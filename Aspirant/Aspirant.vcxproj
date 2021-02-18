@@ -32,6 +32,7 @@
     <ClInclude Include="MEvent.h" />
     <ClInclude Include="MGeneric.h" />
     <ClInclude Include="MRender.h" />
+    <ClInclude Include="UIState.h" />
     <ClInclude Include="Utility.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

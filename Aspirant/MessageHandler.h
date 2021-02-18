@@ -29,6 +29,13 @@ namespace tggd::common
 		{
 			SetParent(parent);
 		}
+		virtual ~MessageHandler()
+		{
+			for (auto& child : _children)
+			{
+				delete child;
+			}
+		}
 		bool Handle(const MGeneric& message)
 		{
 			if (OnMessage(&message))

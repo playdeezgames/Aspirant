@@ -67,5 +67,8 @@
     <ClInclude Include="MessageHandler.h">
       <Filter>Header Files\Application</Filter>
     </ClInclude>
+    <ClInclude Include="UIState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
