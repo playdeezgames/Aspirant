@@ -30,7 +30,6 @@ namespace tggd::common
 		static void DoFinish();
 
 	protected:
-		bool OnMessage(const MGeneric&);
 		SDL_Renderer* GetRenderer() const { return renderer; }
 		virtual bool IsRunning() const = 0;
 		virtual void Start() = 0;

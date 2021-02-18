@@ -116,10 +116,4 @@ namespace tggd::common
 		}
 		return 0;
 	}
-
-	bool Application::OnMessage(const MGeneric& message)
-	{
-		return false;
-	}
-
 }

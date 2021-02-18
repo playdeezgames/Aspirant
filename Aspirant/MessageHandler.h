@@ -21,7 +21,7 @@ namespace tggd::common
 			}
 		}
 	protected:
-		virtual bool OnMessage(const MGeneric&) = 0;
+		virtual bool OnMessage(const MGeneric*) = 0;
 	public:
 		MessageHandler(MessageHandler* parent)
 			: _parent(nullptr)
@@ -31,7 +31,7 @@ namespace tggd::common
 		}
 		bool Handle(const MGeneric& message)
 		{
-			if (OnMessage(message))
+			if (OnMessage(&message))
 			{
 				return true;
 			}
@@ -49,7 +49,7 @@ namespace tggd::common
 		}
 		void Broadcast(const MGeneric& message)
 		{
-			OnMessage(message);
+			OnMessage(&message);
 			for (auto& child : _children)
 			{
 				child->Broadcast(message);
@@ -65,7 +65,7 @@ namespace tggd::common
 					return true;
 				}
 			}
-			return OnMessage(message);
+			return OnMessage(&message);
 		}
 	};
 }

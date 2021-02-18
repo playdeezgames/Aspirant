@@ -24,5 +24,11 @@ namespace aspirant
 
 	}
 
+	bool AspirantApplication::OnMessage(const tggd::common::MGeneric*)
+	{
+		return false;
+	}
+
+
 	AspirantApplication application;
 }
