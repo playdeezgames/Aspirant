@@ -1,6 +1,5 @@
 #pragma once
 #include "MGeneric.h"
-#include "Renderer.h"
 #include <SDL.h>
 namespace tggd::common
 {
@@ -10,7 +9,7 @@ namespace tggd::common
 		SDL_Renderer* _renderer;
 	public:
 		MRender(SDL_Renderer* renderer)
-			: MGeneric(Renderer::MSGID_Draw)
+			: MGeneric(MSGID_Draw)
 			, _renderer(renderer)
 		{
 
@@ -19,5 +18,6 @@ namespace tggd::common
 		{
 			return _renderer;
 		}
+		static void MSGID_Draw() {}
 	};
 }

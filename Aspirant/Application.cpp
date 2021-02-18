@@ -3,7 +3,7 @@
 #include <SDL_mixer.h>
 #include <SDL_image.h>
 #include "MEvent.h"
-#include "Renderer.h"
+#include "MRender.h"
 #include "Utility.h"
 namespace tggd::common
 {
@@ -77,7 +77,7 @@ namespace tggd::common
 		SDL_Event evt;
 		while(s_application->IsRunning())
 		{
-			s_application->Broadcast(Renderer::MSGID_Draw);
+			s_application->Broadcast(MRender::MSGID_Draw);
 			SDL_RenderPresent(s_application->renderer);
 			if (SDL_PollEvent(&evt))
 			{

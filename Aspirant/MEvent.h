@@ -1,6 +1,5 @@
 #pragma once
 #include "MGeneric.h"
-#include "EventHandler.h"
 #include <SDL.h>
 namespace tggd::common
 {
@@ -10,7 +9,7 @@ namespace tggd::common
 		const SDL_Event& _event;
 	public:
 		MEvent(const SDL_Event& evt)
-			: MGeneric(EventHandler::MSGID_SdlEvent)
+			: MGeneric(MSGID_SdlEvent)
 			, _event(evt)
 		{
 
@@ -19,5 +18,6 @@ namespace tggd::common
 		{
 			return _event;
 		}
+		static void MSGID_SdlEvent() {}
 	};
 }

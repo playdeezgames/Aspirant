@@ -27,13 +27,11 @@
   <ItemGroup>
     <ClInclude Include="Application.h" />
     <ClInclude Include="AspirantApplication.h" />
-    <ClInclude Include="EventHandler.h" />
     <ClInclude Include="json.hpp" />
     <ClInclude Include="MessageHandler.h" />
     <ClInclude Include="MEvent.h" />
     <ClInclude Include="MGeneric.h" />
     <ClInclude Include="MRender.h" />
-    <ClInclude Include="Renderer.h" />
     <ClInclude Include="Utility.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
