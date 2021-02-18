@@ -70,5 +70,8 @@
     <ClInclude Include="UIState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MSetUIState.h">
+      <Filter>Header Files\Messages</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
