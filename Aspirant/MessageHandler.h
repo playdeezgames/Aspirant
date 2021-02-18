@@ -23,7 +23,7 @@ namespace tggd::common
 	protected:
 		virtual bool OnMessage(const MGeneric&) = 0;
 	public:
-		MessageHandler(MessageHandler* parent = nullptr)
+		MessageHandler(MessageHandler* parent)
 			: _parent(nullptr)
 			, _children()
 		{

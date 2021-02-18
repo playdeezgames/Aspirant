@@ -21,7 +21,8 @@ namespace tggd::common
 	(
 		const std::string& fileName
 	)
-		: window(nullptr)
+		: MessageHandler(nullptr)
+		, window(nullptr)
 		, renderer(nullptr)
 		, windowWidth(0)
 		, windowHeight(0)
