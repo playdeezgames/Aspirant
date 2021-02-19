@@ -4,6 +4,7 @@
 #include <SDL_image.h>
 #include "MEvent.h"
 #include "MRender.h"
+#include "MUpdate.h"
 #include "Utility.h"
 namespace tggd::common
 {
@@ -75,8 +76,12 @@ namespace tggd::common
 	void Application::DoPump()
 	{
 		SDL_Event evt;
+		auto currentTicks = SDL_GetTicks();
 		while(s_application->IsRunning())
 		{
+			auto frameTicks = SDL_GetTicks();
+			s_application->Broadcast(MUpdate(frameTicks - currentTicks));
+			currentTicks = frameTicks;
 			s_application->Broadcast(MRender(s_application->renderer));
 			SDL_RenderPresent(s_application->renderer);
 			if (SDL_PollEvent(&evt))

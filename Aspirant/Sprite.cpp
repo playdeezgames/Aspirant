@@ -29,6 +29,11 @@ namespace tggd::common
 			(color) ? (color->g) : (255), 
 			(color) ? (color->b) : (255)
 		);
+		SDL_SetTextureAlphaMod
+		(
+			texture,
+			(color) ? (color->a) : 255
+		);
 		SDL_Rect rcDst =
 		{
 			xy.GetX() + offset.GetX(),

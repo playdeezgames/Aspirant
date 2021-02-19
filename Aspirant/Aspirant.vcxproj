@@ -47,6 +47,7 @@
     <ClInclude Include="HelpPage.h" />
     <ClInclude Include="HelpPageManager.h" />
     <ClInclude Include="json.hpp" />
+    <ClInclude Include="MUpdate.h" />
     <ClInclude Include="StaticText.h" />
     <ClInclude Include="MessageHandler.h" />
     <ClInclude Include="MEvent.h" />

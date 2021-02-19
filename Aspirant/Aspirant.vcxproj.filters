@@ -175,5 +175,8 @@
     <ClInclude Include="StaticText.h">
       <Filter>Header Files\Graphics</Filter>
     </ClInclude>
+    <ClInclude Include="MUpdate.h">
+      <Filter>Header Files\Messages</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
