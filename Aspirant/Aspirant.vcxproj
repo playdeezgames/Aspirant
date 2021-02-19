@@ -23,6 +23,7 @@
     <ClCompile Include="AspirantApplication.cpp" />
     <ClCompile Include="ColorManager.cpp" />
     <ClCompile Include="FinishManager.cpp" />
+    <ClCompile Include="FontManager.cpp" />
     <ClCompile Include="HelpPage.cpp" />
     <ClCompile Include="HelpPageManager.cpp" />
     <ClCompile Include="Label.cpp" />
@@ -41,6 +42,7 @@
     <ClInclude Include="ColorManager.h" />
     <ClInclude Include="Finisher.h" />
     <ClInclude Include="FinishManager.h" />
+    <ClInclude Include="FontManager.h" />
     <ClInclude Include="HelpPage.h" />
     <ClInclude Include="HelpPageManager.h" />
     <ClInclude Include="json.hpp" />

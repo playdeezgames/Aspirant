@@ -24,7 +24,6 @@ namespace aspirant
 			: UIStateMessageHandler(parent, currentState, UIState::Splash)
 			, spriteManager(spriteManager)
 			, spriteFont(spriteFont)
-			, labels()
 		{
 		}
 	};

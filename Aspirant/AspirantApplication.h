@@ -5,7 +5,7 @@
 #include "TextureManager.h"
 #include "SpriteManager.h"
 #include "ColorManager.h"
-#include "SpriteFont.h"
+#include "FontManager.h"
 namespace aspirant
 {
 	class AspirantApplication : public tggd::common::Application
@@ -16,7 +16,7 @@ namespace aspirant
 		tggd::common::TextureManager textureManager;
 		tggd::common::SpriteManager spriteManager;
 		tggd::common::ColorManager colorManager;
-		tggd::common::SpriteFont spriteFont;
+		tggd::common::FontManager fontManager;
 		bool OnSetUIState(const UIState&);
 		bool OnSdlEvent(const SDL_Event&);
 	protected:
