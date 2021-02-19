@@ -55,7 +55,5 @@ namespace aspirant
 		return true;
 	}
 
-
-
 	AspirantApplication application;
 }
