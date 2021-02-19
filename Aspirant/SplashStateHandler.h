@@ -1,6 +1,6 @@
 #pragma once
 #include "UIStateMessageHandler.h"
-#include "SpriteManager.h"
+#include "StaticImage.h"
 #include "SpriteFont.h"
 #include <SDL.h>
 namespace aspirant
@@ -8,7 +8,7 @@ namespace aspirant
 	class SplashStateHandler : public UIStateMessageHandler
 	{
 	private:
-		const tggd::common::SpriteManager& spriteManager;
+		tggd::common::StaticImage staticImage;
 		const tggd::common::SpriteFont& spriteFont;
 		bool OnDraw(SDL_Renderer*) const;
 	protected:
@@ -16,15 +16,11 @@ namespace aspirant
 	public:
 		SplashStateHandler
 		(
-			MessageHandler* parent,
-			const UIState& currentState,
-			const tggd::common::SpriteManager& spriteManager,
-			const tggd::common::SpriteFont& spriteFont
-		)
-			: UIStateMessageHandler(parent, currentState, UIState::Splash)
-			, spriteManager(spriteManager)
-			, spriteFont(spriteFont)
-		{
-		}
+			MessageHandler*,
+			const UIState&,
+			const tggd::common::SpriteManager&,
+			const tggd::common::ColorManager&,
+			const tggd::common::SpriteFont&
+		);
 	};
 }
