@@ -9,6 +9,7 @@ namespace aspirant
 	bool SplashStateHandler::OnDraw(SDL_Renderer* renderer) const
 	{
 		spriteManager.GetSprite(SPRITE_NAME)->Draw(renderer, tggd::common::XY<int>(SPRITE_X, SPRITE_Y));
+		spriteFont.WriteText(renderer, tggd::common::XY<int>(0, 0), "Hello, world!", "white");
 		return false;
 	}
 

@@ -7,12 +7,16 @@ namespace aspirant
 	const std::string APPLICATION_CONFIG_FILE = "config/application.json";
 	const std::string TEXTURE_CONFIG_FILE = "config/textures.json";
 	const std::string SPRITE_CONFIG_FILE = "config/sprites.json";
+	const std::string COLOR_CONFIG_FILE = "config/colors.json";
+	const std::string FONT_CONFIG_FILE = "config/font.json";
 
 	AspirantApplication::AspirantApplication()
 		: tggd::common::Application(APPLICATION_CONFIG_FILE)
 		, finishManager()
 		, textureManager(finishManager)
 		, spriteManager(finishManager)
+		, colorManager(finishManager)
+		, spriteFont(spriteManager, colorManager, FONT_CONFIG_FILE)
 		, uiState(UIState::Splash)
 	{
 
@@ -25,10 +29,11 @@ namespace aspirant
 
 	void AspirantApplication::Start(SDL_Renderer* renderer)
 	{
+		colorManager.Start(COLOR_CONFIG_FILE);
 		textureManager.Start(renderer, TEXTURE_CONFIG_FILE);
 		spriteManager.Start(textureManager, SPRITE_CONFIG_FILE);
 
-		new SplashStateHandler(this, uiState, spriteManager);
+		new SplashStateHandler(this, uiState, spriteManager, spriteFont);
 	}
 
 	void AspirantApplication::Finish()

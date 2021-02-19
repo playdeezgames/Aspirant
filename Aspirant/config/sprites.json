@@ -1,9 +1,681 @@
 {
+    "Character20": {
+        "texture": "font",
+        "x": 0,
+        "y": 0,
+        "w": 16,
+        "h": 16
+    },
+    "Character21": {
+        "texture": "font",
+        "x": 16,
+        "y": 0,
+        "w": 16,
+        "h": 16
+    },
+    "Character22": {
+        "texture": "font",
+        "x": 32,
+        "y": 0,
+        "w": 16,
+        "h": 16
+    },
+    "Character23": {
+        "texture": "font",
+        "x": 48,
+        "y": 0,
+        "w": 16,
+        "h": 16
+    },
+    "Character24": {
+        "texture": "font",
+        "x": 64,
+        "y": 0,
+        "w": 16,
+        "h": 16
+    },
+    "Character25": {
+        "texture": "font",
+        "x": 80,
+        "y": 0,
+        "w": 16,
+        "h": 16
+    },
+    "Character26": {
+        "texture": "font",
+        "x": 96,
+        "y": 0,
+        "w": 16,
+        "h": 16
+    },
+    "Character27": {
+        "texture": "font",
+        "x": 112,
+        "y": 0,
+        "w": 16,
+        "h": 16
+    },
+    "Character28": {
+        "texture": "font",
+        "x": 128,
+        "y": 0,
+        "w": 16,
+        "h": 16
+    },
+    "Character29": {
+        "texture": "font",
+        "x": 144,
+        "y": 0,
+        "w": 16,
+        "h": 16
+    },
+    "Character2A": {
+        "texture": "font",
+        "x": 160,
+        "y": 0,
+        "w": 16,
+        "h": 16
+    },
+    "Character2B": {
+        "texture": "font",
+        "x": 176,
+        "y": 0,
+        "w": 16,
+        "h": 16
+    },
+    "Character2C": {
+        "texture": "font",
+        "x": 192,
+        "y": 0,
+        "w": 16,
+        "h": 16
+    },
+    "Character2D": {
+        "texture": "font",
+        "x": 208,
+        "y": 0,
+        "w": 16,
+        "h": 16
+    },
+    "Character2E": {
+        "texture": "font",
+        "x": 224,
+        "y": 0,
+        "w": 16,
+        "h": 16
+    },
+    "Character2F": {
+        "texture": "font",
+        "x": 240,
+        "y": 0,
+        "w": 16,
+        "h": 16
+    },
+    "Character30": {
+        "texture": "font",
+        "x": 0,
+        "y": 16,
+        "w": 16,
+        "h": 16
+    },
+    "Character31": {
+        "texture": "font",
+        "x": 16,
+        "y": 16,
+        "w": 16,
+        "h": 16
+    },
+    "Character32": {
+        "texture": "font",
+        "x": 32,
+        "y": 16,
+        "w": 16,
+        "h": 16
+    },
+    "Character33": {
+        "texture": "font",
+        "x": 48,
+        "y": 16,
+        "w": 16,
+        "h": 16
+    },
+    "Character34": {
+        "texture": "font",
+        "x": 64,
+        "y": 16,
+        "w": 16,
+        "h": 16
+    },
+    "Character35": {
+        "texture": "font",
+        "x": 80,
+        "y": 16,
+        "w": 16,
+        "h": 16
+    },
+    "Character36": {
+        "texture": "font",
+        "x": 96,
+        "y": 16,
+        "w": 16,
+        "h": 16
+    },
+    "Character37": {
+        "texture": "font",
+        "x": 112,
+        "y": 16,
+        "w": 16,
+        "h": 16
+    },
+    "Character38": {
+        "texture": "font",
+        "x": 128,
+        "y": 16,
+        "w": 16,
+        "h": 16
+    },
+    "Character39": {
+        "texture": "font",
+        "x": 144,
+        "y": 16,
+        "w": 16,
+        "h": 16
+    },
+    "Character3A": {
+        "texture": "font",
+        "x": 160,
+        "y": 16,
+        "w": 16,
+        "h": 16
+    },
+    "Character3B": {
+        "texture": "font",
+        "x": 176,
+        "y": 16,
+        "w": 16,
+        "h": 16
+    },
+    "Character3C": {
+        "texture": "font",
+        "x": 192,
+        "y": 16,
+        "w": 16,
+        "h": 16
+    },
+    "Character3D": {
+        "texture": "font",
+        "x": 208,
+        "y": 16,
+        "w": 16,
+        "h": 16
+    },
+    "Character3E": {
+        "texture": "font",
+        "x": 224,
+        "y": 16,
+        "w": 16,
+        "h": 16
+    },
+    "Character3F": {
+        "texture": "font",
+        "x": 240,
+        "y": 16,
+        "w": 16,
+        "h": 16
+    },
+    "Character40": {
+        "texture": "font",
+        "x": 0,
+        "y": 32,
+        "w": 16,
+        "h": 16
+    },
+    "Character41": {
+        "texture": "font",
+        "x": 16,
+        "y": 32,
+        "w": 16,
+        "h": 16
+    },
+    "Character42": {
+        "texture": "font",
+        "x": 32,
+        "y": 32,
+        "w": 16,
+        "h": 16
+    },
+    "Character43": {
+        "texture": "font",
+        "x": 48,
+        "y": 32,
+        "w": 16,
+        "h": 16
+    },
+    "Character44": {
+        "texture": "font",
+        "x": 64,
+        "y": 32,
+        "w": 16,
+        "h": 16
+    },
+    "Character45": {
+        "texture": "font",
+        "x": 80,
+        "y": 32,
+        "w": 16,
+        "h": 16
+    },
+    "Character46": {
+        "texture": "font",
+        "x": 96,
+        "y": 32,
+        "w": 16,
+        "h": 16
+    },
+    "Character47": {
+        "texture": "font",
+        "x": 112,
+        "y": 32,
+        "w": 16,
+        "h": 16
+    },
+    "Character48": {
+        "texture": "font",
+        "x": 128,
+        "y": 32,
+        "w": 16,
+        "h": 16
+    },
+    "Character49": {
+        "texture": "font",
+        "x": 144,
+        "y": 32,
+        "w": 16,
+        "h": 16
+    },
+    "Character4A": {
+        "texture": "font",
+        "x": 160,
+        "y": 32,
+        "w": 16,
+        "h": 16
+    },
+    "Character4B": {
+        "texture": "font",
+        "x": 176,
+        "y": 32,
+        "w": 16,
+        "h": 16
+    },
+    "Character4C": {
+        "texture": "font",
+        "x": 192,
+        "y": 32,
+        "w": 16,
+        "h": 16
+    },
+    "Character4D": {
+        "texture": "font",
+        "x": 208,
+        "y": 32,
+        "w": 16,
+        "h": 16
+    },
+    "Character4E": {
+        "texture": "font",
+        "x": 224,
+        "y": 32,
+        "w": 16,
+        "h": 16
+    },
+    "Character4F": {
+        "texture": "font",
+        "x": 240,
+        "y": 32,
+        "w": 16,
+        "h": 16
+    },
+    "Character50": {
+        "texture": "font",
+        "x": 0,
+        "y": 48,
+        "w": 16,
+        "h": 16
+    },
+    "Character51": {
+        "texture": "font",
+        "x": 16,
+        "y": 48,
+        "w": 16,
+        "h": 16
+    },
+    "Character52": {
+        "texture": "font",
+        "x": 32,
+        "y": 48,
+        "w": 16,
+        "h": 16
+    },
+    "Character53": {
+        "texture": "font",
+        "x": 48,
+        "y": 48,
+        "w": 16,
+        "h": 16
+    },
+    "Character54": {
+        "texture": "font",
+        "x": 64,
+        "y": 48,
+        "w": 16,
+        "h": 16
+    },
+    "Character55": {
+        "texture": "font",
+        "x": 80,
+        "y": 48,
+        "w": 16,
+        "h": 16
+    },
+    "Character56": {
+        "texture": "font",
+        "x": 96,
+        "y": 48,
+        "w": 16,
+        "h": 16
+    },
+    "Character57": {
+        "texture": "font",
+        "x": 112,
+        "y": 48,
+        "w": 16,
+        "h": 16
+    },
+    "Character58": {
+        "texture": "font",
+        "x": 128,
+        "y": 48,
+        "w": 16,
+        "h": 16
+    },
+    "Character59": {
+        "texture": "font",
+        "x": 144,
+        "y": 48,
+        "w": 16,
+        "h": 16
+    },
+    "Character5A": {
+        "texture": "font",
+        "x": 160,
+        "y": 48,
+        "w": 16,
+        "h": 16
+    },
+    "Character5B": {
+        "texture": "font",
+        "x": 176,
+        "y": 48,
+        "w": 16,
+        "h": 16
+    },
+    "Character5C": {
+        "texture": "font",
+        "x": 192,
+        "y": 48,
+        "w": 16,
+        "h": 16
+    },
+    "Character5D": {
+        "texture": "font",
+        "x": 208,
+        "y": 48,
+        "w": 16,
+        "h": 16
+    },
+    "Character5E": {
+        "texture": "font",
+        "x": 224,
+        "y": 48,
+        "w": 16,
+        "h": 16
+    },
+    "Character5F": {
+        "texture": "font",
+        "x": 240,
+        "y": 48,
+        "w": 16,
+        "h": 16
+    },
+    "Character60": {
+        "texture": "font",
+        "x": 0,
+        "y": 64,
+        "w": 16,
+        "h": 16
+    },
+    "Character61": {
+        "texture": "font",
+        "x": 16,
+        "y": 64,
+        "w": 16,
+        "h": 16
+    },
+    "Character62": {
+        "texture": "font",
+        "x": 32,
+        "y": 64,
+        "w": 16,
+        "h": 16
+    },
+    "Character63": {
+        "texture": "font",
+        "x": 48,
+        "y": 64,
+        "w": 16,
+        "h": 16
+    },
+    "Character64": {
+        "texture": "font",
+        "x": 64,
+        "y": 64,
+        "w": 16,
+        "h": 16
+    },
+    "Character65": {
+        "texture": "font",
+        "x": 80,
+        "y": 64,
+        "w": 16,
+        "h": 16
+    },
+    "Character66": {
+        "texture": "font",
+        "x": 96,
+        "y": 64,
+        "w": 16,
+        "h": 16
+    },
+    "Character67": {
+        "texture": "font",
+        "x": 112,
+        "y": 64,
+        "w": 16,
+        "h": 16
+    },
+    "Character68": {
+        "texture": "font",
+        "x": 128,
+        "y": 64,
+        "w": 16,
+        "h": 16
+    },
+    "Character69": {
+        "texture": "font",
+        "x": 144,
+        "y": 64,
+        "w": 16,
+        "h": 16
+    },
+    "Character6A": {
+        "texture": "font",
+        "x": 160,
+        "y": 64,
+        "w": 16,
+        "h": 16
+    },
+    "Character6B": {
+        "texture": "font",
+        "x": 176,
+        "y": 64,
+        "w": 16,
+        "h": 16
+    },
+    "Character6C": {
+        "texture": "font",
+        "x": 192,
+        "y": 64,
+        "w": 16,
+        "h": 16
+    },
+    "Character6D": {
+        "texture": "font",
+        "x": 208,
+        "y": 64,
+        "w": 16,
+        "h": 16
+    },
+    "Character6E": {
+        "texture": "font",
+        "x": 224,
+        "y": 64,
+        "w": 16,
+        "h": 16
+    },
+    "Character6F": {
+        "texture": "font",
+        "x": 240,
+        "y": 64,
+        "w": 16,
+        "h": 16
+    },
+    "Character70": {
+        "texture": "font",
+        "x": 0,
+        "y": 80,
+        "w": 16,
+        "h": 16
+    },
+    "Character71": {
+        "texture": "font",
+        "x": 16,
+        "y": 80,
+        "w": 16,
+        "h": 16
+    },
+    "Character72": {
+        "texture": "font",
+        "x": 32,
+        "y": 80,
+        "w": 16,
+        "h": 16
+    },
+    "Character73": {
+        "texture": "font",
+        "x": 48,
+        "y": 80,
+        "w": 16,
+        "h": 16
+    },
+    "Character74": {
+        "texture": "font",
+        "x": 64,
+        "y": 80,
+        "w": 16,
+        "h": 16
+    },
+    "Character75": {
+        "texture": "font",
+        "x": 80,
+        "y": 80,
+        "w": 16,
+        "h": 16
+    },
+    "Character76": {
+        "texture": "font",
+        "x": 96,
+        "y": 80,
+        "w": 16,
+        "h": 16
+    },
+    "Character77": {
+        "texture": "font",
+        "x": 112,
+        "y": 80,
+        "w": 16,
+        "h": 16
+    },
+    "Character78": {
+        "texture": "font",
+        "x": 128,
+        "y": 80,
+        "w": 16,
+        "h": 16
+    },
+    "Character79": {
+        "texture": "font",
+        "x": 144,
+        "y": 80,
+        "w": 16,
+        "h": 16
+    },
+    "Character7A": {
+        "texture": "font",
+        "x": 160,
+        "y": 80,
+        "w": 16,
+        "h": 16
+    },
+    "Character7B": {
+        "texture": "font",
+        "x": 176,
+        "y": 80,
+        "w": 16,
+        "h": 16
+    },
+    "Character7C": {
+        "texture": "font",
+        "x": 192,
+        "y": 80,
+        "w": 16,
+        "h": 16
+    },
+    "Character7D": {
+        "texture": "font",
+        "x": 208,
+        "y": 80,
+        "w": 16,
+        "h": 16
+    },
+    "Character7E": {
+        "texture": "font",
+        "x": 224,
+        "y": 80,
+        "w": 16,
+        "h": 16
+    },
+    "Character7F": {
+        "texture": "font",
+        "x": 240,
+        "y": 80,
+        "w": 16,
+        "h": 16
+    },
     "Splash": {
         "texture": "splash",
         "x": 0,
         "y": 0,
         "w": 1280,
         "h": 720
-      }
+    }
 }
