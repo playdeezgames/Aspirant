@@ -1,0 +1,3 @@
+Refactors:
+    ☐ SplashStateHandler takes a spritefont.... this should be a set of labels or something
+    ☐ consolidate StaticImage and Label with a base class and base collection?
