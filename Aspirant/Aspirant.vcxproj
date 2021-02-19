@@ -23,6 +23,9 @@
     <ClCompile Include="AspirantApplication.cpp" />
     <ClCompile Include="ColorManager.cpp" />
     <ClCompile Include="FinishManager.cpp" />
+    <ClCompile Include="HelpPage.cpp" />
+    <ClCompile Include="HelpPageManager.cpp" />
+    <ClCompile Include="Label.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SplashStateHandler.cpp" />
     <ClCompile Include="Sprite.cpp" />
@@ -38,7 +41,10 @@
     <ClInclude Include="ColorManager.h" />
     <ClInclude Include="Finisher.h" />
     <ClInclude Include="FinishManager.h" />
+    <ClInclude Include="HelpPage.h" />
+    <ClInclude Include="HelpPageManager.h" />
     <ClInclude Include="json.hpp" />
+    <ClInclude Include="Label.h" />
     <ClInclude Include="MessageHandler.h" />
     <ClInclude Include="MEvent.h" />
     <ClInclude Include="MGeneric.h" />

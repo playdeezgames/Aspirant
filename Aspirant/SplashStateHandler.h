@@ -16,7 +16,7 @@ namespace aspirant
 	public:
 		SplashStateHandler
 		(
-			MessageHandler* parent, 
+			MessageHandler* parent,
 			const UIState& currentState,
 			const tggd::common::SpriteManager& spriteManager,
 			const tggd::common::SpriteFont& spriteFont
@@ -24,8 +24,8 @@ namespace aspirant
 			: UIStateMessageHandler(parent, currentState, UIState::Splash)
 			, spriteManager(spriteManager)
 			, spriteFont(spriteFont)
+			, labels()
 		{
-
 		}
 	};
 }
