@@ -1,61 +1,66 @@
 #include "HelpPage.h"
-const std::string PROPERTY_NEXT_PAGE = "nextPage";
-const std::string PROPERTY_PREVIOUS_PAGE = "previousPage";
-const std::string PROPERTY_LABELS = "labels";
-
-const std::string PROPERTY_FONT = "font";
-const std::string PROPERTY_X = "x";
-const std::string PROPERTY_Y = "y";
-const std::string PROPERTY_TEXT = "text";
-const std::string PROPERTY_COLOR = "color";
-const std::string PROPERTY_DROP_SHADOW = "dropShadow";
-
-HelpPage::HelpPage(const nlohmann::json& properties, const tggd::common::FontManager& fontManager)
-	: nextPage(properties[PROPERTY_NEXT_PAGE])
-	, previousPage(properties[PROPERTY_PREVIOUS_PAGE])
-	, labels()
+namespace tggd::common
 {
-	auto& entries = properties[PROPERTY_LABELS];
-	for (auto& entry : entries)
+
+
+	const std::string PROPERTY_NEXT_PAGE = "nextPage";
+	const std::string PROPERTY_PREVIOUS_PAGE = "previousPage";
+	const std::string PROPERTY_LABELS = "labels";
+
+	const std::string PROPERTY_FONT = "font";
+	const std::string PROPERTY_X = "x";
+	const std::string PROPERTY_Y = "y";
+	const std::string PROPERTY_TEXT = "text";
+	const std::string PROPERTY_COLOR = "color";
+	const std::string PROPERTY_DROP_SHADOW = "dropShadow";
+
+	HelpPage::HelpPage(const nlohmann::json& properties, const tggd::common::FontManager& fontManager)
+		: nextPage(properties[PROPERTY_NEXT_PAGE])
+		, previousPage(properties[PROPERTY_PREVIOUS_PAGE])
+		, labels()
 	{
-		bool hasDropShadow = false;
-		tggd::common::XY<int> dropShadowOffset(0,0);
-		std::string dropShadowColor = "";
-		if (entry.count(PROPERTY_DROP_SHADOW) > 0)
+		auto& entries = properties[PROPERTY_LABELS];
+		for (auto& entry : entries)
 		{
-			auto& dropShadow = entry[PROPERTY_DROP_SHADOW];
-			hasDropShadow = true;
-			dropShadowOffset = { (int)dropShadow[PROPERTY_X], (int)dropShadow[PROPERTY_Y] };
-			dropShadowColor = dropShadow[PROPERTY_COLOR];
-		}
-		labels.push_back
-		(
-			tggd::common::Label
+			bool hasDropShadow = false;
+			tggd::common::XY<int> dropShadowOffset(0, 0);
+			std::string dropShadowColor = "";
+			if (entry.count(PROPERTY_DROP_SHADOW) > 0)
+			{
+				auto& dropShadow = entry[PROPERTY_DROP_SHADOW];
+				hasDropShadow = true;
+				dropShadowOffset = { (int)dropShadow[PROPERTY_X], (int)dropShadow[PROPERTY_Y] };
+				dropShadowColor = dropShadow[PROPERTY_COLOR];
+			}
+			labels.push_back
 			(
-				tggd::common::XY<int>(entry[PROPERTY_X], entry[PROPERTY_Y]),
-				entry[PROPERTY_TEXT],
-				fontManager,
-				entry[PROPERTY_FONT],
-				entry[PROPERTY_COLOR],
-				hasDropShadow,
-				dropShadowOffset,
-				dropShadowColor
-			)
-		);
+				tggd::common::Label
+				(
+					tggd::common::XY<int>(entry[PROPERTY_X], entry[PROPERTY_Y]),
+					entry[PROPERTY_TEXT],
+					fontManager,
+					entry[PROPERTY_FONT],
+					entry[PROPERTY_COLOR],
+					hasDropShadow,
+					dropShadowOffset,
+					dropShadowColor
+				)
+			);
+		}
 	}
-}
 
-const std::string& HelpPage::GetNextPage() const
-{
-	return nextPage;
-}
+	const std::string& HelpPage::GetNextPage() const
+	{
+		return nextPage;
+	}
 
-const std::string& HelpPage::GetPreviousPage() const
-{
-	return previousPage;
-}
+	const std::string& HelpPage::GetPreviousPage() const
+	{
+		return previousPage;
+	}
 
-const std::vector< tggd::common::Label>& HelpPage::GetLabels() const
-{
-	return labels;
+	const std::vector< tggd::common::Label>& HelpPage::GetLabels() const
+	{
+		return labels;
+	}
 }

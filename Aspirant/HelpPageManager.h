@@ -2,13 +2,16 @@
 #include "BaseDescriptorManager.h"
 #include "HelpPage.h"
 #include <string>
-class HelpPageManager: public tggd::common::BaseDescriptorManager<std::string, HelpPage>
+namespace tggd::common
 {
-private:
-	const tggd::common::FontManager& fontManager;
-protected:
-	std::string ParseKey(const std::string&);
-	HelpPage* ParseDescriptor(const nlohmann::json&);
-public:
-	HelpPageManager(tggd::common::FinishManager&, const tggd::common::FontManager&);
-};
+	class HelpPageManager: public tggd::common::BaseDescriptorManager<std::string, HelpPage>
+	{
+	private:
+		const tggd::common::FontManager& fontManager;
+	protected:
+		std::string ParseKey(const std::string&);
+		HelpPage* ParseDescriptor(const nlohmann::json&);
+	public:
+		HelpPageManager(tggd::common::FinishManager&, const tggd::common::FontManager&);
+	};
+}

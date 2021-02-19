@@ -3,15 +3,18 @@
 #include "Label.h"
 #include <string>
 #include <vector>
-class HelpPage
+namespace tggd::common
 {
-private:
-	std::string nextPage;
-	std::string previousPage;
-	std::vector<tggd::common::Label> labels;
-public:
-	HelpPage(const nlohmann::json&, const tggd::common::FontManager&);
-	const std::string& GetNextPage() const;
-	const std::string& GetPreviousPage() const;
-	const std::vector< tggd::common::Label>& GetLabels() const;
-};
+	class HelpPage
+	{
+	private:
+		std::string nextPage;
+		std::string previousPage;
+		std::vector<tggd::common::Label> labels;
+	public:
+		HelpPage(const nlohmann::json&, const tggd::common::FontManager&);
+		const std::string& GetNextPage() const;
+		const std::string& GetPreviousPage() const;
+		const std::vector< tggd::common::Label>& GetLabels() const;
+	};
+}
