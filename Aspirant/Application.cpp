@@ -10,6 +10,8 @@ namespace tggd::common
 {
 	const std::string PROPERTY_WIDTH = "width";
 	const std::string PROPERTY_HEIGHT = "height";
+	const std::string PROPERTY_LOGICAL_WIDTH = "logicalWidth";
+	const std::string PROPERTY_LOGICAL_HEIGHT = "logicalHeight";
 	const std::string PROPERTY_TITLE = "title";
 	const std::string PROPERTY_ICON = "icon";
 	const std::string PROPERTY_MIXER_FREQUENCY = "mixerFrequency";
@@ -27,6 +29,8 @@ namespace tggd::common
 		, renderer(nullptr)
 		, windowWidth(0)
 		, windowHeight(0)
+		, logicalWidth(0)
+		, logicalHeight(0)
 		, windowTitle("")
 		, iconFileName("")
 		, mixerFrequency(0)
@@ -40,6 +44,8 @@ namespace tggd::common
 		auto properties = Utility::LoadJSON(fileName);
 		windowWidth = (int)properties[PROPERTY_WIDTH];
 		windowHeight = (int)properties[PROPERTY_HEIGHT];
+		logicalWidth = (int)properties[PROPERTY_LOGICAL_WIDTH];
+		logicalHeight = (int)properties[PROPERTY_LOGICAL_HEIGHT];
 		windowTitle = properties[PROPERTY_TITLE];
 		iconFileName = properties[PROPERTY_ICON];
 		mixerFrequency = (int)properties[PROPERTY_MIXER_FREQUENCY];
@@ -65,6 +71,7 @@ namespace tggd::common
 			0,
 			&s_application->window,
 			&s_application->renderer);
+		SDL_RenderSetLogicalSize(s_application->renderer, s_application->logicalWidth, s_application->logicalHeight);
 		SDL_SetWindowTitle(s_application->window, s_application->windowTitle.c_str());
 		auto iconSurface = IMG_Load(s_application->iconFileName.c_str());
 		SDL_SetWindowIcon(s_application->window, iconSurface);

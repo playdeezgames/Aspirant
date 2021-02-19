@@ -1,6 +1,8 @@
 {
     "width": 1280,
     "height": 720,
+    "logicalWidth": 640,
+    "logicalHeight": 360,
     "title": "Aspirant (of SPLORR!!)",
     "icon": "assets/images/icon.png",
     "mixerFrequency": 44100,

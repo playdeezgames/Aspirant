@@ -18,6 +18,8 @@ namespace tggd::common
 		std::string iconFileName;
 		int windowWidth;
 		int windowHeight;
+		int logicalWidth;
+		int logicalHeight;
 		int mixerFrequency;
 		int channelCount;
 		int chunkSize;

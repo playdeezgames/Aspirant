@@ -3,7 +3,7 @@
 namespace aspirant
 {
 	const std::string SPRITE_NAME = "Splash";
-	const std::string SPRITE_COLOR = "white";
+	const std::string SPRITE_COLOR = "White";
 	const int SPRITE_X = 0;
 	const int SPRITE_Y = 0;
 
@@ -24,16 +24,31 @@ namespace aspirant
 		(
 			tggd::common::Label
 			(
-				tggd::common::XY<int>(0,0),
-				"Hello, world!",
+				tggd::common::XY<int>(320-20*8,180-8),
+				"Aspirant of SPLORR!!",
 				fontManager,
 				"default",
-				"white",
+				"Cyan",
 				true,
-				tggd::common::XY<int>(4,4),
-				"black"
+				tggd::common::XY<int>(2,2),
+				"Black"
 			)
 		);
+		labels.push_back
+		(
+			tggd::common::Label
+			(
+				tggd::common::XY<int>(320 - 32 * 8, 360 - 18),
+				"A Production of TheGrumpyGameDev",
+				fontManager,
+				"default",
+				"DarkGray",
+				true,
+				tggd::common::XY<int>(2, 2),
+				"Black"
+			)
+		);
+
 	}
 
 	bool SplashStateHandler::OnDraw(SDL_Renderer* renderer) const
