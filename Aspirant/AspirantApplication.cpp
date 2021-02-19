@@ -3,11 +3,16 @@
 #include "MEvent.h"
 namespace aspirant
 {
-	const std::string CONFIG_FILE = "config/application.json";
+	const std::string APPLICATION_CONFIG_FILE = "config/application.json";
+	const std::string TEXTURE_CONFIG_FILE = "config/textures.json";
+	const std::string SPRITE_CONFIG_FILE = "config/sprites.json";
 
 	AspirantApplication::AspirantApplication()
-		: tggd::common::Application(CONFIG_FILE)
-		, uiState(UIState::MainMenu)
+		: tggd::common::Application(APPLICATION_CONFIG_FILE)
+		, finishManager()
+		, textureManager(finishManager)
+		, spriteManager(finishManager)
+		, uiState(UIState::Splash)
 	{
 
 	}
@@ -17,14 +22,15 @@ namespace aspirant
 		return uiState!=UIState::Quit;
 	}
 
-	void AspirantApplication::Start()
+	void AspirantApplication::Start(SDL_Renderer* renderer)
 	{
-
+		textureManager.Start(renderer, TEXTURE_CONFIG_FILE);
+		spriteManager.Start(textureManager, SPRITE_CONFIG_FILE);
 	}
 
 	void AspirantApplication::Finish()
 	{
-
+		finishManager.Finish();
 	}
 
 	bool AspirantApplication::OnMessage(const tggd::common::MGeneric* message)

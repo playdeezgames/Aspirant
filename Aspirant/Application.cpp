@@ -69,7 +69,7 @@ namespace tggd::common
 		SDL_SetWindowIcon(s_application->window, iconSurface);
 		SDL_FreeSurface(iconSurface);
 
-		s_application->Start();
+		s_application->Start(s_application->renderer);
 	}
 
 	void Application::DoPump()

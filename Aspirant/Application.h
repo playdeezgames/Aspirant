@@ -32,7 +32,7 @@ namespace tggd::common
 	protected:
 		SDL_Renderer* GetRenderer() const { return renderer; }
 		virtual bool IsRunning() const = 0;
-		virtual void Start() = 0;
+		virtual void Start(SDL_Renderer*) = 0;
 		virtual void Finish() = 0;
 	public:
 		Application(const std::string&);
