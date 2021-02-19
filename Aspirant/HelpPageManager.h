@@ -5,10 +5,10 @@
 class HelpPageManager: public tggd::common::BaseDescriptorManager<std::string, HelpPage>
 {
 private:
-	const tggd::common::SpriteFont& font;
+	const tggd::common::FontManager& fontManager;
 protected:
 	std::string ParseKey(const std::string&);
 	HelpPage* ParseDescriptor(const nlohmann::json&);
 public:
-	HelpPageManager(tggd::common::FinishManager&, const tggd::common::SpriteFont&);
+	HelpPageManager(tggd::common::FinishManager&, const tggd::common::FontManager&);
 };

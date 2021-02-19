@@ -3,13 +3,14 @@ const std::string PROPERTY_NEXT_PAGE = "nextPage";
 const std::string PROPERTY_PREVIOUS_PAGE = "previousPage";
 const std::string PROPERTY_LABELS = "labels";
 
+const std::string PROPERTY_FONT = "font";
 const std::string PROPERTY_X = "x";
 const std::string PROPERTY_Y = "y";
 const std::string PROPERTY_TEXT = "text";
 const std::string PROPERTY_COLOR = "color";
 const std::string PROPERTY_DROP_SHADOW = "dropShadow";
 
-HelpPage::HelpPage(const nlohmann::json& properties, const tggd::common::SpriteFont& font)
+HelpPage::HelpPage(const nlohmann::json& properties, const tggd::common::FontManager& fontManager)
 	: nextPage(properties[PROPERTY_NEXT_PAGE])
 	, previousPage(properties[PROPERTY_PREVIOUS_PAGE])
 	, labels()
@@ -33,7 +34,8 @@ HelpPage::HelpPage(const nlohmann::json& properties, const tggd::common::SpriteF
 			(
 				tggd::common::XY<int>(entry[PROPERTY_X], entry[PROPERTY_Y]),
 				entry[PROPERTY_TEXT],
-				font,
+				fontManager,
+				entry[PROPERTY_FONT],
 				entry[PROPERTY_COLOR],
 				hasDropShadow,
 				dropShadowOffset,

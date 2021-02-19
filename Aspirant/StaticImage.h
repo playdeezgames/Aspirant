@@ -2,9 +2,10 @@
 #include "SpriteManager.h"
 #include "ColorManager.h"
 #include "XY.h"
+#include "Drawn.h"
 namespace tggd::common
 {
-	class StaticImage
+	class StaticImage : public Drawn
 	{
 	private:
 		const SpriteManager& spriteManager;

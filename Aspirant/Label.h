@@ -1,7 +1,7 @@
 #pragma once
 #include "XY.h"
 #include <string>
-#include "SpriteFont.h"
+#include "FontManager.h"
 #include "json.hpp"
 namespace tggd::common
 {
@@ -10,7 +10,8 @@ namespace tggd::common
 	private:
 		tggd::common::XY<int> xy;
 		std::string text;
-		const tggd::common::SpriteFont& font;
+		const tggd::common::FontManager& fontManager;
+		std::string fontName;
 		std::string color;
 		bool hasDropShadow;
 		tggd::common::XY<int> dropShadowXY;
@@ -20,7 +21,8 @@ namespace tggd::common
 		(
 			const tggd::common::XY<int>&,
 			const std::string&,
-			const tggd::common::SpriteFont&,
+			const tggd::common::FontManager&,
+			const std::string&,
 			const std::string&,
 			bool,
 			const tggd::common::XY<int>&,

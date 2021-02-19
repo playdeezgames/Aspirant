@@ -40,6 +40,7 @@
     <ClInclude Include="AspirantApplication.h" />
     <ClInclude Include="BaseDescriptorManager.h" />
     <ClInclude Include="ColorManager.h" />
+    <ClInclude Include="Drawn.h" />
     <ClInclude Include="Finisher.h" />
     <ClInclude Include="FinishManager.h" />
     <ClInclude Include="FontManager.h" />

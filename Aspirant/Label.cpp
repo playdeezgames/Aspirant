@@ -5,7 +5,8 @@ namespace tggd::common
 	(
 		const tggd::common::XY<int>& xy,
 		const std::string& text,
-		const tggd::common::SpriteFont& font, 
+		const tggd::common::FontManager& fontManager, 
+		const std::string& fontName,
 		const std::string& color,
 		bool hasDropShadow,
 		const tggd::common::XY<int>& dropShadowOffset,
@@ -13,7 +14,8 @@ namespace tggd::common
 	)
 		: xy(xy)
 		, text(text)
-		, font(font)
+		, fontManager(fontManager)
+		, fontName(fontName)
 		, color(color)
 		, hasDropShadow(hasDropShadow)
 		, dropShadowXY(dropShadowOffset + xy)
@@ -25,8 +27,8 @@ namespace tggd::common
 	{
 		if (hasDropShadow)
 		{
-			font.WriteText(renderer, dropShadowXY, text, dropShadowColor);
+			fontManager.GetDescriptor(fontName)->WriteText(renderer, dropShadowXY, text, dropShadowColor);
 		}
-		font.WriteText(renderer, xy, text, color);
+		fontManager.GetDescriptor(fontName)->WriteText(renderer, xy, text, color);
 	}
 }
