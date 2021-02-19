@@ -3,13 +3,16 @@
 #include "StaticImage.h"
 #include "SpriteFont.h"
 #include <SDL.h>
+#include "StaticText.h"
+#include <list>
 namespace aspirant
 {
 	class SplashStateHandler : public UIStateMessageHandler
 	{
 	private:
 		tggd::common::StaticImage staticImage;
-		const tggd::common::SpriteFont& spriteFont;
+		const tggd::common::FontManager& fontManager;
+		std::list<tggd::common::Label> labels;
 		bool OnDraw(SDL_Renderer*) const;
 	protected:
 		bool OnMessage(const tggd::common::MGeneric*);
@@ -20,7 +23,7 @@ namespace aspirant
 			const UIState&,
 			const tggd::common::SpriteManager&,
 			const tggd::common::ColorManager&,
-			const tggd::common::SpriteFont&
+			const tggd::common::FontManager&
 		);
 	};
 }

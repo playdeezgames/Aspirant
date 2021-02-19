@@ -1,6 +1,6 @@
 #pragma once
 #include "json.hpp"
-#include "Label.h"
+#include "StaticText.h"
 #include <string>
 #include <vector>
 namespace tggd::common

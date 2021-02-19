@@ -1,4 +1,4 @@
-#include "Label.h"
+#include "StaticText.h"
 namespace tggd::common
 {
 	Label::Label

@@ -13,18 +13,36 @@ namespace aspirant
 		const UIState& currentState,
 		const tggd::common::SpriteManager& spriteManager,
 		const tggd::common::ColorManager& colorManager,
-		const tggd::common::SpriteFont& spriteFont
+		const tggd::common::FontManager& fontManager
 	)
 		: UIStateMessageHandler(parent, currentState, UIState::Splash)
-		, spriteFont(spriteFont)
+		, fontManager(fontManager)
 		, staticImage(spriteManager, colorManager, SPRITE_NAME, SPRITE_COLOR, tggd::common::XY<int>(SPRITE_X, SPRITE_Y))
+		, labels()
 	{
+		labels.push_back
+		(
+			tggd::common::Label
+			(
+				tggd::common::XY<int>(0,0),
+				"Hello, world!",
+				fontManager,
+				"default",
+				"white",
+				true,
+				tggd::common::XY<int>(4,4),
+				"black"
+			)
+		);
 	}
 
 	bool SplashStateHandler::OnDraw(SDL_Renderer* renderer) const
 	{
 		staticImage.Draw(renderer);
-		spriteFont.WriteText(renderer, tggd::common::XY<int>(0, 0), "Hello, world!", "white");
+		for (auto label : labels)
+		{
+			label.Draw(renderer);
+		}
 		return false;
 	}
 

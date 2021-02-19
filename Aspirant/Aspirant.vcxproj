@@ -26,7 +26,7 @@
     <ClCompile Include="FontManager.cpp" />
     <ClCompile Include="HelpPage.cpp" />
     <ClCompile Include="HelpPageManager.cpp" />
-    <ClCompile Include="Label.cpp" />
+    <ClCompile Include="StaticText.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SplashStateHandler.cpp" />
     <ClCompile Include="Sprite.cpp" />
@@ -47,7 +47,7 @@
     <ClInclude Include="HelpPage.h" />
     <ClInclude Include="HelpPageManager.h" />
     <ClInclude Include="json.hpp" />
-    <ClInclude Include="Label.h" />
+    <ClInclude Include="StaticText.h" />
     <ClInclude Include="MessageHandler.h" />
     <ClInclude Include="MEvent.h" />
     <ClInclude Include="MGeneric.h" />

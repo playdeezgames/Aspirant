@@ -34,7 +34,7 @@ namespace aspirant
 		spriteManager.Start(textureManager, SPRITE_CONFIG_FILE);
 		fontManager.Start(FONTS_CONFIG_FILE);
 
-		new SplashStateHandler(this, uiState, spriteManager, colorManager, *fontManager.GetDescriptor("default"));
+		new SplashStateHandler(this, uiState, spriteManager, colorManager, fontManager);
 	}
 
 	void AspirantApplication::Finish()

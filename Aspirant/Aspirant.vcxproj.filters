@@ -77,9 +77,6 @@
     <ClCompile Include="SplashStateHandler.cpp">
       <Filter>Source Files\UI</Filter>
     </ClCompile>
-    <ClCompile Include="Label.cpp">
-      <Filter>Source Files\Graphics</Filter>
-    </ClCompile>
     <ClCompile Include="HelpPage.cpp">
       <Filter>Source Files\Graphics</Filter>
     </ClCompile>
@@ -87,6 +84,9 @@
       <Filter>Source Files\Graphics</Filter>
     </ClCompile>
     <ClCompile Include="FontManager.cpp">
+      <Filter>Source Files\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="StaticText.cpp">
       <Filter>Source Files\Graphics</Filter>
     </ClCompile>
   </ItemGroup>
@@ -157,9 +157,6 @@
     <ClInclude Include="SplashStateHandler.h">
       <Filter>Header Files\UI</Filter>
     </ClInclude>
-    <ClInclude Include="Label.h">
-      <Filter>Header Files\Graphics</Filter>
-    </ClInclude>
     <ClInclude Include="HelpPage.h">
       <Filter>Header Files\Graphics</Filter>
     </ClInclude>
@@ -173,6 +170,9 @@
       <Filter>Header Files\Graphics</Filter>
     </ClInclude>
     <ClInclude Include="Drawn.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticText.h">
       <Filter>Header Files\Graphics</Filter>
     </ClInclude>
   </ItemGroup>
