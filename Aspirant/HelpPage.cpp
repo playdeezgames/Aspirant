@@ -1,12 +1,9 @@
 #include "HelpPage.h"
 namespace tggd::common
 {
-
-
 	const std::string PROPERTY_NEXT_PAGE = "nextPage";
 	const std::string PROPERTY_PREVIOUS_PAGE = "previousPage";
 	const std::string PROPERTY_LABELS = "labels";
-
 	const std::string PROPERTY_FONT = "font";
 	const std::string PROPERTY_X = "x";
 	const std::string PROPERTY_Y = "y";
