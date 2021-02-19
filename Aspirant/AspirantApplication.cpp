@@ -1,6 +1,7 @@
 #include "AspirantApplication.h"
 #include "MSetUIState.h"
 #include "MEvent.h"
+#include "SplashStateHandler.h"
 namespace aspirant
 {
 	const std::string APPLICATION_CONFIG_FILE = "config/application.json";
@@ -26,6 +27,8 @@ namespace aspirant
 	{
 		textureManager.Start(renderer, TEXTURE_CONFIG_FILE);
 		spriteManager.Start(textureManager, SPRITE_CONFIG_FILE);
+
+		new SplashStateHandler(this, uiState, spriteManager);
 	}
 
 	void AspirantApplication::Finish()

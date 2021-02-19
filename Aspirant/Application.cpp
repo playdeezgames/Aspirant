@@ -77,7 +77,7 @@ namespace tggd::common
 		SDL_Event evt;
 		while(s_application->IsRunning())
 		{
-			s_application->Broadcast(MRender::MSGID_Draw);
+			s_application->Broadcast(MRender(s_application->renderer));
 			SDL_RenderPresent(s_application->renderer);
 			if (SDL_PollEvent(&evt))
 			{

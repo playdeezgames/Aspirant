@@ -12,15 +12,19 @@ namespace tggd::common
 		{
 			if (_parent)
 			{
-				_children.remove(this);
+				_parent->_children.remove(this);
 			}
 			_parent = parent;
 			if (_parent)
 			{
-				_children.push_back(this);
+				_parent->_children.push_back(this);
 			}
 		}
 	protected:
+		virtual bool IsEnabled()
+		{
+			return true;
+		}
 		virtual bool OnMessage(const MGeneric*) = 0;
 	public:
 		MessageHandler(MessageHandler* parent)
@@ -38,6 +42,10 @@ namespace tggd::common
 		}
 		bool Handle(const MGeneric& message)
 		{
+			if (!IsEnabled())
+			{
+				return false;
+			}
 			if (OnMessage(&message))
 			{
 				return true;
@@ -56,6 +64,10 @@ namespace tggd::common
 		}
 		void Broadcast(const MGeneric& message)
 		{
+			if (!IsEnabled())
+			{
+				return;
+			}
 			OnMessage(&message);
 			for (auto& child : _children)
 			{
@@ -64,6 +76,10 @@ namespace tggd::common
 		}
 		bool HandleBroadcast(const MGeneric& message)
 		{
+			if (!IsEnabled())
+			{
+				return false;
+			}
 			for (auto iter = _children.rbegin(); iter != _children.rend(); ++iter)
 			{
 				auto child = *iter;
