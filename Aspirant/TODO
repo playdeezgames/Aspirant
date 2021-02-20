@@ -3,6 +3,12 @@ Features:
         160 x 160
     ☐ gamepad support
     ☐ customize keyboard controls
+Controls:
+    ☐ menu item(tintable text)
+        needs to respond to a value stored elsewhere to determine which color it should be
+        highlighted color
+        non highlighted color
+        disabled color
 Refactors:
     ☐ SplashStateHandler takes a spritefont.... this should be a set of labels or something
     ☐ consolidate StaticImage and Label with a base class and base collection?
