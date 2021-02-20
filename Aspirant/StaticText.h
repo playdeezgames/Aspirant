@@ -5,7 +5,7 @@
 #include "json.hpp"
 namespace tggd::common
 {
-	class Label
+	class StaticText
 	{
 	private:
 		tggd::common::XY<int> xy;
@@ -17,7 +17,7 @@ namespace tggd::common
 		tggd::common::XY<int> dropShadowXY;
 		std::string dropShadowColor;
 	public:
-		Label
+		StaticText
 		(
 			const tggd::common::XY<int>&,
 			const std::string&,
@@ -28,7 +28,7 @@ namespace tggd::common
 			const tggd::common::XY<int>&,
 			const std::string&
 		);
-		Label(const nlohmann::json&);
+		StaticText(const nlohmann::json&);
 		void Draw(SDL_Renderer*) const;
 	};
 }

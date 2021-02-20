@@ -31,7 +31,7 @@ namespace tggd::common
 			}
 			labels.push_back
 			(
-				tggd::common::Label
+				tggd::common::StaticText
 				(
 					tggd::common::XY<int>(entry[PROPERTY_X], entry[PROPERTY_Y]),
 					entry[PROPERTY_TEXT],
@@ -56,7 +56,7 @@ namespace tggd::common
 		return previousPage;
 	}
 
-	const std::vector< tggd::common::Label>& HelpPage::GetLabels() const
+	const std::vector< tggd::common::StaticText>& HelpPage::GetLabels() const
 	{
 		return labels;
 	}

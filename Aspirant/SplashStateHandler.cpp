@@ -27,7 +27,7 @@ namespace aspirant
 	{
 		labels.push_back//TODO: magic layout
 		(
-			tggd::common::Label
+			tggd::common::StaticText
 			(
 				tggd::common::XY<int>(320-20*8,180-8),
 				"Aspirant of SPLORR!!",
@@ -41,7 +41,7 @@ namespace aspirant
 		);
 		labels.push_back//TODO: magic layout
 		(
-			tggd::common::Label
+			tggd::common::StaticText
 			(
 				tggd::common::XY<int>(320 - 32 * 8, 360 - 18),
 				"A Production of TheGrumpyGameDev",

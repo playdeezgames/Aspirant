@@ -13,7 +13,7 @@ namespace aspirant
 	private:
 		tggd::common::StaticImage staticImage;
 		const tggd::common::FontManager& fontManager;
-		std::list<tggd::common::Label> labels;
+		std::list<tggd::common::StaticText> labels;
 		bool OnDraw(SDL_Renderer*) const;
 		bool OnUpdate(unsigned int);
 		bool OnCommand(const Command&);

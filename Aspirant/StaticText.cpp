@@ -1,7 +1,7 @@
 #include "StaticText.h"
 namespace tggd::common
 {
-	Label::Label
+	StaticText::StaticText
 	(
 		const tggd::common::XY<int>& xy,
 		const std::string& text,
@@ -23,7 +23,7 @@ namespace tggd::common
 	{
 
 	}
-	void Label::Draw(SDL_Renderer* renderer) const
+	void StaticText::Draw(SDL_Renderer* renderer) const
 	{
 		if (hasDropShadow)
 		{
