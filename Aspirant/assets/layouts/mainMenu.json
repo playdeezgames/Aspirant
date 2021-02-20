@@ -2,10 +2,36 @@
     {
         "type": "TintableText",
         "font": "default",
-        "colorString": "yermom",
-        "text": "Aspirant of SPLORR!!",
-        "x": 160,
-        "y": 172,
+        "colorString": "MainMenu.Color.0",
+        "text": "Start",
+        "x": 0,
+        "y": 0,
+        "dropShadow": {
+            "color": "Black",
+            "x": 2,
+            "y": 2
+        }
+    },
+    {
+        "type": "TintableText",
+        "font": "default",
+        "colorString": "MainMenu.Color.1",
+        "text": "About",
+        "x": 0,
+        "y": 16,
+        "dropShadow": {
+            "color": "Black",
+            "x": 2,
+            "y": 2
+        }
+    },
+    {
+        "type": "TintableText",
+        "font": "default",
+        "colorString": "MainMenu.Color.2",
+        "text": "Quit",
+        "x": 0,
+        "y": 32,
         "dropShadow": {
             "color": "Black",
             "x": 2,

@@ -22,7 +22,7 @@ namespace aspirant
 		, spriteManager(finishManager)
 		, colorManager(finishManager)
 		, fontManager(finishManager, spriteManager, colorManager)
-		, stringManager(tggd::common::Utility::LoadJSON(STRINGS_CONFIG_FILE))//TODO: put this into a "start" function?
+		, stringManager()
 		, layoutManager(finishManager, spriteManager, colorManager, fontManager, stringManager)
 		, uiState(UIState::Splash)
 	{
@@ -36,6 +36,7 @@ namespace aspirant
 
 	void AspirantApplication::Start(SDL_Renderer* renderer)
 	{
+		stringManager.Start(STRINGS_CONFIG_FILE);
 		colorManager.Start(COLOR_CONFIG_FILE);
 		textureManager.Start(renderer, TEXTURE_CONFIG_FILE);
 		spriteManager.Start(textureManager, SPRITE_CONFIG_FILE);

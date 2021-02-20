@@ -1,12 +1,19 @@
 #include "StringManager.h"
+#include "Utility.h"
 namespace tggd::common
 {
-	StringManager::StringManager
-	(
-		const nlohmann::json& properties
-	)
-		: table()
+	StringManager::StringManager()
+		:table()
 	{
+
+	}
+
+	void StringManager::Start
+	(
+		const std::string& fileName
+	)
+	{
+		auto properties = Utility::LoadJSON(fileName);
 		for (auto& item : properties.items())
 		{
 			Set(item.key(), item.value());
