@@ -20,16 +20,16 @@ namespace tggd::common
 	public:
 		StaticText
 		(
+			const tggd::common::FontManager&,
 			const tggd::common::XY<int>&,
 			const std::string&,
-			const tggd::common::FontManager&,
 			const std::string&,
 			const std::string&,
 			bool,
 			const tggd::common::XY<int>&,
 			const std::string&
 		);
-		//StaticText(const nlohmann::json&);
+		StaticText(const tggd::common::FontManager&, const nlohmann::json&);
 		void Draw(SDL_Renderer*) const;
 	};
 }

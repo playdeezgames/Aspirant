@@ -3,12 +3,9 @@
 #include "MUpdate.h"
 #include "MSetUIState.h"
 #include "MCommand.h"
+#include "Utility.h"
 namespace aspirant
 {
-	const std::string SPRITE_NAME = "Splash";
-	const std::string SPRITE_COLOR = "White";
-	const int SPRITE_X = 0;
-	const int SPRITE_Y = 0;
 	const int TICKS_LEFT = 3000;
 
 	SplashStateHandler::SplashStateHandler
@@ -22,51 +19,8 @@ namespace aspirant
 	)
 		: UIStateMessageHandler(parent, currentState, UIState::Splash)
 		, ticksLeft(TICKS_LEFT)
-		, layout(finishManager)
+		, layout(finishManager, spriteManager, colorManager, fontManager,tggd::common::Utility::LoadJSON("assets/layouts/splash.json"))
 	{
-		layout.Add
-		(
-			new tggd::common::StaticImage
-			(
-				spriteManager, 
-				colorManager, 
-				SPRITE_NAME, 
-				SPRITE_COLOR, 
-				tggd::common::XY<int>
-				(
-					SPRITE_X, 
-					SPRITE_Y
-				)
-			)
-		);
-		layout.Add
-		(
-			new tggd::common::StaticText
-			(
-				tggd::common::XY<int>(320-20*8,180-8),
-				"Aspirant of SPLORR!!",
-				fontManager,
-				"default",
-				"Cyan",
-				true,
-				tggd::common::XY<int>(2,2),
-				"Black"
-			)
-		);
-		layout.Add
-		(
-			new tggd::common::StaticText
-			(
-				tggd::common::XY<int>(320 - 32 * 8, 360 - 18),
-				"A Production of TheGrumpyGameDev",
-				fontManager,
-				"default",
-				"DarkGray",
-				true,
-				tggd::common::XY<int>(2, 2),
-				"Black"
-			)
-		);
 	}
 
 	bool SplashStateHandler::OnUpdate(unsigned int milliseconds)

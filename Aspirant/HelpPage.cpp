@@ -33,9 +33,9 @@ namespace tggd::common
 			(
 				tggd::common::StaticText
 				(
+					fontManager,
 					tggd::common::XY<int>(entry[PROPERTY_X], entry[PROPERTY_Y]),
 					entry[PROPERTY_TEXT],
-					fontManager,
 					entry[PROPERTY_FONT],
 					entry[PROPERTY_COLOR],
 					hasDropShadow,
