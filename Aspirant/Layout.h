@@ -6,6 +6,7 @@
 #include "SpriteManager.h"
 #include "ColorManager.h"
 #include "FontManager.h"
+#include "StringManager.h"
 namespace tggd::common
 {
 	class Layout: public Drawn, public Finisher
@@ -23,6 +24,7 @@ namespace tggd::common
 			const SpriteManager&,
 			const ColorManager&,
 			const FontManager&,
+			const StringManager&,
 			const nlohmann::json&
 		);
 		void Draw(SDL_Renderer*) const;

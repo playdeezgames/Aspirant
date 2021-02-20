@@ -5,6 +5,7 @@ namespace aspirant
 	bool MainMenuStateHandler::OnDraw(SDL_Renderer* renderer) const
 	{
 		SDL_RenderClear(renderer);
+		layout->Draw(renderer);
 		return true;
 	}
 
@@ -17,12 +18,16 @@ namespace aspirant
 		return false;
 	}
 
+	const std::string LAYOUT_NAME = "MainMenu";
+
 	MainMenuStateHandler::MainMenuStateHandler
 	(
 		MessageHandler* parent,
-		const UIState& currentState
+		const UIState& currentState,
+		const tggd::common::LayoutManager& layoutManager
 	)
 		: UIStateMessageHandler(parent, currentState, UIState::MainMenu)
+		, layout(layoutManager.GetDescriptor(LAYOUT_NAME))
 	{
 
 	}

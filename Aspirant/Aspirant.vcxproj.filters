@@ -81,6 +81,12 @@
     <Filter Include="Source Files\Graphics\Controls">
       <UniqueIdentifier>{49b7a110-84f1-4dba-a643-2363fde4d1d4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Data">
+      <UniqueIdentifier>{ada98035-d2d3-4ffb-b968-85192b5d4066}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Data">
+      <UniqueIdentifier>{98359875-23b7-409a-a5e6-eef250c696b2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AspirantApplication.cpp">
@@ -133,6 +139,12 @@
     </ClCompile>
     <ClCompile Include="StaticText.cpp">
       <Filter>Source Files\Graphics\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="TintableText.cpp">
+      <Filter>Source Files\Graphics\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="StringManager.cpp">
+      <Filter>Source Files\Data</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -240,6 +252,12 @@
     </ClInclude>
     <ClInclude Include="Drawn.h">
       <Filter>Header Files\Graphics\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="TintableText.h">
+      <Filter>Header Files\Graphics\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="StringManager.h">
+      <Filter>Header Files\Data</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

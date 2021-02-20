@@ -40,7 +40,7 @@ namespace tggd::common
 		, text(properties[PROPERTY_TEXT])
 		, fontManager(fontManager)
 		, fontName(properties[PROPERTY_FONT])
-		, color(properties[PROPERTY_COLOR])
+		, color(properties[PROPERTY_COLOR])//DIFFERENT
 		, hasDropShadow(false)
 		, dropShadowXY(0,0)
 		, dropShadowColor("")
@@ -60,6 +60,6 @@ namespace tggd::common
 		{
 			fontManager.GetDescriptor(fontName)->WriteText(renderer, dropShadowXY, text, dropShadowColor);
 		}
-		fontManager.GetDescriptor(fontName)->WriteText(renderer, xy, text, color);
+		fontManager.GetDescriptor(fontName)->WriteText(renderer, xy, text, color);//DIFFERENT
 	}
 }

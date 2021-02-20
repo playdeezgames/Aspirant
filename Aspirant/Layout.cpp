@@ -2,6 +2,7 @@
 #include "Utility.h"
 #include "StaticImage.h"
 #include "StaticText.h"
+#include "TintableText.h"
 namespace tggd::common
 {
 	Layout::Layout
@@ -16,6 +17,7 @@ namespace tggd::common
 	const std::string PROPERTY_TYPE="type";
 	const std::string TYPE_STATIC_IMAGE = "StaticImage";
 	const std::string TYPE_STATIC_TEXT = "StaticText";
+	const std::string TYPE_TINTABLE_TEXT = "TintableText";
 
 	Layout::Layout
 	(
@@ -23,6 +25,7 @@ namespace tggd::common
 		const SpriteManager& spriteManager,
 		const ColorManager& colorManager,
 		const FontManager& fontManager,
+		const StringManager& stringManager,
 		const nlohmann::json& itemDescriptors
 	)
 		: drawnItems()
@@ -45,6 +48,14 @@ namespace tggd::common
 					new StaticText(fontManager, itemDescriptor)
 				);
 			}
+			else if (itemType == TYPE_TINTABLE_TEXT)
+			{
+				drawnItems.push_back
+				(
+					new TintableText(fontManager, stringManager, itemDescriptor)
+				);
+			}
+
 		}
 	}
 

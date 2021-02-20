@@ -1,0 +1,15 @@
+[
+    {
+        "type": "TintableText",
+        "font": "default",
+        "colorString": "yermom",
+        "text": "Aspirant of SPLORR!!",
+        "x": 160,
+        "y": 172,
+        "dropShadow": {
+            "color": "Black",
+            "x": 2,
+            "y": 2
+        }
+    }
+]

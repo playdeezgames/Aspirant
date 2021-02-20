@@ -34,7 +34,9 @@
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="SpriteFont.cpp" />
     <ClCompile Include="SpriteManager.cpp" />
+    <ClCompile Include="StringManager.cpp" />
     <ClCompile Include="TextureManager.cpp" />
+    <ClCompile Include="TintableText.cpp" />
     <ClCompile Include="Utility.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -68,7 +70,9 @@
     <ClInclude Include="SpriteManager.h" />
     <ClInclude Include="SpriteTable.h" />
     <ClInclude Include="StaticImage.h" />
+    <ClInclude Include="StringManager.h" />
     <ClInclude Include="TextureManager.h" />
+    <ClInclude Include="TintableText.h" />
     <ClInclude Include="UIState.h" />
     <ClInclude Include="UIStateMessageHandler.h" />
     <ClInclude Include="Utility.h" />

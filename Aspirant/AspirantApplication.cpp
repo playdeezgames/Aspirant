@@ -4,6 +4,7 @@
 #include "SplashStateHandler.h"
 #include "MainMenuStateHandler.h"
 #include "MCommand.h"
+#include "Utility.h"
 namespace aspirant
 {
 	const std::string APPLICATION_CONFIG_FILE = "config/application.json";
@@ -12,6 +13,7 @@ namespace aspirant
 	const std::string COLOR_CONFIG_FILE = "config/colors.json";
 	const std::string FONTS_CONFIG_FILE = "config/fonts.json";
 	const std::string LAYOUTS_CONFIG_FILE = "config/layouts.json";
+	const std::string STRINGS_CONFIG_FILE = "config/strings.json";
 
 	AspirantApplication::AspirantApplication()
 		: tggd::common::Application(APPLICATION_CONFIG_FILE)
@@ -20,7 +22,8 @@ namespace aspirant
 		, spriteManager(finishManager)
 		, colorManager(finishManager)
 		, fontManager(finishManager, spriteManager, colorManager)
-		, layoutManager(finishManager, spriteManager, colorManager, fontManager)
+		, stringManager(tggd::common::Utility::LoadJSON(STRINGS_CONFIG_FILE))//TODO: put this into a "start" function?
+		, layoutManager(finishManager, spriteManager, colorManager, fontManager, stringManager)
 		, uiState(UIState::Splash)
 	{
 
@@ -40,7 +43,7 @@ namespace aspirant
 		layoutManager.Start(LAYOUTS_CONFIG_FILE);
 
 		new SplashStateHandler(this, uiState, layoutManager);
-		new MainMenuStateHandler(this, uiState);
+		new MainMenuStateHandler(this, uiState, layoutManager);
 	}
 
 	void AspirantApplication::Finish()

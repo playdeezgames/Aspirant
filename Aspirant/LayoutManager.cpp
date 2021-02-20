@@ -9,7 +9,7 @@ namespace tggd::common
 
 	Layout* LayoutManager::ParseDescriptor(const nlohmann::json& properties)
 	{
-		return new Layout(finishManager, spriteManager, colorManager, fontManager, Utility::LoadJSON(properties));
+		return new Layout(finishManager, spriteManager, colorManager, fontManager, stringManager, Utility::LoadJSON(properties));
 	}
 
 	LayoutManager::LayoutManager
@@ -17,13 +17,15 @@ namespace tggd::common
 		FinishManager& finishManager,
 		const SpriteManager& spriteManager,
 		const ColorManager& colorManager,
-		const FontManager& fontManager
+		const FontManager& fontManager,
+		const StringManager& stringManager
 	)
 		: BaseDescriptorManager(finishManager)
 		, finishManager(finishManager)
 		, spriteManager(spriteManager)
 		, colorManager(colorManager)
 		, fontManager(fontManager)
+		, stringManager(stringManager)
 	{
 
 	}
