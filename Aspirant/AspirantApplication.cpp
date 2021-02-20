@@ -36,7 +36,7 @@ namespace aspirant
 		spriteManager.Start(textureManager, SPRITE_CONFIG_FILE);
 		fontManager.Start(FONTS_CONFIG_FILE);
 
-		new SplashStateHandler(this, uiState, spriteManager, colorManager, fontManager);
+		new SplashStateHandler(this, uiState, spriteManager, colorManager, fontManager, finishManager);
 		new MainMenuStateHandler(this, uiState);
 	}
 

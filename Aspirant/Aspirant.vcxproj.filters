@@ -98,6 +98,9 @@
     <ClCompile Include="MainMenuStateHandler.cpp">
       <Filter>Source Files\UI</Filter>
     </ClCompile>
+    <ClCompile Include="Layout.cpp">
+      <Filter>Source Files\Graphics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h">
@@ -204,6 +207,9 @@
     </ClInclude>
     <ClInclude Include="MCommand.h">
       <Filter>Header Files\Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="Layout.h">
+      <Filter>Header Files\Graphics</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

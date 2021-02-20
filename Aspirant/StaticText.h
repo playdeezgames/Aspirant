@@ -3,9 +3,10 @@
 #include <string>
 #include "FontManager.h"
 #include "json.hpp"
+#include "Drawn.h"
 namespace tggd::common
 {
-	class StaticText
+	class StaticText: public Drawn
 	{
 	private:
 		tggd::common::XY<int> xy;
@@ -28,7 +29,7 @@ namespace tggd::common
 			const tggd::common::XY<int>&,
 			const std::string&
 		);
-		StaticText(const nlohmann::json&);
+		//StaticText(const nlohmann::json&);
 		void Draw(SDL_Renderer*) const;
 	};
 }

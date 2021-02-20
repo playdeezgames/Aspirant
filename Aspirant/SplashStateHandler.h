@@ -6,14 +6,13 @@
 #include "StaticText.h"
 #include <list>
 #include "Command.h"
+#include "Layout.h"
 namespace aspirant
 {
 	class SplashStateHandler : public UIStateMessageHandler
 	{
 	private:
-		tggd::common::StaticImage staticImage;
-		const tggd::common::FontManager& fontManager;
-		std::list<tggd::common::StaticText> labels;
+		tggd::common::Layout layout;
 		bool OnDraw(SDL_Renderer*) const;
 		bool OnUpdate(unsigned int);
 		bool OnCommand(const Command&);
@@ -27,7 +26,8 @@ namespace aspirant
 			const UIState&,
 			const tggd::common::SpriteManager&,
 			const tggd::common::ColorManager&,
-			const tggd::common::FontManager&
+			const tggd::common::FontManager&,
+			tggd::common::FinishManager&
 		);
 	};
 }

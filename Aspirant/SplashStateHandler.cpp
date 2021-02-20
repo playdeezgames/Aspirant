@@ -17,17 +17,31 @@ namespace aspirant
 		const UIState& currentState,
 		const tggd::common::SpriteManager& spriteManager,
 		const tggd::common::ColorManager& colorManager,
-		const tggd::common::FontManager& fontManager
+		const tggd::common::FontManager& fontManager,
+		tggd::common::FinishManager& finishManager
 	)
 		: UIStateMessageHandler(parent, currentState, UIState::Splash)
-		, fontManager(fontManager)
-		, staticImage(spriteManager, colorManager, SPRITE_NAME, SPRITE_COLOR, tggd::common::XY<int>(SPRITE_X, SPRITE_Y))
-		, labels()
 		, ticksLeft(TICKS_LEFT)
+		, layout(finishManager)
 	{
-		labels.push_back//TODO: magic layout
+		layout.Add
 		(
-			tggd::common::StaticText
+			new tggd::common::StaticImage
+			(
+				spriteManager, 
+				colorManager, 
+				SPRITE_NAME, 
+				SPRITE_COLOR, 
+				tggd::common::XY<int>
+				(
+					SPRITE_X, 
+					SPRITE_Y
+				)
+			)
+		);
+		layout.Add
+		(
+			new tggd::common::StaticText
 			(
 				tggd::common::XY<int>(320-20*8,180-8),
 				"Aspirant of SPLORR!!",
@@ -39,9 +53,9 @@ namespace aspirant
 				"Black"
 			)
 		);
-		labels.push_back//TODO: magic layout
+		layout.Add
 		(
-			tggd::common::StaticText
+			new tggd::common::StaticText
 			(
 				tggd::common::XY<int>(320 - 32 * 8, 360 - 18),
 				"A Production of TheGrumpyGameDev",
@@ -68,11 +82,7 @@ namespace aspirant
 
 	bool SplashStateHandler::OnDraw(SDL_Renderer* renderer) const
 	{
-		staticImage.Draw(renderer);
-		for (auto label : labels)
-		{
-			label.Draw(renderer);
-		}
+		layout.Draw(renderer);
 		return false;
 	}
 

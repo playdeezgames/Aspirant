@@ -26,6 +26,7 @@
     <ClCompile Include="FontManager.cpp" />
     <ClCompile Include="HelpPage.cpp" />
     <ClCompile Include="HelpPageManager.cpp" />
+    <ClCompile Include="Layout.cpp" />
     <ClCompile Include="MainMenuStateHandler.cpp" />
     <ClCompile Include="StaticText.cpp" />
     <ClCompile Include="main.cpp" />
@@ -49,6 +50,7 @@
     <ClInclude Include="HelpPage.h" />
     <ClInclude Include="HelpPageManager.h" />
     <ClInclude Include="json.hpp" />
+    <ClInclude Include="Layout.h" />
     <ClInclude Include="MainMenuStateHandler.h" />
     <ClInclude Include="MCommand.h" />
     <ClInclude Include="MUpdate.h" />
