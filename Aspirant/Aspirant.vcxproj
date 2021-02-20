@@ -48,6 +48,9 @@
     <ClInclude Include="HelpPageManager.h" />
     <ClInclude Include="json.hpp" />
     <ClInclude Include="MUpdate.h" />
+    <ClInclude Include="Room.h" />
+    <ClInclude Include="RoomCell.h" />
+    <ClInclude Include="RoomCellObject.h" />
     <ClInclude Include="StaticText.h" />
     <ClInclude Include="MessageHandler.h" />
     <ClInclude Include="MEvent.h" />

@@ -42,6 +42,9 @@
     <Filter Include="Source Files\UI">
       <UniqueIdentifier>{eac66c24-00df-4ec2-8cd4-04f2990677df}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Room">
+      <UniqueIdentifier>{9738cf7e-fd03-4c73-89e5-e2848f956b57}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp">
@@ -177,6 +180,15 @@
     </ClInclude>
     <ClInclude Include="MUpdate.h">
       <Filter>Header Files\Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="Room.h">
+      <Filter>Header Files\Room</Filter>
+    </ClInclude>
+    <ClInclude Include="RoomCell.h">
+      <Filter>Header Files\Room</Filter>
+    </ClInclude>
+    <ClInclude Include="RoomCellObject.h">
+      <Filter>Header Files\Room</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
