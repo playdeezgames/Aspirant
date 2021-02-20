@@ -92,6 +92,9 @@
     <ClCompile Include="StaticText.cpp">
       <Filter>Source Files\Graphics</Filter>
     </ClCompile>
+    <ClCompile Include="MainMenuStateHandler.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h">
@@ -189,6 +192,9 @@
     </ClInclude>
     <ClInclude Include="RoomCellObject.h">
       <Filter>Header Files\Room</Filter>
+    </ClInclude>
+    <ClInclude Include="MainMenuStateHandler.h">
+      <Filter>Header Files\UI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

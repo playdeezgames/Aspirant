@@ -21,7 +21,7 @@ namespace tggd::common
 			}
 		}
 	protected:
-		virtual bool IsEnabled()
+		virtual bool IsEnabled() const
 		{
 			return true;
 		}

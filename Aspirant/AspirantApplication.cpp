@@ -2,6 +2,7 @@
 #include "MSetUIState.h"
 #include "MEvent.h"
 #include "SplashStateHandler.h"
+#include "MainMenuStateHandler.h"
 namespace aspirant
 {
 	const std::string APPLICATION_CONFIG_FILE = "config/application.json";
@@ -35,6 +36,7 @@ namespace aspirant
 		fontManager.Start(FONTS_CONFIG_FILE);
 
 		new SplashStateHandler(this, uiState, spriteManager, colorManager, fontManager);
+		new MainMenuStateHandler(this, uiState);
 	}
 
 	void AspirantApplication::Finish()

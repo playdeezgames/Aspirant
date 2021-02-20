@@ -9,7 +9,7 @@ namespace aspirant
 		UIState filterState;
 		const UIState& currentState;
 	protected:
-		bool IsEnabled()
+		bool IsEnabled() const
 		{
 			return (currentState == filterState);
 		}

@@ -14,6 +14,8 @@ namespace aspirant
 		const tggd::common::FontManager& fontManager;
 		std::list<tggd::common::Label> labels;
 		bool OnDraw(SDL_Renderer*) const;
+		bool OnUpdate(unsigned int);
+		unsigned int ticksLeft;
 	protected:
 		bool OnMessage(const tggd::common::MGeneric*);
 	public:
