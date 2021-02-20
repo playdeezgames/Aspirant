@@ -48,102 +48,105 @@
     <Filter Include="Header Files\Input">
       <UniqueIdentifier>{554743f0-b99f-48d4-8bff-3dcc1d37d3c4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Messages\Common">
+      <UniqueIdentifier>{b02648f6-c92a-49a9-90af-68c6a206992c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UI\Enums">
+      <UniqueIdentifier>{f430ceef-573b-42d7-bf8c-25e37cb61be7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UI\States">
+      <UniqueIdentifier>{fef4814d-1ce9-44d4-b8b6-11a74ef955b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Graphics\Managers">
+      <UniqueIdentifier>{dd1e9058-799e-4484-a658-1e662073c537}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Graphics\Utility">
+      <UniqueIdentifier>{abb91f3d-5926-4194-966b-f5493600d087}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Graphics\Controls">
+      <UniqueIdentifier>{5bf0c9bd-5d18-4c48-8db4-2b84874259c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Graphics\Common">
+      <UniqueIdentifier>{12898b72-3e3a-44f4-b29f-33e3b6e03278}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BaseClasses">
+      <UniqueIdentifier>{f17a2f1f-4b13-4105-a134-4801ac6d9375}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Graphics\Managers">
+      <UniqueIdentifier>{980ce17f-3fa7-4d6d-93c4-b9a9c9a854e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Graphics\Common">
+      <UniqueIdentifier>{06a0f7a3-402a-429d-a398-866e73aad5f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Graphics\Controls">
+      <UniqueIdentifier>{49b7a110-84f1-4dba-a643-2363fde4d1d4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Application.cpp">
-      <Filter>Source Files\Application</Filter>
-    </ClCompile>
     <ClCompile Include="AspirantApplication.cpp">
-      <Filter>Source Files\Application</Filter>
-    </ClCompile>
-    <ClCompile Include="main.cpp">
       <Filter>Source Files\Application</Filter>
     </ClCompile>
     <ClCompile Include="Utility.cpp">
       <Filter>Source Files\Utility</Filter>
     </ClCompile>
-    <ClCompile Include="TextureManager.cpp">
-      <Filter>Source Files\Graphics</Filter>
-    </ClCompile>
     <ClCompile Include="FinishManager.cpp">
       <Filter>Source Files\Utility</Filter>
-    </ClCompile>
-    <ClCompile Include="ColorManager.cpp">
-      <Filter>Source Files\Graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="Sprite.cpp">
-      <Filter>Source Files\Graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="SpriteFont.cpp">
-      <Filter>Source Files\Graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="SpriteManager.cpp">
-      <Filter>Source Files\Graphics</Filter>
     </ClCompile>
     <ClCompile Include="SplashStateHandler.cpp">
       <Filter>Source Files\UI</Filter>
     </ClCompile>
-    <ClCompile Include="HelpPage.cpp">
-      <Filter>Source Files\Graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="HelpPageManager.cpp">
-      <Filter>Source Files\Graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="FontManager.cpp">
-      <Filter>Source Files\Graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="StaticText.cpp">
-      <Filter>Source Files\Graphics</Filter>
-    </ClCompile>
     <ClCompile Include="MainMenuStateHandler.cpp">
       <Filter>Source Files\UI</Filter>
     </ClCompile>
-    <ClCompile Include="Layout.cpp">
-      <Filter>Source Files\Graphics</Filter>
+    <ClCompile Include="Application.cpp">
+      <Filter>Source Files\BaseClasses</Filter>
     </ClCompile>
-    <ClCompile Include="StaticImage.cpp">
-      <Filter>Source Files\Graphics</Filter>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorManager.cpp">
+      <Filter>Source Files\Graphics\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="FontManager.cpp">
+      <Filter>Source Files\Graphics\Managers</Filter>
     </ClCompile>
     <ClCompile Include="LayoutManager.cpp">
-      <Filter>Source Files\Graphics</Filter>
+      <Filter>Source Files\Graphics\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteManager.cpp">
+      <Filter>Source Files\Graphics\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureManager.cpp">
+      <Filter>Source Files\Graphics\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteFont.cpp">
+      <Filter>Source Files\Graphics\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>Source Files\Graphics\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Layout.cpp">
+      <Filter>Source Files\Graphics\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="StaticImage.cpp">
+      <Filter>Source Files\Graphics\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="StaticText.cpp">
+      <Filter>Source Files\Graphics\Controls</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Application.h">
-      <Filter>Header Files\Application</Filter>
-    </ClInclude>
     <ClInclude Include="AspirantApplication.h">
       <Filter>Header Files\Application</Filter>
     </ClInclude>
     <ClInclude Include="json.hpp">
       <Filter>Header Files\Dependencies</Filter>
     </ClInclude>
-    <ClInclude Include="MEvent.h">
-      <Filter>Header Files\Messages</Filter>
-    </ClInclude>
-    <ClInclude Include="MGeneric.h">
-      <Filter>Header Files\Messages</Filter>
-    </ClInclude>
-    <ClInclude Include="MRender.h">
-      <Filter>Header Files\Messages</Filter>
-    </ClInclude>
     <ClInclude Include="Utility.h">
       <Filter>Header Files\Utility</Filter>
     </ClInclude>
-    <ClInclude Include="MessageHandler.h">
-      <Filter>Header Files\Application</Filter>
-    </ClInclude>
     <ClInclude Include="MSetUIState.h">
       <Filter>Header Files\Messages</Filter>
-    </ClInclude>
-    <ClInclude Include="XY.h">
-      <Filter>Header Files\Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="UIState.h">
-      <Filter>Header Files\UI</Filter>
-    </ClInclude>
-    <ClInclude Include="TextureManager.h">
-      <Filter>Header Files\Graphics</Filter>
     </ClInclude>
     <ClInclude Include="Finisher.h">
       <Filter>Header Files\Utility</Filter>
@@ -151,50 +154,11 @@
     <ClInclude Include="FinishManager.h">
       <Filter>Header Files\Utility</Filter>
     </ClInclude>
-    <ClInclude Include="Sprite.h">
-      <Filter>Header Files\Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="SpriteFont.h">
-      <Filter>Header Files\Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="SpriteManager.h">
-      <Filter>Header Files\Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="SpriteTable.h">
-      <Filter>Header Files\Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="ColorManager.h">
-      <Filter>Header Files\Graphics</Filter>
-    </ClInclude>
     <ClInclude Include="BaseDescriptorManager.h">
       <Filter>Header Files\BaseClasses</Filter>
     </ClInclude>
     <ClInclude Include="UIStateMessageHandler.h">
       <Filter>Header Files\UI</Filter>
-    </ClInclude>
-    <ClInclude Include="SplashStateHandler.h">
-      <Filter>Header Files\UI</Filter>
-    </ClInclude>
-    <ClInclude Include="HelpPage.h">
-      <Filter>Header Files\Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="HelpPageManager.h">
-      <Filter>Header Files\Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="FontManager.h">
-      <Filter>Header Files\Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="StaticImage.h">
-      <Filter>Header Files\Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="Drawn.h">
-      <Filter>Header Files\Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="StaticText.h">
-      <Filter>Header Files\Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="MUpdate.h">
-      <Filter>Header Files\Messages</Filter>
     </ClInclude>
     <ClInclude Include="Room.h">
       <Filter>Header Files\Room</Filter>
@@ -205,20 +169,77 @@
     <ClInclude Include="RoomCellObject.h">
       <Filter>Header Files\Room</Filter>
     </ClInclude>
-    <ClInclude Include="MainMenuStateHandler.h">
-      <Filter>Header Files\UI</Filter>
-    </ClInclude>
     <ClInclude Include="Command.h">
       <Filter>Header Files\Input</Filter>
     </ClInclude>
     <ClInclude Include="MCommand.h">
       <Filter>Header Files\Messages</Filter>
     </ClInclude>
-    <ClInclude Include="Layout.h">
-      <Filter>Header Files\Graphics</Filter>
+    <ClInclude Include="Application.h">
+      <Filter>Header Files\BaseClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="MEvent.h">
+      <Filter>Header Files\Messages\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="MGeneric.h">
+      <Filter>Header Files\Messages\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="MRender.h">
+      <Filter>Header Files\Messages\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="MUpdate.h">
+      <Filter>Header Files\Messages\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageHandler.h">
+      <Filter>Header Files\BaseClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="UIState.h">
+      <Filter>Header Files\UI\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="MainMenuStateHandler.h">
+      <Filter>Header Files\UI\States</Filter>
+    </ClInclude>
+    <ClInclude Include="SplashStateHandler.h">
+      <Filter>Header Files\UI\States</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorManager.h">
+      <Filter>Header Files\Graphics\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="FontManager.h">
+      <Filter>Header Files\Graphics\Managers</Filter>
     </ClInclude>
     <ClInclude Include="LayoutManager.h">
-      <Filter>Header Files\Graphics</Filter>
+      <Filter>Header Files\Graphics\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteManager.h">
+      <Filter>Header Files\Graphics\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteTable.h">
+      <Filter>Header Files\Graphics\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="XY.h">
+      <Filter>Header Files\Graphics\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Layout.h">
+      <Filter>Header Files\Graphics\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticImage.h">
+      <Filter>Header Files\Graphics\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticText.h">
+      <Filter>Header Files\Graphics\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureManager.h">
+      <Filter>Header Files\Graphics\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>Header Files\Graphics\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteFont.h">
+      <Filter>Header Files\Graphics\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Drawn.h">
+      <Filter>Header Files\Graphics\Common</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
