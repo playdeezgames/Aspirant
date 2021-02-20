@@ -1,4 +1,6 @@
 {
     "splash" : "assets/images/splash.png",
-    "font" : "assets/images/font.png"
+    "font" : "assets/images/font.png",
+    "font35" : "assets/images/Font3x5.png",
+    "background": "assets/images/background.png"
 }

@@ -31,7 +31,7 @@ namespace tggd::common
 	const std::string PROPERTY_FONT = "font";
 	const std::string PROPERTY_COLOR_STRING = "colorString";
 	const std::string PROPERTY_DROP_SHADOW = "dropShadow";
-
+	const std::string PROPERTY_COLOR = "color";
 
 	TintableText::TintableText
 	(
@@ -48,6 +48,13 @@ namespace tggd::common
 		, dropShadowXY(0, 0)
 		, dropShadowColor("")
 	{
+		if (properties.count(PROPERTY_DROP_SHADOW) > 0)
+		{
+			hasDropShadow = true;
+			auto& dropShadow = properties[PROPERTY_DROP_SHADOW];
+			dropShadowColor = dropShadow[PROPERTY_COLOR];
+			dropShadowXY = xy + XY<int>(dropShadow[PROPERTY_X], dropShadow[PROPERTY_Y]);
+		}
 	}
 
 	void TintableText::Draw(SDL_Renderer* renderer) const

@@ -1,5 +1,12 @@
 [
     {
+        "type": "StaticImage",
+        "sprite": "Background",
+        "color": "DarkGray",
+        "x": 0,
+        "y": 0
+    },
+    {
         "type": "TintableText",
         "font": "default",
         "colorString": "MainMenu.Color.0",
