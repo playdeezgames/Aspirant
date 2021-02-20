@@ -3,6 +3,7 @@
 #include "ColorManager.h"
 #include "XY.h"
 #include "Drawn.h"
+#include "json.hpp"
 namespace tggd::common
 {
 	class StaticImage : public Drawn
@@ -16,23 +17,18 @@ namespace tggd::common
 	public:
 		StaticImage
 		(
-			const SpriteManager& spriteManager,
-			const ColorManager& colorManager,
-			const std::string spriteName,
-			const std::string colorName,
-			XY<int> xy
-		)
-			: spriteManager(spriteManager)
-			, colorManager(colorManager)
-			, spriteName(spriteName)
-			, colorName(colorName)
-			, xy(xy)
-		{
-
-		}
-		void Draw(SDL_Renderer* renderer) const
-		{
-			spriteManager.GetSprite(spriteName)->Draw(renderer, xy, colorManager.GetDescriptor(colorName));
-		}
+			const SpriteManager&,
+			const ColorManager&,
+			const std::string,
+			const std::string,
+			XY<int>
+		);
+		StaticImage
+		(
+			const SpriteManager&,
+			const ColorManager&,
+			const nlohmann::json&
+		);
+		void Draw(SDL_Renderer*) const;
 	};
 }

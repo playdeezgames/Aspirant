@@ -28,6 +28,7 @@
     <ClCompile Include="HelpPageManager.cpp" />
     <ClCompile Include="Layout.cpp" />
     <ClCompile Include="MainMenuStateHandler.cpp" />
+    <ClCompile Include="StaticImage.cpp" />
     <ClCompile Include="StaticText.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SplashStateHandler.cpp" />
