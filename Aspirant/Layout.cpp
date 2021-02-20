@@ -2,7 +2,7 @@
 #include "Utility.h"
 #include "StaticImage.h"
 #include "StaticText.h"
-#include "TintableText.h"
+#include "DynamicText.h"
 namespace tggd::common
 {
 	Layout::Layout
@@ -17,7 +17,7 @@ namespace tggd::common
 	const std::string PROPERTY_TYPE="type";
 	const std::string TYPE_STATIC_IMAGE = "StaticImage";
 	const std::string TYPE_STATIC_TEXT = "StaticText";
-	const std::string TYPE_TINTABLE_TEXT = "TintableText";
+	const std::string TYPE_DYNAMIC_TEXT = "DynamicText";
 
 	Layout::Layout
 	(
@@ -48,11 +48,11 @@ namespace tggd::common
 					new StaticText(fontManager, itemDescriptor)
 				);
 			}
-			else if (itemType == TYPE_TINTABLE_TEXT)
+			else if (itemType == TYPE_DYNAMIC_TEXT)
 			{
 				drawnItems.push_back
 				(
-					new TintableText(fontManager, stringManager, itemDescriptor)
+					new DynamicText(fontManager, stringManager, itemDescriptor)
 				);
 			}
 

@@ -140,11 +140,11 @@
     <ClCompile Include="StaticText.cpp">
       <Filter>Source Files\Graphics\Controls</Filter>
     </ClCompile>
-    <ClCompile Include="TintableText.cpp">
-      <Filter>Source Files\Graphics\Controls</Filter>
-    </ClCompile>
     <ClCompile Include="StringManager.cpp">
       <Filter>Source Files\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="DynamicText.cpp">
+      <Filter>Source Files\Graphics\Controls</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -253,10 +253,22 @@
     <ClInclude Include="Drawn.h">
       <Filter>Header Files\Graphics\Common</Filter>
     </ClInclude>
-    <ClInclude Include="TintableText.h">
+    <ClInclude Include="StringManager.h">
+      <Filter>Header Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="IDataStore.h">
+      <Filter>Header Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="DynamicText.h">
       <Filter>Header Files\Graphics\Controls</Filter>
     </ClInclude>
-    <ClInclude Include="StringManager.h">
+    <ClInclude Include="IValue.h">
+      <Filter>Header Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstantValue.h">
+      <Filter>Header Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="DynamicValue.h">
       <Filter>Header Files\Data</Filter>
     </ClInclude>
   </ItemGroup>

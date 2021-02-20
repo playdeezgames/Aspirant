@@ -9,7 +9,7 @@
     {
         "type": "TintableText",
         "font": "default",
-        "colorString": "MainMenu.Color.0",
+        "color": "MainMenu.Color.0",
         "text": "Start",
         "x": 0,
         "y": 0,
@@ -22,7 +22,7 @@
     {
         "type": "TintableText",
         "font": "default",
-        "colorString": "MainMenu.Color.1",
+        "color": "MainMenu.Color.1",
         "text": "About",
         "x": 0,
         "y": 16,
@@ -35,7 +35,7 @@
     {
         "type": "TintableText",
         "font": "default",
-        "colorString": "MainMenu.Color.2",
+        "color": "MainMenu.Color.2",
         "text": "Quit",
         "x": 0,
         "y": 32,

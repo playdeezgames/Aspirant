@@ -7,7 +7,7 @@
 #include "Drawn.h"
 namespace tggd::common
 {
-	class TintableText : public Drawn
+	class DynamicText : public Drawn
 	{
 	private:
 		tggd::common::XY<int> xy;
@@ -20,7 +20,7 @@ namespace tggd::common
 		tggd::common::XY<int> dropShadowXY;
 		std::string dropShadowColor;
 	public:
-		TintableText
+		DynamicText
 		(
 			const tggd::common::FontManager&,
 			const tggd::common::StringManager&,
@@ -32,7 +32,7 @@ namespace tggd::common
 			const tggd::common::XY<int>&,
 			const std::string&
 		);
-		TintableText(const tggd::common::FontManager&, const tggd::common::StringManager&, const nlohmann::json&);
+		DynamicText(const tggd::common::FontManager&, const tggd::common::StringManager&, const nlohmann::json&);
 		void Draw(SDL_Renderer*) const;
 	};
 }

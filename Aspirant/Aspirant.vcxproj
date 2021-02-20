@@ -36,7 +36,7 @@
     <ClCompile Include="SpriteManager.cpp" />
     <ClCompile Include="StringManager.cpp" />
     <ClCompile Include="TextureManager.cpp" />
-    <ClCompile Include="TintableText.cpp" />
+    <ClCompile Include="DynamicText.cpp" />
     <ClCompile Include="Utility.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -45,10 +45,14 @@
     <ClInclude Include="BaseDescriptorManager.h" />
     <ClInclude Include="ColorManager.h" />
     <ClInclude Include="Command.h" />
+    <ClInclude Include="ConstantValue.h" />
     <ClInclude Include="Drawn.h" />
+    <ClInclude Include="DynamicValue.h" />
     <ClInclude Include="Finisher.h" />
     <ClInclude Include="FinishManager.h" />
     <ClInclude Include="FontManager.h" />
+    <ClInclude Include="IDataStore.h" />
+    <ClInclude Include="IValue.h" />
     <ClInclude Include="json.hpp" />
     <ClInclude Include="Layout.h" />
     <ClInclude Include="LayoutManager.h" />
@@ -72,7 +76,7 @@
     <ClInclude Include="StaticImage.h" />
     <ClInclude Include="StringManager.h" />
     <ClInclude Include="TextureManager.h" />
-    <ClInclude Include="TintableText.h" />
+    <ClInclude Include="DynamicText.h" />
     <ClInclude Include="UIState.h" />
     <ClInclude Include="UIStateMessageHandler.h" />
     <ClInclude Include="Utility.h" />

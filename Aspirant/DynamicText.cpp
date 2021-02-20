@@ -1,7 +1,7 @@
-#include "TintableText.h"
+#include "DynamicText.h"
 namespace tggd::common
 {
-	TintableText::TintableText
+	DynamicText::DynamicText
 	(
 		const tggd::common::FontManager& fontManager,
 		const tggd::common::StringManager& stringManager,
@@ -29,11 +29,11 @@ namespace tggd::common
 	const std::string PROPERTY_Y = "y";
 	const std::string PROPERTY_TEXT = "text";
 	const std::string PROPERTY_FONT = "font";
-	const std::string PROPERTY_COLOR_STRING = "colorString";
+	const std::string PROPERTY_COLOR_STRING = "color";
 	const std::string PROPERTY_DROP_SHADOW = "dropShadow";
 	const std::string PROPERTY_COLOR = "color";
 
-	TintableText::TintableText
+	DynamicText::DynamicText
 	(
 		const tggd::common::FontManager& fontManager, 
 		const tggd::common::StringManager& stringManager, const nlohmann::json& properties
@@ -57,7 +57,7 @@ namespace tggd::common
 		}
 	}
 
-	void TintableText::Draw(SDL_Renderer* renderer) const
+	void DynamicText::Draw(SDL_Renderer* renderer) const
 	{
 		if (hasDropShadow)
 		{

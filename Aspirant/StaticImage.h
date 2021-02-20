@@ -4,6 +4,7 @@
 #include "XY.h"
 #include "Drawn.h"
 #include "json.hpp"
+#include "IValue.h"
 namespace tggd::common
 {
 	class StaticImage : public Drawn
@@ -11,9 +12,10 @@ namespace tggd::common
 	private:
 		const SpriteManager& spriteManager;
 		const ColorManager& colorManager;
-		std::string spriteName;
-		std::string colorName;
-		XY<int> xy;
+		IValue<std::string>* spriteName;
+		IValue<std::string>* colorName;
+		IValue<int>* x;
+		IValue<int>* y;
 	public:
 		StaticImage
 		(
@@ -29,6 +31,7 @@ namespace tggd::common
 			const ColorManager&,
 			const nlohmann::json&
 		);
+		~StaticImage();
 		void Draw(SDL_Renderer*) const;
 	};
 }

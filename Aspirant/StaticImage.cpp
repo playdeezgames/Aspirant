@@ -1,4 +1,6 @@
 #include "StaticImage.h"
+#include "Utility.h"
+#include "ConstantValue.h"
 namespace tggd::common
 {
 	const std::string PROPERTY_SPRITE = "sprite";
@@ -13,9 +15,10 @@ namespace tggd::common
 	)
 		: spriteManager(spriteManager)
 		, colorManager(colorManager)
-		, spriteName(properties[PROPERTY_SPRITE])
-		, colorName(properties[PROPERTY_COLOR])
-		, xy(properties[PROPERTY_X], properties[PROPERTY_Y])
+		, spriteName(new ConstantValue<std::string>(properties[PROPERTY_SPRITE]))
+		, colorName(new ConstantValue<std::string>(properties[PROPERTY_COLOR]))
+		, x(new ConstantValue<int>(properties[PROPERTY_X]))
+		, y(new ConstantValue<int>(properties[PROPERTY_Y]))
 	{
 
 	}
@@ -30,15 +33,34 @@ namespace tggd::common
 	)
 		: spriteManager(spriteManager)
 		, colorManager(colorManager)
-		, spriteName(spriteName)
-		, colorName(colorName)
-		, xy(xy)
+		, spriteName(new ConstantValue(spriteName))
+		, colorName(new ConstantValue(colorName))
+		, x(new ConstantValue(xy.GetX()))
+		, y(new ConstantValue(xy.GetY()))
 	{
-
 	}
+
+	StaticImage::~StaticImage()
+	{
+		Utility::SafeDelete(spriteName);
+		Utility::SafeDelete(colorName);
+		Utility::SafeDelete(x);
+		Utility::SafeDelete(y);
+	}
+
+
 	void StaticImage::Draw(SDL_Renderer* renderer) const
 	{
-		spriteManager.GetSprite(spriteName)->Draw(renderer, xy, colorManager.GetDescriptor(colorName));
+		spriteManager.GetSprite
+		(
+			spriteName->Get()
+		)
+			->Draw
+		(
+			renderer, 
+			XY<int>(x->Get(), y->Get()), 
+			colorManager.GetDescriptor(colorName->Get())
+		);
 	}
 
 
