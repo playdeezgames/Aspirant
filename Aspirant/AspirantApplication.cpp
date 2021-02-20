@@ -3,6 +3,7 @@
 #include "MEvent.h"
 #include "SplashStateHandler.h"
 #include "MainMenuStateHandler.h"
+#include "MCommand.h"
 namespace aspirant
 {
 	const std::string APPLICATION_CONFIG_FILE = "config/application.json";
@@ -63,11 +64,48 @@ namespace aspirant
 		return true;
 	}
 
+	bool AspirantApplication::OnKeyDown(const SDL_KeyboardEvent& keyEvent)
+	{
+		switch (keyEvent.keysym.sym)
+		{
+		case SDLK_UP:
+			return HandleBroadcast(MCommand(Command::UP));
+		case SDLK_DOWN:
+			return HandleBroadcast(MCommand(Command::DOWN));
+		case SDLK_LEFT:
+			return HandleBroadcast(MCommand(Command::LEFT));
+		case SDLK_RIGHT:
+			return HandleBroadcast(MCommand(Command::RIGHT));
+		case SDLK_SPACE:
+			return HandleBroadcast(MCommand(Command::GREEN));
+		case SDLK_RETURN:
+			return HandleBroadcast(MCommand(Command::START));
+		case SDLK_ESCAPE:
+			return HandleBroadcast(MCommand(Command::RED));
+		case SDLK_COMMA:
+			return HandleBroadcast(MCommand(Command::PREVIOUS));
+		case SDLK_PERIOD:
+			return HandleBroadcast(MCommand(Command::NEXT));
+		case SDLK_BACKSPACE:
+			return HandleBroadcast(MCommand(Command::BACK));
+		case SDLK_TAB:
+			return HandleBroadcast(MCommand(Command::YELLOW));
+		case SDLK_z:
+			return HandleBroadcast(MCommand(Command::BLUE));
+		}
+		return true;
+	}
+
+
 	bool AspirantApplication::OnSdlEvent(const SDL_Event& evt)
 	{
 		if (evt.type == SDL_QUIT)
 		{
 			uiState = UIState::Quit;
+		}
+		else if (evt.type == SDL_KEYDOWN)
+		{
+			return OnKeyDown(evt.key);
 		}
 		return true;
 	}

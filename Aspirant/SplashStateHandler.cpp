@@ -2,6 +2,7 @@
 #include "MRender.h"
 #include "MUpdate.h"
 #include "MSetUIState.h"
+#include "MCommand.h"
 namespace aspirant
 {
 	const std::string SPRITE_NAME = "Splash";
@@ -75,15 +76,26 @@ namespace aspirant
 		return false;
 	}
 
+	bool SplashStateHandler::OnCommand(const Command& command)
+	{
+		ticksLeft = 0;
+		return true;
+	}
+
+
 	bool SplashStateHandler::OnMessage(const tggd::common::MGeneric* message)
 	{
 		if (message->GetId() == tggd::common::MRender::MSGID_Draw)
 		{
 			return OnDraw(static_cast<const tggd::common::MRender*>(message)->GetRenderer());
 		}
-		if (message->GetId() == tggd::common::MUpdate::MSGID_Update)
+		else if (message->GetId() == tggd::common::MUpdate::MSGID_Update)
 		{
 			return OnUpdate(static_cast<const tggd::common::MUpdate*>(message)->GetMilliseconds());
+		}
+		else if (message->GetId() == MCommand::MSGID_Command)
+		{
+			return OnCommand(static_cast<const MCommand*>(message)->GetCommand());
 		}
 		return false;
 	}

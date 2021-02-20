@@ -45,6 +45,9 @@
     <Filter Include="Header Files\Room">
       <UniqueIdentifier>{9738cf7e-fd03-4c73-89e5-e2848f956b57}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Input">
+      <UniqueIdentifier>{554743f0-b99f-48d4-8bff-3dcc1d37d3c4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp">
@@ -195,6 +198,12 @@
     </ClInclude>
     <ClInclude Include="MainMenuStateHandler.h">
       <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Command.h">
+      <Filter>Header Files\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="MCommand.h">
+      <Filter>Header Files\Messages</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

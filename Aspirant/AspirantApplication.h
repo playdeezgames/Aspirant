@@ -18,6 +18,7 @@ namespace aspirant
 		tggd::common::ColorManager colorManager;
 		tggd::common::FontManager fontManager;
 		bool OnSetUIState(const UIState&);
+		bool OnKeyDown(const SDL_KeyboardEvent&);
 		bool OnSdlEvent(const SDL_Event&);
 	protected:
 		bool OnMessage(const tggd::common::MGeneric*);

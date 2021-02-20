@@ -41,6 +41,7 @@
     <ClInclude Include="AspirantApplication.h" />
     <ClInclude Include="BaseDescriptorManager.h" />
     <ClInclude Include="ColorManager.h" />
+    <ClInclude Include="Command.h" />
     <ClInclude Include="Drawn.h" />
     <ClInclude Include="Finisher.h" />
     <ClInclude Include="FinishManager.h" />
@@ -49,6 +50,7 @@
     <ClInclude Include="HelpPageManager.h" />
     <ClInclude Include="json.hpp" />
     <ClInclude Include="MainMenuStateHandler.h" />
+    <ClInclude Include="MCommand.h" />
     <ClInclude Include="MUpdate.h" />
     <ClInclude Include="Room.h" />
     <ClInclude Include="RoomCell.h" />

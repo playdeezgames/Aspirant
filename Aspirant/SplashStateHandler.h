@@ -5,6 +5,7 @@
 #include <SDL.h>
 #include "StaticText.h"
 #include <list>
+#include "Command.h"
 namespace aspirant
 {
 	class SplashStateHandler : public UIStateMessageHandler
@@ -15,6 +16,7 @@ namespace aspirant
 		std::list<tggd::common::Label> labels;
 		bool OnDraw(SDL_Renderer*) const;
 		bool OnUpdate(unsigned int);
+		bool OnCommand(const Command&);
 		unsigned int ticksLeft;
 	protected:
 		bool OnMessage(const tggd::common::MGeneric*);
