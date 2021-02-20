@@ -1,9 +1,10 @@
 #pragma once
 #include <string>
 #include <map>
+#include "IDataStore.h"
 namespace tggd::common
 {
-	class StringManager
+	class StringManager: public IDataStore<std::string>
 	{
 	private:
 		std::map<std::string, std::string> table;

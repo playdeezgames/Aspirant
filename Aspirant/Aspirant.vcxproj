@@ -24,6 +24,7 @@
     <ClCompile Include="ColorManager.cpp" />
     <ClCompile Include="FinishManager.cpp" />
     <ClCompile Include="FontManager.cpp" />
+    <ClCompile Include="IntManager.cpp" />
     <ClCompile Include="Layout.cpp" />
     <ClCompile Include="LayoutManager.cpp" />
     <ClCompile Include="MainMenuStateHandler.cpp" />
@@ -36,7 +37,6 @@
     <ClCompile Include="SpriteManager.cpp" />
     <ClCompile Include="StringManager.cpp" />
     <ClCompile Include="TextureManager.cpp" />
-    <ClCompile Include="DynamicText.cpp" />
     <ClCompile Include="Utility.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -52,6 +52,7 @@
     <ClInclude Include="FinishManager.h" />
     <ClInclude Include="FontManager.h" />
     <ClInclude Include="IDataStore.h" />
+    <ClInclude Include="IntManager.h" />
     <ClInclude Include="IValue.h" />
     <ClInclude Include="json.hpp" />
     <ClInclude Include="Layout.h" />
@@ -76,7 +77,6 @@
     <ClInclude Include="StaticImage.h" />
     <ClInclude Include="StringManager.h" />
     <ClInclude Include="TextureManager.h" />
-    <ClInclude Include="DynamicText.h" />
     <ClInclude Include="UIState.h" />
     <ClInclude Include="UIStateMessageHandler.h" />
     <ClInclude Include="Utility.h" />

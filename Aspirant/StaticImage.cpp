@@ -1,24 +1,60 @@
 #include "StaticImage.h"
 #include "Utility.h"
 #include "ConstantValue.h"
+#include "DynamicValue.h"
 namespace tggd::common
 {
 	const std::string PROPERTY_SPRITE = "sprite";
 	const std::string PROPERTY_COLOR = "color";
 	const std::string PROPERTY_X = "x";
 	const std::string PROPERTY_Y = "y";
+
+	const std::string PROPERTY_KEY = "key";
+	IValue<std::string>* LoadString(const IDataStore<std::string>& stringStore, const nlohmann::json& value)
+	{
+		if (value.is_string())
+		{
+			return new ConstantValue<std::string>(value);
+		}
+		else if (value.is_object())
+		{
+			return new DynamicValue<std::string>(stringStore, value[PROPERTY_KEY]);
+		}
+		else
+		{
+			throw "BAD VALUE!";
+		}
+	}
+	IValue<int>* LoadInt(const IDataStore<int>& intStore, const nlohmann::json& value)
+	{
+		if (value.is_number_integer())
+		{
+			return new ConstantValue<int>(value);
+		}
+		else if (value.is_object())
+		{
+			return new DynamicValue<int>(intStore, value[PROPERTY_KEY]);
+		}
+		else
+		{
+			throw "BAD VALUE!";
+		}
+	}
+
 	StaticImage::StaticImage
 	(
+		const IDataStore<std::string>& stringStore,
+		const IDataStore<int>& intStore,
 		const SpriteManager& spriteManager,
 		const ColorManager& colorManager,
 		const nlohmann::json& properties
 	)
 		: spriteManager(spriteManager)
 		, colorManager(colorManager)
-		, spriteName(new ConstantValue<std::string>(properties[PROPERTY_SPRITE]))
-		, colorName(new ConstantValue<std::string>(properties[PROPERTY_COLOR]))
-		, x(new ConstantValue<int>(properties[PROPERTY_X]))
-		, y(new ConstantValue<int>(properties[PROPERTY_Y]))
+		, spriteName(LoadString(stringStore, properties[PROPERTY_SPRITE]))
+		, colorName(LoadString(stringStore, properties[PROPERTY_COLOR]))
+		, x(LoadInt(intStore, properties[PROPERTY_X]))
+		, y(LoadInt(intStore, properties[PROPERTY_Y]))
 	{
 
 	}
@@ -56,11 +92,11 @@ namespace tggd::common
 			spriteName->Get()
 		)
 			->Draw
-		(
-			renderer, 
-			XY<int>(x->Get(), y->Get()), 
-			colorManager.GetDescriptor(colorName->Get())
-		);
+			(
+				renderer,
+				XY<int>(x->Get(), y->Get()),
+				colorManager.GetDescriptor(colorName->Get())
+			);
 	}
 
 

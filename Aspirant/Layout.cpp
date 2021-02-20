@@ -2,7 +2,6 @@
 #include "Utility.h"
 #include "StaticImage.h"
 #include "StaticText.h"
-#include "DynamicText.h"
 namespace tggd::common
 {
 	Layout::Layout
@@ -17,15 +16,15 @@ namespace tggd::common
 	const std::string PROPERTY_TYPE="type";
 	const std::string TYPE_STATIC_IMAGE = "StaticImage";
 	const std::string TYPE_STATIC_TEXT = "StaticText";
-	const std::string TYPE_DYNAMIC_TEXT = "DynamicText";
-
+	
 	Layout::Layout
 	(
-		FinishManager& finishManager, 
+		FinishManager& finishManager,
 		const SpriteManager& spriteManager,
 		const ColorManager& colorManager,
 		const FontManager& fontManager,
-		const StringManager& stringManager,
+		const IDataStore<std::string>& stringStore,
+		const IDataStore<int>& intStore,
 		const nlohmann::json& itemDescriptors
 	)
 		: drawnItems()
@@ -38,7 +37,7 @@ namespace tggd::common
 			{
 				drawnItems.push_back
 				(
-					new StaticImage(spriteManager, colorManager, itemDescriptor)
+					new StaticImage(stringStore, intStore, spriteManager, colorManager, itemDescriptor)
 				);
 			}
 			else if (itemType == TYPE_STATIC_TEXT)
@@ -48,14 +47,6 @@ namespace tggd::common
 					new StaticText(fontManager, itemDescriptor)
 				);
 			}
-			else if (itemType == TYPE_DYNAMIC_TEXT)
-			{
-				drawnItems.push_back
-				(
-					new DynamicText(fontManager, stringManager, itemDescriptor)
-				);
-			}
-
 		}
 	}
 

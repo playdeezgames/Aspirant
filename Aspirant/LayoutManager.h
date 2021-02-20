@@ -5,7 +5,6 @@
 #include "SpriteManager.h"
 #include "ColorManager.h"
 #include "FontManager.h"
-#include "StringManager.h"
 namespace tggd::common
 {
 	class LayoutManager: public BaseDescriptorManager<std::string, Layout>
@@ -14,7 +13,8 @@ namespace tggd::common
 		const SpriteManager& spriteManager;
 		const ColorManager& colorManager;
 		const FontManager& fontManager;
-		const StringManager& stringManager;
+		const IDataStore<std::string>& stringStore;
+		const IDataStore<int>& intStore;
 		FinishManager& finishManager;
 	protected:
 		std::string ParseKey(const std::string&);
@@ -26,7 +26,8 @@ namespace tggd::common
 			const SpriteManager&,
 			const ColorManager&,
 			const FontManager&,
-			const StringManager&
+			const IDataStore<std::string>&,
+			const IDataStore<int>&
 		);
 	};
 }

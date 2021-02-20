@@ -143,8 +143,8 @@
     <ClCompile Include="StringManager.cpp">
       <Filter>Source Files\Data</Filter>
     </ClCompile>
-    <ClCompile Include="DynamicText.cpp">
-      <Filter>Source Files\Graphics\Controls</Filter>
+    <ClCompile Include="IntManager.cpp">
+      <Filter>Source Files\Data</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -259,9 +259,6 @@
     <ClInclude Include="IDataStore.h">
       <Filter>Header Files\Data</Filter>
     </ClInclude>
-    <ClInclude Include="DynamicText.h">
-      <Filter>Header Files\Graphics\Controls</Filter>
-    </ClInclude>
     <ClInclude Include="IValue.h">
       <Filter>Header Files\Data</Filter>
     </ClInclude>
@@ -269,6 +266,9 @@
       <Filter>Header Files\Data</Filter>
     </ClInclude>
     <ClInclude Include="DynamicValue.h">
+      <Filter>Header Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="IntManager.h">
       <Filter>Header Files\Data</Filter>
     </ClInclude>
   </ItemGroup>

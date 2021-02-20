@@ -5,6 +5,7 @@
 #include "Drawn.h"
 #include "json.hpp"
 #include "IValue.h"
+#include "IDataStore.h"
 namespace tggd::common
 {
 	class StaticImage : public Drawn
@@ -27,6 +28,8 @@ namespace tggd::common
 		);
 		StaticImage
 		(
+			const IDataStore<std::string>&,
+			const IDataStore<int>&,
 			const SpriteManager&,
 			const ColorManager&,
 			const nlohmann::json&
