@@ -1,18 +1,16 @@
 #pragma once
 #include "UIStateMessageHandler.h"
-#include "StaticImage.h"
-#include "SpriteFont.h"
 #include <SDL.h>
-#include "StaticText.h"
 #include <list>
 #include "Command.h"
 #include "Layout.h"
+#include "LayoutManager.h"
 namespace aspirant
 {
 	class SplashStateHandler : public UIStateMessageHandler
 	{
 	private:
-		tggd::common::Layout layout;
+		const tggd::common::Layout* layout;
 		bool OnDraw(SDL_Renderer*) const;
 		bool OnUpdate(unsigned int);
 		bool OnCommand(const Command&);
@@ -24,10 +22,7 @@ namespace aspirant
 		(
 			MessageHandler*,
 			const UIState&,
-			const tggd::common::SpriteManager&,
-			const tggd::common::ColorManager&,
-			const tggd::common::FontManager&,
-			tggd::common::FinishManager&
+			tggd::common::LayoutManager&
 		);
 	};
 }

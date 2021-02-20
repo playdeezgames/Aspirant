@@ -27,6 +27,7 @@
     <ClCompile Include="HelpPage.cpp" />
     <ClCompile Include="HelpPageManager.cpp" />
     <ClCompile Include="Layout.cpp" />
+    <ClCompile Include="LayoutManager.cpp" />
     <ClCompile Include="MainMenuStateHandler.cpp" />
     <ClCompile Include="StaticImage.cpp" />
     <ClCompile Include="StaticText.cpp" />
@@ -52,6 +53,7 @@
     <ClInclude Include="HelpPageManager.h" />
     <ClInclude Include="json.hpp" />
     <ClInclude Include="Layout.h" />
+    <ClInclude Include="LayoutManager.h" />
     <ClInclude Include="MainMenuStateHandler.h" />
     <ClInclude Include="MCommand.h" />
     <ClInclude Include="MUpdate.h" />

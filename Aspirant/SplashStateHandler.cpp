@@ -7,19 +7,17 @@
 namespace aspirant
 {
 	const int TICKS_LEFT = 3000;
+	const std::string LAYOUT_NAME = "Splash";
 
 	SplashStateHandler::SplashStateHandler
 	(
 		MessageHandler* parent,
 		const UIState& currentState,
-		const tggd::common::SpriteManager& spriteManager,
-		const tggd::common::ColorManager& colorManager,
-		const tggd::common::FontManager& fontManager,
-		tggd::common::FinishManager& finishManager
+		tggd::common::LayoutManager& layoutManager
 	)
 		: UIStateMessageHandler(parent, currentState, UIState::Splash)
 		, ticksLeft(TICKS_LEFT)
-		, layout(finishManager, spriteManager, colorManager, fontManager,tggd::common::Utility::LoadJSON("assets/layouts/splash.json"))
+		, layout(layoutManager.GetDescriptor(LAYOUT_NAME))
 	{
 	}
 
@@ -36,7 +34,7 @@ namespace aspirant
 
 	bool SplashStateHandler::OnDraw(SDL_Renderer* renderer) const
 	{
-		layout.Draw(renderer);
+		layout->Draw(renderer);
 		return false;
 	}
 

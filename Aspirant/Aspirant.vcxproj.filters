@@ -104,6 +104,9 @@
     <ClCompile Include="StaticImage.cpp">
       <Filter>Source Files\Graphics</Filter>
     </ClCompile>
+    <ClCompile Include="LayoutManager.cpp">
+      <Filter>Source Files\Graphics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h">
@@ -212,6 +215,9 @@
       <Filter>Header Files\Messages</Filter>
     </ClInclude>
     <ClInclude Include="Layout.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="LayoutManager.h">
       <Filter>Header Files\Graphics</Filter>
     </ClInclude>
   </ItemGroup>
