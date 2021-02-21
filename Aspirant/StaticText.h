@@ -2,6 +2,7 @@
 #include "XY.h"
 #include <string>
 #include "IDataStore.h"
+#include "IValue.h"
 #include "SpriteFont.h"
 #include "json.hpp"
 #include "Drawn.h"
@@ -10,14 +11,17 @@ namespace tggd::common
 	class StaticText: public Drawn
 	{
 	private:
-		tggd::common::XY<int> xy;
-		std::string text;
 		const tggd::common::IDataStore<SpriteFont>& fontStore;
-		std::string fontName;
-		std::string color;
-		bool hasDropShadow;
-		tggd::common::XY<int> dropShadowXY;
-		std::string dropShadowColor;
+
+		IValue<std::string>* text;
+		IValue<std::string>* fontName;
+		IValue<std::string>* color;
+		IValue<std::string>* dropShadowColor;
+		IValue<bool>* hasDropShadow;
+		IValue<int>* x;
+		IValue<int>* y;
+		IValue<int>* dropShadowX;
+		IValue<int>* dropShadowY;
 	public:
 		StaticText
 		(
@@ -34,9 +38,11 @@ namespace tggd::common
 		(
 			const tggd::common::IDataStore<std::string>&,
 			const tggd::common::IDataStore<int>&,
+			const tggd::common::IDataStore<bool>&,
 			const tggd::common::IDataStore<SpriteFont>&,
 			const nlohmann::json&
 		);
+		~StaticText();
 		void Draw(SDL_Renderer*) const;
 	};
 }

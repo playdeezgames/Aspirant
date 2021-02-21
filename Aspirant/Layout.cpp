@@ -25,6 +25,7 @@ namespace tggd::common
 		const FontManager& fontManager,
 		const IDataStore<std::string>& stringStore,
 		const IDataStore<int>& intStore,
+		const IDataStore<bool>& flagStore,
 		const nlohmann::json& itemDescriptors
 	)
 		: drawnItems()
@@ -44,7 +45,7 @@ namespace tggd::common
 			{
 				drawnItems.push_back
 				(
-					new StaticText(stringStore, intStore, fontManager, itemDescriptor)
+					new StaticText(stringStore, intStore, flagStore, fontManager, itemDescriptor)
 				);
 			}
 		}

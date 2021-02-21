@@ -1,4 +1,6 @@
 #include "StaticText.h"
+#include "Utility.h"
+#include "ConstantValue.h"
 namespace tggd::common
 {
 	StaticText::StaticText
@@ -12,14 +14,16 @@ namespace tggd::common
 		const tggd::common::XY<int>& dropShadowOffset,
 		const std::string& dropShadowColor
 	)
-		: xy(xy)
-		, text(text)
+		: x(new ConstantValue(xy.GetX()))
+		, y(new ConstantValue(xy.GetY()))
+		, text(new ConstantValue(text))
 		, fontStore(fontStore)
-		, fontName(fontName)
-		, color(color)
-		, hasDropShadow(hasDropShadow)
-		, dropShadowXY(dropShadowOffset + xy)
-		, dropShadowColor(dropShadowColor)
+		, fontName(new ConstantValue(fontName))
+		, color(new ConstantValue(color))
+		, hasDropShadow(new ConstantValue(hasDropShadow))
+		, dropShadowX(new ConstantValue(dropShadowOffset.GetX()))
+		, dropShadowY(new ConstantValue(dropShadowOffset.GetY()))
+		, dropShadowColor(new ConstantValue(dropShadowColor))
 	{
 
 	}
@@ -38,45 +42,63 @@ namespace tggd::common
 	(
 		const tggd::common::IDataStore<std::string>& stringStore,
 		const tggd::common::IDataStore<int>& intStore,
+		const tggd::common::IDataStore<bool>& flagStore,
 		const tggd::common::IDataStore<SpriteFont>& fontStore,
 		const nlohmann::json& properties
 	)
-		: xy(properties[PROPERTY_X],properties[PROPERTY_Y])
-		, text(properties[PROPERTY_TEXT])
+		: text(Utility::LoadString(stringStore,properties[PROPERTY_TEXT]))
 		, fontStore(fontStore)
-		, fontName(properties[PROPERTY_FONT])
-		, color(properties[PROPERTY_COLOR])
-		, hasDropShadow(false)
-		, dropShadowXY(0,0)
-		, dropShadowColor("")
+		, fontName(Utility::LoadString(stringStore, properties[PROPERTY_FONT]))
+		, color(Utility::LoadString(stringStore, properties[PROPERTY_COLOR]))
+		, hasDropShadow(nullptr)
+		, dropShadowColor(nullptr)
+		, dropShadowX(nullptr)
+		, dropShadowY(nullptr)
+		, x(Utility::LoadInt(intStore, properties[PROPERTY_X]))
+		, y(Utility::LoadInt(intStore, properties[PROPERTY_Y]))
 	{
 		if (properties.count(PROPERTY_DROP_SHADOW) > 0)
 		{
-			hasDropShadow = properties[PROPERTY_DROP_SHADOW];
+			hasDropShadow = Utility::LoadFlag(flagStore, properties[PROPERTY_DROP_SHADOW]);
+		}
+		else
+		{
+			hasDropShadow = new ConstantValue(false);
 		}
 		if (properties.count(PROPERTY_DROP_SHADOW) > 0)
 		{
-			dropShadowColor = properties[PROPERTY_DROP_SHADOW_COLOR];
+			dropShadowColor = Utility::LoadString(stringStore,properties[PROPERTY_DROP_SHADOW_COLOR]);
 		}
-		int x = 0;
 		if (properties.count(PROPERTY_DROP_SHADOW_X) > 0)
 		{
-			x = properties[PROPERTY_DROP_SHADOW_X];
+			dropShadowX = Utility::LoadInt(intStore, properties[PROPERTY_DROP_SHADOW_X]);
 		}
-		int y = 0;
 		if (properties.count(PROPERTY_DROP_SHADOW_Y) > 0)
 		{
-			x = properties[PROPERTY_DROP_SHADOW_Y];
+			dropShadowY = Utility::LoadInt(intStore, properties[PROPERTY_DROP_SHADOW_Y]);
 		}
-		dropShadowXY = xy + XY<int>(x,y);
 	}
+
+	StaticText::~StaticText()
+	{
+		Utility::SafeDelete(text);
+		Utility::SafeDelete(fontName);
+		Utility::SafeDelete(color);
+		Utility::SafeDelete(dropShadowColor);
+		Utility::SafeDelete(hasDropShadow);
+		Utility::SafeDelete(x);
+		Utility::SafeDelete(y);
+		Utility::SafeDelete(dropShadowX);
+		Utility::SafeDelete(dropShadowY);
+	}
+
 
 	void StaticText::Draw(SDL_Renderer* renderer) const
 	{
 		if (hasDropShadow)
 		{
-			fontStore.Get(fontName).WriteText(renderer, dropShadowXY, text, dropShadowColor);
+			fontStore.Get(fontName->Get()).WriteText(renderer, XY<int>(x->Get() + dropShadowX->Get(), y->Get() + dropShadowY->Get()), text->Get(), dropShadowColor->Get());
 		}
-		fontStore.Get(fontName).WriteText(renderer, xy, text, color);
+		fontStore.Get(fontName->Get()).WriteText(renderer, XY<int>(x->Get(), y->Get()), text->Get(), color->Get());
 	}
 }

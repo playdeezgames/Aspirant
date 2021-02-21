@@ -26,6 +26,7 @@ namespace tggd::common
 			const FontManager&,
 			const IDataStore<std::string>&,
 			const IDataStore<int>&,
+			const IDataStore<bool>&,
 			const nlohmann::json&
 		);
 		void Draw(SDL_Renderer*) const;
