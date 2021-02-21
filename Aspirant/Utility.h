@@ -3,6 +3,8 @@
 #include <string>
 #include <map>
 #include "json.hpp"
+#include "IValue.h"
+#include "IDataStore.h"
 namespace tggd::common
 {
 	class Utility
@@ -35,6 +37,8 @@ namespace tggd::common
 			}
 			table.clear();
 		}
+		static IValue<std::string>* LoadString(const IDataStore<std::string>&, const nlohmann::json&);
+		static IValue<int>* LoadInt(const IDataStore<int>&, const nlohmann::json&);
 	};
 }
 

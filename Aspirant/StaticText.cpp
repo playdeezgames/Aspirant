@@ -3,7 +3,7 @@ namespace tggd::common
 {
 	StaticText::StaticText
 	(
-		const tggd::common::FontManager& fontManager, 
+		const tggd::common::IDataStore<SpriteFont>& fontStore,
 		const tggd::common::XY<int>& xy,
 		const std::string& text,
 		const std::string& fontName,
@@ -14,7 +14,7 @@ namespace tggd::common
 	)
 		: xy(xy)
 		, text(text)
-		, fontManager(fontManager)
+		, fontStore(fontStore)
 		, fontName(fontName)
 		, color(color)
 		, hasDropShadow(hasDropShadow)
@@ -33,14 +33,16 @@ namespace tggd::common
 
 	StaticText::StaticText
 	(
-		const tggd::common::FontManager& fontManager, 
+		const tggd::common::IDataStore<std::string>& stringStore,
+		const tggd::common::IDataStore<int>& intStore,
+		const tggd::common::IDataStore<SpriteFont>& fontStore,
 		const nlohmann::json& properties
 	)
 		: xy(properties[PROPERTY_X],properties[PROPERTY_Y])
 		, text(properties[PROPERTY_TEXT])
-		, fontManager(fontManager)
+		, fontStore(fontStore)
 		, fontName(properties[PROPERTY_FONT])
-		, color(properties[PROPERTY_COLOR])//DIFFERENT
+		, color(properties[PROPERTY_COLOR])
 		, hasDropShadow(false)
 		, dropShadowXY(0,0)
 		, dropShadowColor("")
@@ -58,8 +60,8 @@ namespace tggd::common
 	{
 		if (hasDropShadow)
 		{
-			fontManager.GetDescriptor(fontName)->WriteText(renderer, dropShadowXY, text, dropShadowColor);
+			fontStore.Get(fontName).WriteText(renderer, dropShadowXY, text, dropShadowColor);
 		}
-		fontManager.GetDescriptor(fontName)->WriteText(renderer, xy, text, color);//DIFFERENT
+		fontStore.Get(fontName).WriteText(renderer, xy, text, color);
 	}
 }

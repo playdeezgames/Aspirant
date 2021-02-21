@@ -23,4 +23,9 @@ namespace tggd::common
 	{
 
 	}
+
+	const SpriteFont& FontManager::Get(const std::string& key) const
+	{
+		return *GetDescriptor(key);
+	}
 }

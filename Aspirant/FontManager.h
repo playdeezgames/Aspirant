@@ -1,9 +1,10 @@
 #pragma once
 #include "BaseDescriptorManager.h"
 #include "SpriteFont.h"
+#include "IDataStore.h"
 namespace tggd::common
 {
-	class FontManager: public BaseDescriptorManager<std::string, SpriteFont>
+	class FontManager: public BaseDescriptorManager<std::string, SpriteFont>, public IDataStore<SpriteFont>
 	{
 	private:
 		const SpriteManager& spriteManager;
@@ -18,5 +19,6 @@ namespace tggd::common
 			const SpriteManager&,
 			const ColorManager&
 		);
+		const SpriteFont& Get(const std::string&) const;
 	};
 }

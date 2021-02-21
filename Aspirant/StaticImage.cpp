@@ -1,7 +1,6 @@
 #include "StaticImage.h"
 #include "Utility.h"
 #include "ConstantValue.h"
-#include "DynamicValue.h"
 namespace tggd::common
 {
 	const std::string PROPERTY_SPRITE = "sprite";
@@ -9,37 +8,6 @@ namespace tggd::common
 	const std::string PROPERTY_X = "x";
 	const std::string PROPERTY_Y = "y";
 
-	const std::string PROPERTY_KEY = "key";
-	IValue<std::string>* LoadString(const IDataStore<std::string>& stringStore, const nlohmann::json& value)
-	{
-		if (value.is_string())
-		{
-			return new ConstantValue<std::string>(value);
-		}
-		else if (value.is_object())
-		{
-			return new DynamicValue<std::string>(stringStore, value[PROPERTY_KEY]);
-		}
-		else
-		{
-			throw "BAD VALUE!";
-		}
-	}
-	IValue<int>* LoadInt(const IDataStore<int>& intStore, const nlohmann::json& value)
-	{
-		if (value.is_number_integer())
-		{
-			return new ConstantValue<int>(value);
-		}
-		else if (value.is_object())
-		{
-			return new DynamicValue<int>(intStore, value[PROPERTY_KEY]);
-		}
-		else
-		{
-			throw "BAD VALUE!";
-		}
-	}
 
 	StaticImage::StaticImage
 	(
@@ -51,10 +19,10 @@ namespace tggd::common
 	)
 		: spriteStore(spriteStore)
 		, colorStore(colorStore)
-		, spriteName(LoadString(stringStore, properties[PROPERTY_SPRITE]))
-		, colorName(LoadString(stringStore, properties[PROPERTY_COLOR]))
-		, x(LoadInt(intStore, properties[PROPERTY_X]))
-		, y(LoadInt(intStore, properties[PROPERTY_Y]))
+		, spriteName(Utility::LoadString(stringStore, properties[PROPERTY_SPRITE]))
+		, colorName(Utility::LoadString(stringStore, properties[PROPERTY_COLOR]))
+		, x(Utility::LoadInt(intStore, properties[PROPERTY_X]))
+		, y(Utility::LoadInt(intStore, properties[PROPERTY_Y]))
 	{
 
 	}

@@ -44,7 +44,7 @@ namespace tggd::common
 			{
 				drawnItems.push_back
 				(
-					new StaticText(fontManager, itemDescriptor)
+					new StaticText(stringStore, intStore, fontManager, itemDescriptor)
 				);
 			}
 		}

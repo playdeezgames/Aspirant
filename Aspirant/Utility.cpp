@@ -3,6 +3,8 @@
 #include <time.h>
 #include <fstream>
 #include <sstream>
+#include "ConstantValue.h"
+#include "DynamicValue.h"
 namespace tggd::common
 {
 	std::vector<std::string> Utility::CommandLineToStringVector(int argc, char** argv)
@@ -56,5 +58,38 @@ namespace tggd::common
 	{
 		return rand() % (maximum - minimum) + minimum;
 	}
+
+	const std::string PROPERTY_KEY = "key";
+	IValue<std::string>* Utility::LoadString(const IDataStore<std::string>& stringStore, const nlohmann::json& value)
+	{
+		if (value.is_string())
+		{
+			return new ConstantValue<std::string>(value);
+		}
+		else if (value.is_object())
+		{
+			return new DynamicValue<std::string>(stringStore, value[PROPERTY_KEY]);
+		}
+		else
+		{
+			throw "BAD VALUE!";
+		}
+	}
+	IValue<int>* Utility::LoadInt(const IDataStore<int>& intStore, const nlohmann::json& value)
+	{
+		if (value.is_number_integer())
+		{
+			return new ConstantValue<int>(value);
+		}
+		else if (value.is_object())
+		{
+			return new DynamicValue<int>(intStore, value[PROPERTY_KEY]);
+		}
+		else
+		{
+			throw "BAD VALUE!";
+		}
+	}
+
 }
 
