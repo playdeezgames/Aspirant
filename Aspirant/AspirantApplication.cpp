@@ -50,7 +50,7 @@ namespace aspirant
 		layoutManager.Start(LAYOUTS_CONFIG_FILE);
 
 		new SplashStateHandler(this, uiState, layoutManager);
-		new MainMenuStateHandler(this, uiState, layoutManager);
+		new MainMenuStateHandler(this, uiState, layoutManager, stringManager);
 	}
 
 	void AspirantApplication::Finish()
