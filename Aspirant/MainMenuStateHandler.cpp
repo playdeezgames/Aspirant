@@ -5,8 +5,8 @@
 #include "MSetUIState.h"
 namespace aspirant
 {
-	const std::string MENU_ITEM_COLOR_ACTIVE = "Cyan";
-	const std::string MENU_ITEM_COLOR_INACTIVE = "Gray";
+	const std::string MENU_ITEM_COLOR_ACTIVE = "Cyan";//DUPLICATED
+	const std::string MENU_ITEM_COLOR_INACTIVE = "Gray";//DUPLICATED
 	const std::string MENU_ITEM_START_COLOR_STRING = "MainMenu.Color.Start";
 	const std::string MENU_ITEM_ABOUT_COLOR_STRING = "MainMenu.Color.About";
 	const std::string MENU_ITEM_OPTIONS_COLOR_STRING = "MainMenu.Color.Options";
@@ -138,6 +138,9 @@ namespace aspirant
 		case MainMenuItem::ABOUT:
 			SDL_SetClipboardText(stringManager.Get(ITCH_URL_STRING).c_str());
 			Handle(MSetUIState(UIState::About));
+			return;
+		case MainMenuItem::QUIT:
+			Handle(MSetUIState(UIState::ConfirmQuit));
 			return;
 		}
 	}

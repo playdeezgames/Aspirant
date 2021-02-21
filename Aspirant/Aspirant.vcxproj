@@ -23,6 +23,7 @@
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="AspirantApplication.cpp" />
     <ClCompile Include="ColorManager.cpp" />
+    <ClCompile Include="ConfirmQuitStateHandler.cpp" />
     <ClCompile Include="FinishManager.cpp" />
     <ClCompile Include="FlagManager.cpp" />
     <ClCompile Include="FontManager.cpp" />
@@ -48,6 +49,7 @@
     <ClInclude Include="BaseDescriptorManager.h" />
     <ClInclude Include="ColorManager.h" />
     <ClInclude Include="Command.h" />
+    <ClInclude Include="ConfirmQuitStateHandler.h" />
     <ClInclude Include="ConstantValue.h" />
     <ClInclude Include="Drawn.h" />
     <ClInclude Include="DynamicValue.h" />

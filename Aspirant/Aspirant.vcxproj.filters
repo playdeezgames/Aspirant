@@ -152,6 +152,9 @@
     <ClCompile Include="AboutStateHandler.cpp">
       <Filter>Source Files\UI</Filter>
     </ClCompile>
+    <ClCompile Include="ConfirmQuitStateHandler.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AspirantApplication.h">
@@ -281,6 +284,9 @@
       <Filter>Header Files\Data</Filter>
     </ClInclude>
     <ClInclude Include="AboutStateHandler.h">
+      <Filter>Header Files\UI\States</Filter>
+    </ClInclude>
+    <ClInclude Include="ConfirmQuitStateHandler.h">
       <Filter>Header Files\UI\States</Filter>
     </ClInclude>
   </ItemGroup>
