@@ -21,11 +21,11 @@
     },
     {
         "type": "StaticText",
-        "font": "font3x5",
+        "font": "font5x7",
         "color": "Gray",
         "text": "A Production of TheGrumpyGameDev",
         "x": 320,
-        "y": 342,
+        "y": 340,
         "horizontalAlignment": 0,
         "dropShadow": true,
         "dropShadowColor": "Black",
