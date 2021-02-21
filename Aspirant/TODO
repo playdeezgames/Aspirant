@@ -20,5 +20,5 @@ Controls:
         non highlighted color
         disabled color
 Refactors:
-    ☐ SplashStateHandler takes a spritefont.... this should be a set of labels or something
-    ☐ consolidate StaticImage and Label with a base class and base collection?
+    ✘ SplashStateHandler takes a spritefont.... this should be a set of labels or something @cancelled(21-02-21 06:01)
+    ✔ consolidate StaticImage and Label with a base class and base collection? @done(21-02-21 06:01)
