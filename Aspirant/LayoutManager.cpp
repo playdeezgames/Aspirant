@@ -19,7 +19,8 @@ namespace tggd::common
 		const ColorManager& colorManager,
 		const FontManager& fontManager,
 		const IDataStore<std::string>& stringStore,
-		const IDataStore<int>& intStore
+		const IDataStore<int>& intStore,
+		const IDataStore<bool>& flagStore
 	)
 		: BaseDescriptorManager(finishManager)
 		, finishManager(finishManager)
@@ -28,6 +29,7 @@ namespace tggd::common
 		, fontManager(fontManager)
 		, stringStore(stringStore)
 		, intStore(intStore)
+		, flagStore(flagStore)
 	{
 
 	}

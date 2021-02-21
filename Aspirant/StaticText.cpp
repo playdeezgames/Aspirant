@@ -30,6 +30,9 @@ namespace tggd::common
 	const std::string PROPERTY_FONT = "font";
 	const std::string PROPERTY_COLOR = "color";
 	const std::string PROPERTY_DROP_SHADOW = "dropShadow";
+	const std::string PROPERTY_DROP_SHADOW_COLOR = "dropShadowColor";
+	const std::string PROPERTY_DROP_SHADOW_X = "dropShadowX";
+	const std::string PROPERTY_DROP_SHADOW_Y = "dropShadowY";
 
 	StaticText::StaticText
 	(
@@ -49,11 +52,23 @@ namespace tggd::common
 	{
 		if (properties.count(PROPERTY_DROP_SHADOW) > 0)
 		{
-			hasDropShadow = true;
-			auto& dropShadow = properties[PROPERTY_DROP_SHADOW];
-			dropShadowColor = dropShadow[PROPERTY_COLOR];
-			dropShadowXY = xy + XY<int>(dropShadow[PROPERTY_X], dropShadow[PROPERTY_Y]);
+			hasDropShadow = properties[PROPERTY_DROP_SHADOW];
 		}
+		if (properties.count(PROPERTY_DROP_SHADOW) > 0)
+		{
+			dropShadowColor = properties[PROPERTY_DROP_SHADOW_COLOR];
+		}
+		int x = 0;
+		if (properties.count(PROPERTY_DROP_SHADOW_X) > 0)
+		{
+			x = properties[PROPERTY_DROP_SHADOW_X];
+		}
+		int y = 0;
+		if (properties.count(PROPERTY_DROP_SHADOW_Y) > 0)
+		{
+			x = properties[PROPERTY_DROP_SHADOW_Y];
+		}
+		dropShadowXY = xy + XY<int>(x,y);
 	}
 
 	void StaticText::Draw(SDL_Renderer* renderer) const

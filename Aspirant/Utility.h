@@ -39,6 +39,7 @@ namespace tggd::common
 		}
 		static IValue<std::string>* LoadString(const IDataStore<std::string>&, const nlohmann::json&);
 		static IValue<int>* LoadInt(const IDataStore<int>&, const nlohmann::json&);
+		static IValue<bool>* LoadFlag(const IDataStore<bool>&, const nlohmann::json&);
 	};
 }
 

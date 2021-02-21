@@ -146,6 +146,9 @@
     <ClCompile Include="IntManager.cpp">
       <Filter>Source Files\Data</Filter>
     </ClCompile>
+    <ClCompile Include="FlagManager.cpp">
+      <Filter>Source Files\Data</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AspirantApplication.h">
@@ -269,6 +272,9 @@
       <Filter>Header Files\Data</Filter>
     </ClInclude>
     <ClInclude Include="IntManager.h">
+      <Filter>Header Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="FlagManager.h">
       <Filter>Header Files\Data</Filter>
     </ClInclude>
   </ItemGroup>

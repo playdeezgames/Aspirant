@@ -23,6 +23,7 @@
     <ClCompile Include="AspirantApplication.cpp" />
     <ClCompile Include="ColorManager.cpp" />
     <ClCompile Include="FinishManager.cpp" />
+    <ClCompile Include="FlagManager.cpp" />
     <ClCompile Include="FontManager.cpp" />
     <ClCompile Include="IntManager.cpp" />
     <ClCompile Include="Layout.cpp" />
@@ -50,6 +51,7 @@
     <ClInclude Include="DynamicValue.h" />
     <ClInclude Include="Finisher.h" />
     <ClInclude Include="FinishManager.h" />
+    <ClInclude Include="FlagManager.h" />
     <ClInclude Include="FontManager.h" />
     <ClInclude Include="IDataStore.h" />
     <ClInclude Include="IntManager.h" />

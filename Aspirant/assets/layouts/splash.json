@@ -13,11 +13,10 @@
         "text": "Aspirant of SPLORR!!",
         "x": 160,
         "y": 172,
-        "dropShadow": {
-            "color": "Black",
-            "x": 2,
-            "y": 2
-        }
+        "dropShadow": true,
+        "dropShadowColor": "Black",
+        "dropShadowX": 2,
+        "dropShadowY": 2
     },
     {
         "type": "StaticText",
@@ -26,10 +25,9 @@
         "text": "A Production of TheGrumpyGameDev",
         "x": 256,
         "y": 342,
-        "dropShadow": {
-            "color": "Black",
-            "x": 1,
-            "y": 1
-        }
+        "dropShadow": true,
+        "dropShadowColor": "Black",
+        "dropShadowX": 2,
+        "dropShadowY": 2
     }
 ]

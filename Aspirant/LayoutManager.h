@@ -15,6 +15,7 @@ namespace tggd::common
 		const FontManager& fontManager;
 		const IDataStore<std::string>& stringStore;
 		const IDataStore<int>& intStore;
+		const IDataStore<bool>& flagStore;
 		FinishManager& finishManager;
 	protected:
 		std::string ParseKey(const std::string&);
@@ -27,7 +28,8 @@ namespace tggd::common
 			const ColorManager&,
 			const FontManager&,
 			const IDataStore<std::string>&,
-			const IDataStore<int>&
+			const IDataStore<int>&,
+			const IDataStore<bool>&
 		);
 	};
 }

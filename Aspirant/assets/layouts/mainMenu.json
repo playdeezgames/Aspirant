@@ -13,11 +13,10 @@
         "text": "Start",
         "x": 0,
         "y": 0,
-        "dropShadow": {
-            "color": "Black",
-            "x": 2,
-            "y": 2
-        }
+        "dropShadow": true,
+        "dropShadowColor": "Black",
+        "dropShadowX": 2,
+        "dropShadowY": 2
     },
     {
         "type": "StaticText",
@@ -26,11 +25,10 @@
         "text": "About",
         "x": 0,
         "y": 16,
-        "dropShadow": {
-            "color": "Black",
-            "x": 2,
-            "y": 2
-        }
+        "dropShadow": true,
+        "dropShadowColor": "Black",
+        "dropShadowX": 2,
+        "dropShadowY": 2
     },
     {
         "type": "StaticText",
@@ -39,10 +37,9 @@
         "text": "Quit",
         "x": 0,
         "y": 32,
-        "dropShadow": {
-            "color": "Black",
-            "x": 2,
-            "y": 2
-        }
+        "dropShadow": true,
+        "dropShadowColor": "Black",
+        "dropShadowX": 2,
+        "dropShadowY": 2
     }
 ]

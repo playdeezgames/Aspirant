@@ -90,6 +90,21 @@ namespace tggd::common
 			throw "BAD VALUE!";
 		}
 	}
+	IValue<bool>* Utility::LoadFlag(const IDataStore<bool>& flagStore, const nlohmann::json& value)
+	{
+		if (value.is_boolean())
+		{
+			return new ConstantValue<bool>(value);
+		}
+		else if (value.is_object())
+		{
+			return new DynamicValue<bool>(flagStore, value[PROPERTY_KEY]);
+		}
+		else
+		{
+			throw "BAD VALUE!";
+		}
+	}
 
 }
 
