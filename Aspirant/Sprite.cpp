@@ -16,23 +16,23 @@ namespace tggd::common
 
 	void Sprite::Draw(SDL_Renderer* renderer, const XY<int>& xy) const
 	{
-		Draw(renderer, xy, nullptr);
+		Draw(renderer, xy, {255,255,255,255});
 	}
 
 
-	void Sprite::Draw(SDL_Renderer* renderer, const XY<int>& xy, const SDL_Color* color) const
+	void Sprite::Draw(SDL_Renderer* renderer, const XY<int>& xy, const SDL_Color& color) const
 	{
 		SDL_SetTextureColorMod
 		(
 			texture, 
-			(color) ? (color->r) : (255), 
-			(color) ? (color->g) : (255), 
-			(color) ? (color->b) : (255)
+			color.r, 
+			color.g, 
+			color.b
 		);
 		SDL_SetTextureAlphaMod
 		(
 			texture,
-			(color) ? (color->a) : 255
+			color.a
 		);
 		SDL_Rect rcDst =
 		{

@@ -1,5 +1,4 @@
 #pragma once
-#include "ColorManager.h"
 #include "XY.h"
 #include "Drawn.h"
 #include "json.hpp"
@@ -12,7 +11,7 @@ namespace tggd::common
 	{
 	private:
 		const IDataStore<Sprite>& spriteStore;
-		const ColorManager& colorManager;
+		const IDataStore<SDL_Color>& colorStore;
 
 		IValue<std::string>* spriteName;
 		IValue<std::string>* colorName;
@@ -22,7 +21,7 @@ namespace tggd::common
 		StaticImage
 		(
 			const IDataStore<Sprite>&,
-			const ColorManager&,
+			const IDataStore<SDL_Color>&,
 			const std::string,
 			const std::string,
 			XY<int>
@@ -32,7 +31,7 @@ namespace tggd::common
 			const IDataStore<std::string>&,
 			const IDataStore<int>&,
 			const IDataStore<Sprite>&,
-			const ColorManager&,
+			const IDataStore<SDL_Color>&,
 			const nlohmann::json&
 		);
 		~StaticImage();

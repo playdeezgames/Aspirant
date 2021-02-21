@@ -26,4 +26,9 @@ namespace tggd::common
 	{
 
 	}
+
+	const SDL_Color& ColorManager::Get(const std::string& key) const
+	{
+		return *GetDescriptor(key);
+	}
 }

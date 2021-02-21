@@ -30,8 +30,8 @@ namespace tggd::common
 
 	tggd::common::XY<int> SpriteFont::WriteGlyph(SDL_Renderer* renderer, const tggd::common::XY<int>& xy, char ch, const std::string& color) const
 	{
-		auto sprite = GetGlyphSprite(ch);
-		sprite.Draw(renderer, xy, colorManager.GetDescriptor(color));
+		const auto& sprite = GetGlyphSprite(ch);
+		sprite.Draw(renderer, xy, colorManager.Get(color));
 		return XY(xy.GetX() + sprite.GetWidth(), xy.GetY());
 	}
 
