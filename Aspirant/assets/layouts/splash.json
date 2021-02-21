@@ -11,8 +11,9 @@
         "font": "default",
         "color": "Cyan",
         "text": "Aspirant of SPLORR!!",
-        "x": 160,
+        "x": 320,
         "y": 172,
+        "horizontalAlignment": 0,
         "dropShadow": true,
         "dropShadowColor": "Black",
         "dropShadowX": 2,
@@ -23,11 +24,12 @@
         "font": "font3x5",
         "color": "Gray",
         "text": "A Production of TheGrumpyGameDev",
-        "x": 256,
+        "x": 320,
         "y": 342,
+        "horizontalAlignment": 0,
         "dropShadow": true,
         "dropShadowColor": "Black",
-        "dropShadowX": 2,
-        "dropShadowY": 2
+        "dropShadowX": 1,
+        "dropShadowY": 1
     }
 ]

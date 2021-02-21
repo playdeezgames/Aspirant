@@ -135,6 +135,12 @@ namespace aspirant
 	{
 		switch (currentItem)
 		{
+		case MainMenuItem::START:
+			//TODO: go to start game screen
+			return;
+		case MainMenuItem::OPTIONS:
+			//TODO: go to options screen
+			return;
 		case MainMenuItem::ABOUT:
 			SDL_SetClipboardText(stringManager.Get(ITCH_URL_STRING).c_str());
 			Handle(MSetUIState(UIState::ABOUT));
