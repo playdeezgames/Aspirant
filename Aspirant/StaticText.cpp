@@ -12,7 +12,8 @@ namespace tggd::common
 		const std::string& color,
 		bool hasDropShadow,
 		const tggd::common::XY<int>& dropShadowOffset,
-		const std::string& dropShadowColor
+		const std::string& dropShadowColor,
+		const HorizontalAlignment& alignment
 	)
 		: x(new ConstantValue(xy.GetX()))
 		, y(new ConstantValue(xy.GetY()))
@@ -24,6 +25,7 @@ namespace tggd::common
 		, dropShadowX(new ConstantValue(dropShadowOffset.GetX()))
 		, dropShadowY(new ConstantValue(dropShadowOffset.GetY()))
 		, dropShadowColor(new ConstantValue(dropShadowColor))
+		, alignment(new ConstantValue((int)alignment))
 	{
 
 	}
@@ -37,6 +39,7 @@ namespace tggd::common
 	const std::string PROPERTY_DROP_SHADOW_COLOR = "dropShadowColor";
 	const std::string PROPERTY_DROP_SHADOW_X = "dropShadowX";
 	const std::string PROPERTY_DROP_SHADOW_Y = "dropShadowY";
+	const std::string PROPERTY_HORIZONTAL_ALIGNMENT = "horizontalAlignment";
 
 	StaticText::StaticText
 	(
@@ -50,12 +53,13 @@ namespace tggd::common
 		, fontStore(fontStore)
 		, fontName(Utility::LoadString(stringStore, properties[PROPERTY_FONT]))
 		, color(Utility::LoadString(stringStore, properties[PROPERTY_COLOR]))
+		, x(Utility::LoadInt(intStore, properties[PROPERTY_X]))
+		, y(Utility::LoadInt(intStore, properties[PROPERTY_Y]))
 		, hasDropShadow(nullptr)
 		, dropShadowColor(nullptr)
 		, dropShadowX(nullptr)
 		, dropShadowY(nullptr)
-		, x(Utility::LoadInt(intStore, properties[PROPERTY_X]))
-		, y(Utility::LoadInt(intStore, properties[PROPERTY_Y]))
+		, alignment(nullptr)
 	{
 		if (properties.count(PROPERTY_DROP_SHADOW) > 0)
 		{
@@ -64,6 +68,14 @@ namespace tggd::common
 		else
 		{
 			hasDropShadow = new ConstantValue(false);
+		}
+		if (properties.count(PROPERTY_HORIZONTAL_ALIGNMENT) > 0)
+		{
+			alignment = Utility::LoadInt(intStore, properties[PROPERTY_HORIZONTAL_ALIGNMENT]);
+		}
+		else
+		{
+			alignment = new ConstantValue((int)HorizontalAlignment::LEFT);
 		}
 		if (properties.count(PROPERTY_DROP_SHADOW) > 0)
 		{
@@ -90,6 +102,7 @@ namespace tggd::common
 		Utility::SafeDelete(y);
 		Utility::SafeDelete(dropShadowX);
 		Utility::SafeDelete(dropShadowY);
+		Utility::SafeDelete(alignment);
 	}
 
 
@@ -97,8 +110,8 @@ namespace tggd::common
 	{
 		if (hasDropShadow)
 		{
-			fontStore.Get(fontName->Get()).WriteText(renderer, XY<int>(x->Get() + dropShadowX->Get(), y->Get() + dropShadowY->Get()), text->Get(), dropShadowColor->Get());
+			fontStore.Get(fontName->Get()).WriteText(renderer, XY<int>(x->Get() + dropShadowX->Get(), y->Get() + dropShadowY->Get()), text->Get(), dropShadowColor->Get(), (HorizontalAlignment)alignment->Get());
 		}
-		fontStore.Get(fontName->Get()).WriteText(renderer, XY<int>(x->Get(), y->Get()), text->Get(), color->Get());
+		fontStore.Get(fontName->Get()).WriteText(renderer, XY<int>(x->Get(), y->Get()), text->Get(), color->Get(), (HorizontalAlignment)alignment->Get());
 	}
 }

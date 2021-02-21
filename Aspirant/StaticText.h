@@ -13,6 +13,7 @@ namespace tggd::common
 	private:
 		const tggd::common::IDataStore<SpriteFont>& fontStore;
 
+		IValue<int>* alignment;
 		IValue<std::string>* text;
 		IValue<std::string>* fontName;
 		IValue<std::string>* color;
@@ -32,7 +33,8 @@ namespace tggd::common
 			const std::string&,
 			bool,
 			const tggd::common::XY<int>&,
-			const std::string&
+			const std::string&,
+			const HorizontalAlignment&
 		);
 		StaticText
 		(
