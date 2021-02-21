@@ -2,7 +2,7 @@
 #include "Utility.h"
 namespace tggd::common
 {
-	void SpriteManager::AddSprite(const std::string& name, Sprite* sprite)
+	void SpriteManager::AddSprite(const std::string& name, const Sprite* sprite)
 	{
 		sprites[name] = sprite;
 	}
@@ -13,14 +13,10 @@ namespace tggd::common
 		finishManager.Add(this);
 	}
 
-	Sprite* SpriteManager::GetSprite(const std::string& name) const
+	const Sprite& SpriteManager::Get(const std::string& name) const
 	{
 		auto iter = sprites.find(name);
-		if (iter != sprites.end())
-		{
-			return iter->second;
-		}
-		return nullptr;
+		return *(iter->second);
 	}
 
 	const std::string PROPERTY_TEXTURE = "texture";

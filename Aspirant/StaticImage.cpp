@@ -45,11 +45,11 @@ namespace tggd::common
 	(
 		const IDataStore<std::string>& stringStore,
 		const IDataStore<int>& intStore,
-		const SpriteManager& spriteManager,
+		const IDataStore<Sprite>& spriteStore,
 		const ColorManager& colorManager,
 		const nlohmann::json& properties
 	)
-		: spriteManager(spriteManager)
+		: spriteStore(spriteStore)
 		, colorManager(colorManager)
 		, spriteName(LoadString(stringStore, properties[PROPERTY_SPRITE]))
 		, colorName(LoadString(stringStore, properties[PROPERTY_COLOR]))
@@ -61,13 +61,13 @@ namespace tggd::common
 
 	StaticImage::StaticImage
 	(
-		const SpriteManager& spriteManager,
+		const IDataStore<Sprite>& spriteManager,
 		const ColorManager& colorManager,
 		const std::string spriteName,
 		const std::string colorName,
 		XY<int> xy
 	)
-		: spriteManager(spriteManager)
+		: spriteStore(spriteStore)
 		, colorManager(colorManager)
 		, spriteName(new ConstantValue(spriteName))
 		, colorName(new ConstantValue(colorName))
@@ -87,11 +87,11 @@ namespace tggd::common
 
 	void StaticImage::Draw(SDL_Renderer* renderer) const
 	{
-		spriteManager.GetSprite
+		spriteStore.Get
 		(
 			spriteName->Get()
 		)
-			->Draw
+			.Draw
 			(
 				renderer,
 				XY<int>(x->Get(), y->Get()),

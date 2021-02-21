@@ -29,7 +29,11 @@ namespace tggd::common
 			const tggd::common::XY<int>&,
 			const std::string&
 		);
-		StaticText(const tggd::common::FontManager&, const nlohmann::json&);
+		StaticText
+		(
+			const tggd::common::FontManager&, 
+			const nlohmann::json&
+		);
 		void Draw(SDL_Renderer*) const;
 	};
 }

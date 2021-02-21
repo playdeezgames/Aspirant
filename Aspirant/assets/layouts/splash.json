@@ -3,8 +3,8 @@
         "type": "StaticImage",
         "sprite": "Splash",
         "color": "White",
-        "x": { "key": "Splash.Image.X" },
-        "y": { "key": "Splash.Image.Y" }
+        "x": 0,
+        "y": 0
     },
     {
         "type": "StaticText",

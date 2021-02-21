@@ -20,14 +20,10 @@ namespace tggd::common
 		}
 	}
 
-	tggd::common::Sprite* SpriteFont::GetGlyphSprite(char ch) const
+	const tggd::common::Sprite& SpriteFont::GetGlyphSprite(char ch) const
 	{
 		auto iter = glyphs.find(ch);
-		if (iter != glyphs.end())
-		{
-			return spriteManager.GetSprite(iter->second);
-		}
-		return nullptr;
+		return spriteManager.Get(iter->second);
 	}
 
 
@@ -35,13 +31,8 @@ namespace tggd::common
 	tggd::common::XY<int> SpriteFont::WriteGlyph(SDL_Renderer* renderer, const tggd::common::XY<int>& xy, char ch, const std::string& color) const
 	{
 		auto sprite = GetGlyphSprite(ch);
-		if (sprite)
-		{
-			sprite->Draw(renderer, xy, colorManager.GetDescriptor(color));
-			return XY(xy.GetX() + sprite->GetWidth(), xy.GetY());
-		}
-		return xy;
-
+		sprite.Draw(renderer, xy, colorManager.GetDescriptor(color));
+		return XY(xy.GetX() + sprite.GetWidth(), xy.GetY());
 	}
 
 	tggd::common::XY<int> SpriteFont::WriteText(SDL_Renderer* renderer, const tggd::common::XY<int>& xy, const std::string& text, const std::string& color) const
@@ -60,10 +51,7 @@ namespace tggd::common
 		for (auto ch : text)
 		{
 			auto sprite = GetGlyphSprite(ch);
-			if (sprite)
-			{
-				width += sprite->GetWidth();
-			}
+			width += sprite.GetWidth();
 		}
 		auto adjustedXY = tggd::common::XY<int>(xy.GetX() - width / 2, xy.GetY());
 		WriteText(renderer, adjustedXY, text, color);

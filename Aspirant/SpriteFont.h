@@ -12,7 +12,7 @@ namespace tggd::common
 		std::map<char, std::string> glyphs;
 		const SpriteManager& spriteManager;
 		const ColorManager& colorManager;
-		tggd::common::Sprite* GetGlyphSprite(char) const;
+		const tggd::common::Sprite& GetGlyphSprite(char) const;
 	public:
 		SpriteFont
 		(
