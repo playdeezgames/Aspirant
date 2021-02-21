@@ -1,10 +1,20 @@
+Finish Screens:
+    ☐ main menu
+Screens:
+    ☐ start game screen
+        new
+        continue
+        load
+    ☐ about
+    ☐ settings
+    ☐ confirm quit
 Features:
     ☐ An Overworld
         160 x 160
     ☐ gamepad support
     ☐ customize keyboard controls
 Controls:
-    ☐ menu item(tintable text)
+    ✔ menu item(tintable text) @done(21-02-21 05:44)
         needs to respond to a value stored elsewhere to determine which color it should be
         highlighted color
         non highlighted color

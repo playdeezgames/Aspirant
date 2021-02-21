@@ -13,8 +13,10 @@ namespace aspirant
 
 	bool MainMenuStateHandler::OnUpdate()
 	{
+		//TODO: magic strings
 		stringManager.Set("MainMenu.Color.Start", (currentItem == MainMenuItem::START) ? ("Cyan") : ("Gray"));
 		stringManager.Set("MainMenu.Color.About", (currentItem == MainMenuItem::ABOUT) ? ("Cyan") : ("Gray"));
+		stringManager.Set("MainMenu.Color.Options", (currentItem == MainMenuItem::OPTIONS) ? ("Cyan") : ("Gray"));
 		stringManager.Set("MainMenu.Color.Quit", (currentItem == MainMenuItem::QUIT) ? ("Cyan") : ("Gray"));
 		return true;
 	}
@@ -80,6 +82,9 @@ namespace aspirant
 			currentItem = MainMenuItem::ABOUT;
 			break;
 		case MainMenuItem::ABOUT:
+			currentItem = MainMenuItem::OPTIONS;
+			break;
+		case MainMenuItem::OPTIONS:
 			currentItem = MainMenuItem::QUIT;
 			break;
 		case MainMenuItem::QUIT:
@@ -98,8 +103,11 @@ namespace aspirant
 		case MainMenuItem::ABOUT:
 			currentItem = MainMenuItem::START;
 			break;
-		case MainMenuItem::QUIT:
+		case MainMenuItem::OPTIONS:
 			currentItem = MainMenuItem::ABOUT;
+			break;
+		case MainMenuItem::QUIT:
+			currentItem = MainMenuItem::OPTIONS;
 			break;
 		}
 	}

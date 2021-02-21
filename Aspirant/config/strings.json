@@ -1,5 +1,6 @@
 {
     "MainMenu.Color.Start": "Gray",
     "MainMenu.Color.About": "Gray",
+    "MainMenu.Color.Options": "Gray",
     "MainMenu.Color.Quit": "Gray"
 }

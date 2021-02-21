@@ -10,6 +10,7 @@ namespace aspirant
 	{
 		START,
 		ABOUT,
+		OPTIONS,
 		QUIT
 	};
 	class MainMenuStateHandler : public UIStateMessageHandler
