@@ -149,6 +149,9 @@
     <ClCompile Include="FlagManager.cpp">
       <Filter>Source Files\Data</Filter>
     </ClCompile>
+    <ClCompile Include="AboutStateHandler.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AspirantApplication.h">
@@ -276,6 +279,9 @@
     </ClInclude>
     <ClInclude Include="FlagManager.h">
       <Filter>Header Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="AboutStateHandler.h">
+      <Filter>Header Files\UI\States</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,4 +1,5 @@
 {
     "Splash":"assets/layouts/splash.json",
-    "MainMenu":"assets/layouts/mainMenu.json"
+    "MainMenu":"assets/layouts/mainMenu.json",
+    "About":"assets/layouts/about.json"
 }

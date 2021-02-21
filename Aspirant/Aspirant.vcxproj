@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AboutStateHandler.cpp" />
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="AspirantApplication.cpp" />
     <ClCompile Include="ColorManager.cpp" />
@@ -41,6 +42,7 @@
     <ClCompile Include="Utility.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AboutStateHandler.h" />
     <ClInclude Include="Application.h" />
     <ClInclude Include="AspirantApplication.h" />
     <ClInclude Include="BaseDescriptorManager.h" />

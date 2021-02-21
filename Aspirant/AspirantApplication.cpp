@@ -3,6 +3,7 @@
 #include "MEvent.h"
 #include "SplashStateHandler.h"
 #include "MainMenuStateHandler.h"
+#include "AboutStateHandler.h"
 #include "MCommand.h"
 #include "Utility.h"
 namespace aspirant
@@ -51,6 +52,7 @@ namespace aspirant
 
 		new SplashStateHandler(this, uiState, layoutManager);
 		new MainMenuStateHandler(this, uiState, layoutManager, stringManager);
+		new AboutStateHandler(this, uiState, layoutManager);
 	}
 
 	void AspirantApplication::Finish()

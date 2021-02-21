@@ -25,6 +25,7 @@ namespace aspirant
 		void NextMenuItem();
 		void PreviousMenuItem();
 		void ActivateMenuItem();
+		void UpdateMenuItemColorString(const std::string&, const MainMenuItem&);
 	protected:
 		bool OnMessage(const tggd::common::MGeneric*);
 	public:

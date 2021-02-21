@@ -6,6 +6,7 @@ namespace aspirant
 		Splash,
 		MainMenu,
 		ConfirmQuit,
-		Quit
+		Quit,
+		About
 	};
 }

@@ -2,8 +2,18 @@
 #include "MRender.h"
 #include "MUpdate.h"
 #include "MCommand.h"
+#include "MSetUIState.h"
 namespace aspirant
 {
+	const std::string MENU_ITEM_COLOR_ACTIVE = "Cyan";
+	const std::string MENU_ITEM_COLOR_INACTIVE = "Gray";
+	const std::string MENU_ITEM_START_COLOR_STRING = "MainMenu.Color.Start";
+	const std::string MENU_ITEM_ABOUT_COLOR_STRING = "MainMenu.Color.About";
+	const std::string MENU_ITEM_OPTIONS_COLOR_STRING = "MainMenu.Color.Options";
+	const std::string MENU_ITEM_QUIT_COLOR_STRING = "MainMenu.Color.Quit";
+	const std::string LAYOUT_NAME = "MainMenu";
+	const std::string ITCH_URL_STRING = "ItchURL";
+
 	bool MainMenuStateHandler::OnDraw(SDL_Renderer* renderer) const
 	{
 		SDL_RenderClear(renderer);
@@ -11,13 +21,23 @@ namespace aspirant
 		return true;
 	}
 
+	void MainMenuStateHandler::UpdateMenuItemColorString(const std::string& stringName, const MainMenuItem& menuItem)
+	{
+		stringManager.Set
+		(
+			stringName, 
+			(currentItem == menuItem) ? (MENU_ITEM_COLOR_ACTIVE) : 
+			(MENU_ITEM_COLOR_INACTIVE)
+		);
+	}
+
+
 	bool MainMenuStateHandler::OnUpdate()
 	{
-		//TODO: magic strings
-		stringManager.Set("MainMenu.Color.Start", (currentItem == MainMenuItem::START) ? ("Cyan") : ("Gray"));
-		stringManager.Set("MainMenu.Color.About", (currentItem == MainMenuItem::ABOUT) ? ("Cyan") : ("Gray"));
-		stringManager.Set("MainMenu.Color.Options", (currentItem == MainMenuItem::OPTIONS) ? ("Cyan") : ("Gray"));
-		stringManager.Set("MainMenu.Color.Quit", (currentItem == MainMenuItem::QUIT) ? ("Cyan") : ("Gray"));
+		UpdateMenuItemColorString(MENU_ITEM_START_COLOR_STRING, MainMenuItem::START);
+		UpdateMenuItemColorString(MENU_ITEM_ABOUT_COLOR_STRING, MainMenuItem::ABOUT);
+		UpdateMenuItemColorString(MENU_ITEM_OPTIONS_COLOR_STRING, MainMenuItem::OPTIONS);
+		UpdateMenuItemColorString(MENU_ITEM_QUIT_COLOR_STRING, MainMenuItem::QUIT);
 		return true;
 	}
 
@@ -39,7 +59,6 @@ namespace aspirant
 		return false;
 	}
 
-	const std::string LAYOUT_NAME = "MainMenu";
 
 	MainMenuStateHandler::MainMenuStateHandler
 	(
@@ -114,7 +133,13 @@ namespace aspirant
 
 	void MainMenuStateHandler::ActivateMenuItem()
 	{
-
+		switch (currentItem)
+		{
+		case MainMenuItem::ABOUT:
+			SDL_SetClipboardText(stringManager.Get(ITCH_URL_STRING).c_str());
+			Handle(MSetUIState(UIState::About));
+			return;
+		}
 	}
 
 }
