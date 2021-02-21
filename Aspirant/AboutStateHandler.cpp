@@ -13,7 +13,7 @@ namespace aspirant
 		const UIState& currentState,
 		tggd::common::LayoutManager& layoutManager
 	)
-		: UIStateMessageHandler(parent, currentState, UIState::About)
+		: UIStateMessageHandler(parent, currentState, UIState::ABOUT)
 		, layout(layoutManager.GetDescriptor(LAYOUT_NAME))
 	{
 	}
@@ -32,7 +32,7 @@ namespace aspirant
 		case Command::RED:
 		case Command::BACK:
 		case Command::START:
-			Handle(MSetUIState(UIState::MainMenu));
+			Handle(MSetUIState(UIState::MAIN_MENU));
 			break;
 		}
 		return true;

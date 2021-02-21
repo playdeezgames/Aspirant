@@ -62,7 +62,7 @@ namespace aspirant
 		const tggd::common::LayoutManager& layoutManager,
 		tggd::common::StringManager& stringManager
 	)
-		: UIStateMessageHandler(parent, currentState, UIState::ConfirmQuit)
+		: UIStateMessageHandler(parent, currentState, UIState::CONFIRM_QUIT)
 		, layout(layoutManager.GetDescriptor(LAYOUT_NAME))
 		, stringManager(stringManager)
 		, currentItem(ConfirmQuitItem::NO)
@@ -104,10 +104,10 @@ namespace aspirant
 		switch (currentItem)
 		{
 		case ConfirmQuitItem::NO:
-			Handle(MSetUIState(UIState::MainMenu));
+			Handle(MSetUIState(UIState::MAIN_MENU));
 			return;
 		case ConfirmQuitItem::YES:
-			Handle(MSetUIState(UIState::Quit));
+			Handle(MSetUIState(UIState::QUIT));
 			return;
 		}
 	}

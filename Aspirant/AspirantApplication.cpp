@@ -30,14 +30,14 @@ namespace aspirant
 		, intManager()
 		, flagManager()
 		, layoutManager(finishManager, spriteManager, colorManager, fontManager, stringManager, intManager, flagManager)
-		, uiState(UIState::Splash)
+		, uiState(UIState::SPLASH)
 	{
 
 	}
 
 	bool AspirantApplication::IsRunning() const
 	{
-		return uiState!=UIState::Quit;
+		return uiState!=UIState::QUIT;
 	}
 
 	void AspirantApplication::Start(SDL_Renderer* renderer)
@@ -118,7 +118,7 @@ namespace aspirant
 	{
 		if (evt.type == SDL_QUIT)
 		{
-			uiState = UIState::Quit;
+			uiState = UIState::QUIT;
 		}
 		else if (evt.type == SDL_KEYDOWN)
 		{

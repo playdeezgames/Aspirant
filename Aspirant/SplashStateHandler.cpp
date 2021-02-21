@@ -15,7 +15,7 @@ namespace aspirant
 		const UIState& currentState,
 		tggd::common::LayoutManager& layoutManager
 	)
-		: UIStateMessageHandler(parent, currentState, UIState::Splash)
+		: UIStateMessageHandler(parent, currentState, UIState::SPLASH)
 		, ticksLeft(TICKS_LEFT)
 		, layout(layoutManager.GetDescriptor(LAYOUT_NAME))
 	{
@@ -26,7 +26,7 @@ namespace aspirant
 		ticksLeft = (ticksLeft > milliseconds) ? (ticksLeft - milliseconds) : (0);
 		if (ticksLeft == 0)
 		{
-			Handle(MSetUIState(UIState::MainMenu));
+			Handle(MSetUIState(UIState::MAIN_MENU));
 			ticksLeft = TICKS_LEFT;
 		}
 		return true;

@@ -3,10 +3,11 @@ namespace aspirant
 {
 	enum class UIState
 	{
-		Splash,
-		MainMenu,
-		ConfirmQuit,
-		Quit,
-		About
+		SPLASH,
+		MAIN_MENU,
+		CONFIRM_QUIT,
+		QUIT,
+		ABOUT,
+		OPTIONS
 	};
 }

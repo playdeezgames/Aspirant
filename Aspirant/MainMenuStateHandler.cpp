@@ -67,7 +67,7 @@ namespace aspirant
 		const tggd::common::LayoutManager& layoutManager,
 		tggd::common::StringManager& stringManager
 	)
-		: UIStateMessageHandler(parent, currentState, UIState::MainMenu)
+		: UIStateMessageHandler(parent, currentState, UIState::MAIN_MENU)
 		, layout(layoutManager.GetDescriptor(LAYOUT_NAME))
 		, stringManager(stringManager)
 		, currentItem(MainMenuItem::START)
@@ -137,10 +137,10 @@ namespace aspirant
 		{
 		case MainMenuItem::ABOUT:
 			SDL_SetClipboardText(stringManager.Get(ITCH_URL_STRING).c_str());
-			Handle(MSetUIState(UIState::About));
+			Handle(MSetUIState(UIState::ABOUT));
 			return;
 		case MainMenuItem::QUIT:
-			Handle(MSetUIState(UIState::ConfirmQuit));
+			Handle(MSetUIState(UIState::CONFIRM_QUIT));
 			return;
 		}
 	}
