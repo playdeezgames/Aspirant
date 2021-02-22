@@ -5,10 +5,10 @@
 #include "MSetUIState.h"
 namespace aspirant
 {
-	const std::string MENU_ITEM_COLOR_ACTIVE = "Cyan";//DUPLICATED
-	const std::string MENU_ITEM_COLOR_INACTIVE = "Gray";//DUPLICATED
-	const std::string MENU_ITEM_NO_COLOR_STRING = "ConfirmQuit.Color.No";
-	const std::string MENU_ITEM_YES_COLOR_STRING = "ConfirmQuit.Color.Yes";
+	const std::string CONFIRM_ITEM_COLOR_ACTIVE = "Cyan";//DUPLICATED
+	const std::string CONFIRM_ITEM_COLOR_INACTIVE = "Gray";//DUPLICATED
+	const std::string CONFIRM_ITEM_NO_COLOR_STRING = "ConfirmQuit.Color.No";
+	const std::string CONFIRM_ITEM_YES_COLOR_STRING = "ConfirmQuit.Color.Yes";
 	const std::string LAYOUT_NAME = "ConfirmQuit";
 
 	bool ConfirmQuitStateHandler::OnDraw(SDL_Renderer* renderer) const
@@ -23,16 +23,16 @@ namespace aspirant
 		stringManager.Set
 		(
 			stringName,
-			(currentItem == menuItem) ? (MENU_ITEM_COLOR_ACTIVE) :
-			(MENU_ITEM_COLOR_INACTIVE)
+			(currentItem == menuItem) ? (CONFIRM_ITEM_COLOR_ACTIVE) :
+			(CONFIRM_ITEM_COLOR_INACTIVE)
 		);
 	}
 
 
 	bool ConfirmQuitStateHandler::OnUpdate()
 	{
-		UpdateMenuItemColorString(MENU_ITEM_NO_COLOR_STRING, ConfirmQuitItem::NO);
-		UpdateMenuItemColorString(MENU_ITEM_YES_COLOR_STRING, ConfirmQuitItem::YES);
+		UpdateMenuItemColorString(CONFIRM_ITEM_NO_COLOR_STRING, ConfirmQuitItem::NO);
+		UpdateMenuItemColorString(CONFIRM_ITEM_YES_COLOR_STRING, ConfirmQuitItem::YES);
 		return true;
 	}
 
