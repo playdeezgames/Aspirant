@@ -57,5 +57,18 @@
         "dropShadowColor": "Black",
         "dropShadowX": 2,
         "dropShadowY": 2
+    },
+    {
+        "type": "StaticText",
+        "font": "default",
+        "color": { "key": "Options.Color.Back" },
+        "text": "Back",
+        "x": 320,
+        "y": 80,
+        "horizontalAlignment": 0,
+        "dropShadow": true,
+        "dropShadowColor": "Black",
+        "dropShadowX": 2,
+        "dropShadowY": 2
     }
 ]

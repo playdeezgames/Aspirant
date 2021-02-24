@@ -2,7 +2,9 @@
 #include "MRender.h"
 #include "MSetUIState.h"
 #include "MCommand.h"
+#include "MUpdate.h"
 #include "Utility.h"
+#include <sstream>
 namespace aspirant
 {
 	const std::string LAYOUT_NAME = "Options";
@@ -25,9 +27,33 @@ namespace aspirant
 	{
 	}
 
+	const std::string TOGGLE_MUTE_STRING_NAME = "Options.Text.ToggleMute";
+	const std::string SFX_VOLUME_STRING_NAME = "Options.Text.SfxVolume";
+	const std::string MUX_VOLUME_STRING_NAME = "Options.Text.MuxVolume";
+	const std::string MUTE = "Mute";
+	const std::string UNMUTE = "Unmute";
+
 	bool OptionsStateHandler::OnUpdate()
 	{
-		return true;
+		//text for toggle mute
+		if (soundManager.IsMuted())
+		{
+			stringManager.Set(TOGGLE_MUTE_STRING_NAME, UNMUTE);
+		}
+		else
+		{
+			stringManager.Set(TOGGLE_MUTE_STRING_NAME, MUTE);
+		}
+		std::stringstream ss;
+		//text for sfx volume
+		ss << "SFX Volume (" << soundManager.GetSfxVolume() << "%)";
+		stringManager.Set(SFX_VOLUME_STRING_NAME, ss.str());
+
+		//text for mux volume
+		ss.str("");
+		ss << "MUX Volume (" << soundManager.GetMuxVolume() << "%)";
+		stringManager.Set(MUX_VOLUME_STRING_NAME, ss.str());
+		return false;
 	}
 
 	bool OptionsStateHandler::OnDraw(SDL_Renderer* renderer) const
@@ -69,6 +95,10 @@ namespace aspirant
 		if (message->GetId() == tggd::common::MRender::MSGID_Draw)
 		{
 			return OnDraw(static_cast<const tggd::common::MRender*>(message)->GetRenderer());
+		}
+		else if (message->GetId() == tggd::common::MUpdate::MSGID_Update)
+		{
+			return OnUpdate();
 		}
 		else if (message->GetId() == MCommand::MSGID_Command)
 		{

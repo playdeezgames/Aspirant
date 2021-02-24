@@ -10,18 +10,18 @@
 #include "Utility.h"
 namespace aspirant
 {
-	const std::string APPLICATION_CONFIG_FILE = "config/application.json";
-	const std::string TEXTURE_CONFIG_FILE = "config/textures.json";
-	const std::string SPRITE_CONFIG_FILE = "config/sprites.json";
-	const std::string COLOR_CONFIG_FILE = "config/colors.json";
-	const std::string FONTS_CONFIG_FILE = "config/fonts.json";
-	const std::string LAYOUTS_CONFIG_FILE = "config/layouts.json";
-	const std::string STRINGS_CONFIG_FILE = "config/strings.json";
-	const std::string INTS_CONFIG_FILE = "config/ints.json";
-	const std::string FLAGS_CONFIG_FILE = "config/flags.json";
+	const std::string APPLICATION_CONFIG_FILE = "config/ui/application.json";
+	const std::string TEXTURE_CONFIG_FILE = "config/graphics/textures.json";
+	const std::string SPRITE_CONFIG_FILE = "config/graphics/sprites.json";
+	const std::string COLOR_CONFIG_FILE = "config/graphics/colors.json";
+	const std::string FONTS_CONFIG_FILE = "config/graphics/fonts.json";
+	const std::string LAYOUTS_CONFIG_FILE = "config/ui/layouts.json";
+	const std::string STRINGS_CONFIG_FILE = "config/data/strings.json";
+	const std::string INTS_CONFIG_FILE = "config/data/ints.json";
+	const std::string FLAGS_CONFIG_FILE = "config/data/flags.json";
 	const std::string OPTIONS_CONFIG_FILE = "config/options.json";
-	const std::string SFX_CONFIG_FILE = "config/sfx.json";
-	const std::string MUX_CONFIG_FILE = "config/mux.json";
+	const std::string SFX_CONFIG_FILE = "config/audio/sfx.json";
+	const std::string MUX_CONFIG_FILE = "config/audio/mux.json";
 
 	AspirantApplication::AspirantApplication()
 		: tggd::common::Application(APPLICATION_CONFIG_FILE)

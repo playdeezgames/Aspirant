@@ -1,0 +1,16 @@
+{
+    "MainMenu.Color.Start": "Gray",
+    "MainMenu.Color.About": "Gray",
+    "MainMenu.Color.Options": "Gray",
+    "MainMenu.Color.Quit": "Gray",
+    "ItchURL": "https://thegrumpygamedev.itch.io/",
+    "ConfirmQuit.Color.No": "Gray",
+    "ConfirmQuit.Color.Yes": "Gray",
+    "Options.Color.ToggleMute": "Gray",
+    "Options.Text.ToggleMute": "Toggle Mute",
+    "Options.Color.SfxVolume": "Gray",
+    "Options.Text.SfxVolume": "Sfx Volume",
+    "Options.Color.MuxVolume": "Gray",
+    "Options.Text.MuxVolume": "Mux Volume",
+    "Options.Color.Back": "Gray"
+}
