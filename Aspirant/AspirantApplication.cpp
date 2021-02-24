@@ -5,6 +5,7 @@
 #include "MainMenuStateHandler.h"
 #include "AboutStateHandler.h"
 #include "ConfirmQuitStateHandler.h"
+#include "OptionsStateHandler.h"
 #include "MCommand.h"
 #include "Utility.h"
 namespace aspirant
@@ -18,6 +19,9 @@ namespace aspirant
 	const std::string STRINGS_CONFIG_FILE = "config/strings.json";
 	const std::string INTS_CONFIG_FILE = "config/ints.json";
 	const std::string FLAGS_CONFIG_FILE = "config/flags.json";
+	const std::string OPTIONS_CONFIG_FILE = "config/options.json";
+	const std::string SFX_CONFIG_FILE = "config/sfx.json";
+	const std::string MUX_CONFIG_FILE = "config/mux.json";
 
 	AspirantApplication::AspirantApplication()
 		: tggd::common::Application(APPLICATION_CONFIG_FILE)
@@ -29,6 +33,8 @@ namespace aspirant
 		, stringManager()
 		, intManager()
 		, flagManager()
+		, soundManager(finishManager)
+		, optionsManager(soundManager, OPTIONS_CONFIG_FILE)
 		, layoutManager(finishManager, spriteManager, colorManager, fontManager, stringManager, intManager, flagManager)
 		, uiState(UIState::SPLASH)
 	{
@@ -50,11 +56,14 @@ namespace aspirant
 		spriteManager.Start(textureManager, SPRITE_CONFIG_FILE);
 		fontManager.Start(FONTS_CONFIG_FILE);
 		layoutManager.Start(LAYOUTS_CONFIG_FILE);
+		soundManager.Start(SFX_CONFIG_FILE, MUX_CONFIG_FILE);
+		optionsManager.Start();
 
 		new SplashStateHandler(this, uiState, layoutManager);
 		new MainMenuStateHandler(this, uiState, layoutManager, stringManager);
 		new AboutStateHandler(this, uiState, layoutManager);
 		new ConfirmQuitStateHandler(this, uiState, layoutManager, stringManager);
+		new OptionsStateHandler(this, uiState, layoutManager, soundManager, optionsManager, stringManager);
 	}
 
 	void AspirantApplication::Finish()

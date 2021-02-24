@@ -1,18 +1,21 @@
 Finish Screens:
     ☐ main menu
 Screens:
-    ☐ start game screen
+    ☐ Start Game Screen
         new
         continue
         load
-    ✔ about @done(21-02-21 06:28)
-    ☐ settings
-    ☐ confirm quit
+    ✔ About @done(21-02-21 06:28)
+    ☐ Settings
+    ☐ Confirm Quit
 Features:
     ☐ An Overworld
         160 x 160
-    ☐ gamepad support
-    ☐ customize keyboard controls
+    ☐ Gamepad Support
+    ☐ Customize Keyboard Controls
+    ☐ Open Help File From Main Menu
+Whimsy:
+    ☐ VR/AR
 Controls:
     ✔ menu item(tintable text) @done(21-02-21 05:44)
         needs to respond to a value stored elsewhere to determine which color it should be

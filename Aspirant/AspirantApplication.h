@@ -10,6 +10,8 @@
 #include "StringManager.h"
 #include "IntManager.h"
 #include "FlagManager.h"
+#include "SoundManager.h"
+#include "OptionsManager.h"
 namespace aspirant
 {
 	class AspirantApplication : public tggd::common::Application
@@ -25,6 +27,8 @@ namespace aspirant
 		tggd::common::StringManager stringManager;
 		tggd::common::IntManager intManager;
 		tggd::common::FlagManager flagManager;
+		tggd::common::SoundManager soundManager;
+		OptionsManager optionsManager;
 		bool OnSetUIState(const UIState&);
 		bool OnKeyDown(const SDL_KeyboardEvent&);
 		bool OnSdlEvent(const SDL_Event&);

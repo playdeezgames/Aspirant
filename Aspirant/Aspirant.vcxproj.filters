@@ -87,6 +87,12 @@
     <Filter Include="Source Files\Data">
       <UniqueIdentifier>{98359875-23b7-409a-a5e6-eef250c696b2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Audio">
+      <UniqueIdentifier>{331954c3-726c-4dfe-b4ee-fc0ad8228a1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Audio">
+      <UniqueIdentifier>{e81852bd-cb4d-43de-b275-e79eb50c5a3e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AspirantApplication.cpp">
@@ -154,6 +160,15 @@
     </ClCompile>
     <ClCompile Include="ConfirmQuitStateHandler.cpp">
       <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="OptionsStateHandler.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundManager.cpp">
+      <Filter>Source Files\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="OptionsManager.cpp">
+      <Filter>Source Files\Data</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -288,6 +303,15 @@
     </ClInclude>
     <ClInclude Include="ConfirmQuitStateHandler.h">
       <Filter>Header Files\UI\States</Filter>
+    </ClInclude>
+    <ClInclude Include="OptionsStateHandler.h">
+      <Filter>Header Files\UI\States</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundManager.h">
+      <Filter>Header Files\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="OptionsManager.h">
+      <Filter>Header Files\Data</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

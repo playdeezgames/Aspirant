@@ -139,7 +139,7 @@ namespace aspirant
 			//TODO: go to start game screen
 			return;
 		case MainMenuItem::OPTIONS:
-			//TODO: go to options screen
+			Handle(MSetUIState(UIState::OPTIONS));
 			return;
 		case MainMenuItem::ABOUT:
 			SDL_SetClipboardText(stringManager.Get(ITCH_URL_STRING).c_str());

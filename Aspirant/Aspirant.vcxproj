@@ -31,6 +31,9 @@
     <ClCompile Include="Layout.cpp" />
     <ClCompile Include="LayoutManager.cpp" />
     <ClCompile Include="MainMenuStateHandler.cpp" />
+    <ClCompile Include="OptionsManager.cpp" />
+    <ClCompile Include="OptionsStateHandler.cpp" />
+    <ClCompile Include="SoundManager.cpp" />
     <ClCompile Include="StaticImage.cpp" />
     <ClCompile Include="StaticText.cpp" />
     <ClCompile Include="main.cpp" />
@@ -66,9 +69,12 @@
     <ClInclude Include="MainMenuStateHandler.h" />
     <ClInclude Include="MCommand.h" />
     <ClInclude Include="MUpdate.h" />
+    <ClInclude Include="OptionsManager.h" />
+    <ClInclude Include="OptionsStateHandler.h" />
     <ClInclude Include="Room.h" />
     <ClInclude Include="RoomCell.h" />
     <ClInclude Include="RoomCellObject.h" />
+    <ClInclude Include="SoundManager.h" />
     <ClInclude Include="StaticText.h" />
     <ClInclude Include="MessageHandler.h" />
     <ClInclude Include="MEvent.h" />
