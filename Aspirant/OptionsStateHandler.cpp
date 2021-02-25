@@ -27,6 +27,12 @@ namespace aspirant
 	{
 	}
 
+	const std::string OPTION_ITEM_COLOR_ACTIVE = "Cyan";//DUPLICATED
+	const std::string OPTION_ITEM_COLOR_INACTIVE = "Gray";//DUPLICATED
+	const std::string OPTION_ITEM_TOGGLE_MUTE_COLOR_STRING = "Options.Color.ToggleMute";
+	const std::string OPTION_ITEM_SFX_VOLUME_COLOR_STRING = "Options.Color.SfxVolume";
+	const std::string OPTION_ITEM_MUX_VOLUME_COLOR_STRING = "Options.Color.MuxVolume";
+	const std::string OPTION_ITEM_BACK_COLOR_STRING = "Options.Color.Back";
 	const std::string TOGGLE_MUTE_STRING_NAME = "Options.Text.ToggleMute";
 	const std::string SFX_VOLUME_STRING_NAME = "Options.Text.SfxVolume";
 	const std::string MUX_VOLUME_STRING_NAME = "Options.Text.MuxVolume";
@@ -35,6 +41,7 @@ namespace aspirant
 
 	bool OptionsStateHandler::OnUpdate()
 	{
+
 		//text for toggle mute
 		if (soundManager.IsMuted())
 		{
@@ -46,13 +53,19 @@ namespace aspirant
 		}
 		std::stringstream ss;
 		//text for sfx volume
-		ss << "SFX Volume (" << soundManager.GetSfxVolume() << "%)";
+		ss << "SFX Volume (" << tggd::common::Utility::ToPercentage(soundManager.GetSfxVolume(), MIX_MAX_VOLUME) << "%)";
 		stringManager.Set(SFX_VOLUME_STRING_NAME, ss.str());
 
 		//text for mux volume
 		ss.str("");
-		ss << "MUX Volume (" << soundManager.GetMuxVolume() << "%)";
+		ss << "MUX Volume (" << tggd::common::Utility::ToPercentage(soundManager.GetMuxVolume(), MIX_MAX_VOLUME) << "%)";
 		stringManager.Set(MUX_VOLUME_STRING_NAME, ss.str());
+
+		UpdateMenuItemColorString(OPTION_ITEM_TOGGLE_MUTE_COLOR_STRING, OptionsItem::TOGGLE_MUTE);
+		UpdateMenuItemColorString(OPTION_ITEM_SFX_VOLUME_COLOR_STRING, OptionsItem::SFX_VOLUME);
+		UpdateMenuItemColorString(OPTION_ITEM_MUX_VOLUME_COLOR_STRING, OptionsItem::MUX_VOLUME);
+		UpdateMenuItemColorString(OPTION_ITEM_BACK_COLOR_STRING, OptionsItem::BACK);
+
 		return false;
 	}
 
@@ -90,6 +103,19 @@ namespace aspirant
 		return true;
 	}
 
+
+
+	void OptionsStateHandler::UpdateMenuItemColorString(const std::string& stringName, const OptionsItem& optionsItem)
+	{
+		stringManager.Set
+		(
+			stringName,
+			(optionsItem == menuItem) ? (OPTION_ITEM_COLOR_ACTIVE) :
+			(OPTION_ITEM_COLOR_INACTIVE)
+		);
+	}
+
+
 	bool OptionsStateHandler::OnMessage(const tggd::common::MGeneric* message)
 	{
 		if (message->GetId() == tggd::common::MRender::MSGID_Draw)
@@ -109,25 +135,97 @@ namespace aspirant
 
 	void OptionsStateHandler::NextItem()
 	{
+		switch (menuItem)
+		{
+		case OptionsItem::TOGGLE_MUTE:
+			menuItem = OptionsItem::SFX_VOLUME;
+			break;
+		case OptionsItem::SFX_VOLUME:
+			menuItem = OptionsItem::MUX_VOLUME;
+			break;
+		case OptionsItem::MUX_VOLUME:
+			menuItem = OptionsItem::BACK;
+			break;
+		case OptionsItem::BACK:
+			menuItem = OptionsItem::TOGGLE_MUTE;
+			break;
+		}
 	}
 
 	void OptionsStateHandler::PreviousItem()
 	{
-
+		switch (menuItem)
+		{
+		case OptionsItem::TOGGLE_MUTE:
+			menuItem = OptionsItem::BACK;
+			break;
+		case OptionsItem::SFX_VOLUME:
+			menuItem = OptionsItem::TOGGLE_MUTE;
+			break;
+		case OptionsItem::MUX_VOLUME:
+			menuItem = OptionsItem::SFX_VOLUME;
+			break;
+		case OptionsItem::BACK:
+			menuItem = OptionsItem::MUX_VOLUME;
+			break;
+		}
 	}
+
+	const int VOLUME_DELTA = 8;
 
 	void OptionsStateHandler::IncreaseItem()
 	{
-
+		switch (menuItem)
+		{
+		case OptionsItem::SFX_VOLUME:
+			AdjustSfxVolume(VOLUME_DELTA);
+			break;
+		case OptionsItem::MUX_VOLUME:
+			AdjustMuxVolume(VOLUME_DELTA);
+			break;
+		}
 	}
 
 	void OptionsStateHandler::DecreaseItem()
 	{
-
+		switch (menuItem)
+		{
+		case OptionsItem::SFX_VOLUME:
+			AdjustSfxVolume(-VOLUME_DELTA);
+			break;
+		case OptionsItem::MUX_VOLUME:
+			AdjustMuxVolume(-VOLUME_DELTA);
+			break;
+		}
 	}
 
 	void OptionsStateHandler::ActivateItem()
 	{
-
+		switch (menuItem)
+		{
+		case OptionsItem::TOGGLE_MUTE:
+			soundManager.SetMuted(!soundManager.IsMuted());
+			optionsManager.Save();
+			break;
+		case OptionsItem::BACK:
+			Handle(MSetUIState(UIState::MAIN_MENU));
+			break;
+		}
 	}
+
+	const std::string SFX_SAMPLE_NAME = "woohoo";
+
+	void OptionsStateHandler::AdjustSfxVolume(int delta)
+	{
+		soundManager.SetSfxVolume(soundManager.GetSfxVolume() + delta);
+		soundManager.PlaySound(SFX_SAMPLE_NAME);
+		optionsManager.Save();
+	}
+
+	void OptionsStateHandler::AdjustMuxVolume(int delta)
+	{
+		soundManager.SetMuxVolume(soundManager.GetMuxVolume() + delta);//TODO: magic number
+		optionsManager.Save();
+	}
+
 }

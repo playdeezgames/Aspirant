@@ -106,5 +106,9 @@ namespace tggd::common
 		}
 	}
 
+	int Utility::ToPercentage(int value, int maximum)
+	{
+		return value * 100 / maximum;
+	}
 }
 

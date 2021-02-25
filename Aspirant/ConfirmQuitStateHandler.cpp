@@ -80,6 +80,10 @@ namespace aspirant
 		case Command::DOWN:
 			NextMenuItem();
 			break;
+		case Command::BACK:
+		case Command::RED:
+			Handle(MSetUIState(UIState::MAIN_MENU));
+			break;
 		case Command::GREEN:
 		case Command::START:
 			ActivateMenuItem();
