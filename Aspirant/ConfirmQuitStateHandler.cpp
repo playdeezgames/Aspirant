@@ -99,7 +99,7 @@ namespace aspirant
 
 	void ConfirmQuitStateHandler::PreviousMenuItem()
 	{
-		//DOES THE SAME THING!
+		//DOES THE SAME THING as next menu item, because there are only two!
 		NextMenuItem();
 	}
 
