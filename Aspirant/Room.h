@@ -3,15 +3,15 @@
 #include "RoomCell.h"
 namespace tggd::common
 {
-	template<typename TTerrain, typename TObjectData, typename TCellFlags>
+	template<typename TObjectData, typename TCellFlags>
 	class Room
 	{
 	private:
 		size_t columns;
 		size_t rows;
-		std::vector<RoomCell<TTerrain, TObjectData, TCellFlags>*> cells;
+		std::vector<RoomCell<TObjectData, TCellFlags>*> cells;
 	public:
-		Room(size_t columns, size_t rows, const TTerrain& terrain)
+		Room(size_t columns, size_t rows)
 			: columns(columns)
 			, rows(rows)
 			, cells()
@@ -20,7 +20,7 @@ namespace tggd::common
 			{
 				for (size_t column = 0; column < columns; ++column)
 				{
-					cells.push_back(new RoomCell<TTerrain, TObjectData, TCellFlags>(column, row, terrain));
+					cells.push_back(new RoomCell<TObjectData, TCellFlags>(column, row));
 				}
 			}
 		}
@@ -35,7 +35,7 @@ namespace tggd::common
 				}
 			}
 		}
-		const RoomCell<TTerrain, TObjectData, TCellFlags>* GetCell(size_t column, size_t row) const
+		const RoomCell<TObjectData, TCellFlags>* GetCell(size_t column, size_t row) const
 		{
 			if (column < columns && row < rows)
 			{
@@ -43,7 +43,7 @@ namespace tggd::common
 			}
 			return nullptr;
 		}
-		RoomCell<TTerrain, TObjectData, TCellFlags>* GetCell(size_t column, size_t row)
+		RoomCell<TObjectData, TCellFlags>* GetCell(size_t column, size_t row)
 		{
 			if (column < columns && row < rows)
 			{

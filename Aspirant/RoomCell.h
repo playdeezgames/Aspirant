@@ -1,50 +1,81 @@
 #pragma once
 #include "RoomCellObject.h"
 #include <set>
+#include <stack>
 #include "Utility.h"
 namespace tggd::common
 {
-	template<typename TTerrain, typename TObjectData, typename TCellFlags>
+	template<typename TObjectData, typename TCellFlags>
 	class RoomCell
 	{
 	private:
-		TTerrain terrain;
-		RoomCellObject<TTerrain, TObjectData, TCellFlags>* object;
+		static const std::string PROPERTY_CELL_FLAGS = "cellFlags";
+		static const std::string PROPERTY_OBJECTS = "objects";
+		std::stack<RoomCellObject<TObjectData, TCellFlags>*> objects;
 		size_t column;
 		size_t row;
 		std::set<TCellFlags> cellFlags;
+		void ClearObjects()
+		{
+			while (HasObjects())
+			{
+				auto object = RemoveObject();
+				Utility::SafeDelete(object);
+			}
+		}
+	protected:
+		virtual nlohmann::json CellFlagToJSON(const TCellFlag&) = 0;
+		virtual TCellFlag CellFlagFromJSON(const nlohmann::json&) = 0;
+		virtual RoomCellObject<TObjectData, TCellFlags>* ObjectFromJSON(const nlohmann::json&) = 0;
 	public:
-		RoomCell(size_t column, size_t row, const TTerrain& terrain)
-			: terrain(terrain)
-			, object(nullptr)
+		RoomCell(size_t column, size_t row)
+			: objects()
 			, column(column)
 			, row(row)
 			, cellFlags()
 		{}
+		void FromJSON(const nlohmann::json& properties)
+		{
+			ClearObjects();
+			cellFlags.clear();
+			const auto& cellFlagsProperty = properties[PROPERTY_CELL_FLAGS];
+			for (auto& cellFlag : cellFlagsProperty)
+			{
+				SetFlag(CellFlagFromJSON(cellFlag));
+			}
+			const auto& objectsProperty = properties[PROPERTY_OBJECTS];
+			for (auto& object : objectsProperty)
+			{
+				AddObject(ObjectFromJSON(object));
+			}
+		}
 		~RoomCell()
 		{
-			if (object)
-			{
-				Utility::SafeDelete(object);
-			}
+			ClearObjects();
 		}
-		const TTerrain& GetTerrain() const { return terrain; }
-		void SetTerrain(const TTerrain& newTerrain) { terrain = newTerrain; }
-		void SetObject(RoomCellObject<TTerrain, TObjectData, TCellFlags>* newCreature)
+		bool AddObject(RoomCellObject<TObjectData, TCellFlags>* newObject)
 		{
-			if (object)
+			if (newObject && newObject->CanCover(GetObject()))
 			{
-				object->roomCell = nullptr;
+				newObject->roomCell = this;
+				objects.push(newObject);
+				return true;
 			}
-			object = newCreature;
-			if (object)
-			{
-				object->roomCell = this;
-			}
+			return false;
 		}
-		const RoomCellObject<TTerrain, TObjectData, TCellFlags>* GetObject() const { return object; }
-		RoomCellObject<TTerrain, TObjectData, TCellFlags>* GetObject() { return object; }
-		bool HasObject() const { return object != nullptr; }
+		const RoomCellObject<TObjectData, TCellFlags>* GetObject() const 
+		{ 
+			return 
+				(objects.empty()) ? (nullptr) :
+				(objects.top()); 
+		}
+		RoomCellObject<TObjectData, TCellFlags>* GetObject() 
+		{ 
+			return
+				(objects.empty()) ? (nullptr) :
+				(objects.top());
+		}
+		bool HasObjects() const { return !objects.empty() }
 		size_t GetColumn() const { return column; }
 		size_t GetRow() const { return row; }
 		void SetFlag(const TCellFlags& flag)
@@ -59,17 +90,34 @@ namespace tggd::common
 		{
 			return cellFlags.contains(flag);
 		}
-		void RemoveObject()
+		RoomCellObject<TObjectData, TCellFlags>* RemoveObject()
 		{
-			if (object)
+			if (!objects.empty())
 			{
-				SetObject(nullptr);
-				delete object;
+				return objects.pop();
 			}
+			return nullptr;
 		}
 		void ClearAllFlags()
 		{
 			cellFlags.clear();
+		}
+		nlohmann::json ToJSON() const
+		{
+			nlohmann::json properties;
+			//cell flags
+			properties[PROPERTY_CELL_FLAGS] = nlohmann::json(nlohmann::detail::value_t::array);
+			for (auto& cellFlag : cellFlags)
+			{
+				properties[PROPERTY_CELL_FLAGS].push_back(CellFlagToJSON(cellFlag));
+			}
+			//objects
+			properties[PROPERTY_OBJECTS] = nlohmann::json(nlohmann::detail::value_t::array);
+			for (auto object : objects)
+			{
+				properties[PROPERTY_OBJECTS].push_back(object->ToJSON());
+			}
+			return properties;
 		}
 	};
 
