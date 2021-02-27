@@ -81,6 +81,8 @@
     <ClInclude Include="Room.h" />
     <ClInclude Include="RoomCell.h" />
     <ClInclude Include="RoomCellObject.h" />
+    <ClInclude Include="ScenarioDescriptor.h" />
+    <ClInclude Include="ScenarioDescriptorManager.h" />
     <ClInclude Include="SoundManager.h" />
     <ClInclude Include="StaticText.h" />
     <ClInclude Include="MessageHandler.h" />

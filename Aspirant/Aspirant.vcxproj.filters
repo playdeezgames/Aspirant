@@ -93,6 +93,21 @@
     <Filter Include="Source Files\Audio">
       <UniqueIdentifier>{e81852bd-cb4d-43de-b275-e79eb50c5a3e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Data\Values">
+      <UniqueIdentifier>{51222c25-f028-46e3-81d2-d845cf1f6242}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Data\Stores">
+      <UniqueIdentifier>{357826cc-d5de-40a1-a903-f4243a031dbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Data\Stores\Primitives">
+      <UniqueIdentifier>{62dfec29-c74e-41dd-9746-152e2db04a8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Data\Descriptors">
+      <UniqueIdentifier>{541bb12f-72e1-4222-8b79-09e21cdb67be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Data\Scenarios">
+      <UniqueIdentifier>{9458ed27-af4a-4825-8c72-b5330f43b7a0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AspirantApplication.cpp">
@@ -286,27 +301,6 @@
     <ClInclude Include="Drawn.h">
       <Filter>Header Files\Graphics\Common</Filter>
     </ClInclude>
-    <ClInclude Include="StringManager.h">
-      <Filter>Header Files\Data</Filter>
-    </ClInclude>
-    <ClInclude Include="IDataStore.h">
-      <Filter>Header Files\Data</Filter>
-    </ClInclude>
-    <ClInclude Include="IValue.h">
-      <Filter>Header Files\Data</Filter>
-    </ClInclude>
-    <ClInclude Include="ConstantValue.h">
-      <Filter>Header Files\Data</Filter>
-    </ClInclude>
-    <ClInclude Include="DynamicValue.h">
-      <Filter>Header Files\Data</Filter>
-    </ClInclude>
-    <ClInclude Include="IntManager.h">
-      <Filter>Header Files\Data</Filter>
-    </ClInclude>
-    <ClInclude Include="FlagManager.h">
-      <Filter>Header Files\Data</Filter>
-    </ClInclude>
     <ClInclude Include="AboutStateHandler.h">
       <Filter>Header Files\UI\States</Filter>
     </ClInclude>
@@ -328,14 +322,41 @@
     <ClInclude Include="BaseGameObject.h">
       <Filter>Header Files\BaseClasses</Filter>
     </ClInclude>
-    <ClInclude Include="DescriptorManager.h">
-      <Filter>Header Files\Data</Filter>
+    <ClInclude Include="ConstantValue.h">
+      <Filter>Header Files\Data\Values</Filter>
     </ClInclude>
-    <ClInclude Include="TerrainDescriptor.h">
-      <Filter>Header Files\Data</Filter>
+    <ClInclude Include="DynamicValue.h">
+      <Filter>Header Files\Data\Values</Filter>
+    </ClInclude>
+    <ClInclude Include="IValue.h">
+      <Filter>Header Files\Data\Values</Filter>
+    </ClInclude>
+    <ClInclude Include="IDataStore.h">
+      <Filter>Header Files\Data\Stores</Filter>
+    </ClInclude>
+    <ClInclude Include="FlagManager.h">
+      <Filter>Header Files\Data\Stores\Primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="IntManager.h">
+      <Filter>Header Files\Data\Stores\Primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="StringManager.h">
+      <Filter>Header Files\Data\Stores\Primitives</Filter>
     </ClInclude>
     <ClInclude Include="CreatureDescriptor.h">
-      <Filter>Header Files\Data</Filter>
+      <Filter>Header Files\Data\Descriptors</Filter>
+    </ClInclude>
+    <ClInclude Include="DescriptorManager.h">
+      <Filter>Header Files\Data\Descriptors</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainDescriptor.h">
+      <Filter>Header Files\Data\Descriptors</Filter>
+    </ClInclude>
+    <ClInclude Include="ScenarioDescriptor.h">
+      <Filter>Header Files\Data\Scenarios</Filter>
+    </ClInclude>
+    <ClInclude Include="ScenarioDescriptorManager.h">
+      <Filter>Header Files\Data\Scenarios</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

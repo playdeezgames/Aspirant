@@ -1,4 +1,8 @@
-[
-    "scenarios/tutorial/scenario.json"
-]
+{
+    "tutorial":{
+        "name": "Tutorial",
+        "brief": "Its a tutorial!",
+        "fileName":"scenarios/tutorial/scenario.json"
+    }
+}
 

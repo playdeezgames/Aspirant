@@ -13,6 +13,7 @@
 #include "SoundManager.h"
 #include "OptionsManager.h"
 #include "DescriptorManager.h"
+#include "ScenarioDescriptorManager.h"
 namespace aspirant
 {
 	class AspirantApplication : public tggd::common::Application
@@ -29,7 +30,8 @@ namespace aspirant
 		tggd::common::IntManager intManager;
 		tggd::common::FlagManager flagManager;
 		tggd::common::SoundManager soundManager;
-		DescriptorManager descriptorManager;
+		DescriptorManager descriptors;
+		ScenarioDescriptorManager scenarios;
 		OptionsManager optionsManager;
 		bool OnSetUIState(const UIState&);
 		bool OnKeyDown(const SDL_KeyboardEvent&);
