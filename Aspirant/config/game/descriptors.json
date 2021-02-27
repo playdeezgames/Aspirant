@@ -1,0 +1,9 @@
+{
+    "floor": {
+        "type": "terrain"
+    },
+    "avatar": {
+        "type": "creature"
+    }
+
+}

@@ -3,13 +3,14 @@
 #include "RoomCell.h"
 namespace tggd::common
 {
-	template<typename TObjectData, typename TCellFlags>
+	template<typename TRoomCell>
 	class Room
 	{
 	private:
 		size_t columns;
 		size_t rows;
-		std::vector<RoomCell<TObjectData, TCellFlags>*> cells;
+		std::vector<TRoomCell*> cells;
+		
 	public:
 		Room(size_t columns, size_t rows)
 			: columns(columns)
@@ -20,7 +21,7 @@ namespace tggd::common
 			{
 				for (size_t column = 0; column < columns; ++column)
 				{
-					cells.push_back(new RoomCell<TObjectData, TCellFlags>(column, row));
+					cells.push_back(new TRoomCell(column, row));
 				}
 			}
 		}
@@ -35,7 +36,7 @@ namespace tggd::common
 				}
 			}
 		}
-		const RoomCell<TObjectData, TCellFlags>* GetCell(size_t column, size_t row) const
+		const TRoomCell* GetCell(size_t column, size_t row) const
 		{
 			if (column < columns && row < rows)
 			{
@@ -43,7 +44,7 @@ namespace tggd::common
 			}
 			return nullptr;
 		}
-		RoomCell<TObjectData, TCellFlags>* GetCell(size_t column, size_t row)
+		TRoomCell* GetCell(size_t column, size_t row)
 		{
 			if (column < columns && row < rows)
 			{

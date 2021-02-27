@@ -1,0 +1,27 @@
+{
+    "name":"Tutorial",
+    "avatar":{
+        "room":"start",
+        "column": 0,
+        "row": 0
+    },
+    "rooms":
+    {
+        "start": 
+        [
+            [
+                {
+                    "cellFlags":[],
+                    "objects":[
+                        {
+                            "descriptor": "floor"
+                        },
+                        {
+                            "descriptor": "avatar"
+                        }
+                    ]
+                }
+            ]
+        ]
+    }
+}
