@@ -2,11 +2,6 @@
 #include "Utility.h"
 namespace tggd::common
 {
-	std::string LayoutManager::ParseKey(const std::string& key)
-	{
-		return key;
-	}
-
 	Layout* LayoutManager::ParseDescriptor(const nlohmann::json& properties)
 	{
 		return new Layout(finishManager, spriteManager, colorManager, fontManager, stringStore, intStore, flagStore, Utility::LoadJSON(properties));
@@ -22,7 +17,7 @@ namespace tggd::common
 		const IDataStore<int>& intStore,
 		const IDataStore<bool>& flagStore
 	)
-		: BaseDescriptorManager(finishManager)
+		: CommonDescriptorManager(finishManager)
 		, finishManager(finishManager)
 		, spriteManager(spriteManager)
 		, colorManager(colorManager)

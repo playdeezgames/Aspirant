@@ -1,11 +1,6 @@
 #include "ColorManager.h"
 namespace tggd::common
 {
-	std::string ColorManager::ParseKey(const std::string& key)
-	{
-		return key;
-	}
-
 	const std::string PROPERTY_RED = "r";
 	const std::string PROPERTY_GREEN = "g";
 	const std::string PROPERTY_BLUE = "b";
@@ -22,7 +17,7 @@ namespace tggd::common
 	}
 
 	ColorManager::ColorManager(tggd::common::FinishManager& finishManager)
-		: BaseDescriptorManager(finishManager)
+		: CommonDescriptorManager(finishManager)
 	{
 
 	}

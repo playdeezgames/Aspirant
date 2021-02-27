@@ -57,6 +57,7 @@
     <ClInclude Include="BaseGameObject.h" />
     <ClInclude Include="ColorManager.h" />
     <ClInclude Include="Command.h" />
+    <ClInclude Include="CommonDescriptorManager.h" />
     <ClInclude Include="ConfirmQuitStateHandler.h" />
     <ClInclude Include="ConstantValue.h" />
     <ClInclude Include="CreatureDescriptor.h" />

@@ -1,20 +1,16 @@
 #pragma once
-#include "BaseDescriptorManager.h"
+#include "CommonDescriptorManager.h"
 #include <string>
 #include "BaseDescriptor.h"
 namespace aspirant
 {
-	class DescriptorManager: public tggd::common::BaseDescriptorManager<std::string, BaseDescriptor>
+	class DescriptorManager: public tggd::common::CommonDescriptorManager<BaseDescriptor>
 	{
 	protected:
-		std::string ParseKey(const std::string& key)
-		{
-			return key;
-		}
 		BaseDescriptor* ParseDescriptor(const nlohmann::json&);
 	public:
 		DescriptorManager(tggd::common::FinishManager& finishManager)
-			: BaseDescriptorManager(finishManager)
+			: CommonDescriptorManager(finishManager)
 		{
 
 		}

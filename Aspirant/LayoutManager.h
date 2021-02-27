@@ -1,5 +1,5 @@
 #pragma once
-#include "BaseDescriptorManager.h"
+#include "CommonDescriptorManager.h"
 #include <string>
 #include "Layout.h"
 #include "SpriteManager.h"
@@ -7,7 +7,7 @@
 #include "FontManager.h"
 namespace tggd::common
 {
-	class LayoutManager: public BaseDescriptorManager<std::string, Layout>
+	class LayoutManager: public CommonDescriptorManager<Layout>
 	{
 	private:
 		const SpriteManager& spriteManager;
@@ -18,7 +18,6 @@ namespace tggd::common
 		const IDataStore<bool>& flagStore;
 		FinishManager& finishManager;
 	protected:
-		std::string ParseKey(const std::string&);
 		Layout* ParseDescriptor(const nlohmann::json&);
 	public:
 		LayoutManager

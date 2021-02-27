@@ -1,9 +1,9 @@
 #pragma once
-#include "BaseDescriptorManager.h"
+#include "CommonDescriptorManager.h"
 #include "ScenarioDescriptor.h"
 namespace aspirant
 {
-	class ScenarioDescriptorManager : public tggd::common::BaseDescriptorManager<std::string, ScenarioDescriptor>
+	class ScenarioDescriptorManager : public tggd::common::CommonDescriptorManager<ScenarioDescriptor>
 	{
 	protected:
 		std::string ParseKey(const std::string& key)
@@ -16,7 +16,7 @@ namespace aspirant
 		}
 	public:
 		ScenarioDescriptorManager(tggd::common::FinishManager& finishManager)
-			: BaseDescriptorManager(finishManager)
+			: CommonDescriptorManager(finishManager)
 		{
 
 		}

@@ -358,5 +358,8 @@
     <ClInclude Include="ScenarioDescriptorManager.h">
       <Filter>Header Files\Data\Scenarios</Filter>
     </ClInclude>
+    <ClInclude Include="CommonDescriptorManager.h">
+      <Filter>Header Files\BaseClasses</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
