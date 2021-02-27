@@ -22,6 +22,7 @@ namespace aspirant
 	const std::string OPTIONS_CONFIG_FILE = "config/options.json";
 	const std::string SFX_CONFIG_FILE = "config/audio/sfx.json";
 	const std::string MUX_CONFIG_FILE = "config/audio/mux.json";
+	const std::string DESCRIPTORS_CONFIG_FILE = "config/game/descriptors";
 
 	AspirantApplication::AspirantApplication()
 		: tggd::common::Application(APPLICATION_CONFIG_FILE)
@@ -37,6 +38,7 @@ namespace aspirant
 		, optionsManager(soundManager, OPTIONS_CONFIG_FILE)
 		, layoutManager(finishManager, spriteManager, colorManager, fontManager, stringManager, intManager, flagManager)
 		, uiState(UIState::SPLASH)
+		, descriptorManager(finishManager)
 	{
 
 	}
@@ -58,6 +60,7 @@ namespace aspirant
 		layoutManager.Start(LAYOUTS_CONFIG_FILE);
 		soundManager.Start(SFX_CONFIG_FILE, MUX_CONFIG_FILE);
 		optionsManager.Start();
+		descriptorManager.Start(DESCRIPTORS_CONFIG_FILE);
 
 		new SplashStateHandler(this, uiState, layoutManager);
 		new MainMenuStateHandler(this, uiState, layoutManager, stringManager);

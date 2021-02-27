@@ -9,8 +9,8 @@ namespace tggd::common
 	class RoomCell
 	{
 	private:
-		static const std::string PROPERTY_CELL_FLAGS = "cellFlags";
-		static const std::string PROPERTY_OBJECTS = "objects";
+		const std::string PROPERTY_CELL_FLAGS = "cellFlags";
+		const std::string PROPERTY_OBJECTS = "objects";
 		std::stack<RoomCellObject<TObjectData, TCellFlags>*> objects;
 		size_t column;
 		size_t row;

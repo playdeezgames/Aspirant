@@ -24,6 +24,8 @@
     <ClCompile Include="AspirantApplication.cpp" />
     <ClCompile Include="ColorManager.cpp" />
     <ClCompile Include="ConfirmQuitStateHandler.cpp" />
+    <ClCompile Include="CreatureDescriptor.cpp" />
+    <ClCompile Include="DescriptorManager.cpp" />
     <ClCompile Include="FinishManager.cpp" />
     <ClCompile Include="FlagManager.cpp" />
     <ClCompile Include="FontManager.cpp" />
@@ -42,6 +44,7 @@
     <ClCompile Include="SpriteFont.cpp" />
     <ClCompile Include="SpriteManager.cpp" />
     <ClCompile Include="StringManager.cpp" />
+    <ClCompile Include="TerrainDescriptor.cpp" />
     <ClCompile Include="TextureManager.cpp" />
     <ClCompile Include="Utility.cpp" />
   </ItemGroup>
@@ -49,11 +52,15 @@
     <ClInclude Include="AboutStateHandler.h" />
     <ClInclude Include="Application.h" />
     <ClInclude Include="AspirantApplication.h" />
+    <ClInclude Include="BaseDescriptor.h" />
     <ClInclude Include="BaseDescriptorManager.h" />
+    <ClInclude Include="BaseGameObject.h" />
     <ClInclude Include="ColorManager.h" />
     <ClInclude Include="Command.h" />
     <ClInclude Include="ConfirmQuitStateHandler.h" />
     <ClInclude Include="ConstantValue.h" />
+    <ClInclude Include="CreatureDescriptor.h" />
+    <ClInclude Include="DescriptorManager.h" />
     <ClInclude Include="Drawn.h" />
     <ClInclude Include="DynamicValue.h" />
     <ClInclude Include="Finisher.h" />
@@ -88,6 +95,7 @@
     <ClInclude Include="SpriteTable.h" />
     <ClInclude Include="StaticImage.h" />
     <ClInclude Include="StringManager.h" />
+    <ClInclude Include="TerrainDescriptor.h" />
     <ClInclude Include="TextureManager.h" />
     <ClInclude Include="UIState.h" />
     <ClInclude Include="UIStateMessageHandler.h" />
