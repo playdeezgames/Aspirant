@@ -18,6 +18,7 @@ namespace aspirant
 		TMenuItem previousMenuItem;
 		std::string itemColorName;
 	public:
+		MenuItemDescriptor() {}//MAGIC!
 		MenuItemDescriptor
 		(
 			const std::string& itemColorName,
@@ -40,16 +41,15 @@ namespace aspirant
 		}
 		const std::string& GetItemColorName() const
 		{
-
+			return itemColorName;
 		}
 	};
 	template<typename TMenuItem>
 	class MenuStateHandler : public UIStateMessageHandler
 	{
-	protected:
-		std::map<TMenuItem, MenuItemDescriptor> menuItems;
-		tggd::common::StringManager& stringManager;
 	private:
+		std::map<TMenuItem, MenuItemDescriptor<TMenuItem>> menuItems;
+		tggd::common::StringManager& stringManager;
 		const std::string COLOR_ACTIVE = "Cyan";//TODO: make these come from config?
 		const std::string COLOR_INACTIVE = "Gray";//TODO: make these come from config?
 		const tggd::common::Layout* layout;
@@ -59,7 +59,7 @@ namespace aspirant
 			auto entry = menuItems.find(menuItem);
 			if (entry != menuItems.end())
 			{
-				menuItem = entry.second.GetNextMenuItem();
+				menuItem = entry->second.GetNextMenuItem();
 			}
 		}
 		void PreviousItem()
@@ -67,7 +67,7 @@ namespace aspirant
 			auto entry = menuItems.find(menuItem);
 			if (entry != menuItems.end())
 			{
-				menuItem = entry.second.GetPreviousMenuItem();
+				menuItem = entry->second.GetPreviousMenuItem();
 			}
 		}
 		bool OnDraw(SDL_Renderer* renderer) const
@@ -76,6 +76,10 @@ namespace aspirant
 			return false;
 		}
 	protected:
+		tggd::common::StringManager& GetStringManager() const
+		{
+			return stringManager;
+		}
 		virtual bool OnUpdate()
 		{
 			for (auto& entry : menuItems)
@@ -89,6 +93,7 @@ namespace aspirant
 					stringManager.Set(entry.second.GetItemColorName(), COLOR_INACTIVE);
 				}
 			}
+			return false;
 		}
 		virtual void IncreaseItem(const TMenuItem&) {}
 		virtual void DecreaseItem(const TMenuItem&) {}
@@ -130,6 +135,10 @@ namespace aspirant
 				return OnUpdate();
 			}
 			return false;
+		}
+		void AddMenuItem(const TMenuItem& item, const MenuItemDescriptor<TMenuItem>& descriptor)
+		{
+			menuItems[item] = descriptor;
 		}
 	public:
 		MenuStateHandler

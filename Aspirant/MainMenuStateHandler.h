@@ -1,5 +1,5 @@
 #pragma once
-#include "UIStateMessageHandler.h"
+#include "MenuStateHandler.h"
 #include <SDL.h>
 #include "LayoutManager.h"
 #include "StringManager.h"
@@ -13,21 +13,10 @@ namespace aspirant
 		OPTIONS,
 		QUIT
 	};
-	class MainMenuStateHandler : public UIStateMessageHandler
+	class MainMenuStateHandler : public MenuStateHandler<MainMenuItem>
 	{
-	private:
-		tggd::common::StringManager& stringManager;
-		MainMenuItem currentItem;
-		const tggd::common::Layout* layout;
-		bool OnDraw(SDL_Renderer*) const;
-		bool OnUpdate();
-		bool OnCommand(const Command&);
-		void NextMenuItem();
-		void PreviousMenuItem();
-		void ActivateMenuItem();
-		void UpdateMenuItemColorString(const std::string&, const MainMenuItem&);
 	protected:
-		bool OnMessage(const tggd::common::MGeneric*);
+		void ActivateItem(const MainMenuItem&);
 	public:
 		MainMenuStateHandler
 		(
