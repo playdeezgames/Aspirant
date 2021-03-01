@@ -1,6 +1,6 @@
 Screens:
     ☐ Start Game Screen
-        ☐ Editor
+        ✔ Editor @done(21-03-01 05:23)
             goes to start editor
         ☐ New Game
         ☐ Load Game        

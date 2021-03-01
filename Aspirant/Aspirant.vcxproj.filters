@@ -197,6 +197,9 @@
     <ClCompile Include="StartGameStateHandler.cpp">
       <Filter>Source Files\UI</Filter>
     </ClCompile>
+    <ClCompile Include="StartEditorStateHandler.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AspirantApplication.h">
@@ -368,6 +371,9 @@
       <Filter>Header Files\UI\States</Filter>
     </ClInclude>
     <ClInclude Include="MenuStateHandler.h">
+      <Filter>Header Files\UI\States</Filter>
+    </ClInclude>
+    <ClInclude Include="StartEditorStateHandler.h">
       <Filter>Header Files\UI\States</Filter>
     </ClInclude>
   </ItemGroup>

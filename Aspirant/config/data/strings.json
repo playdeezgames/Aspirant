@@ -14,5 +14,7 @@
     "Options.Text.MuxVolume": "Mux Volume",
     "Options.Color.Back": "Gray",
     "StartGame.Color.Editor": "Gray",
-    "StartGame.Color.Back": "Gray"
+    "StartGame.Color.Back": "Gray",
+    "StartEditor.Color.New": "Gray",
+    "StartEditor.Color.Back": "Gray"
 }

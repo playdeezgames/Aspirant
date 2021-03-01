@@ -4,5 +4,6 @@
     "About":"config/ui/layouts/aboutPage.json",
     "ConfirmQuit":"config/ui/layouts/confirmQuitPage.json",
     "Options":"config/ui/layouts/optionsPage.json",
-    "StartGame":"config/ui/layouts/startGamePage.json"
+    "StartGame":"config/ui/layouts/startGamePage.json",
+    "StartEditor":"config/ui/layouts/startEditorPage.json"
 }

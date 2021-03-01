@@ -48,7 +48,7 @@ namespace aspirant
 				MENU_ITEM_ABOUT_COLOR_NAME,
 				MainMenuItem::START,
 				MainMenuItem::OPTIONS
-				)
+			)
 		);
 		AddMenuItem
 		(
@@ -58,7 +58,7 @@ namespace aspirant
 				MENU_ITEM_OPTIONS_COLOR_NAME,
 				MainMenuItem::ABOUT,
 				MainMenuItem::QUIT
-				)
+			)
 		);
 		AddMenuItem
 		(
@@ -68,7 +68,7 @@ namespace aspirant
 				MENU_ITEM_QUIT_COLOR_NAME,
 				MainMenuItem::OPTIONS,
 				MainMenuItem::START
-				)
+			)
 		);
 	}
 

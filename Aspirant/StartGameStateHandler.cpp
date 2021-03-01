@@ -47,7 +47,7 @@ namespace aspirant
 			SetUIState(UIState::MAIN_MENU);
 			break;
 		case StartGameItem::EDITOR:
-			//TODO: go to select scenario to edit screen
+			SetUIState(UIState::START_EDITOR);
 			break;
 		}
 	}

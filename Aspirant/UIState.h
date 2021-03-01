@@ -9,6 +9,7 @@ namespace aspirant
 		QUIT,
 		ABOUT,
 		OPTIONS,
-		START_GAME
+		START_GAME,
+		START_EDITOR
 	};
 }
