@@ -2,7 +2,6 @@
 #include "MRender.h"
 #include "MUpdate.h"
 #include "MCommand.h"
-#include "MSetUIState.h"
 namespace aspirant
 {
 	const std::string MENU_ITEM_COLOR_ACTIVE = "Cyan";//DUPLICATED
@@ -136,17 +135,17 @@ namespace aspirant
 		switch (currentItem)
 		{
 		case MainMenuItem::START:
-			Handle(MSetUIState(UIState::START_GAME));
+			SetUIState(UIState::START_GAME);
 			return;
 		case MainMenuItem::OPTIONS:
-			Handle(MSetUIState(UIState::OPTIONS));
+			SetUIState(UIState::OPTIONS);
 			return;
 		case MainMenuItem::ABOUT:
 			SDL_SetClipboardText(stringManager.Get(ITCH_URL_STRING).c_str());
-			Handle(MSetUIState(UIState::ABOUT));
+			SetUIState(UIState::ABOUT);
 			return;
 		case MainMenuItem::QUIT:
-			Handle(MSetUIState(UIState::CONFIRM_QUIT));
+			SetUIState(UIState::CONFIRM_QUIT);
 			return;
 		}
 	}

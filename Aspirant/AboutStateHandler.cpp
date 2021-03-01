@@ -1,6 +1,5 @@
 #include "AboutStateHandler.h"
 #include "MRender.h"
-#include "MSetUIState.h"
 #include "MCommand.h"
 #include "Utility.h"
 namespace aspirant
@@ -32,7 +31,7 @@ namespace aspirant
 		case Command::RED:
 		case Command::BACK:
 		case Command::START:
-			Handle(MSetUIState(UIState::MAIN_MENU));
+			SetUIState(UIState::MAIN_MENU);
 			break;
 		}
 		return true;

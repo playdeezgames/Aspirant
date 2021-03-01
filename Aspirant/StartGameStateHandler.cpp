@@ -1,7 +1,6 @@
 #include "StartGameStateHandler.h"
 #include "MRender.h"
 #include "MCommand.h"
-#include "MSetUIState.h"
 #include "MUpdate.h"
 namespace aspirant
 {
@@ -24,7 +23,7 @@ namespace aspirant
 		{
 		case Command::RED:
 		case Command::BACK:
-			Handle(MSetUIState(UIState::MAIN_MENU));
+			SetUIState(UIState::MAIN_MENU);
 			break;
 		case Command::GREEN:
 			ActivateMenuItem();
@@ -120,7 +119,7 @@ namespace aspirant
 		switch (currentItem)
 		{
 		case StartGameItem::BACK:
-			Handle(MSetUIState(UIState::MAIN_MENU));
+			SetUIState(UIState::MAIN_MENU);
 			break;
 		case StartGameItem::EDITOR:
 			//TODO: go to select scenario to edit screen

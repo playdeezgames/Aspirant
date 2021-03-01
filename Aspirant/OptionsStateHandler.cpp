@@ -1,6 +1,5 @@
 #include "OptionsStateHandler.h"
 #include "MRender.h"
-#include "MSetUIState.h"
 #include "MCommand.h"
 #include "MUpdate.h"
 #include "Utility.h"
@@ -8,6 +7,17 @@
 namespace aspirant
 {
 	const std::string LAYOUT_NAME = "Options";
+	const std::string OPTION_ITEM_COLOR_ACTIVE = "Cyan";//DUPLICATED
+	const std::string OPTION_ITEM_COLOR_INACTIVE = "Gray";//DUPLICATED
+	const std::string OPTION_ITEM_TOGGLE_MUTE_COLOR_STRING = "Options.Color.ToggleMute";
+	const std::string OPTION_ITEM_SFX_VOLUME_COLOR_STRING = "Options.Color.SfxVolume";
+	const std::string OPTION_ITEM_MUX_VOLUME_COLOR_STRING = "Options.Color.MuxVolume";
+	const std::string OPTION_ITEM_BACK_COLOR_STRING = "Options.Color.Back";
+	const std::string TOGGLE_MUTE_STRING_NAME = "Options.Text.ToggleMute";
+	const std::string SFX_VOLUME_STRING_NAME = "Options.Text.SfxVolume";
+	const std::string MUX_VOLUME_STRING_NAME = "Options.Text.MuxVolume";
+	const std::string MUTE = "Mute";
+	const std::string UNMUTE = "Unmute";
 
 	OptionsStateHandler::OptionsStateHandler
 	(
@@ -27,17 +37,6 @@ namespace aspirant
 	{
 	}
 
-	const std::string OPTION_ITEM_COLOR_ACTIVE = "Cyan";//DUPLICATED
-	const std::string OPTION_ITEM_COLOR_INACTIVE = "Gray";//DUPLICATED
-	const std::string OPTION_ITEM_TOGGLE_MUTE_COLOR_STRING = "Options.Color.ToggleMute";
-	const std::string OPTION_ITEM_SFX_VOLUME_COLOR_STRING = "Options.Color.SfxVolume";
-	const std::string OPTION_ITEM_MUX_VOLUME_COLOR_STRING = "Options.Color.MuxVolume";
-	const std::string OPTION_ITEM_BACK_COLOR_STRING = "Options.Color.Back";
-	const std::string TOGGLE_MUTE_STRING_NAME = "Options.Text.ToggleMute";
-	const std::string SFX_VOLUME_STRING_NAME = "Options.Text.SfxVolume";
-	const std::string MUX_VOLUME_STRING_NAME = "Options.Text.MuxVolume";
-	const std::string MUTE = "Mute";
-	const std::string UNMUTE = "Unmute";
 
 	bool OptionsStateHandler::OnUpdate()
 	{
@@ -97,7 +96,7 @@ namespace aspirant
 		case Command::RED:
 		case Command::BACK:
 		case Command::START:
-			Handle(MSetUIState(UIState::MAIN_MENU));
+			SetUIState(UIState::MAIN_MENU);
 			break;
 		}
 		return true;
@@ -208,7 +207,7 @@ namespace aspirant
 			optionsManager.Save();
 			break;
 		case OptionsItem::BACK:
-			Handle(MSetUIState(UIState::MAIN_MENU));
+			SetUIState(UIState::MAIN_MENU);
 			break;
 		}
 	}

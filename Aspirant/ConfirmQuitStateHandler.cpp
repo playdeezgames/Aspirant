@@ -2,7 +2,6 @@
 #include "MRender.h"
 #include "MUpdate.h"
 #include "MCommand.h"
-#include "MSetUIState.h"
 namespace aspirant
 {
 	const std::string CONFIRM_ITEM_COLOR_ACTIVE = "Cyan";//DUPLICATED
@@ -82,7 +81,7 @@ namespace aspirant
 			break;
 		case Command::BACK:
 		case Command::RED:
-			Handle(MSetUIState(UIState::MAIN_MENU));
+			SetUIState(UIState::MAIN_MENU);
 			break;
 		case Command::GREEN:
 		case Command::START:
@@ -108,10 +107,10 @@ namespace aspirant
 		switch (currentItem)
 		{
 		case ConfirmQuitItem::NO:
-			Handle(MSetUIState(UIState::MAIN_MENU));
+			SetUIState(UIState::MAIN_MENU);
 			return;
 		case ConfirmQuitItem::YES:
-			Handle(MSetUIState(UIState::QUIT));
+			SetUIState(UIState::QUIT);
 			return;
 		}
 	}

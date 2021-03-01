@@ -1,7 +1,6 @@
 #include "SplashStateHandler.h"
 #include "MRender.h"
 #include "MUpdate.h"
-#include "MSetUIState.h"
 #include "MCommand.h"
 #include "Utility.h"
 namespace aspirant
@@ -26,7 +25,7 @@ namespace aspirant
 		ticksLeft = (ticksLeft > milliseconds) ? (ticksLeft - milliseconds) : (0);
 		if (ticksLeft == 0)
 		{
-			Handle(MSetUIState(UIState::MAIN_MENU));
+			SetUIState(UIState::MAIN_MENU);
 			ticksLeft = TICKS_LEFT;
 		}
 		return true;

@@ -1,6 +1,7 @@
 #pragma once
 #include "MessageHandler.h"
 #include "UIState.h"
+#include "MSetUIState.h"
 namespace aspirant
 {
 	class UIStateMessageHandler : public tggd::common::MessageHandler
@@ -12,6 +13,10 @@ namespace aspirant
 		bool IsEnabled() const
 		{
 			return (currentState == filterState);
+		}
+		void SetUIState(const UIState& newState)
+		{
+			Handle(MSetUIState(newState));
 		}
 	public:
 		UIStateMessageHandler(MessageHandler* parent, const UIState& currentState, const UIState& filterState)
