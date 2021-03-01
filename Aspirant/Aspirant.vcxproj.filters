@@ -194,6 +194,9 @@
     <ClCompile Include="CreatureDescriptor.cpp">
       <Filter>Source Files\Data</Filter>
     </ClCompile>
+    <ClCompile Include="StartGameStateHandler.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AspirantApplication.h">
@@ -360,6 +363,9 @@
     </ClInclude>
     <ClInclude Include="CommonDescriptorManager.h">
       <Filter>Header Files\BaseClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="StartGameStateHandler.h">
+      <Filter>Header Files\UI\States</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

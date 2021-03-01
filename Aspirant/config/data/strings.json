@@ -12,5 +12,7 @@
     "Options.Text.SfxVolume": "Sfx Volume",
     "Options.Color.MuxVolume": "Gray",
     "Options.Text.MuxVolume": "Mux Volume",
-    "Options.Color.Back": "Gray"
+    "Options.Color.Back": "Gray",
+    "StartGame.Color.Editor": "Gray",
+    "StartGame.Color.Back": "Gray"
 }

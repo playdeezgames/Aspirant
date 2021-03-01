@@ -8,6 +8,7 @@ namespace aspirant
 		CONFIRM_QUIT,
 		QUIT,
 		ABOUT,
-		OPTIONS
+		OPTIONS,
+		START_GAME
 	};
 }

@@ -3,5 +3,6 @@
     "MainMenu":"config/ui/layouts/mainMenuPage.json",
     "About":"config/ui/layouts/aboutPage.json",
     "ConfirmQuit":"config/ui/layouts/confirmQuitPage.json",
-    "Options":"config/ui/layouts/optionsPage.json"
+    "Options":"config/ui/layouts/optionsPage.json",
+    "StartGame":"config/ui/layouts/startGamePage.json"
 }

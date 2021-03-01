@@ -10,7 +10,7 @@
         "type": "StaticText",
         "font": "default",
         "color": "LightGreen",
-        "text": "==ABOUT==",
+        "text": "==START GAME==",
         "x": 320,
         "y": 0,
         "horizontalAlignment": 0,
@@ -22,10 +22,11 @@
     {
         "type": "StaticText",
         "font": "default",
-        "color": "Gray",
-        "text": "A Production of TheGrumpyGameDev",
-        "x": 0,
+        "color": { "key": "StartGame.Color.Editor" },
+        "text": "Editor",
+        "x": 320,
         "y": 32,
+        "horizontalAlignment": 0,
         "dropShadow": true,
         "dropShadowColor": "Black",
         "dropShadowX": 2,
@@ -34,25 +35,14 @@
     {
         "type": "StaticText",
         "font": "default",
-        "color": "Cyan",
-        "text": {"key":"ItchURL"},
-        "x": 0,
+        "color": { "key": "StartGame.Color.Back" },
+        "text": "Back",
+        "x": 320,
         "y": 48,
+        "horizontalAlignment": 0,
         "dropShadow": true,
         "dropShadowColor": "Black",
         "dropShadowX": 2,
         "dropShadowY": 2
-    },
-    {
-        "type": "StaticText",
-        "font": "default",
-        "color": "DarkGray",
-        "text": "(URL above copied to clipboard!)",
-        "x": 0,
-        "y": 64,
-        "dropShadow": true,
-        "dropShadowColor": "Black",
-        "dropShadowX": 2,
-        "dropShadowY": 2
-    } 
+    }
 ]

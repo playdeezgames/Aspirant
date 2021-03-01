@@ -6,6 +6,7 @@
 #include "AboutStateHandler.h"
 #include "ConfirmQuitStateHandler.h"
 #include "OptionsStateHandler.h"
+#include "StartGameStateHandler.h"
 #include "MCommand.h"
 #include "Utility.h"
 namespace aspirant
@@ -70,6 +71,7 @@ namespace aspirant
 		new AboutStateHandler(this, uiState, layoutManager);
 		new ConfirmQuitStateHandler(this, uiState, layoutManager, stringManager);
 		new OptionsStateHandler(this, uiState, layoutManager, soundManager, optionsManager, stringManager);
+		new StartGameStateHandler(this, uiState, layoutManager, stringManager);
 	}
 
 	void AspirantApplication::Finish()

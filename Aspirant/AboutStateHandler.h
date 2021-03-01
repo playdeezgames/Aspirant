@@ -1,7 +1,6 @@
 #pragma once
 #include "UIStateMessageHandler.h"
 #include <SDL.h>
-#include <list>
 #include "Command.h"
 #include "Layout.h"
 #include "LayoutManager.h"

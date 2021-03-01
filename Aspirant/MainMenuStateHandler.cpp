@@ -136,7 +136,7 @@ namespace aspirant
 		switch (currentItem)
 		{
 		case MainMenuItem::START:
-			//TODO: go to start game screen
+			Handle(MSetUIState(UIState::START_GAME));
 			return;
 		case MainMenuItem::OPTIONS:
 			Handle(MSetUIState(UIState::OPTIONS));
