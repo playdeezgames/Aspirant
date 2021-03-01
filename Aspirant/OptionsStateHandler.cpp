@@ -7,12 +7,10 @@
 namespace aspirant
 {
 	const std::string LAYOUT_NAME = "Options";
-	const std::string OPTION_ITEM_COLOR_ACTIVE = "Cyan";//DUPLICATED
-	const std::string OPTION_ITEM_COLOR_INACTIVE = "Gray";//DUPLICATED
-	const std::string OPTION_ITEM_TOGGLE_MUTE_COLOR_STRING = "Options.Color.ToggleMute";
-	const std::string OPTION_ITEM_SFX_VOLUME_COLOR_STRING = "Options.Color.SfxVolume";
-	const std::string OPTION_ITEM_MUX_VOLUME_COLOR_STRING = "Options.Color.MuxVolume";
-	const std::string OPTION_ITEM_BACK_COLOR_STRING = "Options.Color.Back";
+	const std::string OPTION_ITEM_TOGGLE_MUTE_COLOR_NAME = "Options.Color.ToggleMute";
+	const std::string OPTION_ITEM_SFX_VOLUME_COLOR_NAME = "Options.Color.SfxVolume";
+	const std::string OPTION_ITEM_MUX_VOLUME_COLOR_NAME = "Options.Color.MuxVolume";
+	const std::string OPTION_ITEM_BACK_COLOR_NAME = "Options.Color.Back";
 
 	const std::string TOGGLE_MUTE_STRING_NAME = "Options.Text.ToggleMute";
 	const std::string SFX_VOLUME_STRING_NAME = "Options.Text.SfxVolume";
@@ -29,13 +27,50 @@ namespace aspirant
 		OptionsManager& optionsManager,
 		tggd::common::StringManager& stringManager
 	)
-		: UIStateMessageHandler(parent, currentState, UIState::OPTIONS)
-		, layout(layoutManager.GetDescriptor(LAYOUT_NAME))
+		: MenuStateHandler(parent, currentState, UIState::OPTIONS, layoutManager.GetDescriptor(LAYOUT_NAME), stringManager, OptionsItem::BACK)
 		, soundManager(soundManager)
 		, optionsManager(optionsManager)
-		, stringManager(stringManager)
-		, menuItem(OptionsItem::BACK)
 	{
+		AddMenuItem
+		(
+			OptionsItem::TOGGLE_MUTE, 
+			MenuItemDescriptor<OptionsItem>
+			(
+				OPTION_ITEM_TOGGLE_MUTE_COLOR_NAME, 
+				OptionsItem::BACK, 
+				OptionsItem::SFX_VOLUME
+			)
+		);
+		AddMenuItem
+		(
+			OptionsItem::SFX_VOLUME,
+			MenuItemDescriptor<OptionsItem>
+			(
+				OPTION_ITEM_SFX_VOLUME_COLOR_NAME,
+				OptionsItem::TOGGLE_MUTE,
+				OptionsItem::MUX_VOLUME
+				)
+		);
+		AddMenuItem
+		(
+			OptionsItem::MUX_VOLUME,
+			MenuItemDescriptor<OptionsItem>
+			(
+				OPTION_ITEM_MUX_VOLUME_COLOR_NAME,
+				OptionsItem::SFX_VOLUME,
+				OptionsItem::BACK
+				)
+		);
+		AddMenuItem
+		(
+			OptionsItem::BACK,
+			MenuItemDescriptor<OptionsItem>
+			(
+				OPTION_ITEM_BACK_COLOR_NAME,
+				OptionsItem::MUX_VOLUME,
+				OptionsItem::TOGGLE_MUTE
+				)
+		);
 	}
 
 
@@ -45,135 +80,28 @@ namespace aspirant
 		//text for toggle mute
 		if (soundManager.IsMuted())
 		{
-			stringManager.Set(TOGGLE_MUTE_STRING_NAME, UNMUTE);
+			GetStringManager().Set(TOGGLE_MUTE_STRING_NAME, UNMUTE);
 		}
 		else
 		{
-			stringManager.Set(TOGGLE_MUTE_STRING_NAME, MUTE);
+			GetStringManager().Set(TOGGLE_MUTE_STRING_NAME, MUTE);
 		}
 		std::stringstream ss;
 		//text for sfx volume
 		ss << "SFX Volume (" << tggd::common::Utility::ToPercentage(soundManager.GetSfxVolume(), MIX_MAX_VOLUME) << "%)";
-		stringManager.Set(SFX_VOLUME_STRING_NAME, ss.str());
+		GetStringManager().Set(SFX_VOLUME_STRING_NAME, ss.str());
 
 		//text for mux volume
 		ss.str("");
 		ss << "MUX Volume (" << tggd::common::Utility::ToPercentage(soundManager.GetMuxVolume(), MIX_MAX_VOLUME) << "%)";
-		stringManager.Set(MUX_VOLUME_STRING_NAME, ss.str());
+		GetStringManager().Set(MUX_VOLUME_STRING_NAME, ss.str());
 
-		UpdateMenuItemColorString(OPTION_ITEM_TOGGLE_MUTE_COLOR_STRING, OptionsItem::TOGGLE_MUTE);
-		UpdateMenuItemColorString(OPTION_ITEM_SFX_VOLUME_COLOR_STRING, OptionsItem::SFX_VOLUME);
-		UpdateMenuItemColorString(OPTION_ITEM_MUX_VOLUME_COLOR_STRING, OptionsItem::MUX_VOLUME);
-		UpdateMenuItemColorString(OPTION_ITEM_BACK_COLOR_STRING, OptionsItem::BACK);
-
-		return false;
-	}
-
-	bool OptionsStateHandler::OnDraw(SDL_Renderer* renderer) const
-	{
-		layout->Draw(renderer);
-		return false;
-	}
-
-	bool OptionsStateHandler::OnCommand(const Command& command)
-	{
-		switch (command)
-		{
-		case Command::UP:
-			PreviousItem();
-			break;
-		case Command::DOWN:
-			NextItem();
-			break;
-		case Command::LEFT:
-			DecreaseItem();
-			break;
-		case Command::RIGHT:
-			IncreaseItem();
-			break;
-		case Command::GREEN:
-			ActivateItem();
-			break;
-		case Command::RED:
-		case Command::BACK:
-		case Command::START:
-			SetUIState(UIState::MAIN_MENU);
-			break;
-		}
-		return true;
-	}
-
-
-
-	void OptionsStateHandler::UpdateMenuItemColorString(const std::string& stringName, const OptionsItem& optionsItem)
-	{
-		stringManager.Set
-		(
-			stringName,
-			(optionsItem == menuItem) ? (OPTION_ITEM_COLOR_ACTIVE) :
-			(OPTION_ITEM_COLOR_INACTIVE)
-		);
-	}
-
-
-	bool OptionsStateHandler::OnMessage(const tggd::common::MGeneric* message)
-	{
-		if (message->GetId() == tggd::common::MRender::MSGID_Draw)
-		{
-			return OnDraw(static_cast<const tggd::common::MRender*>(message)->GetRenderer());
-		}
-		else if (message->GetId() == tggd::common::MUpdate::MSGID_Update)
-		{
-			return OnUpdate();
-		}
-		else if (message->GetId() == MCommand::MSGID_Command)
-		{
-			return OnCommand(static_cast<const MCommand*>(message)->GetCommand());
-		}
-		return false;
-	}
-
-	void OptionsStateHandler::NextItem()
-	{
-		switch (menuItem)
-		{
-		case OptionsItem::TOGGLE_MUTE:
-			menuItem = OptionsItem::SFX_VOLUME;
-			break;
-		case OptionsItem::SFX_VOLUME:
-			menuItem = OptionsItem::MUX_VOLUME;
-			break;
-		case OptionsItem::MUX_VOLUME:
-			menuItem = OptionsItem::BACK;
-			break;
-		case OptionsItem::BACK:
-			menuItem = OptionsItem::TOGGLE_MUTE;
-			break;
-		}
-	}
-
-	void OptionsStateHandler::PreviousItem()
-	{
-		switch (menuItem)
-		{
-		case OptionsItem::TOGGLE_MUTE:
-			menuItem = OptionsItem::BACK;
-			break;
-		case OptionsItem::SFX_VOLUME:
-			menuItem = OptionsItem::TOGGLE_MUTE;
-			break;
-		case OptionsItem::MUX_VOLUME:
-			menuItem = OptionsItem::SFX_VOLUME;
-			break;
-		case OptionsItem::BACK:
-			menuItem = OptionsItem::MUX_VOLUME;
-			break;
-		}
+		return MenuStateHandler::OnUpdate();
 	}
 
 	const int VOLUME_DELTA = 8;
 
-	void OptionsStateHandler::IncreaseItem()
+	void OptionsStateHandler::IncreaseItem(const OptionsItem& menuItem)
 	{
 		switch (menuItem)
 		{
@@ -186,7 +114,7 @@ namespace aspirant
 		}
 	}
 
-	void OptionsStateHandler::DecreaseItem()
+	void OptionsStateHandler::DecreaseItem(const OptionsItem& menuItem)
 	{
 		switch (menuItem)
 		{
@@ -199,7 +127,7 @@ namespace aspirant
 		}
 	}
 
-	void OptionsStateHandler::ActivateItem()
+	void OptionsStateHandler::ActivateItem(const OptionsItem& menuItem)
 	{
 		switch (menuItem)
 		{

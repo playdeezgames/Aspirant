@@ -18,7 +18,7 @@ namespace aspirant
 		TMenuItem previousMenuItem;
 		std::string itemColorName;
 	public:
-		MenuItemDescriptor() {}//MAGIC!
+		MenuItemDescriptor():nextMenuItem(), previousMenuItem(), itemColorName() {}//MAGIC!
 		MenuItemDescriptor
 		(
 			const std::string& itemColorName,

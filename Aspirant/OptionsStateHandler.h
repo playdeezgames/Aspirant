@@ -1,5 +1,5 @@
 #pragma once
-#include "UIStateMessageHandler.h"
+#include "MenuStateHandler.h"
 #include <SDL.h>
 #include <list>
 #include "Command.h"
@@ -17,27 +17,18 @@ namespace aspirant
 		MUX_VOLUME,
 		BACK
 	};
-	class OptionsStateHandler : public UIStateMessageHandler
+	class OptionsStateHandler : public MenuStateHandler<OptionsItem>
 	{
 	private:
-		const tggd::common::Layout* layout;
 		tggd::common::SoundManager& soundManager;
 		OptionsManager& optionsManager;
-		tggd::common::StringManager& stringManager;
-		OptionsItem menuItem;
-		void NextItem();
-		void PreviousItem();
-		void IncreaseItem();
-		void DecreaseItem();
-		void ActivateItem();
-		bool OnDraw(SDL_Renderer*) const;
-		bool OnCommand(const Command&);
-		bool OnUpdate();
 		void AdjustSfxVolume(int);
 		void AdjustMuxVolume(int);
-		void UpdateMenuItemColorString(const std::string&, const OptionsItem&);
 	protected:
-		bool OnMessage(const tggd::common::MGeneric*);
+		void IncreaseItem(const OptionsItem&);
+		void DecreaseItem(const OptionsItem&);
+		void ActivateItem(const OptionsItem&);
+		bool OnUpdate();
 	public:
 		OptionsStateHandler
 		(
