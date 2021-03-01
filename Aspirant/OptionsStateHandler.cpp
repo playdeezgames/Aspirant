@@ -27,7 +27,16 @@ namespace aspirant
 		OptionsManager& optionsManager,
 		tggd::common::StringManager& stringManager
 	)
-		: MenuStateHandler(parent, currentState, UIState::OPTIONS, layoutManager.GetDescriptor(LAYOUT_NAME), stringManager, OptionsItem::BACK)
+		: MenuStateHandler
+			(
+				parent, 
+				currentState, 
+				UIState::OPTIONS, 
+				UIState::MAIN_MENU,
+				layoutManager.GetDescriptor(LAYOUT_NAME), 
+				stringManager, 
+				OptionsItem::BACK
+			)
 		, soundManager(soundManager)
 		, optionsManager(optionsManager)
 	{

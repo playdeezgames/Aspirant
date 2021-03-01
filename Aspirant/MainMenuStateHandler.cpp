@@ -19,7 +19,16 @@ namespace aspirant
 		const tggd::common::LayoutManager& layoutManager,
 		tggd::common::StringManager& stringManager
 	)
-		: MenuStateHandler(parent, currentState, UIState::MAIN_MENU, layoutManager.GetDescriptor(LAYOUT_NAME), stringManager, MainMenuItem::START)
+		: MenuStateHandler
+			(
+				parent, 
+				currentState, 
+				UIState::MAIN_MENU, 
+				UIState::CONFIRM_QUIT,
+				layoutManager.GetDescriptor(LAYOUT_NAME), 
+				stringManager, 
+				MainMenuItem::START
+			)
 	{
 		AddMenuItem
 		(

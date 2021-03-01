@@ -20,6 +20,7 @@ namespace aspirant
 			parent, 
 			currentState, 
 			UIState::CONFIRM_QUIT, 
+			UIState::MAIN_MENU,
 			layoutManager.GetDescriptor(LAYOUT_NAME), 
 			stringManager,
 			ConfirmQuitItem::NO

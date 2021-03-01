@@ -54,6 +54,7 @@ namespace aspirant
 		const std::string COLOR_INACTIVE = "Gray";//TODO: make these come from config?
 		const tggd::common::Layout* layout;
 		TMenuItem menuItem;
+		UIState parentState;
 		void NextItem()
 		{
 			auto entry = menuItems.find(menuItem);
@@ -102,6 +103,10 @@ namespace aspirant
 		{
 			switch (command)
 			{
+			case Command::RED:
+			case Command::BACK:
+				SetUIState(parentState);
+				break;
 			case Command::UP:
 				PreviousItem();
 				break;
@@ -146,6 +151,7 @@ namespace aspirant
 			MessageHandler* parent,
 			const UIState& uiState,
 			const UIState& filterState,
+			const UIState& parentState,
 			const tggd::common::Layout* layout,
 			tggd::common::StringManager& stringManager,
 			const TMenuItem& menuItem
@@ -155,6 +161,7 @@ namespace aspirant
 			, menuItem(menuItem)
 			, menuItems()
 			, stringManager(stringManager)
+			, parentState(parentState)
 		{
 
 		}
