@@ -4,55 +4,9 @@
 #include "MCommand.h"
 namespace aspirant
 {
-	const std::string CONFIRM_ITEM_COLOR_ACTIVE = "Cyan";//DUPLICATED
-	const std::string CONFIRM_ITEM_COLOR_INACTIVE = "Gray";//DUPLICATED
-	const std::string CONFIRM_ITEM_NO_COLOR_STRING = "ConfirmQuit.Color.No";
-	const std::string CONFIRM_ITEM_YES_COLOR_STRING = "ConfirmQuit.Color.Yes";
+	const std::string CONFIRM_ITEM_NO_COLOR_NAME = "ConfirmQuit.Color.No";
+	const std::string CONFIRM_ITEM_YES_COLOR_NAME = "ConfirmQuit.Color.Yes";
 	const std::string LAYOUT_NAME = "ConfirmQuit";
-
-	bool ConfirmQuitStateHandler::OnDraw(SDL_Renderer* renderer) const
-	{
-		SDL_RenderClear(renderer);
-		layout->Draw(renderer);
-		return true;
-	}
-
-	void ConfirmQuitStateHandler::UpdateMenuItemColorString(const std::string& stringName, const ConfirmQuitItem& menuItem)
-	{
-		stringManager.Set
-		(
-			stringName,
-			(currentItem == menuItem) ? (CONFIRM_ITEM_COLOR_ACTIVE) :
-			(CONFIRM_ITEM_COLOR_INACTIVE)
-		);
-	}
-
-
-	bool ConfirmQuitStateHandler::OnUpdate()
-	{
-		UpdateMenuItemColorString(CONFIRM_ITEM_NO_COLOR_STRING, ConfirmQuitItem::NO);
-		UpdateMenuItemColorString(CONFIRM_ITEM_YES_COLOR_STRING, ConfirmQuitItem::YES);
-		return true;
-	}
-
-
-	bool ConfirmQuitStateHandler::OnMessage(const tggd::common::MGeneric* message)
-	{
-		if (message->GetId() == tggd::common::MRender::MSGID_Draw)
-		{
-			return OnDraw(static_cast<const tggd::common::MRender*>(message)->GetRenderer());
-		}
-		else if (message->GetId() == tggd::common::MUpdate::MSGID_Update)
-		{
-			return OnUpdate();
-		}
-		else if (message->GetId() == MCommand::MSGID_Command)
-		{
-			return OnCommand(static_cast<const MCommand*>(message)->GetCommand());
-		}
-		return false;
-	}
-
 
 	ConfirmQuitStateHandler::ConfirmQuitStateHandler
 	(
@@ -61,48 +15,29 @@ namespace aspirant
 		const tggd::common::LayoutManager& layoutManager,
 		tggd::common::StringManager& stringManager
 	)
-		: UIStateMessageHandler(parent, currentState, UIState::CONFIRM_QUIT)
-		, layout(layoutManager.GetDescriptor(LAYOUT_NAME))
-		, stringManager(stringManager)
-		, currentItem(ConfirmQuitItem::NO)
+		: MenuStateHandler
+		(
+			parent, 
+			currentState, 
+			UIState::CONFIRM_QUIT, 
+			layoutManager.GetDescriptor(LAYOUT_NAME), 
+			stringManager,
+			ConfirmQuitItem::NO
+		)
 	{
-
+		AddMenuItem
+		(
+			ConfirmQuitItem::YES,
+			MenuItemDescriptor<ConfirmQuitItem>(CONFIRM_ITEM_YES_COLOR_NAME, ConfirmQuitItem::NO, ConfirmQuitItem::NO)
+		);
+		AddMenuItem
+		(
+			ConfirmQuitItem::NO,
+			MenuItemDescriptor<ConfirmQuitItem>(CONFIRM_ITEM_NO_COLOR_NAME, ConfirmQuitItem::YES, ConfirmQuitItem::YES)
+		);
 	}
 
-	bool ConfirmQuitStateHandler::OnCommand(const Command& command)
-	{
-		switch (command)
-		{
-		case Command::UP:
-			PreviousMenuItem();
-			break;
-		case Command::DOWN:
-			NextMenuItem();
-			break;
-		case Command::BACK:
-		case Command::RED:
-			SetUIState(UIState::MAIN_MENU);
-			break;
-		case Command::GREEN:
-		case Command::START:
-			ActivateMenuItem();
-			break;
-		}
-		return true;
-	}
-
-	void ConfirmQuitStateHandler::NextMenuItem()
-	{
-		currentItem = (currentItem == ConfirmQuitItem::NO) ? (ConfirmQuitItem::YES) : (ConfirmQuitItem::NO);
-	}
-
-	void ConfirmQuitStateHandler::PreviousMenuItem()
-	{
-		//DOES THE SAME THING as next menu item, because there are only two!
-		NextMenuItem();
-	}
-
-	void ConfirmQuitStateHandler::ActivateMenuItem()
+	void ConfirmQuitStateHandler::ActivateItem(const ConfirmQuitItem& currentItem)
 	{
 		switch (currentItem)
 		{
@@ -114,5 +49,4 @@ namespace aspirant
 			return;
 		}
 	}
-
 }

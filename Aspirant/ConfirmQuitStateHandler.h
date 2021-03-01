@@ -1,5 +1,5 @@
 #pragma once
-#include "UIStateMessageHandler.h"
+#include "MenuStateHandler.h"
 #include <SDL.h>
 #include "LayoutManager.h"
 #include "StringManager.h"
@@ -11,21 +11,10 @@ namespace aspirant
 		NO,
 		YES
 	};
-	class ConfirmQuitStateHandler : public UIStateMessageHandler
+	class ConfirmQuitStateHandler : public MenuStateHandler<ConfirmQuitItem>
 	{
-	private:
-		tggd::common::StringManager& stringManager;
-		ConfirmQuitItem currentItem;
-		const tggd::common::Layout* layout;
-		bool OnDraw(SDL_Renderer*) const;
-		bool OnUpdate();
-		bool OnCommand(const Command&);
-		void NextMenuItem();
-		void PreviousMenuItem();
-		void ActivateMenuItem();
-		void UpdateMenuItemColorString(const std::string&, const ConfirmQuitItem&);
 	protected:
-		bool OnMessage(const tggd::common::MGeneric*);
+		void ActivateItem(const ConfirmQuitItem&);
 	public:
 		ConfirmQuitStateHandler
 		(
