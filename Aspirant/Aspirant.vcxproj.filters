@@ -367,5 +367,8 @@
     <ClInclude Include="StartGameStateHandler.h">
       <Filter>Header Files\UI\States</Filter>
     </ClInclude>
+    <ClInclude Include="MenuStateHandler.h">
+      <Filter>Header Files\UI\States</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

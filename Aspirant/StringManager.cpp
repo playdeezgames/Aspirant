@@ -29,4 +29,5 @@ namespace tggd::common
 	{
 		table[key] = value;
 	}
+
 }

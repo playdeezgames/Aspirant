@@ -13,6 +13,7 @@ namespace aspirant
 	const std::string OPTION_ITEM_SFX_VOLUME_COLOR_STRING = "Options.Color.SfxVolume";
 	const std::string OPTION_ITEM_MUX_VOLUME_COLOR_STRING = "Options.Color.MuxVolume";
 	const std::string OPTION_ITEM_BACK_COLOR_STRING = "Options.Color.Back";
+
 	const std::string TOGGLE_MUTE_STRING_NAME = "Options.Text.ToggleMute";
 	const std::string SFX_VOLUME_STRING_NAME = "Options.Text.SfxVolume";
 	const std::string MUX_VOLUME_STRING_NAME = "Options.Text.MuxVolume";
