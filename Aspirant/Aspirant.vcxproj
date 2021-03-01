@@ -35,6 +35,7 @@
     <ClCompile Include="MainMenuStateHandler.cpp" />
     <ClCompile Include="OptionsManager.cpp" />
     <ClCompile Include="OptionsStateHandler.cpp" />
+    <ClCompile Include="ScenarioDescriptorManager.cpp" />
     <ClCompile Include="SoundManager.cpp" />
     <ClCompile Include="StartEditorStateHandler.cpp" />
     <ClCompile Include="StartGameStateHandler.cpp" />

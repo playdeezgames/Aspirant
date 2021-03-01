@@ -7,6 +7,7 @@ namespace aspirant
 
 	const std::string START_EDITOR_NEW_COLOR_NAME = "StartEditor.Color.New";
 	const std::string START_EDITOR_BACK_COLOR_NAME = "StartEditor.Color.Back";
+	const std::string START_EDITOR_OPEN_COLOR_NAME = "StartEditor.Color.Open";
 	const std::string LAYOUT_NAME = "StartEditor";
 
 	StartEditorStateHandler::StartEditorStateHandler
@@ -30,12 +31,17 @@ namespace aspirant
 		AddMenuItem
 		(
 			StartEditorItem::NEW,
-			MenuItemDescriptor<StartEditorItem>(START_EDITOR_NEW_COLOR_NAME, StartEditorItem::BACK, StartEditorItem::BACK)
+			MenuItemDescriptor<StartEditorItem>(START_EDITOR_NEW_COLOR_NAME, StartEditorItem::BACK, StartEditorItem::OPEN)
+		);
+		AddMenuItem
+		(
+			StartEditorItem::OPEN,
+			MenuItemDescriptor<StartEditorItem>(START_EDITOR_OPEN_COLOR_NAME, StartEditorItem::NEW, StartEditorItem::BACK)
 		);
 		AddMenuItem
 		(
 			StartEditorItem::BACK,
-			MenuItemDescriptor<StartEditorItem>(START_EDITOR_BACK_COLOR_NAME, StartEditorItem::NEW, StartEditorItem::NEW)
+			MenuItemDescriptor<StartEditorItem>(START_EDITOR_BACK_COLOR_NAME, StartEditorItem::OPEN, StartEditorItem::NEW)
 		);
 	}
 

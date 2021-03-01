@@ -1,8 +1,9 @@
-{
-    "tutorial":{
-        "name": "Tutorial",
-        "brief": "Its a tutorial!",
-        "fileName":"scenarios/tutorial/scenario.json"
+[
+    {
+        "id": 0,
+        "name": "Scenario One",
+        "brief": "It's the first scenario!",
+        "fileName":"scenarios/scenario_0/scenario.json"
     }
-}
+]
 

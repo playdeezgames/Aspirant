@@ -9,6 +9,7 @@ namespace aspirant
 	enum class StartEditorItem
 	{
 		NEW,
+		OPEN,
 		BACK
 	};
 	class StartEditorStateHandler : public MenuStateHandler<StartEditorItem>

@@ -9,6 +9,8 @@ namespace aspirant
 		const std::string PROPERTY_NAME = "name";
 		const std::string PROPERTY_BRIEF = "brief";
 		const std::string PROPERTY_FILE_NAME = "fileName";
+		const std::string PROPERTY_ID = "id";
+		int id;
 		std::string name;
 		std::string brief;
 		std::string fileName;
@@ -17,8 +19,13 @@ namespace aspirant
 			: name(properties[PROPERTY_NAME])
 			, brief(properties[PROPERTY_BRIEF])
 			, fileName(properties[PROPERTY_FILE_NAME])
+			, id(properties[PROPERTY_ID])
 		{
 
+		}
+		int GetId() const
+		{
+			return id;
 		}
 		const std::string& GetName() const
 		{

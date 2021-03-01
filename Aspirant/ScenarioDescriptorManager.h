@@ -1,24 +1,17 @@
 #pragma once
-#include "CommonDescriptorManager.h"
 #include "ScenarioDescriptor.h"
+#include "FinishManager.h"
+#include <string>
+#include <vector>
 namespace aspirant
 {
-	class ScenarioDescriptorManager : public tggd::common::CommonDescriptorManager<ScenarioDescriptor>
+	class ScenarioDescriptorManager: public tggd::common::Finisher
 	{
-	protected:
-		std::string ParseKey(const std::string& key)
-		{
-			return key;
-		}
-		ScenarioDescriptor* ParseDescriptor(const nlohmann::json& properties)
-		{
-			return new ScenarioDescriptor(properties);
-		}
+	private:
+		std::vector<ScenarioDescriptor*> descriptors;
 	public:
-		ScenarioDescriptorManager(tggd::common::FinishManager& finishManager)
-			: CommonDescriptorManager(finishManager)
-		{
-
-		}
+		ScenarioDescriptorManager(tggd::common::FinishManager&);
+		void Start(const std::string&);
+		void Finish();
 	};
 }

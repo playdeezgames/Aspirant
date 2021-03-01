@@ -200,6 +200,9 @@
     <ClCompile Include="StartEditorStateHandler.cpp">
       <Filter>Source Files\UI</Filter>
     </ClCompile>
+    <ClCompile Include="ScenarioDescriptorManager.cpp">
+      <Filter>Source Files\Data</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AspirantApplication.h">
