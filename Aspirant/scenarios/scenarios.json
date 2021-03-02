@@ -3,7 +3,7 @@
         "id": 0,
         "name": "Scenario One",
         "brief": "It's the first scenario!",
-        "fileName":"scenarios/scenario_0/scenario.json"
+        "fileName":"scenarios/scenario_0.json"
     }
 ]
 
