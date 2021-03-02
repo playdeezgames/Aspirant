@@ -17,5 +17,6 @@ namespace aspirant
 		void Save() const;
 		int GetNextId() const;
 		size_t Add(ScenarioDescriptor*);
+		size_t GetCount() const;
 	};
 }

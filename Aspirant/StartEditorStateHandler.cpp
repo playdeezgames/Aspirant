@@ -62,6 +62,7 @@ namespace aspirant
 			CreateNewScenario();
 			break;
 		case StartEditorItem::OPEN:
+			//TODO: what to do when there are no scenarios to open?
 			SetUIState(UIState::EDIT_SCENARIO_SELECTOR);
 			break;
 		}

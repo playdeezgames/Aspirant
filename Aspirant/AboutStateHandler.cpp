@@ -12,15 +12,8 @@ namespace aspirant
 		const UIState& currentState,
 		tggd::common::LayoutManager& layoutManager
 	)
-		: UIStateMessageHandler(parent, currentState, UIState::ABOUT)
-		, layout(layoutManager.GetDescriptor(LAYOUT_NAME))
+		: CommonStateHandler(parent, currentState, UIState::ABOUT, layoutManager.GetDescriptor(LAYOUT_NAME))
 	{
-	}
-
-	bool AboutStateHandler::OnDraw(SDL_Renderer* renderer) const
-	{
-		layout->Draw(renderer);
-		return false;
 	}
 
 	bool AboutStateHandler::OnCommand(const Command& command)
@@ -35,19 +28,5 @@ namespace aspirant
 			break;
 		}
 		return true;
-	}
-
-
-	bool AboutStateHandler::OnMessage(const tggd::common::MGeneric* message)
-	{
-		if (message->GetId() == tggd::common::MRender::MSGID_Draw)
-		{
-			return OnDraw(static_cast<const tggd::common::MRender*>(message)->GetRenderer());
-		}
-		else if (message->GetId() == MCommand::MSGID_Command)
-		{
-			return OnCommand(static_cast<const MCommand*>(message)->GetCommand());
-		}
-		return false;
 	}
 }

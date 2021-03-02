@@ -206,6 +206,12 @@
     <ClCompile Include="EditorContext.cpp">
       <Filter>Source Files\Data</Filter>
     </ClCompile>
+    <ClCompile Include="EditScenarioSelectorStateHandler.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="CommonStateHandler.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AspirantApplication.h">
@@ -384,6 +390,12 @@
     </ClInclude>
     <ClInclude Include="EditorContext.h">
       <Filter>Header Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="EditScenarioSelectorStateHandler.h">
+      <Filter>Header Files\UI\States</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonStateHandler.h">
+      <Filter>Header Files\UI\States</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

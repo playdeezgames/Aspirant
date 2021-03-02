@@ -1,18 +1,17 @@
 #pragma once
-#include "UIStateMessageHandler.h"
+#include "CommonStateHandler.h"
 #include <SDL.h>
 #include "Command.h"
 #include "Layout.h"
 #include "LayoutManager.h"
-#include "CommonStateHandler.h"
 namespace aspirant
 {
-	class AboutStateHandler : public CommonStateHandler
+	class EditScenarioSelectorStateHandler : public CommonStateHandler
 	{
 	protected:
 		bool OnCommand(const Command&);
 	public:
-		AboutStateHandler
+		EditScenarioSelectorStateHandler
 		(
 			MessageHandler*,
 			const UIState&,

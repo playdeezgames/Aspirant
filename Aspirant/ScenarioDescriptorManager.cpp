@@ -59,4 +59,9 @@ namespace aspirant
 		return index;
 	}
 
+	size_t ScenarioDescriptorManager::GetCount() const
+	{
+		return descriptors.size();
+	}
+
 }

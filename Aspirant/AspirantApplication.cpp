@@ -8,6 +8,7 @@
 #include "OptionsStateHandler.h"
 #include "StartGameStateHandler.h"
 #include "StartEditorStateHandler.h"
+#include "EditScenarioSelectorStateHandler.h"
 #include "Utility.h"
 namespace aspirant
 {
@@ -74,6 +75,7 @@ namespace aspirant
 		new OptionsStateHandler(this, uiState, layoutManager, soundManager, optionsManager, stringManager);
 		new StartGameStateHandler(this, uiState, layoutManager, stringManager);
 		new StartEditorStateHandler(this, uiState, layoutManager, stringManager, scenarios, editorContext);
+		new EditScenarioSelectorStateHandler(this, uiState, layoutManager);
 	}
 
 	void AspirantApplication::Finish()
