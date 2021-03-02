@@ -9,9 +9,12 @@ namespace aspirant
 	{
 	private:
 		std::vector<ScenarioDescriptor*> descriptors;
+		std::string fileName;
 	public:
-		ScenarioDescriptorManager(tggd::common::FinishManager&);
-		void Start(const std::string&);
+		ScenarioDescriptorManager(tggd::common::FinishManager&, const std::string&);
+		void Load();
 		void Finish();
+		void Save();
+
 	};
 }

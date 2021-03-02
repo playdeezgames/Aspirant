@@ -55,6 +55,9 @@ namespace aspirant
 		case StartEditorItem::NEW:
 			//TODO
 			break;
+		case StartEditorItem::OPEN:
+			//TODO
+			break;
 		}
 	}
 

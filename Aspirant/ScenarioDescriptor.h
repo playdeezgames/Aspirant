@@ -39,5 +39,14 @@ namespace aspirant
 		{
 			return fileName;
 		}
+		nlohmann::json ToJSON() const
+		{
+			nlohmann::json properties;
+			properties[PROPERTY_ID] = GetId();
+			properties[PROPERTY_BRIEF] = GetBrief();
+			properties[PROPERTY_NAME] = GetName();
+			properties[PROPERTY_FILE_NAME] = GetFileName();
+			return properties;
+		}
 	};
 }

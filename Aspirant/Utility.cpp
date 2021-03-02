@@ -5,6 +5,7 @@
 #include <sstream>
 #include "ConstantValue.h"
 #include "DynamicValue.h"
+#include <direct.h>
 namespace tggd::common
 {
 	std::vector<std::string> Utility::CommandLineToStringVector(int argc, char** argv)
@@ -110,5 +111,11 @@ namespace tggd::common
 	{
 		return value * 100 / maximum;
 	}
+
+	void Utility::CreateFolder(const std::string& directory)
+	{
+		_mkdir(directory.c_str());//ignore return value!
+	}
+
 }
 

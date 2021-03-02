@@ -41,7 +41,7 @@ namespace aspirant
 		, layoutManager(finishManager, spriteManager, colorManager, fontManager, stringManager, intManager, flagManager)
 		, uiState(UIState::SPLASH)
 		, descriptors(finishManager)
-		, scenarios(finishManager)
+		, scenarios(finishManager, SCENARIOS_CONFIG_FILE)
 	{
 
 	}
@@ -64,7 +64,7 @@ namespace aspirant
 		soundManager.Start(SFX_CONFIG_FILE, MUX_CONFIG_FILE);
 		optionsManager.Start();
 		descriptors.Start(DESCRIPTORS_CONFIG_FILE);
-		scenarios.Start(SCENARIOS_CONFIG_FILE);
+		scenarios.Load();
 
 		new SplashStateHandler(this, uiState, layoutManager);
 		new MainMenuStateHandler(this, uiState, layoutManager, stringManager);
