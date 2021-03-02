@@ -1,3 +1,4 @@
+
 Screens:
     ☐ Start Game Screen
         ✔ Editor @done(21-03-01 05:23)
@@ -18,6 +19,9 @@ Features:
     ☐ Customize Keyboard Controls
     ☐ Open Help File From Main Menu
 Whimsy:
+    ☐ diabetic cat
+        ☐ must give insulin, or else
+        ☐ if "or else" scenario happens, then mice will chew through something that makes life impossible
     ✘ VR/AR @cancelled(21-02-27 05:55)
 Controls:
     ✔ menu item(tintable text) @done(21-02-21 05:44)

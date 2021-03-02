@@ -1,9 +1,1 @@
-[
-    {
-        "id": 0,
-        "name": "Scenario One",
-        "brief": "It's the first scenario!",
-        "fileName":"scenarios/scenario_0.json"
-    }
-]
-
+[{"brief":"The best scenario ever!","fileName":"scenarios/scenario_1.json","id":1,"name":"New Scenario"}]

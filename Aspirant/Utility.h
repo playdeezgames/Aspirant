@@ -41,7 +41,6 @@ namespace tggd::common
 		static IValue<int>* LoadInt(const IDataStore<int>&, const nlohmann::json&);
 		static IValue<bool>* LoadFlag(const IDataStore<bool>&, const nlohmann::json&);
 		static int ToPercentage(int, int);
-		static void CreateFolder(const std::string&);
 	};
 }
 

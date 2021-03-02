@@ -26,6 +26,7 @@
     <ClCompile Include="ConfirmQuitStateHandler.cpp" />
     <ClCompile Include="CreatureDescriptor.cpp" />
     <ClCompile Include="DescriptorManager.cpp" />
+    <ClCompile Include="EditorContext.cpp" />
     <ClCompile Include="FinishManager.cpp" />
     <ClCompile Include="FlagManager.cpp" />
     <ClCompile Include="FontManager.cpp" />
@@ -67,6 +68,7 @@
     <ClInclude Include="DescriptorManager.h" />
     <ClInclude Include="Drawn.h" />
     <ClInclude Include="DynamicValue.h" />
+    <ClInclude Include="EditorContext.h" />
     <ClInclude Include="Finisher.h" />
     <ClInclude Include="FinishManager.h" />
     <ClInclude Include="FlagManager.h" />

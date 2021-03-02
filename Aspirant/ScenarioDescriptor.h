@@ -23,6 +23,20 @@ namespace aspirant
 		{
 
 		}
+		ScenarioDescriptor
+		(
+			int id, 
+			const std::string& name, 
+			const std::string& brief, 
+			const std::string& fileName
+		)
+			: id(id)
+			, name(name)
+			, brief(brief)
+			, fileName(fileName)
+		{
+
+		}
 		int GetId() const
 		{
 			return id;

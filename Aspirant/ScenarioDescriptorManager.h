@@ -14,7 +14,8 @@ namespace aspirant
 		ScenarioDescriptorManager(tggd::common::FinishManager&, const std::string&);
 		void Load();
 		void Finish();
-		void Save();
-
+		void Save() const;
+		int GetNextId() const;
+		size_t Add(ScenarioDescriptor*);
 	};
 }

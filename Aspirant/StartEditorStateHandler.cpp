@@ -2,6 +2,8 @@
 #include "MRender.h"
 #include "MCommand.h"
 #include "MUpdate.h"
+#include <sstream>
+#include "Utility.h"
 namespace aspirant
 {
 
@@ -15,7 +17,9 @@ namespace aspirant
 		MessageHandler* parent,
 		const UIState& currentState,
 		tggd::common::LayoutManager& layoutManager,
-		tggd::common::StringManager& stringManager
+		tggd::common::StringManager& stringManager,
+		ScenarioDescriptorManager& scenarios,
+		EditorContext& editorContext
 	)
 		: MenuStateHandler
 		(
@@ -27,6 +31,8 @@ namespace aspirant
 			stringManager,
 			StartEditorItem::BACK
 		)
+		, scenarios(scenarios)
+		, editorContext(editorContext)
 	{
 		AddMenuItem
 		(
@@ -53,12 +59,35 @@ namespace aspirant
 			SetUIState(UIState::START_GAME);
 			break;
 		case StartEditorItem::NEW:
-			//TODO
+			CreateNewScenario();
 			break;
 		case StartEditorItem::OPEN:
-			//TODO
+			SetUIState(UIState::EDIT_SCENARIO_SELECTOR);
 			break;
 		}
 	}
 
+	void CreateScenarioFile(const std::string& fileName)
+	{
+		nlohmann::json properties;
+		properties["rooms"] = nlohmann::json({});//TODO: magic string
+		tggd::common::Utility::SaveJSON(fileName, properties);
+	}
+
+	void StartEditorStateHandler::CreateNewScenario()
+	{
+		int scenarioId = scenarios.GetNextId();
+		std::stringstream ss;
+		ss << "scenarios/scenario_" << scenarioId << ".json";//TODO: magic string
+		ScenarioDescriptor* descriptor = new ScenarioDescriptor
+		(
+			scenarioId,
+			"New Scenario",//TODO: magic string
+			"The best scenario ever!",//TODO: magic string
+			ss.str()
+		);
+		CreateScenarioFile(ss.str());
+		editorContext.SetScenarioIndex(scenarios.Add(descriptor));
+		SetUIState(UIState::EDIT_SCENARIO_DESCRIPTOR);
+	}
 }

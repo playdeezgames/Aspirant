@@ -112,10 +112,5 @@ namespace tggd::common
 		return value * 100 / maximum;
 	}
 
-	void Utility::CreateFolder(const std::string& directory)
-	{
-		_mkdir(directory.c_str());//ignore return value!
-	}
-
 }
 

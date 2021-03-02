@@ -14,6 +14,7 @@
 #include "OptionsManager.h"
 #include "DescriptorManager.h"
 #include "ScenarioDescriptorManager.h"
+#include "EditorContext.h"
 namespace aspirant
 {
 	class AspirantApplication : public tggd::common::Application
@@ -33,6 +34,7 @@ namespace aspirant
 		DescriptorManager descriptors;
 		ScenarioDescriptorManager scenarios;
 		OptionsManager optionsManager;
+		EditorContext editorContext;
 		bool OnSetUIState(const UIState&);
 		bool OnKeyDown(const SDL_KeyboardEvent&);
 		bool OnSdlEvent(const SDL_Event&);

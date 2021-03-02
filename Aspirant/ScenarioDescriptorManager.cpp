@@ -30,7 +30,7 @@ namespace aspirant
 		}
 	}
 
-	void ScenarioDescriptorManager::Save()
+	void ScenarioDescriptorManager::Save() const
 	{
 		nlohmann::json descriptorList;
 		for (auto& descriptor : descriptors)
@@ -39,4 +39,24 @@ namespace aspirant
 		}
 		tggd::common::Utility::SaveJSON(fileName, descriptorList);
 	}
+
+	int ScenarioDescriptorManager::GetNextId() const
+	{
+		int maximum = 0;
+		for (auto& descriptor : descriptors)
+		{
+			maximum = (descriptor->GetId() > maximum) ? (descriptor->GetId()) : (maximum);
+		}
+		return maximum + 1;
+	}
+
+	size_t ScenarioDescriptorManager::Add(ScenarioDescriptor* descriptor)
+	{
+		assert(descriptor);
+		size_t index = descriptors.size();
+		descriptors.push_back(descriptor);
+		Save();
+		return index;
+	}
+
 }
