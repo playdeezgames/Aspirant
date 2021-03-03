@@ -242,6 +242,9 @@
     <ClCompile Include="StartEditorStateHandler.cpp">
       <Filter>Source Files\UI\Editor</Filter>
     </ClCompile>
+    <ClCompile Include="EditScenarioStateHandler.cpp">
+      <Filter>Source Files\UI\Editor</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AspirantApplication.h">
@@ -426,6 +429,9 @@
     </ClInclude>
     <ClInclude Include="DescriptorManager.h">
       <Filter>Header Files\Data\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="EditScenarioStateHandler.h">
+      <Filter>Header Files\UI\States\Editor</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,4 +1,5 @@
 #include "AspirantApplication.h"
+#include "Utility.h"
 #include "MSetUIState.h"
 #include "MEvent.h"
 #include "SplashStateHandler.h"
@@ -9,7 +10,7 @@
 #include "StartGameStateHandler.h"
 #include "StartEditorStateHandler.h"
 #include "EditScenarioSelectorStateHandler.h"
-#include "Utility.h"
+#include "EditScenarioStateHandler.h"
 namespace aspirant
 {
 	const std::string APPLICATION_CONFIG_FILE = "config/ui/application.json";
@@ -76,6 +77,7 @@ namespace aspirant
 		new StartGameStateHandler(this, uiState, layoutManager, stringManager);
 		new StartEditorStateHandler(this, uiState, layoutManager, stringManager, scenarios, editorContext);
 		new EditScenarioSelectorStateHandler(this, uiState, layoutManager, editorContext, scenarios, stringManager);
+		new EditScenarioStateHandler(this, uiState, layoutManager, stringManager, scenarios, editorContext);
 	}
 
 	void AspirantApplication::Finish()

@@ -21,5 +21,8 @@
     "EditScenarioSelector.Text.Index": "Scenario #/#",
     "EditScenarioSelector.Text.Id": "<id>",
     "EditScenarioSelector.Text.Name": "<name>",
-    "EditScenarioSelector.Text.Brief": "<brief>"
+    "EditScenarioSelector.Text.Brief": "<brief>",
+    "EditScenario.Color.Descriptor":"Gray",
+    "EditScenario.Color.Rooms":"Gray",
+    "EditScenario.Color.Back":"Gray"
 }

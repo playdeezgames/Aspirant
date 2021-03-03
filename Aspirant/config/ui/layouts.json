@@ -6,5 +6,6 @@
     "Options":"config/ui/layouts/optionsPage.json",
     "StartGame":"config/ui/layouts/startGamePage.json",
     "StartEditor":"config/ui/layouts/startEditorPage.json",
-    "EditScenarioSelector":"config/ui/layouts/editScenarioSelectorPage.json"
+    "EditScenarioSelector":"config/ui/layouts/editScenarioSelectorPage.json",
+    "EditScenario":"config/ui/layouts/editScenarioPage.json"
 }

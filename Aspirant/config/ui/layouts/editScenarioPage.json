@@ -1,0 +1,62 @@
+[
+    {
+        "type": "StaticImage",
+        "sprite": "Background",
+        "color": "DarkGray",
+        "x": 0,
+        "y": 0
+    },
+    {
+        "type": "StaticText",
+        "font": "default",
+        "color": "LightGreen",
+        "text": "==EDIT SCENARIO==",
+        "x": 320,
+        "y": 0,
+        "horizontalAlignment": 0,
+        "dropShadow": true,
+        "dropShadowColor": "Black",
+        "dropShadowX": 2,
+        "dropShadowY": 2
+    },
+    {
+        "type": "StaticText",
+        "font": "default",
+        "color": { "key": "EditScenario.Color.Descriptor" },
+        "text": "Descriptor...",
+        "x": 320,
+        "y": 32,
+        "horizontalAlignment": 0,
+        "dropShadow": true,
+        "dropShadowColor": "Black",
+        "dropShadowX": 2,
+        "dropShadowY": 2
+    },
+    {
+        "type": "StaticText",
+        "font": "default",
+        "color": { "key": "EditScenario.Color.Rooms" },
+        "text": "Rooms...",
+        "x": 320,
+        "y": 48,
+        "horizontalAlignment": 0,
+        "dropShadow": true,
+        "dropShadowColor": "Black",
+        "dropShadowX": 2,
+        "dropShadowY": 2
+    },
+    {
+        "type": "StaticText",
+        "font": "default",
+        "color": { "key": "EditScenario.Color.Back" },
+        "text": "Back",
+        "x": 320,
+        "y": 64,
+        "horizontalAlignment": 0,
+        "dropShadow": true,
+        "dropShadowColor": "Black",
+        "dropShadowX": 2,
+        "dropShadowY": 2
+    }
+
+]

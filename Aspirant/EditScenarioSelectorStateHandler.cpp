@@ -24,6 +24,9 @@ namespace aspirant
 		case Command::LEFT:
 			PreviousScenario();
 			break;
+		case Command::GREEN:
+			SetUIState(UIState::EDIT_SCENARIO);
+			break;
 		}
 		return true;
 	}

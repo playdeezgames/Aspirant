@@ -29,6 +29,7 @@
     <ClCompile Include="DescriptorManager.cpp" />
     <ClCompile Include="EditorContext.cpp" />
     <ClCompile Include="EditScenarioSelectorStateHandler.cpp" />
+    <ClCompile Include="EditScenarioStateHandler.cpp" />
     <ClCompile Include="FinishManager.cpp" />
     <ClCompile Include="FlagManager.cpp" />
     <ClCompile Include="FontManager.cpp" />
@@ -73,6 +74,7 @@
     <ClInclude Include="DynamicValue.h" />
     <ClInclude Include="EditorContext.h" />
     <ClInclude Include="EditScenarioSelectorStateHandler.h" />
+    <ClInclude Include="EditScenarioStateHandler.h" />
     <ClInclude Include="Finisher.h" />
     <ClInclude Include="FinishManager.h" />
     <ClInclude Include="FlagManager.h" />
