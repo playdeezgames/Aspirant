@@ -75,7 +75,7 @@ namespace aspirant
 		new OptionsStateHandler(this, uiState, layoutManager, soundManager, optionsManager, stringManager);
 		new StartGameStateHandler(this, uiState, layoutManager, stringManager);
 		new StartEditorStateHandler(this, uiState, layoutManager, stringManager, scenarios, editorContext);
-		new EditScenarioSelectorStateHandler(this, uiState, layoutManager);
+		new EditScenarioSelectorStateHandler(this, uiState, layoutManager, editorContext, scenarios, stringManager);
 	}
 
 	void AspirantApplication::Finish()

@@ -108,7 +108,7 @@
         "font": "default",
         "color": "Gray",
         "text": {
-            "key": "EditScenarioSelector.Text.Name"
+            "key": "EditScenarioSelector.Text.Brief"
         },
         "x": 320,
         "y": 176,
