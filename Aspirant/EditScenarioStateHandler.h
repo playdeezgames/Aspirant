@@ -16,7 +16,9 @@ namespace aspirant
 	private:
 		const ScenarioDescriptorManager& scenarios;
 		const EditorContext& editorContext;
+		void UpdateHeader();
 	protected:
+		bool OnUpdate();
 		void ActivateItem(const EditScenarioItem&);
 	public:
 		EditScenarioStateHandler
