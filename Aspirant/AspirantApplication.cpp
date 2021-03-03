@@ -136,7 +136,6 @@ namespace aspirant
 		return true;
 	}
 
-
 	bool AspirantApplication::OnSdlEvent(const SDL_Event& evt)
 	{
 		if (evt.type == SDL_QUIT)
