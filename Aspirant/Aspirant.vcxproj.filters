@@ -138,6 +138,9 @@
     <Filter Include="Source Files\UI\Editor">
       <UniqueIdentifier>{07a6a74c-f47a-464d-be6b-c17ec33ea914}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Data\Scenarios">
+      <UniqueIdentifier>{2b8fee4f-28e1-45b4-b6e5-68b639fc74e0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AspirantApplication.cpp">
@@ -244,6 +247,9 @@
     </ClCompile>
     <ClCompile Include="EditScenarioStateHandler.cpp">
       <Filter>Source Files\UI\Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="Scenario.cpp">
+      <Filter>Source Files\Data\Scenarios</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -432,6 +438,18 @@
     </ClInclude>
     <ClInclude Include="EditScenarioStateHandler.h">
       <Filter>Header Files\UI\States\Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="Scenario.h">
+      <Filter>Header Files\Data\Scenarios</Filter>
+    </ClInclude>
+    <ClInclude Include="ScenarioRoomCell.h">
+      <Filter>Header Files\Data\Scenarios</Filter>
+    </ClInclude>
+    <ClInclude Include="ScenarioRoomCellFlags.h">
+      <Filter>Header Files\Data\Scenarios</Filter>
+    </ClInclude>
+    <ClInclude Include="ScenarioObjectInstance.h">
+      <Filter>Header Files\Data\Scenarios</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

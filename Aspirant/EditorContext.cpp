@@ -3,6 +3,7 @@ namespace aspirant
 {
 	EditorContext::EditorContext()
 		: scenarioIndex(0)
+		, scenario()
 	{
 
 	}

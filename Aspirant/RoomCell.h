@@ -3,6 +3,7 @@
 #include <set>
 #include <stack>
 #include "Utility.h"
+#include "json.hpp"
 namespace tggd::common
 {
 	template<typename TObjectData, typename TCellFlags>
@@ -24,8 +25,8 @@ namespace tggd::common
 			}
 		}
 	protected:
-		virtual nlohmann::json CellFlagToJSON(const TCellFlag&) = 0;
-		virtual TCellFlag CellFlagFromJSON(const nlohmann::json&) = 0;
+		virtual nlohmann::json CellFlagToJSON(const TCellFlags&) = 0;
+		virtual TCellFlags CellFlagFromJSON(const nlohmann::json&) = 0;
 		virtual RoomCellObject<TObjectData, TCellFlags>* ObjectFromJSON(const nlohmann::json&) = 0;
 	public:
 		RoomCell(size_t column, size_t row)
@@ -75,7 +76,7 @@ namespace tggd::common
 				(objects.empty()) ? (nullptr) :
 				(objects.top());
 		}
-		bool HasObjects() const { return !objects.empty() }
+		bool HasObjects() const { return !objects.empty(); }
 		size_t GetColumn() const { return column; }
 		size_t GetRow() const { return row; }
 		void SetFlag(const TCellFlags& flag)
@@ -94,7 +95,9 @@ namespace tggd::common
 		{
 			if (!objects.empty())
 			{
-				return objects.pop();
+				auto result = objects.top();
+				objects.pop();
+				return result;
 			}
 			return nullptr;
 		}
