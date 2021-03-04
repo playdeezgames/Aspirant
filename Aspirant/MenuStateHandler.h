@@ -48,11 +48,11 @@ namespace aspirant
 	class MenuStateHandler : public UIStateMessageHandler
 	{
 	private:
+		std::string layoutName;
 		std::map<TMenuItem, MenuItemDescriptor<TMenuItem>> menuItems;
 		tggd::common::StringManager& stringManager;
 		const std::string COLOR_ACTIVE = "Cyan";//TODO: make these come from config?
 		const std::string COLOR_INACTIVE = "Gray";//TODO: make these come from config?
-		const tggd::common::Layout* layout;
 		TMenuItem menuItem;
 		UIState parentState;
 		void NextItem()
@@ -73,7 +73,7 @@ namespace aspirant
 		}
 		bool OnDraw(SDL_Renderer* renderer) const
 		{
-			layout->Draw(renderer);
+			GetUIContext().GetLayoutManager().GetDescriptor(layoutName)->Draw(renderer);
 			return false;
 		}
 	protected:
@@ -151,13 +151,13 @@ namespace aspirant
 			MessageHandler* parent,
 			const UIState& filterState,
 			const UIState& parentState,
-			const tggd::common::Layout* layout,
+			const std::string& layoutName,
 			tggd::common::StringManager& stringManager,
 			const TMenuItem& menuItem,
 			const UIContext& uiContext
 		)
 			: UIStateMessageHandler(parent, filterState, uiContext)
-			, layout(layout)
+			, layoutName(layoutName)
 			, menuItem(menuItem)
 			, menuItems()
 			, stringManager(stringManager)

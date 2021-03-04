@@ -8,7 +8,7 @@ namespace aspirant
 	class CommonStateHandler : public UIStateMessageHandler
 	{
 	private:
-		const tggd::common::Layout* layout;
+		std::string layoutName;
 		bool OnDraw(SDL_Renderer*) const;
 	protected:
 		virtual bool OnCommand(const Command&) = 0;
@@ -19,7 +19,7 @@ namespace aspirant
 		(
 			MessageHandler*,
 			const UIState&,
-			const tggd::common::Layout*,
+			const std::string&,
 			const UIContext&
 		);
 	};

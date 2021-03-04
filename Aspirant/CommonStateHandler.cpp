@@ -6,7 +6,7 @@ namespace aspirant
 {
 	bool CommonStateHandler::OnDraw(SDL_Renderer* renderer) const
 	{
-		layout->Draw(renderer);
+		GetUIContext().GetLayoutManager().GetDescriptor(layoutName)->Draw(renderer);
 		return false;
 	}
 
@@ -31,11 +31,11 @@ namespace aspirant
 	(
 		MessageHandler* parent,
 		const UIState& filterState,
-		const tggd::common::Layout* layout,
+		const std::string& layoutName,
 		const UIContext& uiContext
 	)
 		: UIStateMessageHandler(parent, filterState, uiContext)
-		, layout(layout)
+		, layoutName(layoutName)
 	{
 
 	}

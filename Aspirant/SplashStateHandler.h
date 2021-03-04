@@ -10,7 +10,6 @@ namespace aspirant
 	class SplashStateHandler : public UIStateMessageHandler
 	{
 	private:
-		const tggd::common::Layout* layout;
 		bool OnDraw(SDL_Renderer*) const;
 		bool OnUpdate(unsigned int);
 		bool OnCommand(const Command&);
@@ -21,7 +20,6 @@ namespace aspirant
 		SplashStateHandler
 		(
 			MessageHandler*,
-			tggd::common::LayoutManager&,
 			const UIContext&
 		);
 	};

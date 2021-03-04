@@ -9,10 +9,9 @@ namespace aspirant
 	AboutStateHandler::AboutStateHandler
 	(
 		MessageHandler* parent,
-		tggd::common::LayoutManager& layoutManager,
 		const UIContext& uiContext
 	)
-		: CommonStateHandler(parent, UIState::ABOUT, layoutManager.GetDescriptor(LAYOUT_NAME), uiContext)
+		: CommonStateHandler(parent, UIState::ABOUT, LAYOUT_NAME, uiContext)
 	{
 	}
 

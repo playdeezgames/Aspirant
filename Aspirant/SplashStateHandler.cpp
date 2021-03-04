@@ -11,12 +11,10 @@ namespace aspirant
 	SplashStateHandler::SplashStateHandler
 	(
 		MessageHandler* parent,
-		tggd::common::LayoutManager& layoutManager,
 		const UIContext& uiContext
 	)
 		: UIStateMessageHandler(parent, UIState::SPLASH, uiContext)
 		, ticksLeft(TICKS_LEFT)
-		, layout(layoutManager.GetDescriptor(LAYOUT_NAME))
 	{
 	}
 
@@ -33,7 +31,7 @@ namespace aspirant
 
 	bool SplashStateHandler::OnDraw(SDL_Renderer* renderer) const
 	{
-		layout->Draw(renderer);
+		GetUIContext().GetLayoutManager().GetDescriptor(LAYOUT_NAME)->Draw(renderer);
 		return false;
 	}
 

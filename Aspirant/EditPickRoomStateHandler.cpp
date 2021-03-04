@@ -23,12 +23,11 @@ namespace aspirant
 	EditPickRoomStateHandler::EditPickRoomStateHandler
 	(
 		MessageHandler* parent,
-		tggd::common::LayoutManager& layoutManager,
 		EditorContext& editorContext,
 		tggd::common::StringManager& stringManager,
 		const UIContext& uiContext
 	)
-		: CommonStateHandler(parent, UIState::EDIT_PICK_ROOM, layoutManager.GetDescriptor(LAYOUT_NAME), uiContext)
+		: CommonStateHandler(parent, UIState::EDIT_PICK_ROOM, LAYOUT_NAME, uiContext)
 	{
 
 	}

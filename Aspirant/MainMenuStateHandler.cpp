@@ -15,7 +15,6 @@ namespace aspirant
 	MainMenuStateHandler::MainMenuStateHandler
 	(
 		MessageHandler* parent,
-		const tggd::common::LayoutManager& layoutManager,
 		tggd::common::StringManager& stringManager,
 		const UIContext& uiContext
 	)
@@ -24,7 +23,7 @@ namespace aspirant
 				parent, 
 				UIState::MAIN_MENU, 
 				UIState::CONFIRM_QUIT,
-				layoutManager.GetDescriptor(LAYOUT_NAME), 
+				LAYOUT_NAME, 
 				stringManager, 
 				MainMenuItem::START,
 				uiContext

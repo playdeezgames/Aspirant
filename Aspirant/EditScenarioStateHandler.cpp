@@ -43,7 +43,6 @@ namespace aspirant
 	EditScenarioStateHandler::EditScenarioStateHandler
 	(
 		MessageHandler* parent,
-		tggd::common::LayoutManager& layoutManager,
 		tggd::common::StringManager& stringManager,
 		const EditorContext& editorContext,
 		const UIContext& uiContext
@@ -53,7 +52,7 @@ namespace aspirant
 			parent, 
 			UIState::EDIT_SCENARIO, 
 			UIState::EDIT_SCENARIO_SELECTOR, 
-			layoutManager.GetDescriptor(LAYOUT_NAME), 
+			LAYOUT_NAME, 
 			stringManager, 
 			EditScenarioItem::BACK,
 			uiContext

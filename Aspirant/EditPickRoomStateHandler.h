@@ -15,7 +15,6 @@ namespace aspirant
 		EditPickRoomStateHandler
 		(
 			MessageHandler*,
-			tggd::common::LayoutManager&,
 			EditorContext&,
 			tggd::common::StringManager&,
 			const UIContext&
