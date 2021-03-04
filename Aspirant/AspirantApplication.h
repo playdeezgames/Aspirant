@@ -1,6 +1,7 @@
 #pragma once
 #include "Application.h"
 #include "UIState.h"
+#include "UIContext.h"
 #include "FinishManager.h"
 #include "TextureManager.h"
 #include "SpriteManager.h"
@@ -21,6 +22,7 @@ namespace aspirant
 	{
 	private:
 		UIState uiState;
+		UIContext uiContext;
 		tggd::common::FinishManager finishManager;
 		tggd::common::TextureManager textureManager;
 		tggd::common::SpriteManager spriteManager;

@@ -17,7 +17,8 @@ namespace aspirant
 		MessageHandler* parent,
 		const UIState& currentState,
 		const tggd::common::LayoutManager& layoutManager,
-		tggd::common::StringManager& stringManager
+		tggd::common::StringManager& stringManager,
+		const UIContext& uiContext
 	)
 		: MenuStateHandler
 			(
@@ -27,7 +28,8 @@ namespace aspirant
 				UIState::CONFIRM_QUIT,
 				layoutManager.GetDescriptor(LAYOUT_NAME), 
 				stringManager, 
-				MainMenuItem::START
+				MainMenuItem::START,
+				uiContext
 			)
 	{
 		AddMenuItem

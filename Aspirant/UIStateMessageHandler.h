@@ -2,6 +2,7 @@
 #include "MessageHandler.h"
 #include "UIState.h"
 #include "MSetUIState.h"
+#include "UIContext.h"
 namespace aspirant
 {
 	class UIStateMessageHandler : public tggd::common::MessageHandler
@@ -9,6 +10,7 @@ namespace aspirant
 	private:
 		UIState filterState;
 		const UIState& currentState;
+		const UIContext& uiContext;
 	protected:
 		bool IsEnabled() const
 		{
@@ -19,10 +21,17 @@ namespace aspirant
 			Handle(MSetUIState(newState));
 		}
 	public:
-		UIStateMessageHandler(MessageHandler* parent, const UIState& currentState, const UIState& filterState)
+		UIStateMessageHandler
+		(
+			MessageHandler* parent, 
+			const UIState& currentState, 
+			const UIState& filterState,
+			const UIContext& uiContext
+		)
 			: tggd::common::MessageHandler(parent)
 			, currentState(currentState)
 			, filterState(filterState)
+			, uiContext(uiContext)
 		{
 
 		}

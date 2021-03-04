@@ -46,6 +46,7 @@ namespace aspirant
 		, descriptors(finishManager)
 		, scenarios(finishManager, SCENARIOS_CONFIG_FILE)
 		, editorContext(descriptors, scenarios)
+		, uiContext()
 	{
 
 	}
@@ -70,16 +71,16 @@ namespace aspirant
 		descriptors.Start(DESCRIPTORS_CONFIG_FILE);
 		scenarios.Load();
 
-		new SplashStateHandler(this, uiState, layoutManager);
-		new MainMenuStateHandler(this, uiState, layoutManager, stringManager);
-		new AboutStateHandler(this, uiState, layoutManager);
-		new ConfirmQuitStateHandler(this, uiState, layoutManager, stringManager);
-		new OptionsStateHandler(this, uiState, layoutManager, soundManager, optionsManager, stringManager);
-		new StartGameStateHandler(this, uiState, layoutManager, stringManager);
-		new StartEditorStateHandler(this, uiState, layoutManager, stringManager, editorContext);
-		new EditScenarioSelectorStateHandler(this, uiState, layoutManager, editorContext, stringManager);
-		new EditScenarioStateHandler(this, uiState, layoutManager, stringManager, editorContext);
-		new EditPickRoomStateHandler(this, uiState, layoutManager, editorContext, stringManager);
+		new SplashStateHandler(this, uiState, layoutManager, uiContext);
+		new MainMenuStateHandler(this, uiState, layoutManager, stringManager, uiContext);
+		new AboutStateHandler(this, uiState, layoutManager, uiContext);
+		new ConfirmQuitStateHandler(this, uiState, layoutManager, stringManager, uiContext);
+		new OptionsStateHandler(this, uiState, layoutManager, soundManager, optionsManager, stringManager, uiContext);
+		new StartGameStateHandler(this, uiState, layoutManager, stringManager, uiContext);
+		new StartEditorStateHandler(this, uiState, layoutManager, stringManager, editorContext, uiContext);
+		new EditScenarioSelectorStateHandler(this, uiState, layoutManager, editorContext, stringManager, uiContext);
+		new EditScenarioStateHandler(this, uiState, layoutManager, stringManager, editorContext, uiContext);
+		new EditPickRoomStateHandler(this, uiState, layoutManager, editorContext, stringManager, uiContext);
 	}
 
 	void AspirantApplication::Finish()

@@ -115,9 +115,10 @@ namespace aspirant
 		const UIState& currentState,
 		tggd::common::LayoutManager& layoutManager,
 		EditorContext& editorContext,
-		tggd::common::StringManager& stringManager
+		tggd::common::StringManager& stringManager,
+		const UIContext& uiContext
 	)
-		: CommonStateHandler(parent, currentState, UIState::EDIT_SCENARIO_SELECTOR, layoutManager.GetDescriptor(LAYOUT_NAME))
+		: CommonStateHandler(parent, currentState, UIState::EDIT_SCENARIO_SELECTOR, layoutManager.GetDescriptor(LAYOUT_NAME), uiContext)
 		, editorContext(editorContext)
 		, stringManager(stringManager)
 	{

@@ -25,7 +25,8 @@ namespace aspirant
 		tggd::common::LayoutManager& layoutManager,
 		tggd::common::SoundManager& soundManager,
 		OptionsManager& optionsManager,
-		tggd::common::StringManager& stringManager
+		tggd::common::StringManager& stringManager,
+		const UIContext& uiContext
 	)
 		: MenuStateHandler
 			(
@@ -35,7 +36,8 @@ namespace aspirant
 				UIState::MAIN_MENU,
 				layoutManager.GetDescriptor(LAYOUT_NAME), 
 				stringManager, 
-				OptionsItem::BACK
+				OptionsItem::BACK,
+				uiContext
 			)
 		, soundManager(soundManager)
 		, optionsManager(optionsManager)

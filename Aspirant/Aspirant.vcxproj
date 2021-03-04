@@ -129,6 +129,7 @@
     <ClInclude Include="TerrainDescriptor.h" />
     <ClInclude Include="TerrainInstance.h" />
     <ClInclude Include="TextureManager.h" />
+    <ClInclude Include="UIContext.h" />
     <ClInclude Include="UIState.h" />
     <ClInclude Include="UIStateMessageHandler.h" />
     <ClInclude Include="Utility.h" />

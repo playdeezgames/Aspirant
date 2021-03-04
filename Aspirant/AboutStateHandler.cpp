@@ -10,9 +10,10 @@ namespace aspirant
 	(
 		MessageHandler* parent,
 		const UIState& currentState,
-		tggd::common::LayoutManager& layoutManager
+		tggd::common::LayoutManager& layoutManager,
+		const UIContext& uiContext
 	)
-		: CommonStateHandler(parent, currentState, UIState::ABOUT, layoutManager.GetDescriptor(LAYOUT_NAME))
+		: CommonStateHandler(parent, currentState, UIState::ABOUT, layoutManager.GetDescriptor(LAYOUT_NAME), uiContext)
 	{
 	}
 

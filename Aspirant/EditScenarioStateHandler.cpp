@@ -46,7 +46,8 @@ namespace aspirant
 		const UIState& uiState,
 		tggd::common::LayoutManager& layoutManager,
 		tggd::common::StringManager& stringManager,
-		const EditorContext& editorContext
+		const EditorContext& editorContext,
+		const UIContext& uiContext
 	)
 		: MenuStateHandler
 		(
@@ -56,7 +57,8 @@ namespace aspirant
 			UIState::EDIT_SCENARIO_SELECTOR, 
 			layoutManager.GetDescriptor(LAYOUT_NAME), 
 			stringManager, 
-			EditScenarioItem::BACK
+			EditScenarioItem::BACK,
+			uiContext
 		)
 		, editorContext(editorContext)
 	{

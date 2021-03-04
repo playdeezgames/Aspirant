@@ -487,5 +487,8 @@
     <ClInclude Include="EditPickRoomStateHandler.h">
       <Filter>Header Files\UI\States\Editor</Filter>
     </ClInclude>
+    <ClInclude Include="UIContext.h">
+      <Filter>Header Files\Data</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

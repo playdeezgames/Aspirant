@@ -23,7 +23,8 @@ namespace aspirant
 			MessageHandler*,
 			const UIState&,
 			const tggd::common::LayoutManager&,
-			tggd::common::StringManager&
+			tggd::common::StringManager&,
+			const UIContext&
 		);
 	};
 }

@@ -154,9 +154,10 @@ namespace aspirant
 			const UIState& parentState,
 			const tggd::common::Layout* layout,
 			tggd::common::StringManager& stringManager,
-			const TMenuItem& menuItem
+			const TMenuItem& menuItem,
+			const UIContext& uiContext
 		)
-			: UIStateMessageHandler(parent, uiState, filterState)
+			: UIStateMessageHandler(parent, uiState, filterState, uiContext)
 			, layout(layout)
 			, menuItem(menuItem)
 			, menuItems()

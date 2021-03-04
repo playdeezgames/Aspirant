@@ -12,9 +12,10 @@ namespace aspirant
 	(
 		MessageHandler* parent,
 		const UIState& currentState,
-		tggd::common::LayoutManager& layoutManager
+		tggd::common::LayoutManager& layoutManager,
+		const UIContext& uiContext
 	)
-		: UIStateMessageHandler(parent, currentState, UIState::SPLASH)
+		: UIStateMessageHandler(parent, currentState, UIState::SPLASH, uiContext)
 		, ticksLeft(TICKS_LEFT)
 		, layout(layoutManager.GetDescriptor(LAYOUT_NAME))
 	{

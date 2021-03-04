@@ -37,7 +37,8 @@ namespace aspirant
 			tggd::common::LayoutManager&,
 			tggd::common::SoundManager&,
 			OptionsManager&,
-			tggd::common::StringManager&
+			tggd::common::StringManager&,
+			const UIContext&
 		);
 	};
 }

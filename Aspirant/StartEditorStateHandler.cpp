@@ -18,7 +18,8 @@ namespace aspirant
 		const UIState& currentState,
 		tggd::common::LayoutManager& layoutManager,
 		tggd::common::StringManager& stringManager,
-		EditorContext& editorContext
+		EditorContext& editorContext,
+		const UIContext& uiContext
 	)
 		: MenuStateHandler
 		(
@@ -28,7 +29,8 @@ namespace aspirant
 			UIState::START_GAME,
 			layoutManager.GetDescriptor(LAYOUT_NAME),
 			stringManager,
-			StartEditorItem::BACK
+			StartEditorItem::BACK,
+			uiContext
 		)
 		, editorContext(editorContext)
 	{
