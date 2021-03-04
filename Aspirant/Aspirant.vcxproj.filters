@@ -481,5 +481,8 @@
     <ClInclude Include="CommonDescriptor.h">
       <Filter>Header Files\Data\Descriptors</Filter>
     </ClInclude>
+    <ClInclude Include="EditPickRoomStateHandler.h">
+      <Filter>Header Files\UI\States\Editor</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

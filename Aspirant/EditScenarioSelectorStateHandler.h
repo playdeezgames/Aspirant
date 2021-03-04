@@ -13,7 +13,6 @@ namespace aspirant
 	{
 	private:
 		EditorContext& editorContext;
-		const ScenarioDescriptorManager& scenarios;
 		tggd::common::StringManager& stringManager;
 		void UpdateIndexText(const ScenarioDescriptor*);
 		void UpdateNameText(const ScenarioDescriptor*);
@@ -32,7 +31,6 @@ namespace aspirant
 			const UIState&,
 			tggd::common::LayoutManager&,
 			EditorContext&,
-			const ScenarioDescriptorManager&,
 			tggd::common::StringManager&
 		);
 	};

@@ -1,8 +1,13 @@
 #include "EditorContext.h"
 namespace aspirant
 {
-	EditorContext::EditorContext(const DescriptorManager& descriptors)
+	EditorContext::EditorContext
+	(
+		const DescriptorManager& descriptors,
+		ScenarioDescriptorManager& scenarios
+	)
 		: scenarioIndex(0)
+		, scenarios(scenarios)
 		, scenario(descriptors)
 	{
 

@@ -80,6 +80,7 @@
     <ClInclude Include="Drawn.h" />
     <ClInclude Include="DynamicValue.h" />
     <ClInclude Include="EditorContext.h" />
+    <ClInclude Include="EditPickRoomStateHandler.h" />
     <ClInclude Include="EditScenarioSelectorStateHandler.h" />
     <ClInclude Include="EditScenarioStateHandler.h" />
     <ClInclude Include="Finisher.h" />

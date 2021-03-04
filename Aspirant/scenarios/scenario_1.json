@@ -6,19 +6,43 @@
                     "cellFlags": [],
                     "objects": [
                         {
-                            "type": "floor"
+                            "type": "brick-wall-1"
                         },
                         {
                             "type": "avatar"
                         }
-
                     ]
                 },
                 {
                     "cellFlags": [],
                     "objects": [
                         {
-                            "type": "floor"
+                            "type": "brick-wall-1"
+                        },
+                        {
+                            "type": "avatar"
+                        }
+                    ]
+                },
+                {
+                    "cellFlags": [],
+                    "objects": [
+                        {
+                            "type": "brick-wall-1"
+                        },
+                        {
+                            "type": "avatar"
+                        }
+                    ]
+                },
+                {
+                    "cellFlags": [],
+                    "objects": [
+                        {
+                            "type": "brick-wall-1"
+                        },
+                        {
+                            "type": "avatar"
                         }
                     ]
                 }
@@ -28,6 +52,60 @@
                     "cellFlags": [],
                     "objects": [
                         {
+                            "type": "brick-wall-1"
+                        },
+                        {
+                            "type": "avatar"
+                        }
+                    ]
+                },
+                {
+                    "cellFlags": [],
+                    "objects": [
+                        {
+                            "type": "floor"
+                        },
+                        {
+                            "type": "avatar"
+                        }
+                    ]
+                },
+                {
+                    "cellFlags": [],
+                    "objects": [
+                        {
+                            "type": "floor"
+                        }
+                    ]
+                },
+                {
+                    "cellFlags": [],
+                    "objects": [
+                        {
+                            "type": "brick-wall-1"
+                        },
+                        {
+                            "type": "avatar"
+                        }
+                    ]
+                }
+            ],
+            [
+                {
+                    "cellFlags": [],
+                    "objects": [
+                        {
+                            "type": "brick-wall-1"
+                        },
+                        {
+                            "type": "avatar"
+                        }
+                    ]
+                },
+                {
+                    "cellFlags": [],
+                    "objects": [
+                        {
                             "type": "floor"
                         }
                     ]
@@ -37,6 +115,63 @@
                     "objects": [
                         {
                             "type": "floor"
+                        }
+                    ]
+                },
+                {
+                    "cellFlags": [],
+                    "objects": [
+                        {
+                            "type": "brick-wall-1"
+                        },
+                        {
+                            "type": "avatar"
+                        }
+                    ]
+                }
+            ],
+            [
+                {
+                    "cellFlags": [],
+                    "objects": [
+                        {
+                            "type": "brick-wall-1"
+                        },
+                        {
+                            "type": "avatar"
+                        }
+                    ]
+                },
+                {
+                    "cellFlags": [],
+                    "objects": [
+                        {
+                            "type": "brick-wall-1"
+                        },
+                        {
+                            "type": "avatar"
+                        }
+                    ]
+                },
+                {
+                    "cellFlags": [],
+                    "objects": [
+                        {
+                            "type": "brick-wall-1"
+                        },
+                        {
+                            "type": "avatar"
+                        }
+                    ]
+                },
+                {
+                    "cellFlags": [],
+                    "objects": [
+                        {
+                            "type": "brick-wall-1"
+                        },
+                        {
+                            "type": "avatar"
                         }
                     ]
                 }

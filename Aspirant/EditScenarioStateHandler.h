@@ -14,7 +14,6 @@ namespace aspirant
 	class EditScenarioStateHandler : public MenuStateHandler<EditScenarioItem>
 	{
 	private:
-		const ScenarioDescriptorManager& scenarios;
 		const EditorContext& editorContext;
 		void UpdateHeader();
 	protected:
@@ -27,7 +26,6 @@ namespace aspirant
 			const UIState&,
 			tggd::common::LayoutManager&,
 			tggd::common::StringManager&,
-			const ScenarioDescriptorManager&,
 			const EditorContext&
 		);
 	};

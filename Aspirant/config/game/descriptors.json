@@ -3,6 +3,10 @@
         "type": "terrain",
         "sprite": "FloorTile"
     },
+    "brick-wall-1": {
+        "type": "terrain",
+        "sprite": "BrickWallTile1"
+    },
     "avatar": {
         "type": "creature",
         "sprite": "AvatarTile"

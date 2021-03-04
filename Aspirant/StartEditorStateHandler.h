@@ -17,7 +17,6 @@ namespace aspirant
 	class StartEditorStateHandler : public MenuStateHandler<StartEditorItem>
 	{
 	private:
-		ScenarioDescriptorManager& scenarios;
 		EditorContext& editorContext;
 		void CreateNewScenario();
 	protected:
@@ -29,7 +28,6 @@ namespace aspirant
 			const UIState&,
 			tggd::common::LayoutManager&,
 			tggd::common::StringManager&,
-			ScenarioDescriptorManager&,
 			EditorContext&
 		);
 	};

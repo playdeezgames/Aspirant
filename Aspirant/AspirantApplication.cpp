@@ -44,7 +44,7 @@ namespace aspirant
 		, uiState(UIState::SPLASH)
 		, descriptors(finishManager)
 		, scenarios(finishManager, SCENARIOS_CONFIG_FILE)
-		, editorContext(descriptors)
+		, editorContext(descriptors, scenarios)
 	{
 
 	}
@@ -75,9 +75,9 @@ namespace aspirant
 		new ConfirmQuitStateHandler(this, uiState, layoutManager, stringManager);
 		new OptionsStateHandler(this, uiState, layoutManager, soundManager, optionsManager, stringManager);
 		new StartGameStateHandler(this, uiState, layoutManager, stringManager);
-		new StartEditorStateHandler(this, uiState, layoutManager, stringManager, scenarios, editorContext);
-		new EditScenarioSelectorStateHandler(this, uiState, layoutManager, editorContext, scenarios, stringManager);
-		new EditScenarioStateHandler(this, uiState, layoutManager, stringManager, scenarios, editorContext);
+		new StartEditorStateHandler(this, uiState, layoutManager, stringManager, editorContext);
+		new EditScenarioSelectorStateHandler(this, uiState, layoutManager, editorContext, stringManager);
+		new EditScenarioStateHandler(this, uiState, layoutManager, stringManager, editorContext);
 	}
 
 	void AspirantApplication::Finish()

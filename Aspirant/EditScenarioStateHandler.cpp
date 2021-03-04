@@ -11,7 +11,7 @@ namespace aspirant
 	void EditScenarioStateHandler::UpdateHeader()
 	{
 		std::stringstream ss;
-		auto scenario = scenarios.Get(editorContext.GetScenarioIndex());
+		auto scenario = editorContext.GetScenarios().Get(editorContext.GetScenarioIndex());
 		ss << scenario->GetName() << "(id=" << scenario->GetId() << ")";//TODO: magic strings
 		GetStringManager().Set(HEADER_TEXT_NAME, ss.str());
 	}
@@ -35,7 +35,7 @@ namespace aspirant
 			SetUIState(UIState::EDIT_SCENARIO_DESCRIPTOR);
 			break;
 		case EditScenarioItem::ROOMS:
-			SetUIState(UIState::EDIT_SCENARIO_PICK_ROOM);
+			SetUIState(UIState::EDIT_PICK_ROOM);
 			break;
 		}
 	}
@@ -46,7 +46,6 @@ namespace aspirant
 		const UIState& uiState,
 		tggd::common::LayoutManager& layoutManager,
 		tggd::common::StringManager& stringManager,
-		const ScenarioDescriptorManager& scenarios,
 		const EditorContext& editorContext
 	)
 		: MenuStateHandler
@@ -59,7 +58,6 @@ namespace aspirant
 			stringManager, 
 			EditScenarioItem::BACK
 		)
-		, scenarios(scenarios)
 		, editorContext(editorContext)
 	{
 		AddMenuItem(EditScenarioItem::DESCRIPTOR, MenuItemDescriptor<EditScenarioItem>(ITEM_DESCRIPTOR_COLOR_NAME, EditScenarioItem::BACK, EditScenarioItem::ROOMS));

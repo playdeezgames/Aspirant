@@ -18,7 +18,6 @@ namespace aspirant
 		const UIState& currentState,
 		tggd::common::LayoutManager& layoutManager,
 		tggd::common::StringManager& stringManager,
-		ScenarioDescriptorManager& scenarios,
 		EditorContext& editorContext
 	)
 		: MenuStateHandler
@@ -31,7 +30,6 @@ namespace aspirant
 			stringManager,
 			StartEditorItem::BACK
 		)
-		, scenarios(scenarios)
 		, editorContext(editorContext)
 	{
 		AddMenuItem
@@ -77,7 +75,7 @@ namespace aspirant
 
 	void StartEditorStateHandler::CreateNewScenario()
 	{
-		int scenarioId = scenarios.GetNextId();
+		int scenarioId = editorContext.GetScenarios().GetNextId();
 		std::stringstream ss;
 		ss << "scenarios/scenario_" << scenarioId << ".json";//TODO: magic string
 		ScenarioDescriptor* descriptor = new ScenarioDescriptor
@@ -88,7 +86,7 @@ namespace aspirant
 			ss.str()
 		);
 		CreateScenarioFile(ss.str());
-		editorContext.SetScenarioIndex(scenarios.Add(descriptor));
+		editorContext.SetScenarioIndex(editorContext.GetScenarios().Add(descriptor));
 		SetUIState(UIState::EDIT_SCENARIO_DESCRIPTOR);
 	}
 }

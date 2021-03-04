@@ -2708,6 +2708,13 @@
         "w": 36,
         "h": 36
     },
+    "BrickWallTile1":{
+        "texture": "urizen-onebit-tileset",
+        "x": 354,
+        "y": 120,
+        "w": 36,
+        "h": 36
+    },
     "AvatarTile":{
         "texture": "urizen-onebit-tileset",
         "x": 978,

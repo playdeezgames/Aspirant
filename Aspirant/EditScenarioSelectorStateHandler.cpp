@@ -11,7 +11,7 @@ namespace aspirant
 
 	void EditScenarioSelectorStateHandler::LoadScenario()
 	{
-		auto scenario = scenarios.Get(editorContext.GetScenarioIndex());
+		auto scenario = editorContext.GetScenarios().Get(editorContext.GetScenarioIndex());
 		editorContext.GetScenario().FromJSON(tggd::common::Utility::LoadJSON(scenario->GetFileName()));
 	}
 
@@ -45,7 +45,7 @@ namespace aspirant
 		if (scenario)
 		{
 			std::stringstream ss;
-			ss << "Scenario " << (editorContext.GetScenarioIndex() + 1) << "/" << scenarios.GetCount();
+			ss << "Scenario " << (editorContext.GetScenarioIndex() + 1) << "/" << editorContext.GetScenarios().GetCount();
 			stringManager.Set(TEXT_INDEX_STRING_NAME, ss.str());
 		}
 		else
@@ -95,11 +95,11 @@ namespace aspirant
 
 	bool EditScenarioSelectorStateHandler::OnUpdate(int)
 	{
-		if (editorContext.GetScenarioIndex() >= scenarios.GetCount())
+		if (editorContext.GetScenarioIndex() >= editorContext.GetScenarios().GetCount())
 		{
 			editorContext.SetScenarioIndex(0);
 		}
-		auto scenario = scenarios.Get(editorContext.GetScenarioIndex());
+		auto scenario = editorContext.GetScenarios().Get(editorContext.GetScenarioIndex());
 		UpdateBriefText(scenario);
 		UpdateIdText(scenario);
 		UpdateIndexText(scenario);
@@ -115,12 +115,10 @@ namespace aspirant
 		const UIState& currentState,
 		tggd::common::LayoutManager& layoutManager,
 		EditorContext& editorContext,
-		const ScenarioDescriptorManager& scenarios,
 		tggd::common::StringManager& stringManager
 	)
 		: CommonStateHandler(parent, currentState, UIState::EDIT_SCENARIO_SELECTOR, layoutManager.GetDescriptor(LAYOUT_NAME))
 		, editorContext(editorContext)
-		, scenarios(scenarios)
 		, stringManager(stringManager)
 	{
 
@@ -128,17 +126,17 @@ namespace aspirant
 
 	void EditScenarioSelectorStateHandler::NextScenario()
 	{
-		if (scenarios.GetCount() > 0)
+		if (editorContext.GetScenarios().GetCount() > 0)
 		{
-			editorContext.SetScenarioIndex((editorContext.GetScenarioIndex() + 1) % scenarios.GetCount());
+			editorContext.SetScenarioIndex((editorContext.GetScenarioIndex() + 1) % editorContext.GetScenarios().GetCount());
 		}
 	}
 
 	void EditScenarioSelectorStateHandler::PreviousScenario()
 	{
-		if (scenarios.GetCount() > 0)
+		if (editorContext.GetScenarios().GetCount() > 0)
 		{
-			editorContext.SetScenarioIndex((editorContext.GetScenarioIndex() + scenarios.GetCount() - 1) % scenarios.GetCount());
+			editorContext.SetScenarioIndex((editorContext.GetScenarioIndex() + editorContext.GetScenarios().GetCount() - 1) % editorContext.GetScenarios().GetCount());
 		}
 	}
 }
