@@ -4,15 +4,20 @@
 #include <string>
 #include "Room.h"
 #include "ScenarioRoomCell.h"
+#include "DescriptorManager.h"
+#include "ScenarioRoom.h"
 namespace aspirant
 {
-	typedef tggd::common::Room<ScenarioRoomCell> ScenarioRoom;
 	class Scenario
 	{
 	private:
-		std::map<std::string, ScenarioRoom> rooms;
+		const DescriptorManager& descriptors;
+		std::map<std::string, ScenarioRoom*> rooms;
+		void Clear();
 	public:
-		Scenario();
+		Scenario(const DescriptorManager&);
+		virtual ~Scenario();
 		void FromJSON(const nlohmann::json&);
+		nlohmann::json ToJSON() const;
 	};
 }

@@ -6,15 +6,4 @@ namespace aspirant
 	{
 
 	}
-
-	BaseGameObject* TerrainDescriptor::LoadGameObject(const nlohmann::json&) const
-	{
-		throw "NOTIMPL";
-	}
-
-	BaseGameObject* TerrainDescriptor::NewGameObject() const
-	{
-		throw "NOTIMPL";
-
-	}
 }

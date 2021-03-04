@@ -1,5 +1,6 @@
 #pragma once
 #include "Scenario.h"
+#include "DescriptorManager.h"
 namespace aspirant
 {
 	class EditorContext
@@ -8,7 +9,7 @@ namespace aspirant
 		size_t scenarioIndex;
 		Scenario scenario;
 	public:
-		EditorContext();
+		EditorContext(const DescriptorManager&);
 		void SetScenarioIndex(size_t);
 		size_t GetScenarioIndex() const;
 		const Scenario& GetScenario() const { return scenario; }

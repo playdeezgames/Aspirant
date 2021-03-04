@@ -41,6 +41,9 @@
     <ClCompile Include="OptionsStateHandler.cpp" />
     <ClCompile Include="Scenario.cpp" />
     <ClCompile Include="ScenarioDescriptorManager.cpp" />
+    <ClCompile Include="ScenarioObjectInstance.cpp" />
+    <ClCompile Include="ScenarioRoom.cpp" />
+    <ClCompile Include="ScenarioRoomCell.cpp" />
     <ClCompile Include="SoundManager.cpp" />
     <ClCompile Include="StartEditorStateHandler.cpp" />
     <ClCompile Include="StartGameStateHandler.cpp" />
@@ -62,7 +65,6 @@
     <ClInclude Include="AspirantApplication.h" />
     <ClInclude Include="BaseDescriptor.h" />
     <ClInclude Include="BaseDescriptorManager.h" />
-    <ClInclude Include="BaseGameObject.h" />
     <ClInclude Include="ColorManager.h" />
     <ClInclude Include="Command.h" />
     <ClInclude Include="CommonDescriptorManager.h" />
@@ -99,6 +101,7 @@
     <ClInclude Include="ScenarioDescriptor.h" />
     <ClInclude Include="ScenarioDescriptorManager.h" />
     <ClInclude Include="ScenarioObjectInstance.h" />
+    <ClInclude Include="ScenarioRoom.h" />
     <ClInclude Include="ScenarioRoomCell.h" />
     <ClInclude Include="ScenarioRoomCellFlags.h" />
     <ClInclude Include="SoundManager.h" />

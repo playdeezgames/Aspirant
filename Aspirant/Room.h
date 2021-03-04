@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include "RoomCell.h"
+#include "json.hpp"
 namespace tggd::common
 {
 	template<typename TRoomCell>
@@ -10,7 +11,8 @@ namespace tggd::common
 		size_t columns;
 		size_t rows;
 		std::vector<TRoomCell*> cells;
-		
+	protected:
+		virtual TRoomCell* GenerateRoomCell(size_t, size_t) = 0;
 	public:
 		Room(size_t columns, size_t rows)
 			: columns(columns)
@@ -21,11 +23,11 @@ namespace tggd::common
 			{
 				for (size_t column = 0; column < columns; ++column)
 				{
-					cells.push_back(new TRoomCell(column, row));
+					cells.push_back(GenerateRoomCell(column, row));
 				}
 			}
 		}
-
+		virtual void FromJSON(const nlohmann::json&) = 0;
 		~Room()
 		{
 			for (auto& item : cells)

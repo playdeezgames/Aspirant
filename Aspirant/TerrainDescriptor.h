@@ -6,7 +6,5 @@ namespace aspirant
 	{
 	public:
 		TerrainDescriptor(const nlohmann::json&);
-		BaseGameObject* LoadGameObject(const nlohmann::json&) const;
-		BaseGameObject* NewGameObject() const;
 	};
 }

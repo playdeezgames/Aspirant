@@ -6,14 +6,4 @@ namespace aspirant
 	{
 
 	}
-
-	BaseGameObject* CreatureDescriptor::LoadGameObject(const nlohmann::json&) const
-	{
-		throw "NOTIMPL";
-	}
-
-	BaseGameObject* CreatureDescriptor::NewGameObject() const
-	{
-		throw "NOTIMPL";
-	}
 }

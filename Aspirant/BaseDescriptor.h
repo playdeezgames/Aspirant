@@ -1,7 +1,6 @@
 #pragma once
 #include <string>
 #include "json.hpp"
-#include "BaseGameObject.h"
 namespace aspirant
 {
 	class BaseDescriptor
@@ -19,7 +18,5 @@ namespace aspirant
 		{
 			return descriptorType;
 		}
-		virtual BaseGameObject* LoadGameObject(const nlohmann::json&) const = 0;
-		virtual BaseGameObject* NewGameObject() const = 0;
 	};
 }

@@ -251,6 +251,15 @@
     <ClCompile Include="Scenario.cpp">
       <Filter>Source Files\Data\Scenarios</Filter>
     </ClCompile>
+    <ClCompile Include="ScenarioRoomCell.cpp">
+      <Filter>Source Files\Data\Scenarios</Filter>
+    </ClCompile>
+    <ClCompile Include="ScenarioObjectInstance.cpp">
+      <Filter>Source Files\Data\Scenarios</Filter>
+    </ClCompile>
+    <ClCompile Include="ScenarioRoom.cpp">
+      <Filter>Source Files\Data\Scenarios</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AspirantApplication.h">
@@ -355,9 +364,6 @@
     <ClInclude Include="BaseDescriptor.h">
       <Filter>Header Files\BaseClasses</Filter>
     </ClInclude>
-    <ClInclude Include="BaseGameObject.h">
-      <Filter>Header Files\BaseClasses</Filter>
-    </ClInclude>
     <ClInclude Include="ConstantValue.h">
       <Filter>Header Files\Data\Values</Filter>
     </ClInclude>
@@ -449,6 +455,9 @@
       <Filter>Header Files\Data\Scenarios</Filter>
     </ClInclude>
     <ClInclude Include="ScenarioObjectInstance.h">
+      <Filter>Header Files\Data\Scenarios</Filter>
+    </ClInclude>
+    <ClInclude Include="ScenarioRoom.h">
       <Filter>Header Files\Data\Scenarios</Filter>
     </ClInclude>
   </ItemGroup>

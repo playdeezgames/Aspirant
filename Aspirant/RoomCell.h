@@ -1,5 +1,4 @@
 #pragma once
-#include "RoomCellObject.h"
 #include <set>
 #include <stack>
 #include "Utility.h"
@@ -12,7 +11,7 @@ namespace tggd::common
 	private:
 		const std::string PROPERTY_CELL_FLAGS = "cellFlags";
 		const std::string PROPERTY_OBJECTS = "objects";
-		std::stack<RoomCellObject<TObjectData, TCellFlags>*> objects;
+		std::stack<TObjectData*> objects;
 		size_t column;
 		size_t row;
 		std::set<TCellFlags> cellFlags;
@@ -27,7 +26,7 @@ namespace tggd::common
 	protected:
 		virtual nlohmann::json CellFlagToJSON(const TCellFlags&) = 0;
 		virtual TCellFlags CellFlagFromJSON(const nlohmann::json&) = 0;
-		virtual RoomCellObject<TObjectData, TCellFlags>* ObjectFromJSON(const nlohmann::json&) = 0;
+		virtual TObjectData* ObjectFromJSON(const nlohmann::json&) = 0;
 	public:
 		RoomCell(size_t column, size_t row)
 			: objects()
@@ -54,7 +53,7 @@ namespace tggd::common
 		{
 			ClearObjects();
 		}
-		bool AddObject(RoomCellObject<TObjectData, TCellFlags>* newObject)
+		bool AddObject(TObjectData* newObject)
 		{
 			if (newObject && newObject->CanCover(GetObject()))
 			{
@@ -64,13 +63,13 @@ namespace tggd::common
 			}
 			return false;
 		}
-		const RoomCellObject<TObjectData, TCellFlags>* GetObject() const 
+		const TObjectData* GetObject() const 
 		{ 
 			return 
 				(objects.empty()) ? (nullptr) :
 				(objects.top()); 
 		}
-		RoomCellObject<TObjectData, TCellFlags>* GetObject() 
+		TObjectData* GetObject() 
 		{ 
 			return
 				(objects.empty()) ? (nullptr) :
@@ -91,7 +90,7 @@ namespace tggd::common
 		{
 			return cellFlags.contains(flag);
 		}
-		RoomCellObject<TObjectData, TCellFlags>* RemoveObject()
+		TObjectData* RemoveObject()
 		{
 			if (!objects.empty())
 			{

@@ -44,7 +44,7 @@ namespace aspirant
 		, uiState(UIState::SPLASH)
 		, descriptors(finishManager)
 		, scenarios(finishManager, SCENARIOS_CONFIG_FILE)
-		, editorContext()
+		, editorContext(descriptors)
 	{
 
 	}
