@@ -46,11 +46,11 @@ namespace aspirant
 		{
 			std::stringstream ss;
 			ss << "Scenario " << (editorContext.GetScenarioIndex() + 1) << "/" << editorContext.GetScenarios().GetCount();
-			stringManager.Set(TEXT_INDEX_STRING_NAME, ss.str());
+			GetUIContext().GetStringManager().Set(TEXT_INDEX_STRING_NAME, ss.str());
 		}
 		else
 		{
-			stringManager.Set(TEXT_INDEX_STRING_NAME, "No Scenarios");//TODO: magic string
+			GetUIContext().GetStringManager().Set(TEXT_INDEX_STRING_NAME, "No Scenarios");//TODO: magic string
 		}
 	}
 
@@ -58,11 +58,11 @@ namespace aspirant
 	{
 		if (scenario)
 		{
-			stringManager.Set(TEXT_NAME_STRING_NAME, scenario->GetName());
+			GetUIContext().GetStringManager().Set(TEXT_NAME_STRING_NAME, scenario->GetName());
 		}
 		else
 		{
-			stringManager.Set(TEXT_NAME_STRING_NAME, "-");//TODO: magic string
+			GetUIContext().GetStringManager().Set(TEXT_NAME_STRING_NAME, "-");//TODO: magic string
 		}
 	}
 
@@ -72,11 +72,11 @@ namespace aspirant
 		{
 			std::stringstream ss;
 			ss << scenario->GetId();
-			stringManager.Set(TEXT_ID_STRING_NAME, ss.str());
+			GetUIContext().GetStringManager().Set(TEXT_ID_STRING_NAME, ss.str());
 		}
 		else
 		{
-			stringManager.Set(TEXT_ID_STRING_NAME, "-");//TODO: magic string
+			GetUIContext().GetStringManager().Set(TEXT_ID_STRING_NAME, "-");//TODO: magic string
 		}
 
 	}
@@ -85,11 +85,11 @@ namespace aspirant
 	{
 		if (scenario)
 		{
-			stringManager.Set(TEXT_BRIEF_STRING_NAME, scenario->GetBrief());
+			GetUIContext().GetStringManager().Set(TEXT_BRIEF_STRING_NAME, scenario->GetBrief());
 		}
 		else
 		{
-			stringManager.Set(TEXT_BRIEF_STRING_NAME, "-");//TODO: magic string
+			GetUIContext().GetStringManager().Set(TEXT_BRIEF_STRING_NAME, "-");//TODO: magic string
 		}
 	}
 
@@ -113,12 +113,10 @@ namespace aspirant
 	(
 		MessageHandler* parent,
 		EditorContext& editorContext,
-		tggd::common::StringManager& stringManager,
 		const UIContext& uiContext
 	)
 		: CommonStateHandler(parent, UIState::EDIT_SCENARIO_SELECTOR, LAYOUT_NAME, uiContext)
 		, editorContext(editorContext)
-		, stringManager(stringManager)
 	{
 
 	}

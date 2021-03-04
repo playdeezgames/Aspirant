@@ -21,7 +21,6 @@ namespace aspirant
 		MainMenuStateHandler
 		(
 			MessageHandler*,
-			tggd::common::StringManager&,
 			const UIContext&
 		);
 	};

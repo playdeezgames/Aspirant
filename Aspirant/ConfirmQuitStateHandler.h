@@ -19,7 +19,6 @@ namespace aspirant
 		ConfirmQuitStateHandler
 		(
 			MessageHandler*,
-			tggd::common::StringManager&,
 			const UIContext&
 		);
 	};

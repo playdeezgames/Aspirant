@@ -50,7 +50,6 @@ namespace aspirant
 	private:
 		std::string layoutName;
 		std::map<TMenuItem, MenuItemDescriptor<TMenuItem>> menuItems;
-		tggd::common::StringManager& stringManager;
 		const std::string COLOR_ACTIVE = "Cyan";//TODO: make these come from config?
 		const std::string COLOR_INACTIVE = "Gray";//TODO: make these come from config?
 		TMenuItem menuItem;
@@ -79,7 +78,7 @@ namespace aspirant
 	protected:
 		tggd::common::StringManager& GetStringManager() const
 		{
-			return stringManager;
+			return GetUIContext().GetStringManager();
 		}
 		virtual bool OnUpdate()
 		{
@@ -87,11 +86,11 @@ namespace aspirant
 			{
 				if (entry.first == menuItem)
 				{
-					stringManager.Set(entry.second.GetItemColorName(), COLOR_ACTIVE);
+					GetStringManager().Set(entry.second.GetItemColorName(), COLOR_ACTIVE);
 				}
 				else
 				{
-					stringManager.Set(entry.second.GetItemColorName(), COLOR_INACTIVE);
+					GetStringManager().Set(entry.second.GetItemColorName(), COLOR_INACTIVE);
 				}
 			}
 			return false;
@@ -152,7 +151,6 @@ namespace aspirant
 			const UIState& filterState,
 			const UIState& parentState,
 			const std::string& layoutName,
-			tggd::common::StringManager& stringManager,
 			const TMenuItem& menuItem,
 			const UIContext& uiContext
 		)
@@ -160,7 +158,6 @@ namespace aspirant
 			, layoutName(layoutName)
 			, menuItem(menuItem)
 			, menuItems()
-			, stringManager(stringManager)
 			, parentState(parentState)
 		{
 

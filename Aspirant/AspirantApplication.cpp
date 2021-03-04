@@ -46,7 +46,7 @@ namespace aspirant
 		, descriptors(finishManager)
 		, scenarios(finishManager, SCENARIOS_CONFIG_FILE)
 		, editorContext(descriptors, scenarios)
-		, uiContext(uiState, layoutManager)
+		, uiContext(uiState, layoutManager, stringManager)
 	{
 
 	}
@@ -72,15 +72,15 @@ namespace aspirant
 		scenarios.Load();
 
 		new SplashStateHandler(this, uiContext);
-		new MainMenuStateHandler(this, stringManager, uiContext);
+		new MainMenuStateHandler(this, uiContext);
 		new AboutStateHandler(this, uiContext);
-		new ConfirmQuitStateHandler(this, stringManager, uiContext);
-		new OptionsStateHandler(this, soundManager, optionsManager, stringManager, uiContext);
-		new StartGameStateHandler(this, stringManager, uiContext);
-		new StartEditorStateHandler(this, stringManager, editorContext, uiContext);
-		new EditScenarioSelectorStateHandler(this, editorContext, stringManager, uiContext);
-		new EditScenarioStateHandler(this, stringManager, editorContext, uiContext);
-		new EditPickRoomStateHandler(this, editorContext, stringManager, uiContext);
+		new ConfirmQuitStateHandler(this, uiContext);
+		new OptionsStateHandler(this, soundManager, optionsManager, uiContext);
+		new StartGameStateHandler(this, uiContext);
+		new StartEditorStateHandler(this, editorContext, uiContext);
+		new EditScenarioSelectorStateHandler(this, editorContext, uiContext);
+		new EditScenarioStateHandler(this, editorContext, uiContext);
+		new EditPickRoomStateHandler(this, editorContext, uiContext);
 	}
 
 	void AspirantApplication::Finish()

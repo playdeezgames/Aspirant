@@ -35,7 +35,6 @@ namespace aspirant
 			MessageHandler*,
 			tggd::common::SoundManager&,
 			OptionsManager&,
-			tggd::common::StringManager&,
 			const UIContext&
 		);
 	};

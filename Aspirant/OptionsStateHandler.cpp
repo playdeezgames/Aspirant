@@ -23,7 +23,6 @@ namespace aspirant
 		MessageHandler* parent,
 		tggd::common::SoundManager& soundManager,
 		OptionsManager& optionsManager,
-		tggd::common::StringManager& stringManager,
 		const UIContext& uiContext
 	)
 		: MenuStateHandler
@@ -32,7 +31,6 @@ namespace aspirant
 				UIState::OPTIONS, 
 				UIState::MAIN_MENU,
 				LAYOUT_NAME, 
-				stringManager, 
 				OptionsItem::BACK,
 				uiContext
 			)

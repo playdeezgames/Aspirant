@@ -13,7 +13,6 @@ namespace aspirant
 	{
 	private:
 		EditorContext& editorContext;
-		tggd::common::StringManager& stringManager;
 		void UpdateIndexText(const ScenarioDescriptor*);
 		void UpdateNameText(const ScenarioDescriptor*);
 		void UpdateIdText(const ScenarioDescriptor*);
@@ -29,7 +28,6 @@ namespace aspirant
 		(
 			MessageHandler*,
 			EditorContext&,
-			tggd::common::StringManager&,
 			const UIContext&
 		);
 	};

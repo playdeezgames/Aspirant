@@ -24,7 +24,6 @@ namespace aspirant
 	(
 		MessageHandler* parent,
 		EditorContext& editorContext,
-		tggd::common::StringManager& stringManager,
 		const UIContext& uiContext
 	)
 		: CommonStateHandler(parent, UIState::EDIT_PICK_ROOM, LAYOUT_NAME, uiContext)

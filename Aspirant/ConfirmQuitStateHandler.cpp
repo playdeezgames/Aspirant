@@ -11,7 +11,6 @@ namespace aspirant
 	ConfirmQuitStateHandler::ConfirmQuitStateHandler
 	(
 		MessageHandler* parent,
-		tggd::common::StringManager& stringManager,
 		const UIContext& uiContext
 	)
 		: MenuStateHandler
@@ -20,7 +19,6 @@ namespace aspirant
 			UIState::CONFIRM_QUIT, 
 			UIState::MAIN_MENU,
 			LAYOUT_NAME, 
-			stringManager,
 			ConfirmQuitItem::NO,
 			uiContext
 		)

@@ -15,7 +15,6 @@ namespace aspirant
 	StartEditorStateHandler::StartEditorStateHandler
 	(
 		MessageHandler* parent,
-		tggd::common::StringManager& stringManager,
 		EditorContext& editorContext,
 		const UIContext& uiContext
 	)
@@ -25,7 +24,6 @@ namespace aspirant
 			UIState::START_EDITOR,
 			UIState::START_GAME,
 			LAYOUT_NAME,
-			stringManager,
 			StartEditorItem::BACK,
 			uiContext
 		)

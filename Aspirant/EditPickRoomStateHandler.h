@@ -16,7 +16,6 @@ namespace aspirant
 		(
 			MessageHandler*,
 			EditorContext&,
-			tggd::common::StringManager&,
 			const UIContext&
 		);
 	};
