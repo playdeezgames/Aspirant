@@ -28,7 +28,6 @@ namespace aspirant
 		EditScenarioSelectorStateHandler
 		(
 			MessageHandler*,
-			const UIState&,
 			tggd::common::LayoutManager&,
 			EditorContext&,
 			tggd::common::StringManager&,

@@ -112,13 +112,12 @@ namespace aspirant
 	EditScenarioSelectorStateHandler::EditScenarioSelectorStateHandler
 	(
 		MessageHandler* parent,
-		const UIState& currentState,
 		tggd::common::LayoutManager& layoutManager,
 		EditorContext& editorContext,
 		tggd::common::StringManager& stringManager,
 		const UIContext& uiContext
 	)
-		: CommonStateHandler(parent, currentState, UIState::EDIT_SCENARIO_SELECTOR, layoutManager.GetDescriptor(LAYOUT_NAME), uiContext)
+		: CommonStateHandler(parent, UIState::EDIT_SCENARIO_SELECTOR, layoutManager.GetDescriptor(LAYOUT_NAME), uiContext)
 		, editorContext(editorContext)
 		, stringManager(stringManager)
 	{

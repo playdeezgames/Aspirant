@@ -15,7 +15,6 @@ namespace aspirant
 	StartEditorStateHandler::StartEditorStateHandler
 	(
 		MessageHandler* parent,
-		const UIState& currentState,
 		tggd::common::LayoutManager& layoutManager,
 		tggd::common::StringManager& stringManager,
 		EditorContext& editorContext,
@@ -24,7 +23,6 @@ namespace aspirant
 		: MenuStateHandler
 		(
 			parent,
-			currentState,
 			UIState::START_EDITOR,
 			UIState::START_GAME,
 			layoutManager.GetDescriptor(LAYOUT_NAME),

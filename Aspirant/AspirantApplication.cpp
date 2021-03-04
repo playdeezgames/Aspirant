@@ -46,7 +46,7 @@ namespace aspirant
 		, descriptors(finishManager)
 		, scenarios(finishManager, SCENARIOS_CONFIG_FILE)
 		, editorContext(descriptors, scenarios)
-		, uiContext()
+		, uiContext(uiState)
 	{
 
 	}
@@ -71,16 +71,16 @@ namespace aspirant
 		descriptors.Start(DESCRIPTORS_CONFIG_FILE);
 		scenarios.Load();
 
-		new SplashStateHandler(this, uiState, layoutManager, uiContext);
-		new MainMenuStateHandler(this, uiState, layoutManager, stringManager, uiContext);
-		new AboutStateHandler(this, uiState, layoutManager, uiContext);
-		new ConfirmQuitStateHandler(this, uiState, layoutManager, stringManager, uiContext);
-		new OptionsStateHandler(this, uiState, layoutManager, soundManager, optionsManager, stringManager, uiContext);
-		new StartGameStateHandler(this, uiState, layoutManager, stringManager, uiContext);
-		new StartEditorStateHandler(this, uiState, layoutManager, stringManager, editorContext, uiContext);
-		new EditScenarioSelectorStateHandler(this, uiState, layoutManager, editorContext, stringManager, uiContext);
-		new EditScenarioStateHandler(this, uiState, layoutManager, stringManager, editorContext, uiContext);
-		new EditPickRoomStateHandler(this, uiState, layoutManager, editorContext, stringManager, uiContext);
+		new SplashStateHandler(this, layoutManager, uiContext);
+		new MainMenuStateHandler(this, layoutManager, stringManager, uiContext);
+		new AboutStateHandler(this, layoutManager, uiContext);
+		new ConfirmQuitStateHandler(this, layoutManager, stringManager, uiContext);
+		new OptionsStateHandler(this, layoutManager, soundManager, optionsManager, stringManager, uiContext);
+		new StartGameStateHandler(this, layoutManager, stringManager, uiContext);
+		new StartEditorStateHandler(this, layoutManager, stringManager, editorContext, uiContext);
+		new EditScenarioSelectorStateHandler(this, layoutManager, editorContext, stringManager, uiContext);
+		new EditScenarioStateHandler(this, layoutManager, stringManager, editorContext, uiContext);
+		new EditPickRoomStateHandler(this, layoutManager, editorContext, stringManager, uiContext);
 	}
 
 	void AspirantApplication::Finish()

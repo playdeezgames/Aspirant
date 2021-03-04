@@ -21,7 +21,6 @@ namespace aspirant
 		SplashStateHandler
 		(
 			MessageHandler*,
-			const UIState&,
 			tggd::common::LayoutManager&,
 			const UIContext&
 		);

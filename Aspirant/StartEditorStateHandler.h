@@ -25,7 +25,6 @@ namespace aspirant
 		StartEditorStateHandler
 		(
 			MessageHandler*,
-			const UIState&,
 			tggd::common::LayoutManager&,
 			tggd::common::StringManager&,
 			EditorContext&,

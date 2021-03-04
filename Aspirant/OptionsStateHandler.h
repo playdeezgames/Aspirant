@@ -33,7 +33,6 @@ namespace aspirant
 		OptionsStateHandler
 		(
 			MessageHandler*,
-			const UIState&,
 			tggd::common::LayoutManager&,
 			tggd::common::SoundManager&,
 			OptionsManager&,

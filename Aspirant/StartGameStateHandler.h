@@ -20,7 +20,6 @@ namespace aspirant
 		StartGameStateHandler
 		(
 			MessageHandler*,
-			const UIState&,
 			tggd::common::LayoutManager&,
 			tggd::common::StringManager&,
 			const UIContext&

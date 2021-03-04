@@ -9,12 +9,15 @@ namespace aspirant
 	{
 	private:
 		UIState filterState;
-		const UIState& currentState;
 		const UIContext& uiContext;
 	protected:
+		const UIContext& GetUIContext() const
+		{
+			return uiContext;
+		}
 		bool IsEnabled() const
 		{
-			return (currentState == filterState);
+			return (GetUIContext().GetUIState() == filterState);
 		}
 		void SetUIState(const UIState& newState)
 		{
@@ -24,12 +27,10 @@ namespace aspirant
 		UIStateMessageHandler
 		(
 			MessageHandler* parent, 
-			const UIState& currentState, 
 			const UIState& filterState,
 			const UIContext& uiContext
 		)
 			: tggd::common::MessageHandler(parent)
-			, currentState(currentState)
 			, filterState(filterState)
 			, uiContext(uiContext)
 		{

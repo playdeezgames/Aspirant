@@ -19,7 +19,6 @@ namespace aspirant
 		(
 			MessageHandler*,
 			const UIState&,
-			const UIState&,
 			const tggd::common::Layout*,
 			const UIContext&
 		);

@@ -30,12 +30,11 @@ namespace aspirant
 	CommonStateHandler::CommonStateHandler
 	(
 		MessageHandler* parent,
-		const UIState& currentState,
 		const UIState& filterState,
 		const tggd::common::Layout* layout,
 		const UIContext& uiContext
 	)
-		: UIStateMessageHandler(parent, currentState, filterState, uiContext)
+		: UIStateMessageHandler(parent, filterState, uiContext)
 		, layout(layout)
 	{
 

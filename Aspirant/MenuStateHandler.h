@@ -149,7 +149,6 @@ namespace aspirant
 		MenuStateHandler
 		(
 			MessageHandler* parent,
-			const UIState& uiState,
 			const UIState& filterState,
 			const UIState& parentState,
 			const tggd::common::Layout* layout,
@@ -157,7 +156,7 @@ namespace aspirant
 			const TMenuItem& menuItem,
 			const UIContext& uiContext
 		)
-			: UIStateMessageHandler(parent, uiState, filterState, uiContext)
+			: UIStateMessageHandler(parent, filterState, uiContext)
 			, layout(layout)
 			, menuItem(menuItem)
 			, menuItems()

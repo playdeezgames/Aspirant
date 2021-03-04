@@ -21,7 +21,6 @@ namespace aspirant
 	OptionsStateHandler::OptionsStateHandler
 	(
 		MessageHandler* parent,
-		const UIState& currentState,
 		tggd::common::LayoutManager& layoutManager,
 		tggd::common::SoundManager& soundManager,
 		OptionsManager& optionsManager,
@@ -31,7 +30,6 @@ namespace aspirant
 		: MenuStateHandler
 			(
 				parent, 
-				currentState, 
 				UIState::OPTIONS, 
 				UIState::MAIN_MENU,
 				layoutManager.GetDescriptor(LAYOUT_NAME), 

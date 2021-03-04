@@ -12,7 +12,6 @@ namespace aspirant
 	StartGameStateHandler::StartGameStateHandler
 	(
 		MessageHandler* parent,
-		const UIState& currentState,
 		tggd::common::LayoutManager& layoutManager,
 		tggd::common::StringManager& stringManager,
 		const UIContext& uiContext
@@ -20,7 +19,6 @@ namespace aspirant
 		: MenuStateHandler
 			(
 				parent, 
-				currentState, 
 				UIState::START_GAME, 
 				UIState::MAIN_MENU,
 				layoutManager.GetDescriptor(LAYOUT_NAME),

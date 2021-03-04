@@ -11,11 +11,10 @@ namespace aspirant
 	SplashStateHandler::SplashStateHandler
 	(
 		MessageHandler* parent,
-		const UIState& currentState,
 		tggd::common::LayoutManager& layoutManager,
 		const UIContext& uiContext
 	)
-		: UIStateMessageHandler(parent, currentState, UIState::SPLASH, uiContext)
+		: UIStateMessageHandler(parent, UIState::SPLASH, uiContext)
 		, ticksLeft(TICKS_LEFT)
 		, layout(layoutManager.GetDescriptor(LAYOUT_NAME))
 	{

@@ -15,7 +15,6 @@ namespace aspirant
 		AboutStateHandler
 		(
 			MessageHandler*,
-			const UIState&,
 			tggd::common::LayoutManager&,
 			const UIContext&
 		);
