@@ -17,8 +17,9 @@ namespace aspirant
 	{
 		auto typeName = properties[PROPERTY_TYPE];
 		auto descriptor = descriptors.GetDescriptor(typeName);
-
-		throw "NOT IMPLEMENTED";
+		auto obj = descriptor->CreateObject();
+		obj->FromJSON(properties);
+		return obj;
 	}
 
 	bool ScenarioRoomCell::CanCover(const ScenarioObjectInstance* newObject, const ScenarioObjectInstance* oldObject) const

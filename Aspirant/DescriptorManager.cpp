@@ -6,7 +6,7 @@ namespace aspirant
 	const std::string PROPERTY_TYPE = "type";
 	const std::string TYPE_TERRAIN = "terrain";
 	const std::string TYPE_CREATURE = "creature";
-	BaseDescriptor* DescriptorManager::ParseDescriptor(const nlohmann::json& properties)
+	BaseDescriptor<ScenarioObjectInstance>* DescriptorManager::ParseDescriptor(const nlohmann::json& properties)
 	{
 		const auto& descriptorType = properties[PROPERTY_TYPE];
 		if (descriptorType == TYPE_TERRAIN)

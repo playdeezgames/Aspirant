@@ -26,6 +26,7 @@
     <ClCompile Include="CommonStateHandler.cpp" />
     <ClCompile Include="ConfirmQuitStateHandler.cpp" />
     <ClCompile Include="CreatureDescriptor.cpp" />
+    <ClCompile Include="CreatureInstance.cpp" />
     <ClCompile Include="DescriptorManager.cpp" />
     <ClCompile Include="EditorContext.cpp" />
     <ClCompile Include="EditScenarioSelectorStateHandler.cpp" />
@@ -56,6 +57,7 @@
     <ClCompile Include="SpriteManager.cpp" />
     <ClCompile Include="StringManager.cpp" />
     <ClCompile Include="TerrainDescriptor.cpp" />
+    <ClCompile Include="TerrainInstance.cpp" />
     <ClCompile Include="TextureManager.cpp" />
     <ClCompile Include="Utility.cpp" />
   </ItemGroup>
@@ -72,6 +74,7 @@
     <ClInclude Include="ConfirmQuitStateHandler.h" />
     <ClInclude Include="ConstantValue.h" />
     <ClInclude Include="CreatureDescriptor.h" />
+    <ClInclude Include="CreatureInstance.h" />
     <ClInclude Include="DescriptorManager.h" />
     <ClInclude Include="Drawn.h" />
     <ClInclude Include="DynamicValue.h" />
@@ -121,6 +124,7 @@
     <ClInclude Include="StaticImage.h" />
     <ClInclude Include="StringManager.h" />
     <ClInclude Include="TerrainDescriptor.h" />
+    <ClInclude Include="TerrainInstance.h" />
     <ClInclude Include="TextureManager.h" />
     <ClInclude Include="UIState.h" />
     <ClInclude Include="UIStateMessageHandler.h" />

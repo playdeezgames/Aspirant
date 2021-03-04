@@ -1,4 +1,5 @@
 #include "TerrainDescriptor.h"
+#include "TerrainInstance.h"
 namespace aspirant
 {
 	TerrainDescriptor::TerrainDescriptor(const nlohmann::json& properties)
@@ -6,4 +7,10 @@ namespace aspirant
 	{
 
 	}
+
+	ScenarioObjectInstance* TerrainDescriptor::CreateObject() const
+	{
+		return new TerrainInstance(*this);
+	}
+
 }

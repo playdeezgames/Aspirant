@@ -141,6 +141,12 @@
     <Filter Include="Source Files\Data\Scenarios">
       <UniqueIdentifier>{2b8fee4f-28e1-45b4-b6e5-68b639fc74e0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Data\Instances">
+      <UniqueIdentifier>{9d67b504-57a5-420e-95b1-3209d3a1a72c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Data\Instances">
+      <UniqueIdentifier>{7b95671c-21cd-4f76-a1fa-9d68c4eb25f5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AspirantApplication.cpp">
@@ -254,11 +260,17 @@
     <ClCompile Include="ScenarioRoomCell.cpp">
       <Filter>Source Files\Data\Scenarios</Filter>
     </ClCompile>
-    <ClCompile Include="ScenarioObjectInstance.cpp">
-      <Filter>Source Files\Data\Scenarios</Filter>
-    </ClCompile>
     <ClCompile Include="ScenarioRoom.cpp">
       <Filter>Source Files\Data\Scenarios</Filter>
+    </ClCompile>
+    <ClCompile Include="ScenarioObjectInstance.cpp">
+      <Filter>Source Files\Data\Instances</Filter>
+    </ClCompile>
+    <ClCompile Include="CreatureInstance.cpp">
+      <Filter>Source Files\Data\Instances</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainInstance.cpp">
+      <Filter>Source Files\Data\Instances</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -454,11 +466,17 @@
     <ClInclude Include="ScenarioRoomCellFlags.h">
       <Filter>Header Files\Data\Scenarios</Filter>
     </ClInclude>
-    <ClInclude Include="ScenarioObjectInstance.h">
-      <Filter>Header Files\Data\Scenarios</Filter>
-    </ClInclude>
     <ClInclude Include="ScenarioRoom.h">
       <Filter>Header Files\Data\Scenarios</Filter>
+    </ClInclude>
+    <ClInclude Include="ScenarioObjectInstance.h">
+      <Filter>Header Files\Data\Instances</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainInstance.h">
+      <Filter>Header Files\Data\Instances</Filter>
+    </ClInclude>
+    <ClInclude Include="CreatureInstance.h">
+      <Filter>Header Files\Data\Instances</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

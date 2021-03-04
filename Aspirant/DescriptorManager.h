@@ -2,12 +2,13 @@
 #include "CommonDescriptorManager.h"
 #include <string>
 #include "BaseDescriptor.h"
+#include "ScenarioObjectInstance.h"
 namespace aspirant
 {
-	class DescriptorManager: public tggd::common::CommonDescriptorManager<BaseDescriptor>
+	class DescriptorManager: public tggd::common::CommonDescriptorManager<BaseDescriptor<ScenarioObjectInstance>>
 	{
 	protected:
-		BaseDescriptor* ParseDescriptor(const nlohmann::json&);
+		BaseDescriptor<ScenarioObjectInstance>* ParseDescriptor(const nlohmann::json&);
 	public:
 		DescriptorManager(tggd::common::FinishManager& finishManager)
 			: CommonDescriptorManager(finishManager)

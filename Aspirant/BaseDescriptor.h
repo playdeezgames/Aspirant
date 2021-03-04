@@ -3,6 +3,7 @@
 #include "json.hpp"
 namespace aspirant
 {
+	template<typename TInstance>
 	class BaseDescriptor
 	{
 	private:
@@ -18,5 +19,6 @@ namespace aspirant
 		{
 			return descriptorType;
 		}
+		virtual TInstance* CreateObject() const = 0;
 	};
 }
