@@ -27,6 +27,7 @@ namespace tggd::common
 		virtual nlohmann::json CellFlagToJSON(const TCellFlags&) = 0;
 		virtual TCellFlags CellFlagFromJSON(const nlohmann::json&) = 0;
 		virtual TObjectData* ObjectFromJSON(const nlohmann::json&) = 0;
+		virtual bool CanCover(const TObjectData*, const TObjectData*) const = 0;
 	public:
 		RoomCell(size_t column, size_t row)
 			: objects()
@@ -55,9 +56,8 @@ namespace tggd::common
 		}
 		bool AddObject(TObjectData* newObject)
 		{
-			if (newObject && newObject->CanCover(GetObject()))
+			if (newObject && CanCover(newObject, GetObject()))
 			{
-				newObject->roomCell = this;
 				objects.push(newObject);
 				return true;
 			}

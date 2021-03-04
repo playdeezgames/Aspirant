@@ -1,1 +1,46 @@
-{"rooms":{}}
+{
+    "rooms": {
+        "test": [
+            [
+                {
+                    "cellFlags": [],
+                    "objects": [
+                        {
+                            "type": "floor"
+                        },
+                        {
+                            "type": "avatar"
+                        }
+
+                    ]
+                },
+                {
+                    "cellFlags": [],
+                    "objects": [
+                        {
+                            "type": "floor"
+                        }
+                    ]
+                }
+            ],
+            [
+                {
+                    "cellFlags": [],
+                    "objects": [
+                        {
+                            "type": "floor"
+                        }
+                    ]
+                },
+                {
+                    "cellFlags": [],
+                    "objects": [
+                        {
+                            "type": "floor"
+                        }
+                    ]
+                }
+            ]
+        ]
+    }
+}

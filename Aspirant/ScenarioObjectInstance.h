@@ -13,5 +13,6 @@ namespace aspirant
 		{
 			return descriptor;
 		}
+		virtual bool CanCover(const ScenarioObjectInstance*) const = 0;
 	};
 }

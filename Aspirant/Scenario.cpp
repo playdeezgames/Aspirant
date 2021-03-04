@@ -26,7 +26,8 @@ namespace aspirant
 			auto rows = room.size();
 			auto columns = room[0].size();
 			auto& key = item.key();
-			rooms[key] = new ScenarioRoom(columns, rows, descriptors);
+			rooms[key] = new ScenarioRoom(descriptors);
+			rooms[key]->SetSize(columns, rows);
 			rooms[key]->FromJSON(room);
 		}
 	}

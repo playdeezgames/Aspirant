@@ -13,6 +13,7 @@ namespace aspirant
 		nlohmann::json CellFlagToJSON(const ScenarioRoomCellFlags&);
 		ScenarioRoomCellFlags CellFlagFromJSON(const nlohmann::json&);
 		ScenarioObjectInstance* ObjectFromJSON(const nlohmann::json&);
+		bool CanCover(const ScenarioObjectInstance*, const ScenarioObjectInstance*) const;
 	public:
 		ScenarioRoomCell(size_t column, size_t row, const DescriptorManager& descriptors)
 			: RoomCell(column, row)

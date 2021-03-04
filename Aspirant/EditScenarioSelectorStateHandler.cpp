@@ -1,5 +1,6 @@
 #include "EditScenarioSelectorStateHandler.h"
 #include <sstream>
+#include "Utility.h"
 namespace aspirant
 {
 	const std::string LAYOUT_NAME = "EditScenarioSelector";
@@ -7,6 +8,13 @@ namespace aspirant
 	const std::string TEXT_ID_STRING_NAME = "EditScenarioSelector.Text.Id";
 	const std::string TEXT_NAME_STRING_NAME = "EditScenarioSelector.Text.Name";
 	const std::string TEXT_BRIEF_STRING_NAME = "EditScenarioSelector.Text.Brief";
+
+	void EditScenarioSelectorStateHandler::LoadScenario()
+	{
+		auto scenario = scenarios.Get(editorContext.GetScenarioIndex());
+		editorContext.GetScenario().FromJSON(tggd::common::Utility::LoadJSON(scenario->GetFileName()));
+	}
+
 
 	bool EditScenarioSelectorStateHandler::OnCommand(const Command& command)
 	{
@@ -25,6 +33,7 @@ namespace aspirant
 			PreviousScenario();
 			break;
 		case Command::GREEN:
+			LoadScenario();
 			SetUIState(UIState::EDIT_SCENARIO);
 			break;
 		}

@@ -15,4 +15,10 @@ namespace aspirant
 			row++;
 		}
 	}
+
+	ScenarioRoomCell* ScenarioRoom::GenerateRoomCell(size_t column, size_t row)
+	{
+		return new ScenarioRoomCell(column, row, descriptors);
+	}
+
 }
