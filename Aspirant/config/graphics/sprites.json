@@ -2700,5 +2700,19 @@
         "y": 0,
         "w": 640,
         "h": 360
+    },
+    "FloorTile":{
+        "texture": "urizen-onebit-tileset",
+        "x": 42,
+        "y": 81,
+        "w": 36,
+        "h": 36
+    },
+    "AvatarTile":{
+        "texture": "urizen-onebit-tileset",
+        "x": 978,
+        "y": 3,
+        "w": 36,
+        "h": 36
     }
 }

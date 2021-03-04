@@ -17,7 +17,7 @@ namespace tggd::common
 		std::vector<TIdentifer> identifiers;
 	protected:
 		virtual TIdentifer ParseKey(const std::string&) = 0;
-		virtual TDescriptor* ParseDescriptor(const nlohmann::json&) = 0;
+		virtual TDescriptor* ParseDescriptor(const TIdentifer&, const nlohmann::json&) = 0;
 	public:
 		BaseDescriptorManager(tggd::common::FinishManager& finishManager)
 		{
@@ -31,7 +31,7 @@ namespace tggd::common
 				auto identifier = ParseKey(item.key());
 				identifiers.push_back(identifier);
 				descriptors[identifier] =
-					ParseDescriptor(item.value());
+					ParseDescriptor(identifier, item.value());
 			}
 		}
 		void Finish()

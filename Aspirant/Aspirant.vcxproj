@@ -69,6 +69,7 @@
     <ClInclude Include="BaseDescriptorManager.h" />
     <ClInclude Include="ColorManager.h" />
     <ClInclude Include="Command.h" />
+    <ClInclude Include="CommonDescriptor.h" />
     <ClInclude Include="CommonDescriptorManager.h" />
     <ClInclude Include="CommonStateHandler.h" />
     <ClInclude Include="ConfirmQuitStateHandler.h" />

@@ -18,7 +18,7 @@ namespace tggd::common
 		const IDataStore<bool>& flagStore;
 		FinishManager& finishManager;
 	protected:
-		Layout* ParseDescriptor(const nlohmann::json&);
+		Layout* ParseDescriptor(const std::string&, const nlohmann::json&);
 	public:
 		LayoutManager
 		(

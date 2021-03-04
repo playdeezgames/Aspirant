@@ -1,12 +1,11 @@
 #pragma once
-#include "BaseDescriptor.h"
-#include "ScenarioObjectInstance.h"
+#include "CommonDescriptor.h"
 namespace aspirant
 {
-	class CreatureDescriptor : public BaseDescriptor<ScenarioObjectInstance>
+	class CreatureDescriptor : public CommonDescriptor
 	{
 	public:
-		CreatureDescriptor(const nlohmann::json&);
+		CreatureDescriptor(const std::string&, const nlohmann::json&);
 		ScenarioObjectInstance* CreateObject() const;
 	};
 }

@@ -1,9 +1,10 @@
 {
     "floor": {
-        "type": "terrain"
+        "type": "terrain",
+        "sprite": "FloorTile"
     },
     "avatar": {
-        "type": "creature"
+        "type": "creature",
+        "sprite": "AvatarTile"
     }
-
 }

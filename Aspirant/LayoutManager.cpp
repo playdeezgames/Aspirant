@@ -2,7 +2,7 @@
 #include "Utility.h"
 namespace tggd::common
 {
-	Layout* LayoutManager::ParseDescriptor(const nlohmann::json& properties)
+	Layout* LayoutManager::ParseDescriptor(const std::string&, const nlohmann::json& properties)
 	{
 		return new Layout(finishManager, spriteManager, colorManager, fontManager, stringStore, intStore, flagStore, Utility::LoadJSON(properties));
 	}

@@ -2,8 +2,8 @@
 #include "TerrainInstance.h"
 namespace aspirant
 {
-	TerrainDescriptor::TerrainDescriptor(const nlohmann::json& properties)
-		: BaseDescriptor(properties)
+	TerrainDescriptor::TerrainDescriptor(const std::string& name, const nlohmann::json& properties)
+		: CommonDescriptor(name, properties)
 	{
 
 	}

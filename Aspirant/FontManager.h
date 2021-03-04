@@ -10,7 +10,7 @@ namespace tggd::common
 		const SpriteManager& spriteManager;
 		const ColorManager& colorManager;
 	protected:
-		SpriteFont* ParseDescriptor(const nlohmann::json&);
+		SpriteFont* ParseDescriptor(const std::string&, const nlohmann::json&);
 	public:
 		FontManager
 		(

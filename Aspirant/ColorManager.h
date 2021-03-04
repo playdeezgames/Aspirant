@@ -8,7 +8,7 @@ namespace tggd::common
 	class ColorManager : public CommonDescriptorManager<SDL_Color>, public IDataStore<SDL_Color>
 	{
 	protected:
-		SDL_Color* ParseDescriptor(const nlohmann::json&);
+		SDL_Color* ParseDescriptor(const std::string&, const nlohmann::json&);
 	public:
 		ColorManager(tggd::common::FinishManager&);
 		const SDL_Color& Get(const std::string&) const;

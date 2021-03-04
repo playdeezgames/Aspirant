@@ -478,5 +478,8 @@
     <ClInclude Include="CreatureInstance.h">
       <Filter>Header Files\Data\Instances</Filter>
     </ClInclude>
+    <ClInclude Include="CommonDescriptor.h">
+      <Filter>Header Files\Data\Descriptors</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

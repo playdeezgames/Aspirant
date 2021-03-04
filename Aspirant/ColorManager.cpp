@@ -6,7 +6,7 @@ namespace tggd::common
 	const std::string PROPERTY_BLUE = "b";
 	const std::string PROPERTY_ALPHA = "a";
 
-	SDL_Color* ColorManager::ParseDescriptor(const nlohmann::json& properties)
+	SDL_Color* ColorManager::ParseDescriptor(const std::string&, const nlohmann::json& properties)
 	{
 		SDL_Color* result = new SDL_Color();
 		result->r = (Uint8)properties[PROPERTY_RED];
