@@ -29,6 +29,7 @@
     <ClCompile Include="CreatureInstance.cpp" />
     <ClCompile Include="DescriptorManager.cpp" />
     <ClCompile Include="EditorContext.cpp" />
+    <ClCompile Include="EditPickRoomStateHandler.cpp" />
     <ClCompile Include="EditScenarioSelectorStateHandler.cpp" />
     <ClCompile Include="EditScenarioStateHandler.cpp" />
     <ClCompile Include="FinishManager.cpp" />

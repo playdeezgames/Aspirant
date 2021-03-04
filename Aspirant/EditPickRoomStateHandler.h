@@ -18,7 +18,6 @@ namespace aspirant
 			const UIState&,
 			tggd::common::LayoutManager&,
 			EditorContext&,
-			const ScenarioDescriptorManager&,
 			tggd::common::StringManager&
 		);
 	};

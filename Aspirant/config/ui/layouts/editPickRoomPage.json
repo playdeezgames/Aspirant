@@ -1,0 +1,22 @@
+[
+    {
+        "type": "StaticImage",
+        "sprite": "Background",
+        "color": "DarkGray",
+        "x": 0,
+        "y": 0
+    },
+    {
+        "type": "StaticText",
+        "font": "default",
+        "color": "LightGreen",
+        "text": "==PICK ROOM==",
+        "x": 320,
+        "y": 0,
+        "horizontalAlignment": 0,
+        "dropShadow": true,
+        "dropShadowColor": "Black",
+        "dropShadowX": 2,
+        "dropShadowY": 2
+    }
+]

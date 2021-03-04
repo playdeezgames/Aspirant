@@ -272,6 +272,9 @@
     <ClCompile Include="TerrainInstance.cpp">
       <Filter>Source Files\Data\Instances</Filter>
     </ClCompile>
+    <ClCompile Include="EditPickRoomStateHandler.cpp">
+      <Filter>Source Files\UI\Editor</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AspirantApplication.h">

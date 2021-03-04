@@ -11,6 +11,7 @@
 #include "StartEditorStateHandler.h"
 #include "EditScenarioSelectorStateHandler.h"
 #include "EditScenarioStateHandler.h"
+#include "EditPickRoomStateHandler.h"
 namespace aspirant
 {
 	const std::string APPLICATION_CONFIG_FILE = "config/ui/application.json";
@@ -78,6 +79,7 @@ namespace aspirant
 		new StartEditorStateHandler(this, uiState, layoutManager, stringManager, editorContext);
 		new EditScenarioSelectorStateHandler(this, uiState, layoutManager, editorContext, stringManager);
 		new EditScenarioStateHandler(this, uiState, layoutManager, stringManager, editorContext);
+		new EditPickRoomStateHandler(this, uiState, layoutManager, editorContext, stringManager);
 	}
 
 	void AspirantApplication::Finish()
