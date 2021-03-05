@@ -18,6 +18,8 @@ namespace aspirant
 	private:
 		EditorContext& editorContext;
 	protected:
+		bool OnCommand(const Command& command);
+		bool OnUpdate();
 		bool OnText(const std::string&);
 		void ActivateItem(const NewRoomItem&);
 		void IncreaseItem(const NewRoomItem&);

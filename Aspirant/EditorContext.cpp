@@ -72,4 +72,56 @@ namespace aspirant
 	{
 		SetRoomIndex(tggd::common::Utility::PreviousIndex(GetRoomIndex(), GetRoomCount()));
 	}
+
+	void EditorContext::ResetNewRoom()
+	{
+		newRoomName = "<replace me>";//TODO: magic string
+		newRoomColumns = 10;//TODO: magic number
+		newRoomRows = 10;//TODO: magic number
+	}
+
+	const std::string& EditorContext::GetNewRoomName() const
+	{
+		return newRoomName;
+	}
+
+	void EditorContext::AppendNewRoomName(const std::string& text)
+	{
+		newRoomName += text;
+	}
+
+	void EditorContext::ClearNewRoomName()
+	{
+		newRoomName = "";
+	}
+
+	size_t EditorContext::GetNewRoomColumns() const
+	{
+		return newRoomColumns;
+	}
+
+	void EditorContext::IncrementNewRoomColumns()
+	{
+		newRoomColumns++;
+	}
+
+	void EditorContext::DecrementNewRoomColumns()
+	{
+		newRoomColumns = (newRoomColumns <= 1) ? (1) : (newRoomColumns - 1);
+	}
+
+	size_t EditorContext::GetNewRoomRows() const
+	{
+		return newRoomRows;
+	}
+
+	void EditorContext::IncrementNewRoomRows()
+	{
+		newRoomRows++;
+	}
+
+	void EditorContext::DecrementNewRoomRows()
+	{
+		newRoomRows = (newRoomRows <= 1) ? (1) : (newRoomRows - 1);
+	}
 }

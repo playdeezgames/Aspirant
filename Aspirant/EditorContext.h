@@ -15,6 +15,10 @@ namespace aspirant
 
 		std::vector<std::string> roomList;
 		size_t roomIndex;
+
+		std::string newRoomName;
+		size_t newRoomColumns;
+		size_t newRoomRows;
 	public:
 		EditorContext(const DescriptorManager&, ScenarioDescriptorManager&);
 		void SetScenarioIndex(size_t);
@@ -32,5 +36,15 @@ namespace aspirant
 		size_t GetRoomCount() const;
 		void NextRoom();
 		void PreviousRoom();
+		void ResetNewRoom();
+		const std::string& GetNewRoomName() const;
+		void AppendNewRoomName(const std::string&);
+		void ClearNewRoomName();
+		size_t GetNewRoomColumns() const;
+		void IncrementNewRoomColumns();
+		void DecrementNewRoomColumns();
+		size_t GetNewRoomRows() const;
+		void IncrementNewRoomRows();
+		void DecrementNewRoomRows();
 	};
 }

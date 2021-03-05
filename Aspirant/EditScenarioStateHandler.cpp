@@ -40,6 +40,7 @@ namespace aspirant
 			SetUIState(UIState::EDIT_PICK_ROOM);
 			break;
 		case EditScenarioItem::NEW_ROOM:
+			editorContext.ResetNewRoom();
 			SetUIState(UIState::EDIT_NEW_ROOM);
 			break;
 		}
