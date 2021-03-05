@@ -490,5 +490,8 @@
     <ClInclude Include="UIContext.h">
       <Filter>Header Files\Data</Filter>
     </ClInclude>
+    <ClInclude Include="MText.h">
+      <Filter>Header Files\Messages\Common</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

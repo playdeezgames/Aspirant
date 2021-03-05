@@ -2,6 +2,7 @@
 #include "Utility.h"
 #include "MSetUIState.h"
 #include "MEvent.h"
+#include "MText.h"
 #include "SplashStateHandler.h"
 #include "MainMenuStateHandler.h"
 #include "AboutStateHandler.h"
@@ -139,6 +140,12 @@ namespace aspirant
 		return true;
 	}
 
+	bool AspirantApplication::OnTextInput(const SDL_TextInputEvent& textEvent)
+	{
+		return HandleBroadcast(tggd::common::MText(textEvent.text));
+	}
+
+
 	bool AspirantApplication::OnSdlEvent(const SDL_Event& evt)
 	{
 		if (evt.type == SDL_QUIT)
@@ -148,6 +155,10 @@ namespace aspirant
 		else if (evt.type == SDL_KEYDOWN)
 		{
 			return OnKeyDown(evt.key);
+		}
+		else if (evt.type == SDL_TEXTINPUT)
+		{
+			return OnTextInput(evt.text);
 		}
 		return true;
 	}

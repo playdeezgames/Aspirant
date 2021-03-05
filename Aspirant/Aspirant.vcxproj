@@ -97,6 +97,7 @@
     <ClInclude Include="MainMenuStateHandler.h" />
     <ClInclude Include="MCommand.h" />
     <ClInclude Include="MenuStateHandler.h" />
+    <ClInclude Include="MText.h" />
     <ClInclude Include="MUpdate.h" />
     <ClInclude Include="OptionsManager.h" />
     <ClInclude Include="OptionsStateHandler.h" />

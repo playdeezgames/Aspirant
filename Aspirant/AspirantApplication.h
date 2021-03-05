@@ -40,6 +40,7 @@ namespace aspirant
 		bool OnSetUIState(const UIState&);
 		bool OnKeyDown(const SDL_KeyboardEvent&);
 		bool OnSdlEvent(const SDL_Event&);
+		bool OnTextInput(const SDL_TextInputEvent&);
 	protected:
 		bool OnMessage(const tggd::common::MGeneric*);
 		bool IsRunning() const;
