@@ -39,6 +39,9 @@ namespace aspirant
 			editorContext.UpdateRoomList();
 			SetUIState(UIState::EDIT_PICK_ROOM);
 			break;
+		case EditScenarioItem::NEW_ROOM:
+			SetUIState(UIState::EDIT_NEW_ROOM);
+			break;
 		}
 	}
 

@@ -8,5 +8,6 @@
     "StartEditor":"config/ui/layouts/startEditorPage.json",
     "EditScenarioSelector":"config/ui/layouts/editScenarioSelectorPage.json",
     "EditScenario":"config/ui/layouts/editScenarioPage.json",
-    "EditPickRoom":"config/ui/layouts/editPickRoomPage.json"
+    "EditPickRoom":"config/ui/layouts/editPickRoomPage.json",
+    "EditNewRoom":"config/ui/layouts/editNewRoomPage.json"
 }

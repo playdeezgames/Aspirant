@@ -8,6 +8,7 @@
 #include "MRender.h"
 #include "MCommand.h"
 #include "MUpdate.h"
+#include "MText.h"
 namespace aspirant
 {
 	template<typename TMenuItem>
@@ -76,6 +77,10 @@ namespace aspirant
 			return false;
 		}
 	protected:
+		const TMenuItem& GetMenuItem() const
+		{
+			return menuItem;
+		}
 		tggd::common::StringManager& GetStringManager() const
 		{
 			return GetUIContext().GetStringManager();
@@ -98,6 +103,7 @@ namespace aspirant
 		virtual void IncreaseItem(const TMenuItem&) {}
 		virtual void DecreaseItem(const TMenuItem&) {}
 		virtual void ActivateItem(const TMenuItem&) = 0;
+		virtual bool OnText(const std::string&) { return false; }
 		virtual bool OnCommand(const Command& command)
 		{
 			switch (command)
@@ -137,6 +143,10 @@ namespace aspirant
 			else if (message->GetId() == tggd::common::MUpdate::MSGID_Update)
 			{
 				return OnUpdate();
+			}
+			else if (message->GetId() == tggd::common::MText::MSGID_TextInput)
+			{
+				return OnText(static_cast<const tggd::common::MText*>(message)->GetText());
 			}
 			return false;
 		}

@@ -28,6 +28,7 @@
     <ClCompile Include="CreatureDescriptor.cpp" />
     <ClCompile Include="CreatureInstance.cpp" />
     <ClCompile Include="DescriptorManager.cpp" />
+    <ClCompile Include="EditNewRoomStateHandler.cpp" />
     <ClCompile Include="EditorContext.cpp" />
     <ClCompile Include="EditPickRoomStateHandler.cpp" />
     <ClCompile Include="EditScenarioSelectorStateHandler.cpp" />
@@ -80,6 +81,7 @@
     <ClInclude Include="DescriptorManager.h" />
     <ClInclude Include="Drawn.h" />
     <ClInclude Include="DynamicValue.h" />
+    <ClInclude Include="EditNewRoomStateHandler.h" />
     <ClInclude Include="EditorContext.h" />
     <ClInclude Include="EditPickRoomStateHandler.h" />
     <ClInclude Include="EditScenarioSelectorStateHandler.h" />
