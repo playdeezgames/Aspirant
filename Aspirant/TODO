@@ -5,15 +5,19 @@ Screens:
             goes to start editor
         ☐ New Game
         ☐ Load Game        
-    ☐ Start Editor
-        ☐ New Scenario
+    ✔ Start Editor @done(21-03-05 04:12)
+        ✔ New Scenario @done(21-03-05 04:12)
             prompt for a name, create scenario, open that scenario
-        ☐ Open Scenario
+        ✔ Open Scenario @done(21-03-05 04:13)
             goes to start scenario editor
-    ☐ Start Scenario Editor
+    ✔ Start Scenario Editor @done(21-03-05 04:13)
     ✔ About @done(21-02-21 06:28)
     ✔ Settings @done(21-02-27 05:55)
     ✔ Confirm Quit @done(21-02-27 05:55)
+    ☐ pick room
+    ☐ edit descriptor screen
+    ☐ room editor
+    ☐ new room screen
 Features:
     ☐ Gamepad Support
     ☐ Customize Keyboard Controls

@@ -8,6 +8,8 @@ namespace aspirant
 {
 	class EditPickRoomStateHandler : public CommonStateHandler
 	{
+	private:		
+		EditorContext& editorContext;
 	protected:
 		bool OnCommand(const Command&);
 		bool OnUpdate(int);

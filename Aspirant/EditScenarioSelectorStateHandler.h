@@ -17,8 +17,6 @@ namespace aspirant
 		void UpdateNameText(const ScenarioDescriptor*);
 		void UpdateIdText(const ScenarioDescriptor*);
 		void UpdateBriefText(const ScenarioDescriptor*);
-		void NextScenario();
-		void PreviousScenario();
 		void LoadScenario();
 	protected:
 		bool OnCommand(const Command&);

@@ -112,5 +112,29 @@ namespace tggd::common
 		return value * 100 / maximum;
 	}
 
+	size_t Utility::NextIndex(size_t index, size_t count)
+	{
+		if (count > 0)
+		{
+			return ((index + 1) % count);
+		}
+		else
+		{
+			return (0);
+		}
+	}
+
+	size_t Utility::PreviousIndex(size_t index, size_t count)
+	{
+		if (count > 0)
+		{
+			return ((index + count - 1) % count);
+		}
+		else
+		{
+			return (0);
+		}
+
+	}
 }
 

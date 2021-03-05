@@ -8,13 +8,14 @@ namespace aspirant
 	enum class EditScenarioItem
 	{
 		DESCRIPTOR,
-		ROOMS,
+		OPEN_ROOM,
+		NEW_ROOM,
 		BACK
 	};
 	class EditScenarioStateHandler : public MenuStateHandler<EditScenarioItem>
 	{
 	private:
-		const EditorContext& editorContext;
+		EditorContext& editorContext;
 		void UpdateHeader();
 	protected:
 		bool OnUpdate();
@@ -23,7 +24,7 @@ namespace aspirant
 		EditScenarioStateHandler
 		(
 			MessageHandler*,
-			const EditorContext&,
+			EditorContext&,
 			const UIContext&
 		);
 	};

@@ -26,11 +26,11 @@ namespace aspirant
 			break;
 		case Command::NEXT:
 		case Command::RIGHT:
-			NextScenario();
+			editorContext.NextScenario();
 			break;
 		case Command::PREVIOUS:
 		case Command::LEFT:
-			PreviousScenario();
+			editorContext.PreviousScenario();
 			break;
 		case Command::GREEN:
 			LoadScenario();
@@ -121,19 +121,4 @@ namespace aspirant
 
 	}
 
-	void EditScenarioSelectorStateHandler::NextScenario()
-	{
-		if (editorContext.GetScenarios().GetCount() > 0)
-		{
-			editorContext.SetScenarioIndex((editorContext.GetScenarioIndex() + 1) % editorContext.GetScenarios().GetCount());
-		}
-	}
-
-	void EditScenarioSelectorStateHandler::PreviousScenario()
-	{
-		if (editorContext.GetScenarios().GetCount() > 0)
-		{
-			editorContext.SetScenarioIndex((editorContext.GetScenarioIndex() + editorContext.GetScenarios().GetCount() - 1) % editorContext.GetScenarios().GetCount());
-		}
-	}
 }

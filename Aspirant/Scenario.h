@@ -6,6 +6,7 @@
 #include "ScenarioRoomCell.h"
 #include "DescriptorManager.h"
 #include "ScenarioRoom.h"
+#include <vector>
 namespace aspirant
 {
 	class Scenario
@@ -19,5 +20,6 @@ namespace aspirant
 		virtual ~Scenario();
 		void FromJSON(const nlohmann::json&);
 		nlohmann::json ToJSON() const;
+		std::vector<std::string> GetRoomKeys() const;
 	};
 }

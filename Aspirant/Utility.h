@@ -41,6 +41,8 @@ namespace tggd::common
 		static IValue<int>* LoadInt(const IDataStore<int>&, const nlohmann::json&);
 		static IValue<bool>* LoadFlag(const IDataStore<bool>&, const nlohmann::json&);
 		static int ToPercentage(int, int);
+		static size_t NextIndex(size_t, size_t);
+		static size_t PreviousIndex(size_t, size_t);
 	};
 }
 

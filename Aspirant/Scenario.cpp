@@ -41,4 +41,15 @@ namespace aspirant
 	{
 		Clear();
 	}
+
+	std::vector<std::string> Scenario::GetRoomKeys() const
+	{
+		std::vector<std::string> result;
+		for (auto& room : rooms)
+		{
+			result.push_back(room.first);
+		}
+		return result;
+	}
+
 }

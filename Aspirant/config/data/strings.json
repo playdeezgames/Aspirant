@@ -23,7 +23,9 @@
     "EditScenarioSelector.Text.Name": "<name>",
     "EditScenarioSelector.Text.Brief": "<brief>",
     "EditScenario.Color.Descriptor":"Gray",
-    "EditScenario.Color.Rooms":"Gray",
+    "EditScenario.Color.OpenRoom":"Gray",
+    "EditScenario.Color.NewRoom":"Gray",
     "EditScenario.Color.Back":"Gray",
-    "EditScenario.Text.Header":"<name>(id=<id>)"
+    "EditScenario.Text.Header":"<name>(id=<id>)",
+    "EditPickRoom.Text.RoomName":"<name>"
 }
