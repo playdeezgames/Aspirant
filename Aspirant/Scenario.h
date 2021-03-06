@@ -21,5 +21,6 @@ namespace aspirant
 		void FromJSON(const nlohmann::json&);
 		nlohmann::json ToJSON() const;
 		std::vector<std::string> GetRoomKeys() const;
+		void AddRoom(const std::string&, size_t, size_t);
 	};
 }

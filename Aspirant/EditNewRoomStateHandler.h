@@ -17,6 +17,7 @@ namespace aspirant
 	{
 	private:
 		EditorContext& editorContext;
+		void CreateRoom();
 	protected:
 		bool OnCommand(const Command& command);
 		bool OnUpdate();

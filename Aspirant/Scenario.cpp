@@ -52,4 +52,14 @@ namespace aspirant
 		return result;
 	}
 
+	void Scenario::AddRoom(const std::string& name, size_t columns, size_t rows)
+	{
+		if (rooms.contains(name))
+		{
+			tggd::common::Utility::SafeDelete(rooms[name]);
+		}
+		rooms[name] = new ScenarioRoom(descriptors);
+		rooms[name]->SetSize(columns, rows);
+	}
+
 }

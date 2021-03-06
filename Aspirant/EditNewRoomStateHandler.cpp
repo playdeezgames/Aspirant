@@ -25,12 +25,20 @@ namespace aspirant
 		return false;
 	}
 
+	void EditNewRoomStateHandler::CreateRoom()
+	{
+		editorContext.GetScenario().AddRoom(editorContext.GetNewRoomName(), editorContext.GetNewRoomColumns(), editorContext.GetNewRoomRows());
+	}
+
+
 	void EditNewRoomStateHandler::ActivateItem(const NewRoomItem& item)
 	{
 		switch (item)
 		{
 		case NewRoomItem::CREATE:
-			//TODO: create room, go to room editor for the new room
+			CreateRoom();
+			editorContext.UpdateRoomList();
+			SetUIState(UIState::EDIT_PICK_ROOM);
 			break;
 		case NewRoomItem::CANCEL:
 			SetUIState(UIState::EDIT_SCENARIO);
