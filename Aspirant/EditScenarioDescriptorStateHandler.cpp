@@ -16,10 +16,10 @@ namespace aspirant
 			switch (GetMenuItem())
 			{
 			case EditScenarioDescriptorItem::SCENARIO_NAME:
-				editorContext.ClearScenarioName();
+				GetEditorContext().ClearScenarioName();
 				return true;
 			case EditScenarioDescriptorItem::BRIEF:
-				editorContext.ClearScenarioBrief();
+				GetEditorContext().ClearScenarioBrief();
 				return true;
 			default:
 				return MenuStateHandler<EditScenarioDescriptorItem>::OnCommand(command);
@@ -31,8 +31,8 @@ namespace aspirant
 
 	bool EditScenarioDescriptorStateHandler::OnUpdate()
 	{
-		GetUIContext().GetStringManager().Set(TEXT_NAME_SCENARIO_NAME, editorContext.GetScenarioDescriptor()->GetName());
-		GetUIContext().GetStringManager().Set(TEXT_NAME_BRIEF, editorContext.GetScenarioDescriptor()->GetBrief());
+		GetUIContext().GetStringManager().Set(TEXT_NAME_SCENARIO_NAME, GetEditorContext().GetScenarioDescriptor()->GetName());
+		GetUIContext().GetStringManager().Set(TEXT_NAME_BRIEF, GetEditorContext().GetScenarioDescriptor()->GetBrief());
 		return MenuStateHandler<EditScenarioDescriptorItem>::OnUpdate();
 	}
 
@@ -41,10 +41,10 @@ namespace aspirant
 		switch (GetMenuItem())
 		{
 		case EditScenarioDescriptorItem::SCENARIO_NAME:
-			editorContext.AppendScenarioName(text);
+			GetEditorContext().AppendScenarioName(text);
 			break;
 		case EditScenarioDescriptorItem::BRIEF:
-			editorContext.AppendScenarioBrief(text);
+			GetEditorContext().AppendScenarioBrief(text);
 			break;
 		}
 		return true;
@@ -66,8 +66,7 @@ namespace aspirant
 		EditorContext& editorContext,
 		const UIContext& uiContext
 	)
-		:MenuStateHandler(parent, UIState::EDIT_SCENARIO_DESCRIPTOR, UIState::EDIT_SCENARIO, LAYOUT_NAME, EditScenarioDescriptorItem::BACK, uiContext)
-		, editorContext(editorContext)
+		: EditorMenuStateHandler(parent, UIState::EDIT_SCENARIO_DESCRIPTOR, UIState::EDIT_SCENARIO, LAYOUT_NAME, EditScenarioDescriptorItem::BACK, uiContext, editorContext)
 	{
 		AddMenuItem(EditScenarioDescriptorItem::SCENARIO_NAME, MenuItemDescriptor<EditScenarioDescriptorItem>(COLOR_NAME_SCENARIO_NAME, EditScenarioDescriptorItem::BACK, EditScenarioDescriptorItem::BRIEF));
 		AddMenuItem(EditScenarioDescriptorItem::BRIEF, MenuItemDescriptor<EditScenarioDescriptorItem>(COLOR_NAME_BRIEF, EditScenarioDescriptorItem::SCENARIO_NAME, EditScenarioDescriptorItem::BACK));

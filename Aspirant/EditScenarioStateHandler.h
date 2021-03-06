@@ -1,5 +1,5 @@
 #pragma once
-#include "MenuStateHandler.h"
+#include "EditorMenuStateHandler.h"
 #include "ScenarioDescriptorManager.h"
 #include "EditorContext.h"
 #include "StringManager.h"
@@ -12,10 +12,9 @@ namespace aspirant
 		NEW_ROOM,
 		BACK
 	};
-	class EditScenarioStateHandler : public MenuStateHandler<EditScenarioItem>
+	class EditScenarioStateHandler : public EditorMenuStateHandler<EditScenarioItem>
 	{
 	private:
-		EditorContext& editorContext;
 		void UpdateHeader();
 	protected:
 		bool OnUpdate();

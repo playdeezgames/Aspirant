@@ -1,5 +1,5 @@
 #pragma once
-#include "MenuStateHandler.h"
+#include "EditorMenuStateHandler.h"
 #include <SDL.h>
 #include "Command.h"
 #include "LayoutManager.h"
@@ -14,10 +14,9 @@ namespace aspirant
 		OPEN,
 		BACK
 	};
-	class StartEditorStateHandler : public MenuStateHandler<StartEditorItem>
+	class StartEditorStateHandler : public EditorMenuStateHandler<StartEditorItem>
 	{
 	private:
-		EditorContext& editorContext;
 		void CreateNewScenario();
 	protected:
 		void ActivateItem(const StartEditorItem&);

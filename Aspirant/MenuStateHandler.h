@@ -124,7 +124,7 @@ namespace aspirant
 	public:
 		MenuStateHandler
 		(
-			MessageHandler* parent,
+			tggd::common::MessageHandler* parent,
 			const UIState& filterState,
 			const UIState& parentState,
 			const std::string& layoutName,

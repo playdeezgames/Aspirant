@@ -520,5 +520,8 @@
     <ClInclude Include="CommonEditorStateHandler.h">
       <Filter>Header Files\UI\States\Base</Filter>
     </ClInclude>
+    <ClInclude Include="EditorMenuStateHandler.h">
+      <Filter>Header Files\UI\States\Base</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

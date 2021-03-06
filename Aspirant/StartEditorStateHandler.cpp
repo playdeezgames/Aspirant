@@ -18,16 +18,16 @@ namespace aspirant
 		EditorContext& editorContext,
 		const UIContext& uiContext
 	)
-		: MenuStateHandler
+		: EditorMenuStateHandler
 		(
 			parent,
 			UIState::START_EDITOR,
 			UIState::START_GAME,
 			LAYOUT_NAME,
 			StartEditorItem::BACK,
-			uiContext
+			uiContext,
+			editorContext
 		)
-		, editorContext(editorContext)
 	{
 		AddMenuItem
 		(
@@ -72,7 +72,7 @@ namespace aspirant
 
 	void StartEditorStateHandler::CreateNewScenario()
 	{
-		int scenarioId = editorContext.GetScenarios().GetNextId();
+		int scenarioId = GetEditorContext().GetScenarios().GetNextId();
 		std::stringstream ss;
 		ss << "scenarios/scenario_" << scenarioId << ".json";//TODO: magic string
 		ScenarioDescriptor* descriptor = new ScenarioDescriptor
@@ -83,7 +83,7 @@ namespace aspirant
 			ss.str()
 		);
 		CreateScenarioFile(ss.str());
-		editorContext.SetScenarioIndex(editorContext.GetScenarios().Add(descriptor));
+		GetEditorContext().SetScenarioIndex(GetEditorContext().GetScenarios().Add(descriptor));
 		SetUIState(UIState::EDIT_SCENARIO);
 	}
 }

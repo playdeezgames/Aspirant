@@ -1,5 +1,5 @@
 #pragma once
-#include "MenuStateHandler.h"
+#include "EditorMenuStateHandler.h"
 #include "Command.h"
 #include "EditorContext.h"
 namespace aspirant
@@ -10,10 +10,8 @@ namespace aspirant
 		BRIEF,
 		BACK
 	};
-	class EditScenarioDescriptorStateHandler : public MenuStateHandler<EditScenarioDescriptorItem>
+	class EditScenarioDescriptorStateHandler : public EditorMenuStateHandler<EditScenarioDescriptorItem>
 	{
-	private:
-		EditorContext& editorContext;
 	protected:
 		bool OnCommand(const Command& command);
 		bool OnUpdate();

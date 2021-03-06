@@ -19,7 +19,7 @@ namespace aspirant
 	{
 		if (GetMenuItem() == NewRoomItem::NAME)
 		{
-			editorContext.AppendNewRoomName(text);
+			GetEditorContext().AppendNewRoomName(text);
 			return true;
 		}
 		return false;
@@ -27,8 +27,8 @@ namespace aspirant
 
 	void EditNewRoomStateHandler::CreateRoom()
 	{
-		editorContext.GetScenario().AddRoom(editorContext.GetNewRoomName(), editorContext.GetNewRoomColumns(), editorContext.GetNewRoomRows());
-		editorContext.SaveScenario();
+		GetEditorContext().GetScenario().AddRoom(GetEditorContext().GetNewRoomName(), GetEditorContext().GetNewRoomColumns(), GetEditorContext().GetNewRoomRows());
+		GetEditorContext().SaveScenario();
 	}
 
 
@@ -38,7 +38,7 @@ namespace aspirant
 		{
 		case NewRoomItem::CREATE:
 			CreateRoom();
-			editorContext.UpdateRoomList();
+			GetEditorContext().UpdateRoomList();
 			SetUIState(UIState::EDIT_PICK_ROOM);
 			break;
 		case NewRoomItem::CANCEL:
@@ -53,16 +53,16 @@ namespace aspirant
 		EditorContext& editorContext,
 		const UIContext& uiContext
 	)
-		: MenuStateHandler
+		: EditorMenuStateHandler
 		(
 			parent,
 			UIState::EDIT_NEW_ROOM,
 			UIState::EDIT_SCENARIO,
 			LAYOUT_NAME,
 			NewRoomItem::CANCEL,
-			uiContext
+			uiContext,
+			editorContext
 		)
-		, editorContext(editorContext)
 	{
 		AddMenuItem(NewRoomItem::NAME, MenuItemDescriptor<NewRoomItem>(COLOR_NAME_ROOM_NAME, NewRoomItem::CANCEL, NewRoomItem::COLUMNS));
 		AddMenuItem(NewRoomItem::COLUMNS, MenuItemDescriptor<NewRoomItem>(COLOR_NAME_COLUMNS, NewRoomItem::NAME, NewRoomItem::ROWS));
@@ -76,10 +76,10 @@ namespace aspirant
 		switch (item)
 		{
 		case NewRoomItem::COLUMNS:
-			editorContext.IncrementNewRoomColumns();
+			GetEditorContext().IncrementNewRoomColumns();
 			break;
 		case NewRoomItem::ROWS:
-			editorContext.IncrementNewRoomRows();
+			GetEditorContext().IncrementNewRoomRows();
 			break;
 		}
 	}
@@ -89,24 +89,24 @@ namespace aspirant
 		switch (item)
 		{
 		case NewRoomItem::COLUMNS:
-			editorContext.DecrementNewRoomColumns();
+			GetEditorContext().DecrementNewRoomColumns();
 			break;
 		case NewRoomItem::ROWS:
-			editorContext.DecrementNewRoomRows();
+			GetEditorContext().DecrementNewRoomRows();
 			break;
 		}
 	}
 
 	bool EditNewRoomStateHandler::OnUpdate()
 	{
-		GetUIContext().GetStringManager().Set(TEXT_NAME_ROOM_NAME, editorContext.GetNewRoomName());
+		GetUIContext().GetStringManager().Set(TEXT_NAME_ROOM_NAME, GetEditorContext().GetNewRoomName());
 
 		std::stringstream ss;
-		ss << editorContext.GetNewRoomColumns();
+		ss << GetEditorContext().GetNewRoomColumns();
 		GetUIContext().GetStringManager().Set(TEXT_NAME_COLUMNS, ss.str());
 
 		ss.str("");
-		ss << editorContext.GetNewRoomRows();
+		ss << GetEditorContext().GetNewRoomRows();
 		GetUIContext().GetStringManager().Set(TEXT_NAME_ROWS, ss.str());
 
 		return MenuStateHandler<NewRoomItem>::OnUpdate();
@@ -119,7 +119,7 @@ namespace aspirant
 		case Command::BACK:
 			if (GetMenuItem() == NewRoomItem::NAME)
 			{
-				editorContext.ClearNewRoomName();
+				GetEditorContext().ClearNewRoomName();
 				return true;
 			}
 			else

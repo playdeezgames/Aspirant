@@ -1,5 +1,5 @@
 #pragma once
-#include "MenuStateHandler.h"
+#include "EditorMenuStateHandler.h"
 #include "Command.h"
 #include "EditorContext.h"
 namespace aspirant
@@ -12,10 +12,9 @@ namespace aspirant
 		CREATE,
 		CANCEL
 	};
-	class EditNewRoomStateHandler : public MenuStateHandler<NewRoomItem>
+	class EditNewRoomStateHandler : public EditorMenuStateHandler<NewRoomItem>
 	{
 	private:
-		EditorContext& editorContext;
 		void CreateRoom();
 	protected:
 		bool OnCommand(const Command& command);

@@ -88,6 +88,7 @@
     <ClInclude Include="EditNewRoomStateHandler.h" />
     <ClInclude Include="EditorContext.h" />
     <ClInclude Include="EditorContextClient.h" />
+    <ClInclude Include="EditorMenuStateHandler.h" />
     <ClInclude Include="EditPickRoomStateHandler.h" />
     <ClInclude Include="EditScenarioDescriptorStateHandler.h" />
     <ClInclude Include="EditScenarioSelectorStateHandler.h" />
