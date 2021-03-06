@@ -12,4 +12,5 @@ namespace aspirant
 	{
 		return new CreatureInstance(*this);
 	}
+
 }

@@ -22,8 +22,17 @@ namespace aspirant
 		return true;
 	}
 
+	const std::string PROPERTY_TYPE = "type";
+
 	void CreatureInstance::FromJSON(const nlohmann::json&)
 	{
 
+	}
+
+	nlohmann::json CreatureInstance::ToJSON() const
+	{
+		nlohmann::json properties;
+		properties[PROPERTY_TYPE] = GetDescriptor().GetName();//TODO: move this into base class
+		return properties;
 	}
 }

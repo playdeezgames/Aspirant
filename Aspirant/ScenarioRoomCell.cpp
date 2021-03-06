@@ -1,7 +1,7 @@
 #include "ScenarioRoomCell.h"
 namespace aspirant
 {
-	nlohmann::json ScenarioRoomCell::CellFlagToJSON(const ScenarioRoomCellFlags& cellFlag)
+	nlohmann::json ScenarioRoomCell::CellFlagToJSON(const ScenarioRoomCellFlags& cellFlag) const
 	{
 		throw "NOT IMPLEMENTED";
 	}
@@ -20,6 +20,11 @@ namespace aspirant
 		auto obj = descriptor->CreateObject();
 		obj->FromJSON(properties);
 		return obj;
+	}
+
+	nlohmann::json ScenarioRoomCell::ObjectToJSON(const ScenarioObjectInstance* obj) const
+	{
+		return obj->ToJSON();
 	}
 
 	bool ScenarioRoomCell::CanCover(const ScenarioObjectInstance* newObject, const ScenarioObjectInstance* oldObject) const

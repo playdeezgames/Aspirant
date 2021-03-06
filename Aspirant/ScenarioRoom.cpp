@@ -21,4 +21,20 @@ namespace aspirant
 		return new ScenarioRoomCell(column, row, descriptors);
 	}
 
+	nlohmann::json ScenarioRoom::ToJSON() const
+	{
+		nlohmann::json properties = nlohmann::json(nlohmann::detail::value_t::array);
+		for (size_t row = 0; row < GetRows(); ++row)
+		{
+			nlohmann::json rowProperties = nlohmann::json(nlohmann::detail::value_t::array);
+			for (size_t column = 0; column < GetColumns(); ++column)
+			{
+				rowProperties.push_back(GetCell(column, row)->ToJSON());
+			}
+			properties.push_back(rowProperties);
+		}
+		return properties;
+	}
+
+
 }

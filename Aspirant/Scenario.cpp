@@ -34,7 +34,12 @@ namespace aspirant
 
 	nlohmann::json Scenario::ToJSON() const
 	{
-		throw "NOT IMPLEMENTED";
+		nlohmann::json properties;
+		for (auto& room : rooms)
+		{
+			properties[PROPERTY_ROOMS][room.first] = room.second->ToJSON();
+		}
+		return properties;
 	}
 
 	Scenario::~Scenario()

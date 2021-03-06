@@ -18,5 +18,6 @@ namespace aspirant
 		virtual bool IsTerrain() const = 0;
 		virtual bool IsCreature() const = 0;
 		virtual void FromJSON(const nlohmann::json&) = 0;
+		virtual nlohmann::json ToJSON() const = 0;
 	};
 }

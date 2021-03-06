@@ -52,5 +52,6 @@ namespace aspirant
 		void ClearScenarioBrief();
 		void AppendScenarioName(const std::string&);
 		void AppendScenarioBrief(const std::string&);
+		void SaveScenario();
 	};
 }

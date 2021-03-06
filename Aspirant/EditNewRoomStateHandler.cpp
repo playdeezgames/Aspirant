@@ -28,6 +28,7 @@ namespace aspirant
 	void EditNewRoomStateHandler::CreateRoom()
 	{
 		editorContext.GetScenario().AddRoom(editorContext.GetNewRoomName(), editorContext.GetNewRoomColumns(), editorContext.GetNewRoomRows());
+		editorContext.SaveScenario();
 	}
 
 

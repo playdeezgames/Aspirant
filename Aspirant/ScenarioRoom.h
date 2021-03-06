@@ -17,5 +17,6 @@ namespace aspirant
 
 		}
 		void FromJSON(const nlohmann::json&);
+		nlohmann::json ToJSON() const;
 	};
 }

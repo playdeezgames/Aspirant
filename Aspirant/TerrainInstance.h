@@ -11,5 +11,6 @@ namespace aspirant
 		bool IsTerrain() const;
 		bool IsCreature() const;
 		void FromJSON(const nlohmann::json&);
+		nlohmann::json ToJSON() const;
 	};
 }

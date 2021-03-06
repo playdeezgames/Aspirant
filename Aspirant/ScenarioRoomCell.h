@@ -10,7 +10,8 @@ namespace aspirant
 	private:
 		const DescriptorManager& descriptors;
 	protected:
-		nlohmann::json CellFlagToJSON(const ScenarioRoomCellFlags&);
+		nlohmann::json CellFlagToJSON(const ScenarioRoomCellFlags&) const;
+		nlohmann::json ObjectToJSON(const ScenarioObjectInstance*) const;
 		ScenarioRoomCellFlags CellFlagFromJSON(const nlohmann::json&);
 		ScenarioObjectInstance* ObjectFromJSON(const nlohmann::json&);
 		bool CanCover(const ScenarioObjectInstance*, const ScenarioObjectInstance*) const;

@@ -1,6 +1,6 @@
 #pragma once
 #include <set>
-#include <stack>
+#include <vector>
 #include "Utility.h"
 #include "json.hpp"
 namespace tggd::common
@@ -11,7 +11,7 @@ namespace tggd::common
 	private:
 		const std::string PROPERTY_CELL_FLAGS = "cellFlags";
 		const std::string PROPERTY_OBJECTS = "objects";
-		std::stack<TObjectData*> objects;
+		std::vector<TObjectData*> objects;
 		size_t column;
 		size_t row;
 		std::set<TCellFlags> cellFlags;
@@ -24,7 +24,8 @@ namespace tggd::common
 			}
 		}
 	protected:
-		virtual nlohmann::json CellFlagToJSON(const TCellFlags&) = 0;
+		virtual nlohmann::json CellFlagToJSON(const TCellFlags&) const = 0;
+		virtual nlohmann::json ObjectToJSON(const TObjectData*) const = 0;
 		virtual TCellFlags CellFlagFromJSON(const nlohmann::json&) = 0;
 		virtual TObjectData* ObjectFromJSON(const nlohmann::json&) = 0;
 		virtual bool CanCover(const TObjectData*, const TObjectData*) const = 0;
@@ -58,7 +59,7 @@ namespace tggd::common
 		{
 			if (newObject && CanCover(newObject, GetObject()))
 			{
-				objects.push(newObject);
+				objects.push_back(newObject);
 				return true;
 			}
 			return false;
@@ -67,13 +68,13 @@ namespace tggd::common
 		{ 
 			return 
 				(objects.empty()) ? (nullptr) :
-				(objects.top()); 
+				(objects.back()); 
 		}
 		TObjectData* GetObject() 
 		{ 
 			return
 				(objects.empty()) ? (nullptr) :
-				(objects.top());
+				(objects.back());
 		}
 		bool HasObjects() const { return !objects.empty(); }
 		size_t GetColumn() const { return column; }
@@ -94,8 +95,8 @@ namespace tggd::common
 		{
 			if (!objects.empty())
 			{
-				auto result = objects.top();
-				objects.pop();
+				auto result = objects.back();
+				objects.pop_back();
 				return result;
 			}
 			return nullptr;
@@ -117,7 +118,7 @@ namespace tggd::common
 			properties[PROPERTY_OBJECTS] = nlohmann::json(nlohmann::detail::value_t::array);
 			for (auto object : objects)
 			{
-				properties[PROPERTY_OBJECTS].push_back(object->ToJSON());
+				properties[PROPERTY_OBJECTS].push_back(ObjectToJSON(object));
 			}
 			return properties;
 		}
