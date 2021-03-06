@@ -1,5 +1,5 @@
 #pragma once
-#include "CommonStateHandler.h"
+#include "CommonEditorStateHandler.h"
 #include <SDL.h>
 #include "Command.h"
 #include "Layout.h"
@@ -9,10 +9,9 @@
 #include "StringManager.h"
 namespace aspirant
 {
-	class EditScenarioSelectorStateHandler : public CommonStateHandler
+	class EditScenarioSelectorStateHandler : public CommonEditorStateHandler
 	{
 	private:
-		EditorContext& editorContext;
 		void UpdateIndexText(const ScenarioDescriptor*);
 		void UpdateNameText(const ScenarioDescriptor*);
 		void UpdateIdText(const ScenarioDescriptor*);

@@ -75,6 +75,7 @@
     <ClInclude Include="Command.h" />
     <ClInclude Include="CommonDescriptor.h" />
     <ClInclude Include="CommonDescriptorManager.h" />
+    <ClInclude Include="CommonEditorStateHandler.h" />
     <ClInclude Include="CommonStateHandler.h" />
     <ClInclude Include="ConfirmQuitStateHandler.h" />
     <ClInclude Include="ConstantValue.h" />
@@ -86,6 +87,7 @@
     <ClInclude Include="EditNavigateRoomStateHandler.h" />
     <ClInclude Include="EditNewRoomStateHandler.h" />
     <ClInclude Include="EditorContext.h" />
+    <ClInclude Include="EditorContextClient.h" />
     <ClInclude Include="EditPickRoomStateHandler.h" />
     <ClInclude Include="EditScenarioDescriptorStateHandler.h" />
     <ClInclude Include="EditScenarioSelectorStateHandler.h" />
@@ -102,6 +104,7 @@
     <ClInclude Include="LayoutManager.h" />
     <ClInclude Include="MainMenuStateHandler.h" />
     <ClInclude Include="MCommand.h" />
+    <ClInclude Include="MenuItemDescriptor.h" />
     <ClInclude Include="MenuStateHandler.h" />
     <ClInclude Include="MText.h" />
     <ClInclude Include="MUpdate.h" />

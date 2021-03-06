@@ -1,15 +1,13 @@
 #pragma once
-#include "CommonStateHandler.h"
+#include "CommonEditorStateHandler.h"
 #include "LayoutManager.h"
 #include "EditorContext.h"
 #include "ScenarioDescriptorManager.h"
 #include "StringManager.h"
 namespace aspirant
 {
-	class EditPickRoomStateHandler : public CommonStateHandler
+	class EditPickRoomStateHandler : public CommonEditorStateHandler
 	{
-	private:		
-		EditorContext& editorContext;//TODO: into common editor state handler!
 	protected:
 		bool OnCommand(const Command&);
 		bool OnUpdate(int);

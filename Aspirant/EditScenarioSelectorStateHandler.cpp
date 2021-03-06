@@ -11,8 +11,8 @@ namespace aspirant
 
 	void EditScenarioSelectorStateHandler::LoadScenario()
 	{
-		auto scenario = editorContext.GetScenarios().Get(editorContext.GetScenarioIndex());
-		editorContext.GetScenario().FromJSON(tggd::common::Utility::LoadJSON(scenario->GetFileName()));
+		auto scenario = GetEditorContext().GetScenarios().Get(GetEditorContext().GetScenarioIndex());
+		GetEditorContext().GetScenario().FromJSON(tggd::common::Utility::LoadJSON(scenario->GetFileName()));
 	}
 
 
@@ -26,11 +26,11 @@ namespace aspirant
 			break;
 		case Command::NEXT:
 		case Command::RIGHT:
-			editorContext.NextScenario();
+			GetEditorContext().NextScenario();
 			break;
 		case Command::PREVIOUS:
 		case Command::LEFT:
-			editorContext.PreviousScenario();
+			GetEditorContext().PreviousScenario();
 			break;
 		case Command::GREEN:
 			LoadScenario();
@@ -45,7 +45,7 @@ namespace aspirant
 		if (scenario)
 		{
 			std::stringstream ss;
-			ss << "Scenario " << (editorContext.GetScenarioIndex() + 1) << "/" << editorContext.GetScenarios().GetCount();
+			ss << "Scenario " << (GetEditorContext().GetScenarioIndex() + 1) << "/" << GetEditorContext().GetScenarios().GetCount();
 			GetUIContext().GetStringManager().Set(TEXT_INDEX_STRING_NAME, ss.str());
 		}
 		else
@@ -95,11 +95,11 @@ namespace aspirant
 
 	bool EditScenarioSelectorStateHandler::OnUpdate(int)
 	{
-		if (editorContext.GetScenarioIndex() >= editorContext.GetScenarios().GetCount())
+		if (GetEditorContext().GetScenarioIndex() >= GetEditorContext().GetScenarios().GetCount())
 		{
-			editorContext.SetScenarioIndex(0);
+			GetEditorContext().SetScenarioIndex(0);
 		}
-		auto scenario = editorContext.GetScenarios().Get(editorContext.GetScenarioIndex());
+		auto scenario = GetEditorContext().GetScenarios().Get(GetEditorContext().GetScenarioIndex());
 		UpdateBriefText(scenario);
 		UpdateIdText(scenario);
 		UpdateIndexText(scenario);
@@ -115,8 +115,7 @@ namespace aspirant
 		EditorContext& editorContext,
 		const UIContext& uiContext
 	)
-		: CommonStateHandler(parent, UIState::EDIT_SCENARIO_SELECTOR, LAYOUT_NAME, uiContext)
-		, editorContext(editorContext)
+		: CommonEditorStateHandler(parent, UIState::EDIT_SCENARIO_SELECTOR, LAYOUT_NAME, uiContext, editorContext)
 	{
 
 	}

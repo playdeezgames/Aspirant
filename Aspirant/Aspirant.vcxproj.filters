@@ -511,5 +511,14 @@
     <ClInclude Include="EditNavigateRoomStateHandler.h">
       <Filter>Header Files\UI\States\Editor</Filter>
     </ClInclude>
+    <ClInclude Include="MenuItemDescriptor.h">
+      <Filter>Header Files\UI\States\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="EditorContextClient.h">
+      <Filter>Header Files\UI\States\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonEditorStateHandler.h">
+      <Filter>Header Files\UI\States\Base</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

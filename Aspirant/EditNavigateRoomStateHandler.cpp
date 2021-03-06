@@ -25,8 +25,7 @@ namespace aspirant
 		EditorContext& editorContext,
 		const UIContext& uiContext
 	)
-		: CommonStateHandler(parent, UIState::EDIT_NAVIGATE_ROOM, LAYOUT_NAME, uiContext)
-		, editorContext(editorContext)
+		: CommonEditorStateHandler(parent, UIState::EDIT_NAVIGATE_ROOM, LAYOUT_NAME, uiContext, editorContext)
 	{
 
 	}
