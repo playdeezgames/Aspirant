@@ -35,5 +35,10 @@
     "EditNewRoom.Color.Cancel":"Gray",
     "EditNewRoom.Text.RoomName":"<room name>",
     "EditNewRoom.Text.Columns":"<columns>",
-    "EditNewRoom.Text.Rows":"<rows>"
+    "EditNewRoom.Text.Rows":"<rows>",
+    "EditScenarioDescriptor.Color.ScenarioName":"Gray",
+    "EditScenarioDescriptor.Color.Brief":"Gray",
+    "EditScenarioDescriptor.Color.Back":"Gray",
+    "EditScenarioDescriptor.Text.ScenarioName":"<name>",
+    "EditScenarioDescriptor.Text.Brief":"<brief>"
 }

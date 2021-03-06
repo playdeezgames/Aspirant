@@ -31,6 +31,7 @@
     <ClCompile Include="EditNewRoomStateHandler.cpp" />
     <ClCompile Include="EditorContext.cpp" />
     <ClCompile Include="EditPickRoomStateHandler.cpp" />
+    <ClCompile Include="EditScenarioDescriptorStateHandler.cpp" />
     <ClCompile Include="EditScenarioSelectorStateHandler.cpp" />
     <ClCompile Include="EditScenarioStateHandler.cpp" />
     <ClCompile Include="FinishManager.cpp" />
@@ -84,6 +85,7 @@
     <ClInclude Include="EditNewRoomStateHandler.h" />
     <ClInclude Include="EditorContext.h" />
     <ClInclude Include="EditPickRoomStateHandler.h" />
+    <ClInclude Include="EditScenarioDescriptorStateHandler.h" />
     <ClInclude Include="EditScenarioSelectorStateHandler.h" />
     <ClInclude Include="EditScenarioStateHandler.h" />
     <ClInclude Include="Finisher.h" />

@@ -4,28 +4,23 @@
 #include "EditorContext.h"
 namespace aspirant
 {
-	enum class NewRoomItem
+	enum class EditScenarioDescriptorItem
 	{
-		NAME,
-		COLUMNS,
-		ROWS,
-		CREATE,
-		CANCEL
+		SCENARIO_NAME,
+		BRIEF,
+		BACK
 	};
-	class EditNewRoomStateHandler : public MenuStateHandler<NewRoomItem>
+	class EditScenarioDescriptorStateHandler : public MenuStateHandler<EditScenarioDescriptorItem>
 	{
 	private:
 		EditorContext& editorContext;
-		void CreateRoom();
 	protected:
 		bool OnCommand(const Command& command);
 		bool OnUpdate();
 		bool OnText(const std::string&);
-		void ActivateItem(const NewRoomItem&);
-		void IncreaseItem(const NewRoomItem&);
-		void DecreaseItem(const NewRoomItem&);
+		void ActivateItem(const EditScenarioDescriptorItem&);
 	public:
-		EditNewRoomStateHandler
+		EditScenarioDescriptorStateHandler
 		(
 			MessageHandler*,
 			EditorContext&,
