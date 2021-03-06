@@ -84,6 +84,6 @@ namespace aspirant
 		);
 		CreateScenarioFile(ss.str());
 		editorContext.SetScenarioIndex(editorContext.GetScenarios().Add(descriptor));
-		SetUIState(UIState::EDIT_SCENARIO_DESCRIPTOR);
+		SetUIState(UIState::EDIT_SCENARIO);
 	}
 }
