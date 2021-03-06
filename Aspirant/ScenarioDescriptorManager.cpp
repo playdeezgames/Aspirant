@@ -76,5 +76,15 @@ namespace aspirant
 		}
 	}
 
-
+	ScenarioDescriptor* ScenarioDescriptorManager::Get(size_t index)
+	{
+		if (index < descriptors.size())
+		{
+			return descriptors[index];
+		}
+		else
+		{
+			return nullptr;
+		}
+	}
 }

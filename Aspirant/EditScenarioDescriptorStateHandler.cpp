@@ -10,16 +10,43 @@ namespace aspirant
 
 	bool EditScenarioDescriptorStateHandler::OnCommand(const Command& command)
 	{
-		return MenuStateHandler<EditScenarioDescriptorItem>::OnCommand(command);
+		switch (command)
+		{
+		case Command::BACK:
+			switch (GetMenuItem())
+			{
+			case EditScenarioDescriptorItem::SCENARIO_NAME:
+				editorContext.ClearScenarioName();
+				return true;
+			case EditScenarioDescriptorItem::BRIEF:
+				editorContext.ClearScenarioBrief();
+				return true;
+			default:
+				return MenuStateHandler<EditScenarioDescriptorItem>::OnCommand(command);
+			}
+		default:
+			return MenuStateHandler<EditScenarioDescriptorItem>::OnCommand(command);
+		}
 	}
 
 	bool EditScenarioDescriptorStateHandler::OnUpdate()
 	{
+		GetUIContext().GetStringManager().Set(TEXT_NAME_SCENARIO_NAME, editorContext.GetScenarioDescriptor()->GetName());
+		GetUIContext().GetStringManager().Set(TEXT_NAME_BRIEF, editorContext.GetScenarioDescriptor()->GetBrief());
 		return MenuStateHandler<EditScenarioDescriptorItem>::OnUpdate();
 	}
 
 	bool EditScenarioDescriptorStateHandler::OnText(const std::string& text)
 	{
+		switch (GetMenuItem())
+		{
+		case EditScenarioDescriptorItem::SCENARIO_NAME:
+			editorContext.AppendScenarioName(text);
+			break;
+		case EditScenarioDescriptorItem::BRIEF:
+			editorContext.AppendScenarioBrief(text);
+			break;
+		}
 		return true;
 	}
 

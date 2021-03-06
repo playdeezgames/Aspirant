@@ -23,6 +23,8 @@ namespace aspirant
 		EditorContext(const DescriptorManager&, ScenarioDescriptorManager&);
 		void SetScenarioIndex(size_t);
 		size_t GetScenarioIndex() const;
+		const ScenarioDescriptor* GetScenarioDescriptor() const;
+		ScenarioDescriptor* GetScenarioDescriptor();
 		void NextScenario();
 		void PreviousScenario();
 		const Scenario& GetScenario() const { return scenario; }
@@ -46,5 +48,9 @@ namespace aspirant
 		size_t GetNewRoomRows() const;
 		void IncrementNewRoomRows();
 		void DecrementNewRoomRows();
+		void ClearScenarioName();
+		void ClearScenarioBrief();
+		void AppendScenarioName(const std::string&);
+		void AppendScenarioBrief(const std::string&);
 	};
 }

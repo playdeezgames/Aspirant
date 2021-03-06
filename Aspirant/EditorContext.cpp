@@ -10,9 +10,23 @@ namespace aspirant
 		: scenarioIndex(0)
 		, scenarios(scenarios)
 		, scenario(descriptors)
+		, newRoomColumns(0)
+		, newRoomRows(0)
+		, roomIndex(0)
 	{
 
 	}
+
+	const ScenarioDescriptor* EditorContext::GetScenarioDescriptor() const
+	{
+		return scenarios.Get(GetScenarioIndex());
+	}
+
+	ScenarioDescriptor* EditorContext::GetScenarioDescriptor()
+	{
+		return scenarios.Get(GetScenarioIndex());
+	}
+
 
 	void EditorContext::SetScenarioIndex(size_t index)
 	{
@@ -124,4 +138,29 @@ namespace aspirant
 	{
 		newRoomRows = (newRoomRows <= 1) ? (1) : (newRoomRows - 1);
 	}
+
+	void EditorContext::ClearScenarioName()
+	{
+		GetScenarioDescriptor()->SetName("");//TODO: magic string
+		GetScenarios().Save();
+	}
+
+	void EditorContext::ClearScenarioBrief()
+	{
+		GetScenarioDescriptor()->SetBrief("");//TODO: magic string
+		GetScenarios().Save();
+	}
+
+	void EditorContext::AppendScenarioName(const std::string& text)
+	{
+		GetScenarioDescriptor()->SetName(GetScenarioDescriptor()->GetName() + text);
+		GetScenarios().Save();
+	}
+
+	void EditorContext::AppendScenarioBrief(const std::string& text)
+	{
+		GetScenarioDescriptor()->SetBrief(GetScenarioDescriptor()->GetBrief() + text);
+		GetScenarios().Save();
+	}
+
 }

@@ -41,9 +41,17 @@ namespace aspirant
 		{
 			return id;
 		}
+		void SetName(const std::string& newName)
+		{
+			name = newName;
+		}
 		const std::string& GetName() const
 		{
 			return name;
+		}
+		void SetBrief(const std::string newBrief)
+		{
+			brief = newBrief;
 		}
 		const std::string& GetBrief() const
 		{
