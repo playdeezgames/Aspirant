@@ -9,8 +9,8 @@ namespace aspirant
 	{
 	private:
 		std::string layoutName;
-		bool OnDraw(SDL_Renderer*) const;
 	protected:
+		virtual bool OnDraw(SDL_Renderer*) const;
 		virtual bool OnCommand(const Command&) = 0;
 		virtual bool OnUpdate(int) { return false; }
 		bool OnMessage(const tggd::common::MGeneric*);

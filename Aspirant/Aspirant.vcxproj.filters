@@ -281,6 +281,9 @@
     <ClCompile Include="EditScenarioDescriptorStateHandler.cpp">
       <Filter>Source Files\UI\Editor</Filter>
     </ClCompile>
+    <ClCompile Include="EditNavigateRoomStateHandler.cpp">
+      <Filter>Source Files\UI\Editor</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AspirantApplication.h">
@@ -503,6 +506,9 @@
       <Filter>Header Files\UI\States\Editor</Filter>
     </ClInclude>
     <ClInclude Include="EditScenarioDescriptorStateHandler.h">
+      <Filter>Header Files\UI\States\Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="EditNavigateRoomStateHandler.h">
       <Filter>Header Files\UI\States\Editor</Filter>
     </ClInclude>
   </ItemGroup>

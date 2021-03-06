@@ -21,6 +21,9 @@ namespace aspirant
 		case Command::PREVIOUS:
 			editorContext.PreviousRoom();
 			break;
+		case Command::GREEN:
+			SetUIState(UIState::EDIT_NAVIGATE_ROOM);
+			break;
 		}
 		return true;
 	}

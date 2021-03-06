@@ -10,5 +10,6 @@
     "EditScenario":"config/ui/layouts/editScenarioPage.json",
     "EditPickRoom":"config/ui/layouts/editPickRoomPage.json",
     "EditNewRoom":"config/ui/layouts/editNewRoomPage.json",
-    "EditScenarioDescriptor":"config/ui/layouts/editScenarioDescriptorPage.json"
+    "EditScenarioDescriptor":"config/ui/layouts/editScenarioDescriptorPage.json",
+    "EditNavigateRoom":"config/ui/layouts/editNavigateRoomPage.json"
 }

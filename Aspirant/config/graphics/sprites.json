@@ -2721,5 +2721,12 @@
         "y": 3,
         "w": 36,
         "h": 36
+    },
+    "MapCursor":{
+        "texture": "urizen-onebit-tileset",
+        "x": 1875,
+        "y": 1914,
+        "w": 36,
+        "h": 36
     }
 }

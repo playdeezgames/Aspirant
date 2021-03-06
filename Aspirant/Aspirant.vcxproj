@@ -28,6 +28,7 @@
     <ClCompile Include="CreatureDescriptor.cpp" />
     <ClCompile Include="CreatureInstance.cpp" />
     <ClCompile Include="DescriptorManager.cpp" />
+    <ClCompile Include="EditNavigateRoomStateHandler.cpp" />
     <ClCompile Include="EditNewRoomStateHandler.cpp" />
     <ClCompile Include="EditorContext.cpp" />
     <ClCompile Include="EditPickRoomStateHandler.cpp" />
@@ -82,6 +83,7 @@
     <ClInclude Include="DescriptorManager.h" />
     <ClInclude Include="Drawn.h" />
     <ClInclude Include="DynamicValue.h" />
+    <ClInclude Include="EditNavigateRoomStateHandler.h" />
     <ClInclude Include="EditNewRoomStateHandler.h" />
     <ClInclude Include="EditorContext.h" />
     <ClInclude Include="EditPickRoomStateHandler.h" />
@@ -203,12 +205,14 @@
     <IncludePath>E:\lib\SDL2_mixer-2.0.4\include;E:\lib\SDL2_image-2.0.5\include;E:\lib\SDL2-2.0.14\include;$(IncludePath)</IncludePath>
     <LibraryPath>E:\lib\SDL2_image-2.0.5\lib\x64;E:\lib\SDL2_mixer-2.0.4\lib\x64;E:\lib\SDL2-2.0.14\lib\x64;$(LibraryPath)</LibraryPath>
     <PublicIncludeDirectories>$(PublicIncludeDirectories)</PublicIncludeDirectories>
+    <EnableMicrosoftCodeAnalysis>false</EnableMicrosoftCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>E:\lib\SDL2_mixer-2.0.4\include;E:\lib\SDL2_image-2.0.5\include;E:\lib\SDL2-2.0.14\include;$(IncludePath)</IncludePath>
     <LibraryPath>E:\lib\SDL2_image-2.0.5\lib\x64;E:\lib\SDL2_mixer-2.0.4\lib\x64;E:\lib\SDL2-2.0.14\lib\x64;$(LibraryPath)</LibraryPath>
     <PublicIncludeDirectories>$(PublicIncludeDirectories)</PublicIncludeDirectories>
+    <EnableMicrosoftCodeAnalysis>false</EnableMicrosoftCodeAnalysis>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
