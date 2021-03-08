@@ -23,9 +23,11 @@ namespace aspirant
 	(
 		MessageHandler* parent,
 		EditorContext& editorContext,
-		const UIContext& uiContext
+		const UIContext& uiContext,
+		const RoomRenderer& roomRenderer
 	)
 		: CommonEditorStateHandler(parent, UIState::EDIT_NAVIGATE_ROOM, LAYOUT_NAME, uiContext, editorContext)
+		, roomRenderer(roomRenderer)
 	{
 
 	}

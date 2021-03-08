@@ -51,6 +51,7 @@ namespace aspirant
 		, scenarios(finishManager, SCENARIOS_CONFIG_FILE)
 		, editorContext(descriptors, scenarios)
 		, uiContext(uiState, layoutManager, stringManager)
+		, roomRenderer()
 	{
 
 	}
@@ -87,7 +88,7 @@ namespace aspirant
 		new EditPickRoomStateHandler(this, editorContext, uiContext);
 		new EditNewRoomStateHandler(this, editorContext, uiContext);
 		new EditScenarioDescriptorStateHandler(this, editorContext, uiContext);
-		new EditNavigateRoomStateHandler(this, editorContext, uiContext);
+		new EditNavigateRoomStateHandler(this, editorContext, uiContext, roomRenderer);
 	}
 
 	void AspirantApplication::Finish()

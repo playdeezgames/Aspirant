@@ -284,6 +284,9 @@
     <ClCompile Include="EditNavigateRoomStateHandler.cpp">
       <Filter>Source Files\UI\Editor</Filter>
     </ClCompile>
+    <ClCompile Include="RoomRenderer.cpp">
+      <Filter>Source Files\Graphics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AspirantApplication.h">
@@ -522,6 +525,9 @@
     </ClInclude>
     <ClInclude Include="EditorMenuStateHandler.h">
       <Filter>Header Files\UI\States\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="RoomRenderer.h">
+      <Filter>Header Files\Graphics</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

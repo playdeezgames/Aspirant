@@ -16,6 +16,7 @@
 #include "DescriptorManager.h"
 #include "ScenarioDescriptorManager.h"
 #include "EditorContext.h"
+#include "RoomRenderer.h"
 namespace aspirant
 {
 	class AspirantApplication : public tggd::common::Application
@@ -37,6 +38,7 @@ namespace aspirant
 		ScenarioDescriptorManager scenarios;
 		OptionsManager optionsManager;
 		EditorContext editorContext;
+		RoomRenderer roomRenderer;
 		bool OnSetUIState(const UIState&);
 		bool OnKeyDown(const SDL_KeyboardEvent&);
 		bool OnSdlEvent(const SDL_Event&);

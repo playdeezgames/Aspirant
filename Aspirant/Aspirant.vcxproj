@@ -44,6 +44,7 @@
     <ClCompile Include="MainMenuStateHandler.cpp" />
     <ClCompile Include="OptionsManager.cpp" />
     <ClCompile Include="OptionsStateHandler.cpp" />
+    <ClCompile Include="RoomRenderer.cpp" />
     <ClCompile Include="Scenario.cpp" />
     <ClCompile Include="ScenarioDescriptorManager.cpp" />
     <ClCompile Include="ScenarioObjectInstance.cpp" />
@@ -114,6 +115,7 @@
     <ClInclude Include="Room.h" />
     <ClInclude Include="RoomCell.h" />
     <ClInclude Include="RoomCellObject.h" />
+    <ClInclude Include="RoomRenderer.h" />
     <ClInclude Include="Scenario.h" />
     <ClInclude Include="ScenarioDescriptor.h" />
     <ClInclude Include="ScenarioDescriptorManager.h" />
