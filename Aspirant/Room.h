@@ -3,6 +3,7 @@
 #include "RoomCell.h"
 #include "json.hpp"
 #include "Utility.h"
+#include "FinishUtility.h"
 namespace tggd::common
 {
 	template<typename TRoomCell>
@@ -18,7 +19,7 @@ namespace tggd::common
 			{
 				if (item)
 				{
-					tggd::common::Utility::SafeDelete(item);
+					tggd::common::FinishUtility::SafeDelete(item);
 				}
 			}
 			cells.clear();

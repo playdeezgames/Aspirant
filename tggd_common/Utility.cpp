@@ -18,11 +18,6 @@ namespace tggd::common
 		return arguments;
 	}
 
-	void Utility::SeedRandomNumberGenerator()
-	{
-		srand((unsigned int)time(nullptr));
-	}
-
 	int Utility::StringToInt(const std::string& text)
 	{
 		std::stringstream ss;
@@ -30,58 +25,6 @@ namespace tggd::common
 		int result = 0;
 		ss >> result;
 		return result;
-	}
-
-	int Utility::GenerateRandomNumberFromRange(int minimum, int maximum)
-	{
-		return rand() % (maximum - minimum) + minimum;
-	}
-
-	const std::string PROPERTY_KEY = "key";
-	IValue<std::string>* Utility::LoadString(const IDataStore<std::string>& stringStore, const nlohmann::json& value)
-	{
-		if (value.is_string())
-		{
-			return new ConstantValue<std::string>(value);
-		}
-		else if (value.is_object())
-		{
-			return new DynamicValue<std::string>(stringStore, value[PROPERTY_KEY]);
-		}
-		else
-		{
-			throw "BAD VALUE!";
-		}
-	}
-	IValue<int>* Utility::LoadInt(const IDataStore<int>& intStore, const nlohmann::json& value)
-	{
-		if (value.is_number_integer())
-		{
-			return new ConstantValue<int>(value);
-		}
-		else if (value.is_object())
-		{
-			return new DynamicValue<int>(intStore, value[PROPERTY_KEY]);
-		}
-		else
-		{
-			throw "BAD VALUE!";
-		}
-	}
-	IValue<bool>* Utility::LoadFlag(const IDataStore<bool>& flagStore, const nlohmann::json& value)
-	{
-		if (value.is_boolean())
-		{
-			return new ConstantValue<bool>(value);
-		}
-		else if (value.is_object())
-		{
-			return new DynamicValue<bool>(flagStore, value[PROPERTY_KEY]);
-		}
-		else
-		{
-			throw "BAD VALUE!";
-		}
 	}
 
 	int Utility::ToPercentage(int value, int maximum)

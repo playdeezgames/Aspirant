@@ -11,7 +11,7 @@ namespace aspirant
 
 	void Scenario::Clear()
 	{
-		tggd::common::Utility::SafeDeleteMap(rooms);
+		tggd::common::FinishUtility::SafeDeleteMap(rooms);
 	}
 
 	const std::string PROPERTY_ROOMS = "rooms";
@@ -61,7 +61,7 @@ namespace aspirant
 	{
 		if (rooms.contains(name))
 		{
-			tggd::common::Utility::SafeDelete(rooms[name]);
+			tggd::common::FinishUtility::SafeDelete(rooms[name]);
 		}
 		rooms[name] = new ScenarioRoom(descriptors);
 		rooms[name]->SetSize(columns, rows);

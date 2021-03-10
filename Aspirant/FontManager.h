@@ -4,7 +4,7 @@
 #include "IDataStore.h"
 namespace tggd::common
 {
-	class FontManager: public CommonDescriptorManager<SpriteFont>, public IDataStore<SpriteFont>
+	class FontManager: public CommonDescriptorManager<SpriteFont>, public tggd::data::IDataStore<SpriteFont>
 	{
 	private:
 		const SpriteManager& spriteManager;

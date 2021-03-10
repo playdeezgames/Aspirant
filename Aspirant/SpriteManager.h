@@ -7,7 +7,7 @@
 #include "IDataStore.h"
 namespace tggd::common
 {
-	class SpriteManager: public Finisher, public IDataStore<Sprite>
+	class SpriteManager: public Finisher, public tggd::data::IDataStore<Sprite>
 	{
 	private:
 		std::map<std::string, const Sprite*> sprites;

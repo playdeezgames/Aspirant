@@ -1,6 +1,6 @@
 #pragma once
 #include "IValue.h"
-namespace tggd::common
+namespace tggd::data
 {
 	template<typename TValue>
 	class ConstantValue : public IValue<TValue>

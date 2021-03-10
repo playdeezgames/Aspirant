@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-namespace tggd::common
+namespace tggd::data
 {
 	template<typename TStored>
 	class IDataStore

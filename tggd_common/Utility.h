@@ -1,49 +1,13 @@
 #pragma once
 #include <vector>
 #include <string>
-#include <map>
-#include "json.hpp"
-#include "IValue.h"
-#include "IDataStore.h"
 namespace tggd::common
 {
 	class Utility
 	{
 	public:
 		static std::vector<std::string> CommandLineToStringVector(int, char**);
-
-		static void SeedRandomNumberGenerator();
-		static int GenerateRandomNumberFromRange(int, int);
-
-
 		static int StringToInt(const std::string&);
-
-		template<typename TDelete>
-		static void SafeDelete(TDelete*& ptr)
-		{
-			if (ptr)
-			{
-				delete ptr;
-				ptr = nullptr;
-			}
-		}
-		template<typename TIdentifier, typename TDelete>
-		static void SafeDeleteMap(std::map<TIdentifier, TDelete*>& table)
-		{
-			for (auto& entry : table)
-			{
-				if (entry.second)
-				{
-					SafeDelete(entry.second);
-				}
-			}
-			table.clear();
-		}
-
-		static IValue<std::string>* LoadString(const IDataStore<std::string>&, const nlohmann::json&);
-		static IValue<int>* LoadInt(const IDataStore<int>&, const nlohmann::json&);
-		static IValue<bool>* LoadFlag(const IDataStore<bool>&, const nlohmann::json&);
-
 		static int ToPercentage(int, int);
 		static size_t NextIndex(size_t, size_t);
 		static size_t PreviousIndex(size_t, size_t);

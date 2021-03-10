@@ -23,9 +23,9 @@ namespace tggd::common
 		const SpriteManager& spriteManager,
 		const ColorManager& colorManager,
 		const FontManager& fontManager,
-		const IDataStore<std::string>& stringStore,
-		const IDataStore<int>& intStore,
-		const IDataStore<bool>& flagStore,
+		const tggd::data::IDataStore<std::string>& stringStore,
+		const tggd::data::IDataStore<int>& intStore,
+		const tggd::data::IDataStore<bool>& flagStore,
 		const nlohmann::json& itemDescriptors
 	)
 		: drawnItems()
@@ -63,7 +63,7 @@ namespace tggd::common
 	{
 		for (auto& item : drawnItems)
 		{
-			Utility::SafeDelete(item);
+			FinishUtility::SafeDelete(item);
 		}
 		drawnItems.clear();
 	}

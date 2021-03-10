@@ -8,6 +8,7 @@
 #include "FinishManager.h"
 #include "Utility.h"
 #include "JSONUtility.h"
+#include "FinishUtility.h"
 namespace tggd::common
 {
 	template<typename TIdentifer, typename TDescriptor>
@@ -37,7 +38,7 @@ namespace tggd::common
 		}
 		void Finish()
 		{
-			tggd::common::Utility::SafeDeleteMap(descriptors);
+			tggd::common::FinishUtility::SafeDeleteMap(descriptors);
 		}
 		const std::vector<TIdentifer>& GetTypes() const
 		{

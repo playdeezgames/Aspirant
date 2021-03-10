@@ -1,7 +1,7 @@
 #pragma once
 #include "IValue.h"
 #include "IDataStore.h"
-namespace tggd::common
+namespace tggd::data
 {
 	template<typename TValue>
 	class DynamicValue : public IValue<TValue>

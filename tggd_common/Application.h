@@ -2,7 +2,6 @@
 #include <SDL.h>
 #include <string>
 #include <vector>
-#include "MGeneric.h"
 #include "MessageHandler.h"
 namespace tggd::common
 {
@@ -24,7 +23,7 @@ namespace tggd::common
 		int mixerFrequency;
 		int channelCount;
 		int chunkSize;
-		
+
 		SDL_Renderer* renderer;
 
 		static Application* s_application;

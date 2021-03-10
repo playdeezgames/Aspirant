@@ -1,5 +1,5 @@
 #pragma once
-namespace tggd::common
+namespace tggd::data
 {
 	template<typename TValue>
 	class IValue

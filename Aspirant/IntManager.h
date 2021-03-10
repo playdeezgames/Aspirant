@@ -4,7 +4,7 @@
 #include "IDataStore.h"
 namespace tggd::common
 {
-	class IntManager : public IDataStore<int>
+	class IntManager : public tggd::data::IDataStore<int>
 	{
 	private:
 		std::map<std::string, int> table;

@@ -1,6 +1,7 @@
 #include "SpriteManager.h"
 #include "Utility.h"
 #include "JSONUtility.h"
+#include <FinishUtility.h>
 namespace tggd::common
 {
 	void SpriteManager::AddSprite(const std::string& name, const Sprite* sprite)
@@ -54,7 +55,7 @@ namespace tggd::common
 		{
 			if (entry.second)
 			{
-				tggd::common::Utility::SafeDelete(entry.second);
+				tggd::common::FinishUtility::SafeDelete(entry.second);
 			}
 		}
 		sprites.clear();

@@ -10,28 +10,28 @@ namespace tggd::common
 	class StaticImage : public Drawn
 	{
 	private:
-		const IDataStore<Sprite>& spriteStore;
-		const IDataStore<SDL_Color>& colorStore;
+		const tggd::data::IDataStore<Sprite>& spriteStore;
+		const tggd::data::IDataStore<SDL_Color>& colorStore;
 
-		IValue<std::string>* spriteName;
-		IValue<std::string>* colorName;
-		IValue<int>* x;
-		IValue<int>* y;
+		tggd::data::IValue<std::string>* spriteName;
+		tggd::data::IValue<std::string>* colorName;
+		tggd::data::IValue<int>* x;
+		tggd::data::IValue<int>* y;
 	public:
 		StaticImage
 		(
-			const IDataStore<Sprite>&,
-			const IDataStore<SDL_Color>&,
+			const tggd::data::IDataStore<Sprite>&,
+			const tggd::data::IDataStore<SDL_Color>&,
 			const std::string,
 			const std::string,
 			XY<int>
 		);
 		StaticImage
 		(
-			const IDataStore<std::string>&,
-			const IDataStore<int>&,
-			const IDataStore<Sprite>&,
-			const IDataStore<SDL_Color>&,
+			const tggd::data::IDataStore<std::string>&,
+			const tggd::data::IDataStore<int>&,
+			const tggd::data::IDataStore<Sprite>&,
+			const tggd::data::IDataStore<SDL_Color>&,
 			const nlohmann::json&
 		);
 		~StaticImage();

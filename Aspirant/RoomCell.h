@@ -2,6 +2,7 @@
 #include <set>
 #include <vector>
 #include "Utility.h"
+#include "FinishUtility.h"
 #include "json.hpp"
 namespace tggd::common
 {
@@ -20,7 +21,7 @@ namespace tggd::common
 			while (HasObjects())
 			{
 				auto object = RemoveObject();
-				Utility::SafeDelete(object);
+				FinishUtility::SafeDelete(object);
 			}
 		}
 	protected:

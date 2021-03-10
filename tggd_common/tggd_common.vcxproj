@@ -21,7 +21,9 @@
   <ItemGroup>
     <ClInclude Include="Application.h" />
     <ClInclude Include="ConstantValue.h" />
+    <ClInclude Include="DataUtility.h" />
     <ClInclude Include="DynamicValue.h" />
+    <ClInclude Include="FinishUtility.h" />
     <ClInclude Include="IDataStore.h" />
     <ClInclude Include="IValue.h" />
     <ClInclude Include="json.hpp" />
@@ -31,12 +33,15 @@
     <ClInclude Include="MGeneric.h" />
     <ClInclude Include="MRender.h" />
     <ClInclude Include="MUpdate.h" />
+    <ClInclude Include="RNGUtility.h" />
     <ClInclude Include="Utility.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
+    <ClCompile Include="DataUtility.cpp" />
     <ClCompile Include="JSONUtility.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="RNGUtility.cpp" />
     <ClCompile Include="Utility.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

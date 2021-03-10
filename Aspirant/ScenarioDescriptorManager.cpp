@@ -1,6 +1,7 @@
 #include "ScenarioDescriptorManager.h"
 #include "Utility.h"
 #include "JSONUtility.h"
+#include "FinishUtility.h"
 namespace aspirant
 {
 	ScenarioDescriptorManager::ScenarioDescriptorManager
@@ -27,7 +28,7 @@ namespace aspirant
 	{
 		for (auto& descriptor : descriptors)
 		{
-			tggd::common::Utility::SafeDelete(descriptor);
+			tggd::common::FinishUtility::SafeDelete(descriptor);
 		}
 	}
 

@@ -24,9 +24,9 @@ namespace tggd::common
 			const SpriteManager&,
 			const ColorManager&,
 			const FontManager&,
-			const IDataStore<std::string>&,
-			const IDataStore<int>&,
-			const IDataStore<bool>&,
+			const tggd::data::IDataStore<std::string>&,
+			const tggd::data::IDataStore<int>&,
+			const tggd::data::IDataStore<bool>&,
 			const nlohmann::json&
 		);
 		void Draw(SDL_Renderer*) const;

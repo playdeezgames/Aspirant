@@ -11,22 +11,22 @@ namespace tggd::common
 	class StaticText: public Drawn
 	{
 	private:
-		const tggd::common::IDataStore<SpriteFont>& fontStore;
+		const tggd::data::IDataStore<SpriteFont>& fontStore;
 
-		IValue<int>* alignment;
-		IValue<std::string>* text;
-		IValue<std::string>* fontName;
-		IValue<std::string>* color;
-		IValue<std::string>* dropShadowColor;
-		IValue<bool>* hasDropShadow;
-		IValue<int>* x;
-		IValue<int>* y;
-		IValue<int>* dropShadowX;
-		IValue<int>* dropShadowY;
+		tggd::data::IValue<int>* alignment;
+		tggd::data::IValue<std::string>* text;
+		tggd::data::IValue<std::string>* fontName;
+		tggd::data::IValue<std::string>* color;
+		tggd::data::IValue<std::string>* dropShadowColor;
+		tggd::data::IValue<bool>* hasDropShadow;
+		tggd::data::IValue<int>* x;
+		tggd::data::IValue<int>* y;
+		tggd::data::IValue<int>* dropShadowX;
+		tggd::data::IValue<int>* dropShadowY;
 	public:
 		StaticText
 		(
-			const tggd::common::IDataStore<SpriteFont>&,
+			const tggd::data::IDataStore<SpriteFont>&,
 			const tggd::common::XY<int>&,
 			const std::string&,
 			const std::string&,
@@ -38,10 +38,10 @@ namespace tggd::common
 		);
 		StaticText
 		(
-			const tggd::common::IDataStore<std::string>&,
-			const tggd::common::IDataStore<int>&,
-			const tggd::common::IDataStore<bool>&,
-			const tggd::common::IDataStore<SpriteFont>&,
+			const tggd::data::IDataStore<std::string>&,
+			const tggd::data::IDataStore<int>&,
+			const tggd::data::IDataStore<bool>&,
+			const tggd::data::IDataStore<SpriteFont>&,
 			const nlohmann::json&
 		);
 		~StaticText();

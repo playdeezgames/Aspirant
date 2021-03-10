@@ -1,6 +1,8 @@
 #include "StaticImage.h"
 #include "Utility.h"
 #include "ConstantValue.h"
+#include "DataUtility.h"
+#include "FinishUtility.h"
 namespace tggd::common
 {
 	const std::string PROPERTY_SPRITE = "sprite";
@@ -11,45 +13,45 @@ namespace tggd::common
 
 	StaticImage::StaticImage
 	(
-		const IDataStore<std::string>& stringStore,
-		const IDataStore<int>& intStore,
-		const IDataStore<Sprite>& spriteStore,
-		const IDataStore<SDL_Color>& colorStore,
+		const tggd::data::IDataStore<std::string>& stringStore,
+		const tggd::data::IDataStore<int>& intStore,
+		const tggd::data::IDataStore<Sprite>& spriteStore,
+		const tggd::data::IDataStore<SDL_Color>& colorStore,
 		const nlohmann::json& properties
 	)
 		: spriteStore(spriteStore)
 		, colorStore(colorStore)
-		, spriteName(Utility::LoadString(stringStore, properties[PROPERTY_SPRITE]))
-		, colorName(Utility::LoadString(stringStore, properties[PROPERTY_COLOR]))
-		, x(Utility::LoadInt(intStore, properties[PROPERTY_X]))
-		, y(Utility::LoadInt(intStore, properties[PROPERTY_Y]))
+		, spriteName(tggd::data::DataUtility::LoadString(stringStore, properties[PROPERTY_SPRITE]))
+		, colorName(tggd::data::DataUtility::LoadString(stringStore, properties[PROPERTY_COLOR]))
+		, x(tggd::data::DataUtility::LoadInt(intStore, properties[PROPERTY_X]))
+		, y(tggd::data::DataUtility::LoadInt(intStore, properties[PROPERTY_Y]))
 	{
 
 	}
 
 	StaticImage::StaticImage
 	(
-		const IDataStore<Sprite>& spriteStore,
-		const IDataStore<SDL_Color>& colorStore,
+		const tggd::data::IDataStore<Sprite>& spriteStore,
+		const tggd::data::IDataStore<SDL_Color>& colorStore,
 		const std::string spriteName,
 		const std::string colorName,
 		XY<int> xy
 	)
 		: spriteStore(spriteStore)
 		, colorStore(colorStore)
-		, spriteName(new ConstantValue(spriteName))
-		, colorName(new ConstantValue(colorName))
-		, x(new ConstantValue(xy.GetX()))
-		, y(new ConstantValue(xy.GetY()))
+		, spriteName(new tggd::data::ConstantValue(spriteName))
+		, colorName(new tggd::data::ConstantValue(colorName))
+		, x(new tggd::data::ConstantValue(xy.GetX()))
+		, y(new tggd::data::ConstantValue(xy.GetY()))
 	{
 	}
 
 	StaticImage::~StaticImage()
 	{
-		Utility::SafeDelete(spriteName);
-		Utility::SafeDelete(colorName);
-		Utility::SafeDelete(x);
-		Utility::SafeDelete(y);
+		tggd::common::FinishUtility::SafeDelete(spriteName);
+		tggd::common::FinishUtility::SafeDelete(colorName);
+		tggd::common::FinishUtility::SafeDelete(x);
+		tggd::common::FinishUtility::SafeDelete(y);
 	}
 
 

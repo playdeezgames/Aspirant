@@ -13,9 +13,9 @@ namespace tggd::common
 		const SpriteManager& spriteManager,
 		const ColorManager& colorManager,
 		const FontManager& fontManager,
-		const IDataStore<std::string>& stringStore,
-		const IDataStore<int>& intStore,
-		const IDataStore<bool>& flagStore
+		const tggd::data::IDataStore<std::string>& stringStore,
+		const tggd::data::IDataStore<int>& intStore,
+		const tggd::data::IDataStore<bool>& flagStore
 	)
 		: CommonDescriptorManager(finishManager)
 		, finishManager(finishManager)

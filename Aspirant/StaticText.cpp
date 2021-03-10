@@ -1,11 +1,12 @@
 #include "StaticText.h"
 #include "Utility.h"
 #include "ConstantValue.h"
+#include <DataUtility.h>
 namespace tggd::common
 {
 	StaticText::StaticText
 	(
-		const tggd::common::IDataStore<SpriteFont>& fontStore,
+		const tggd::data::IDataStore<SpriteFont>& fontStore,
 		const tggd::common::XY<int>& xy,
 		const std::string& text,
 		const std::string& fontName,
@@ -15,17 +16,17 @@ namespace tggd::common
 		const std::string& dropShadowColor,
 		const HorizontalAlignment& alignment
 	)
-		: x(new ConstantValue(xy.GetX()))
-		, y(new ConstantValue(xy.GetY()))
-		, text(new ConstantValue(text))
+		: x(new tggd::data::ConstantValue(xy.GetX()))
+		, y(new tggd::data::ConstantValue(xy.GetY()))
+		, text(new tggd::data::ConstantValue(text))
 		, fontStore(fontStore)
-		, fontName(new ConstantValue(fontName))
-		, color(new ConstantValue(color))
-		, hasDropShadow(new ConstantValue(hasDropShadow))
-		, dropShadowX(new ConstantValue(dropShadowOffset.GetX()))
-		, dropShadowY(new ConstantValue(dropShadowOffset.GetY()))
-		, dropShadowColor(new ConstantValue(dropShadowColor))
-		, alignment(new ConstantValue((int)alignment))
+		, fontName(new tggd::data::ConstantValue(fontName))
+		, color(new tggd::data::ConstantValue(color))
+		, hasDropShadow(new tggd::data::ConstantValue(hasDropShadow))
+		, dropShadowX(new tggd::data::ConstantValue(dropShadowOffset.GetX()))
+		, dropShadowY(new tggd::data::ConstantValue(dropShadowOffset.GetY()))
+		, dropShadowColor(new tggd::data::ConstantValue(dropShadowColor))
+		, alignment(new tggd::data::ConstantValue((int)alignment))
 	{
 
 	}
@@ -43,18 +44,18 @@ namespace tggd::common
 
 	StaticText::StaticText
 	(
-		const tggd::common::IDataStore<std::string>& stringStore,
-		const tggd::common::IDataStore<int>& intStore,
-		const tggd::common::IDataStore<bool>& flagStore,
-		const tggd::common::IDataStore<SpriteFont>& fontStore,
+		const tggd::data::IDataStore<std::string>& stringStore,
+		const tggd::data::IDataStore<int>& intStore,
+		const tggd::data::IDataStore<bool>& flagStore,
+		const tggd::data::IDataStore<SpriteFont>& fontStore,
 		const nlohmann::json& properties
 	)
-		: text(Utility::LoadString(stringStore,properties[PROPERTY_TEXT]))
+		: text(tggd::data::DataUtility::LoadString(stringStore,properties[PROPERTY_TEXT]))
 		, fontStore(fontStore)
-		, fontName(Utility::LoadString(stringStore, properties[PROPERTY_FONT]))
-		, color(Utility::LoadString(stringStore, properties[PROPERTY_COLOR]))
-		, x(Utility::LoadInt(intStore, properties[PROPERTY_X]))
-		, y(Utility::LoadInt(intStore, properties[PROPERTY_Y]))
+		, fontName(tggd::data::DataUtility::LoadString(stringStore, properties[PROPERTY_FONT]))
+		, color(tggd::data::DataUtility::LoadString(stringStore, properties[PROPERTY_COLOR]))
+		, x(tggd::data::DataUtility::LoadInt(intStore, properties[PROPERTY_X]))
+		, y(tggd::data::DataUtility::LoadInt(intStore, properties[PROPERTY_Y]))
 		, hasDropShadow(nullptr)
 		, dropShadowColor(nullptr)
 		, dropShadowX(nullptr)
@@ -63,46 +64,46 @@ namespace tggd::common
 	{
 		if (properties.count(PROPERTY_DROP_SHADOW) > 0)
 		{
-			hasDropShadow = Utility::LoadFlag(flagStore, properties[PROPERTY_DROP_SHADOW]);
+			hasDropShadow = tggd::data::DataUtility::LoadFlag(flagStore, properties[PROPERTY_DROP_SHADOW]);
 		}
 		else
 		{
-			hasDropShadow = new ConstantValue(false);
+			hasDropShadow = new tggd::data::ConstantValue(false);
 		}
 		if (properties.count(PROPERTY_HORIZONTAL_ALIGNMENT) > 0)
 		{
-			alignment = Utility::LoadInt(intStore, properties[PROPERTY_HORIZONTAL_ALIGNMENT]);
+			alignment = tggd::data::DataUtility::LoadInt(intStore, properties[PROPERTY_HORIZONTAL_ALIGNMENT]);
 		}
 		else
 		{
-			alignment = new ConstantValue((int)HorizontalAlignment::LEFT);
+			alignment = new tggd::data::ConstantValue((int)HorizontalAlignment::LEFT);
 		}
 		if (properties.count(PROPERTY_DROP_SHADOW) > 0)
 		{
-			dropShadowColor = Utility::LoadString(stringStore,properties[PROPERTY_DROP_SHADOW_COLOR]);
+			dropShadowColor = tggd::data::DataUtility::LoadString(stringStore,properties[PROPERTY_DROP_SHADOW_COLOR]);
 		}
 		if (properties.count(PROPERTY_DROP_SHADOW_X) > 0)
 		{
-			dropShadowX = Utility::LoadInt(intStore, properties[PROPERTY_DROP_SHADOW_X]);
+			dropShadowX = tggd::data::DataUtility::LoadInt(intStore, properties[PROPERTY_DROP_SHADOW_X]);
 		}
 		if (properties.count(PROPERTY_DROP_SHADOW_Y) > 0)
 		{
-			dropShadowY = Utility::LoadInt(intStore, properties[PROPERTY_DROP_SHADOW_Y]);
+			dropShadowY = tggd::data::DataUtility::LoadInt(intStore, properties[PROPERTY_DROP_SHADOW_Y]);
 		}
 	}
 
 	StaticText::~StaticText()
 	{
-		Utility::SafeDelete(text);
-		Utility::SafeDelete(fontName);
-		Utility::SafeDelete(color);
-		Utility::SafeDelete(dropShadowColor);
-		Utility::SafeDelete(hasDropShadow);
-		Utility::SafeDelete(x);
-		Utility::SafeDelete(y);
-		Utility::SafeDelete(dropShadowX);
-		Utility::SafeDelete(dropShadowY);
-		Utility::SafeDelete(alignment);
+		FinishUtility::SafeDelete(text);
+		FinishUtility::SafeDelete(fontName);
+		FinishUtility::SafeDelete(color);
+		FinishUtility::SafeDelete(dropShadowColor);
+		FinishUtility::SafeDelete(hasDropShadow);
+		FinishUtility::SafeDelete(x);
+		FinishUtility::SafeDelete(y);
+		FinishUtility::SafeDelete(dropShadowX);
+		FinishUtility::SafeDelete(dropShadowY);
+		FinishUtility::SafeDelete(alignment);
 	}
 
 

@@ -4,7 +4,7 @@
 #include "IDataStore.h"
 namespace tggd::common
 {
-	class FlagManager : public IDataStore<bool>
+	class FlagManager : public tggd::data::IDataStore<bool>
 	{
 	private:
 		std::set<std::string> flags;
