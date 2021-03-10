@@ -20,7 +20,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AboutStateHandler.cpp" />
-    <ClCompile Include="Application.cpp" />
     <ClCompile Include="AspirantApplication.cpp" />
     <ClCompile Include="ColorManager.cpp" />
     <ClCompile Include="CommonStateHandler.cpp" />
@@ -55,7 +54,6 @@
     <ClCompile Include="StartGameStateHandler.cpp" />
     <ClCompile Include="StaticImage.cpp" />
     <ClCompile Include="StaticText.cpp" />
-    <ClCompile Include="main.cpp" />
     <ClCompile Include="SplashStateHandler.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="SpriteFont.cpp" />
@@ -64,11 +62,9 @@
     <ClCompile Include="TerrainDescriptor.cpp" />
     <ClCompile Include="TerrainInstance.cpp" />
     <ClCompile Include="TextureManager.cpp" />
-    <ClCompile Include="Utility.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AboutStateHandler.h" />
-    <ClInclude Include="Application.h" />
     <ClInclude Include="AspirantApplication.h" />
     <ClInclude Include="BaseDescriptor.h" />
     <ClInclude Include="BaseDescriptorManager.h" />
@@ -79,12 +75,10 @@
     <ClInclude Include="CommonEditorStateHandler.h" />
     <ClInclude Include="CommonStateHandler.h" />
     <ClInclude Include="ConfirmQuitStateHandler.h" />
-    <ClInclude Include="ConstantValue.h" />
     <ClInclude Include="CreatureDescriptor.h" />
     <ClInclude Include="CreatureInstance.h" />
     <ClInclude Include="DescriptorManager.h" />
     <ClInclude Include="Drawn.h" />
-    <ClInclude Include="DynamicValue.h" />
     <ClInclude Include="EditNavigateRoomStateHandler.h" />
     <ClInclude Include="EditNewRoomStateHandler.h" />
     <ClInclude Include="EditorContext.h" />
@@ -98,10 +92,7 @@
     <ClInclude Include="FinishManager.h" />
     <ClInclude Include="FlagManager.h" />
     <ClInclude Include="FontManager.h" />
-    <ClInclude Include="IDataStore.h" />
     <ClInclude Include="IntManager.h" />
-    <ClInclude Include="IValue.h" />
-    <ClInclude Include="json.hpp" />
     <ClInclude Include="Layout.h" />
     <ClInclude Include="LayoutManager.h" />
     <ClInclude Include="MainMenuStateHandler.h" />
@@ -109,7 +100,6 @@
     <ClInclude Include="MenuItemDescriptor.h" />
     <ClInclude Include="MenuStateHandler.h" />
     <ClInclude Include="MText.h" />
-    <ClInclude Include="MUpdate.h" />
     <ClInclude Include="OptionsManager.h" />
     <ClInclude Include="OptionsStateHandler.h" />
     <ClInclude Include="Room.h" />
@@ -127,10 +117,6 @@
     <ClInclude Include="StartEditorStateHandler.h" />
     <ClInclude Include="StartGameStateHandler.h" />
     <ClInclude Include="StaticText.h" />
-    <ClInclude Include="MessageHandler.h" />
-    <ClInclude Include="MEvent.h" />
-    <ClInclude Include="MGeneric.h" />
-    <ClInclude Include="MRender.h" />
     <ClInclude Include="MSetUIState.h" />
     <ClInclude Include="SplashStateHandler.h" />
     <ClInclude Include="Sprite.h" />
@@ -145,8 +131,12 @@
     <ClInclude Include="UIContext.h" />
     <ClInclude Include="UIState.h" />
     <ClInclude Include="UIStateMessageHandler.h" />
-    <ClInclude Include="Utility.h" />
     <ClInclude Include="XY.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\tggd_common\tggd_common.vcxproj">
+      <Project>{6dd963db-3ce4-4f66-b280-db8c0e800b6e}</Project>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -208,14 +198,14 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>E:\lib\SDL2_mixer-2.0.4\include;E:\lib\SDL2_image-2.0.5\include;E:\lib\SDL2-2.0.14\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\tggd_common;E:\lib\SDL2_mixer-2.0.4\include;E:\lib\SDL2_image-2.0.5\include;E:\lib\SDL2-2.0.14\include;$(IncludePath)</IncludePath>
     <LibraryPath>E:\lib\SDL2_image-2.0.5\lib\x64;E:\lib\SDL2_mixer-2.0.4\lib\x64;E:\lib\SDL2-2.0.14\lib\x64;$(LibraryPath)</LibraryPath>
     <PublicIncludeDirectories>$(PublicIncludeDirectories)</PublicIncludeDirectories>
     <EnableMicrosoftCodeAnalysis>false</EnableMicrosoftCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>E:\lib\SDL2_mixer-2.0.4\include;E:\lib\SDL2_image-2.0.5\include;E:\lib\SDL2-2.0.14\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\tggd_common;E:\lib\SDL2_mixer-2.0.4\include;E:\lib\SDL2_image-2.0.5\include;E:\lib\SDL2-2.0.14\include;$(IncludePath)</IncludePath>
     <LibraryPath>E:\lib\SDL2_image-2.0.5\lib\x64;E:\lib\SDL2_mixer-2.0.4\lib\x64;E:\lib\SDL2-2.0.14\lib\x64;$(LibraryPath)</LibraryPath>
     <PublicIncludeDirectories>$(PublicIncludeDirectories)</PublicIncludeDirectories>
     <EnableMicrosoftCodeAnalysis>false</EnableMicrosoftCodeAnalysis>
@@ -261,6 +251,9 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <ProjectReference>
+      <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
+    </ProjectReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -279,6 +272,9 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <ProjectReference>
+      <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
+    </ProjectReference>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

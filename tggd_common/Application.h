@@ -9,6 +9,7 @@ namespace tggd::common
 	class Application : public MessageHandler
 	{
 	private:
+
 		Application() = delete;
 		Application(const Application&) = delete;
 		Application(Application&&) = delete;

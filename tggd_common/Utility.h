@@ -7,15 +7,23 @@
 #include "IDataStore.h"
 namespace tggd::common
 {
+	class JSONUtility
+	{
+	public:
+		static nlohmann::json LoadJSON(const std::string&);
+		static void SaveJSON(const std::string&, const nlohmann::json&);
+	};
 	class Utility
 	{
 	public:
 		static std::vector<std::string> CommandLineToStringVector(int, char**);
+
 		static void SeedRandomNumberGenerator();
 		static int GenerateRandomNumberFromRange(int, int);
-		static nlohmann::json LoadJSON(const std::string&);
-		static void SaveJSON(const std::string&, const nlohmann::json&);
+
+
 		static int StringToInt(const std::string&);
+
 		template<typename TDelete>
 		static void SafeDelete(TDelete*& ptr)
 		{
@@ -37,9 +45,11 @@ namespace tggd::common
 			}
 			table.clear();
 		}
+
 		static IValue<std::string>* LoadString(const IDataStore<std::string>&, const nlohmann::json&);
 		static IValue<int>* LoadInt(const IDataStore<int>&, const nlohmann::json&);
 		static IValue<bool>* LoadFlag(const IDataStore<bool>&, const nlohmann::json&);
+
 		static int ToPercentage(int, int);
 		static size_t NextIndex(size_t, size_t);
 		static size_t PreviousIndex(size_t, size_t);

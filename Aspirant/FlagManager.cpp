@@ -13,7 +13,7 @@ namespace tggd::common
 		const std::string& fileName
 	)
 	{
-		auto properties = Utility::LoadJSON(fileName);
+		auto properties = JSONUtility::LoadJSON(fileName);
 		for (auto& item : properties)
 		{
 			Set(item);

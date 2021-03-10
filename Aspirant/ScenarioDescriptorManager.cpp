@@ -15,7 +15,7 @@ namespace aspirant
 
 	void ScenarioDescriptorManager::Load()
 	{
-		auto descriptorList = tggd::common::Utility::LoadJSON(fileName);
+		auto descriptorList = tggd::common::JSONUtility::LoadJSON(fileName);
 		for (auto& properties : descriptorList)
 		{
 			descriptors.push_back(new ScenarioDescriptor(properties));
@@ -37,7 +37,7 @@ namespace aspirant
 		{
 			descriptorList.push_back(descriptor->ToJSON());
 		}
-		tggd::common::Utility::SaveJSON(fileName, descriptorList);
+		tggd::common::JSONUtility::SaveJSON(fileName, descriptorList);
 	}
 
 	int ScenarioDescriptorManager::GetNextId() const

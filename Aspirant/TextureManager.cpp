@@ -11,7 +11,7 @@ namespace tggd::common
 
 	void TextureManager::Start(SDL_Renderer* renderer, const std::string& fileName)
 	{
-		auto properties = Utility::LoadJSON(fileName);
+		auto properties = JSONUtility::LoadJSON(fileName);
 		for (auto& entry : properties.items())
 		{
 			std::string imageFileName = entry.value();

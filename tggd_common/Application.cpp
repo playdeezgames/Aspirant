@@ -41,7 +41,7 @@ namespace tggd::common
 		{
 			s_application = this;
 		}
-		auto properties = Utility::LoadJSON(fileName);
+		auto properties = JSONUtility::LoadJSON(fileName);
 		windowWidth = (int)properties[PROPERTY_WIDTH];
 		windowHeight = (int)properties[PROPERTY_HEIGHT];
 		logicalWidth = (int)properties[PROPERTY_LOGICAL_WIDTH];

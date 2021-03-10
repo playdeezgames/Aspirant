@@ -12,7 +12,7 @@ namespace tggd::common
 		, colorManager(colorManager)
 		, glyphs()
 	{
-		nlohmann::json properties = Utility::LoadJSON(fileName);
+		nlohmann::json properties = JSONUtility::LoadJSON(fileName);
 		for (auto& item : properties.items())
 		{
 			char ch = (char)Utility::StringToInt(item.key());

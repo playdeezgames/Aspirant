@@ -25,7 +25,7 @@ namespace tggd::common
 		}
 		void Start(const std::string& fileName)
 		{
-			nlohmann::json properties = tggd::common::Utility::LoadJSON(fileName);
+			nlohmann::json properties = tggd::common::JSONUtility::LoadJSON(fileName);
 			for (auto& item : properties.items())
 			{
 				auto identifier = ParseKey(item.key());

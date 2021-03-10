@@ -32,7 +32,7 @@ namespace tggd::common
 		return result;
 	}
 
-	nlohmann::json Utility::LoadJSON(const std::string& fileName)
+	nlohmann::json JSONUtility::LoadJSON(const std::string& fileName)
 	{
 		nlohmann::json document;
 		std::ifstream input(fileName);
@@ -44,7 +44,7 @@ namespace tggd::common
 		return document;
 	}
 
-	void Utility::SaveJSON(const std::string& fileName, const nlohmann::json& document)
+	void JSONUtility::SaveJSON(const std::string& fileName, const nlohmann::json& document)
 	{
 		std::ofstream output(fileName);
 		if (output.is_open())

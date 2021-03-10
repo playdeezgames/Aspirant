@@ -67,7 +67,7 @@ namespace aspirant
 	{
 		nlohmann::json properties;
 		properties["rooms"] = nlohmann::json({});//TODO: magic string
-		tggd::common::Utility::SaveJSON(fileName, properties);
+		tggd::common::JSONUtility::SaveJSON(fileName, properties);
 	}
 
 	void StartEditorStateHandler::CreateNewScenario()

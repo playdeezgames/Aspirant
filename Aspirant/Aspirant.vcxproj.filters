@@ -152,16 +152,7 @@
     <ClCompile Include="AspirantApplication.cpp">
       <Filter>Source Files\Application</Filter>
     </ClCompile>
-    <ClCompile Include="Utility.cpp">
-      <Filter>Source Files\Utility</Filter>
-    </ClCompile>
     <ClCompile Include="FinishManager.cpp">
-      <Filter>Source Files\Utility</Filter>
-    </ClCompile>
-    <ClCompile Include="Application.cpp">
-      <Filter>Source Files\BaseClasses</Filter>
-    </ClCompile>
-    <ClCompile Include="main.cpp">
       <Filter>Source Files\Utility</Filter>
     </ClCompile>
     <ClCompile Include="ColorManager.cpp">
@@ -292,12 +283,6 @@
     <ClInclude Include="AspirantApplication.h">
       <Filter>Header Files\Application</Filter>
     </ClInclude>
-    <ClInclude Include="json.hpp">
-      <Filter>Header Files\Dependencies</Filter>
-    </ClInclude>
-    <ClInclude Include="Utility.h">
-      <Filter>Header Files\Utility</Filter>
-    </ClInclude>
     <ClInclude Include="MSetUIState.h">
       <Filter>Header Files\Messages</Filter>
     </ClInclude>
@@ -324,24 +309,6 @@
     </ClInclude>
     <ClInclude Include="MCommand.h">
       <Filter>Header Files\Messages</Filter>
-    </ClInclude>
-    <ClInclude Include="Application.h">
-      <Filter>Header Files\BaseClasses</Filter>
-    </ClInclude>
-    <ClInclude Include="MEvent.h">
-      <Filter>Header Files\Messages\Common</Filter>
-    </ClInclude>
-    <ClInclude Include="MGeneric.h">
-      <Filter>Header Files\Messages\Common</Filter>
-    </ClInclude>
-    <ClInclude Include="MRender.h">
-      <Filter>Header Files\Messages\Common</Filter>
-    </ClInclude>
-    <ClInclude Include="MUpdate.h">
-      <Filter>Header Files\Messages\Common</Filter>
-    </ClInclude>
-    <ClInclude Include="MessageHandler.h">
-      <Filter>Header Files\BaseClasses</Filter>
     </ClInclude>
     <ClInclude Include="UIState.h">
       <Filter>Header Files\UI\Enums</Filter>
@@ -390,18 +357,6 @@
     </ClInclude>
     <ClInclude Include="BaseDescriptor.h">
       <Filter>Header Files\BaseClasses</Filter>
-    </ClInclude>
-    <ClInclude Include="ConstantValue.h">
-      <Filter>Header Files\Data\Values</Filter>
-    </ClInclude>
-    <ClInclude Include="DynamicValue.h">
-      <Filter>Header Files\Data\Values</Filter>
-    </ClInclude>
-    <ClInclude Include="IValue.h">
-      <Filter>Header Files\Data\Values</Filter>
-    </ClInclude>
-    <ClInclude Include="IDataStore.h">
-      <Filter>Header Files\Data\Stores</Filter>
     </ClInclude>
     <ClInclude Include="FlagManager.h">
       <Filter>Header Files\Data\Stores\Primitives</Filter>

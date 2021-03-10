@@ -165,6 +165,6 @@ namespace aspirant
 
 	void EditorContext::SaveScenario()
 	{
-		tggd::common::Utility::SaveJSON(GetScenarioDescriptor()->GetFileName(), GetScenario().ToJSON());
+		tggd::common::JSONUtility::SaveJSON(GetScenarioDescriptor()->GetFileName(), GetScenario().ToJSON());
 	}
 }
