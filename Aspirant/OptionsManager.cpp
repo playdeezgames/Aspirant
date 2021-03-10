@@ -20,7 +20,7 @@ namespace aspirant
 
 	void OptionsManager::Start()
 	{
-		auto properties = tggd::common::JSONUtility::LoadJSON(fileName);
+		auto properties = tggd::data::JSONUtility::LoadJSON(fileName);
 		soundManager.SetMuted((bool)properties[PROPERTY_MUTED]);
 		soundManager.SetSfxVolume((int)properties[PROPERTY_SFX_VOLUME]);
 		soundManager.SetMuxVolume((int)properties[PROPERTY_MUX_VOLUME]);
@@ -32,6 +32,6 @@ namespace aspirant
 		properties[PROPERTY_MUTED] = soundManager.IsMuted();
 		properties[PROPERTY_MUX_VOLUME] = soundManager.GetMuxVolume();
 		properties[PROPERTY_SFX_VOLUME] = soundManager.GetSfxVolume();
-		tggd::common::JSONUtility::SaveJSON(fileName, properties);
+		tggd::data::JSONUtility::SaveJSON(fileName, properties);
 	}
 }

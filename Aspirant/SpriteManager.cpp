@@ -30,7 +30,7 @@ namespace tggd::common
 
 	void SpriteManager::Start(const TextureManager& textureManager, const std::string& fileName)
 	{
-		nlohmann::json j = JSONUtility::LoadJSON(fileName);
+		nlohmann::json j = tggd::data::JSONUtility::LoadJSON(fileName);
 		for (auto& item : j.items())
 		{
 			auto& properties = item.value();

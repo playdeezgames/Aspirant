@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include "json.hpp"
-namespace tggd::common
+namespace tggd::data
 {
 	class JSONUtility
 	{

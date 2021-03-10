@@ -4,7 +4,7 @@ namespace tggd::common
 {
 	Layout* LayoutManager::ParseDescriptor(const std::string&, const nlohmann::json& properties)
 	{
-		return new Layout(finishManager, spriteManager, colorManager, fontManager, stringStore, intStore, flagStore, JSONUtility::LoadJSON(properties));
+		return new Layout(finishManager, spriteManager, colorManager, fontManager, stringStore, intStore, flagStore, tggd::data::JSONUtility::LoadJSON(properties));
 	}
 
 	LayoutManager::LayoutManager

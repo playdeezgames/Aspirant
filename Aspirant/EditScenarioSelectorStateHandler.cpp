@@ -12,7 +12,7 @@ namespace aspirant
 	void EditScenarioSelectorStateHandler::LoadScenario()
 	{
 		auto scenario = GetEditorContext().GetScenarios().Get(GetEditorContext().GetScenarioIndex());
-		GetEditorContext().GetScenario().FromJSON(tggd::common::JSONUtility::LoadJSON(scenario->GetFileName()));
+		GetEditorContext().GetScenario().FromJSON(tggd::data::JSONUtility::LoadJSON(scenario->GetFileName()));
 	}
 
 

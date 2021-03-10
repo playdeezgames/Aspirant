@@ -135,7 +135,7 @@ namespace tggd::common
 
 	void SoundManager::StartSound(const std::string& sfxFileName)
 	{
-		nlohmann::json j = JSONUtility::LoadJSON(sfxFileName);
+		nlohmann::json j = tggd::data::JSONUtility::LoadJSON(sfxFileName);
 		for (auto& i : j.items())
 		{
 			AddSound(i.key(), i.value());
@@ -144,7 +144,7 @@ namespace tggd::common
 
 	void SoundManager::StartMusic(const std::string& muxFileName)
 	{
-		nlohmann::json j = JSONUtility::LoadJSON(muxFileName);
+		nlohmann::json j = tggd::data::JSONUtility::LoadJSON(muxFileName);
 		for (auto& i : j.items())
 		{
 			AddMusic(i.key(), i.value());

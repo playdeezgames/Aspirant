@@ -1,6 +1,6 @@
 #include "JSONUtility.h"
 #include <fstream>
-namespace tggd::common
+namespace tggd::data
 {
 	nlohmann::json JSONUtility::LoadJSON(const std::string& fileName)
 	{
