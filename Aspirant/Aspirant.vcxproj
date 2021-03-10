@@ -137,6 +137,9 @@
     <ProjectReference Include="..\tggd_common\tggd_common.vcxproj">
       <Project>{6dd963db-3ce4-4f66-b280-db8c0e800b6e}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\tggd_data\tggd_data.vcxproj">
+      <Project>{5c7d56ef-72fa-48aa-a427-1cc0f255a910}</Project>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -198,14 +201,14 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>..\tggd_common;E:\lib\SDL2_mixer-2.0.4\include;E:\lib\SDL2_image-2.0.5\include;E:\lib\SDL2-2.0.14\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\tggd_data;..\tggd_common;E:\lib\SDL2_mixer-2.0.4\include;E:\lib\SDL2_image-2.0.5\include;E:\lib\SDL2-2.0.14\include;$(IncludePath)</IncludePath>
     <LibraryPath>E:\lib\SDL2_image-2.0.5\lib\x64;E:\lib\SDL2_mixer-2.0.4\lib\x64;E:\lib\SDL2-2.0.14\lib\x64;$(LibraryPath)</LibraryPath>
     <PublicIncludeDirectories>$(PublicIncludeDirectories)</PublicIncludeDirectories>
     <EnableMicrosoftCodeAnalysis>false</EnableMicrosoftCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>..\tggd_common;E:\lib\SDL2_mixer-2.0.4\include;E:\lib\SDL2_image-2.0.5\include;E:\lib\SDL2-2.0.14\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\tggd_data;..\tggd_common;E:\lib\SDL2_mixer-2.0.4\include;E:\lib\SDL2_image-2.0.5\include;E:\lib\SDL2-2.0.14\include;$(IncludePath)</IncludePath>
     <LibraryPath>E:\lib\SDL2_image-2.0.5\lib\x64;E:\lib\SDL2_mixer-2.0.4\lib\x64;E:\lib\SDL2-2.0.14\lib\x64;$(LibraryPath)</LibraryPath>
     <PublicIncludeDirectories>$(PublicIncludeDirectories)</PublicIncludeDirectories>
     <EnableMicrosoftCodeAnalysis>false</EnableMicrosoftCodeAnalysis>
