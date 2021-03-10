@@ -48,7 +48,7 @@ namespace aspirant
 		{
 			return menuItem;
 		}
-		tggd::common::StringManager& GetStringManager() const
+		tggd::data::StringManager& GetStringManager() const
 		{
 			return GetUIContext().GetStringManager();
 		}

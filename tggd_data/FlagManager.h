@@ -2,7 +2,7 @@
 #include <string>
 #include <set>
 #include "IDataStore.h"
-namespace tggd::common
+namespace tggd::data
 {
 	class FlagManager : public tggd::data::IDataStore<bool>
 	{

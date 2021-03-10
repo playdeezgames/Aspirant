@@ -48,9 +48,6 @@
     <Filter Include="Header Files\Input">
       <UniqueIdentifier>{554743f0-b99f-48d4-8bff-3dcc1d37d3c4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Messages\Common">
-      <UniqueIdentifier>{b02648f6-c92a-49a9-90af-68c6a206992c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\UI\Enums">
       <UniqueIdentifier>{f430ceef-573b-42d7-bf8c-25e37cb61be7}</UniqueIdentifier>
     </Filter>
@@ -98,9 +95,6 @@
     </Filter>
     <Filter Include="Header Files\Data\Stores">
       <UniqueIdentifier>{357826cc-d5de-40a1-a903-f4243a031dbe}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Data\Stores\Primitives">
-      <UniqueIdentifier>{62dfec29-c74e-41dd-9746-152e2db04a8a}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\Data\Descriptors">
       <UniqueIdentifier>{541bb12f-72e1-4222-8b79-09e21cdb67be}</UniqueIdentifier>
@@ -190,15 +184,6 @@
     </ClCompile>
     <ClCompile Include="EditorContext.cpp">
       <Filter>Source Files\Data</Filter>
-    </ClCompile>
-    <ClCompile Include="FlagManager.cpp">
-      <Filter>Source Files\Data\Primitives</Filter>
-    </ClCompile>
-    <ClCompile Include="IntManager.cpp">
-      <Filter>Source Files\Data\Primitives</Filter>
-    </ClCompile>
-    <ClCompile Include="StringManager.cpp">
-      <Filter>Source Files\Data\Primitives</Filter>
     </ClCompile>
     <ClCompile Include="CreatureDescriptor.cpp">
       <Filter>Source Files\Data\Descriptors</Filter>
@@ -358,15 +343,6 @@
     <ClInclude Include="BaseDescriptor.h">
       <Filter>Header Files\BaseClasses</Filter>
     </ClInclude>
-    <ClInclude Include="FlagManager.h">
-      <Filter>Header Files\Data\Stores\Primitives</Filter>
-    </ClInclude>
-    <ClInclude Include="IntManager.h">
-      <Filter>Header Files\Data\Stores\Primitives</Filter>
-    </ClInclude>
-    <ClInclude Include="StringManager.h">
-      <Filter>Header Files\Data\Stores\Primitives</Filter>
-    </ClInclude>
     <ClInclude Include="CreatureDescriptor.h">
       <Filter>Header Files\Data\Descriptors</Filter>
     </ClInclude>
@@ -456,9 +432,6 @@
     </ClInclude>
     <ClInclude Include="UIContext.h">
       <Filter>Header Files\Data</Filter>
-    </ClInclude>
-    <ClInclude Include="MText.h">
-      <Filter>Header Files\Messages\Common</Filter>
     </ClInclude>
     <ClInclude Include="EditNewRoomStateHandler.h">
       <Filter>Header Files\UI\States\Editor</Filter>

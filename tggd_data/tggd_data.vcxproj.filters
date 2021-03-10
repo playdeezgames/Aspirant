@@ -32,12 +32,30 @@
     <ClInclude Include="JSONUtility.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="FlagManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IntManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StringManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DataUtility.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="JSONUtility.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FlagManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IntManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StringManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

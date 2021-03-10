@@ -22,14 +22,20 @@
     <ClInclude Include="ConstantValue.h" />
     <ClInclude Include="DataUtility.h" />
     <ClInclude Include="DynamicValue.h" />
+    <ClInclude Include="FlagManager.h" />
     <ClInclude Include="IDataStore.h" />
+    <ClInclude Include="IntManager.h" />
     <ClInclude Include="IValue.h" />
     <ClInclude Include="json.hpp" />
     <ClInclude Include="JSONUtility.h" />
+    <ClInclude Include="StringManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DataUtility.cpp" />
+    <ClCompile Include="FlagManager.cpp" />
+    <ClCompile Include="IntManager.cpp" />
     <ClCompile Include="JSONUtility.cpp" />
+    <ClCompile Include="StringManager.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

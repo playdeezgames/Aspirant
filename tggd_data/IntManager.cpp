@@ -1,15 +1,14 @@
-#include "StringManager.h"
-#include "Utility.h"
+#include "IntManager.h"
 #include "JSONUtility.h"
-namespace tggd::common
+namespace tggd::data
 {
-	StringManager::StringManager()
+	IntManager::IntManager()
 		:table()
 	{
 
 	}
 
-	void StringManager::Start
+	void IntManager::Start
 	(
 		const std::string& fileName
 	)
@@ -21,14 +20,13 @@ namespace tggd::common
 		}
 	}
 
-	const std::string& StringManager::Get(const std::string& key) const
+	const int& IntManager::Get(const std::string& key) const
 	{
 		return table.find(key)->second;
 	}
 
-	void StringManager::Set(const std::string& key, const std::string& value)
+	void IntManager::Set(const std::string& key, const int& value)
 	{
 		table[key] = value;
 	}
-
 }

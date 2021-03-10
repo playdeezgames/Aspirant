@@ -25,6 +25,7 @@
     <ClInclude Include="MEvent.h" />
     <ClInclude Include="MGeneric.h" />
     <ClInclude Include="MRender.h" />
+    <ClInclude Include="MText.h" />
     <ClInclude Include="MUpdate.h" />
     <ClInclude Include="RNGUtility.h" />
     <ClInclude Include="Utility.h" />

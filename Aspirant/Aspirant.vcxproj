@@ -35,9 +35,7 @@
     <ClCompile Include="EditScenarioSelectorStateHandler.cpp" />
     <ClCompile Include="EditScenarioStateHandler.cpp" />
     <ClCompile Include="FinishManager.cpp" />
-    <ClCompile Include="FlagManager.cpp" />
     <ClCompile Include="FontManager.cpp" />
-    <ClCompile Include="IntManager.cpp" />
     <ClCompile Include="Layout.cpp" />
     <ClCompile Include="LayoutManager.cpp" />
     <ClCompile Include="MainMenuStateHandler.cpp" />
@@ -58,7 +56,6 @@
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="SpriteFont.cpp" />
     <ClCompile Include="SpriteManager.cpp" />
-    <ClCompile Include="StringManager.cpp" />
     <ClCompile Include="TerrainDescriptor.cpp" />
     <ClCompile Include="TerrainInstance.cpp" />
     <ClCompile Include="TextureManager.cpp" />
@@ -90,16 +87,13 @@
     <ClInclude Include="EditScenarioStateHandler.h" />
     <ClInclude Include="Finisher.h" />
     <ClInclude Include="FinishManager.h" />
-    <ClInclude Include="FlagManager.h" />
     <ClInclude Include="FontManager.h" />
-    <ClInclude Include="IntManager.h" />
     <ClInclude Include="Layout.h" />
     <ClInclude Include="LayoutManager.h" />
     <ClInclude Include="MainMenuStateHandler.h" />
     <ClInclude Include="MCommand.h" />
     <ClInclude Include="MenuItemDescriptor.h" />
     <ClInclude Include="MenuStateHandler.h" />
-    <ClInclude Include="MText.h" />
     <ClInclude Include="OptionsManager.h" />
     <ClInclude Include="OptionsStateHandler.h" />
     <ClInclude Include="Room.h" />
@@ -124,7 +118,6 @@
     <ClInclude Include="SpriteManager.h" />
     <ClInclude Include="SpriteTable.h" />
     <ClInclude Include="StaticImage.h" />
-    <ClInclude Include="StringManager.h" />
     <ClInclude Include="TerrainDescriptor.h" />
     <ClInclude Include="TerrainInstance.h" />
     <ClInclude Include="TextureManager.h" />

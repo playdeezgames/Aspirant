@@ -30,9 +30,9 @@ namespace aspirant
 		tggd::common::ColorManager colorManager;
 		tggd::common::FontManager fontManager;
 		tggd::common::LayoutManager layoutManager;
-		tggd::common::StringManager stringManager;
-		tggd::common::IntManager intManager;
-		tggd::common::FlagManager flagManager;
+		tggd::data::StringManager stringManager;
+		tggd::data::IntManager intManager;
+		tggd::data::FlagManager flagManager;
 		tggd::common::SoundManager soundManager;
 		DescriptorManager descriptors;
 		ScenarioDescriptorManager scenarios;

@@ -2,7 +2,7 @@
 #include <string>
 #include <map>
 #include "IDataStore.h"
-namespace tggd::common
+namespace tggd::data
 {
 	class IntManager : public tggd::data::IDataStore<int>
 	{
