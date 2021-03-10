@@ -6,17 +6,18 @@
 #include "MRender.h"
 #include "MUpdate.h"
 #include "Utility.h"
+#include "JSONUtility.h"
 namespace tggd::common
 {
-	const std::string PROPERTY_WIDTH = "width";
-	const std::string PROPERTY_HEIGHT = "height";
-	const std::string PROPERTY_LOGICAL_WIDTH = "logicalWidth";
-	const std::string PROPERTY_LOGICAL_HEIGHT = "logicalHeight";
-	const std::string PROPERTY_TITLE = "title";
-	const std::string PROPERTY_ICON = "icon";
-	const std::string PROPERTY_MIXER_FREQUENCY = "mixerFrequency";
-	const std::string PROPERTY_CHANNEL_COUNT = "channelCount";
-	const std::string PROPERTY_CHUNK_SIZE = "chunkSize";
+	#define PROPERTY_WIDTH "width"
+	#define PROPERTY_HEIGHT "height"
+	#define PROPERTY_LOGICAL_WIDTH "logicalWidth"
+	#define PROPERTY_LOGICAL_HEIGHT "logicalHeight"
+	#define PROPERTY_TITLE "title"
+	#define PROPERTY_ICON "icon"
+	#define PROPERTY_MIXER_FREQUENCY "mixerFrequency"
+	#define PROPERTY_CHANNEL_COUNT "channelCount"
+	#define PROPERTY_CHUNK_SIZE "chunkSize"
 
 	Application* Application::s_application = nullptr;
 

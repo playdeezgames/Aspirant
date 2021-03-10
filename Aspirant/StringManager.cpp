@@ -1,5 +1,6 @@
 #include "StringManager.h"
 #include "Utility.h"
+#include "JSONUtility.h"
 namespace tggd::common
 {
 	StringManager::StringManager()

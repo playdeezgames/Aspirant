@@ -1,5 +1,6 @@
 #include "IntManager.h"
 #include "Utility.h"
+#include "JSONUtility.h"
 namespace tggd::common
 {
 	IntManager::IntManager()

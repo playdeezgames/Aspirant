@@ -7,6 +7,7 @@
 #include "Finisher.h"
 #include "FinishManager.h"
 #include "Utility.h"
+#include "JSONUtility.h"
 namespace tggd::common
 {
 	template<typename TIdentifer, typename TDescriptor>

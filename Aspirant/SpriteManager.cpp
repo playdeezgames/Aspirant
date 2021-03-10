@@ -1,5 +1,6 @@
 #include "SpriteManager.h"
 #include "Utility.h"
+#include "JSONUtility.h"
 namespace tggd::common
 {
 	void SpriteManager::AddSprite(const std::string& name, const Sprite* sprite)

@@ -1,6 +1,7 @@
 #include "OptionsManager.h"
 #include "Utility.h"
 #include <io.h>
+#include "JSONUtility.h"
 namespace aspirant
 {
 	OptionsManager::OptionsManager

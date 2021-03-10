@@ -1,6 +1,7 @@
 #include "TextureManager.h"
 #include "Utility.h"
 #include <SDL_image.h>
+#include "JSONUtility.h"
 namespace tggd::common
 {
 	TextureManager::TextureManager(FinishManager& finishManager)

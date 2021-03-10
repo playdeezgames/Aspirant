@@ -1,5 +1,6 @@
 #include "FlagManager.h"
 #include "Utility.h"
+#include "JSONUtility.h"
 namespace tggd::common
 {
 	FlagManager::FlagManager()

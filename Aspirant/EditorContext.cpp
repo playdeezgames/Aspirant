@@ -1,5 +1,7 @@
 #include "EditorContext.h"
 #include "Utility.h"
+#include "JSONUtility.h"
+
 namespace aspirant
 {
 	EditorContext::EditorContext

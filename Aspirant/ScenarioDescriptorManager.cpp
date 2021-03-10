@@ -1,5 +1,6 @@
 #include "ScenarioDescriptorManager.h"
 #include "Utility.h"
+#include "JSONUtility.h"
 namespace aspirant
 {
 	ScenarioDescriptorManager::ScenarioDescriptorManager

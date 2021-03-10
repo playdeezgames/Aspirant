@@ -25,6 +25,7 @@
     <ClInclude Include="IDataStore.h" />
     <ClInclude Include="IValue.h" />
     <ClInclude Include="json.hpp" />
+    <ClInclude Include="JSONUtility.h" />
     <ClInclude Include="MessageHandler.h" />
     <ClInclude Include="MEvent.h" />
     <ClInclude Include="MGeneric.h" />
@@ -34,6 +35,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
+    <ClCompile Include="JSONUtility.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Utility.cpp" />
   </ItemGroup>
