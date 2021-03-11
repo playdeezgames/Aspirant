@@ -3,7 +3,7 @@
 #include "ConstantValue.h"
 #include "DataUtility.h"
 #include "FinishUtility.h"
-namespace tggd::common
+namespace tggd::graphics
 {
 	const std::string PROPERTY_SPRITE = "sprite";
 	const std::string PROPERTY_COLOR = "color";

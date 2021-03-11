@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tggd_common", "..\tggd_comm
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tggd_data", "..\tggd_data\tggd_data.vcxproj", "{5C7D56EF-72FA-48AA-A427-1CC0F255A910}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tggd_graphics", "..\tggd_graphics\tggd_graphics.vcxproj", "{5DA3B8F0-CCC8-41D3-AA40-8FFADBA3B417}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +43,14 @@ Global
 		{5C7D56EF-72FA-48AA-A427-1CC0F255A910}.Release|x64.Build.0 = Release|x64
 		{5C7D56EF-72FA-48AA-A427-1CC0F255A910}.Release|x86.ActiveCfg = Release|Win32
 		{5C7D56EF-72FA-48AA-A427-1CC0F255A910}.Release|x86.Build.0 = Release|Win32
+		{5DA3B8F0-CCC8-41D3-AA40-8FFADBA3B417}.Debug|x64.ActiveCfg = Debug|x64
+		{5DA3B8F0-CCC8-41D3-AA40-8FFADBA3B417}.Debug|x64.Build.0 = Debug|x64
+		{5DA3B8F0-CCC8-41D3-AA40-8FFADBA3B417}.Debug|x86.ActiveCfg = Debug|Win32
+		{5DA3B8F0-CCC8-41D3-AA40-8FFADBA3B417}.Debug|x86.Build.0 = Debug|Win32
+		{5DA3B8F0-CCC8-41D3-AA40-8FFADBA3B417}.Release|x64.ActiveCfg = Release|x64
+		{5DA3B8F0-CCC8-41D3-AA40-8FFADBA3B417}.Release|x64.Build.0 = Release|x64
+		{5DA3B8F0-CCC8-41D3-AA40-8FFADBA3B417}.Release|x86.ActiveCfg = Release|Win32
+		{5DA3B8F0-CCC8-41D3-AA40-8FFADBA3B417}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

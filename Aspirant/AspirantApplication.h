@@ -25,11 +25,11 @@ namespace aspirant
 		UIState uiState;
 		UIContext uiContext;
 		tggd::common::FinishManager finishManager;
-		tggd::common::TextureManager textureManager;
-		tggd::common::SpriteManager spriteManager;
-		tggd::common::ColorManager colorManager;
-		tggd::common::FontManager fontManager;
-		tggd::common::LayoutManager layoutManager;
+		tggd::graphics::TextureManager textureManager;
+		tggd::graphics::SpriteManager spriteManager;
+		tggd::graphics::ColorManager colorManager;
+		tggd::graphics::FontManager fontManager;
+		tggd::graphics::LayoutManager layoutManager;
 		tggd::data::StringManager stringManager;
 		tggd::data::IntManager intManager;
 		tggd::data::FlagManager flagManager;

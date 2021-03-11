@@ -18,14 +18,8 @@
     <Filter Include="Header Files\Dependencies">
       <UniqueIdentifier>{a4f346f2-e46d-40be-968a-172f849a2e16}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Utility">
-      <UniqueIdentifier>{75999fa0-ffe3-4b72-9cd0-b26eb88ebf98}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Application">
       <UniqueIdentifier>{f4a2f45d-871f-43d7-a4e4-b03a7b04e898}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Utility">
-      <UniqueIdentifier>{4e4b2a87-925e-439b-ac74-52ef8149c3d5}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\UI">
       <UniqueIdentifier>{38b3892d-51b3-45a8-9ead-59eaecaa74ec}</UniqueIdentifier>
@@ -54,18 +48,6 @@
     <Filter Include="Header Files\UI\States">
       <UniqueIdentifier>{fef4814d-1ce9-44d4-b8b6-11a74ef955b3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Graphics\Managers">
-      <UniqueIdentifier>{dd1e9058-799e-4484-a658-1e662073c537}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Graphics\Utility">
-      <UniqueIdentifier>{abb91f3d-5926-4194-966b-f5493600d087}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Graphics\Controls">
-      <UniqueIdentifier>{5bf0c9bd-5d18-4c48-8db4-2b84874259c1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Graphics\Common">
-      <UniqueIdentifier>{12898b72-3e3a-44f4-b29f-33e3b6e03278}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\BaseClasses">
       <UniqueIdentifier>{f17a2f1f-4b13-4105-a134-4801ac6d9375}</UniqueIdentifier>
     </Filter>
@@ -89,12 +71,6 @@
     </Filter>
     <Filter Include="Source Files\Audio">
       <UniqueIdentifier>{e81852bd-cb4d-43de-b275-e79eb50c5a3e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Data\Values">
-      <UniqueIdentifier>{51222c25-f028-46e3-81d2-d845cf1f6242}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Data\Stores">
-      <UniqueIdentifier>{357826cc-d5de-40a1-a903-f4243a031dbe}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\Data\Descriptors">
       <UniqueIdentifier>{541bb12f-72e1-4222-8b79-09e21cdb67be}</UniqueIdentifier>
@@ -146,39 +122,6 @@
     <ClCompile Include="AspirantApplication.cpp">
       <Filter>Source Files\Application</Filter>
     </ClCompile>
-    <ClCompile Include="FinishManager.cpp">
-      <Filter>Source Files\Utility</Filter>
-    </ClCompile>
-    <ClCompile Include="ColorManager.cpp">
-      <Filter>Source Files\Graphics\Managers</Filter>
-    </ClCompile>
-    <ClCompile Include="FontManager.cpp">
-      <Filter>Source Files\Graphics\Managers</Filter>
-    </ClCompile>
-    <ClCompile Include="LayoutManager.cpp">
-      <Filter>Source Files\Graphics\Managers</Filter>
-    </ClCompile>
-    <ClCompile Include="SpriteManager.cpp">
-      <Filter>Source Files\Graphics\Managers</Filter>
-    </ClCompile>
-    <ClCompile Include="TextureManager.cpp">
-      <Filter>Source Files\Graphics\Managers</Filter>
-    </ClCompile>
-    <ClCompile Include="SpriteFont.cpp">
-      <Filter>Source Files\Graphics\Common</Filter>
-    </ClCompile>
-    <ClCompile Include="Sprite.cpp">
-      <Filter>Source Files\Graphics\Common</Filter>
-    </ClCompile>
-    <ClCompile Include="Layout.cpp">
-      <Filter>Source Files\Graphics\Controls</Filter>
-    </ClCompile>
-    <ClCompile Include="StaticImage.cpp">
-      <Filter>Source Files\Graphics\Controls</Filter>
-    </ClCompile>
-    <ClCompile Include="StaticText.cpp">
-      <Filter>Source Files\Graphics\Controls</Filter>
-    </ClCompile>
     <ClCompile Include="SoundManager.cpp">
       <Filter>Source Files\Audio</Filter>
     </ClCompile>
@@ -207,9 +150,6 @@
       <Filter>Source Files\UI\Navigation</Filter>
     </ClCompile>
     <ClCompile Include="OptionsStateHandler.cpp">
-      <Filter>Source Files\UI\Navigation</Filter>
-    </ClCompile>
-    <ClCompile Include="MainMenuStateHandler.cpp">
       <Filter>Source Files\UI\Navigation</Filter>
     </ClCompile>
     <ClCompile Include="ConfirmQuitStateHandler.cpp">
@@ -263,6 +203,9 @@
     <ClCompile Include="RoomRenderer.cpp">
       <Filter>Source Files\Graphics</Filter>
     </ClCompile>
+    <ClCompile Include="MainMenuStateHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AspirantApplication.h">
@@ -270,15 +213,6 @@
     </ClInclude>
     <ClInclude Include="MSetUIState.h">
       <Filter>Header Files\Messages</Filter>
-    </ClInclude>
-    <ClInclude Include="Finisher.h">
-      <Filter>Header Files\Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="FinishManager.h">
-      <Filter>Header Files\Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="BaseDescriptorManager.h">
-      <Filter>Header Files\BaseClasses</Filter>
     </ClInclude>
     <ClInclude Include="Room.h">
       <Filter>Header Files\Room</Filter>
@@ -298,45 +232,6 @@
     <ClInclude Include="UIState.h">
       <Filter>Header Files\UI\Enums</Filter>
     </ClInclude>
-    <ClInclude Include="ColorManager.h">
-      <Filter>Header Files\Graphics\Managers</Filter>
-    </ClInclude>
-    <ClInclude Include="FontManager.h">
-      <Filter>Header Files\Graphics\Managers</Filter>
-    </ClInclude>
-    <ClInclude Include="LayoutManager.h">
-      <Filter>Header Files\Graphics\Managers</Filter>
-    </ClInclude>
-    <ClInclude Include="SpriteManager.h">
-      <Filter>Header Files\Graphics\Managers</Filter>
-    </ClInclude>
-    <ClInclude Include="SpriteTable.h">
-      <Filter>Header Files\Graphics\Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="XY.h">
-      <Filter>Header Files\Graphics\Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="Layout.h">
-      <Filter>Header Files\Graphics\Controls</Filter>
-    </ClInclude>
-    <ClInclude Include="StaticImage.h">
-      <Filter>Header Files\Graphics\Controls</Filter>
-    </ClInclude>
-    <ClInclude Include="StaticText.h">
-      <Filter>Header Files\Graphics\Controls</Filter>
-    </ClInclude>
-    <ClInclude Include="TextureManager.h">
-      <Filter>Header Files\Graphics\Managers</Filter>
-    </ClInclude>
-    <ClInclude Include="Sprite.h">
-      <Filter>Header Files\Graphics\Common</Filter>
-    </ClInclude>
-    <ClInclude Include="SpriteFont.h">
-      <Filter>Header Files\Graphics\Common</Filter>
-    </ClInclude>
-    <ClInclude Include="Drawn.h">
-      <Filter>Header Files\Graphics\Common</Filter>
-    </ClInclude>
     <ClInclude Include="SoundManager.h">
       <Filter>Header Files\Audio</Filter>
     </ClInclude>
@@ -354,9 +249,6 @@
     </ClInclude>
     <ClInclude Include="ScenarioDescriptorManager.h">
       <Filter>Header Files\Data\Scenarios</Filter>
-    </ClInclude>
-    <ClInclude Include="CommonDescriptorManager.h">
-      <Filter>Header Files\BaseClasses</Filter>
     </ClInclude>
     <ClInclude Include="EditorContext.h">
       <Filter>Header Files\Data</Filter>

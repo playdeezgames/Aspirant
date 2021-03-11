@@ -2,9 +2,9 @@
 #include "CommonDescriptorManager.h"
 #include "SpriteFont.h"
 #include "IDataStore.h"
-namespace tggd::common
+namespace tggd::graphics
 {
-	class FontManager: public CommonDescriptorManager<SpriteFont>, public tggd::data::IDataStore<SpriteFont>
+	class FontManager: public tggd::common::CommonDescriptorManager<SpriteFont>, public tggd::data::IDataStore<SpriteFont>
 	{
 	private:
 		const SpriteManager& spriteManager;
@@ -14,7 +14,7 @@ namespace tggd::common
 	public:
 		FontManager
 		(
-			FinishManager&,
+			tggd::common::FinishManager&,
 			const SpriteManager&,
 			const ColorManager&
 		);

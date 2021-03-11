@@ -3,7 +3,7 @@
 #include "Drawn.h"
 namespace aspirant
 {
-	class RoomRenderer: tggd::common::Drawn
+	class RoomRenderer: tggd::graphics::Drawn
 	{
 	public:
 		RoomRenderer();

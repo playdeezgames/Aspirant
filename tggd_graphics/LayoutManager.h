@@ -5,9 +5,9 @@
 #include "SpriteManager.h"
 #include "ColorManager.h"
 #include "FontManager.h"
-namespace tggd::common
+namespace tggd::graphics
 {
-	class LayoutManager: public CommonDescriptorManager<Layout>
+	class LayoutManager: public tggd::common::CommonDescriptorManager<Layout>
 	{
 	private:
 		const SpriteManager& spriteManager;
@@ -16,13 +16,13 @@ namespace tggd::common
 		const tggd::data::IDataStore<std::string>& stringStore;
 		const tggd::data::IDataStore<int>& intStore;
 		const tggd::data::IDataStore<bool>& flagStore;
-		FinishManager& finishManager;
+		tggd::common::FinishManager& finishManager;
 	protected:
 		Layout* ParseDescriptor(const std::string&, const nlohmann::json&);
 	public:
 		LayoutManager
 		(
-			FinishManager&,
+			tggd::common::FinishManager&,
 			const SpriteManager&,
 			const ColorManager&,
 			const FontManager&,

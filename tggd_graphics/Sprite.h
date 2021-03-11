@@ -1,7 +1,7 @@
 #pragma once
 #include <SDL.h>
 #include "XY.h"
-namespace tggd::common
+namespace tggd::graphics
 {
 	class Sprite
 	{

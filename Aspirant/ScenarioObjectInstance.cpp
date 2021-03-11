@@ -1,7 +1,7 @@
 #include "ScenarioObjectInstance.h"
 namespace aspirant
 {
-	ScenarioObjectInstance::ScenarioObjectInstance(const BaseDescriptor<ScenarioObjectInstance>& descriptor)
+	ScenarioObjectInstance::ScenarioObjectInstance(const aspirant::common::BaseDescriptor<ScenarioObjectInstance>& descriptor)
 		: descriptor(descriptor)
 	{
 

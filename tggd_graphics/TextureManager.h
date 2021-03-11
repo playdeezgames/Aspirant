@@ -3,15 +3,15 @@
 #include <map>
 #include <string>
 #include "FinishManager.h"
-namespace tggd::common
+namespace tggd::graphics
 {
-	class TextureManager: public Finisher
+	class TextureManager: public tggd::common::Finisher
 	{
 	private:
 		std::map<std::string, SDL_Texture*> textures;
 		void Add(const std::string&, SDL_Texture*);
 	public:
-		TextureManager(FinishManager&);
+		TextureManager(tggd::common::FinishManager&);
 		void Start(SDL_Renderer*, const std::string&);
 		void Finish();
 		SDL_Texture* Get(const std::string&) const;

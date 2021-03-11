@@ -7,20 +7,20 @@
 #include "ColorManager.h"
 #include "FontManager.h"
 #include "IDataStore.h"
-namespace tggd::common
+namespace tggd::graphics
 {
-	class Layout: public Drawn, public Finisher
+	class Layout: public Drawn, public tggd::common::Finisher
 	{
 	private:
 		std::list<Drawn*> drawnItems;
 	public:
 		Layout
 		(
-			FinishManager&
+			tggd::common::FinishManager&
 		);
 		Layout
 		(
-			FinishManager&,
+			tggd::common::FinishManager&,
 			const SpriteManager&,
 			const ColorManager&,
 			const FontManager&,

@@ -5,7 +5,7 @@
 #include "IValue.h"
 #include "IDataStore.h"
 #include "Sprite.h"
-namespace tggd::common
+namespace tggd::graphics
 {
 	class StaticImage : public Drawn
 	{

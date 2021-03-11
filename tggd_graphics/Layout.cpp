@@ -2,11 +2,11 @@
 #include "Utility.h"
 #include "StaticImage.h"
 #include "StaticText.h"
-namespace tggd::common
+namespace tggd::graphics
 {
 	Layout::Layout
 	(
-		FinishManager& finishManager
+		tggd::common::FinishManager& finishManager
 	)
 		: drawnItems()
 	{
@@ -19,7 +19,7 @@ namespace tggd::common
 	
 	Layout::Layout
 	(
-		FinishManager& finishManager,
+		tggd::common::FinishManager& finishManager,
 		const SpriteManager& spriteManager,
 		const ColorManager& colorManager,
 		const FontManager& fontManager,
@@ -63,7 +63,7 @@ namespace tggd::common
 	{
 		for (auto& item : drawnItems)
 		{
-			FinishUtility::SafeDelete(item);
+			tggd::common::FinishUtility::SafeDelete(item);
 		}
 		drawnItems.clear();
 	}

@@ -7,10 +7,10 @@ namespace aspirant
 	class ScenarioObjectInstance
 	{
 	private:
-		const BaseDescriptor<ScenarioObjectInstance>& descriptor;
+		const aspirant::common::BaseDescriptor<ScenarioObjectInstance>& descriptor;
 	public:
-		ScenarioObjectInstance(const BaseDescriptor<ScenarioObjectInstance>&);
-		const BaseDescriptor<ScenarioObjectInstance>& GetDescriptor() const
+		ScenarioObjectInstance(const aspirant::common::BaseDescriptor<ScenarioObjectInstance>&);
+		const aspirant::common::BaseDescriptor<ScenarioObjectInstance>& GetDescriptor() const
 		{
 			return descriptor;
 		}

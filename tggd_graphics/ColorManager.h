@@ -3,9 +3,9 @@
 #include <string>
 #include <SDL.h>
 #include "IDataStore.h"
-namespace tggd::common
+namespace tggd::graphics
 {
-	class ColorManager : public CommonDescriptorManager<SDL_Color>, public tggd::data::IDataStore<SDL_Color>
+	class ColorManager : public tggd::common::CommonDescriptorManager<SDL_Color>, public tggd::data::IDataStore<SDL_Color>
 	{
 	protected:
 		SDL_Color* ParseDescriptor(const std::string&, const nlohmann::json&);

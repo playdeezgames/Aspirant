@@ -1,5 +1,5 @@
 #include "ColorManager.h"
-namespace tggd::common
+namespace tggd::graphics
 {
 	const std::string PROPERTY_RED = "r";
 	const std::string PROPERTY_GREEN = "g";

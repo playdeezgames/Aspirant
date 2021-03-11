@@ -3,14 +3,14 @@
 #include "ScenarioObjectInstance.h"
 namespace aspirant
 {
-	class CommonDescriptor : public BaseDescriptor<ScenarioObjectInstance>
+	class CommonDescriptor : public aspirant::common::BaseDescriptor<ScenarioObjectInstance>
 	{
 	private:
 		const std::string PROPERTY_SPRITE = "sprite";
 		std::string sprite;
 	public:
 		CommonDescriptor(const std::string& name, const nlohmann::json& properties)
-			: BaseDescriptor(name, properties)
+			: aspirant::common::BaseDescriptor<ScenarioObjectInstance>(name, properties)
 			, sprite(properties[PROPERTY_SPRITE])
 		{
 

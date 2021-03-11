@@ -2,14 +2,14 @@
 #include "Utility.h"
 #include "JSONUtility.h"
 #include <FinishUtility.h>
-namespace tggd::common
+namespace tggd::graphics
 {
 	void SpriteManager::AddSprite(const std::string& name, const Sprite* sprite)
 	{
 		sprites[name] = sprite;
 	}
 
-	SpriteManager::SpriteManager(FinishManager& finishManager)
+	SpriteManager::SpriteManager(tggd::common::FinishManager& finishManager)
 		: sprites()
 	{
 		finishManager.Add(this);

@@ -1,5 +1,5 @@
 #include "FontManager.h"
-namespace tggd::common
+namespace tggd::graphics
 {
 	SpriteFont* FontManager::ParseDescriptor(const std::string&, const nlohmann::json& properties)
 	{
@@ -8,7 +8,7 @@ namespace tggd::common
 
 	FontManager::FontManager
 	(
-		FinishManager& finishManager,
+		tggd::common::FinishManager& finishManager,
 		const SpriteManager& spriteManager,
 		const ColorManager& colorManager
 	)

@@ -19,32 +19,45 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Application.h" />
-    <ClInclude Include="BaseDescriptorManager.h" />
-    <ClInclude Include="CommonDescriptorManager.h" />
-    <ClInclude Include="FinishManager.h" />
-    <ClInclude Include="FinishUtility.h" />
-    <ClInclude Include="MessageHandler.h" />
-    <ClInclude Include="MEvent.h" />
-    <ClInclude Include="MGeneric.h" />
-    <ClInclude Include="MRender.h" />
-    <ClInclude Include="MText.h" />
-    <ClInclude Include="MUpdate.h" />
-    <ClInclude Include="RNGUtility.h" />
-    <ClInclude Include="Utility.h" />
+    <ClInclude Include="ColorManager.h" />
+    <ClInclude Include="Drawn.h" />
+    <ClInclude Include="FontManager.h" />
+    <ClInclude Include="Layout.h" />
+    <ClInclude Include="LayoutManager.h" />
+    <ClInclude Include="Sprite.h" />
+    <ClInclude Include="SpriteFont.h" />
+    <ClInclude Include="SpriteManager.h" />
+    <ClInclude Include="SpriteTable.h" />
+    <ClInclude Include="StaticImage.h" />
+    <ClInclude Include="StaticText.h" />
+    <ClInclude Include="TextureManager.h" />
+    <ClInclude Include="XY.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Application.cpp" />
-    <ClCompile Include="FinishManager.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="RNGUtility.cpp" />
-    <ClCompile Include="Utility.cpp" />
+    <ClCompile Include="ColorManager.cpp" />
+    <ClCompile Include="FontManager.cpp" />
+    <ClCompile Include="Layout.cpp" />
+    <ClCompile Include="LayoutManager.cpp" />
+    <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="SpriteFont.cpp" />
+    <ClCompile Include="SpriteManager.cpp" />
+    <ClCompile Include="StaticImage.cpp" />
+    <ClCompile Include="StaticText.cpp" />
+    <ClCompile Include="TextureManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\tggd_common\tggd_common.vcxproj">
+      <Project>{6dd963db-3ce4-4f66-b280-db8c0e800b6e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\tggd_data\tggd_data.vcxproj">
+      <Project>{5c7d56ef-72fa-48aa-a427-1cc0f255a910}</Project>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{6dd963db-3ce4-4f66-b280-db8c0e800b6e}</ProjectGuid>
-    <RootNamespace>tggdcommon</RootNamespace>
+    <ProjectGuid>{5da3b8f0-ccc8-41d3-aa40-8ffadba3b417}</ProjectGuid>
+    <RootNamespace>tggdgraphics</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -100,13 +113,11 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <EnableMicrosoftCodeAnalysis>false</EnableMicrosoftCodeAnalysis>
-    <IncludePath>..\tggd_data;E:\lib\SDL2_image-2.0.5\include;E:\lib\SDL2_mixer-2.0.4\include;E:\lib\SDL2-2.0.14\include;$(IncludePath)</IncludePath>
+    <IncludePath>E:\lib\SDL2_image-2.0.5\include;E:\lib\SDL2-2.0.14\include;..\tggd_data;..\tggd_common;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <EnableMicrosoftCodeAnalysis>false</EnableMicrosoftCodeAnalysis>
-    <IncludePath>..\tggd_data;E:\lib\SDL2_image-2.0.5\include;E:\lib\SDL2_mixer-2.0.4\include;E:\lib\SDL2-2.0.14\include;$(IncludePath)</IncludePath>
+    <IncludePath>E:\lib\SDL2_image-2.0.5\include;E:\lib\SDL2-2.0.14\include;..\tggd_data;..\tggd_common;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

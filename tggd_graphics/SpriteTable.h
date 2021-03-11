@@ -6,7 +6,7 @@
 #include "json.hpp"
 #include "Utility.h"
 #include "FinishManager.h"
-namespace tggd::common
+namespace tggd::graphics
 {
 	template<typename TIdentifier>
 	class SpriteTable : public Finisher

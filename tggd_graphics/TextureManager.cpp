@@ -2,9 +2,9 @@
 #include "Utility.h"
 #include <SDL_image.h>
 #include "JSONUtility.h"
-namespace tggd::common
+namespace tggd::graphics
 {
-	TextureManager::TextureManager(FinishManager& finishManager)
+	TextureManager::TextureManager(tggd::common::FinishManager& finishManager)
 		: textures()
 	{
 		finishManager.Add(this);

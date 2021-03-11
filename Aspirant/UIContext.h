@@ -8,13 +8,13 @@ namespace aspirant
 	{
 	private:
 		const UIState& uiState;
-		const tggd::common::LayoutManager& layoutManager;
+		const tggd::graphics::LayoutManager& layoutManager;
 		tggd::data::StringManager& stringManager;
 	public:
 		UIContext
 		(
 			const UIState& uiState,
-			const tggd::common::LayoutManager& layoutManager,
+			const tggd::graphics::LayoutManager& layoutManager,
 			tggd::data::StringManager& stringManager
 		) 
 			: uiState(uiState)
@@ -25,7 +25,7 @@ namespace aspirant
 		{
 			return uiState;
 		}
-		const tggd::common::LayoutManager& GetLayoutManager() const
+		const tggd::graphics::LayoutManager& GetLayoutManager() const
 		{
 			return layoutManager;
 		}

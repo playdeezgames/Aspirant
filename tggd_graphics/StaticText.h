@@ -6,7 +6,7 @@
 #include "SpriteFont.h"
 #include "json.hpp"
 #include "Drawn.h"
-namespace tggd::common
+namespace tggd::graphics
 {
 	class StaticText: public Drawn
 	{
@@ -27,12 +27,12 @@ namespace tggd::common
 		StaticText
 		(
 			const tggd::data::IDataStore<SpriteFont>&,
-			const tggd::common::XY<int>&,
+			const tggd::graphics::XY<int>&,
 			const std::string&,
 			const std::string&,
 			const std::string&,
 			bool,
-			const tggd::common::XY<int>&,
+			const tggd::graphics::XY<int>&,
 			const std::string&,
 			const HorizontalAlignment&
 		);

@@ -1,6 +1,6 @@
 #pragma once
 #include <SDL.h>
-namespace tggd::common
+namespace tggd::graphics
 {
 	class Drawn
 	{

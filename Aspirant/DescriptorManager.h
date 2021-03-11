@@ -5,10 +5,10 @@
 #include "ScenarioObjectInstance.h"
 namespace aspirant
 {
-	class DescriptorManager: public tggd::common::CommonDescriptorManager<BaseDescriptor<ScenarioObjectInstance>>
+	class DescriptorManager: public tggd::common::CommonDescriptorManager<aspirant::common::BaseDescriptor<ScenarioObjectInstance>>
 	{
 	protected:
-		BaseDescriptor<ScenarioObjectInstance>* ParseDescriptor(const std::string&, const nlohmann::json&);
+		aspirant::common::BaseDescriptor<ScenarioObjectInstance>* ParseDescriptor(const std::string&, const nlohmann::json&);
 	public:
 		DescriptorManager(tggd::common::FinishManager& finishManager)
 			: CommonDescriptorManager(finishManager)

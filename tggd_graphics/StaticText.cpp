@@ -2,17 +2,17 @@
 #include "Utility.h"
 #include "ConstantValue.h"
 #include <DataUtility.h>
-namespace tggd::common
+namespace tggd::graphics
 {
 	StaticText::StaticText
 	(
 		const tggd::data::IDataStore<SpriteFont>& fontStore,
-		const tggd::common::XY<int>& xy,
+		const tggd::graphics::XY<int>& xy,
 		const std::string& text,
 		const std::string& fontName,
 		const std::string& color,
 		bool hasDropShadow,
-		const tggd::common::XY<int>& dropShadowOffset,
+		const tggd::graphics::XY<int>& dropShadowOffset,
 		const std::string& dropShadowColor,
 		const HorizontalAlignment& alignment
 	)
@@ -94,16 +94,16 @@ namespace tggd::common
 
 	StaticText::~StaticText()
 	{
-		FinishUtility::SafeDelete(text);
-		FinishUtility::SafeDelete(fontName);
-		FinishUtility::SafeDelete(color);
-		FinishUtility::SafeDelete(dropShadowColor);
-		FinishUtility::SafeDelete(hasDropShadow);
-		FinishUtility::SafeDelete(x);
-		FinishUtility::SafeDelete(y);
-		FinishUtility::SafeDelete(dropShadowX);
-		FinishUtility::SafeDelete(dropShadowY);
-		FinishUtility::SafeDelete(alignment);
+		tggd::common::FinishUtility::SafeDelete(text);
+		tggd::common::FinishUtility::SafeDelete(fontName);
+		tggd::common::FinishUtility::SafeDelete(color);
+		tggd::common::FinishUtility::SafeDelete(dropShadowColor);
+		tggd::common::FinishUtility::SafeDelete(hasDropShadow);
+		tggd::common::FinishUtility::SafeDelete(x);
+		tggd::common::FinishUtility::SafeDelete(y);
+		tggd::common::FinishUtility::SafeDelete(dropShadowX);
+		tggd::common::FinishUtility::SafeDelete(dropShadowY);
+		tggd::common::FinishUtility::SafeDelete(alignment);
 	}
 
 

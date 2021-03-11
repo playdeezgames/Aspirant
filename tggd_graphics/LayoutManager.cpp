@@ -1,6 +1,6 @@
 #include "LayoutManager.h"
 #include "Utility.h"
-namespace tggd::common
+namespace tggd::graphics
 {
 	Layout* LayoutManager::ParseDescriptor(const std::string&, const nlohmann::json& properties)
 	{
@@ -9,7 +9,7 @@ namespace tggd::common
 
 	LayoutManager::LayoutManager
 	(
-		FinishManager& finishManager,
+		tggd::common::FinishManager& finishManager,
 		const SpriteManager& spriteManager,
 		const ColorManager& colorManager,
 		const FontManager& fontManager,
