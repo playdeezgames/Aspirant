@@ -1,6 +1,6 @@
 #include "CreatureDescriptor.h"
 #include "CreatureInstance.h"
-namespace aspirant
+namespace aspirant::game
 {
 	CreatureDescriptor::CreatureDescriptor(const std::string& name, const nlohmann::json& properties)
 		: CommonDescriptor(name, properties)

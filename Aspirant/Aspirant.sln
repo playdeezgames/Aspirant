@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tggd_data", "..\tggd_data\t
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tggd_graphics", "..\tggd_graphics\tggd_graphics.vcxproj", "{5DA3B8F0-CCC8-41D3-AA40-8FFADBA3B417}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "aspirant_game", "..\aspirant_game\aspirant_game.vcxproj", "{F65DCA58-FDDC-493E-B61A-A61B91E67051}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -51,6 +53,14 @@ Global
 		{5DA3B8F0-CCC8-41D3-AA40-8FFADBA3B417}.Release|x64.Build.0 = Release|x64
 		{5DA3B8F0-CCC8-41D3-AA40-8FFADBA3B417}.Release|x86.ActiveCfg = Release|Win32
 		{5DA3B8F0-CCC8-41D3-AA40-8FFADBA3B417}.Release|x86.Build.0 = Release|Win32
+		{F65DCA58-FDDC-493E-B61A-A61B91E67051}.Debug|x64.ActiveCfg = Debug|x64
+		{F65DCA58-FDDC-493E-B61A-A61B91E67051}.Debug|x64.Build.0 = Debug|x64
+		{F65DCA58-FDDC-493E-B61A-A61B91E67051}.Debug|x86.ActiveCfg = Debug|Win32
+		{F65DCA58-FDDC-493E-B61A-A61B91E67051}.Debug|x86.Build.0 = Debug|Win32
+		{F65DCA58-FDDC-493E-B61A-A61B91E67051}.Release|x64.ActiveCfg = Release|x64
+		{F65DCA58-FDDC-493E-B61A-A61B91E67051}.Release|x64.Build.0 = Release|x64
+		{F65DCA58-FDDC-493E-B61A-A61B91E67051}.Release|x86.ActiveCfg = Release|Win32
+		{F65DCA58-FDDC-493E-B61A-A61B91E67051}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -6,8 +6,8 @@ namespace aspirant
 {
 	EditorContext::EditorContext
 	(
-		const DescriptorManager& descriptors,
-		ScenarioDescriptorManager& scenarios
+		const aspirant::game::DescriptorManager& descriptors,
+		aspirant::game::ScenarioDescriptorManager& scenarios
 	)
 		: scenarioIndex(0)
 		, scenarios(scenarios)
@@ -19,12 +19,12 @@ namespace aspirant
 
 	}
 
-	const ScenarioDescriptor* EditorContext::GetScenarioDescriptor() const
+	const aspirant::game::ScenarioDescriptor* EditorContext::GetScenarioDescriptor() const
 	{
 		return scenarios.Get(GetScenarioIndex());
 	}
 
-	ScenarioDescriptor* EditorContext::GetScenarioDescriptor()
+	aspirant::game::ScenarioDescriptor* EditorContext::GetScenarioDescriptor()
 	{
 		return scenarios.Get(GetScenarioIndex());
 	}

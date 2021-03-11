@@ -1,12 +1,12 @@
 #include "DescriptorManager.h"
 #include "TerrainDescriptor.h"
 #include "CreatureDescriptor.h"
-namespace aspirant
+namespace aspirant::game
 {
 	const std::string PROPERTY_TYPE = "type";
 	const std::string TYPE_TERRAIN = "terrain";
 	const std::string TYPE_CREATURE = "creature";
-	aspirant::common::BaseDescriptor<ScenarioObjectInstance>* DescriptorManager::ParseDescriptor(const std::string& name, const nlohmann::json& properties)
+	aspirant::game::BaseDescriptor<ScenarioObjectInstance>* DescriptorManager::ParseDescriptor(const std::string& name, const nlohmann::json& properties)
 	{
 		const auto& descriptorType = properties[PROPERTY_TYPE];
 		if (descriptorType == TYPE_TERRAIN)

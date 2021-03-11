@@ -3,9 +3,9 @@
 #include "ScenarioRoomCellFlags.h"
 #include "ScenarioObjectInstance.h"
 #include "DescriptorManager.h"
-namespace aspirant
+namespace aspirant::game
 {
-	class ScenarioRoomCell : public tggd::common::RoomCell<ScenarioObjectInstance, ScenarioRoomCellFlags>
+	class ScenarioRoomCell : public aspirant::game::RoomCell<ScenarioObjectInstance, ScenarioRoomCellFlags>
 	{
 	private:
 		const DescriptorManager& descriptors;

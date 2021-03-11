@@ -7,7 +7,7 @@
 #include "DescriptorManager.h"
 #include "ScenarioRoom.h"
 #include <vector>
-namespace aspirant
+namespace aspirant::game
 {
 	class Scenario
 	{

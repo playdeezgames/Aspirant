@@ -1,5 +1,5 @@
 #include "ScenarioRoom.h"
-namespace aspirant
+namespace aspirant::game
 {
 	void ScenarioRoom::FromJSON(const nlohmann::json& properties)
 	{

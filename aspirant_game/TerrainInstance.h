@@ -1,12 +1,12 @@
 #pragma once
 #include "ScenarioObjectInstance.h"
-#include "CreatureDescriptor.h"
-namespace aspirant
+#include "TerrainDescriptor.h"
+namespace aspirant::game
 {
-	class CreatureInstance : public ScenarioObjectInstance
+	class TerrainInstance : public ScenarioObjectInstance
 	{
 	public:
-		CreatureInstance(const CreatureDescriptor&);
+		TerrainInstance(const TerrainDescriptor&);
 		bool CanCover(const ScenarioObjectInstance*) const;
 		bool IsTerrain() const;
 		bool IsCreature() const;

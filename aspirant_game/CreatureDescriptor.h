@@ -1,6 +1,6 @@
 #pragma once
 #include "CommonDescriptor.h"
-namespace aspirant
+namespace aspirant::game
 {
 	class CreatureDescriptor : public CommonDescriptor
 	{

@@ -34,8 +34,8 @@ namespace aspirant
 		tggd::data::IntManager intManager;
 		tggd::data::FlagManager flagManager;
 		tggd::common::SoundManager soundManager;
-		DescriptorManager descriptors;
-		ScenarioDescriptorManager scenarios;
+		aspirant::game::DescriptorManager descriptors;
+		aspirant::game::ScenarioDescriptorManager scenarios;
 		OptionsManager optionsManager;
 		EditorContext editorContext;
 		RoomRenderer roomRenderer;

@@ -1,5 +1,5 @@
 #include "CreatureInstance.h"
-namespace aspirant
+namespace aspirant::game
 {
 	CreatureInstance::CreatureInstance(const CreatureDescriptor& descriptor)
 		: ScenarioObjectInstance(descriptor)

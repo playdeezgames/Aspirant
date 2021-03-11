@@ -4,7 +4,7 @@
 #include "json.hpp"
 #include "Utility.h"
 #include "FinishUtility.h"
-namespace tggd::common
+namespace aspirant::game
 {
 	template<typename TRoomCell>
 	class Room

@@ -12,10 +12,10 @@ namespace aspirant
 	class EditScenarioSelectorStateHandler : public CommonEditorStateHandler
 	{
 	private:
-		void UpdateIndexText(const ScenarioDescriptor*);
-		void UpdateNameText(const ScenarioDescriptor*);
-		void UpdateIdText(const ScenarioDescriptor*);
-		void UpdateBriefText(const ScenarioDescriptor*);
+		void UpdateIndexText(const aspirant::game::ScenarioDescriptor*);
+		void UpdateNameText(const aspirant::game::ScenarioDescriptor*);
+		void UpdateIdText(const aspirant::game::ScenarioDescriptor*);
+		void UpdateBriefText(const aspirant::game::ScenarioDescriptor*);
 		void LoadScenario();
 	protected:
 		bool OnCommand(const Command&);

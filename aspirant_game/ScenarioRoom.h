@@ -1,9 +1,9 @@
 #pragma once
 #include "Room.h"
 #include "ScenarioRoomCell.h"
-namespace aspirant
+namespace aspirant::game
 {
-	class ScenarioRoom : public tggd::common::Room<ScenarioRoomCell>
+	class ScenarioRoom : public aspirant::game::Room<ScenarioRoomCell>
 	{
 	private:
 		const DescriptorManager& descriptors;

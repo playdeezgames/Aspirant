@@ -8,10 +8,10 @@ namespace aspirant
 	class EditorContext
 	{
 	private:
-		ScenarioDescriptorManager& scenarios;
+		aspirant::game::ScenarioDescriptorManager& scenarios;
 		size_t scenarioIndex;
 
-		Scenario scenario;
+		aspirant::game::Scenario scenario;
 
 		std::vector<std::string> roomList;
 		size_t roomIndex;
@@ -20,17 +20,17 @@ namespace aspirant
 		size_t newRoomColumns;
 		size_t newRoomRows;
 	public:
-		EditorContext(const DescriptorManager&, ScenarioDescriptorManager&);
+		EditorContext(const aspirant::game::DescriptorManager&, aspirant::game::ScenarioDescriptorManager&);
 		void SetScenarioIndex(size_t);
 		size_t GetScenarioIndex() const;
-		const ScenarioDescriptor* GetScenarioDescriptor() const;
-		ScenarioDescriptor* GetScenarioDescriptor();
+		const aspirant::game::ScenarioDescriptor* GetScenarioDescriptor() const;
+		aspirant::game::ScenarioDescriptor* GetScenarioDescriptor();
 		void NextScenario();
 		void PreviousScenario();
-		const Scenario& GetScenario() const { return scenario; }
-		Scenario& GetScenario() { return scenario; }
-		const ScenarioDescriptorManager& GetScenarios() const { return scenarios; }
-		ScenarioDescriptorManager& GetScenarios() { return scenarios; }
+		const aspirant::game::Scenario& GetScenario() const { return scenario; }
+		aspirant::game::Scenario& GetScenario() { return scenario; }
+		const aspirant::game::ScenarioDescriptorManager& GetScenarios() const { return scenarios; }
+		aspirant::game::ScenarioDescriptorManager& GetScenarios() { return scenarios; }
 		void UpdateRoomList();
 		void SetRoomIndex(size_t);
 		size_t GetRoomIndex() const;

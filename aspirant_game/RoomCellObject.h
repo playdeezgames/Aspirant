@@ -1,6 +1,6 @@
 #pragma once
 #include "json.hpp"
-namespace tggd::common
+namespace aspirant::game
 {
 	template<typename TObjectData, typename TCellFlags>
 	class RoomCell;

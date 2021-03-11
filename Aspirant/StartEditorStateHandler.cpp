@@ -75,7 +75,7 @@ namespace aspirant
 		int scenarioId = GetEditorContext().GetScenarios().GetNextId();
 		std::stringstream ss;
 		ss << "scenarios/scenario_" << scenarioId << ".json";//TODO: magic string
-		ScenarioDescriptor* descriptor = new ScenarioDescriptor
+		aspirant::game::ScenarioDescriptor* descriptor = new aspirant::game::ScenarioDescriptor
 		(
 			scenarioId,
 			"New Scenario",//TODO: magic string

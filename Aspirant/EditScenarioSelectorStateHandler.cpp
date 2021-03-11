@@ -40,7 +40,7 @@ namespace aspirant
 		return true;
 	}
 
-	void EditScenarioSelectorStateHandler::UpdateIndexText(const ScenarioDescriptor* scenario)
+	void EditScenarioSelectorStateHandler::UpdateIndexText(const aspirant::game::ScenarioDescriptor* scenario)
 	{
 		if (scenario)
 		{
@@ -54,7 +54,7 @@ namespace aspirant
 		}
 	}
 
-	void EditScenarioSelectorStateHandler::UpdateNameText(const ScenarioDescriptor* scenario)
+	void EditScenarioSelectorStateHandler::UpdateNameText(const aspirant::game::ScenarioDescriptor* scenario)
 	{
 		if (scenario)
 		{
@@ -66,7 +66,7 @@ namespace aspirant
 		}
 	}
 
-	void EditScenarioSelectorStateHandler::UpdateIdText(const ScenarioDescriptor* scenario)
+	void EditScenarioSelectorStateHandler::UpdateIdText(const aspirant::game::ScenarioDescriptor* scenario)
 	{
 		if (scenario)
 		{
@@ -81,7 +81,7 @@ namespace aspirant
 
 	}
 
-	void EditScenarioSelectorStateHandler::UpdateBriefText(const ScenarioDescriptor* scenario)
+	void EditScenarioSelectorStateHandler::UpdateBriefText(const aspirant::game::ScenarioDescriptor* scenario)
 	{
 		if (scenario)
 		{

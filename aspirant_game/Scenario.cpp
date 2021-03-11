@@ -1,6 +1,6 @@
 #include "Scenario.h"
 #include "Utility.h"
-namespace aspirant
+namespace aspirant::game
 {
 	Scenario::Scenario(const DescriptorManager& descriptors)
 		: descriptors(descriptors)

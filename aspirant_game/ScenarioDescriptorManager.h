@@ -3,7 +3,7 @@
 #include "FinishManager.h"
 #include <string>
 #include <vector>
-namespace aspirant
+namespace aspirant::game
 {
 	class ScenarioDescriptorManager: public tggd::common::Finisher
 	{

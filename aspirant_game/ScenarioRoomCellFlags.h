@@ -1,5 +1,5 @@
 #pragma once
-namespace aspirant
+namespace aspirant::game
 {
 	enum class ScenarioRoomCellFlags
 	{

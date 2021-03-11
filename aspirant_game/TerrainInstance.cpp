@@ -1,5 +1,5 @@
 #include "TerrainInstance.h"
-namespace aspirant
+namespace aspirant::game
 {
 	TerrainInstance::TerrainInstance(const TerrainDescriptor& descriptor)
 		: ScenarioObjectInstance(descriptor)

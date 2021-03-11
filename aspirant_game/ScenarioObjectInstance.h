@@ -2,15 +2,15 @@
 #include <string>
 #include "BaseDescriptor.h"
 #include "json.hpp"
-namespace aspirant
+namespace aspirant::game
 {
 	class ScenarioObjectInstance
 	{
 	private:
-		const aspirant::common::BaseDescriptor<ScenarioObjectInstance>& descriptor;
+		const aspirant::game::BaseDescriptor<ScenarioObjectInstance>& descriptor;
 	public:
-		ScenarioObjectInstance(const aspirant::common::BaseDescriptor<ScenarioObjectInstance>&);
-		const aspirant::common::BaseDescriptor<ScenarioObjectInstance>& GetDescriptor() const
+		ScenarioObjectInstance(const aspirant::game::BaseDescriptor<ScenarioObjectInstance>&);
+		const aspirant::game::BaseDescriptor<ScenarioObjectInstance>& GetDescriptor() const
 		{
 			return descriptor;
 		}

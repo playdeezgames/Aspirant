@@ -2,7 +2,7 @@
 #include "Utility.h"
 #include "JSONUtility.h"
 #include "FinishUtility.h"
-namespace aspirant
+namespace aspirant::game
 {
 	ScenarioDescriptorManager::ScenarioDescriptorManager
 	(

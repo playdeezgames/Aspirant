@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include "json.hpp"
-namespace aspirant::common
+namespace aspirant::game
 {
 	template<typename TInstance>
 	class BaseDescriptor

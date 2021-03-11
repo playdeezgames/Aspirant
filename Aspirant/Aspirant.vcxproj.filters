@@ -128,18 +128,6 @@
     <ClCompile Include="EditorContext.cpp">
       <Filter>Source Files\Data</Filter>
     </ClCompile>
-    <ClCompile Include="CreatureDescriptor.cpp">
-      <Filter>Source Files\Data\Descriptors</Filter>
-    </ClCompile>
-    <ClCompile Include="TerrainDescriptor.cpp">
-      <Filter>Source Files\Data\Descriptors</Filter>
-    </ClCompile>
-    <ClCompile Include="ScenarioDescriptorManager.cpp">
-      <Filter>Source Files\Data\Descriptors</Filter>
-    </ClCompile>
-    <ClCompile Include="DescriptorManager.cpp">
-      <Filter>Source Files\Data\Managers</Filter>
-    </ClCompile>
     <ClCompile Include="OptionsManager.cpp">
       <Filter>Source Files\Data\Managers</Filter>
     </ClCompile>
@@ -170,24 +158,6 @@
     <ClCompile Include="EditScenarioStateHandler.cpp">
       <Filter>Source Files\UI\Editor</Filter>
     </ClCompile>
-    <ClCompile Include="Scenario.cpp">
-      <Filter>Source Files\Data\Scenarios</Filter>
-    </ClCompile>
-    <ClCompile Include="ScenarioRoomCell.cpp">
-      <Filter>Source Files\Data\Scenarios</Filter>
-    </ClCompile>
-    <ClCompile Include="ScenarioRoom.cpp">
-      <Filter>Source Files\Data\Scenarios</Filter>
-    </ClCompile>
-    <ClCompile Include="ScenarioObjectInstance.cpp">
-      <Filter>Source Files\Data\Instances</Filter>
-    </ClCompile>
-    <ClCompile Include="CreatureInstance.cpp">
-      <Filter>Source Files\Data\Instances</Filter>
-    </ClCompile>
-    <ClCompile Include="TerrainInstance.cpp">
-      <Filter>Source Files\Data\Instances</Filter>
-    </ClCompile>
     <ClCompile Include="EditPickRoomStateHandler.cpp">
       <Filter>Source Files\UI\Editor</Filter>
     </ClCompile>
@@ -214,15 +184,6 @@
     <ClInclude Include="MSetUIState.h">
       <Filter>Header Files\Messages</Filter>
     </ClInclude>
-    <ClInclude Include="Room.h">
-      <Filter>Header Files\Room</Filter>
-    </ClInclude>
-    <ClInclude Include="RoomCell.h">
-      <Filter>Header Files\Room</Filter>
-    </ClInclude>
-    <ClInclude Include="RoomCellObject.h">
-      <Filter>Header Files\Room</Filter>
-    </ClInclude>
     <ClInclude Include="Command.h">
       <Filter>Header Files\Input</Filter>
     </ClInclude>
@@ -234,21 +195,6 @@
     </ClInclude>
     <ClInclude Include="SoundManager.h">
       <Filter>Header Files\Audio</Filter>
-    </ClInclude>
-    <ClInclude Include="BaseDescriptor.h">
-      <Filter>Header Files\BaseClasses</Filter>
-    </ClInclude>
-    <ClInclude Include="CreatureDescriptor.h">
-      <Filter>Header Files\Data\Descriptors</Filter>
-    </ClInclude>
-    <ClInclude Include="TerrainDescriptor.h">
-      <Filter>Header Files\Data\Descriptors</Filter>
-    </ClInclude>
-    <ClInclude Include="ScenarioDescriptor.h">
-      <Filter>Header Files\Data\Scenarios</Filter>
-    </ClInclude>
-    <ClInclude Include="ScenarioDescriptorManager.h">
-      <Filter>Header Files\Data\Scenarios</Filter>
     </ClInclude>
     <ClInclude Include="EditorContext.h">
       <Filter>Header Files\Data</Filter>
@@ -289,35 +235,8 @@
     <ClInclude Include="OptionsManager.h">
       <Filter>Header Files\Data\Managers</Filter>
     </ClInclude>
-    <ClInclude Include="DescriptorManager.h">
-      <Filter>Header Files\Data\Managers</Filter>
-    </ClInclude>
     <ClInclude Include="EditScenarioStateHandler.h">
       <Filter>Header Files\UI\States\Editor</Filter>
-    </ClInclude>
-    <ClInclude Include="Scenario.h">
-      <Filter>Header Files\Data\Scenarios</Filter>
-    </ClInclude>
-    <ClInclude Include="ScenarioRoomCell.h">
-      <Filter>Header Files\Data\Scenarios</Filter>
-    </ClInclude>
-    <ClInclude Include="ScenarioRoomCellFlags.h">
-      <Filter>Header Files\Data\Scenarios</Filter>
-    </ClInclude>
-    <ClInclude Include="ScenarioRoom.h">
-      <Filter>Header Files\Data\Scenarios</Filter>
-    </ClInclude>
-    <ClInclude Include="ScenarioObjectInstance.h">
-      <Filter>Header Files\Data\Instances</Filter>
-    </ClInclude>
-    <ClInclude Include="TerrainInstance.h">
-      <Filter>Header Files\Data\Instances</Filter>
-    </ClInclude>
-    <ClInclude Include="CreatureInstance.h">
-      <Filter>Header Files\Data\Instances</Filter>
-    </ClInclude>
-    <ClInclude Include="CommonDescriptor.h">
-      <Filter>Header Files\Data\Descriptors</Filter>
     </ClInclude>
     <ClInclude Include="EditPickRoomStateHandler.h">
       <Filter>Header Files\UI\States\Editor</Filter>

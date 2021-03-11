@@ -1,5 +1,5 @@
 #include "ScenarioRoomCell.h"
-namespace aspirant
+namespace aspirant::game
 {
 	nlohmann::json ScenarioRoomCell::CellFlagToJSON(const ScenarioRoomCellFlags& cellFlag) const
 	{

@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include "json.hpp"
-namespace aspirant
+namespace aspirant::game
 {
 	class ScenarioDescriptor
 	{

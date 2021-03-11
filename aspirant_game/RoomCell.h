@@ -4,7 +4,7 @@
 #include "Utility.h"
 #include "FinishUtility.h"
 #include "json.hpp"
-namespace tggd::common
+namespace aspirant::game
 {
 	template<typename TObjectData, typename TCellFlags>
 	class RoomCell
@@ -21,7 +21,7 @@ namespace tggd::common
 			while (HasObjects())
 			{
 				auto object = RemoveObject();
-				FinishUtility::SafeDelete(object);
+				tggd::common::FinishUtility::SafeDelete(object);
 			}
 		}
 	protected:
