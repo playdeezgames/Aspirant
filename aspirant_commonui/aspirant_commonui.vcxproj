@@ -32,14 +32,6 @@
   <ItemGroup>
     <ClCompile Include="CommonStateHandler.cpp" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\tggd_data\tggd_data.vcxproj">
-      <Project>{5c7d56ef-72fa-48aa-a427-1cc0f255a910}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\tggd_graphics\tggd_graphics.vcxproj">
-      <Project>{5da3b8f0-ccc8-41d3-aa40-8ffadba3b417}</Project>
-    </ProjectReference>
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>

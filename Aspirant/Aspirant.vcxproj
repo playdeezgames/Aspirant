@@ -19,9 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AboutStateHandler.cpp" />
     <ClCompile Include="AspirantApplication.cpp" />
-    <ClCompile Include="ConfirmQuitStateHandler.cpp" />
     <ClCompile Include="EditNavigateRoomStateHandler.cpp" />
     <ClCompile Include="EditNewRoomStateHandler.cpp" />
     <ClCompile Include="EditorContext.cpp" />
@@ -29,19 +27,12 @@
     <ClCompile Include="EditScenarioDescriptorStateHandler.cpp" />
     <ClCompile Include="EditScenarioSelectorStateHandler.cpp" />
     <ClCompile Include="EditScenarioStateHandler.cpp" />
-    <ClCompile Include="MainMenuStateHandler.cpp" />
-    <ClCompile Include="OptionsManager.cpp" />
-    <ClCompile Include="OptionsStateHandler.cpp" />
     <ClCompile Include="RoomRenderer.cpp" />
     <ClCompile Include="StartEditorStateHandler.cpp" />
-    <ClCompile Include="StartGameStateHandler.cpp" />
-    <ClCompile Include="SplashStateHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AboutStateHandler.h" />
     <ClInclude Include="AspirantApplication.h" />
     <ClInclude Include="CommonEditorStateHandler.h" />
-    <ClInclude Include="ConfirmQuitStateHandler.h" />
     <ClInclude Include="EditNavigateRoomStateHandler.h" />
     <ClInclude Include="EditNewRoomStateHandler.h" />
     <ClInclude Include="EditorContext.h" />
@@ -51,13 +42,8 @@
     <ClInclude Include="EditScenarioDescriptorStateHandler.h" />
     <ClInclude Include="EditScenarioSelectorStateHandler.h" />
     <ClInclude Include="EditScenarioStateHandler.h" />
-    <ClInclude Include="MainMenuStateHandler.h" />
-    <ClInclude Include="OptionsManager.h" />
-    <ClInclude Include="OptionsStateHandler.h" />
     <ClInclude Include="RoomRenderer.h" />
     <ClInclude Include="StartEditorStateHandler.h" />
-    <ClInclude Include="StartGameStateHandler.h" />
-    <ClInclude Include="SplashStateHandler.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\aspirant_commonui\aspirant_commonui.vcxproj">
@@ -65,6 +51,9 @@
     </ProjectReference>
     <ProjectReference Include="..\aspirant_game\aspirant_game.vcxproj">
       <Project>{f65dca58-fddc-493e-b61a-a61b91e67051}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\aspirant_navigationui\aspirant_navigationui.vcxproj">
+      <Project>{c268c24f-b3bb-4f52-af41-36c451836874}</Project>
     </ProjectReference>
     <ProjectReference Include="..\tggd_common\tggd_common.vcxproj">
       <Project>{6dd963db-3ce4-4f66-b280-db8c0e800b6e}</Project>

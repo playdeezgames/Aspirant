@@ -2,7 +2,7 @@
 #include "MRender.h"
 #include "MCommand.h"
 #include "MUpdate.h"
-namespace aspirant
+namespace aspirant::navigationui
 {
 
 	const std::string START_GAME_EDITOR_COLOR_NAME = "StartGame.Color.Editor";

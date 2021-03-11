@@ -5,7 +5,7 @@
 #include "Command.h"
 #include "Layout.h"
 #include "LayoutManager.h"
-namespace aspirant
+namespace aspirant::navigationui
 {
 	class SplashStateHandler : public aspirant::commonui::UIStateMessageHandler
 	{

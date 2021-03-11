@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include "SoundManager.h"
-namespace aspirant
+namespace aspirant::navigationui
 {
 	class OptionsManager
 	{

@@ -4,7 +4,7 @@
 #include "MUpdate.h"
 #include "Utility.h"
 #include <sstream>
-namespace aspirant
+namespace aspirant::navigationui
 {
 	const std::string LAYOUT_NAME = "Options";
 	const std::string OPTION_ITEM_TOGGLE_MUTE_COLOR_NAME = "Options.Color.ToggleMute";

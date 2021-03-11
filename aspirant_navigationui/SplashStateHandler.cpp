@@ -3,7 +3,7 @@
 #include "MUpdate.h"
 #include "MCommand.h"
 #include "Utility.h"
-namespace aspirant
+namespace aspirant::navigationui
 {
 	const int TICKS_LEFT = 3000;
 	const std::string LAYOUT_NAME = "Splash";

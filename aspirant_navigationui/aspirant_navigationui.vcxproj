@@ -19,37 +19,28 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ColorManager.h" />
-    <ClInclude Include="Drawn.h" />
-    <ClInclude Include="FontManager.h" />
-    <ClInclude Include="Layout.h" />
-    <ClInclude Include="LayoutManager.h" />
-    <ClInclude Include="Sprite.h" />
-    <ClInclude Include="SpriteFont.h" />
-    <ClInclude Include="SpriteManager.h" />
-    <ClInclude Include="SpriteTable.h" />
-    <ClInclude Include="StaticImage.h" />
-    <ClInclude Include="StaticText.h" />
-    <ClInclude Include="TextureManager.h" />
-    <ClInclude Include="XY.h" />
+    <ClInclude Include="AboutStateHandler.h" />
+    <ClInclude Include="ConfirmQuitStateHandler.h" />
+    <ClInclude Include="MainMenuStateHandler.h" />
+    <ClInclude Include="OptionsManager.h" />
+    <ClInclude Include="OptionsStateHandler.h" />
+    <ClInclude Include="SplashStateHandler.h" />
+    <ClInclude Include="StartGameStateHandler.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ColorManager.cpp" />
-    <ClCompile Include="FontManager.cpp" />
-    <ClCompile Include="Layout.cpp" />
-    <ClCompile Include="LayoutManager.cpp" />
-    <ClCompile Include="Sprite.cpp" />
-    <ClCompile Include="SpriteFont.cpp" />
-    <ClCompile Include="SpriteManager.cpp" />
-    <ClCompile Include="StaticImage.cpp" />
-    <ClCompile Include="StaticText.cpp" />
-    <ClCompile Include="TextureManager.cpp" />
+    <ClCompile Include="AboutStateHandler.cpp" />
+    <ClCompile Include="ConfirmQuitStateHandler.cpp" />
+    <ClCompile Include="MainMenuStateHandler.cpp" />
+    <ClCompile Include="OptionsManager.cpp" />
+    <ClCompile Include="OptionsStateHandler.cpp" />
+    <ClCompile Include="SplashStateHandler.cpp" />
+    <ClCompile Include="StartGameStateHandler.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{5da3b8f0-ccc8-41d3-aa40-8ffadba3b417}</ProjectGuid>
-    <RootNamespace>tggdgraphics</RootNamespace>
+    <ProjectGuid>{c268c24f-b3bb-4f52-af41-36c451836874}</ProjectGuid>
+    <RootNamespace>aspirantnavigationui</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -105,11 +96,11 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>E:\lib\SDL2_image-2.0.5\include;E:\lib\SDL2-2.0.14\include;..\tggd_data;..\tggd_common;$(IncludePath)</IncludePath>
+    <IncludePath>E:\lib\SDL2_mixer-2.0.4\include;E:\lib\SDL2-2.0.14\include;..\tggd_data;..\tggd_graphics;..\tggd_common;..\aspirant_commonui;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>E:\lib\SDL2_image-2.0.5\include;E:\lib\SDL2-2.0.14\include;..\tggd_data;..\tggd_common;$(IncludePath)</IncludePath>
+    <IncludePath>E:\lib\SDL2_mixer-2.0.4\include;E:\lib\SDL2-2.0.14\include;..\tggd_data;..\tggd_graphics;..\tggd_common;..\aspirant_commonui;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

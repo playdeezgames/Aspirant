@@ -36,7 +36,7 @@ namespace aspirant
 		tggd::common::SoundManager soundManager;
 		aspirant::game::DescriptorManager descriptors;
 		aspirant::game::ScenarioDescriptorManager scenarios;
-		OptionsManager optionsManager;
+		aspirant::navigationui::OptionsManager optionsManager;
 		EditorContext editorContext;
 		RoomRenderer roomRenderer;
 		bool OnSetUIState(const aspirant::commonui::UIState&);

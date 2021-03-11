@@ -5,7 +5,7 @@
 #include "Layout.h"
 #include "LayoutManager.h"
 #include "StringManager.h"
-namespace aspirant
+namespace aspirant::navigationui
 {
 	enum class StartGameItem
 	{

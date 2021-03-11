@@ -76,12 +76,12 @@ namespace aspirant
 		descriptors.Start(DESCRIPTORS_CONFIG_FILE);
 		scenarios.Load();
 
-		new SplashStateHandler(this, uiContext);
-		new MainMenuStateHandler(this, uiContext);
-		new AboutStateHandler(this, uiContext);
-		new ConfirmQuitStateHandler(this, uiContext);
-		new OptionsStateHandler(this, soundManager, optionsManager, uiContext);
-		new StartGameStateHandler(this, uiContext);
+		new aspirant::navigationui::SplashStateHandler(this, uiContext);
+		new aspirant::navigationui::MainMenuStateHandler(this, uiContext);
+		new aspirant::navigationui::AboutStateHandler(this, uiContext);
+		new aspirant::navigationui::ConfirmQuitStateHandler(this, uiContext);
+		new aspirant::navigationui::OptionsStateHandler(this, soundManager, optionsManager, uiContext);
+		new aspirant::navigationui::StartGameStateHandler(this, uiContext);
 		new StartEditorStateHandler(this, editorContext, uiContext);
 		new EditScenarioSelectorStateHandler(this, editorContext, uiContext);
 		new EditScenarioStateHandler(this, editorContext, uiContext);

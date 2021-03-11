@@ -2,7 +2,7 @@
 #include "MRender.h"
 #include "MCommand.h"
 #include "Utility.h"
-namespace aspirant
+namespace aspirant::navigationui
 {
 	const std::string LAYOUT_NAME = "About";
 

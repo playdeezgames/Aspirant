@@ -4,7 +4,7 @@
 #include "LayoutManager.h"
 #include "StringManager.h"
 #include "Command.h"
-namespace aspirant
+namespace aspirant::navigationui
 {
 	enum class MainMenuItem
 	{

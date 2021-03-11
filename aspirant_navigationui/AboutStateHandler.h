@@ -5,7 +5,7 @@
 #include "Layout.h"
 #include "LayoutManager.h"
 #include "CommonStateHandler.h"
-namespace aspirant
+namespace aspirant::navigationui
 {
 	class AboutStateHandler : public aspirant::commonui::CommonStateHandler
 	{

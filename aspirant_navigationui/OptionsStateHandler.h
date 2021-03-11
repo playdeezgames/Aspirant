@@ -8,7 +8,7 @@
 #include "SoundManager.h"
 #include "OptionsManager.h"
 #include "StringManager.h"
-namespace aspirant
+namespace aspirant::navigationui
 {
 	enum class OptionsItem
 	{

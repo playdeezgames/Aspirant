@@ -125,24 +125,6 @@
     <ClCompile Include="EditorContext.cpp">
       <Filter>Source Files\Data</Filter>
     </ClCompile>
-    <ClCompile Include="OptionsManager.cpp">
-      <Filter>Source Files\Data\Managers</Filter>
-    </ClCompile>
-    <ClCompile Include="SplashStateHandler.cpp">
-      <Filter>Source Files\UI\Navigation</Filter>
-    </ClCompile>
-    <ClCompile Include="OptionsStateHandler.cpp">
-      <Filter>Source Files\UI\Navigation</Filter>
-    </ClCompile>
-    <ClCompile Include="ConfirmQuitStateHandler.cpp">
-      <Filter>Source Files\UI\Navigation</Filter>
-    </ClCompile>
-    <ClCompile Include="AboutStateHandler.cpp">
-      <Filter>Source Files\UI\Navigation</Filter>
-    </ClCompile>
-    <ClCompile Include="StartGameStateHandler.cpp">
-      <Filter>Source Files\UI\Navigation</Filter>
-    </ClCompile>
     <ClCompile Include="EditScenarioSelectorStateHandler.cpp">
       <Filter>Source Files\UI\Editor</Filter>
     </ClCompile>
@@ -167,9 +149,6 @@
     <ClCompile Include="RoomRenderer.cpp">
       <Filter>Source Files\Graphics</Filter>
     </ClCompile>
-    <ClCompile Include="MainMenuStateHandler.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AspirantApplication.h">
@@ -178,32 +157,11 @@
     <ClInclude Include="EditorContext.h">
       <Filter>Header Files\Data</Filter>
     </ClInclude>
-    <ClInclude Include="AboutStateHandler.h">
-      <Filter>Header Files\UI\States\Navigation</Filter>
-    </ClInclude>
-    <ClInclude Include="ConfirmQuitStateHandler.h">
-      <Filter>Header Files\UI\States\Navigation</Filter>
-    </ClInclude>
-    <ClInclude Include="SplashStateHandler.h">
-      <Filter>Header Files\UI\States\Navigation</Filter>
-    </ClInclude>
-    <ClInclude Include="OptionsStateHandler.h">
-      <Filter>Header Files\UI\States\Navigation</Filter>
-    </ClInclude>
-    <ClInclude Include="MainMenuStateHandler.h">
-      <Filter>Header Files\UI\States\Navigation</Filter>
-    </ClInclude>
-    <ClInclude Include="StartGameStateHandler.h">
-      <Filter>Header Files\UI\States\Navigation</Filter>
-    </ClInclude>
     <ClInclude Include="EditScenarioSelectorStateHandler.h">
       <Filter>Header Files\UI\States\Editor</Filter>
     </ClInclude>
     <ClInclude Include="StartEditorStateHandler.h">
       <Filter>Header Files\UI\States\Editor</Filter>
-    </ClInclude>
-    <ClInclude Include="OptionsManager.h">
-      <Filter>Header Files\Data\Managers</Filter>
     </ClInclude>
     <ClInclude Include="EditScenarioStateHandler.h">
       <Filter>Header Files\UI\States\Editor</Filter>

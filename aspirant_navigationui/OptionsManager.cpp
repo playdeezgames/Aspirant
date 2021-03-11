@@ -2,7 +2,7 @@
 #include "Utility.h"
 #include <io.h>
 #include "JSONUtility.h"
-namespace aspirant
+namespace aspirant::navigationui
 {
 	OptionsManager::OptionsManager
 	(

@@ -2,7 +2,7 @@
 #include "MRender.h"
 #include "MUpdate.h"
 #include "MCommand.h"
-namespace aspirant
+namespace aspirant::navigationui
 {
 	const std::string LAYOUT_NAME = "MainMenu";
 	const std::string ITCH_URL_STRING = "ItchURL";

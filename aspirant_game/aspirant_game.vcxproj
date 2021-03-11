@@ -49,14 +49,6 @@
     <ClCompile Include="TerrainDescriptor.cpp" />
     <ClCompile Include="TerrainInstance.cpp" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\tggd_common\tggd_common.vcxproj">
-      <Project>{6dd963db-3ce4-4f66-b280-db8c0e800b6e}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\tggd_data\tggd_data.vcxproj">
-      <Project>{5c7d56ef-72fa-48aa-a427-1cc0f255a910}</Project>
-    </ProjectReference>
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>

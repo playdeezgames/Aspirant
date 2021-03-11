@@ -2,7 +2,7 @@
 #include "MRender.h"
 #include "MUpdate.h"
 #include "MCommand.h"
-namespace aspirant
+namespace aspirant::navigationui
 {
 	const std::string CONFIRM_ITEM_NO_COLOR_NAME = "ConfirmQuit.Color.No";
 	const std::string CONFIRM_ITEM_YES_COLOR_NAME = "ConfirmQuit.Color.Yes";
