@@ -5,24 +5,24 @@ namespace aspirant
 	const std::string TEXT_NAME_STRING_ROOM_NAME = "EditPickRoom.Text.RoomName";
 
 
-	bool EditPickRoomStateHandler::OnCommand(const Command& command)
+	bool EditPickRoomStateHandler::OnCommand(const aspirant::commonui::Command& command)
 	{
 		switch (command)
 		{
-		case Command::BACK:
-		case Command::RED:
-			SetUIState(UIState::EDIT_SCENARIO);
+		case aspirant::commonui::Command::BACK:
+		case aspirant::commonui::Command::RED:
+			SetUIState(aspirant::commonui::UIState::EDIT_SCENARIO);
 			break;
-		case Command::RIGHT:
-		case Command::NEXT:
+		case aspirant::commonui::Command::RIGHT:
+		case aspirant::commonui::Command::NEXT:
 			GetEditorContext().NextRoom();
 			break;
-		case Command::LEFT:
-		case Command::PREVIOUS:
+		case aspirant::commonui::Command::LEFT:
+		case aspirant::commonui::Command::PREVIOUS:
 			GetEditorContext().PreviousRoom();
 			break;
-		case Command::GREEN:
-			SetUIState(UIState::EDIT_NAVIGATE_ROOM);
+		case aspirant::commonui::Command::GREEN:
+			SetUIState(aspirant::commonui::UIState::EDIT_NAVIGATE_ROOM);
 			break;
 		}
 		return true;
@@ -46,9 +46,9 @@ namespace aspirant
 	(
 		MessageHandler* parent,
 		EditorContext& editorContext,
-		const UIContext& uiContext
+		const aspirant::commonui::UIContext& uiContext
 	)
-		: CommonEditorStateHandler(parent, UIState::EDIT_PICK_ROOM, LAYOUT_NAME, uiContext, editorContext)
+		: CommonEditorStateHandler(parent, aspirant::commonui::UIState::EDIT_PICK_ROOM, LAYOUT_NAME, uiContext, editorContext)
 	{
 
 	}

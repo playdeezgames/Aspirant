@@ -122,17 +122,11 @@
     <ClCompile Include="AspirantApplication.cpp">
       <Filter>Source Files\Application</Filter>
     </ClCompile>
-    <ClCompile Include="SoundManager.cpp">
-      <Filter>Source Files\Audio</Filter>
-    </ClCompile>
     <ClCompile Include="EditorContext.cpp">
       <Filter>Source Files\Data</Filter>
     </ClCompile>
     <ClCompile Include="OptionsManager.cpp">
       <Filter>Source Files\Data\Managers</Filter>
-    </ClCompile>
-    <ClCompile Include="CommonStateHandler.cpp">
-      <Filter>Source Files\UI\Base</Filter>
     </ClCompile>
     <ClCompile Include="SplashStateHandler.cpp">
       <Filter>Source Files\UI\Navigation</Filter>
@@ -181,38 +175,14 @@
     <ClInclude Include="AspirantApplication.h">
       <Filter>Header Files\Application</Filter>
     </ClInclude>
-    <ClInclude Include="MSetUIState.h">
-      <Filter>Header Files\Messages</Filter>
-    </ClInclude>
-    <ClInclude Include="Command.h">
-      <Filter>Header Files\Input</Filter>
-    </ClInclude>
-    <ClInclude Include="MCommand.h">
-      <Filter>Header Files\Messages</Filter>
-    </ClInclude>
-    <ClInclude Include="UIState.h">
-      <Filter>Header Files\UI\Enums</Filter>
-    </ClInclude>
-    <ClInclude Include="SoundManager.h">
-      <Filter>Header Files\Audio</Filter>
-    </ClInclude>
     <ClInclude Include="EditorContext.h">
       <Filter>Header Files\Data</Filter>
-    </ClInclude>
-    <ClInclude Include="CommonStateHandler.h">
-      <Filter>Header Files\UI\States\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="UIStateMessageHandler.h">
-      <Filter>Header Files\UI\States\Base</Filter>
     </ClInclude>
     <ClInclude Include="AboutStateHandler.h">
       <Filter>Header Files\UI\States\Navigation</Filter>
     </ClInclude>
     <ClInclude Include="ConfirmQuitStateHandler.h">
       <Filter>Header Files\UI\States\Navigation</Filter>
-    </ClInclude>
-    <ClInclude Include="MenuStateHandler.h">
-      <Filter>Header Files\UI\States\Base</Filter>
     </ClInclude>
     <ClInclude Include="SplashStateHandler.h">
       <Filter>Header Files\UI\States\Navigation</Filter>
@@ -241,9 +211,6 @@
     <ClInclude Include="EditPickRoomStateHandler.h">
       <Filter>Header Files\UI\States\Editor</Filter>
     </ClInclude>
-    <ClInclude Include="UIContext.h">
-      <Filter>Header Files\Data</Filter>
-    </ClInclude>
     <ClInclude Include="EditNewRoomStateHandler.h">
       <Filter>Header Files\UI\States\Editor</Filter>
     </ClInclude>
@@ -252,9 +219,6 @@
     </ClInclude>
     <ClInclude Include="EditNavigateRoomStateHandler.h">
       <Filter>Header Files\UI\States\Editor</Filter>
-    </ClInclude>
-    <ClInclude Include="MenuItemDescriptor.h">
-      <Filter>Header Files\UI\States\Base</Filter>
     </ClInclude>
     <ClInclude Include="EditorContextClient.h">
       <Filter>Header Files\UI\States\Base</Filter>

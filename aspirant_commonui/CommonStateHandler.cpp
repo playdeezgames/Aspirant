@@ -2,7 +2,7 @@
 #include "MRender.h"
 #include "MCommand.h"
 #include "MUpdate.h"
-namespace aspirant
+namespace aspirant::commonui
 {
 	bool CommonStateHandler::OnDraw(SDL_Renderer* renderer) const
 	{

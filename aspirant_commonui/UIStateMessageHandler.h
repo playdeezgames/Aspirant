@@ -3,7 +3,7 @@
 #include "UIState.h"
 #include "MSetUIState.h"
 #include "UIContext.h"
-namespace aspirant
+namespace aspirant::commonui
 {
 	class UIStateMessageHandler : public tggd::common::MessageHandler
 	{

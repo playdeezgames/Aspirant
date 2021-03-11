@@ -39,10 +39,10 @@ namespace aspirant
 		case NewRoomItem::CREATE:
 			CreateRoom();
 			GetEditorContext().UpdateRoomList();
-			SetUIState(UIState::EDIT_PICK_ROOM);
+			SetUIState(aspirant::commonui::UIState::EDIT_PICK_ROOM);
 			break;
 		case NewRoomItem::CANCEL:
-			SetUIState(UIState::EDIT_SCENARIO);
+			SetUIState(aspirant::commonui::UIState::EDIT_SCENARIO);
 			break;
 		}
 	}
@@ -51,24 +51,24 @@ namespace aspirant
 	(
 		MessageHandler* parent,
 		EditorContext& editorContext,
-		const UIContext& uiContext
+		const aspirant::commonui::UIContext& uiContext
 	)
 		: EditorMenuStateHandler
 		(
 			parent,
-			UIState::EDIT_NEW_ROOM,
-			UIState::EDIT_SCENARIO,
+			aspirant::commonui::UIState::EDIT_NEW_ROOM,
+			aspirant::commonui::UIState::EDIT_SCENARIO,
 			LAYOUT_NAME,
 			NewRoomItem::CANCEL,
 			uiContext,
 			editorContext
 		)
 	{
-		AddMenuItem(NewRoomItem::NAME, MenuItemDescriptor<NewRoomItem>(COLOR_NAME_ROOM_NAME, NewRoomItem::CANCEL, NewRoomItem::COLUMNS));
-		AddMenuItem(NewRoomItem::COLUMNS, MenuItemDescriptor<NewRoomItem>(COLOR_NAME_COLUMNS, NewRoomItem::NAME, NewRoomItem::ROWS));
-		AddMenuItem(NewRoomItem::ROWS, MenuItemDescriptor<NewRoomItem>(COLOR_NAME_ROWS, NewRoomItem::COLUMNS, NewRoomItem::CREATE));
-		AddMenuItem(NewRoomItem::CREATE, MenuItemDescriptor<NewRoomItem>(COLOR_NAME_CREATE, NewRoomItem::ROWS, NewRoomItem::CANCEL));
-		AddMenuItem(NewRoomItem::CANCEL, MenuItemDescriptor<NewRoomItem>(COLOR_NAME_CANCEL, NewRoomItem::CREATE, NewRoomItem::NAME));
+		AddMenuItem(NewRoomItem::NAME, aspirant::commonui::MenuItemDescriptor<NewRoomItem>(COLOR_NAME_ROOM_NAME, NewRoomItem::CANCEL, NewRoomItem::COLUMNS));
+		AddMenuItem(NewRoomItem::COLUMNS, aspirant::commonui::MenuItemDescriptor<NewRoomItem>(COLOR_NAME_COLUMNS, NewRoomItem::NAME, NewRoomItem::ROWS));
+		AddMenuItem(NewRoomItem::ROWS, aspirant::commonui::MenuItemDescriptor<NewRoomItem>(COLOR_NAME_ROWS, NewRoomItem::COLUMNS, NewRoomItem::CREATE));
+		AddMenuItem(NewRoomItem::CREATE, aspirant::commonui::MenuItemDescriptor<NewRoomItem>(COLOR_NAME_CREATE, NewRoomItem::ROWS, NewRoomItem::CANCEL));
+		AddMenuItem(NewRoomItem::CANCEL, aspirant::commonui::MenuItemDescriptor<NewRoomItem>(COLOR_NAME_CANCEL, NewRoomItem::CREATE, NewRoomItem::NAME));
 	}
 
 	void EditNewRoomStateHandler::IncreaseItem(const NewRoomItem& item)
@@ -112,11 +112,11 @@ namespace aspirant
 		return MenuStateHandler<NewRoomItem>::OnUpdate();
 	}
 
-	bool EditNewRoomStateHandler::OnCommand(const Command& command)
+	bool EditNewRoomStateHandler::OnCommand(const aspirant::commonui::Command& command)
 	{
 		switch (command)
 		{
-		case Command::BACK:
+		case aspirant::commonui::Command::BACK:
 			if (GetMenuItem() == NewRoomItem::NAME)
 			{
 				GetEditorContext().ClearNewRoomName();

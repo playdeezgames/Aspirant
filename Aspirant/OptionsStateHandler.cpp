@@ -23,13 +23,13 @@ namespace aspirant
 		MessageHandler* parent,
 		tggd::common::SoundManager& soundManager,
 		OptionsManager& optionsManager,
-		const UIContext& uiContext
+		const aspirant::commonui::UIContext& uiContext
 	)
 		: MenuStateHandler
 			(
 				parent, 
-				UIState::OPTIONS, 
-				UIState::MAIN_MENU,
+				aspirant::commonui::UIState::OPTIONS,
+				aspirant::commonui::UIState::MAIN_MENU,
 				LAYOUT_NAME, 
 				OptionsItem::BACK,
 				uiContext
@@ -40,7 +40,7 @@ namespace aspirant
 		AddMenuItem
 		(
 			OptionsItem::TOGGLE_MUTE, 
-			MenuItemDescriptor<OptionsItem>
+			aspirant::commonui::MenuItemDescriptor<OptionsItem>
 			(
 				OPTION_ITEM_TOGGLE_MUTE_COLOR_NAME, 
 				OptionsItem::BACK, 
@@ -50,7 +50,7 @@ namespace aspirant
 		AddMenuItem
 		(
 			OptionsItem::SFX_VOLUME,
-			MenuItemDescriptor<OptionsItem>
+			aspirant::commonui::MenuItemDescriptor<OptionsItem>
 			(
 				OPTION_ITEM_SFX_VOLUME_COLOR_NAME,
 				OptionsItem::TOGGLE_MUTE,
@@ -60,7 +60,7 @@ namespace aspirant
 		AddMenuItem
 		(
 			OptionsItem::MUX_VOLUME,
-			MenuItemDescriptor<OptionsItem>
+			aspirant::commonui::MenuItemDescriptor<OptionsItem>
 			(
 				OPTION_ITEM_MUX_VOLUME_COLOR_NAME,
 				OptionsItem::SFX_VOLUME,
@@ -70,7 +70,7 @@ namespace aspirant
 		AddMenuItem
 		(
 			OptionsItem::BACK,
-			MenuItemDescriptor<OptionsItem>
+			aspirant::commonui::MenuItemDescriptor<OptionsItem>
 			(
 				OPTION_ITEM_BACK_COLOR_NAME,
 				OptionsItem::MUX_VOLUME,
@@ -142,7 +142,7 @@ namespace aspirant
 			optionsManager.Save();
 			break;
 		case OptionsItem::BACK:
-			SetUIState(UIState::MAIN_MENU);
+			SetUIState(aspirant::commonui::UIState::MAIN_MENU);
 			break;
 		}
 	}

@@ -17,7 +17,7 @@ namespace aspirant
 	private:
 		void CreateRoom();
 	protected:
-		bool OnCommand(const Command& command);
+		bool OnCommand(const aspirant::commonui::Command& command);
 		bool OnUpdate();
 		bool OnText(const std::string&);
 		void ActivateItem(const NewRoomItem&);
@@ -28,7 +28,7 @@ namespace aspirant
 		(
 			MessageHandler*,
 			EditorContext&,
-			const UIContext&
+			const aspirant::commonui::UIContext&
 		);
 	};
 }

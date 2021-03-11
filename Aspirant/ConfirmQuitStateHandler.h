@@ -11,15 +11,15 @@ namespace aspirant
 		NO,
 		YES
 	};
-	class ConfirmQuitStateHandler : public MenuStateHandler<ConfirmQuitItem>
+	class ConfirmQuitStateHandler : public aspirant::commonui::MenuStateHandler<ConfirmQuitItem>
 	{
 	protected:
 		void ActivateItem(const ConfirmQuitItem&);
 	public:
 		ConfirmQuitStateHandler
 		(
-			MessageHandler*,
-			const UIContext&
+			tggd::common::MessageHandler*,
+			const aspirant::commonui::UIContext&
 		);
 	};
 }

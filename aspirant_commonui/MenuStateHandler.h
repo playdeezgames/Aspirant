@@ -10,10 +10,10 @@
 #include "MUpdate.h"
 #include "MText.h"
 #include "MenuItemDescriptor.h"
-namespace aspirant
+namespace aspirant::commonui
 {
 	template<typename TMenuItem>
-	class MenuStateHandler : public UIStateMessageHandler
+	class MenuStateHandler : public aspirant::commonui::UIStateMessageHandler
 	{
 	private:
 		std::string layoutName;
@@ -21,7 +21,7 @@ namespace aspirant
 		const std::string COLOR_ACTIVE = "Cyan";//TODO: make these come from config?
 		const std::string COLOR_INACTIVE = "Gray";//TODO: make these come from config?
 		TMenuItem menuItem;
-		UIState parentState;
+		aspirant::commonui::UIState parentState;
 		void NextItem()
 		{
 			auto entry = menuItems.find(menuItem);

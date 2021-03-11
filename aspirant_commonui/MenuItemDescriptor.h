@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-namespace aspirant
+namespace aspirant::commonui
 {
 	template<typename TMenuItem>
 	class MenuItemDescriptor

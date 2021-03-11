@@ -16,25 +16,25 @@ namespace aspirant
 	}
 
 
-	bool EditScenarioSelectorStateHandler::OnCommand(const Command& command)
+	bool EditScenarioSelectorStateHandler::OnCommand(const aspirant::commonui::Command& command)
 	{
 		switch (command)
 		{
-		case Command::BACK:
-		case Command::RED:
-			SetUIState(UIState::START_EDITOR);
+		case aspirant::commonui::Command::BACK:
+		case aspirant::commonui::Command::RED:
+			SetUIState(aspirant::commonui::UIState::START_EDITOR);
 			break;
-		case Command::NEXT:
-		case Command::RIGHT:
+		case aspirant::commonui::Command::NEXT:
+		case aspirant::commonui::Command::RIGHT:
 			GetEditorContext().NextScenario();
 			break;
-		case Command::PREVIOUS:
-		case Command::LEFT:
+		case aspirant::commonui::Command::PREVIOUS:
+		case aspirant::commonui::Command::LEFT:
 			GetEditorContext().PreviousScenario();
 			break;
-		case Command::GREEN:
+		case aspirant::commonui::Command::GREEN:
 			LoadScenario();
-			SetUIState(UIState::EDIT_SCENARIO);
+			SetUIState(aspirant::commonui::UIState::EDIT_SCENARIO);
 			break;
 		}
 		return true;
@@ -113,9 +113,9 @@ namespace aspirant
 	(
 		MessageHandler* parent,
 		EditorContext& editorContext,
-		const UIContext& uiContext
+		const aspirant::commonui::UIContext& uiContext
 	)
-		: CommonEditorStateHandler(parent, UIState::EDIT_SCENARIO_SELECTOR, LAYOUT_NAME, uiContext, editorContext)
+		: CommonEditorStateHandler(parent, aspirant::commonui::UIState::EDIT_SCENARIO_SELECTOR, LAYOUT_NAME, uiContext, editorContext)
 	{
 
 	}

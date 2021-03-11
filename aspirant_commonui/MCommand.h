@@ -1,7 +1,7 @@
 #pragma once
 #include "MGeneric.h"
 #include "Command.h"
-namespace aspirant
+namespace aspirant::commonui
 {
 	class MCommand: public tggd::common::MGeneric
 	{

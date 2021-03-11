@@ -1,7 +1,7 @@
 #pragma once
 #include "MGeneric.h"
 #include "UIState.h"
-namespace aspirant
+namespace aspirant::commonui
 {
 	class MSetUIState : public tggd::common::MGeneric
 	{

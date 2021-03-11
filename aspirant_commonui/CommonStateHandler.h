@@ -3,7 +3,7 @@
 #include "Layout.h"
 #include <SDL.h>
 #include "Command.h"
-namespace aspirant
+namespace aspirant::commonui
 {
 	class CommonStateHandler : public UIStateMessageHandler
 	{
@@ -17,7 +17,7 @@ namespace aspirant
 	public:
 		CommonStateHandler
 		(
-			MessageHandler*,
+			tggd::common::MessageHandler*,
 			const UIState&,
 			const std::string&,
 			const UIContext&

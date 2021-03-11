@@ -15,13 +15,13 @@ namespace aspirant
 	MainMenuStateHandler::MainMenuStateHandler
 	(
 		MessageHandler* parent,
-		const UIContext& uiContext
+		const aspirant::commonui::UIContext& uiContext
 	)
 		: MenuStateHandler
 			(
 				parent, 
-				UIState::MAIN_MENU, 
-				UIState::CONFIRM_QUIT,
+				aspirant::commonui::UIState::MAIN_MENU,
+				aspirant::commonui::UIState::CONFIRM_QUIT,
 				LAYOUT_NAME, 
 				MainMenuItem::START,
 				uiContext
@@ -30,7 +30,7 @@ namespace aspirant
 		AddMenuItem
 		(
 			MainMenuItem::START, 
-			MenuItemDescriptor<MainMenuItem>
+			aspirant::commonui::MenuItemDescriptor<MainMenuItem>
 			(
 				MENU_ITEM_START_COLOR_NAME, 
 				MainMenuItem::QUIT, 
@@ -40,7 +40,7 @@ namespace aspirant
 		AddMenuItem
 		(
 			MainMenuItem::ABOUT,
-			MenuItemDescriptor<MainMenuItem>
+			aspirant::commonui::MenuItemDescriptor<MainMenuItem>
 			(
 				MENU_ITEM_ABOUT_COLOR_NAME,
 				MainMenuItem::START,
@@ -50,7 +50,7 @@ namespace aspirant
 		AddMenuItem
 		(
 			MainMenuItem::OPTIONS,
-			MenuItemDescriptor<MainMenuItem>
+			aspirant::commonui::MenuItemDescriptor<MainMenuItem>
 			(
 				MENU_ITEM_OPTIONS_COLOR_NAME,
 				MainMenuItem::ABOUT,
@@ -60,7 +60,7 @@ namespace aspirant
 		AddMenuItem
 		(
 			MainMenuItem::QUIT,
-			MenuItemDescriptor<MainMenuItem>
+			aspirant::commonui::MenuItemDescriptor<MainMenuItem>
 			(
 				MENU_ITEM_QUIT_COLOR_NAME,
 				MainMenuItem::OPTIONS,
@@ -74,17 +74,17 @@ namespace aspirant
 		switch (currentItem)
 		{
 		case MainMenuItem::START:
-			SetUIState(UIState::START_GAME);
+			SetUIState(aspirant::commonui::UIState::START_GAME);
 			return;
 		case MainMenuItem::OPTIONS:
-			SetUIState(UIState::OPTIONS);
+			SetUIState(aspirant::commonui::UIState::OPTIONS);
 			return;
 		case MainMenuItem::ABOUT:
 			SDL_SetClipboardText(GetStringManager().Get(ITCH_URL_STRING).c_str());
-			SetUIState(UIState::ABOUT);
+			SetUIState(aspirant::commonui::UIState::ABOUT);
 			return;
 		case MainMenuItem::QUIT:
-			SetUIState(UIState::CONFIRM_QUIT);
+			SetUIState(aspirant::commonui::UIState::CONFIRM_QUIT);
 			return;
 		}
 	}

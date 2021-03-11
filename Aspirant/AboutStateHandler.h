@@ -7,15 +7,15 @@
 #include "CommonStateHandler.h"
 namespace aspirant
 {
-	class AboutStateHandler : public CommonStateHandler
+	class AboutStateHandler : public aspirant::commonui::CommonStateHandler
 	{
 	protected:
-		bool OnCommand(const Command&);
+		bool OnCommand(const aspirant::commonui::Command&);
 	public:
 		AboutStateHandler
 		(
-			MessageHandler*,
-			const UIContext&
+			tggd::common::MessageHandler*,
+			const aspirant::commonui::UIContext&
 		);
 	};
 }

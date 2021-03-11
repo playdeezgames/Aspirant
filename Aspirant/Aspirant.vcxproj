@@ -21,7 +21,6 @@
   <ItemGroup>
     <ClCompile Include="AboutStateHandler.cpp" />
     <ClCompile Include="AspirantApplication.cpp" />
-    <ClCompile Include="CommonStateHandler.cpp" />
     <ClCompile Include="ConfirmQuitStateHandler.cpp" />
     <ClCompile Include="EditNavigateRoomStateHandler.cpp" />
     <ClCompile Include="EditNewRoomStateHandler.cpp" />
@@ -34,7 +33,6 @@
     <ClCompile Include="OptionsManager.cpp" />
     <ClCompile Include="OptionsStateHandler.cpp" />
     <ClCompile Include="RoomRenderer.cpp" />
-    <ClCompile Include="SoundManager.cpp" />
     <ClCompile Include="StartEditorStateHandler.cpp" />
     <ClCompile Include="StartGameStateHandler.cpp" />
     <ClCompile Include="SplashStateHandler.cpp" />
@@ -42,9 +40,7 @@
   <ItemGroup>
     <ClInclude Include="AboutStateHandler.h" />
     <ClInclude Include="AspirantApplication.h" />
-    <ClInclude Include="Command.h" />
     <ClInclude Include="CommonEditorStateHandler.h" />
-    <ClInclude Include="CommonStateHandler.h" />
     <ClInclude Include="ConfirmQuitStateHandler.h" />
     <ClInclude Include="EditNavigateRoomStateHandler.h" />
     <ClInclude Include="EditNewRoomStateHandler.h" />
@@ -56,22 +52,17 @@
     <ClInclude Include="EditScenarioSelectorStateHandler.h" />
     <ClInclude Include="EditScenarioStateHandler.h" />
     <ClInclude Include="MainMenuStateHandler.h" />
-    <ClInclude Include="MCommand.h" />
-    <ClInclude Include="MenuItemDescriptor.h" />
-    <ClInclude Include="MenuStateHandler.h" />
     <ClInclude Include="OptionsManager.h" />
     <ClInclude Include="OptionsStateHandler.h" />
     <ClInclude Include="RoomRenderer.h" />
-    <ClInclude Include="SoundManager.h" />
     <ClInclude Include="StartEditorStateHandler.h" />
     <ClInclude Include="StartGameStateHandler.h" />
-    <ClInclude Include="MSetUIState.h" />
     <ClInclude Include="SplashStateHandler.h" />
-    <ClInclude Include="UIContext.h" />
-    <ClInclude Include="UIState.h" />
-    <ClInclude Include="UIStateMessageHandler.h" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\aspirant_commonui\aspirant_commonui.vcxproj">
+      <Project>{b3e07f62-ecfb-4710-89fc-624043ae8857}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\aspirant_game\aspirant_game.vcxproj">
       <Project>{f65dca58-fddc-493e-b61a-a61b91e67051}</Project>
     </ProjectReference>
@@ -145,14 +136,14 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>..\aspirant_game;..\tggd_graphics;..\tggd_data;..\tggd_common;E:\lib\SDL2_mixer-2.0.4\include;E:\lib\SDL2_image-2.0.5\include;E:\lib\SDL2-2.0.14\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\aspirant_commonui;..\aspirant_game;..\tggd_graphics;..\tggd_data;..\tggd_common;E:\lib\SDL2_mixer-2.0.4\include;E:\lib\SDL2_image-2.0.5\include;E:\lib\SDL2-2.0.14\include;$(IncludePath)</IncludePath>
     <LibraryPath>..\tggd_graphics;E:\lib\SDL2_image-2.0.5\lib\x64;E:\lib\SDL2_mixer-2.0.4\lib\x64;E:\lib\SDL2-2.0.14\lib\x64;$(LibraryPath)</LibraryPath>
     <PublicIncludeDirectories>$(PublicIncludeDirectories)</PublicIncludeDirectories>
     <EnableMicrosoftCodeAnalysis>false</EnableMicrosoftCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>..\aspirant_game;..\tggd_graphics;..\tggd_data;..\tggd_common;E:\lib\SDL2_mixer-2.0.4\include;E:\lib\SDL2_image-2.0.5\include;E:\lib\SDL2-2.0.14\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\aspirant_commonui;..\aspirant_game;..\tggd_graphics;..\tggd_data;..\tggd_common;E:\lib\SDL2_mixer-2.0.4\include;E:\lib\SDL2_image-2.0.5\include;E:\lib\SDL2-2.0.14\include;$(IncludePath)</IncludePath>
     <LibraryPath>..\tggd_graphics;E:\lib\SDL2_image-2.0.5\lib\x64;E:\lib\SDL2_mixer-2.0.4\lib\x64;E:\lib\SDL2-2.0.14\lib\x64;$(LibraryPath)</LibraryPath>
     <PublicIncludeDirectories>$(PublicIncludeDirectories)</PublicIncludeDirectories>
     <EnableMicrosoftCodeAnalysis>false</EnableMicrosoftCodeAnalysis>

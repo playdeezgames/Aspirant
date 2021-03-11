@@ -18,14 +18,14 @@ namespace aspirant
 		void UpdateBriefText(const aspirant::game::ScenarioDescriptor*);
 		void LoadScenario();
 	protected:
-		bool OnCommand(const Command&);
+		bool OnCommand(const aspirant::commonui::Command&);
 		bool OnUpdate(int);
 	public:
 		EditScenarioSelectorStateHandler
 		(
-			MessageHandler*,
+			tggd::common::MessageHandler*,
 			EditorContext&,
-			const UIContext&
+			const aspirant::commonui::UIContext&
 		);
 	};
 }

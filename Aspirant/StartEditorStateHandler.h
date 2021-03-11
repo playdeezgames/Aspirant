@@ -23,9 +23,9 @@ namespace aspirant
 	public:
 		StartEditorStateHandler
 		(
-			MessageHandler*,
+			tggd::common::MessageHandler*,
 			EditorContext&,
-			const UIContext&
+			const aspirant::commonui::UIContext&
 		);
 	};
 }

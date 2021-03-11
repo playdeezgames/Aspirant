@@ -3,15 +3,15 @@
 #include "EditorContextClient.h"
 namespace aspirant
 {
-	class CommonEditorStateHandler: public CommonStateHandler, public EditorContextClient
+	class CommonEditorStateHandler: public aspirant::commonui::CommonStateHandler, public EditorContextClient
 	{
 	public:
 		CommonEditorStateHandler
 		(
-			MessageHandler* parent,
-			const UIState& filterState,
+			tggd::common::MessageHandler* parent,
+			const aspirant::commonui::UIState& filterState,
 			const std::string& layoutName,
-			const UIContext& uiContext,
+			const aspirant::commonui::UIContext& uiContext,
 			EditorContext& editorContext
 		)
 			: CommonStateHandler(parent, filterState, layoutName, uiContext)

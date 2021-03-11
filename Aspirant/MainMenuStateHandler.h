@@ -13,7 +13,7 @@ namespace aspirant
 		OPTIONS,
 		QUIT
 	};
-	class MainMenuStateHandler : public MenuStateHandler<MainMenuItem>
+	class MainMenuStateHandler : public aspirant::commonui::MenuStateHandler<MainMenuItem>
 	{
 	protected:
 		void ActivateItem(const MainMenuItem&);
@@ -21,7 +21,7 @@ namespace aspirant
 		MainMenuStateHandler
 		(
 			MessageHandler*,
-			const UIContext&
+			const aspirant::commonui::UIContext&
 		);
 	};
 }

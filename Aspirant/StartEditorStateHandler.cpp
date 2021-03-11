@@ -16,13 +16,13 @@ namespace aspirant
 	(
 		MessageHandler* parent,
 		EditorContext& editorContext,
-		const UIContext& uiContext
+		const aspirant::commonui::UIContext& uiContext
 	)
 		: EditorMenuStateHandler
 		(
 			parent,
-			UIState::START_EDITOR,
-			UIState::START_GAME,
+			aspirant::commonui::UIState::START_EDITOR,
+			aspirant::commonui::UIState::START_GAME,
 			LAYOUT_NAME,
 			StartEditorItem::BACK,
 			uiContext,
@@ -32,17 +32,17 @@ namespace aspirant
 		AddMenuItem
 		(
 			StartEditorItem::NEW,
-			MenuItemDescriptor<StartEditorItem>(START_EDITOR_NEW_COLOR_NAME, StartEditorItem::BACK, StartEditorItem::OPEN)
+			aspirant::commonui::MenuItemDescriptor<StartEditorItem>(START_EDITOR_NEW_COLOR_NAME, StartEditorItem::BACK, StartEditorItem::OPEN)
 		);
 		AddMenuItem
 		(
 			StartEditorItem::OPEN,
-			MenuItemDescriptor<StartEditorItem>(START_EDITOR_OPEN_COLOR_NAME, StartEditorItem::NEW, StartEditorItem::BACK)
+			aspirant::commonui::MenuItemDescriptor<StartEditorItem>(START_EDITOR_OPEN_COLOR_NAME, StartEditorItem::NEW, StartEditorItem::BACK)
 		);
 		AddMenuItem
 		(
 			StartEditorItem::BACK,
-			MenuItemDescriptor<StartEditorItem>(START_EDITOR_BACK_COLOR_NAME, StartEditorItem::OPEN, StartEditorItem::NEW)
+			aspirant::commonui::MenuItemDescriptor<StartEditorItem>(START_EDITOR_BACK_COLOR_NAME, StartEditorItem::OPEN, StartEditorItem::NEW)
 		);
 	}
 
@@ -51,14 +51,14 @@ namespace aspirant
 		switch (currentItem)
 		{
 		case StartEditorItem::BACK:
-			SetUIState(UIState::START_GAME);
+			SetUIState(aspirant::commonui::UIState::START_GAME);
 			break;
 		case StartEditorItem::NEW:
 			CreateNewScenario();
 			break;
 		case StartEditorItem::OPEN:
 			//TODO: what to do when there are no scenarios to open?
-			SetUIState(UIState::EDIT_SCENARIO_SELECTOR);
+			SetUIState(aspirant::commonui::UIState::EDIT_SCENARIO_SELECTOR);
 			break;
 		}
 	}
@@ -84,6 +84,6 @@ namespace aspirant
 		);
 		CreateScenarioFile(ss.str());
 		GetEditorContext().SetScenarioIndex(GetEditorContext().GetScenarios().Add(descriptor));
-		SetUIState(UIState::EDIT_SCENARIO);
+		SetUIState(aspirant::commonui::UIState::EDIT_SCENARIO);
 	}
 }

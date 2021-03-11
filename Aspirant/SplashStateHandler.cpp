@@ -11,9 +11,9 @@ namespace aspirant
 	SplashStateHandler::SplashStateHandler
 	(
 		MessageHandler* parent,
-		const UIContext& uiContext
+		const aspirant::commonui::UIContext& uiContext
 	)
-		: UIStateMessageHandler(parent, UIState::SPLASH, uiContext)
+		: UIStateMessageHandler(parent, aspirant::commonui::UIState::SPLASH, uiContext)
 		, ticksLeft(TICKS_LEFT)
 	{
 	}
@@ -23,7 +23,7 @@ namespace aspirant
 		ticksLeft = (ticksLeft > milliseconds) ? (ticksLeft - milliseconds) : (0);
 		if (ticksLeft == 0)
 		{
-			SetUIState(UIState::MAIN_MENU);
+			SetUIState(aspirant::commonui::UIState::MAIN_MENU);
 			ticksLeft = TICKS_LEFT;
 		}
 		return true;
@@ -35,7 +35,7 @@ namespace aspirant
 		return false;
 	}
 
-	bool SplashStateHandler::OnCommand(const Command& command)
+	bool SplashStateHandler::OnCommand(const aspirant::commonui::Command& command)
 	{
 		ticksLeft = 0;
 		return true;
@@ -52,9 +52,9 @@ namespace aspirant
 		{
 			return OnUpdate(static_cast<const tggd::common::MUpdate*>(message)->GetMilliseconds());
 		}
-		else if (message->GetId() == MCommand::MSGID_Command)
+		else if (message->GetId() == aspirant::commonui::MCommand::MSGID_Command)
 		{
-			return OnCommand(static_cast<const MCommand*>(message)->GetCommand());
+			return OnCommand(static_cast<const aspirant::commonui::MCommand*>(message)->GetCommand());
 		}
 		return false;
 	}

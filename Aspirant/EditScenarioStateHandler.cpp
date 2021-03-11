@@ -30,18 +30,18 @@ namespace aspirant
 		switch (menuItem)
 		{
 		case EditScenarioItem::BACK:
-			SetUIState(UIState::EDIT_SCENARIO_SELECTOR);
+			SetUIState(aspirant::commonui::UIState::EDIT_SCENARIO_SELECTOR);
 			break;
 		case EditScenarioItem::DESCRIPTOR:
-			SetUIState(UIState::EDIT_SCENARIO_DESCRIPTOR);
+			SetUIState(aspirant::commonui::UIState::EDIT_SCENARIO_DESCRIPTOR);
 			break;
 		case EditScenarioItem::OPEN_ROOM:
 			GetEditorContext().UpdateRoomList();
-			SetUIState(UIState::EDIT_PICK_ROOM);
+			SetUIState(aspirant::commonui::UIState::EDIT_PICK_ROOM);
 			break;
 		case EditScenarioItem::NEW_ROOM:
 			GetEditorContext().ResetNewRoom();
-			SetUIState(UIState::EDIT_NEW_ROOM);
+			SetUIState(aspirant::commonui::UIState::EDIT_NEW_ROOM);
 			break;
 		}
 	}
@@ -50,23 +50,23 @@ namespace aspirant
 	(
 		MessageHandler* parent,
 		EditorContext& editorContext,
-		const UIContext& uiContext
+		const aspirant::commonui::UIContext& uiContext
 	)
 		: EditorMenuStateHandler
 		(
 			parent, 
-			UIState::EDIT_SCENARIO, 
-			UIState::EDIT_SCENARIO_SELECTOR, 
+			aspirant::commonui::UIState::EDIT_SCENARIO,
+			aspirant::commonui::UIState::EDIT_SCENARIO_SELECTOR,
 			LAYOUT_NAME, 
 			EditScenarioItem::BACK,
 			uiContext,
 			editorContext
 		)
 	{
-		AddMenuItem(EditScenarioItem::DESCRIPTOR, MenuItemDescriptor<EditScenarioItem>(ITEM_DESCRIPTOR_COLOR_NAME, EditScenarioItem::BACK, EditScenarioItem::OPEN_ROOM));
-		AddMenuItem(EditScenarioItem::OPEN_ROOM, MenuItemDescriptor<EditScenarioItem>(ITEM_OPEN_ROOM_COLOR_NAME, EditScenarioItem::DESCRIPTOR, EditScenarioItem::NEW_ROOM));
-		AddMenuItem(EditScenarioItem::NEW_ROOM, MenuItemDescriptor<EditScenarioItem>(ITEM_NEW_ROOM_COLOR_NAME, EditScenarioItem::OPEN_ROOM, EditScenarioItem::BACK));
-		AddMenuItem(EditScenarioItem::BACK, MenuItemDescriptor<EditScenarioItem>(ITEM_BACK_COLOR_NAME, EditScenarioItem::NEW_ROOM, EditScenarioItem::DESCRIPTOR));
+		AddMenuItem(EditScenarioItem::DESCRIPTOR, aspirant::commonui::MenuItemDescriptor<EditScenarioItem>(ITEM_DESCRIPTOR_COLOR_NAME, EditScenarioItem::BACK, EditScenarioItem::OPEN_ROOM));
+		AddMenuItem(EditScenarioItem::OPEN_ROOM, aspirant::commonui::MenuItemDescriptor<EditScenarioItem>(ITEM_OPEN_ROOM_COLOR_NAME, EditScenarioItem::DESCRIPTOR, EditScenarioItem::NEW_ROOM));
+		AddMenuItem(EditScenarioItem::NEW_ROOM, aspirant::commonui::MenuItemDescriptor<EditScenarioItem>(ITEM_NEW_ROOM_COLOR_NAME, EditScenarioItem::OPEN_ROOM, EditScenarioItem::BACK));
+		AddMenuItem(EditScenarioItem::BACK, aspirant::commonui::MenuItemDescriptor<EditScenarioItem>(ITEM_BACK_COLOR_NAME, EditScenarioItem::NEW_ROOM, EditScenarioItem::DESCRIPTOR));
 	}
 
 }

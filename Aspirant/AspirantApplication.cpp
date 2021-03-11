@@ -46,7 +46,7 @@ namespace aspirant
 		, soundManager(finishManager)
 		, optionsManager(soundManager, OPTIONS_CONFIG_FILE)
 		, layoutManager(finishManager, spriteManager, colorManager, fontManager, stringManager, intManager, flagManager)
-		, uiState(UIState::SPLASH)
+		, uiState(aspirant::commonui::UIState::SPLASH)
 		, descriptors(finishManager)
 		, scenarios(finishManager, SCENARIOS_CONFIG_FILE)
 		, editorContext(descriptors, scenarios)
@@ -58,7 +58,7 @@ namespace aspirant
 
 	bool AspirantApplication::IsRunning() const
 	{
-		return uiState!=UIState::QUIT;
+		return uiState!= aspirant::commonui::UIState::QUIT;
 	}
 
 	void AspirantApplication::Start(SDL_Renderer* renderer)
@@ -98,9 +98,9 @@ namespace aspirant
 
 	bool AspirantApplication::OnMessage(const tggd::common::MGeneric* message)
 	{
-		if (message->GetId() == MSetUIState::MSGID_SetUIState)
+		if (message->GetId() == aspirant::commonui::MSetUIState::MSGID_SetUIState)
 		{
-			return OnSetUIState(static_cast<const MSetUIState*>(message)->GetState());
+			return OnSetUIState(static_cast<const aspirant::commonui::MSetUIState*>(message)->GetState());
 		}
 		else if (message->GetId() == tggd::common::MEvent::MSGID_SdlEvent)
 		{
@@ -109,7 +109,7 @@ namespace aspirant
 		return false;
 	}
 
-	bool AspirantApplication::OnSetUIState(const UIState& state)
+	bool AspirantApplication::OnSetUIState(const aspirant::commonui::UIState& state)
 	{
 		uiState = state;
 		return true;
@@ -120,29 +120,29 @@ namespace aspirant
 		switch (keyEvent.keysym.sym)
 		{
 		case SDLK_UP:
-			return HandleBroadcast(MCommand(Command::UP));
+			return HandleBroadcast(aspirant::commonui::MCommand(aspirant::commonui::Command::UP));
 		case SDLK_DOWN:
-			return HandleBroadcast(MCommand(Command::DOWN));
+			return HandleBroadcast(aspirant::commonui::MCommand(aspirant::commonui::Command::DOWN));
 		case SDLK_LEFT:
-			return HandleBroadcast(MCommand(Command::LEFT));
+			return HandleBroadcast(aspirant::commonui::MCommand(aspirant::commonui::Command::LEFT));
 		case SDLK_RIGHT:
-			return HandleBroadcast(MCommand(Command::RIGHT));
+			return HandleBroadcast(aspirant::commonui::MCommand(aspirant::commonui::Command::RIGHT));
 		case SDLK_SPACE:
-			return HandleBroadcast(MCommand(Command::GREEN));
+			return HandleBroadcast(aspirant::commonui::MCommand(aspirant::commonui::Command::GREEN));
 		case SDLK_RETURN:
-			return HandleBroadcast(MCommand(Command::START));
+			return HandleBroadcast(aspirant::commonui::MCommand(aspirant::commonui::Command::START));
 		case SDLK_ESCAPE:
-			return HandleBroadcast(MCommand(Command::RED));
+			return HandleBroadcast(aspirant::commonui::MCommand(aspirant::commonui::Command::RED));
 		case SDLK_COMMA:
-			return HandleBroadcast(MCommand(Command::PREVIOUS));
+			return HandleBroadcast(aspirant::commonui::MCommand(aspirant::commonui::Command::PREVIOUS));
 		case SDLK_PERIOD:
-			return HandleBroadcast(MCommand(Command::NEXT));
+			return HandleBroadcast(aspirant::commonui::MCommand(aspirant::commonui::Command::NEXT));
 		case SDLK_BACKSPACE:
-			return HandleBroadcast(MCommand(Command::BACK));
+			return HandleBroadcast(aspirant::commonui::MCommand(aspirant::commonui::Command::BACK));
 		case SDLK_TAB:
-			return HandleBroadcast(MCommand(Command::YELLOW));
+			return HandleBroadcast(aspirant::commonui::MCommand(aspirant::commonui::Command::YELLOW));
 		case SDLK_z:
-			return HandleBroadcast(MCommand(Command::BLUE));
+			return HandleBroadcast(aspirant::commonui::MCommand(aspirant::commonui::Command::BLUE));
 		}
 		return true;
 	}
@@ -157,7 +157,7 @@ namespace aspirant
 	{
 		if (evt.type == SDL_QUIT)
 		{
-			uiState = UIState::QUIT;
+			uiState = aspirant::commonui::UIState::QUIT;
 		}
 		else if (evt.type == SDL_KEYDOWN)
 		{

@@ -2,18 +2,18 @@
 #include "UIState.h"
 #include "LayoutManager.h"
 #include "StringManager.h"
-namespace aspirant
+namespace aspirant::commonui
 {
 	class UIContext
 	{
 	private:
-		const UIState& uiState;
+		const aspirant::commonui::UIState& uiState;
 		const tggd::graphics::LayoutManager& layoutManager;
 		tggd::data::StringManager& stringManager;
 	public:
 		UIContext
 		(
-			const UIState& uiState,
+			const aspirant::commonui::UIState& uiState,
 			const tggd::graphics::LayoutManager& layoutManager,
 			tggd::data::StringManager& stringManager
 		) 
@@ -21,7 +21,7 @@ namespace aspirant
 			, layoutManager(layoutManager)
 			, stringManager(stringManager)
 		{}
-		const UIState& GetUIState() const
+		const aspirant::commonui::UIState& GetUIState() const
 		{
 			return uiState;
 		}

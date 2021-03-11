@@ -11,13 +11,13 @@ namespace aspirant
 	ConfirmQuitStateHandler::ConfirmQuitStateHandler
 	(
 		MessageHandler* parent,
-		const UIContext& uiContext
+		const aspirant::commonui::UIContext& uiContext
 	)
-		: MenuStateHandler
+		: aspirant::commonui::MenuStateHandler<ConfirmQuitItem>
 		(
 			parent, 
-			UIState::CONFIRM_QUIT, 
-			UIState::MAIN_MENU,
+			aspirant::commonui::UIState::CONFIRM_QUIT,
+			aspirant::commonui::UIState::MAIN_MENU,
 			LAYOUT_NAME, 
 			ConfirmQuitItem::NO,
 			uiContext
@@ -26,12 +26,12 @@ namespace aspirant
 		AddMenuItem
 		(
 			ConfirmQuitItem::YES,
-			MenuItemDescriptor<ConfirmQuitItem>(CONFIRM_ITEM_YES_COLOR_NAME, ConfirmQuitItem::NO, ConfirmQuitItem::NO)
+			aspirant::commonui::MenuItemDescriptor<ConfirmQuitItem>(CONFIRM_ITEM_YES_COLOR_NAME, ConfirmQuitItem::NO, ConfirmQuitItem::NO)
 		);
 		AddMenuItem
 		(
 			ConfirmQuitItem::NO,
-			MenuItemDescriptor<ConfirmQuitItem>(CONFIRM_ITEM_NO_COLOR_NAME, ConfirmQuitItem::YES, ConfirmQuitItem::YES)
+			aspirant::commonui::MenuItemDescriptor<ConfirmQuitItem>(CONFIRM_ITEM_NO_COLOR_NAME, ConfirmQuitItem::YES, ConfirmQuitItem::YES)
 		);
 	}
 
@@ -40,10 +40,10 @@ namespace aspirant
 		switch (currentItem)
 		{
 		case ConfirmQuitItem::NO:
-			SetUIState(UIState::MAIN_MENU);
+			SetUIState(aspirant::commonui::UIState::MAIN_MENU);
 			return;
 		case ConfirmQuitItem::YES:
-			SetUIState(UIState::QUIT);
+			SetUIState(aspirant::commonui::UIState::QUIT);
 			return;
 		}
 	}

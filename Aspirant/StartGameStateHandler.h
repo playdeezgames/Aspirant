@@ -12,15 +12,15 @@ namespace aspirant
 		EDITOR,
 		BACK
 	};
-	class StartGameStateHandler : public MenuStateHandler<StartGameItem>
+	class StartGameStateHandler : public aspirant::commonui::MenuStateHandler<StartGameItem>
 	{
 	protected:
 		void ActivateItem(const StartGameItem&);
 	public:
 		StartGameStateHandler
 		(
-			MessageHandler*,
-			const UIContext&
+			tggd::common::MessageHandler*,
+			const aspirant::commonui::UIContext&
 		);
 	};
 }

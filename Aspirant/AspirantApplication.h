@@ -22,8 +22,8 @@ namespace aspirant
 	class AspirantApplication : public tggd::common::Application
 	{
 	private:
-		UIState uiState;
-		UIContext uiContext;
+		aspirant::commonui::UIState uiState;
+		aspirant::commonui::UIContext uiContext;
 		tggd::common::FinishManager finishManager;
 		tggd::graphics::TextureManager textureManager;
 		tggd::graphics::SpriteManager spriteManager;
@@ -39,7 +39,7 @@ namespace aspirant
 		OptionsManager optionsManager;
 		EditorContext editorContext;
 		RoomRenderer roomRenderer;
-		bool OnSetUIState(const UIState&);
+		bool OnSetUIState(const aspirant::commonui::UIState&);
 		bool OnKeyDown(const SDL_KeyboardEvent&);
 		bool OnSdlEvent(const SDL_Event&);
 		bool OnTextInput(const SDL_TextInputEvent&);

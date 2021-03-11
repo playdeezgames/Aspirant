@@ -9,14 +9,14 @@ namespace aspirant
 	class EditPickRoomStateHandler : public CommonEditorStateHandler
 	{
 	protected:
-		bool OnCommand(const Command&);
+		bool OnCommand(const aspirant::commonui::Command&);
 		bool OnUpdate(int);
 	public:
 		EditPickRoomStateHandler
 		(
 			MessageHandler*,
 			EditorContext&,
-			const UIContext&
+			const aspirant::commonui::UIContext&
 		);
 	};
 }

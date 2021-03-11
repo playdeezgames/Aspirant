@@ -24,7 +24,7 @@ namespace aspirant
 		(
 			MessageHandler*,
 			EditorContext&,
-			const UIContext&
+			const aspirant::commonui::UIContext&
 		);
 	};
 }

@@ -7,20 +7,20 @@
 #include "LayoutManager.h"
 namespace aspirant
 {
-	class SplashStateHandler : public UIStateMessageHandler
+	class SplashStateHandler : public aspirant::commonui::UIStateMessageHandler
 	{
 	private:
 		bool OnDraw(SDL_Renderer*) const;
 		bool OnUpdate(unsigned int);
-		bool OnCommand(const Command&);
+		bool OnCommand(const aspirant::commonui::Command&);
 		unsigned int ticksLeft;
 	protected:
 		bool OnMessage(const tggd::common::MGeneric*);
 	public:
 		SplashStateHandler
 		(
-			MessageHandler*,
-			const UIContext&
+			tggd::common::MessageHandler*,
+			const aspirant::commonui::UIContext&
 		);
 	};
 }

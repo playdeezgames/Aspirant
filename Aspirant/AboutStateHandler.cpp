@@ -9,21 +9,21 @@ namespace aspirant
 	AboutStateHandler::AboutStateHandler
 	(
 		MessageHandler* parent,
-		const UIContext& uiContext
+		const aspirant::commonui::UIContext& uiContext
 	)
-		: CommonStateHandler(parent, UIState::ABOUT, LAYOUT_NAME, uiContext)
+		: aspirant::commonui::CommonStateHandler(parent, aspirant::commonui::UIState::ABOUT, LAYOUT_NAME, uiContext)
 	{
 	}
 
-	bool AboutStateHandler::OnCommand(const Command& command)
+	bool AboutStateHandler::OnCommand(const aspirant::commonui::Command& command)
 	{
 		switch (command)
 		{
-		case Command::GREEN:
-		case Command::RED:
-		case Command::BACK:
-		case Command::START:
-			SetUIState(UIState::MAIN_MENU);
+		case aspirant::commonui::Command::GREEN:
+		case aspirant::commonui::Command::RED:
+		case aspirant::commonui::Command::BACK:
+		case aspirant::commonui::Command::START:
+			SetUIState(aspirant::commonui::UIState::MAIN_MENU);
 			break;
 		}
 		return true;

@@ -3,13 +3,13 @@ namespace aspirant
 {
 	const std::string LAYOUT_NAME = "EditNavigateRoom";
 
-	bool EditNavigateRoomStateHandler::OnCommand(const Command& command)
+	bool EditNavigateRoomStateHandler::OnCommand(const aspirant::commonui::Command& command)
 	{
 		switch (command)
 		{
-		case Command::BACK:
-		case Command::RED:
-			SetUIState(UIState::EDIT_PICK_ROOM);
+		case aspirant::commonui::Command::BACK:
+		case aspirant::commonui::Command::RED:
+			SetUIState(aspirant::commonui::UIState::EDIT_PICK_ROOM);
 			break;
 		}
 		return true;
@@ -23,10 +23,10 @@ namespace aspirant
 	(
 		MessageHandler* parent,
 		EditorContext& editorContext,
-		const UIContext& uiContext,
+		const aspirant::commonui::UIContext& uiContext,
 		const RoomRenderer& roomRenderer
 	)
-		: CommonEditorStateHandler(parent, UIState::EDIT_NAVIGATE_ROOM, LAYOUT_NAME, uiContext, editorContext)
+		: CommonEditorStateHandler(parent, aspirant::commonui::UIState::EDIT_NAVIGATE_ROOM, LAYOUT_NAME, uiContext, editorContext)
 		, roomRenderer(roomRenderer)
 	{
 

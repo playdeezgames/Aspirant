@@ -17,7 +17,7 @@ namespace aspirant
 		MUX_VOLUME,
 		BACK
 	};
-	class OptionsStateHandler : public MenuStateHandler<OptionsItem>
+	class OptionsStateHandler : public aspirant::commonui::MenuStateHandler<OptionsItem>
 	{
 	private:
 		tggd::common::SoundManager& soundManager;
@@ -32,10 +32,10 @@ namespace aspirant
 	public:
 		OptionsStateHandler
 		(
-			MessageHandler*,
+			tggd::common::MessageHandler*,
 			tggd::common::SoundManager&,
 			OptionsManager&,
-			const UIContext&
+			const aspirant::commonui::UIContext&
 		);
 	};
 }

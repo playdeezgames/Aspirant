@@ -4,20 +4,20 @@
 namespace aspirant
 {
 	template<typename TMenuItem>
-	class EditorMenuStateHandler : public MenuStateHandler<TMenuItem>, public EditorContextClient
+	class EditorMenuStateHandler : public aspirant::commonui::MenuStateHandler<TMenuItem>, public EditorContextClient
 	{
 	public:
 		EditorMenuStateHandler
 		(
 			tggd::common::MessageHandler* parent,
-			const UIState& filterState,
-			const UIState& parentState,
+			const aspirant::commonui::UIState& filterState,
+			const aspirant::commonui::UIState& parentState,
 			const std::string& layoutName,
 			const TMenuItem& menuItem,
-			const UIContext& uiContext,
+			const aspirant::commonui::UIContext& uiContext,
 			EditorContext& editorContext
 		)
-			: MenuStateHandler<TMenuItem>(parent, filterState, parentState, layoutName, menuItem, uiContext)
+			: aspirant::commonui::MenuStateHandler<TMenuItem>(parent, filterState, parentState, layoutName, menuItem, uiContext)
 			, EditorContextClient(editorContext)
 		{
 
