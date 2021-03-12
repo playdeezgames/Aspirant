@@ -11,6 +11,7 @@ namespace aspirant::editorui
 	protected:
 		bool OnCommand(const aspirant::commonui::Command&);
 		bool OnUpdate(int);
+		bool OnDraw(SDL_Renderer*) const;
 	public:
 		EditNavigateRoomStateHandler
 		(

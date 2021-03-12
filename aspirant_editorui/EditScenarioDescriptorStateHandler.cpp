@@ -31,8 +31,8 @@ namespace aspirant::editorui
 
 	bool EditScenarioDescriptorStateHandler::OnUpdate()
 	{
-		GetUIContext().GetStringManager().Set(TEXT_NAME_SCENARIO_NAME, GetEditorContext().GetScenarioDescriptor()->GetName());
-		GetUIContext().GetStringManager().Set(TEXT_NAME_BRIEF, GetEditorContext().GetScenarioDescriptor()->GetBrief());
+		GetUIContext().GetStringManager().Set(TEXT_NAME_SCENARIO_NAME, GetEditorContext().GetScenarioSelector().GetScenarioDescriptor()->GetName());
+		GetUIContext().GetStringManager().Set(TEXT_NAME_BRIEF, GetEditorContext().GetScenarioSelector().GetScenarioDescriptor()->GetBrief());
 		return MenuStateHandler<EditScenarioDescriptorItem>::OnUpdate();
 	}
 

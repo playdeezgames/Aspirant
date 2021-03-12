@@ -9,35 +9,13 @@ namespace aspirant::editorui
 		const aspirant::game::DescriptorManager& descriptors,
 		aspirant::game::ScenarioDescriptorManager& scenarios
 	)
-		: scenarioIndex(0)
-		, scenarios(scenarios)
+		: scenarioSelector(scenarios)
 		, scenario(descriptors)
 		, newRoomColumns(0)
 		, newRoomRows(0)
 		, roomIndex(0)
 	{
 
-	}
-
-	const aspirant::game::ScenarioDescriptor* EditorContext::GetScenarioDescriptor() const
-	{
-		return scenarios.Get(GetScenarioIndex());
-	}
-
-	aspirant::game::ScenarioDescriptor* EditorContext::GetScenarioDescriptor()
-	{
-		return scenarios.Get(GetScenarioIndex());
-	}
-
-
-	void EditorContext::SetScenarioIndex(size_t index)
-	{
-		scenarioIndex = index;
-	}
-
-	size_t EditorContext::GetScenarioIndex() const
-	{
-		return scenarioIndex;
 	}
 
 	void EditorContext::UpdateRoomList()
@@ -67,16 +45,6 @@ namespace aspirant::editorui
 	size_t EditorContext::GetRoomCount() const
 	{
 		return roomList.size();
-	}
-
-	void EditorContext::NextScenario()
-	{
-		SetScenarioIndex(tggd::common::Utility::NextIndex(GetScenarioIndex(), GetScenarios().GetCount()));
-	}
-
-	void EditorContext::PreviousScenario()
-	{
-		SetScenarioIndex(tggd::common::Utility::PreviousIndex(GetScenarioIndex(), GetScenarios().GetCount()));
 	}
 
 	void EditorContext::NextRoom()
@@ -143,30 +111,30 @@ namespace aspirant::editorui
 
 	void EditorContext::ClearScenarioName()
 	{
-		GetScenarioDescriptor()->SetName("");//TODO: magic string
-		GetScenarios().Save();
+		GetScenarioSelector().GetScenarioDescriptor()->SetName("");//TODO: magic string
+		GetScenarioSelector().GetScenarios().Save();
 	}
 
 	void EditorContext::ClearScenarioBrief()
 	{
-		GetScenarioDescriptor()->SetBrief("");//TODO: magic string
-		GetScenarios().Save();
+		GetScenarioSelector().GetScenarioDescriptor()->SetBrief("");//TODO: magic string
+		GetScenarioSelector().GetScenarios().Save();
 	}
 
 	void EditorContext::AppendScenarioName(const std::string& text)
 	{
-		GetScenarioDescriptor()->SetName(GetScenarioDescriptor()->GetName() + text);
-		GetScenarios().Save();
+		GetScenarioSelector().GetScenarioDescriptor()->SetName(GetScenarioSelector().GetScenarioDescriptor()->GetName() + text);
+		GetScenarioSelector().GetScenarios().Save();
 	}
 
 	void EditorContext::AppendScenarioBrief(const std::string& text)
 	{
-		GetScenarioDescriptor()->SetBrief(GetScenarioDescriptor()->GetBrief() + text);
-		GetScenarios().Save();
+		GetScenarioSelector().GetScenarioDescriptor()->SetBrief(GetScenarioSelector().GetScenarioDescriptor()->GetBrief() + text);
+		GetScenarioSelector().GetScenarios().Save();
 	}
 
 	void EditorContext::SaveScenario()
 	{
-		tggd::data::JSONUtility::SaveJSON(GetScenarioDescriptor()->GetFileName(), GetScenario().ToJSON());
+		tggd::data::JSONUtility::SaveJSON(GetScenarioSelector().GetScenarioDescriptor()->GetFileName(), GetScenario().ToJSON());
 	}
 }

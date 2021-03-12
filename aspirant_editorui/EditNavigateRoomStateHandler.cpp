@@ -3,6 +3,14 @@ namespace aspirant::editorui
 {
 	const std::string LAYOUT_NAME = "EditNavigateRoom";
 
+	bool EditNavigateRoomStateHandler::OnDraw(SDL_Renderer* renderer) const
+	{
+		CommonEditorStateHandler::OnDraw(renderer);
+		roomRenderer.Draw(renderer);
+		return false;
+	}
+
+
 	bool EditNavigateRoomStateHandler::OnCommand(const aspirant::commonui::Command& command)
 	{
 		switch (command)

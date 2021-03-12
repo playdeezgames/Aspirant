@@ -12,7 +12,7 @@ namespace aspirant::editorui
 	void EditScenarioStateHandler::UpdateHeader()
 	{
 		std::stringstream ss;
-		auto scenario = GetEditorContext().GetScenarios().Get(GetEditorContext().GetScenarioIndex());
+		auto scenario = GetEditorContext().GetScenarioSelector().GetScenarios().Get(GetEditorContext().GetScenarioSelector().GetScenarioIndex());
 		ss << scenario->GetName() << "(id=" << scenario->GetId() << ")";//TODO: magic strings
 		GetStringManager().Set(HEADER_TEXT_NAME, ss.str());
 	}
