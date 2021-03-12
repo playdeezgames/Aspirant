@@ -4,7 +4,7 @@
 #include "MUpdate.h"
 #include <sstream>
 #include "Utility.h"
-namespace aspirant
+namespace aspirant::editorui
 {
 
 	const std::string START_EDITOR_NEW_COLOR_NAME = "StartEditor.Color.New";

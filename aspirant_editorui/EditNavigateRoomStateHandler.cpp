@@ -1,5 +1,5 @@
 #include "EditNavigateRoomStateHandler.h"
-namespace aspirant
+namespace aspirant::editorui
 {
 	const std::string LAYOUT_NAME = "EditNavigateRoom";
 

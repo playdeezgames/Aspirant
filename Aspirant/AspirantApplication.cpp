@@ -82,13 +82,13 @@ namespace aspirant
 		new aspirant::navigationui::ConfirmQuitStateHandler(this, uiContext);
 		new aspirant::navigationui::OptionsStateHandler(this, soundManager, optionsManager, uiContext);
 		new aspirant::navigationui::StartGameStateHandler(this, uiContext);
-		new StartEditorStateHandler(this, editorContext, uiContext);
-		new EditScenarioSelectorStateHandler(this, editorContext, uiContext);
-		new EditScenarioStateHandler(this, editorContext, uiContext);
-		new EditPickRoomStateHandler(this, editorContext, uiContext);
-		new EditNewRoomStateHandler(this, editorContext, uiContext);
-		new EditScenarioDescriptorStateHandler(this, editorContext, uiContext);
-		new EditNavigateRoomStateHandler(this, editorContext, uiContext, roomRenderer);
+		new aspirant::editorui::StartEditorStateHandler(this, editorContext, uiContext);
+		new aspirant::editorui::EditScenarioSelectorStateHandler(this, editorContext, uiContext);
+		new aspirant::editorui::EditScenarioStateHandler(this, editorContext, uiContext);
+		new aspirant::editorui::EditPickRoomStateHandler(this, editorContext, uiContext);
+		new aspirant::editorui::EditNewRoomStateHandler(this, editorContext, uiContext);
+		new aspirant::editorui::EditScenarioDescriptorStateHandler(this, editorContext, uiContext);
+		new aspirant::editorui::EditNavigateRoomStateHandler(this, editorContext, uiContext, roomRenderer);
 	}
 
 	void AspirantApplication::Finish()

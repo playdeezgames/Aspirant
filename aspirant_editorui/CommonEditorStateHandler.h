@@ -1,7 +1,7 @@
 #pragma once
 #include "CommonStateHandler.h"
 #include "EditorContextClient.h"
-namespace aspirant
+namespace aspirant::editorui
 {
 	class CommonEditorStateHandler: public aspirant::commonui::CommonStateHandler, public EditorContextClient
 	{

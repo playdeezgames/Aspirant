@@ -3,7 +3,7 @@
 #include "ScenarioDescriptorManager.h"
 #include "EditorContext.h"
 #include "StringManager.h"
-namespace aspirant
+namespace aspirant::editorui
 {
 	enum class EditScenarioItem
 	{

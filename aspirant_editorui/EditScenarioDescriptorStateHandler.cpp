@@ -1,5 +1,5 @@
 #include "EditScenarioDescriptorStateHandler.h"
-namespace aspirant
+namespace aspirant::editorui
 {
 	const std::string LAYOUT_NAME = "EditScenarioDescriptor";
 	const std::string COLOR_NAME_SCENARIO_NAME = "EditScenarioDescriptor.Color.ScenarioName";

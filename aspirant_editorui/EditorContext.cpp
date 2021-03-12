@@ -2,7 +2,7 @@
 #include "Utility.h"
 #include "JSONUtility.h"
 
-namespace aspirant
+namespace aspirant::editorui
 {
 	EditorContext::EditorContext
 	(

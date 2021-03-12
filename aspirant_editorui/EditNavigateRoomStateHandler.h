@@ -2,7 +2,7 @@
 #include "CommonEditorStateHandler.h"
 #include "EditorContext.h"
 #include "RoomRenderer.h"
-namespace aspirant
+namespace aspirant::editorui
 {
 	class EditNavigateRoomStateHandler : public CommonEditorStateHandler
 	{

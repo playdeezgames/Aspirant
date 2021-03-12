@@ -2,7 +2,7 @@
 #include "EditorMenuStateHandler.h"
 #include "Command.h"
 #include "EditorContext.h"
-namespace aspirant
+namespace aspirant::editorui
 {
 	enum class EditScenarioDescriptorItem
 	{

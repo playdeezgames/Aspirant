@@ -37,8 +37,8 @@ namespace aspirant
 		aspirant::game::DescriptorManager descriptors;
 		aspirant::game::ScenarioDescriptorManager scenarios;
 		aspirant::navigationui::OptionsManager optionsManager;
-		EditorContext editorContext;
-		RoomRenderer roomRenderer;
+		aspirant::editorui::EditorContext editorContext;
+		aspirant::editorui::RoomRenderer roomRenderer;
 		bool OnSetUIState(const aspirant::commonui::UIState&);
 		bool OnKeyDown(const SDL_KeyboardEvent&);
 		bool OnSdlEvent(const SDL_Event&);

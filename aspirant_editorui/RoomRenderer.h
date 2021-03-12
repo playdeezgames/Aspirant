@@ -1,7 +1,7 @@
 #pragma once
 #include <SDL.h>
 #include "Drawn.h"
-namespace aspirant
+namespace aspirant::editorui
 {
 	class RoomRenderer: tggd::graphics::Drawn
 	{

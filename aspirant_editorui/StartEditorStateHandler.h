@@ -6,7 +6,7 @@
 #include "StringManager.h"
 #include "ScenarioDescriptorManager.h"
 #include "EditorContext.h"
-namespace aspirant
+namespace aspirant::editorui
 {
 	enum class StartEditorItem
 	{

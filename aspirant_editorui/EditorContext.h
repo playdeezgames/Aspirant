@@ -3,7 +3,7 @@
 #include "DescriptorManager.h"
 #include "ScenarioDescriptorManager.h"
 #include <vector>
-namespace aspirant
+namespace aspirant::editorui
 {
 	class EditorContext
 	{

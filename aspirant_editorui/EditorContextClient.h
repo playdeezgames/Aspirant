@@ -1,6 +1,6 @@
 #pragma once
 #include "EditorContext.h"
-namespace aspirant
+namespace aspirant::editorui
 {
 	class EditorContextClient
 	{

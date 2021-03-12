@@ -4,7 +4,7 @@
 #include "EditorContext.h"
 #include "ScenarioDescriptorManager.h"
 #include "StringManager.h"
-namespace aspirant
+namespace aspirant::editorui
 {
 	class EditPickRoomStateHandler : public CommonEditorStateHandler
 	{

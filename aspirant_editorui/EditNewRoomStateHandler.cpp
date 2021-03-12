@@ -1,6 +1,6 @@
 #include "EditNewRoomStateHandler.h"
 #include <sstream>
-namespace aspirant
+namespace aspirant::editorui
 {
 	const std::string LAYOUT_NAME = "EditNewRoom";
 

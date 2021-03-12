@@ -1,5 +1,5 @@
 #include "EditPickRoomStateHandler.h"
-namespace aspirant
+namespace aspirant::editorui
 {
 	const std::string LAYOUT_NAME = "EditPickRoom";
 	const std::string TEXT_NAME_STRING_ROOM_NAME = "EditPickRoom.Text.RoomName";

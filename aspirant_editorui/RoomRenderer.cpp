@@ -1,5 +1,5 @@
 #include "RoomRenderer.h"
-namespace aspirant
+namespace aspirant::editorui
 {
 	RoomRenderer::RoomRenderer()
 	{

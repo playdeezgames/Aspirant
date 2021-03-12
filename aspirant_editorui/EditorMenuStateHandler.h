@@ -1,7 +1,7 @@
 #pragma once
 #include "MenuStateHandler.h"
 #include "EditorContextClient.h"
-namespace aspirant
+namespace aspirant::editorui
 {
 	template<typename TMenuItem>
 	class EditorMenuStateHandler : public aspirant::commonui::MenuStateHandler<TMenuItem>, public EditorContextClient

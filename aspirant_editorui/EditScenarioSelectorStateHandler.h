@@ -7,7 +7,7 @@
 #include "EditorContext.h"
 #include "ScenarioDescriptorManager.h"
 #include "StringManager.h"
-namespace aspirant
+namespace aspirant::editorui
 {
 	class EditScenarioSelectorStateHandler : public CommonEditorStateHandler
 	{
