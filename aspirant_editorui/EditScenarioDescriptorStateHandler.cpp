@@ -16,10 +16,10 @@ namespace aspirant::editorui
 			switch (GetMenuItem())
 			{
 			case EditScenarioDescriptorItem::SCENARIO_NAME:
-				GetEditorContext().ClearScenarioName();
+				GetEditorContext().GetScenarioSelector().ClearScenarioName();
 				return true;
 			case EditScenarioDescriptorItem::BRIEF:
-				GetEditorContext().ClearScenarioBrief();
+				GetEditorContext().GetScenarioSelector().ClearScenarioBrief();
 				return true;
 			default:
 				return MenuStateHandler<EditScenarioDescriptorItem>::OnCommand(command);
@@ -41,10 +41,10 @@ namespace aspirant::editorui
 		switch (GetMenuItem())
 		{
 		case EditScenarioDescriptorItem::SCENARIO_NAME:
-			GetEditorContext().AppendScenarioName(text);
+			GetEditorContext().GetScenarioSelector().AppendScenarioName(text);
 			break;
 		case EditScenarioDescriptorItem::BRIEF:
-			GetEditorContext().AppendScenarioBrief(text);
+			GetEditorContext().GetScenarioSelector().AppendScenarioBrief(text);
 			break;
 		}
 		return true;

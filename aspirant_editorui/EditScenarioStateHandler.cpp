@@ -36,11 +36,11 @@ namespace aspirant::editorui
 			SetUIState(aspirant::commonui::UIState::EDIT_SCENARIO_DESCRIPTOR);
 			break;
 		case EditScenarioItem::OPEN_ROOM:
-			GetEditorContext().UpdateRoomList();
+			GetEditorContext().GetRoomList().UpdateRoomList();
 			SetUIState(aspirant::commonui::UIState::EDIT_PICK_ROOM);
 			break;
 		case EditScenarioItem::NEW_ROOM:
-			GetEditorContext().ResetNewRoom();
+			GetEditorContext().GetNewRoom().ResetNewRoom();
 			SetUIState(aspirant::commonui::UIState::EDIT_NEW_ROOM);
 			break;
 		}

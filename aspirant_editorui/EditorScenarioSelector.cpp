@@ -35,4 +35,29 @@ namespace aspirant::editorui
 		SetScenarioIndex(tggd::common::Utility::PreviousIndex(GetScenarioIndex(), GetScenarios().GetCount()));
 	}
 
+	void EditorScenarioSelector::ClearScenarioName()
+	{
+		GetScenarioDescriptor()->SetName("");//TODO: magic string
+		GetScenarios().Save();
+	}
+
+	void EditorScenarioSelector::ClearScenarioBrief()
+	{
+		GetScenarioDescriptor()->SetBrief("");//TODO: magic string
+		GetScenarios().Save();
+	}
+
+	void EditorScenarioSelector::AppendScenarioName(const std::string& text)
+	{
+		GetScenarioDescriptor()->SetName(GetScenarioDescriptor()->GetName() + text);
+		GetScenarios().Save();
+	}
+
+	void EditorScenarioSelector::AppendScenarioBrief(const std::string& text)
+	{
+		GetScenarioDescriptor()->SetBrief(GetScenarioDescriptor()->GetBrief() + text);
+		GetScenarios().Save();
+	}
+
+
 }

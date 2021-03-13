@@ -15,11 +15,11 @@ namespace aspirant::editorui
 			break;
 		case aspirant::commonui::Command::RIGHT:
 		case aspirant::commonui::Command::NEXT:
-			GetEditorContext().NextRoom();
+			GetEditorContext().GetRoomList().NextRoom();
 			break;
 		case aspirant::commonui::Command::LEFT:
 		case aspirant::commonui::Command::PREVIOUS:
-			GetEditorContext().PreviousRoom();
+			GetEditorContext().GetRoomList().PreviousRoom();
 			break;
 		case aspirant::commonui::Command::GREEN:
 			SetUIState(aspirant::commonui::UIState::EDIT_NAVIGATE_ROOM);
@@ -30,9 +30,9 @@ namespace aspirant::editorui
 
 	bool EditPickRoomStateHandler::OnUpdate(int)
 	{
-		if (GetEditorContext().GetRoomCount() > 0)
+		if (GetEditorContext().GetRoomList().GetRoomCount() > 0)
 		{
-			auto& roomName = GetEditorContext().GetRoomList()[GetEditorContext().GetRoomIndex()];
+			auto& roomName = GetEditorContext().GetRoomList().GetRoomList()[GetEditorContext().GetRoomList().GetRoomIndex()];
 			GetUIContext().GetStringManager().Set(TEXT_NAME_STRING_ROOM_NAME, roomName);
 		}
 		else

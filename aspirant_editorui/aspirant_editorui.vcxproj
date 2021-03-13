@@ -25,6 +25,8 @@
     <ClInclude Include="EditorContext.h" />
     <ClInclude Include="EditorContextClient.h" />
     <ClInclude Include="EditorMenuStateHandler.h" />
+    <ClInclude Include="EditorNewRoomContext.h" />
+    <ClInclude Include="EditorRoomListContext.h" />
     <ClInclude Include="EditorScenarioSelector.h" />
     <ClInclude Include="EditPickRoomStateHandler.h" />
     <ClInclude Include="EditScenarioDescriptorStateHandler.h" />
@@ -37,6 +39,8 @@
     <ClCompile Include="EditNavigateRoomStateHandler.cpp" />
     <ClCompile Include="EditNewRoomStateHandler.cpp" />
     <ClCompile Include="EditorContext.cpp" />
+    <ClCompile Include="EditorNewRoomContext.cpp" />
+    <ClCompile Include="EditorRoomListContext.cpp" />
     <ClCompile Include="EditorScenarioSelector.cpp" />
     <ClCompile Include="EditPickRoomStateHandler.cpp" />
     <ClCompile Include="EditScenarioDescriptorStateHandler.cpp" />
@@ -105,11 +109,11 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>..\aspirant_game;E:\lib\SDL2-2.0.14\include;..\tggd_data;..\tggd_graphics;..\tggd_common;..\aspirant_commonui;$(IncludePath)</IncludePath>
+    <IncludePath>..\tggd_common;..\aspirant_game;E:\lib\SDL2-2.0.14\include;..\tggd_data;..\tggd_graphics;..\aspirant_commonui;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>..\aspirant_game;E:\lib\SDL2-2.0.14\include;..\tggd_data;..\tggd_graphics;..\tggd_common;..\aspirant_commonui;$(IncludePath)</IncludePath>
+    <IncludePath>..\tggd_common;..\aspirant_game;E:\lib\SDL2-2.0.14\include;..\tggd_data;..\tggd_graphics;..\aspirant_commonui;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

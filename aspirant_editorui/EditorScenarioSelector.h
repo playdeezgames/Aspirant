@@ -22,5 +22,9 @@ namespace aspirant::editorui
 		void PreviousScenario();
 		const aspirant::game::ScenarioDescriptorManager& GetScenarios() const { return scenarios; }
 		aspirant::game::ScenarioDescriptorManager& GetScenarios() { return scenarios; }
+		void ClearScenarioName();
+		void ClearScenarioBrief();
+		void AppendScenarioName(const std::string&);
+		void AppendScenarioBrief(const std::string&);
 	};
 }
