@@ -1,13 +1,17 @@
 #include "EditNavigateRoomStateHandler.h"
 #include "Utility.h"
+#include <sstream>
 namespace aspirant::editorui
 {
 	const std::string LAYOUT_NAME = "EditNavigateRoom";
+	const std::string LAYOUT_ROOM_VIEW_POSITION = "RoomViewPosition";
+	const std::string TEXT_ROOM_VIEW_POSITION_NAME = "RoomViewPosition.Text.Position";
 
 	bool EditNavigateRoomStateHandler::OnDraw(SDL_Renderer* renderer) const
 	{
 		CommonEditorStateHandler::OnDraw(renderer);
 		roomRenderer.Draw(renderer);
+		GetUIContext().GetLayoutManager().GetDescriptor(LAYOUT_ROOM_VIEW_POSITION)->Draw(renderer);
 		return false;
 	}
 
@@ -48,8 +52,13 @@ namespace aspirant::editorui
 
 	bool EditNavigateRoomStateHandler::OnUpdate(int)
 	{
+		auto& cursorPosition = GetEditorContext().GetRoomView().GetCursor();
+		std::stringstream ss;
+		ss << "(" << cursorPosition.GetX() << "," << cursorPosition.GetY() << ")";//TODO: magic string
+		GetUIContext().GetStringManager().Set(TEXT_ROOM_VIEW_POSITION_NAME, ss.str());
 		return false;
 	}
+
 	EditNavigateRoomStateHandler::EditNavigateRoomStateHandler
 	(
 		MessageHandler* parent,

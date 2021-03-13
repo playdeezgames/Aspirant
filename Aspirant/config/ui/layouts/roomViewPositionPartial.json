@@ -1,0 +1,17 @@
+[
+    {
+        "type": "StaticText",
+        "font": "default",
+        "color": "Gray",
+        "text": {
+            "key": "RoomViewPosition.Text.Position"
+        },
+        "x": 0,
+        "y": 0,
+        "horizontalAlignment": 1,
+        "dropShadow": true,
+        "dropShadowColor": "Black",
+        "dropShadowX": 2,
+        "dropShadowY": 2
+    }
+]

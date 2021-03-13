@@ -40,5 +40,6 @@
     "EditScenarioDescriptor.Color.Brief":"Gray",
     "EditScenarioDescriptor.Color.Back":"Gray",
     "EditScenarioDescriptor.Text.ScenarioName":"<name>",
-    "EditScenarioDescriptor.Text.Brief":"<brief>"
+    "EditScenarioDescriptor.Text.Brief":"<brief>",
+    "RoomViewPosition.Text.Position":"(#,#)"
 }
