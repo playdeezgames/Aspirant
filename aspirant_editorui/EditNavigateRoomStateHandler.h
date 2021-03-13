@@ -2,12 +2,14 @@
 #include "CommonEditorStateHandler.h"
 #include "EditorContext.h"
 #include "RoomRenderer.h"
+#include "XY.h"
 namespace aspirant::editorui
 {
 	class EditNavigateRoomStateHandler : public CommonEditorStateHandler
 	{
 	private:
 		const RoomRenderer& roomRenderer;
+		void MoveCursor(const tggd::graphics::XY<int>&);
 	protected:
 		bool OnCommand(const aspirant::commonui::Command&);
 		bool OnUpdate(int);

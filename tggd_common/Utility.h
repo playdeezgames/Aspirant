@@ -11,6 +11,7 @@ namespace tggd::common
 		static int ToPercentage(int, int);
 		static size_t NextIndex(size_t, size_t);
 		static size_t PreviousIndex(size_t, size_t);
+		static int PositiveModulo(int, size_t);
 	};
 }
 

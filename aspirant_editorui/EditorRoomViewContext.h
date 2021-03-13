@@ -17,6 +17,6 @@ namespace aspirant::editorui
 		const tggd::graphics::XY<size_t>& GetAnchor() const { return gridAnchor; }
 		const tggd::graphics::XY<size_t>& GetCursor() const { return gridCursor; }
 		void SetAnchor(const tggd::graphics::XY<size_t>& value) { gridAnchor = value; }
-		void SetCursor(const tggd::graphics::XY<size_t>& value) { gridCursor = value; }
+		void SetCursor(const tggd::graphics::XY<size_t>&);
 	};
 }

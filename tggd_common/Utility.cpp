@@ -56,5 +56,12 @@ namespace tggd::common
 		}
 
 	}
+
+	int Utility::PositiveModulo(int dividend, size_t divisor)
+	{
+		dividend %= (int)divisor;
+		return (dividend < 0) ? (dividend + (int)divisor) : (dividend);
+	}
+
 }
 

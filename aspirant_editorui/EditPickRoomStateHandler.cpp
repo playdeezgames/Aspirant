@@ -22,6 +22,7 @@ namespace aspirant::editorui
 			GetEditorContext().GetRoomList().PreviousRoom();
 			break;
 		case aspirant::commonui::Command::GREEN:
+			GetEditorContext().GetRoomView().SetCursor({ 0,0 });
 			SetUIState(aspirant::commonui::UIState::EDIT_NAVIGATE_ROOM);
 			break;
 		}

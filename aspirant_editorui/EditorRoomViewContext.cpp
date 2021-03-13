@@ -11,4 +11,12 @@ namespace aspirant::editorui
 	{
 
 	}
+
+	void EditorRoomViewContext::SetCursor(const tggd::graphics::XY<size_t>& value)
+	{
+		gridCursor = value;
+		size_t newAnchorX = gridCursor.GetX() - gridSize.GetX() / 2;
+		size_t newAnchorY = gridCursor.GetY() - gridSize.GetY() / 2;
+		SetAnchor({ newAnchorX, newAnchorY });
+	}
 }
