@@ -24,6 +24,7 @@
     <ClInclude Include="FontManager.h" />
     <ClInclude Include="Layout.h" />
     <ClInclude Include="LayoutManager.h" />
+    <ClInclude Include="Plotter.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="SpriteFont.h" />
     <ClInclude Include="SpriteManager.h" />

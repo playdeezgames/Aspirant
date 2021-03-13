@@ -51,7 +51,7 @@ namespace aspirant
 		, scenarios(finishManager, SCENARIOS_CONFIG_FILE)
 		, editorContext(descriptors, scenarios)
 		, uiContext(uiState, layoutManager, stringManager)
-		, roomRenderer(editorContext)
+		, roomRenderer(editorContext, spriteManager)
 	{
 
 	}
