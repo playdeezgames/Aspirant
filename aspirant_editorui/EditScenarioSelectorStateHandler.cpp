@@ -11,7 +11,7 @@ namespace aspirant::editorui
 
 	void EditScenarioSelectorStateHandler::LoadScenario()
 	{
-		auto scenario = GetEditorContext().GetScenarioSelector().GetScenarios().Get(GetEditorContext().GetScenarioSelector().GetScenarioIndex());
+		auto scenario = GetEditorContext().GetScenarioSelector().GetAll().Get(GetEditorContext().GetScenarioSelector().GetIndex());
 		GetEditorContext().GetScenario().FromJSON(tggd::data::JSONUtility::LoadJSON(scenario->GetFileName()));
 	}
 
@@ -26,11 +26,11 @@ namespace aspirant::editorui
 			break;
 		case aspirant::commonui::Command::NEXT:
 		case aspirant::commonui::Command::RIGHT:
-			GetEditorContext().GetScenarioSelector().NextScenario();
+			GetEditorContext().GetScenarioSelector().Next();
 			break;
 		case aspirant::commonui::Command::PREVIOUS:
 		case aspirant::commonui::Command::LEFT:
-			GetEditorContext().GetScenarioSelector().PreviousScenario();
+			GetEditorContext().GetScenarioSelector().Previous();
 			break;
 		case aspirant::commonui::Command::GREEN:
 			LoadScenario();
@@ -45,7 +45,7 @@ namespace aspirant::editorui
 		if (scenario)
 		{
 			std::stringstream ss;
-			ss << "Scenario " << (GetEditorContext().GetScenarioSelector().GetScenarioIndex() + 1) << "/" << GetEditorContext().GetScenarioSelector().GetScenarios().GetCount();
+			ss << "Scenario " << (GetEditorContext().GetScenarioSelector().GetIndex() + 1) << "/" << GetEditorContext().GetScenarioSelector().GetAll().GetCount();
 			GetUIContext().GetStringManager().Set(TEXT_INDEX_STRING_NAME, ss.str());
 		}
 		else
@@ -95,11 +95,11 @@ namespace aspirant::editorui
 
 	bool EditScenarioSelectorStateHandler::OnUpdate(int)
 	{
-		if (GetEditorContext().GetScenarioSelector().GetScenarioIndex() >= GetEditorContext().GetScenarioSelector().GetScenarios().GetCount())
+		if (GetEditorContext().GetScenarioSelector().GetIndex() >= GetEditorContext().GetScenarioSelector().GetAll().GetCount())
 		{
-			GetEditorContext().GetScenarioSelector().SetScenarioIndex(0);
+			GetEditorContext().GetScenarioSelector().SetIndex(0);
 		}
-		auto scenario = GetEditorContext().GetScenarioSelector().GetScenarios().Get(GetEditorContext().GetScenarioSelector().GetScenarioIndex());
+		auto scenario = GetEditorContext().GetScenarioSelector().GetAll().Get(GetEditorContext().GetScenarioSelector().GetIndex());
 		UpdateBriefText(scenario);
 		UpdateIdText(scenario);
 		UpdateIndexText(scenario);

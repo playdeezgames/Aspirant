@@ -72,7 +72,7 @@ namespace aspirant::editorui
 
 	void StartEditorStateHandler::CreateNewScenario()
 	{
-		int scenarioId = GetEditorContext().GetScenarioSelector().GetScenarios().GetNextId();
+		int scenarioId = GetEditorContext().GetScenarioSelector().GetAll().GetNextId();
 		std::stringstream ss;
 		ss << "scenarios/scenario_" << scenarioId << ".json";//TODO: magic string
 		aspirant::game::ScenarioDescriptor* descriptor = new aspirant::game::ScenarioDescriptor
@@ -83,7 +83,7 @@ namespace aspirant::editorui
 			ss.str()
 		);
 		CreateScenarioFile(ss.str());
-		GetEditorContext().GetScenarioSelector().SetScenarioIndex(GetEditorContext().GetScenarioSelector() .GetScenarios().Add(descriptor));
+		GetEditorContext().GetScenarioSelector().SetIndex(GetEditorContext().GetScenarioSelector() .GetAll().Add(descriptor));
 		SetUIState(aspirant::commonui::UIState::EDIT_SCENARIO);
 	}
 }

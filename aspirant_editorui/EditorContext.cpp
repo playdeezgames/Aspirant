@@ -19,6 +19,6 @@ namespace aspirant::editorui
 
 	void EditorContext::SaveScenario()
 	{
-		tggd::data::JSONUtility::SaveJSON(GetScenarioSelector().GetScenarioDescriptor()->GetFileName(), GetScenario().ToJSON());
+		tggd::data::JSONUtility::SaveJSON(GetScenarioSelector().Get()->GetFileName(), GetScenario().ToJSON());
 	}
 }

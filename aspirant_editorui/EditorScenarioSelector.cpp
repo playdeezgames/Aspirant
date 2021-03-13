@@ -4,59 +4,59 @@
 
 namespace aspirant::editorui
 {
-	const aspirant::game::ScenarioDescriptor* EditorScenarioSelector::GetScenarioDescriptor() const
+	const aspirant::game::ScenarioDescriptor* EditorScenarioSelector::Get() const
 	{
-		return scenarios.Get(GetScenarioIndex());
+		return scenarios.Get(GetIndex());
 	}
 
-	aspirant::game::ScenarioDescriptor* EditorScenarioSelector::GetScenarioDescriptor()
+	aspirant::game::ScenarioDescriptor* EditorScenarioSelector::Get()
 	{
-		return scenarios.Get(GetScenarioIndex());
+		return scenarios.Get(GetIndex());
 	}
 
 
-	void EditorScenarioSelector::SetScenarioIndex(size_t index)
+	void EditorScenarioSelector::SetIndex(size_t index)
 	{
 		scenarioIndex = index;
 	}
 
-	size_t EditorScenarioSelector::GetScenarioIndex() const
+	size_t EditorScenarioSelector::GetIndex() const
 	{
 		return scenarioIndex;
 	}
 
-	void EditorScenarioSelector::NextScenario()
+	void EditorScenarioSelector::Next()
 	{
-		SetScenarioIndex(tggd::common::Utility::NextIndex(GetScenarioIndex(), GetScenarios().GetCount()));
+		SetIndex(tggd::common::Utility::NextIndex(GetIndex(), GetAll().GetCount()));
 	}
 
-	void EditorScenarioSelector::PreviousScenario()
+	void EditorScenarioSelector::Previous()
 	{
-		SetScenarioIndex(tggd::common::Utility::PreviousIndex(GetScenarioIndex(), GetScenarios().GetCount()));
+		SetIndex(tggd::common::Utility::PreviousIndex(GetIndex(), GetAll().GetCount()));
 	}
 
-	void EditorScenarioSelector::ClearScenarioName()
+	void EditorScenarioSelector::ClearName()
 	{
-		GetScenarioDescriptor()->SetName("");//TODO: magic string
-		GetScenarios().Save();
+		Get()->SetName("");//TODO: magic string
+		GetAll().Save();
 	}
 
-	void EditorScenarioSelector::ClearScenarioBrief()
+	void EditorScenarioSelector::ClearBrief()
 	{
-		GetScenarioDescriptor()->SetBrief("");//TODO: magic string
-		GetScenarios().Save();
+		Get()->SetBrief("");//TODO: magic string
+		GetAll().Save();
 	}
 
-	void EditorScenarioSelector::AppendScenarioName(const std::string& text)
+	void EditorScenarioSelector::AppendName(const std::string& text)
 	{
-		GetScenarioDescriptor()->SetName(GetScenarioDescriptor()->GetName() + text);
-		GetScenarios().Save();
+		Get()->SetName(Get()->GetName() + text);
+		GetAll().Save();
 	}
 
-	void EditorScenarioSelector::AppendScenarioBrief(const std::string& text)
+	void EditorScenarioSelector::AppendBrief(const std::string& text)
 	{
-		GetScenarioDescriptor()->SetBrief(GetScenarioDescriptor()->GetBrief() + text);
-		GetScenarios().Save();
+		Get()->SetBrief(Get()->GetBrief() + text);
+		GetAll().Save();
 	}
 
 
