@@ -65,6 +65,10 @@ namespace aspirant::game
 			}
 			return false;
 		}
+		const std::vector<TObjectData*>& GetObjects() const
+		{
+			return objects;
+		}
 		const TObjectData* GetObject() const 
 		{ 
 			return 

@@ -48,10 +48,22 @@ namespace aspirant::editorui
 		}
 	}
 
-
-	void RoomRenderer::Draw(SDL_Renderer* renderer) const
+	void RoomRenderer::DrawCell(SDL_Renderer* renderer, const tggd::graphics::XY<size_t>& viewPosition, const aspirant::game::ScenarioRoomCell* cell) const
 	{
-		auto room = editorContext.GetRoom();
+		if (cell)
+		{
+			auto& objs = cell->GetObjects();
+			for (auto& obj : objs)
+			{
+				auto plotPosition = cellPlotter->Plot(viewPosition);
+				DrawObject(renderer, plotPosition, obj);
+			}
+		}
+	}
+
+
+	void RoomRenderer::DrawRoom(SDL_Renderer* renderer, const aspirant::game::ScenarioRoom* room) const
+	{
 		if (room)
 		{
 			for (size_t viewRow = 0; viewRow < editorContext.GetRoomView().GetSize().GetY(); ++viewRow)
@@ -63,14 +75,14 @@ namespace aspirant::editorui
 						(
 							viewColumn,
 							viewRow
-						);
-					tggd::graphics::XY<size_t> cellPosition = 
+							);
+					tggd::graphics::XY<size_t> cellPosition =
 						viewPosition + editorContext.GetRoomView().GetAnchor();
 					auto cell = room->GetCell(cellPosition.GetX(), cellPosition.GetY());
 					if (cell)
 					{
-						auto obj = cell->GetObject();
-						if (obj)
+						auto& objs = cell->GetObjects();
+						for (auto& obj : objs)
 						{
 							auto plotPosition = cellPlotter->Plot(viewPosition);
 							DrawObject(renderer, plotPosition, obj);
@@ -79,5 +91,22 @@ namespace aspirant::editorui
 				}
 			}
 		}
+	}
+
+	void RoomRenderer::DrawMapCursor(SDL_Renderer* renderer) const
+	{
+		//MapCursor
+		//vp = cp - an
+		auto& cursorPosition = editorContext.GetRoomView().GetCursor();
+		auto& anchorPosition = editorContext.GetRoomView().GetAnchor();
+		tggd::graphics::XY<size_t> viewPosition = { cursorPosition.GetX() - anchorPosition.GetX(), cursorPosition.GetY() - anchorPosition.GetY()  };
+		//TODO: magic string vv
+		spriteManager.Get("MapCursor").Draw(renderer, cellPlotter->Plot(viewPosition));
+	}
+
+	void RoomRenderer::Draw(SDL_Renderer* renderer) const
+	{
+		DrawRoom(renderer, editorContext.GetRoom());
+		DrawMapCursor(renderer);
 	}
 }
