@@ -67,4 +67,15 @@ namespace aspirant::game
 		rooms[name]->SetSize(columns, rows);
 	}
 
+	const ScenarioRoom* Scenario::GetRoom(const std::string& key) const
+	{
+		auto iter = rooms.find(key);
+		return iter->second;
+	}
+
+	ScenarioRoom* Scenario::GetRoom(const std::string& key)
+	{
+		auto iter = rooms.find(key);
+		return iter->second;
+	}
 }

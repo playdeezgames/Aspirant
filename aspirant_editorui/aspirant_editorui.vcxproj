@@ -27,6 +27,7 @@
     <ClInclude Include="EditorMenuStateHandler.h" />
     <ClInclude Include="EditorNewRoomContext.h" />
     <ClInclude Include="EditorRoomListContext.h" />
+    <ClInclude Include="EditorRoomViewContext.h" />
     <ClInclude Include="EditorScenarioSelector.h" />
     <ClInclude Include="EditPickRoomStateHandler.h" />
     <ClInclude Include="EditScenarioDescriptorStateHandler.h" />
@@ -41,6 +42,7 @@
     <ClCompile Include="EditorContext.cpp" />
     <ClCompile Include="EditorNewRoomContext.cpp" />
     <ClCompile Include="EditorRoomListContext.cpp" />
+    <ClCompile Include="EditorRoomViewContext.cpp" />
     <ClCompile Include="EditorScenarioSelector.cpp" />
     <ClCompile Include="EditPickRoomStateHandler.cpp" />
     <ClCompile Include="EditScenarioDescriptorStateHandler.cpp" />
