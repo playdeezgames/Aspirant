@@ -33,6 +33,7 @@
     <ClInclude Include="EditScenarioDescriptorStateHandler.h" />
     <ClInclude Include="EditScenarioSelectorStateHandler.h" />
     <ClInclude Include="EditScenarioStateHandler.h" />
+    <ClInclude Include="RoomCellObjectsRenderer.h" />
     <ClInclude Include="RoomRenderer.h" />
     <ClInclude Include="StartEditorStateHandler.h" />
   </ItemGroup>
@@ -48,6 +49,7 @@
     <ClCompile Include="EditScenarioDescriptorStateHandler.cpp" />
     <ClCompile Include="EditScenarioSelectorStateHandler.cpp" />
     <ClCompile Include="EditScenarioStateHandler.cpp" />
+    <ClCompile Include="RoomCellObjectsRenderer.cpp" />
     <ClCompile Include="RoomRenderer.cpp" />
     <ClCompile Include="StartEditorStateHandler.cpp" />
   </ItemGroup>

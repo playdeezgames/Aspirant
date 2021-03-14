@@ -59,6 +59,9 @@
     <ClInclude Include="EditorRoomViewContext.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="RoomCellObjectsRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EditNavigateRoomStateHandler.cpp">
@@ -98,6 +101,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="EditorRoomViewContext.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RoomCellObjectsRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

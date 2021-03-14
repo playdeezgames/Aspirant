@@ -52,6 +52,7 @@ namespace aspirant
 		, editorContext(descriptors, scenarios)
 		, uiContext(uiState, layoutManager, stringManager)
 		, roomRenderer(editorContext, spriteManager)
+		, roomCellObjectsRenderer()
 	{
 
 	}
@@ -88,7 +89,7 @@ namespace aspirant
 		new aspirant::editorui::EditPickRoomStateHandler(this, editorContext, uiContext);
 		new aspirant::editorui::EditNewRoomStateHandler(this, editorContext, uiContext);
 		new aspirant::editorui::EditScenarioDescriptorStateHandler(this, editorContext, uiContext);
-		new aspirant::editorui::EditNavigateRoomStateHandler(this, editorContext, uiContext, roomRenderer);
+		new aspirant::editorui::EditNavigateRoomStateHandler(this, editorContext, uiContext, roomRenderer, roomCellObjectsRenderer);
 	}
 
 	void AspirantApplication::Finish()

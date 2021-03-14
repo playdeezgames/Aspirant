@@ -17,6 +17,7 @@
 #include "ScenarioDescriptorManager.h"
 #include "EditorContext.h"
 #include "RoomRenderer.h"
+#include "RoomCellObjectsRenderer.h"
 namespace aspirant
 {
 	class AspirantApplication : public tggd::common::Application
@@ -39,6 +40,7 @@ namespace aspirant
 		aspirant::navigationui::OptionsManager optionsManager;
 		aspirant::editorui::EditorContext editorContext;
 		aspirant::editorui::RoomRenderer roomRenderer;
+		aspirant::editorui::RoomCellObjectsRenderer roomCellObjectsRenderer;
 		bool OnSetUIState(const aspirant::commonui::UIState&);
 		bool OnKeyDown(const SDL_KeyboardEvent&);
 		bool OnSdlEvent(const SDL_Event&);

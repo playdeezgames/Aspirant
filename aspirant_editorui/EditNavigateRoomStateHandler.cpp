@@ -11,6 +11,7 @@ namespace aspirant::editorui
 	{
 		CommonEditorStateHandler::OnDraw(renderer);
 		roomRenderer.Draw(renderer);
+		roomCellObjectsRenderer.Draw(renderer);
 		GetUIContext().GetLayoutManager().GetDescriptor(LAYOUT_ROOM_VIEW_POSITION)->Draw(renderer);
 		return false;
 	}
@@ -64,10 +65,12 @@ namespace aspirant::editorui
 		MessageHandler* parent,
 		EditorContext& editorContext,
 		const aspirant::commonui::UIContext& uiContext,
-		const RoomRenderer& roomRenderer
+		const RoomRenderer& roomRenderer,
+		const RoomCellObjectsRenderer& roomCellObjectsRenderer
 	)
 		: CommonEditorStateHandler(parent, aspirant::commonui::UIState::EDIT_NAVIGATE_ROOM, LAYOUT_NAME, uiContext, editorContext)
 		, roomRenderer(roomRenderer)
+		, roomCellObjectsRenderer(roomCellObjectsRenderer)
 	{
 
 	}

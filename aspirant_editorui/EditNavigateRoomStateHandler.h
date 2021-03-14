@@ -2,6 +2,7 @@
 #include "CommonEditorStateHandler.h"
 #include "EditorContext.h"
 #include "RoomRenderer.h"
+#include "RoomCellObjectsRenderer.h"
 #include "XY.h"
 namespace aspirant::editorui
 {
@@ -9,6 +10,7 @@ namespace aspirant::editorui
 	{
 	private:
 		const RoomRenderer& roomRenderer;
+		const RoomCellObjectsRenderer& roomCellObjectsRenderer;
 		void MoveCursor(const tggd::graphics::XY<int>&);
 	protected:
 		bool OnCommand(const aspirant::commonui::Command&);
@@ -20,7 +22,8 @@ namespace aspirant::editorui
 			MessageHandler*,
 			EditorContext&,
 			const aspirant::commonui::UIContext&,
-			const RoomRenderer&
+			const RoomRenderer&,
+			const RoomCellObjectsRenderer&
 		);
 	};
 }
