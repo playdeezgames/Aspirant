@@ -1,7 +1,7 @@
 #include "RoomRenderer.h"
 #include "TerrainDescriptor.h"
 #include "CreatureDescriptor.h"
-namespace aspirant::editorui
+namespace aspirant::editor::controls
 {
 	class RoomRendererPlotter : public tggd::graphics::Plotter<size_t, int>
 	{

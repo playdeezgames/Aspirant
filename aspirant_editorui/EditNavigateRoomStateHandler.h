@@ -9,8 +9,8 @@ namespace aspirant::editorui
 	class EditNavigateRoomStateHandler : public CommonEditorStateHandler
 	{
 	private:
-		const RoomRenderer& roomRenderer;
-		const RoomCellObjectsRenderer& roomCellObjectsRenderer;
+		const aspirant::editor::controls::RoomRenderer& roomRenderer;
+		const aspirant::editor::controls::RoomCellObjectsRenderer& roomCellObjectsRenderer;
 		void MoveCursor(const tggd::graphics::XY<int>&);
 	protected:
 		bool OnCommand(const aspirant::commonui::Command&);
@@ -22,8 +22,8 @@ namespace aspirant::editorui
 			MessageHandler*,
 			aspirant::editor::context::EditorContext&,
 			const aspirant::commonui::UIContext&,
-			const RoomRenderer&,
-			const RoomCellObjectsRenderer&
+			const aspirant::editor::controls::RoomRenderer&,
+			const aspirant::editor::controls::RoomCellObjectsRenderer&
 		);
 	};
 }

@@ -1,6 +1,6 @@
 #pragma once
 #include "Drawn.h"
-namespace aspirant::editorui
+namespace aspirant::editor::controls
 {
 	class RoomCellObjectsRenderer : public tggd::graphics::Drawn
 	{

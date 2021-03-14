@@ -6,7 +6,7 @@
 #include "Plotter.h"
 #include "SpriteManager.h"
 #include "FinishManager.h"
-namespace aspirant::editorui
+namespace aspirant::editor::controls
 {
 	class RoomRenderer: tggd::graphics::Drawn
 	{

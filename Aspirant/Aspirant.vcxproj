@@ -110,14 +110,14 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>..\aspirant_editorui;..\aspirant_navigationui;..\aspirant_commonui;..\aspirant_game;..\tggd_graphics;..\tggd_data;..\tggd_common;E:\lib\SDL2_mixer-2.0.4\include;E:\lib\SDL2_image-2.0.5\include;E:\lib\SDL2-2.0.14\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\aspirant_editor_context;..\aspirant_editorui;..\aspirant_navigationui;..\aspirant_commonui;..\aspirant_game;..\tggd_graphics;..\tggd_data;..\tggd_common;E:\lib\SDL2_mixer-2.0.4\include;E:\lib\SDL2_image-2.0.5\include;E:\lib\SDL2-2.0.14\include;$(IncludePath)</IncludePath>
     <LibraryPath>..\tggd_graphics;E:\lib\SDL2_image-2.0.5\lib\x64;E:\lib\SDL2_mixer-2.0.4\lib\x64;E:\lib\SDL2-2.0.14\lib\x64;$(LibraryPath)</LibraryPath>
     <PublicIncludeDirectories>$(PublicIncludeDirectories)</PublicIncludeDirectories>
     <EnableMicrosoftCodeAnalysis>false</EnableMicrosoftCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>..\aspirant_editorui;..\aspirant_navigationui;..\aspirant_commonui;..\aspirant_game;..\tggd_graphics;..\tggd_data;..\tggd_common;E:\lib\SDL2_mixer-2.0.4\include;E:\lib\SDL2_image-2.0.5\include;E:\lib\SDL2-2.0.14\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\aspirant_editor_context;..\aspirant_editorui;..\aspirant_navigationui;..\aspirant_commonui;..\aspirant_game;..\tggd_graphics;..\tggd_data;..\tggd_common;E:\lib\SDL2_mixer-2.0.4\include;E:\lib\SDL2_image-2.0.5\include;E:\lib\SDL2-2.0.14\include;$(IncludePath)</IncludePath>
     <LibraryPath>..\tggd_graphics;E:\lib\SDL2_image-2.0.5\lib\x64;E:\lib\SDL2_mixer-2.0.4\lib\x64;E:\lib\SDL2-2.0.14\lib\x64;$(LibraryPath)</LibraryPath>
     <PublicIncludeDirectories>$(PublicIncludeDirectories)</PublicIncludeDirectories>
     <EnableMicrosoftCodeAnalysis>false</EnableMicrosoftCodeAnalysis>

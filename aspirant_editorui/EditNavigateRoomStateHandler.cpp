@@ -65,8 +65,8 @@ namespace aspirant::editorui
 		MessageHandler* parent,
 		aspirant::editor::context::EditorContext& editorContext,
 		const aspirant::commonui::UIContext& uiContext,
-		const RoomRenderer& roomRenderer,
-		const RoomCellObjectsRenderer& roomCellObjectsRenderer
+		const aspirant::editor::controls::RoomRenderer& roomRenderer,
+		const aspirant::editor::controls::RoomCellObjectsRenderer& roomCellObjectsRenderer
 	)
 		: CommonEditorStateHandler(parent, aspirant::commonui::UIState::EDIT_NAVIGATE_ROOM, LAYOUT_NAME, uiContext, editorContext)
 		, roomRenderer(roomRenderer)

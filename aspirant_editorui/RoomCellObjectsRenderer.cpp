@@ -1,5 +1,5 @@
 #include "RoomCellObjectsRenderer.h"
-namespace aspirant::editorui
+namespace aspirant::editor::controls
 {
 	RoomCellObjectsRenderer::RoomCellObjectsRenderer()
 	{
