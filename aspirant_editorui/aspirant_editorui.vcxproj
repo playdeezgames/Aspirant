@@ -22,13 +22,8 @@
     <ClInclude Include="CommonEditorStateHandler.h" />
     <ClInclude Include="EditNavigateRoomStateHandler.h" />
     <ClInclude Include="EditNewRoomStateHandler.h" />
-    <ClInclude Include="EditorContext.h" />
     <ClInclude Include="EditorContextClient.h" />
     <ClInclude Include="EditorMenuStateHandler.h" />
-    <ClInclude Include="EditorNewRoomContext.h" />
-    <ClInclude Include="EditorRoomListContext.h" />
-    <ClInclude Include="EditorRoomViewContext.h" />
-    <ClInclude Include="EditorScenarioSelector.h" />
     <ClInclude Include="EditPickRoomStateHandler.h" />
     <ClInclude Include="EditScenarioDescriptorStateHandler.h" />
     <ClInclude Include="EditScenarioSelectorStateHandler.h" />
@@ -40,11 +35,6 @@
   <ItemGroup>
     <ClCompile Include="EditNavigateRoomStateHandler.cpp" />
     <ClCompile Include="EditNewRoomStateHandler.cpp" />
-    <ClCompile Include="EditorContext.cpp" />
-    <ClCompile Include="EditorNewRoomContext.cpp" />
-    <ClCompile Include="EditorRoomListContext.cpp" />
-    <ClCompile Include="EditorRoomViewContext.cpp" />
-    <ClCompile Include="EditorScenarioSelector.cpp" />
     <ClCompile Include="EditPickRoomStateHandler.cpp" />
     <ClCompile Include="EditScenarioDescriptorStateHandler.cpp" />
     <ClCompile Include="EditScenarioSelectorStateHandler.cpp" />
@@ -113,11 +103,11 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>..\tggd_graphics;..\tggd_common;..\aspirant_game;E:\lib\SDL2-2.0.14\include;..\tggd_data;..\aspirant_commonui;$(IncludePath)</IncludePath>
+    <IncludePath>..\aspirant_editor_context;..\tggd_graphics;..\tggd_common;..\aspirant_game;E:\lib\SDL2-2.0.14\include;..\tggd_data;..\aspirant_commonui;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>..\tggd_graphics;..\tggd_common;..\aspirant_game;E:\lib\SDL2-2.0.14\include;..\tggd_data;..\aspirant_commonui;$(IncludePath)</IncludePath>
+    <IncludePath>..\aspirant_editor_context;..\tggd_graphics;..\tggd_common;..\aspirant_game;E:\lib\SDL2-2.0.14\include;..\tggd_data;..\aspirant_commonui;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

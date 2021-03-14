@@ -20,9 +20,6 @@
     <ClInclude Include="EditNewRoomStateHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="EditorContext.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="EditorContextClient.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -47,18 +44,6 @@
     <ClInclude Include="StartEditorStateHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="EditorScenarioSelector.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="EditorNewRoomContext.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="EditorRoomListContext.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="EditorRoomViewContext.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="RoomCellObjectsRenderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -68,9 +53,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="EditNewRoomStateHandler.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="EditorContext.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="EditPickRoomStateHandler.cpp">
@@ -89,18 +71,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="StartEditorStateHandler.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="EditorScenarioSelector.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="EditorNewRoomContext.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="EditorRoomListContext.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="EditorRoomViewContext.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="RoomCellObjectsRenderer.cpp">
