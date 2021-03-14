@@ -100,10 +100,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>..\aspirant_editor_controls;..\aspirant_editor_context;..\tggd_graphics;..\tggd_common;..\aspirant_game;E:\lib\SDL2-2.0.14\include;..\tggd_data;..\aspirant_commonui;$(IncludePath)</IncludePath>
+    <EnableMicrosoftCodeAnalysis>false</EnableMicrosoftCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>..\aspirant_editor_controls;..\aspirant_editor_context;..\tggd_graphics;..\tggd_common;..\aspirant_game;E:\lib\SDL2-2.0.14\include;..\tggd_data;..\aspirant_commonui;$(IncludePath)</IncludePath>
+    <EnableMicrosoftCodeAnalysis>false</EnableMicrosoftCodeAnalysis>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

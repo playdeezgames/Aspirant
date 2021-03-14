@@ -17,9 +17,7 @@ namespace aspirant::editor::controls
 		const aspirant::editor::context::EditorContext& editorContext,
 		const tggd::graphics::SpriteManager& spriteManager
 	)
-		: editorContext(editorContext)
-		, cellPlotter(new RoomRendererPlotter())
-		, spriteManager(spriteManager)
+		: EditorBaseControl(editorContext, spriteManager, new RoomRendererPlotter())
 	{
 
 	}
@@ -37,12 +35,12 @@ namespace aspirant::editor::controls
 			if (descriptor.GetType() == "terrain")//TODO: magic string
 			{
 				const aspirant::game::TerrainDescriptor& terrainDescriptor = dynamic_cast<const aspirant::game::TerrainDescriptor&>(descriptor);
-				spriteManager.Get(terrainDescriptor.GetSprite()).Draw(renderer, position);
+				GetSpriteManager().Get(terrainDescriptor.GetSprite()).Draw(renderer, position);
 			}
 			else if (descriptor.GetType() == "creature")//TODO: magic string
 			{
 				const aspirant::game::CreatureDescriptor& creatureDescriptor = dynamic_cast<const aspirant::game::CreatureDescriptor&>(descriptor);
-				spriteManager.Get(creatureDescriptor.GetSprite()).Draw(renderer, position);
+				GetSpriteManager().Get(creatureDescriptor.GetSprite()).Draw(renderer, position);
 			}
 
 		}
@@ -55,7 +53,7 @@ namespace aspirant::editor::controls
 			auto& objs = cell->GetObjects();
 			for (auto& obj : objs)
 			{
-				auto plotPosition = cellPlotter->Plot(viewPosition);
+				auto plotPosition = GetCellPlotter()->Plot(viewPosition);
 				DrawObject(renderer, plotPosition, obj);
 			}
 		}
@@ -66,9 +64,9 @@ namespace aspirant::editor::controls
 	{
 		if (room)
 		{
-			for (size_t viewRow = 0; viewRow < editorContext.GetRoomView().GetSize().GetY(); ++viewRow)
+			for (size_t viewRow = 0; viewRow < GetEditorContext().GetRoomView().GetSize().GetY(); ++viewRow)
 			{
-				for (size_t viewColumn = 0; viewColumn < editorContext.GetRoomView().GetSize().GetX(); ++viewColumn)
+				for (size_t viewColumn = 0; viewColumn < GetEditorContext().GetRoomView().GetSize().GetX(); ++viewColumn)
 				{
 					tggd::graphics::XY<size_t> viewPosition =
 						tggd::graphics::XY<size_t>
@@ -77,14 +75,14 @@ namespace aspirant::editor::controls
 							viewRow
 							);
 					tggd::graphics::XY<size_t> cellPosition =
-						viewPosition + editorContext.GetRoomView().GetAnchor();
+						viewPosition + GetEditorContext().GetRoomView().GetAnchor();
 					auto cell = room->GetCell(cellPosition.GetX(), cellPosition.GetY());
 					if (cell)
 					{
 						auto& objs = cell->GetObjects();
 						for (auto& obj : objs)
 						{
-							auto plotPosition = cellPlotter->Plot(viewPosition);
+							auto plotPosition = GetCellPlotter()->Plot(viewPosition);
 							DrawObject(renderer, plotPosition, obj);
 						}
 					}
@@ -97,16 +95,16 @@ namespace aspirant::editor::controls
 	{
 		//MapCursor
 		//vp = cp - an
-		auto& cursorPosition = editorContext.GetRoomView().GetCursor();
-		auto& anchorPosition = editorContext.GetRoomView().GetAnchor();
+		auto& cursorPosition = GetEditorContext().GetRoomView().GetCursor();
+		auto& anchorPosition = GetEditorContext().GetRoomView().GetAnchor();
 		tggd::graphics::XY<size_t> viewPosition = { cursorPosition.GetX() - anchorPosition.GetX(), cursorPosition.GetY() - anchorPosition.GetY()  };
 		//TODO: magic string vv
-		spriteManager.Get("MapCursor").Draw(renderer, cellPlotter->Plot(viewPosition));
+		GetSpriteManager().Get("MapCursor").Draw(renderer, GetCellPlotter()->Plot(viewPosition));
 	}
 
 	void RoomRenderer::Draw(SDL_Renderer* renderer) const
 	{
-		DrawRoom(renderer, editorContext.GetRoom());
+		DrawRoom(renderer, GetEditorContext().GetRoom());
 		DrawMapCursor(renderer);
 	}
 }

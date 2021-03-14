@@ -52,7 +52,7 @@ namespace aspirant
 		, editorContext(descriptors, scenarios)
 		, uiContext(uiState, layoutManager, stringManager)
 		, roomRenderer(editorContext, spriteManager)
-		, roomCellObjectsRenderer()
+		, roomCellObjectsRenderer(editorContext, spriteManager)
 	{
 
 	}

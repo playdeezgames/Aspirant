@@ -1,12 +1,15 @@
 #pragma once
-#include "Drawn.h"
+#include "EditorBaseControl.h"
 namespace aspirant::editor::controls
 {
-	class RoomCellObjectsRenderer : public tggd::graphics::Drawn
+	class RoomCellObjectsRenderer : public EditorBaseControl
 	{
-	private:
 	public:
-		RoomCellObjectsRenderer();
+		RoomCellObjectsRenderer
+		(
+			const aspirant::editor::context::EditorContext&,
+			const tggd::graphics::SpriteManager&
+		);
 		void Draw(SDL_Renderer*) const;
 	};
 }

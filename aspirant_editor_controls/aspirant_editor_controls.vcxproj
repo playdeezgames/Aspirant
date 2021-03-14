@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="EditorBaseControl.h" />
     <ClInclude Include="RoomCellObjectsRenderer.h" />
     <ClInclude Include="RoomRenderer.h" />
   </ItemGroup>
@@ -87,10 +88,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>..\tggd_common;..\tggd_data;..\aspirant_game;..\aspirant_editor_context;..\tggd_graphics;E:\lib\SDL2-2.0.14\include;$(IncludePath)</IncludePath>
+    <EnableMicrosoftCodeAnalysis>false</EnableMicrosoftCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>..\tggd_common;..\tggd_data;..\aspirant_game;..\aspirant_editor_context;..\tggd_graphics;E:\lib\SDL2-2.0.14\include;$(IncludePath)</IncludePath>
+    <EnableMicrosoftCodeAnalysis>false</EnableMicrosoftCodeAnalysis>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
