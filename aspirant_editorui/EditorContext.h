@@ -7,7 +7,7 @@
 #include "EditorNewRoomContext.h"
 #include "EditorRoomListContext.h"
 #include "EditorRoomViewContext.h"
-namespace aspirant::editorui
+namespace aspirant::editor::context
 {
 	class EditorContext
 	{

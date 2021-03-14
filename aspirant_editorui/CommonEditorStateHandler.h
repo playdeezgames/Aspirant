@@ -12,7 +12,7 @@ namespace aspirant::editorui
 			const aspirant::commonui::UIState& filterState,
 			const std::string& layoutName,
 			const aspirant::commonui::UIContext& uiContext,
-			EditorContext& editorContext
+			aspirant::editor::context::EditorContext& editorContext
 		)
 			: CommonStateHandler(parent, filterState, layoutName, uiContext)
 			, EditorContextClient(editorContext)

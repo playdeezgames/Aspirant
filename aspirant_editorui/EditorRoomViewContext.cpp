@@ -1,5 +1,5 @@
 #include "EditorRoomViewContext.h"
-namespace aspirant::editorui
+namespace aspirant::editor::context
 {
 	EditorRoomViewContext::EditorRoomViewContext
 	(

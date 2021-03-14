@@ -15,7 +15,7 @@ namespace aspirant::editorui
 		EditPickRoomStateHandler
 		(
 			MessageHandler*,
-			EditorContext&,
+			aspirant::editor::context::EditorContext&,
 			const aspirant::commonui::UIContext&
 		);
 	};

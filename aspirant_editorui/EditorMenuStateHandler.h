@@ -15,7 +15,7 @@ namespace aspirant::editorui
 			const std::string& layoutName,
 			const TMenuItem& menuItem,
 			const aspirant::commonui::UIContext& uiContext,
-			EditorContext& editorContext
+			aspirant::editor::context::EditorContext& editorContext
 		)
 			: aspirant::commonui::MenuStateHandler<TMenuItem>(parent, filterState, parentState, layoutName, menuItem, uiContext)
 			, EditorContextClient(editorContext)

@@ -49,7 +49,7 @@ namespace aspirant::editorui
 	EditScenarioStateHandler::EditScenarioStateHandler
 	(
 		MessageHandler* parent,
-		EditorContext& editorContext,
+		aspirant::editor::context::EditorContext& editorContext,
 		const aspirant::commonui::UIContext& uiContext
 	)
 		: EditorMenuStateHandler

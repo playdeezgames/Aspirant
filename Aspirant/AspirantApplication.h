@@ -38,7 +38,7 @@ namespace aspirant
 		aspirant::game::DescriptorManager descriptors;
 		aspirant::game::ScenarioDescriptorManager scenarios;
 		aspirant::navigationui::OptionsManager optionsManager;
-		aspirant::editorui::EditorContext editorContext;
+		aspirant::editor::context::EditorContext editorContext;
 		aspirant::editorui::RoomRenderer roomRenderer;
 		aspirant::editorui::RoomCellObjectsRenderer roomCellObjectsRenderer;
 		bool OnSetUIState(const aspirant::commonui::UIState&);

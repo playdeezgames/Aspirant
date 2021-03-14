@@ -1,6 +1,6 @@
 #pragma once
 #include "XY.h"
-namespace aspirant::editorui
+namespace aspirant::editor::context
 {
 	class EditorRoomViewContext
 	{

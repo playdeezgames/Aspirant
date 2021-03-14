@@ -27,7 +27,7 @@ namespace aspirant::editorui
 		EditNewRoomStateHandler
 		(
 			MessageHandler*,
-			EditorContext&,
+			aspirant::editor::context::EditorContext&,
 			const aspirant::commonui::UIContext&
 		);
 	};

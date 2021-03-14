@@ -5,14 +5,14 @@ namespace aspirant::editorui
 	class EditorContextClient
 	{
 	private:
-		EditorContext& editorContext;
+		aspirant::editor::context::EditorContext& editorContext;
 	protected:
-		EditorContext& GetEditorContext() const
+		aspirant::editor::context::EditorContext& GetEditorContext() const
 		{
 			return editorContext;
 		}
 	public:
-		EditorContextClient(EditorContext& editorContext)
+		EditorContextClient(aspirant::editor::context::EditorContext& editorContext)
 			: editorContext(editorContext)
 		{
 

@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-namespace aspirant::editorui
+namespace aspirant::editor::context
 {
 	class EditorNewRoomContext
 	{

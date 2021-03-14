@@ -24,7 +24,7 @@ namespace aspirant::editorui
 		EditScenarioSelectorStateHandler
 		(
 			tggd::common::MessageHandler*,
-			EditorContext&,
+			aspirant::editor::context::EditorContext&,
 			const aspirant::commonui::UIContext&
 		);
 	};

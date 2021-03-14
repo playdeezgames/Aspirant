@@ -1,5 +1,5 @@
 #include "EditorNewRoomContext.h"
-namespace aspirant::editorui
+namespace aspirant::editor::context
 {
 	void EditorNewRoomContext::ResetNewRoom()
 	{

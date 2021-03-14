@@ -112,7 +112,7 @@ namespace aspirant::editorui
 	EditScenarioSelectorStateHandler::EditScenarioSelectorStateHandler
 	(
 		MessageHandler* parent,
-		EditorContext& editorContext,
+		aspirant::editor::context::EditorContext& editorContext,
 		const aspirant::commonui::UIContext& uiContext
 	)
 		: CommonEditorStateHandler(parent, aspirant::commonui::UIState::EDIT_SCENARIO_SELECTOR, LAYOUT_NAME, uiContext, editorContext)

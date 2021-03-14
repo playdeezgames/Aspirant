@@ -21,7 +21,7 @@ namespace aspirant::editorui
 		EditScenarioDescriptorStateHandler
 		(
 			MessageHandler*,
-			EditorContext&,
+			aspirant::editor::context::EditorContext&,
 			const aspirant::commonui::UIContext&
 		);
 	};

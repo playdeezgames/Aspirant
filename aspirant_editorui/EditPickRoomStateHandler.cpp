@@ -46,7 +46,7 @@ namespace aspirant::editorui
 	EditPickRoomStateHandler::EditPickRoomStateHandler
 	(
 		MessageHandler* parent,
-		EditorContext& editorContext,
+		aspirant::editor::context::EditorContext& editorContext,
 		const aspirant::commonui::UIContext& uiContext
 	)
 		: CommonEditorStateHandler(parent, aspirant::commonui::UIState::EDIT_PICK_ROOM, LAYOUT_NAME, uiContext, editorContext)

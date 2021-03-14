@@ -15,7 +15,7 @@ namespace aspirant::editorui
 	StartEditorStateHandler::StartEditorStateHandler
 	(
 		MessageHandler* parent,
-		EditorContext& editorContext,
+		aspirant::editor::context::EditorContext& editorContext,
 		const aspirant::commonui::UIContext& uiContext
 	)
 		: EditorMenuStateHandler

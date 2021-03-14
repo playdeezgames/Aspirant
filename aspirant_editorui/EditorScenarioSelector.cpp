@@ -2,7 +2,7 @@
 #include "Utility.h"
 #include "JSONUtility.h"
 
-namespace aspirant::editorui
+namespace aspirant::editor::context
 {
 	const aspirant::game::ScenarioDescriptor* EditorScenarioSelector::Get() const
 	{

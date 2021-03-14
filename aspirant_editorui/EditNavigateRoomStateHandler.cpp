@@ -63,7 +63,7 @@ namespace aspirant::editorui
 	EditNavigateRoomStateHandler::EditNavigateRoomStateHandler
 	(
 		MessageHandler* parent,
-		EditorContext& editorContext,
+		aspirant::editor::context::EditorContext& editorContext,
 		const aspirant::commonui::UIContext& uiContext,
 		const RoomRenderer& roomRenderer,
 		const RoomCellObjectsRenderer& roomCellObjectsRenderer

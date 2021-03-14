@@ -1,6 +1,6 @@
 #pragma once
 #include "ScenarioDescriptorManager.h"
-namespace aspirant::editorui
+namespace aspirant::editor::context
 {
 	class EditorScenarioSelector
 	{

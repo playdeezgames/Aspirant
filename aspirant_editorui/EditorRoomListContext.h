@@ -2,7 +2,7 @@
 #include <vector>
 #include <string>
 #include "Scenario.h"
-namespace aspirant::editorui
+namespace aspirant::editor::context
 {
 	class EditorRoomListContext
 	{

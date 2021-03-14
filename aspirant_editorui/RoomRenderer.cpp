@@ -14,7 +14,7 @@ namespace aspirant::editorui
 
 	RoomRenderer::RoomRenderer
 	(
-		const EditorContext& editorContext,
+		const aspirant::editor::context::EditorContext& editorContext,
 		const tggd::graphics::SpriteManager& spriteManager
 	)
 		: editorContext(editorContext)

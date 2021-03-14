@@ -11,7 +11,7 @@ namespace aspirant::editorui
 	class RoomRenderer: tggd::graphics::Drawn
 	{
 	private:
-		const EditorContext& editorContext;
+		const aspirant::editor::context::EditorContext& editorContext;
 		tggd::graphics::Plotter<size_t, int>* cellPlotter;
 		const tggd::graphics::SpriteManager& spriteManager;
 		void DrawObject(SDL_Renderer*, const tggd::graphics::XY<int>&, const aspirant::game::ScenarioObjectInstance*) const;
@@ -21,7 +21,7 @@ namespace aspirant::editorui
 	public:
 		RoomRenderer
 		(
-			const EditorContext&,
+			const aspirant::editor::context::EditorContext&,
 			const tggd::graphics::SpriteManager&
 		);
 		~RoomRenderer()

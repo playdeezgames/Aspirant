@@ -1,6 +1,6 @@
 #include "EditorRoomListContext.h"
 #include "Utility.h"
-namespace aspirant::editorui
+namespace aspirant::editor::context
 {
 	EditorRoomListContext::EditorRoomListContext(const aspirant::game::Scenario& scenario)
 		: scenario(scenario)
