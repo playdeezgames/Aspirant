@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EditorContext.h" />
+    <ClInclude Include="EditorDescriptorSelectorContext.h" />
     <ClInclude Include="EditorNewRoomContext.h" />
     <ClInclude Include="EditorRoomListContext.h" />
     <ClInclude Include="EditorRoomViewContext.h" />
@@ -28,6 +29,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EditorContext.cpp" />
+    <ClCompile Include="EditorDescriptorSelectorContext.cpp" />
     <ClCompile Include="EditorNewRoomContext.cpp" />
     <ClCompile Include="EditorRoomCellObjectsContext.cpp" />
     <ClCompile Include="EditorRoomListContext.cpp" />

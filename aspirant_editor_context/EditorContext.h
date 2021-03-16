@@ -8,6 +8,7 @@
 #include "EditorRoomListContext.h"
 #include "EditorRoomViewContext.h"
 #include "EditorRoomCellObjectsContext.h"
+#include "EditorDescriptorSelectorContext.h"
 namespace aspirant::editor::context
 {
 	class EditorContext
@@ -18,6 +19,7 @@ namespace aspirant::editor::context
 		EditorRoomListContext roomList;
 		EditorRoomViewContext roomView;
 		EditorRoomCellObjectsContext roomCellObjects;
+		EditorDescriptorSelectorContext descriptorSelector;
 		aspirant::game::Scenario scenario;
 	public:
 		EditorContext(const aspirant::game::DescriptorManager&, aspirant::game::ScenarioDescriptorManager&);
@@ -63,6 +65,14 @@ namespace aspirant::editor::context
 		EditorRoomCellObjectsContext& GetRoomCellObjects()
 		{
 			return roomCellObjects;
+		}
+		const EditorDescriptorSelectorContext& GetDescriptorSelector() const
+		{
+			return descriptorSelector;
+		}
+		EditorDescriptorSelectorContext& GetDescriptorSelector()
+		{
+			return descriptorSelector;
 		}
 
 		const aspirant::game::Scenario& GetScenario() const { return scenario; }
