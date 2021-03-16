@@ -24,6 +24,7 @@
     <ClInclude Include="RoomRenderer.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="EditorBaseControl.cpp" />
     <ClCompile Include="RoomCellObjectsRenderer.cpp" />
     <ClCompile Include="RoomRenderer.cpp" />
   </ItemGroup>

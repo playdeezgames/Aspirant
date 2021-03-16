@@ -4,8 +4,6 @@ namespace aspirant::editor::controls
 {
 	class RoomCellObjectsRenderer : public EditorBaseControl
 	{
-	private:
-		void DrawObject(SDL_Renderer*, tggd::graphics::XY<int>, const aspirant::game::ScenarioObjectInstance*) const;
 	public:
 		RoomCellObjectsRenderer
 		(

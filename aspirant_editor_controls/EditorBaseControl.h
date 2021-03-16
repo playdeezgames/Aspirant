@@ -25,6 +25,7 @@ namespace aspirant::editor::controls
 		{
 			return spriteManager;
 		}
+		void DrawObject(SDL_Renderer*, tggd::graphics::XY<int>, const aspirant::game::ScenarioObjectInstance*) const;
 	public:
 		EditorBaseControl
 		(

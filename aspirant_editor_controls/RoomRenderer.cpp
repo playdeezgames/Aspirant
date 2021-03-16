@@ -1,6 +1,4 @@
 #include "RoomRenderer.h"
-#include "TerrainDescriptor.h"
-#include "CreatureDescriptor.h"
 namespace aspirant::editor::controls
 {
 	class RoomRendererPlotter : public tggd::graphics::Plotter<size_t, int>
@@ -20,30 +18,6 @@ namespace aspirant::editor::controls
 		: EditorBaseControl(editorContext, spriteManager, new RoomRendererPlotter())
 	{
 
-	}
-
-	void RoomRenderer::DrawObject
-	(
-		SDL_Renderer* renderer, 
-		const tggd::graphics::XY<int>& position, 
-		const aspirant::game::ScenarioObjectInstance* obj
-	) const
-	{
-		if (obj)
-		{
-			auto& descriptor = obj->GetDescriptor();
-			if (descriptor.GetType() == "terrain")//TODO: magic string
-			{
-				const aspirant::game::TerrainDescriptor& terrainDescriptor = dynamic_cast<const aspirant::game::TerrainDescriptor&>(descriptor);
-				GetSpriteManager().Get(terrainDescriptor.GetSprite()).Draw(renderer, position);
-			}
-			else if (descriptor.GetType() == "creature")//TODO: magic string
-			{
-				const aspirant::game::CreatureDescriptor& creatureDescriptor = dynamic_cast<const aspirant::game::CreatureDescriptor&>(descriptor);
-				GetSpriteManager().Get(creatureDescriptor.GetSprite()).Draw(renderer, position);
-			}
-
-		}
 	}
 
 	void RoomRenderer::DrawCell(SDL_Renderer* renderer, const tggd::graphics::XY<size_t>& viewPosition, const aspirant::game::ScenarioRoomCell* cell) const
