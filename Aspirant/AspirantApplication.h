@@ -18,6 +18,7 @@
 #include "EditorContext.h"
 #include "RoomRenderer.h"
 #include "RoomCellObjectsRenderer.h"
+#include "DescriptorSelectorRenderer.h"
 namespace aspirant
 {
 	class AspirantApplication : public tggd::common::Application
@@ -41,6 +42,7 @@ namespace aspirant
 		aspirant::editor::context::EditorContext editorContext;
 		aspirant::editor::controls::RoomRenderer roomRenderer;
 		aspirant::editor::controls::RoomCellObjectsRenderer roomCellObjectsRenderer;
+		aspirant::editor::controls::DescriptorSelectorRenderer descriptorSelectorRenderer;
 		bool OnSetUIState(const aspirant::commonui::UIState&);
 		bool OnKeyDown(const SDL_KeyboardEvent&);
 		bool OnSdlEvent(const SDL_Event&);

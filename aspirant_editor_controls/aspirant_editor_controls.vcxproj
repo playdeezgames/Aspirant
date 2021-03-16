@@ -20,10 +20,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EditorBaseControl.h" />
+    <ClInclude Include="DescriptorSelectorRenderer.h" />
     <ClInclude Include="RoomCellObjectsRenderer.h" />
     <ClInclude Include="RoomRenderer.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DescriptorSelectorRenderer.cpp" />
     <ClCompile Include="EditorBaseControl.cpp" />
     <ClCompile Include="RoomCellObjectsRenderer.cpp" />
     <ClCompile Include="RoomRenderer.cpp" />

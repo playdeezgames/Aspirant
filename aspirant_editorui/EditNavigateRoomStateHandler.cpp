@@ -12,6 +12,7 @@ namespace aspirant::editorui
 		CommonEditorStateHandler::OnDraw(renderer);
 		roomRenderer.Draw(renderer);
 		roomCellObjectsRenderer.Draw(renderer);
+		descriptorSelectorRenderer.Draw(renderer);
 		GetUIContext().GetLayoutManager().GetDescriptor(LAYOUT_ROOM_VIEW_POSITION)->Draw(renderer);
 		return false;
 	}
@@ -66,11 +67,13 @@ namespace aspirant::editorui
 		aspirant::editor::context::EditorContext& editorContext,
 		const aspirant::commonui::UIContext& uiContext,
 		const aspirant::editor::controls::RoomRenderer& roomRenderer,
-		const aspirant::editor::controls::RoomCellObjectsRenderer& roomCellObjectsRenderer
+		const aspirant::editor::controls::RoomCellObjectsRenderer& roomCellObjectsRenderer,
+		const aspirant::editor::controls::DescriptorSelectorRenderer& descriptorSelectorRenderer
 	)
 		: CommonEditorStateHandler(parent, aspirant::commonui::UIState::EDIT_NAVIGATE_ROOM, LAYOUT_NAME, uiContext, editorContext)
 		, roomRenderer(roomRenderer)
 		, roomCellObjectsRenderer(roomCellObjectsRenderer)
+		, descriptorSelectorRenderer(descriptorSelectorRenderer)
 	{
 
 	}
