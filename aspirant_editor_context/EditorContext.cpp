@@ -14,6 +14,7 @@ namespace aspirant::editor::context
 		, newRoom()
 		, roomList(scenario)
 		, roomView(tggd::graphics::XY<size_t>(10,10))//TODO: magic number!
+		, roomCellObjects(roomView, roomList)
 	{
 
 	}
@@ -22,29 +23,4 @@ namespace aspirant::editor::context
 	{
 		tggd::data::JSONUtility::SaveJSON(GetScenarioSelector().Get()->GetFileName(), GetScenario().ToJSON());
 	}
-
-	const aspirant::game::ScenarioRoom* EditorContext::GetRoom() const
-	{
-		if (GetRoomList().GetRoomCount() > GetRoomList().GetRoomIndex())
-		{
-			return scenario.GetRoom(GetRoomList().GetRoomList()[GetRoomList().GetRoomIndex()]);
-		}
-		else
-		{
-			return nullptr;
-		}
-	}
-
-	aspirant::game::ScenarioRoom* EditorContext::GetRoom()
-	{
-		if (GetRoomList().GetRoomCount() > GetRoomList().GetRoomIndex())
-		{
-			return scenario.GetRoom(GetRoomList().GetRoomList()[GetRoomList().GetRoomIndex()]);
-		}
-		else
-		{
-			return nullptr;
-		}
-	}
-
 }

@@ -24,10 +24,12 @@
     <ClInclude Include="EditorRoomListContext.h" />
     <ClInclude Include="EditorRoomViewContext.h" />
     <ClInclude Include="EditorScenarioSelector.h" />
+    <ClInclude Include="EditorRoomCellObjectsContext.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EditorContext.cpp" />
     <ClCompile Include="EditorNewRoomContext.cpp" />
+    <ClCompile Include="EditorRoomCellObjectsContext.cpp" />
     <ClCompile Include="EditorRoomListContext.cpp" />
     <ClCompile Include="EditorRoomViewContext.cpp" />
     <ClCompile Include="EditorScenarioSelector.cpp" />

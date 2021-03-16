@@ -2,7 +2,7 @@
 #include "Utility.h"
 namespace aspirant::editor::context
 {
-	EditorRoomListContext::EditorRoomListContext(const aspirant::game::Scenario& scenario)
+	EditorRoomListContext::EditorRoomListContext(aspirant::game::Scenario& scenario)
 		: scenario(scenario)
 	{
 
@@ -46,6 +46,29 @@ namespace aspirant::editor::context
 	void EditorRoomListContext::PreviousRoom()
 	{
 		SetRoomIndex(tggd::common::Utility::PreviousIndex(GetRoomIndex(), GetRoomCount()));
+	}
+	const aspirant::game::ScenarioRoom* EditorRoomListContext::GetRoom() const
+	{
+		if (GetRoomCount() > GetRoomIndex())
+		{
+			return scenario.GetRoom(GetRoomList()[GetRoomIndex()]);
+		}
+		else
+		{
+			return nullptr;
+		}
+	}
+
+	aspirant::game::ScenarioRoom* EditorRoomListContext::GetRoom()
+	{
+		if (GetRoomCount() > GetRoomIndex())
+		{
+			return scenario.GetRoom(GetRoomList()[GetRoomIndex()]);
+		}
+		else
+		{
+			return nullptr;
+		}
 	}
 
 }

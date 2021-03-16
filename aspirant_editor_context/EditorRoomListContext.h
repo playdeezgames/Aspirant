@@ -7,11 +7,11 @@ namespace aspirant::editor::context
 	class EditorRoomListContext
 	{
 	private:
-		const aspirant::game::Scenario& scenario;
+		aspirant::game::Scenario& scenario;
 		std::vector<std::string> roomList;
 		size_t roomIndex;
 	public:
-		EditorRoomListContext(const aspirant::game::Scenario&);
+		EditorRoomListContext(aspirant::game::Scenario&);
 		void UpdateRoomList();
 		void SetRoomIndex(size_t);
 		size_t GetRoomIndex() const;
@@ -20,5 +20,7 @@ namespace aspirant::editor::context
 		void NextRoom();
 		void PreviousRoom();
 
+		const aspirant::game::ScenarioRoom* GetRoom() const;
+		aspirant::game::ScenarioRoom* GetRoom();
 	};
 }

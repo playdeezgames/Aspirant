@@ -20,7 +20,7 @@ namespace aspirant::editorui
 	{
 		int newCursorX = (int)GetEditorContext().GetRoomView().GetCursor().GetX() + delta.GetX();
 		int newCursorY = (int)GetEditorContext().GetRoomView().GetCursor().GetY() + delta.GetY();
-		auto room = GetEditorContext().GetRoom();
+		auto room = GetEditorContext().GetRoomList().GetRoom();
 		newCursorX = tggd::common::Utility::PositiveModulo(newCursorX, room->GetColumns());
 		newCursorY = tggd::common::Utility::PositiveModulo(newCursorY, room->GetRows());
 		GetEditorContext().GetRoomView().SetCursor({ (size_t)newCursorX, (size_t)newCursorY });

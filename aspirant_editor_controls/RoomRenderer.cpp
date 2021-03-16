@@ -104,7 +104,7 @@ namespace aspirant::editor::controls
 
 	void RoomRenderer::Draw(SDL_Renderer* renderer) const
 	{
-		DrawRoom(renderer, GetEditorContext().GetRoom());
+		DrawRoom(renderer, GetEditorContext().GetRoomList().GetRoom());
 		DrawMapCursor(renderer);
 	}
 }
