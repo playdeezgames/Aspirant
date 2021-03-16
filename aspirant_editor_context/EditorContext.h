@@ -56,6 +56,15 @@ namespace aspirant::editor::context
 			return roomView;
 		}
 
+		const EditorRoomCellObjectsContext& GetRoomCellObjects() const
+		{
+			return roomCellObjects;
+		}
+		EditorRoomCellObjectsContext& GetRoomCellObjects()
+		{
+			return roomCellObjects;
+		}
+
 		const aspirant::game::Scenario& GetScenario() const { return scenario; }
 		aspirant::game::Scenario& GetScenario() { return scenario; }
 		void SaveScenario();

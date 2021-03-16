@@ -31,4 +31,11 @@ namespace aspirant::editor::context
 		return nullptr;
 	}
 
+	void EditorRoomCellObjectsContext::Reset()
+	{
+		auto cell = GetCell();
+		index = (cell) ? (cell->GetObjects().size()) : (0);
+	}
+
+
 }

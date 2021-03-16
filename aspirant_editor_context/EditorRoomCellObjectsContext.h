@@ -21,5 +21,6 @@ namespace aspirant::editor::context
 		}
 		const aspirant::game::ScenarioRoomCell* GetCell() const;
 		aspirant::game::ScenarioRoomCell* GetCell();
+		void Reset();
 	};
 }

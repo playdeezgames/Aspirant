@@ -24,7 +24,7 @@ namespace aspirant::editorui
 		newCursorX = tggd::common::Utility::PositiveModulo(newCursorX, room->GetColumns());
 		newCursorY = tggd::common::Utility::PositiveModulo(newCursorY, room->GetRows());
 		GetEditorContext().GetRoomView().SetCursor({ (size_t)newCursorX, (size_t)newCursorY });
-
+		GetEditorContext().GetRoomCellObjects().Reset();
 	}
 
 	bool EditNavigateRoomStateHandler::OnCommand(const aspirant::commonui::Command& command)
