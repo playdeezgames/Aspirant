@@ -6,13 +6,18 @@ namespace tggd::common
 	{
 	private:
 		messageid_t messageId;
+	protected:
+		bool HasId(const messageid_t& messageId)
+		{
+			return this && GetId() == messageId;
+		}
 	public:
-		MGeneric(messageid_t messageId)
+		MGeneric(const messageid_t& messageId)
 			: messageId(messageId)
 		{
 
 		}
-		messageid_t GetId() const
+		const messageid_t& GetId() const
 		{
 			return messageId;
 		}

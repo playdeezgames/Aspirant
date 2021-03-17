@@ -20,9 +20,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AspirantApplication.cpp" />
+    <ClCompile Include="ConfigurationConstants.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AspirantApplication.h" />
+    <ClInclude Include="ConfigurationConstants.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\aspirant_commonui\aspirant_commonui.vcxproj">

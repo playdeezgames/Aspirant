@@ -7,6 +7,7 @@ namespace aspirant::commonui
 	{
 	private:
 		UIState state;
+		static void MSGID_SetUIState() {}
 	public:
 		MSetUIState(const UIState& state)
 			: MGeneric(MSGID_SetUIState)
@@ -18,6 +19,13 @@ namespace aspirant::commonui
 		{
 			return state;
 		}
-		static void MSGID_SetUIState() {}
+		static bool IsMSetUIState(const tggd::common::MGeneric* message)
+		{
+			return message && message->GetId() == MSGID_SetUIState;
+		}
+		static const MSetUIState* ToMSetUIState(const tggd::common::MGeneric* message)
+		{
+			return static_cast<const aspirant::commonui::MSetUIState*>(message);
+		}
 	};
 }

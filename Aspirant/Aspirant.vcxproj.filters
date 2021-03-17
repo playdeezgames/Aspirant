@@ -14,9 +14,15 @@
     <ClInclude Include="AspirantApplication.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ConfigurationConstants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AspirantApplication.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ConfigurationConstants.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

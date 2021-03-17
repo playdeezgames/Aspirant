@@ -7,6 +7,7 @@ namespace tggd::common
 	{
 	private:
 		const SDL_Event& _event;
+		static void MSGID_SdlEvent() {}
 	public:
 		MEvent(const SDL_Event& evt)
 			: MGeneric(MSGID_SdlEvent)
@@ -18,6 +19,13 @@ namespace tggd::common
 		{
 			return _event;
 		}
-		static void MSGID_SdlEvent() {}
+		static bool IsMEvent(const MGeneric* message)
+		{
+			return message && message->GetId() == MSGID_SdlEvent;
+		}
+		static const MEvent* ToMEvent(const MGeneric* message)
+		{
+			return static_cast<const tggd::common::MEvent*>(message);
+		}
 	};
 }

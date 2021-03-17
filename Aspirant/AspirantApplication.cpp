@@ -17,25 +17,11 @@
 #include "EditScenarioDescriptorStateHandler.h"
 #include "EditNavigateRoomStateHandler.h"
 #include "EditDescriptorSelectorStateHandler.h"
+#include "ConfigurationConstants.h"
 namespace aspirant
 {
-	const std::string APPLICATION_CONFIG_FILE = "config/ui/application.json";
-	const std::string TEXTURE_CONFIG_FILE = "config/graphics/textures.json";
-	const std::string SPRITE_CONFIG_FILE = "config/graphics/sprites.json";
-	const std::string COLOR_CONFIG_FILE = "config/graphics/colors.json";
-	const std::string FONTS_CONFIG_FILE = "config/graphics/fonts.json";
-	const std::string LAYOUTS_CONFIG_FILE = "config/ui/layouts.json";
-	const std::string STRINGS_CONFIG_FILE = "config/data/strings.json";
-	const std::string INTS_CONFIG_FILE = "config/data/ints.json";
-	const std::string FLAGS_CONFIG_FILE = "config/data/flags.json";
-	const std::string OPTIONS_CONFIG_FILE = "config/options.json";
-	const std::string SFX_CONFIG_FILE = "config/audio/sfx.json";
-	const std::string MUX_CONFIG_FILE = "config/audio/mux.json";
-	const std::string DESCRIPTORS_CONFIG_FILE = "config/game/descriptors.json";
-	const std::string SCENARIOS_CONFIG_FILE = "scenarios/scenarios.json";
-
 	AspirantApplication::AspirantApplication()
-		: tggd::common::Application(APPLICATION_CONFIG_FILE)
+		: tggd::common::Application(ConfigurationConstants::APPLICATION)
 		, finishManager()
 		, textureManager(finishManager)
 		, spriteManager(finishManager)
@@ -45,11 +31,11 @@ namespace aspirant
 		, intManager()
 		, flagManager()
 		, soundManager(finishManager)
-		, optionsManager(soundManager, OPTIONS_CONFIG_FILE)
+		, optionsManager(soundManager, ConfigurationConstants::OPTIONS)
 		, layoutManager(finishManager, spriteManager, colorManager, fontManager, stringManager, intManager, flagManager)
 		, uiState(aspirant::commonui::UIState::SPLASH)
 		, descriptors(finishManager)
-		, scenarios(finishManager, SCENARIOS_CONFIG_FILE)
+		, scenarios(finishManager, ConfigurationConstants::SCENARIOS)
 		, editorContext(descriptors, scenarios)
 		, uiContext(uiState, layoutManager, stringManager)
 		, roomRenderer(editorContext, spriteManager)
@@ -66,17 +52,17 @@ namespace aspirant
 
 	void AspirantApplication::Start(SDL_Renderer* renderer)
 	{
-		stringManager.Start(STRINGS_CONFIG_FILE);
-		intManager.Start(INTS_CONFIG_FILE);
-		flagManager.Start(FLAGS_CONFIG_FILE);
-		colorManager.Start(COLOR_CONFIG_FILE);
-		textureManager.Start(renderer, TEXTURE_CONFIG_FILE);
-		spriteManager.Start(textureManager, SPRITE_CONFIG_FILE);
-		fontManager.Start(FONTS_CONFIG_FILE);
-		layoutManager.Start(LAYOUTS_CONFIG_FILE);
-		soundManager.Start(SFX_CONFIG_FILE, MUX_CONFIG_FILE);
+		stringManager.Start(ConfigurationConstants::STRINGS);
+		intManager.Start(ConfigurationConstants::INTS);
+		flagManager.Start(ConfigurationConstants::FLAGS);
+		colorManager.Start(ConfigurationConstants::COLOR);
+		textureManager.Start(renderer, ConfigurationConstants::TEXTURE);
+		spriteManager.Start(textureManager, ConfigurationConstants::SPRITE);
+		fontManager.Start(ConfigurationConstants::FONTS);
+		layoutManager.Start(ConfigurationConstants::LAYOUTS);
+		soundManager.Start(ConfigurationConstants::SFX, ConfigurationConstants::MUX);
 		optionsManager.Start();
-		descriptors.Start(DESCRIPTORS_CONFIG_FILE);
+		descriptors.Start(ConfigurationConstants::DESCRIPTORS);
 		scenarios.Load();
 
 		new aspirant::navigationui::SplashStateHandler(this, uiContext);
@@ -119,13 +105,13 @@ namespace aspirant
 
 	bool AspirantApplication::OnMessage(const tggd::common::MGeneric* message)
 	{
-		if (message->GetId() == aspirant::commonui::MSetUIState::MSGID_SetUIState)
+		if (aspirant::commonui::MSetUIState::IsMSetUIState(message))
 		{
-			return OnSetUIState(static_cast<const aspirant::commonui::MSetUIState*>(message)->GetState());
+			return OnSetUIState(aspirant::commonui::MSetUIState::ToMSetUIState(message)->GetState());
 		}
-		else if (message->GetId() == tggd::common::MEvent::MSGID_SdlEvent)
+		else if (tggd::common::MEvent::IsMEvent(message))
 		{
-			return OnSdlEvent(static_cast<const tggd::common::MEvent*>(message)->GetEvent());
+			return OnSdlEvent(tggd::common::MEvent::ToMEvent(message)->GetEvent());
 		}
 		return false;
 	}
