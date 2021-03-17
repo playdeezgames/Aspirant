@@ -19,6 +19,10 @@ namespace aspirant::editor::context
 		{
 			return index;
 		}
+		void SetIndex(size_t idx)
+		{
+			index = idx;
+		}
 		size_t GetCount() const
 		{
 			return descriptorTypes.size();

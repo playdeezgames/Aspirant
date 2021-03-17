@@ -16,6 +16,7 @@
 #include "EditNewRoomStateHandler.h"
 #include "EditScenarioDescriptorStateHandler.h"
 #include "EditNavigateRoomStateHandler.h"
+#include "EditDescriptorSelectorStateHandler.h"
 namespace aspirant
 {
 	const std::string APPLICATION_CONFIG_FILE = "config/ui/application.json";
@@ -99,6 +100,16 @@ namespace aspirant
 			roomCellObjectsRenderer,
 			descriptorSelectorRenderer
 		);
+		new aspirant::editorui::EditDescriptorSelectorStateHandler
+		(
+			this,
+			editorContext,
+			uiContext,
+			roomRenderer,
+			roomCellObjectsRenderer,
+			descriptorSelectorRenderer
+		);
+		
 	}
 
 	void AspirantApplication::Finish()

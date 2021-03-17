@@ -44,6 +44,9 @@
     <ClInclude Include="CommonRoomEditorStateHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="EditDescriptorSelectorStateHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EditNavigateRoomStateHandler.cpp">
@@ -65,6 +68,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="StartEditorStateHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EditDescriptorSelectorStateHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -12,5 +12,6 @@
     "EditNewRoom":"config/ui/layouts/editNewRoomPage.json",
     "EditScenarioDescriptor":"config/ui/layouts/editScenarioDescriptorPage.json",
     "EditNavigateRoom":"config/ui/layouts/editNavigateRoomPage.json",
-    "RoomViewPosition":"config/ui/layouts/roomViewPositionPartial.json"
+    "RoomViewPosition":"config/ui/layouts/roomViewPositionPartial.json",
+    "EditDescriptorSelector":"config/ui/layouts/editDescriptorSelectorPage.json"
 }
