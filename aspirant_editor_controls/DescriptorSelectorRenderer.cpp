@@ -21,6 +21,19 @@ namespace aspirant::editor::controls
 
 	void DescriptorSelectorRenderer::Draw(SDL_Renderer* renderer) const
 	{
-
+		const size_t COLUMNS = 7;
+		for (size_t idx = 0; idx < GetContext().GetDescriptorSelector().GetCount(); ++idx)
+		{
+			tggd::graphics::XY<int> position = GetPlotter()->Plot({ idx % COLUMNS, idx / COLUMNS });
+			auto descriptor = GetContext().GetDescriptorSelector().GetDescriptor(idx);
+			if (descriptor)
+			{
+				DrawDescriptor(renderer, position, *descriptor);
+			}
+			if (idx == GetContext().GetDescriptorSelector().GetIndex())
+			{
+				GetSpriteManager().Get("MapCursor").Draw(renderer, position);//TODO: magic string
+			}
+		}
 	}
 }
