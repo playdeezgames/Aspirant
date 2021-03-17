@@ -11,6 +11,7 @@ namespace aspirant::editorui
 	{
 	private:
 		void MoveCursor(const tggd::graphics::XY<int>&);
+		void PlaceObject();
 	protected:
 		bool OnCommand(const aspirant::commonui::Command&);
 		bool OnUpdate(int);

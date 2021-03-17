@@ -48,6 +48,9 @@ namespace aspirant::editorui
 		case aspirant::commonui::Command::RIGHT:
 			MoveCursor({ 1, 0 });
 			break;
+		case aspirant::commonui::Command::GREEN:
+			PlaceObject();
+			break;
 		case aspirant::commonui::Command::NEXT:
 			SetUIState(aspirant::commonui::UIState::EDIT_DESCRIPTOR_SELECTOR);
 			break;
@@ -86,4 +89,17 @@ namespace aspirant::editorui
 	{
 
 	}
+
+	void EditNavigateRoomStateHandler::PlaceObject()
+	{
+		auto& cursorPosition = GetEditorContext().GetRoomView().GetCursor();
+		auto descriptor = GetEditorContext().GetDescriptorSelector().GetDescriptor(GetEditorContext().GetDescriptorSelector().GetIndex());
+		auto roomCell = GetEditorContext().GetRoomList().GetRoom()->GetCell(cursorPosition.GetX(), cursorPosition.GetY());
+		auto obj = descriptor->CreateObject();
+		if (!roomCell->AddObject(obj))
+		{
+			delete obj;
+		}
+	}
+
 }
