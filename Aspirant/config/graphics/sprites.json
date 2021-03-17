@@ -2717,8 +2717,8 @@
     },
     "AvatarTile":{
         "texture": "urizen-onebit-tileset",
-        "x": 978,
-        "y": 3,
+        "x": 3,
+        "y": 354,
         "w": 36,
         "h": 36
     },
