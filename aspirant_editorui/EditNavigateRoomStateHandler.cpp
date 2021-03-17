@@ -33,7 +33,7 @@ namespace aspirant::editorui
 		switch (command)
 		{
 		case aspirant::commonui::Command::BACK:
-		case aspirant::commonui::Command::RED:
+			GetEditorContext().SaveScenario();
 			SetUIState(aspirant::commonui::UIState::EDIT_PICK_ROOM);
 			break;
 		case aspirant::commonui::Command::UP:
@@ -50,6 +50,9 @@ namespace aspirant::editorui
 			break;
 		case aspirant::commonui::Command::GREEN:
 			PlaceObject();
+			break;
+		case aspirant::commonui::Command::RED:
+			RemoveObject();
 			break;
 		case aspirant::commonui::Command::NEXT:
 			SetUIState(aspirant::commonui::UIState::EDIT_DESCRIPTOR_SELECTOR);
@@ -101,5 +104,17 @@ namespace aspirant::editorui
 			delete obj;
 		}
 	}
+
+	void EditNavigateRoomStateHandler::RemoveObject()
+	{
+		auto& cursorPosition = GetEditorContext().GetRoomView().GetCursor();
+		auto roomCell = GetEditorContext().GetRoomList().GetRoom()->GetCell(cursorPosition.GetX(), cursorPosition.GetY());
+		auto obj = roomCell->RemoveObject();
+		if (obj)
+		{
+			delete obj;
+		}
+	}
+
 
 }
