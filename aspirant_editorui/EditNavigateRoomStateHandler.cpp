@@ -48,6 +48,9 @@ namespace aspirant::editorui
 		case aspirant::commonui::Command::RIGHT:
 			MoveCursor({ 1, 0 });
 			break;
+		case aspirant::commonui::Command::NEXT:
+			SetUIState(aspirant::commonui::UIState::EDIT_DESCRIPTOR_SELECTOR);
+			break;
 		}
 		return true;
 	}
@@ -70,10 +73,16 @@ namespace aspirant::editorui
 		const aspirant::editor::controls::RoomCellObjectsRenderer& roomCellObjectsRenderer,
 		const aspirant::editor::controls::DescriptorSelectorRenderer& descriptorSelectorRenderer
 	)
-		: CommonEditorStateHandler(parent, aspirant::commonui::UIState::EDIT_NAVIGATE_ROOM, LAYOUT_NAME, uiContext, editorContext)
-		, roomRenderer(roomRenderer)
-		, roomCellObjectsRenderer(roomCellObjectsRenderer)
-		, descriptorSelectorRenderer(descriptorSelectorRenderer)
+		: CommonRoomEditorStateHandler
+		(
+			parent, 
+			aspirant::commonui::UIState::EDIT_NAVIGATE_ROOM, 
+			LAYOUT_NAME, uiContext, 
+			editorContext, 
+			roomRenderer,
+			roomCellObjectsRenderer,
+			descriptorSelectorRenderer
+		)
 	{
 
 	}

@@ -1,5 +1,5 @@
 #pragma once
-#include "CommonEditorStateHandler.h"
+#include "CommonRoomEditorStateHandler.h"
 #include "EditorContext.h"
 #include "RoomRenderer.h"
 #include "RoomCellObjectsRenderer.h"
@@ -7,12 +7,9 @@
 #include "XY.h"
 namespace aspirant::editorui
 {
-	class EditNavigateRoomStateHandler : public CommonEditorStateHandler
+	class EditNavigateRoomStateHandler : public CommonRoomEditorStateHandler
 	{
 	private:
-		const aspirant::editor::controls::RoomRenderer& roomRenderer;
-		const aspirant::editor::controls::RoomCellObjectsRenderer& roomCellObjectsRenderer;
-		const aspirant::editor::controls::DescriptorSelectorRenderer& descriptorSelectorRenderer;
 		void MoveCursor(const tggd::graphics::XY<int>&);
 	protected:
 		bool OnCommand(const aspirant::commonui::Command&);
