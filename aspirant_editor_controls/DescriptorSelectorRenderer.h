@@ -1,8 +1,9 @@
 #pragma once
 #include "EditorBaseControl.h"
+#include "EditorContext.h"
 namespace aspirant::editor::controls
 {
-	class DescriptorSelectorRenderer: public EditorBaseControl
+	class DescriptorSelectorRenderer: public EditorBaseControl<aspirant::editor::context::EditorContext>
 	{
 	public:
 		DescriptorSelectorRenderer

@@ -27,7 +27,7 @@ namespace aspirant::editor::controls
 			auto& objs = cell->GetObjects();
 			for (auto& obj : objs)
 			{
-				auto plotPosition = GetCellPlotter()->Plot(viewPosition);
+				auto plotPosition = GetPlotter()->Plot(viewPosition);
 				DrawObject(renderer, plotPosition, obj);
 			}
 		}
@@ -38,9 +38,9 @@ namespace aspirant::editor::controls
 	{
 		if (room)
 		{
-			for (size_t viewRow = 0; viewRow < GetEditorContext().GetRoomView().GetSize().GetY(); ++viewRow)
+			for (size_t viewRow = 0; viewRow < GetContext().GetRoomView().GetSize().GetY(); ++viewRow)
 			{
-				for (size_t viewColumn = 0; viewColumn < GetEditorContext().GetRoomView().GetSize().GetX(); ++viewColumn)
+				for (size_t viewColumn = 0; viewColumn < GetContext().GetRoomView().GetSize().GetX(); ++viewColumn)
 				{
 					tggd::graphics::XY<size_t> viewPosition =
 						tggd::graphics::XY<size_t>
@@ -49,14 +49,14 @@ namespace aspirant::editor::controls
 							viewRow
 							);
 					tggd::graphics::XY<size_t> cellPosition =
-						viewPosition + GetEditorContext().GetRoomView().GetAnchor();
+						viewPosition + GetContext().GetRoomView().GetAnchor();
 					auto cell = room->GetCell(cellPosition.GetX(), cellPosition.GetY());
 					if (cell)
 					{
 						auto& objs = cell->GetObjects();
 						for (auto& obj : objs)
 						{
-							auto plotPosition = GetCellPlotter()->Plot(viewPosition);
+							auto plotPosition = GetPlotter()->Plot(viewPosition);
 							DrawObject(renderer, plotPosition, obj);
 						}
 					}
@@ -69,16 +69,16 @@ namespace aspirant::editor::controls
 	{
 		//MapCursor
 		//vp = cp - an
-		auto& cursorPosition = GetEditorContext().GetRoomView().GetCursor();
-		auto& anchorPosition = GetEditorContext().GetRoomView().GetAnchor();
+		auto& cursorPosition = GetContext().GetRoomView().GetCursor();
+		auto& anchorPosition = GetContext().GetRoomView().GetAnchor();
 		tggd::graphics::XY<size_t> viewPosition = { cursorPosition.GetX() - anchorPosition.GetX(), cursorPosition.GetY() - anchorPosition.GetY()  };
 		//TODO: magic string vv
-		GetSpriteManager().Get("MapCursor").Draw(renderer, GetCellPlotter()->Plot(viewPosition));
+		GetSpriteManager().Get("MapCursor").Draw(renderer, GetPlotter()->Plot(viewPosition));
 	}
 
 	void RoomRenderer::Draw(SDL_Renderer* renderer) const
 	{
-		DrawRoom(renderer, GetEditorContext().GetRoomList().GetRoom());
+		DrawRoom(renderer, GetContext().GetRoomList().GetRoom());
 		DrawMapCursor(renderer);
 	}
 }

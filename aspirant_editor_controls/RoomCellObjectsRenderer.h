@@ -1,8 +1,9 @@
 #pragma once
 #include "EditorBaseControl.h"
+#include "EditorContext.h"
 namespace aspirant::editor::controls
 {
-	class RoomCellObjectsRenderer : public EditorBaseControl
+	class RoomCellObjectsRenderer : public EditorBaseControl<aspirant::editor::context::EditorContext>
 	{
 	public:
 		RoomCellObjectsRenderer

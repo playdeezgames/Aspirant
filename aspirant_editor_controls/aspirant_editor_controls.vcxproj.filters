@@ -31,9 +31,6 @@
     <ClCompile Include="RoomRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="EditorBaseControl.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="DescriptorSelectorRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

@@ -1,47 +1,75 @@
 #pragma once
 #include "Drawn.h"
-#include "EditorContext.h"
 #include "Plotter.h"
 #include "SpriteManager.h"
 #include "FinishManager.h"
+#include "ScenarioObjectInstance.h"
+#include "FinishUtility.h"
+#include "CreatureDescriptor.h"
+#include "TerrainDescriptor.h"
 namespace aspirant::editor::controls
 {
+	template<typename TContext>
 	class EditorBaseControl : public tggd::graphics::Drawn
 	{
 	private:
-		const aspirant::editor::context::EditorContext& editorContext;
-		tggd::graphics::Plotter<size_t, int>* cellPlotter;
+		const TContext& context;
+		tggd::graphics::Plotter<size_t, int>* plotter;
 		const tggd::graphics::SpriteManager& spriteManager;
+		const std::string TYPE_TERRAIN = "terrain";
+		const std::string TYPE_CREATURE = "creature";
 	protected:
-		const aspirant::editor::context::EditorContext& GetEditorContext() const
+		const TContext& GetContext() const
 		{
-			return editorContext;
+			return context;
 		}
-		const tggd::graphics::Plotter<size_t, int>* GetCellPlotter() const
+		const tggd::graphics::Plotter<size_t, int>* GetPlotter() const
 		{
-			return cellPlotter;
+			return plotter;
 		}
 		const tggd::graphics::SpriteManager& GetSpriteManager() const
 		{
 			return spriteManager;
 		}
-		void DrawObject(SDL_Renderer*, tggd::graphics::XY<int>, const aspirant::game::ScenarioObjectInstance*) const;
+		void DrawObject
+		(
+			SDL_Renderer* renderer, 
+			tggd::graphics::XY<int> position, 
+			const aspirant::game::ScenarioObjectInstance* obj
+		) const
+		{
+			if (obj)
+			{
+				auto& descriptor = obj->GetDescriptor();
+				if (descriptor.GetType() == TYPE_TERRAIN)
+				{
+					const aspirant::game::TerrainDescriptor& terrainDescriptor = dynamic_cast<const aspirant::game::TerrainDescriptor&>(descriptor);
+					GetSpriteManager().Get(terrainDescriptor.GetSprite()).Draw(renderer, position);
+				}
+				else if (descriptor.GetType() == TYPE_CREATURE)
+				{
+					const aspirant::game::CreatureDescriptor& creatureDescriptor = dynamic_cast<const aspirant::game::CreatureDescriptor&>(descriptor);
+					GetSpriteManager().Get(creatureDescriptor.GetSprite()).Draw(renderer, position);
+				}
+			}
+		}
+
 	public:
 		EditorBaseControl
 		(
-			const aspirant::editor::context::EditorContext& editorContext,
+			const TContext& context,
 			const tggd::graphics::SpriteManager& spriteManager,
-			tggd::graphics::Plotter<size_t, int>* cellPlotter
+			tggd::graphics::Plotter<size_t, int>* plotter
 		)
-			: editorContext(editorContext)
+			: context(context)
 			, spriteManager(spriteManager)
-			, cellPlotter(cellPlotter)
+			, plotter(plotter)
 		{
 
 		}
 		virtual ~EditorBaseControl()
 		{
-			tggd::common::FinishUtility::SafeDelete(cellPlotter);
+			tggd::common::FinishUtility::SafeDelete(plotter);
 		}
 	};
 

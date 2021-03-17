@@ -1,8 +1,9 @@
 #pragma once
+#include "EditorContext.h"
 #include "EditorBaseControl.h"
 namespace aspirant::editor::controls
 {
-	class RoomRenderer: public EditorBaseControl
+	class RoomRenderer: public EditorBaseControl<aspirant::editor::context::EditorContext>
 	{
 	private:
 		void DrawCell(SDL_Renderer*, const tggd::graphics::XY<size_t>&, const aspirant::game::ScenarioRoomCell*) const;

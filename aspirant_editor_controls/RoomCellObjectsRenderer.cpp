@@ -22,12 +22,12 @@ namespace aspirant::editor::controls
 
 	void RoomCellObjectsRenderer::Draw(SDL_Renderer* renderer) const
 	{
-		auto& objs = GetEditorContext().GetRoomCellObjects().GetCell()->GetObjects();
+		auto& objs = GetContext().GetRoomCellObjects().GetCell()->GetObjects();
 		size_t column = 0;
 		for (auto& obj : objs)
 		{
-			DrawObject(renderer, GetCellPlotter()->Plot({ column++, 0 }), obj);
+			DrawObject(renderer, GetPlotter()->Plot({ column++, 0 }), obj);
 		}
-		GetSpriteManager().Get("MapCursor").Draw(renderer, GetCellPlotter()->Plot({ GetEditorContext().GetRoomCellObjects().GetIndex(), 0 }));
+		GetSpriteManager().Get("MapCursor").Draw(renderer, GetPlotter()->Plot({ GetContext().GetRoomCellObjects().GetIndex(), 0 }));
 	}
 }
