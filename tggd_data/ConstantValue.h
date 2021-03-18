@@ -18,6 +18,7 @@ namespace tggd::data
 		{
 
 		}
+	protected:
 		const TValue& Get() const
 		{
 			return value;

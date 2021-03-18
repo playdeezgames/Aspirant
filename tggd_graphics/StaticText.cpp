@@ -111,8 +111,8 @@ namespace tggd::graphics
 	{
 		if (hasDropShadow)
 		{
-			fontStore[fontName->Get()].WriteText(renderer, tggd::common::XY<int>(x->Get() + dropShadowX->Get(), y->Get() + dropShadowY->Get()), text->Get(), dropShadowColor->Get(), (HorizontalAlignment)alignment->Get());
+			fontStore[**fontName].WriteText(renderer, tggd::common::XY<int>(**x + **dropShadowX, **y + **dropShadowY), **text, **dropShadowColor, (HorizontalAlignment)**alignment);
 		}
-		fontStore[fontName->Get()].WriteText(renderer, tggd::common::XY<int>(x->Get(), y->Get()), text->Get(), color->Get(), (HorizontalAlignment)alignment->Get());
+		fontStore[**fontName].WriteText(renderer, tggd::common::XY<int>(**x, **y), **text, **color, (HorizontalAlignment)**alignment);
 	}
 }
