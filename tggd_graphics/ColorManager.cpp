@@ -22,7 +22,7 @@ namespace tggd::graphics
 
 	}
 
-	const SDL_Color& ColorManager::Get(const std::string& key) const
+	const SDL_Color& ColorManager::operator[](const std::string& key) const
 	{
 		return *GetDescriptor(key);
 	}

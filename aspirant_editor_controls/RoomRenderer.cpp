@@ -73,7 +73,7 @@ namespace aspirant::editor::controls
 		auto& anchorPosition = GetContext().GetRoomView().GetAnchor();
 		tggd::common::XY<size_t> viewPosition = { cursorPosition.GetX() - anchorPosition.GetX(), cursorPosition.GetY() - anchorPosition.GetY()  };
 		//TODO: magic string vv
-		GetSpriteManager().Get("MapCursor").Draw(renderer, GetPlotter()->Plot(viewPosition));
+		GetSpriteManager()["MapCursor"].Draw(renderer, GetPlotter()->Plot(viewPosition));
 	}
 
 	void RoomRenderer::Draw(SDL_Renderer* renderer) const

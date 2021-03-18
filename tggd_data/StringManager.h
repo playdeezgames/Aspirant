@@ -11,7 +11,7 @@ namespace tggd::data
 	public:
 		StringManager();
 		void Start(const std::string&);
-		const std::string& Get(const std::string&) const;
+		const std::string& operator[](const std::string&) const;
 		void Set(const std::string&, const std::string&);
 	};
 }

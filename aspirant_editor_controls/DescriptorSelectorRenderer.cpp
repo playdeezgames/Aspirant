@@ -32,7 +32,7 @@ namespace aspirant::editor::controls
 			}
 			if (idx == GetContext().GetDescriptorSelector().GetIndex())
 			{
-				GetSpriteManager().Get("MapCursor").Draw(renderer, position);//TODO: magic string
+				GetSpriteManager()["MapCursor"].Draw(renderer, position);//TODO: magic string
 			}
 		}
 	}

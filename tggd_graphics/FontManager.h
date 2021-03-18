@@ -18,6 +18,6 @@ namespace tggd::graphics
 			const SpriteManager&,
 			const ColorManager&
 		);
-		const SpriteFont& Get(const std::string&) const;
+		const SpriteFont& operator[](const std::string&) const;
 	};
 }

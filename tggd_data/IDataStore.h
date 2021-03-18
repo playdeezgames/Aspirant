@@ -6,6 +6,6 @@ namespace tggd::data
 	class IDataStore
 	{
 	public:
-		virtual const TStored& Get(const std::string&) const = 0;
+		virtual const TStored& operator[](const std::string&) const = 0;
 	};
 }

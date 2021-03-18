@@ -19,7 +19,7 @@ namespace tggd::graphics
 
 	}
 
-	const SpriteFont& FontManager::Get(const std::string& key) const
+	const SpriteFont& FontManager::operator[](const std::string& key) const
 	{
 		return *GetDescriptor(key);
 	}

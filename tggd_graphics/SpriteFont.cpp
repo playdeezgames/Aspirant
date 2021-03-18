@@ -23,7 +23,7 @@ namespace tggd::graphics
 	const tggd::graphics::Sprite& SpriteFont::GetGlyphSprite(char ch) const
 	{
 		auto iter = glyphs.find(ch);
-		return spriteManager.Get(iter->second);
+		return spriteManager[iter->second];
 	}
 
 
@@ -31,7 +31,7 @@ namespace tggd::graphics
 	tggd::common::XY<int> SpriteFont::WriteGlyph(SDL_Renderer* renderer, const tggd::common::XY<int>& xy, char ch, const std::string& color) const
 	{
 		const auto& sprite = GetGlyphSprite(ch);
-		sprite.Draw(renderer, xy, colorManager.Get(color));
+		sprite.Draw(renderer, xy, colorManager[color]);
 		return tggd::common::XY(xy.GetX() + sprite.GetWidth(), xy.GetY());
 	}
 

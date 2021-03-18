@@ -23,11 +23,6 @@ namespace tggd::data
 	const bool FLAG_PRESENT = true;
 	const bool FLAG_ABSENT = false;
 
-	const bool& FlagManager::Get(const std::string& key) const
-	{
-		return (flags.contains(key)) ? (FLAG_PRESENT) : (FLAG_ABSENT);
-	}
-
 	void FlagManager::Set(const std::string& key)
 	{
 		flags.insert(key);
@@ -40,7 +35,7 @@ namespace tggd::data
 
 	void FlagManager::Toggle(const std::string& key)
 	{
-		if (Get(key))
+		if ((*this)[key])
 		{
 			Clear(key);
 		}
@@ -50,4 +45,8 @@ namespace tggd::data
 		}
 	}
 
+	const bool& FlagManager::operator[](const std::string& key) const
+	{
+		return (flags.contains(key)) ? (FLAG_PRESENT) : (FLAG_ABSENT);
+	}
 }

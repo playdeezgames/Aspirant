@@ -80,7 +80,7 @@ namespace aspirant::navigationui
 			SetUIState(aspirant::commonui::UIState::OPTIONS);
 			return;
 		case MainMenuItem::ABOUT:
-			SDL_SetClipboardText(GetStringManager().Get(ITCH_URL_STRING).c_str());
+			SDL_SetClipboardText(GetStringManager()[ITCH_URL_STRING].c_str());
 			SetUIState(aspirant::commonui::UIState::ABOUT);
 			return;
 		case MainMenuItem::QUIT:

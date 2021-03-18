@@ -57,15 +57,12 @@ namespace tggd::graphics
 
 	void StaticImage::Draw(SDL_Renderer* renderer) const
 	{
-		spriteStore.Get
-		(
-			spriteName->Get()
-		)
+		spriteStore[spriteName->Get()]
 			.Draw
 			(
 				renderer,
 				tggd::common::XY<int>(x->Get(), y->Get()),
-				colorStore.Get(colorName->Get())
+				colorStore[colorName->Get()]
 			);
 	}
 

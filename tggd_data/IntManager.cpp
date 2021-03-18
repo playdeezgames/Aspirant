@@ -20,7 +20,7 @@ namespace tggd::data
 		}
 	}
 
-	const int& IntManager::Get(const std::string& key) const
+	const int& IntManager::operator[](const std::string& key) const
 	{
 		return table.find(key)->second;
 	}

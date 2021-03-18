@@ -11,7 +11,7 @@ namespace tggd::data
 	public:
 		FlagManager();
 		void Start(const std::string&);
-		const bool& Get(const std::string&) const;
+		const bool& operator[](const std::string&) const;
 		void Set(const std::string&);
 		void Clear(const std::string&);
 		void Toggle(const std::string&);

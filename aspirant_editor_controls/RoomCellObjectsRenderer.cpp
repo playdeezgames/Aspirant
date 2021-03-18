@@ -28,6 +28,6 @@ namespace aspirant::editor::controls
 		{
 			DrawObject(renderer, GetPlotter()->Plot({ column++, 0 }), obj);
 		}
-		GetSpriteManager().Get("MapCursor").Draw(renderer, GetPlotter()->Plot({ GetContext().GetRoomCellObjects().GetIndex(), 0 }));
+		GetSpriteManager()["MapCursor"].Draw(renderer, GetPlotter()->Plot({ GetContext().GetRoomCellObjects().GetIndex(), 0 }));
 	}
 }

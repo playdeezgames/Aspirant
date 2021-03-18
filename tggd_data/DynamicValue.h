@@ -23,7 +23,7 @@ namespace tggd::data
 		}
 		const TValue& Get() const
 		{
-			return store.Get(key);
+			return store[key];
 		}
 	};
 }

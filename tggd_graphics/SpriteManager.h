@@ -14,7 +14,7 @@ namespace tggd::graphics
 		void AddSprite(const std::string&, const Sprite*);
 	public:
 		SpriteManager(tggd::common::FinishManager&);
-		const Sprite& Get(const std::string&) const;
+		const Sprite& operator[](const std::string&) const;
 		void Start(const TextureManager&, const std::string&);
 		void Finish();
 	};

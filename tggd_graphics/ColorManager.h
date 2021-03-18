@@ -11,6 +11,6 @@ namespace tggd::graphics
 		SDL_Color* ParseDescriptor(const std::string&, const nlohmann::json&);
 	public:
 		ColorManager(tggd::common::FinishManager&);
-		const SDL_Color& Get(const std::string&) const;
+		const SDL_Color& operator[](const std::string&) const;
 	};
 }

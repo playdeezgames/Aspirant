@@ -41,12 +41,12 @@ namespace aspirant::editor::controls
 			if (descriptor.GetType() == TYPE_TERRAIN)
 			{
 				const aspirant::game::TerrainDescriptor& terrainDescriptor = dynamic_cast<const aspirant::game::TerrainDescriptor&>(descriptor);
-				GetSpriteManager().Get(terrainDescriptor.GetSprite()).Draw(renderer, position);
+				GetSpriteManager()[terrainDescriptor.GetSprite()].Draw(renderer, position);
 			}
 			else if (descriptor.GetType() == TYPE_CREATURE)
 			{
 				const aspirant::game::CreatureDescriptor& creatureDescriptor = dynamic_cast<const aspirant::game::CreatureDescriptor&>(descriptor);
-				GetSpriteManager().Get(creatureDescriptor.GetSprite()).Draw(renderer, position);
+				GetSpriteManager()[creatureDescriptor.GetSprite()].Draw(renderer, position);
 			}
 		}
 		void DrawObject

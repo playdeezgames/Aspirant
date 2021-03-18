@@ -15,7 +15,7 @@ namespace tggd::graphics
 		finishManager.Add(this);
 	}
 
-	const Sprite& SpriteManager::Get(const std::string& name) const
+	const Sprite& SpriteManager::operator[](const std::string& name) const
 	{
 		auto iter = sprites.find(name);
 		return *(iter->second);
