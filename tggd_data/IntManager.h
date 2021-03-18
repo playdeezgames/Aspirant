@@ -6,6 +6,10 @@ namespace tggd::data
 {
 	class IntManager : public tggd::data::IDataStore<int>
 	{
+		IntManager(const IntManager&) = delete;
+		IntManager(IntManager&&) = delete;
+		IntManager& operator=(const IntManager&) = delete;
+		IntManager& operator=(IntManager&&) = delete;
 	private:
 		std::map<std::string, int> table;
 	public:

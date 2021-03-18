@@ -6,6 +6,10 @@ namespace tggd::data
 {
 	class FlagManager : public tggd::data::IDataStore<bool>
 	{
+		FlagManager(const FlagManager&) = delete;
+		FlagManager(FlagManager&&) = delete;
+		FlagManager& operator=(const FlagManager&) = delete;
+		FlagManager& operator=(FlagManager&&) = delete;
 	private:
 		std::set<std::string> flags;
 	public:
