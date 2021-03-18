@@ -4,9 +4,9 @@ namespace aspirant::editor::controls
 	class RoomCellObjectsPlotter : public tggd::graphics::Plotter<size_t, int>
 	{
 	public:
-		tggd::graphics::XY<int> Plot(const tggd::graphics::XY<size_t> position) const
+		tggd::common::XY<int> Plot(const tggd::common::XY<size_t>& position) const
 		{
-			return tggd::graphics::XY<int>(360 + (int)position.GetX() * 36, 0);//TODO: magic numbers
+			return {360 + (int)position.GetX() * 36, 0 };//TODO: magic numbers
 		}
 	};
 

@@ -13,7 +13,7 @@ namespace aspirant::editor::context
 		, scenario(descriptors)
 		, newRoom()
 		, roomList(scenario)
-		, roomView(tggd::graphics::XY<size_t>(10,10))//TODO: magic number!
+		, roomView(tggd::common::XY<size_t>(10,10))//TODO: magic number!
 		, roomCellObjects(roomView, roomList)
 		, descriptorSelector(descriptors)
 	{

@@ -35,7 +35,7 @@ namespace tggd::graphics
 		const tggd::data::IDataStore<SDL_Color>& colorStore,
 		const std::string spriteName,
 		const std::string colorName,
-		XY<int> xy
+		tggd::common::XY<int> xy
 	)
 		: spriteStore(spriteStore)
 		, colorStore(colorStore)
@@ -64,7 +64,7 @@ namespace tggd::graphics
 			.Draw
 			(
 				renderer,
-				XY<int>(x->Get(), y->Get()),
+				tggd::common::XY<int>(x->Get(), y->Get()),
 				colorStore.Get(colorName->Get())
 			);
 	}

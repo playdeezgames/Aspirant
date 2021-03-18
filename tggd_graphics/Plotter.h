@@ -6,6 +6,6 @@ namespace tggd::graphics
 	class Plotter
 	{
 	public:
-		virtual XY<TOutputDimension> Plot(const XY<TInputDimension>) const = 0;
+		virtual tggd::common::XY<TOutputDimension> Plot(const tggd::common::XY<TInputDimension>&) const = 0;
 	};
 }

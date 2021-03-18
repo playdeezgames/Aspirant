@@ -5,19 +5,19 @@ namespace aspirant
 	class ConfigurationConstants
 	{
 	public:
-		static const std::string APPLICATION;
-		static const std::string TEXTURE;
-		static const std::string SPRITE;
-		static const std::string COLOR;
-		static const std::string FONTS;
-		static const std::string LAYOUTS;
-		static const std::string STRINGS;
-		static const std::string INTS;
-		static const std::string FLAGS;
-		static const std::string OPTIONS;
-		static const std::string SFX;
-		static const std::string MUX;
-		static const std::string DESCRIPTORS;
-		static const std::string SCENARIOS;
+		const std::string APPLICATION = "config/ui/application.json";
+		const std::string TEXTURE = "config/graphics/textures.json";
+		const std::string SPRITE = "config/graphics/sprites.json";
+		const std::string COLOR = "config/graphics/colors.json";
+		const std::string FONTS = "config/graphics/fonts.json";
+		const std::string LAYOUTS = "config/ui/layouts.json";
+		const std::string STRINGS = "config/data/strings.json";
+		const std::string INTS = "config/data/ints.json";
+		const std::string FLAGS = "config/data/flags.json";
+		const std::string OPTIONS = "config/options.json";
+		const std::string SFX = "config/audio/sfx.json";
+		const std::string MUX = "config/audio/mux.json";
+		const std::string DESCRIPTORS = "config/game/descriptors.json";
+		const std::string SCENARIOS = "scenarios/scenarios.json";
 	};
 }

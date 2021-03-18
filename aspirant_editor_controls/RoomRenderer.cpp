@@ -4,9 +4,9 @@ namespace aspirant::editor::controls
 	class RoomRendererPlotter : public tggd::graphics::Plotter<size_t, int>
 	{
 	public:
-		tggd::graphics::XY<int> Plot(const tggd::graphics::XY<size_t> position) const
+		tggd::common::XY<int> Plot(const tggd::common::XY<size_t>& position) const
 		{
-			return tggd::graphics::XY<int>((int)position.GetX() * 36, (int)position.GetY() * 36);//TODO: magic number
+			return tggd::common::XY<int>((int)position.GetX() * 36, (int)position.GetY() * 36);//TODO: magic number
 		}
 	};
 
@@ -20,7 +20,7 @@ namespace aspirant::editor::controls
 
 	}
 
-	void RoomRenderer::DrawCell(SDL_Renderer* renderer, const tggd::graphics::XY<size_t>& viewPosition, const aspirant::game::ScenarioRoomCell* cell) const
+	void RoomRenderer::DrawCell(SDL_Renderer* renderer, const tggd::common::XY<size_t>& viewPosition, const aspirant::game::ScenarioRoomCell* cell) const
 	{
 		if (cell)
 		{
@@ -42,13 +42,13 @@ namespace aspirant::editor::controls
 			{
 				for (size_t viewColumn = 0; viewColumn < GetContext().GetRoomView().GetSize().GetX(); ++viewColumn)
 				{
-					tggd::graphics::XY<size_t> viewPosition =
-						tggd::graphics::XY<size_t>
+					tggd::common::XY<size_t> viewPosition =
+						tggd::common::XY<size_t>
 						(
 							viewColumn,
 							viewRow
 							);
-					tggd::graphics::XY<size_t> cellPosition =
+					tggd::common::XY<size_t> cellPosition =
 						viewPosition + GetContext().GetRoomView().GetAnchor();
 					auto cell = room->GetCell(cellPosition.GetX(), cellPosition.GetY());
 					if (cell)
@@ -71,7 +71,7 @@ namespace aspirant::editor::controls
 		//vp = cp - an
 		auto& cursorPosition = GetContext().GetRoomView().GetCursor();
 		auto& anchorPosition = GetContext().GetRoomView().GetAnchor();
-		tggd::graphics::XY<size_t> viewPosition = { cursorPosition.GetX() - anchorPosition.GetX(), cursorPosition.GetY() - anchorPosition.GetY()  };
+		tggd::common::XY<size_t> viewPosition = { cursorPosition.GetX() - anchorPosition.GetX(), cursorPosition.GetY() - anchorPosition.GetY()  };
 		//TODO: magic string vv
 		GetSpriteManager().Get("MapCursor").Draw(renderer, GetPlotter()->Plot(viewPosition));
 	}

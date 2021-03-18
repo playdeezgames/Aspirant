@@ -6,7 +6,7 @@ namespace aspirant::editor::controls
 	class RoomRenderer: public EditorBaseControl<aspirant::editor::context::EditorContext>
 	{
 	private:
-		void DrawCell(SDL_Renderer*, const tggd::graphics::XY<size_t>&, const aspirant::game::ScenarioRoomCell*) const;
+		void DrawCell(SDL_Renderer*, const tggd::common::XY<size_t>&, const aspirant::game::ScenarioRoomCell*) const;
 		void DrawRoom(SDL_Renderer*, const aspirant::game::ScenarioRoom*) const;
 		void DrawMapCursor(SDL_Renderer*) const;
 	public:

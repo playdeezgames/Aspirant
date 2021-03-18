@@ -7,12 +7,12 @@ namespace tggd::graphics
 	StaticText::StaticText
 	(
 		const tggd::data::IDataStore<SpriteFont>& fontStore,
-		const tggd::graphics::XY<int>& xy,
+		const tggd::common::XY<int>& xy,
 		const std::string& text,
 		const std::string& fontName,
 		const std::string& color,
 		bool hasDropShadow,
-		const tggd::graphics::XY<int>& dropShadowOffset,
+		const tggd::common::XY<int>& dropShadowOffset,
 		const std::string& dropShadowColor,
 		const HorizontalAlignment& alignment
 	)
@@ -111,8 +111,8 @@ namespace tggd::graphics
 	{
 		if (hasDropShadow)
 		{
-			fontStore.Get(fontName->Get()).WriteText(renderer, XY<int>(x->Get() + dropShadowX->Get(), y->Get() + dropShadowY->Get()), text->Get(), dropShadowColor->Get(), (HorizontalAlignment)alignment->Get());
+			fontStore.Get(fontName->Get()).WriteText(renderer, tggd::common::XY<int>(x->Get() + dropShadowX->Get(), y->Get() + dropShadowY->Get()), text->Get(), dropShadowColor->Get(), (HorizontalAlignment)alignment->Get());
 		}
-		fontStore.Get(fontName->Get()).WriteText(renderer, XY<int>(x->Get(), y->Get()), text->Get(), color->Get(), (HorizontalAlignment)alignment->Get());
+		fontStore.Get(fontName->Get()).WriteText(renderer, tggd::common::XY<int>(x->Get(), y->Get()), text->Get(), color->Get(), (HorizontalAlignment)alignment->Get());
 	}
 }

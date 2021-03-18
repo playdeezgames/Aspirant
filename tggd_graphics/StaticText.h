@@ -27,12 +27,12 @@ namespace tggd::graphics
 		StaticText
 		(
 			const tggd::data::IDataStore<SpriteFont>&,
-			const tggd::graphics::XY<int>&,
+			const tggd::common::XY<int>&,
 			const std::string&,
 			const std::string&,
 			const std::string&,
 			bool,
-			const tggd::graphics::XY<int>&,
+			const tggd::common::XY<int>&,
 			const std::string&,
 			const HorizontalAlignment&
 		);

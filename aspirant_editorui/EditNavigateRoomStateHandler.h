@@ -10,7 +10,7 @@ namespace aspirant::editorui
 	class EditNavigateRoomStateHandler : public CommonRoomEditorStateHandler
 	{
 	private:
-		void MoveCursor(const tggd::graphics::XY<int>&);
+		void MoveCursor(const tggd::common::XY<int>&);
 		void PlaceObject();
 		void RemoveObject();
 	protected:

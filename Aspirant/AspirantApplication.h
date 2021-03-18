@@ -19,11 +19,13 @@
 #include "RoomRenderer.h"
 #include "RoomCellObjectsRenderer.h"
 #include "DescriptorSelectorRenderer.h"
+#include "ConfigurationConstants.h"
 namespace aspirant
 {
 	class AspirantApplication : public tggd::common::Application
 	{
 	private:
+		ConfigurationConstants config;
 		aspirant::commonui::UIState uiState;
 		aspirant::commonui::UIContext uiContext;
 		tggd::common::FinishManager finishManager;

@@ -33,6 +33,7 @@
     <ClInclude Include="RNGUtility.h" />
     <ClInclude Include="SoundManager.h" />
     <ClInclude Include="Utility.h" />
+    <ClInclude Include="XY.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />

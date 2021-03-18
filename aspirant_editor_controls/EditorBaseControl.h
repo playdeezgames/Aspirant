@@ -34,7 +34,7 @@ namespace aspirant::editor::controls
 		void DrawDescriptor
 		(
 			SDL_Renderer* renderer,
-			tggd::graphics::XY<int> position,
+			tggd::common::XY<int> position,
 			const aspirant::game::BaseDescriptor<aspirant::game::ScenarioObjectInstance>& descriptor
 		) const
 		{
@@ -52,7 +52,7 @@ namespace aspirant::editor::controls
 		void DrawObject
 		(
 			SDL_Renderer* renderer, 
-			tggd::graphics::XY<int> position, 
+			tggd::common::XY<int> position,
 			const aspirant::game::ScenarioObjectInstance* obj
 		) const
 		{

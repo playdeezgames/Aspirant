@@ -28,16 +28,16 @@ namespace tggd::graphics
 
 
 
-	tggd::graphics::XY<int> SpriteFont::WriteGlyph(SDL_Renderer* renderer, const tggd::graphics::XY<int>& xy, char ch, const std::string& color) const
+	tggd::common::XY<int> SpriteFont::WriteGlyph(SDL_Renderer* renderer, const tggd::common::XY<int>& xy, char ch, const std::string& color) const
 	{
 		const auto& sprite = GetGlyphSprite(ch);
 		sprite.Draw(renderer, xy, colorManager.Get(color));
-		return XY(xy.GetX() + sprite.GetWidth(), xy.GetY());
+		return tggd::common::XY(xy.GetX() + sprite.GetWidth(), xy.GetY());
 	}
 
-	tggd::graphics::XY<int> SpriteFont::WriteTextLeft(SDL_Renderer* renderer, const tggd::graphics::XY<int>& xy, const std::string& text, const std::string& color) const
+	tggd::common::XY<int> SpriteFont::WriteTextLeft(SDL_Renderer* renderer, const tggd::common::XY<int>& xy, const std::string& text, const std::string& color) const
 	{
-		tggd::graphics::XY<int> temp = xy;
+		tggd::common::XY<int> temp = xy;
 		for (auto ch : text)
 		{
 			temp = WriteGlyph(renderer, temp, ch, color);
@@ -45,7 +45,7 @@ namespace tggd::graphics
 		return temp;
 	}
 
-	void SpriteFont::WriteTextCentered(SDL_Renderer* renderer, const tggd::graphics::XY<int>& xy, const std::string& text, const std::string& color) const
+	void SpriteFont::WriteTextCentered(SDL_Renderer* renderer, const tggd::common::XY<int>& xy, const std::string& text, const std::string& color) const
 	{
 		int width = 0;
 		for (auto ch : text)
@@ -53,11 +53,11 @@ namespace tggd::graphics
 			const auto& sprite = GetGlyphSprite(ch);
 			width += sprite.GetWidth();
 		}
-		auto adjustedXY = tggd::graphics::XY<int>(xy.GetX() - width / 2, xy.GetY());
+		auto adjustedXY = tggd::common::XY<int>(xy.GetX() - width / 2, xy.GetY());
 		WriteTextLeft(renderer, adjustedXY, text, color);
 	}
 
-	void SpriteFont::WriteTextRight(SDL_Renderer* renderer, const tggd::graphics::XY<int>& xy, const std::string& text, const std::string& color) const
+	void SpriteFont::WriteTextRight(SDL_Renderer* renderer, const tggd::common::XY<int>& xy, const std::string& text, const std::string& color) const
 	{
 		int width = 0;
 		for (auto ch : text)
@@ -65,14 +65,14 @@ namespace tggd::graphics
 			const auto& sprite = GetGlyphSprite(ch);
 			width += sprite.GetWidth();
 		}
-		auto adjustedXY = tggd::graphics::XY<int>(xy.GetX() - width, xy.GetY());
+		auto adjustedXY = tggd::common::XY<int>(xy.GetX() - width, xy.GetY());
 		WriteTextLeft(renderer, adjustedXY, text, color);
 	}
 
 	void SpriteFont::WriteText
 	(
 		SDL_Renderer* renderer, 
-		const tggd::graphics::XY<int>& xy,
+		const tggd::common::XY<int>& xy,
 		const std::string& text, 
 		const std::string& color, 
 		const HorizontalAlignment& alignment

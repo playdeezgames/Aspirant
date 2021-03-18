@@ -4,9 +4,9 @@ namespace aspirant::editor::controls
 	class DescriptorSelectorPlotter : public tggd::graphics::Plotter<size_t, int>
 	{
 	public:
-		tggd::graphics::XY<int> Plot(const tggd::graphics::XY<size_t> position) const
+		tggd::common::XY<int> Plot(const tggd::common::XY<size_t>& position) const
 		{
-			return tggd::graphics::XY<int>(360 + (int)position.GetX() * 36, 36 +(int)position.GetY() * 36);//TODO: magic numbers
+			return tggd::common::XY<int>(360 + (int)position.GetX() * 36, 36 +(int)position.GetY() * 36);//TODO: magic numbers
 		}
 	};
 
@@ -24,7 +24,7 @@ namespace aspirant::editor::controls
 		const size_t COLUMNS = 7;
 		for (size_t idx = 0; idx < GetContext().GetDescriptorSelector().GetCount(); ++idx)
 		{
-			tggd::graphics::XY<int> position = GetPlotter()->Plot({ idx % COLUMNS, idx / COLUMNS });
+			tggd::common::XY<int> position = GetPlotter()->Plot({ idx % COLUMNS, idx / COLUMNS });
 			auto descriptor = GetContext().GetDescriptorSelector().GetDescriptor(idx);
 			if (descriptor)
 			{

@@ -32,7 +32,6 @@
     <ClInclude Include="StaticImage.h" />
     <ClInclude Include="StaticText.h" />
     <ClInclude Include="TextureManager.h" />
-    <ClInclude Include="XY.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ColorManager.cpp" />

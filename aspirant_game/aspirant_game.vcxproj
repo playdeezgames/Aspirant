@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Avatar.h" />
     <ClInclude Include="BaseDescriptor.h" />
     <ClInclude Include="CommonDescriptor.h" />
     <ClInclude Include="CreatureDescriptor.h" />

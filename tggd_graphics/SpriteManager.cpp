@@ -43,7 +43,7 @@ namespace tggd::graphics
 			source.h = properties[PROPERTY_H];
 			int offsetX = (properties.count(PROPERTY_OFFSET_X) > 0) ? ((int)properties[PROPERTY_OFFSET_X]) : (0);
 			int offsetY = (properties.count(PROPERTY_OFFSET_Y) > 0) ? ((int)properties[PROPERTY_OFFSET_Y]) : (0);
-			XY<int> offset(offsetX, offsetY);
+			tggd::common::XY<int> offset(offsetX, offsetY);
 			Sprite* sprite = new Sprite(texture, source, offset);
 			AddSprite(item.key(), sprite);
 		}

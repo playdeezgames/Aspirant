@@ -24,7 +24,7 @@ namespace tggd::graphics
 			const tggd::data::IDataStore<SDL_Color>&,
 			const std::string,
 			const std::string,
-			XY<int>
+			tggd::common::XY<int>
 		);
 		StaticImage
 		(

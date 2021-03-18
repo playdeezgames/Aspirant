@@ -21,7 +21,8 @@
 namespace aspirant
 {
 	AspirantApplication::AspirantApplication()
-		: tggd::common::Application(ConfigurationConstants::APPLICATION)
+		: config()
+		, tggd::common::Application(config.APPLICATION)
 		, finishManager()
 		, textureManager(finishManager)
 		, spriteManager(finishManager)
@@ -31,11 +32,11 @@ namespace aspirant
 		, intManager()
 		, flagManager()
 		, soundManager(finishManager)
-		, optionsManager(soundManager, ConfigurationConstants::OPTIONS)
+		, optionsManager(soundManager, config.OPTIONS)
 		, layoutManager(finishManager, spriteManager, colorManager, fontManager, stringManager, intManager, flagManager)
 		, uiState(aspirant::commonui::UIState::SPLASH)
 		, descriptors(finishManager)
-		, scenarios(finishManager, ConfigurationConstants::SCENARIOS)
+		, scenarios(finishManager, config.SCENARIOS)
 		, editorContext(descriptors, scenarios)
 		, uiContext(uiState, layoutManager, stringManager)
 		, roomRenderer(editorContext, spriteManager)
@@ -52,17 +53,17 @@ namespace aspirant
 
 	void AspirantApplication::Start(SDL_Renderer* renderer)
 	{
-		stringManager.Start(ConfigurationConstants::STRINGS);
-		intManager.Start(ConfigurationConstants::INTS);
-		flagManager.Start(ConfigurationConstants::FLAGS);
-		colorManager.Start(ConfigurationConstants::COLOR);
-		textureManager.Start(renderer, ConfigurationConstants::TEXTURE);
-		spriteManager.Start(textureManager, ConfigurationConstants::SPRITE);
-		fontManager.Start(ConfigurationConstants::FONTS);
-		layoutManager.Start(ConfigurationConstants::LAYOUTS);
-		soundManager.Start(ConfigurationConstants::SFX, ConfigurationConstants::MUX);
+		stringManager.Start(config.STRINGS);
+		intManager.Start(config.INTS);
+		flagManager.Start(config.FLAGS);
+		colorManager.Start(config.COLOR);
+		textureManager.Start(renderer, config.TEXTURE);
+		spriteManager.Start(textureManager, config.SPRITE);
+		fontManager.Start(config.FONTS);
+		layoutManager.Start(config.LAYOUTS);
+		soundManager.Start(config.SFX, config.MUX);
 		optionsManager.Start();
-		descriptors.Start(ConfigurationConstants::DESCRIPTORS);
+		descriptors.Start(config.DESCRIPTORS);
 		scenarios.Load();
 
 		new aspirant::navigationui::SplashStateHandler(this, uiContext);

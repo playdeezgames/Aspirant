@@ -17,7 +17,7 @@ namespace aspirant::editorui
 		return false;
 	}
 
-	void EditNavigateRoomStateHandler::MoveCursor(const tggd::graphics::XY<int>& delta)
+	void EditNavigateRoomStateHandler::MoveCursor(const tggd::common::XY<int>& delta)
 	{
 		int newCursorX = (int)GetEditorContext().GetRoomView().GetCursor().GetX() + delta.GetX();
 		int newCursorY = (int)GetEditorContext().GetRoomView().GetCursor().GetY() + delta.GetY();
