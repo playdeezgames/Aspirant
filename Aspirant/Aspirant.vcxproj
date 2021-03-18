@@ -20,7 +20,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AspirantApplication.cpp" />
-    <ClCompile Include="ConfigurationConstants.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AspirantApplication.h" />

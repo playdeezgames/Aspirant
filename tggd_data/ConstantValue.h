@@ -5,6 +5,11 @@ namespace tggd::data
 	template<typename TValue>
 	class ConstantValue : public IValue<TValue>
 	{
+		ConstantValue() = delete;
+		ConstantValue(const ConstantValue&) = delete;
+		ConstantValue(ConstantValue&&) = delete;
+		ConstantValue& operator=(const ConstantValue&) = delete;
+		ConstantValue& operator=(ConstantValue&&) = delete;
 	private:
 		TValue value;
 	public:

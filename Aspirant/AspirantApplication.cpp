@@ -22,7 +22,7 @@ namespace aspirant
 {
 	AspirantApplication::AspirantApplication()
 		: config()
-		, tggd::common::Application(config.APPLICATION)
+		, tggd::common::Application()
 		, finishManager()
 		, textureManager(finishManager)
 		, spriteManager(finishManager)
@@ -43,7 +43,7 @@ namespace aspirant
 		, roomCellObjectsRenderer(editorContext, spriteManager)
 		, descriptorSelectorRenderer(editorContext, spriteManager)
 	{
-
+		Bootstrap(config.APPLICATION);
 	}
 
 	bool AspirantApplication::IsRunning() const

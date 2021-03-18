@@ -8,10 +8,10 @@ namespace tggd::common
 	class Application : public MessageHandler
 	{
 	private:
-
-		Application() = delete;
 		Application(const Application&) = delete;
 		Application(Application&&) = delete;
+		Application& operator=(const Application&) = delete;
+		Application& operator=(Application&&) = delete;
 
 		SDL_Window* window;
 		std::string windowTitle;
@@ -31,13 +31,15 @@ namespace tggd::common
 		static void DoPump();
 		static void DoFinish();
 
+
 	protected:
+		void Bootstrap(const std::string&);
 		SDL_Renderer* GetRenderer() const { return renderer; }
 		virtual bool IsRunning() const = 0;
 		virtual void Start(SDL_Renderer*) = 0;
 		virtual void Finish() = 0;
 	public:
-		Application(const std::string&);
+		Application();
 		static int Run(const std::vector<std::string>&);
 	};
 }

@@ -21,10 +21,7 @@ namespace tggd::common
 
 	Application* Application::s_application = nullptr;
 
-	Application::Application
-	(
-		const std::string& fileName
-	)
+	Application::Application()
 		: MessageHandler(nullptr)
 		, window(nullptr)
 		, renderer(nullptr)
@@ -42,6 +39,10 @@ namespace tggd::common
 		{
 			s_application = this;
 		}
+	}
+
+	void Application::Bootstrap(const std::string& fileName)
+	{
 		auto properties = tggd::data::JSONUtility::LoadJSON(fileName);
 		windowWidth = (int)properties[PROPERTY_WIDTH];
 		windowHeight = (int)properties[PROPERTY_HEIGHT];
