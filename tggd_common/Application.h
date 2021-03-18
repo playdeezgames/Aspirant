@@ -30,8 +30,6 @@ namespace tggd::common
 		static void DoStart();
 		static void DoPump();
 		static void DoFinish();
-
-
 	protected:
 		void Bootstrap(const std::string&);
 		SDL_Renderer* GetRenderer() const { return renderer; }

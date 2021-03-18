@@ -5,6 +5,11 @@ namespace tggd::common
 {
 	class MEvent : public MGeneric
 	{
+		MEvent() = delete;
+		MEvent(const MEvent&) = delete;
+		MEvent(MEvent&&) = delete;
+		MEvent& operator=(const MEvent&) = delete;
+		MEvent& operator=(MEvent&&) = delete;
 	private:
 		const SDL_Event& _event;
 		static void MSGID_SdlEvent() {}

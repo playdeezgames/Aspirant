@@ -10,6 +10,20 @@ namespace tggd::common
 	public:
 		XY() : x(), y() {}
 		XY(const TDimension& x, const TDimension& y) : x(x), y(y) {}
+		XY(const XY<TDimension>& other) : x(other.x), y(other.y) {}
+		XY(XY<TDimension>&& other) : x(other.x), y(other.y) {}
+		XY<TDimension>& operator=(XY<TDimension>&& other)
+		{
+			x = other.x;
+			y = other.y;
+			return *this;
+		}
+		XY<TDimension>& operator=(const XY<TDimension>& other)
+		{
+			x = other.x;
+			y = other.y;
+			return *this;
+		}
 		const TDimension& GetX() const { return x; }
 		const TDimension& GetY() const { return y; }
 	};

@@ -9,6 +9,11 @@ namespace tggd::common
 {
 	class FinishUtility
 	{
+		FinishUtility() = delete;
+		FinishUtility(const FinishUtility&) = delete;
+		FinishUtility(FinishUtility&&) = delete;
+		FinishUtility& operator=(const FinishUtility&) = delete;
+		FinishUtility& operator=(FinishUtility&&) = delete;
 	public:
 		template<typename TDelete>
 		static void SafeDelete(TDelete*& ptr)

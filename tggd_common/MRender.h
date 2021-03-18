@@ -5,6 +5,11 @@ namespace tggd::common
 {
 	class MRender : public MGeneric
 	{
+		MRender() = delete;
+		MRender(const MRender&) = delete;
+		MRender(MRender&&) = delete;
+		MRender& operator=(const MRender&) = delete;
+		MRender& operator=(MRender&&) = delete;
 	private:
 		SDL_Renderer* _renderer;
 	public:

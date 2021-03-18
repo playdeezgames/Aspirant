@@ -14,6 +14,11 @@ namespace tggd::common
 	template<typename TIdentifer, typename TDescriptor>
 	class BaseDescriptorManager : public tggd::common::Finisher
 	{
+		BaseDescriptorManager() = delete;
+		BaseDescriptorManager(const BaseDescriptorManager&) = delete;
+		BaseDescriptorManager(BaseDescriptorManager&&) = delete;
+		BaseDescriptorManager& operator=(const BaseDescriptorManager&) = delete;
+		BaseDescriptorManager& operator=(BaseDescriptorManager&&) = delete;
 	private:
 		std::map<TIdentifer, TDescriptor*> descriptors;
 		std::vector<TIdentifer> identifiers;

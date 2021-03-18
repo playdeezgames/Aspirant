@@ -4,6 +4,11 @@ namespace tggd::common
 	typedef void(*messageid_t)();
 	class MGeneric
 	{
+		MGeneric() = delete;
+		MGeneric(const MGeneric&) = delete;
+		MGeneric(MGeneric&&) = delete;
+		MGeneric& operator=(const MGeneric&) = delete;
+		MGeneric& operator=(MGeneric&&) = delete;
 	private:
 		messageid_t messageId;
 	protected:

@@ -5,6 +5,11 @@ namespace tggd::common
 {
 	class Utility
 	{
+		Utility() = delete;
+		Utility(const Utility&) = delete;
+		Utility(Utility&&) = delete;
+		Utility& operator=(const Utility&) = delete;
+		Utility& operator=(Utility&&) = delete;
 	public:
 		static std::vector<std::string> CommandLineToStringVector(int, char**);
 		static int StringToInt(const std::string&);

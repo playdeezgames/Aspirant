@@ -5,6 +5,11 @@ namespace tggd::common
 {
 	class MessageHandler
 	{
+		MessageHandler() = delete;
+		MessageHandler(const MessageHandler&) = delete;
+		MessageHandler(MessageHandler&&) = delete;
+		MessageHandler& operator=(const MessageHandler&) = delete;
+		MessageHandler& operator=(MessageHandler&&) = delete;
 	private:
 		MessageHandler* _parent;
 		std::list<MessageHandler*> _children;

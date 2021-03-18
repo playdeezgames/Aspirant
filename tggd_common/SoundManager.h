@@ -7,6 +7,11 @@ namespace tggd::common
 {
 	class SoundManager: Finisher
 	{
+		SoundManager() = delete;
+		SoundManager(const SoundManager&) = delete;
+		SoundManager(SoundManager&&) = delete;
+		SoundManager& operator=(const SoundManager&) = delete;
+		SoundManager& operator=(SoundManager&&) = delete;
 	private:
 		std::map<std::string, Mix_Chunk*> sounds;
 		int sfxVolume;
