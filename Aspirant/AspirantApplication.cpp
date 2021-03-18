@@ -106,9 +106,9 @@ namespace aspirant
 
 	bool AspirantApplication::OnMessage(const tggd::common::MGeneric* message)
 	{
-		if (aspirant::commonui::MSetUIState::IsMSetUIState(message))
+		if (aspirant::commonui::MSetUIState::Is(message))
 		{
-			return OnSetUIState(aspirant::commonui::MSetUIState::ToMSetUIState(message)->GetState());
+			return OnSetUIState(aspirant::commonui::MSetUIState::From(message)->GetState());
 		}
 		else if (tggd::common::MEvent::Is(message))
 		{

@@ -19,11 +19,11 @@ namespace aspirant::commonui
 		{
 			return state;
 		}
-		static bool IsMSetUIState(const tggd::common::MGeneric* message)
+		static bool Is(const tggd::common::MGeneric* message)
 		{
 			return message && message->GetId() == MSGID_SetUIState;
 		}
-		static const MSetUIState* ToMSetUIState(const tggd::common::MGeneric* message)
+		static const MSetUIState* From(const tggd::common::MGeneric* message)
 		{
 			return static_cast<const aspirant::commonui::MSetUIState*>(message);
 		}
