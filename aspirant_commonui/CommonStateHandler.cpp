@@ -12,17 +12,17 @@ namespace aspirant::commonui
 
 	bool CommonStateHandler::OnMessage(const tggd::common::MGeneric* message)
 	{
-		if (message->GetId() == tggd::common::MRender::MSGID_Draw)
+		if (tggd::common::MRender::Is(message))
 		{
-			return OnDraw(static_cast<const tggd::common::MRender*>(message)->GetRenderer());
+			return OnDraw(tggd::common::MRender::From(message)->GetRenderer());
 		}
 		else if (message->GetId() == MCommand::MSGID_Command)
 		{
 			return OnCommand(static_cast<const MCommand*>(message)->GetCommand());
 		}
-		else if (message->GetId() == tggd::common::MUpdate::MSGID_Update)
+		else if (tggd::common::MUpdate::Is(message))
 		{
-			return OnUpdate(static_cast<const tggd::common::MUpdate*>(message)->GetMilliseconds());
+			return OnUpdate(tggd::common::MUpdate::From(message)->GetMilliseconds());
 		}
 		return false;
 	}

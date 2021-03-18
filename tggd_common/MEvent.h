@@ -24,11 +24,11 @@ namespace tggd::common
 		{
 			return _event;
 		}
-		static bool IsMEvent(const MGeneric* message)
+		static bool Is(const MGeneric* message)
 		{
 			return message && message->GetId() == MSGID_SdlEvent;
 		}
-		static const MEvent* ToMEvent(const MGeneric* message)
+		static const MEvent* From(const MGeneric* message)
 		{
 			return static_cast<const tggd::common::MEvent*>(message);
 		}

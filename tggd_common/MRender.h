@@ -12,6 +12,7 @@ namespace tggd::common
 		MRender& operator=(MRender&&) = delete;
 	private:
 		SDL_Renderer* _renderer;
+		static void MSGID_Draw() {}
 	public:
 		MRender(SDL_Renderer* renderer)
 			: MGeneric(MSGID_Draw)
@@ -23,6 +24,13 @@ namespace tggd::common
 		{
 			return _renderer;
 		}
-		static void MSGID_Draw() {}
+		static bool Is(const MGeneric* message)
+		{
+			return message && message->GetId() == MSGID_Draw;
+		}
+		static const MRender* From(const MGeneric* message)
+		{
+			return static_cast<const tggd::common::MRender*>(message);
+		}
 	};
 }

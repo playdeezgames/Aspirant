@@ -11,6 +11,7 @@ namespace tggd::common
 		MUpdate& operator=(MUpdate&&) = delete;
 	private:
 		unsigned int milliseconds;
+		static void MSGID_Update() {}
 	public:
 		MUpdate(unsigned int milliseconds)
 			: MGeneric(MSGID_Update)
@@ -22,6 +23,14 @@ namespace tggd::common
 		{
 			return milliseconds;
 		}
-		static void MSGID_Update() {}
+		static bool Is(const MGeneric* message)
+		{
+			return message && message->GetId() == MSGID_Update;
+		}
+		static const MUpdate* From(const MGeneric* message)
+		{
+			return static_cast<const tggd::common::MUpdate*>(message);
+		}
+
 	};
 }

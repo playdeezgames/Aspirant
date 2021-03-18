@@ -110,9 +110,9 @@ namespace aspirant
 		{
 			return OnSetUIState(aspirant::commonui::MSetUIState::ToMSetUIState(message)->GetState());
 		}
-		else if (tggd::common::MEvent::IsMEvent(message))
+		else if (tggd::common::MEvent::Is(message))
 		{
-			return OnSdlEvent(tggd::common::MEvent::ToMEvent(message)->GetEvent());
+			return OnSdlEvent(tggd::common::MEvent::From(message)->GetEvent());
 		}
 		return false;
 	}
