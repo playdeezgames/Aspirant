@@ -6,6 +6,11 @@ namespace aspirant::commonui
 {
 	class UIContext
 	{
+		UIContext() = delete;
+		UIContext(const UIContext&) = delete;
+		UIContext(UIContext&&) = delete;
+		UIContext& operator=(const UIContext&) = delete;
+		UIContext& operator=(UIContext&&) = delete;
 	private:
 		const aspirant::commonui::UIState& uiState;
 		const tggd::graphics::LayoutManager& layoutManager;

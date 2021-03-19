@@ -5,6 +5,11 @@ namespace aspirant::commonui
 {
 	class MSetUIState : public tggd::common::MGeneric
 	{
+		MSetUIState() = delete;
+		MSetUIState(const MSetUIState&) = delete;
+		MSetUIState(MSetUIState&&) = delete;
+		MSetUIState& operator=(const MSetUIState&) = delete;
+		MSetUIState& operator=(MSetUIState&&) = delete;
 	private:
 		UIState state;
 		static void MSGID_SetUIState() {}

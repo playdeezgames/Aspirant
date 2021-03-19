@@ -15,6 +15,11 @@ namespace aspirant::commonui
 	template<typename TMenuItem>
 	class MenuStateHandler : public aspirant::commonui::UIStateMessageHandler
 	{
+		MenuStateHandler() = delete;
+		MenuStateHandler(const MenuStateHandler&) = delete;
+		MenuStateHandler(MenuStateHandler&&) = delete;
+		MenuStateHandler& operator=(const MenuStateHandler&) = delete;
+		MenuStateHandler& operator=(MenuStateHandler&&) = delete;
 	private:
 		std::string layoutName;
 		std::map<TMenuItem, MenuItemDescriptor<TMenuItem>> menuItems;

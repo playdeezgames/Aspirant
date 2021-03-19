@@ -7,6 +7,11 @@ namespace aspirant::commonui
 {
 	class CommonStateHandler : public UIStateMessageHandler
 	{
+		CommonStateHandler() = delete;
+		CommonStateHandler(const CommonStateHandler&) = delete;
+		CommonStateHandler(CommonStateHandler&&) = delete;
+		CommonStateHandler& operator=(const CommonStateHandler&) = delete;
+		CommonStateHandler& operator=(CommonStateHandler&&) = delete;
 	private:
 		std::string layoutName;
 	protected:

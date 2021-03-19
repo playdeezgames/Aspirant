@@ -5,12 +5,16 @@ namespace aspirant::commonui
 	template<typename TMenuItem>
 	class MenuItemDescriptor
 	{
+		MenuItemDescriptor(MenuItemDescriptor&&) = delete;
+		MenuItemDescriptor& operator=(MenuItemDescriptor&&) = delete;
 	private:
 		TMenuItem nextMenuItem;
 		TMenuItem previousMenuItem;
 		std::string itemColorName;
 	public:
-		MenuItemDescriptor() :nextMenuItem(), previousMenuItem(), itemColorName() {}//MAGIC!
+		MenuItemDescriptor() = default;
+		MenuItemDescriptor(const MenuItemDescriptor&) = default;
+		MenuItemDescriptor& operator=(const MenuItemDescriptor&) = default;
 		MenuItemDescriptor
 		(
 			const std::string& itemColorName,

@@ -5,6 +5,11 @@ namespace aspirant::commonui
 {
 	class MCommand: public tggd::common::MGeneric
 	{
+		MCommand() = delete;
+		MCommand(const MCommand&) = delete;
+		MCommand(MCommand&&) = delete;
+		MCommand& operator=(const MCommand&) = delete;
+		MCommand& operator=(MCommand&&) = delete;
 	private:
 		Command command;
 		static void MSGID_Command() {}

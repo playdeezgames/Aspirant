@@ -7,6 +7,11 @@ namespace aspirant::commonui
 {
 	class UIStateMessageHandler : public tggd::common::MessageHandler
 	{
+		UIStateMessageHandler() = delete;
+		UIStateMessageHandler(const UIStateMessageHandler&) = delete;
+		UIStateMessageHandler(UIStateMessageHandler&&) = delete;
+		UIStateMessageHandler& operator=(const UIStateMessageHandler&) = delete;
+		UIStateMessageHandler& operator=(UIStateMessageHandler&&) = delete;
 	private:
 		UIState filterState;
 		const UIContext& uiContext;
