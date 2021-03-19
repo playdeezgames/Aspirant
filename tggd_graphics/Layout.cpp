@@ -4,15 +4,6 @@
 #include "StaticText.h"
 namespace tggd::graphics
 {
-	Layout::Layout
-	(
-		tggd::common::FinishManager& finishManager
-	)
-		: drawnItems()
-	{
-		finishManager.Add(this);
-	}
-
 	const std::string PROPERTY_TYPE="type";
 	const std::string TYPE_STATIC_IMAGE = "StaticImage";
 	const std::string TYPE_STATIC_TEXT = "StaticText";

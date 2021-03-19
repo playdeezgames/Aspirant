@@ -13,13 +13,14 @@ namespace tggd::graphics
 		: public Drawn
 		, public tggd::common::Finisher
 	{
+		Layout() = delete;
+		Layout(const Layout&) = delete;
+		Layout(Layout&&) = delete;
+		Layout& operator=(const Layout&) = delete;
+		Layout& operator=(Layout&&) = delete;
 	private:
 		std::list<Drawn*> drawnItems;
 	public:
-		Layout
-		(
-			tggd::common::FinishManager&
-		);
 		Layout
 		(
 			tggd::common::FinishManager&,
