@@ -5,6 +5,11 @@ namespace tggd::graphics
 {
 	class Sprite
 	{
+		Sprite() = delete;
+		Sprite(const Sprite&) = delete;
+		Sprite(Sprite&&) = delete;
+		Sprite& operator=(const Sprite&) = delete;
+		Sprite& operator=(Sprite&&) = delete;
 	private:
 		SDL_Texture* texture;
 		SDL_Rect source;
