@@ -28,7 +28,6 @@
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="SpriteFont.h" />
     <ClInclude Include="SpriteManager.h" />
-    <ClInclude Include="SpriteTable.h" />
     <ClInclude Include="StaticImage.h" />
     <ClInclude Include="StaticText.h" />
     <ClInclude Include="TextureManager.h" />

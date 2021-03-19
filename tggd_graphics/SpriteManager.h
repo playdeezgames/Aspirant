@@ -9,6 +9,11 @@ namespace tggd::graphics
 {
 	class SpriteManager: public tggd::common::Finisher, public tggd::data::IDataStore<Sprite>
 	{
+		SpriteManager() = delete;
+		SpriteManager(const SpriteManager&) = delete;
+		SpriteManager(SpriteManager&&) = delete;
+		SpriteManager& operator=(const SpriteManager&) = delete;
+		SpriteManager& operator=(SpriteManager&&) = delete;
 	private:
 		std::map<std::string, const Sprite*> sprites;
 		void AddSprite(const std::string&, const Sprite*);

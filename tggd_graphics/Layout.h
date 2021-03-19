@@ -9,7 +9,9 @@
 #include "IDataStore.h"
 namespace tggd::graphics
 {
-	class Layout: public Drawn, public tggd::common::Finisher
+	class Layout
+		: public Drawn
+		, public tggd::common::Finisher
 	{
 	private:
 		std::list<Drawn*> drawnItems;

@@ -4,8 +4,15 @@
 #include "IDataStore.h"
 namespace tggd::graphics
 {
-	class FontManager: public tggd::common::CommonDescriptorManager<SpriteFont>, public tggd::data::IDataStore<SpriteFont>
+	class FontManager
+		: public tggd::common::CommonDescriptorManager<SpriteFont>
+		, public tggd::data::IDataStore<SpriteFont>
 	{
+		FontManager() = delete;
+		FontManager(const FontManager&) = delete;
+		FontManager(FontManager&&) = delete;
+		FontManager& operator=(const FontManager&) = delete;
+		FontManager& operator=(FontManager&&) = delete;
 	private:
 		const SpriteManager& spriteManager;
 		const ColorManager& colorManager;

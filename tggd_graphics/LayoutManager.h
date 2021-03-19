@@ -9,6 +9,11 @@ namespace tggd::graphics
 {
 	class LayoutManager: public tggd::common::CommonDescriptorManager<Layout>
 	{
+		LayoutManager() = delete;
+		LayoutManager(const LayoutManager&) = delete;
+		LayoutManager(LayoutManager&&) = delete;
+		LayoutManager& operator=(const LayoutManager&) = delete;
+		LayoutManager& operator=(LayoutManager&&) = delete;
 	private:
 		const SpriteManager& spriteManager;
 		const ColorManager& colorManager;
