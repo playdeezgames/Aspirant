@@ -12,6 +12,11 @@ namespace aspirant::editor::controls
 	template<typename TContext>
 	class EditorBaseControl : public tggd::graphics::Drawn
 	{
+		EditorBaseControl() = delete;
+		EditorBaseControl(const EditorBaseControl&) = delete;
+		EditorBaseControl(EditorBaseControl&&) = delete;
+		EditorBaseControl& operator=(const EditorBaseControl&) = delete;
+		EditorBaseControl& operator=(EditorBaseControl&&) = delete;
 	private:
 		const TContext& context;
 		tggd::graphics::Plotter<size_t, int>* plotter;

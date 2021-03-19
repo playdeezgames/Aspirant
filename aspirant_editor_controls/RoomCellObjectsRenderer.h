@@ -5,6 +5,11 @@ namespace aspirant::editor::controls
 {
 	class RoomCellObjectsRenderer : public EditorBaseControl<aspirant::editor::context::EditorContext>
 	{
+		RoomCellObjectsRenderer() = delete;
+		RoomCellObjectsRenderer(const RoomCellObjectsRenderer&) = delete;
+		RoomCellObjectsRenderer(RoomCellObjectsRenderer&&) = delete;
+		RoomCellObjectsRenderer& operator=(const RoomCellObjectsRenderer&) = delete;
+		RoomCellObjectsRenderer& operator=(RoomCellObjectsRenderer&&) = delete;
 	public:
 		RoomCellObjectsRenderer
 		(
