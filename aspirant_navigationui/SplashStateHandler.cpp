@@ -52,9 +52,9 @@ namespace aspirant::navigationui
 		{
 			return OnUpdate(tggd::common::MUpdate::From(message)->GetMilliseconds());
 		}
-		else if (message->GetId() == aspirant::commonui::MCommand::MSGID_Command)
+		else if (aspirant::commonui::MCommand::Is(message))
 		{
-			return OnCommand(static_cast<const aspirant::commonui::MCommand*>(message)->GetCommand());
+			return OnCommand(aspirant::commonui::MCommand::From(message)->GetCommand());
 		}
 		return false;
 	}

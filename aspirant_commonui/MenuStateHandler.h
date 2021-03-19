@@ -103,9 +103,9 @@ namespace aspirant::commonui
 			{
 				return OnDraw(tggd::common::MRender::From(message)->GetRenderer());
 			}
-			else if (message->GetId() == MCommand::MSGID_Command)
+			else if (MCommand::Is(message))
 			{
-				return OnCommand(static_cast<const MCommand*>(message)->GetCommand());
+				return OnCommand(MCommand::From(message)->GetCommand());
 			}
 			else if (tggd::common::MUpdate::Is(message))
 			{

@@ -7,6 +7,7 @@ namespace aspirant::commonui
 	{
 	private:
 		Command command;
+		static void MSGID_Command() {}
 	public:
 		MCommand(const Command& command)
 			: MGeneric(MSGID_Command)
@@ -14,10 +15,17 @@ namespace aspirant::commonui
 		{
 
 		}
-		static void MSGID_Command() {}
 		const Command& GetCommand() const
 		{
 			return command;
+		}
+		static bool Is(const tggd::common::MGeneric* message)
+		{
+			return message->GetId() == MSGID_Command;
+		}
+		static const MCommand* From(const tggd::common::MGeneric* message)
+		{
+			return static_cast<const MCommand*>(message);
 		}
 	};
 }
