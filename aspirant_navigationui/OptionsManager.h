@@ -5,6 +5,11 @@ namespace aspirant::navigationui
 {
 	class OptionsManager
 	{
+		OptionsManager() = delete;
+		OptionsManager(const OptionsManager&) = delete;
+		OptionsManager(OptionsManager&&) = delete;
+		OptionsManager& operator=(const OptionsManager&) = delete;
+		OptionsManager& operator=(OptionsManager&&) = delete;
 	private:
 		std::string fileName;
 		tggd::common::SoundManager& soundManager;

@@ -9,6 +9,11 @@ namespace aspirant::navigationui
 {
 	class SplashStateHandler : public aspirant::commonui::UIStateMessageHandler
 	{
+		SplashStateHandler() = delete;
+		SplashStateHandler(const SplashStateHandler&) = delete;
+		SplashStateHandler(SplashStateHandler&&) = delete;
+		SplashStateHandler& operator=(const SplashStateHandler&) = delete;
+		SplashStateHandler& operator=(SplashStateHandler&&) = delete;
 	private:
 		bool OnDraw(SDL_Renderer*) const;
 		bool OnUpdate(unsigned int);

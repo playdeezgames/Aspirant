@@ -13,6 +13,11 @@ namespace aspirant::navigationui
 	};
 	class ConfirmQuitStateHandler : public aspirant::commonui::MenuStateHandler<ConfirmQuitItem>
 	{
+		ConfirmQuitStateHandler() = delete;
+		ConfirmQuitStateHandler(const ConfirmQuitStateHandler&) = delete;
+		ConfirmQuitStateHandler(ConfirmQuitStateHandler&&) = delete;
+		ConfirmQuitStateHandler& operator=(const ConfirmQuitStateHandler&) = delete;
+		ConfirmQuitStateHandler& operator=(ConfirmQuitStateHandler&&) = delete;
 	protected:
 		void ActivateItem(const ConfirmQuitItem&);
 	public:

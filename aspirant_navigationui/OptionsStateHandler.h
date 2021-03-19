@@ -19,6 +19,11 @@ namespace aspirant::navigationui
 	};
 	class OptionsStateHandler : public aspirant::commonui::MenuStateHandler<OptionsItem>
 	{
+		OptionsStateHandler() = delete;
+		OptionsStateHandler(const OptionsStateHandler&) = delete;
+		OptionsStateHandler(OptionsStateHandler&&) = delete;
+		OptionsStateHandler& operator=(const OptionsStateHandler&) = delete;
+		OptionsStateHandler& operator=(OptionsStateHandler&&) = delete;
 	private:
 		tggd::common::SoundManager& soundManager;
 		OptionsManager& optionsManager;

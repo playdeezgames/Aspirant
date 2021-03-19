@@ -14,6 +14,11 @@ namespace aspirant::navigationui
 	};
 	class StartGameStateHandler : public aspirant::commonui::MenuStateHandler<StartGameItem>
 	{
+		StartGameStateHandler() = delete;
+		StartGameStateHandler(const StartGameStateHandler&) = delete;
+		StartGameStateHandler(StartGameStateHandler&&) = delete;
+		StartGameStateHandler& operator=(const StartGameStateHandler&) = delete;
+		StartGameStateHandler& operator=(StartGameStateHandler&&) = delete;
 	protected:
 		void ActivateItem(const StartGameItem&);
 	public:
