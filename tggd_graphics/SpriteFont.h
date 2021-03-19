@@ -14,6 +14,11 @@ namespace tggd::graphics
 	};
 	class SpriteFont
 	{
+		SpriteFont() = delete;
+		SpriteFont(const SpriteFont&) = delete;
+		SpriteFont(SpriteFont&&) = delete;
+		SpriteFont& operator=(const SpriteFont&) = delete;
+		SpriteFont& operator=(SpriteFont&&) = delete;
 	private:
 		std::map<char, std::string> glyphs;
 		const SpriteManager& spriteManager;

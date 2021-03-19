@@ -9,6 +9,11 @@ namespace tggd::graphics
 {
 	class StaticImage : public Drawn
 	{
+		StaticImage() = delete;
+		StaticImage(const StaticImage&) = delete;
+		StaticImage(StaticImage&&) = delete;
+		StaticImage& operator=(const StaticImage&) = delete;
+		StaticImage& operator=(StaticImage&&) = delete;
 	private:
 		const tggd::data::IDataStore<Sprite>& spriteStore;
 		const tggd::data::IDataStore<SDL_Color>& colorStore;

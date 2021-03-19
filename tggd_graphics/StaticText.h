@@ -10,6 +10,11 @@ namespace tggd::graphics
 {
 	class StaticText: public Drawn
 	{
+		StaticText() = delete;
+		StaticText(const StaticText&) = delete;
+		StaticText(StaticText&&) = delete;
+		StaticText& operator=(const StaticText&) = delete;
+		StaticText& operator=(StaticText&&) = delete;
 	private:
 		const tggd::data::IDataStore<SpriteFont>& fontStore;
 
