@@ -4,6 +4,11 @@ namespace aspirant::editor::context
 {
 	class EditorRoomViewContext
 	{
+		EditorRoomViewContext() = delete;
+		EditorRoomViewContext(const EditorRoomViewContext&) = delete;
+		EditorRoomViewContext(EditorRoomViewContext&&) = delete;
+		EditorRoomViewContext& operator=(const EditorRoomViewContext&) = delete;
+		EditorRoomViewContext& operator=(EditorRoomViewContext&&) = delete;
 	private:
 		tggd::common::XY<size_t> gridSize;
 		tggd::common::XY<size_t> gridAnchor;

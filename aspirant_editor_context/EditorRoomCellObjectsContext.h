@@ -5,6 +5,11 @@ namespace aspirant::editor::context
 {
 	class EditorRoomCellObjectsContext
 	{
+		EditorRoomCellObjectsContext() = delete;
+		EditorRoomCellObjectsContext(const EditorRoomCellObjectsContext&) = delete;
+		EditorRoomCellObjectsContext(EditorRoomCellObjectsContext&&) = delete;
+		EditorRoomCellObjectsContext& operator=(const EditorRoomCellObjectsContext&) = delete;
+		EditorRoomCellObjectsContext& operator=(EditorRoomCellObjectsContext&&) = delete;
 	private:
 		EditorRoomListContext& roomList;
 		const EditorRoomViewContext& roomView;

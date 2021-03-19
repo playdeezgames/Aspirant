@@ -6,6 +6,11 @@ namespace aspirant::editor::context
 {
 	class EditorDescriptorSelectorContext
 	{
+		EditorDescriptorSelectorContext() = delete;
+		EditorDescriptorSelectorContext(const EditorDescriptorSelectorContext&) = delete;
+		EditorDescriptorSelectorContext(EditorDescriptorSelectorContext&&) = delete;
+		EditorDescriptorSelectorContext& operator=(const EditorDescriptorSelectorContext&) = delete;
+		EditorDescriptorSelectorContext& operator=(EditorDescriptorSelectorContext&&) = delete;
 	private:
 		const aspirant::game::DescriptorManager& descriptors;
 		const std::vector<std::string>& descriptorTypes;

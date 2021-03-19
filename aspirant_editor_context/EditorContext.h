@@ -13,6 +13,11 @@ namespace aspirant::editor::context
 {
 	class EditorContext
 	{
+		EditorContext() = delete;
+		EditorContext(const EditorContext&) = delete;
+		EditorContext(EditorContext&&) = delete;
+		EditorContext& operator=(const EditorContext&) = delete;
+		EditorContext& operator=(EditorContext&&) = delete;
 	private:
 		EditorScenarioSelector scenarioSelector;
 		EditorNewRoomContext newRoom;

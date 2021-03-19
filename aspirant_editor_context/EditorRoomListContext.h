@@ -6,6 +6,11 @@ namespace aspirant::editor::context
 {
 	class EditorRoomListContext
 	{
+		EditorRoomListContext() = delete;
+		EditorRoomListContext(const EditorRoomListContext&) = delete;
+		EditorRoomListContext(EditorRoomListContext&&) = delete;
+		EditorRoomListContext& operator=(const EditorRoomListContext&) = delete;
+		EditorRoomListContext& operator=(EditorRoomListContext&&) = delete;
 	private:
 		aspirant::game::Scenario& scenario;
 		std::vector<std::string> roomList;

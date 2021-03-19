@@ -4,6 +4,11 @@ namespace aspirant::editor::context
 {
 	class EditorScenarioSelector
 	{
+		EditorScenarioSelector() = delete;
+		EditorScenarioSelector(const EditorScenarioSelector&) = delete;
+		EditorScenarioSelector(EditorScenarioSelector&&) = delete;
+		EditorScenarioSelector& operator=(const EditorScenarioSelector&) = delete;
+		EditorScenarioSelector& operator=(EditorScenarioSelector&&) = delete;
 	private:
 		aspirant::game::ScenarioDescriptorManager& scenarios;
 		size_t scenarioIndex;
