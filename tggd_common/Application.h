@@ -36,8 +36,8 @@ namespace tggd::common
 		virtual bool IsRunning() const = 0;
 		virtual void Start(SDL_Renderer*) = 0;
 		virtual void Finish() = 0;
-	public:
 		Application();
+	public:
 		static int Run(const std::vector<std::string>&);
 	};
 }
