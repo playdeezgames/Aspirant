@@ -1,0 +1,121 @@
+[
+    {
+        "type": "StaticImage",
+        "sprite": "Background",
+        "color": "DarkGray",
+        "x": 0,
+        "y": 0
+    },
+    {
+        "type": "StaticText",
+        "font": "default",
+        "color": "LightGreen",
+        "text": "==CHOOSE SCENARIO==",
+        "x": 320,
+        "y": 0,
+        "horizontalAlignment": 0,
+        "dropShadow": true,
+        "dropShadowColor": "Black",
+        "dropShadowX": 2,
+        "dropShadowY": 2
+    },
+    {
+        "type": "StaticText",
+        "font": "default",
+        "color": "Green",
+        "text": {
+            "key": "EditScenarioSelector.Text.Index"
+        },
+        "x": 320,
+        "y": 32,
+        "horizontalAlignment": 0,
+        "dropShadow": true,
+        "dropShadowColor": "Black",
+        "dropShadowX": 2,
+        "dropShadowY": 2
+    },
+    {
+        "type": "StaticText",
+        "font": "default",
+        "color": "Brown",
+        "text": "Scenario Id",
+        "x": 320,
+        "y": 64,
+        "horizontalAlignment": 0,
+        "dropShadow": true,
+        "dropShadowColor": "Black",
+        "dropShadowX": 2,
+        "dropShadowY": 2
+    },
+    {
+        "type": "StaticText",
+        "font": "default",
+        "color": "Gray",
+        "text": {
+            "key": "EditScenarioSelector.Text.Id"
+        },
+        "x": 320,
+        "y": 80,
+        "horizontalAlignment": 0,
+        "dropShadow": true,
+        "dropShadowColor": "Black",
+        "dropShadowX": 2,
+        "dropShadowY": 2
+    },
+    {
+        "type": "StaticText",
+        "font": "default",
+        "color": "Brown",
+        "text": "Name",
+        "x": 320,
+        "y": 112,
+        "horizontalAlignment": 0,
+        "dropShadow": true,
+        "dropShadowColor": "Black",
+        "dropShadowX": 2,
+        "dropShadowY": 2
+    },
+    {
+        "type": "StaticText",
+        "font": "default",
+        "color": "Gray",
+        "text": {
+            "key": "EditScenarioSelector.Text.Name"
+        },
+        "x": 320,
+        "y": 128,
+        "horizontalAlignment": 0,
+        "dropShadow": true,
+        "dropShadowColor": "Black",
+        "dropShadowX": 2,
+        "dropShadowY": 2
+    },
+    {
+        "type": "StaticText",
+        "font": "default",
+        "color": "Brown",
+        "text": "Brief",
+        "x": 320,
+        "y": 160,
+        "horizontalAlignment": 0,
+        "dropShadow": true,
+        "dropShadowColor": "Black",
+        "dropShadowX": 2,
+        "dropShadowY": 2
+    },
+    {
+        "type": "StaticText",
+        "font": "default",
+        "color": "Gray",
+        "text": {
+            "key": "EditScenarioSelector.Text.Brief"
+        },
+        "x": 320,
+        "y": 176,
+        "horizontalAlignment": 0,
+        "dropShadow": true,
+        "dropShadowColor": "Black",
+        "dropShadowX": 2,
+        "dropShadowY": 2
+    }
+]

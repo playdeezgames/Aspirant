@@ -1,0 +1,58 @@
+[
+    {
+        "type": "StaticImage",
+        "sprite": "Background",
+        "color": "DarkGray",
+        "x": 0,
+        "y": 0
+    },
+    {
+        "type": "StaticText",
+        "font": "default",
+        "color": "LightGreen",
+        "text": "==ABOUT==",
+        "x": 320,
+        "y": 0,
+        "horizontalAlignment": 0,
+        "dropShadow": true,
+        "dropShadowColor": "Black",
+        "dropShadowX": 2,
+        "dropShadowY": 2
+    },
+    {
+        "type": "StaticText",
+        "font": "default",
+        "color": "Gray",
+        "text": "A Production of TheGrumpyGameDev",
+        "x": 0,
+        "y": 32,
+        "dropShadow": true,
+        "dropShadowColor": "Black",
+        "dropShadowX": 2,
+        "dropShadowY": 2
+    },
+    {
+        "type": "StaticText",
+        "font": "default",
+        "color": "Cyan",
+        "text": {"key":"ItchURL"},
+        "x": 0,
+        "y": 48,
+        "dropShadow": true,
+        "dropShadowColor": "Black",
+        "dropShadowX": 2,
+        "dropShadowY": 2
+    },
+    {
+        "type": "StaticText",
+        "font": "default",
+        "color": "DarkGray",
+        "text": "(URL above copied to clipboard!)",
+        "x": 0,
+        "y": 64,
+        "dropShadow": true,
+        "dropShadowColor": "Black",
+        "dropShadowX": 2,
+        "dropShadowY": 2
+    } 
+]

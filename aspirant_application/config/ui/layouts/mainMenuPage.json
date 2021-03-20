@@ -1,0 +1,74 @@
+[
+    {
+        "type": "StaticImage",
+        "sprite": "Background",
+        "color": "DarkGray",
+        "x": 0,
+        "y": 0
+    },
+    {
+        "type": "StaticText",
+        "font": "default",
+        "color": "LightGreen",
+        "text": "==MAIN MENU==",
+        "x": 320,
+        "y": 0,
+        "horizontalAlignment": 0,
+        "dropShadow": true,
+        "dropShadowColor": "Black",
+        "dropShadowX": 2,
+        "dropShadowY": 2
+    },
+    {
+        "type": "StaticText",
+        "font": "default",
+        "color": { "key": "MainMenu.Color.Start" },
+        "text": "Start",
+        "x": 320,
+        "y": 32,
+        "horizontalAlignment": 0,
+        "dropShadow": true,
+        "dropShadowColor": "Black",
+        "dropShadowX": 2,
+        "dropShadowY": 2
+    },
+    {
+        "type": "StaticText",
+        "font": "default",
+        "color": { "key": "MainMenu.Color.About" },
+        "text": "About",
+        "x": 320,
+        "y": 48,
+        "horizontalAlignment": 0,
+        "dropShadow": true,
+        "dropShadowColor": "Black",
+        "dropShadowX": 2,
+        "dropShadowY": 2
+    },
+    {
+        "type": "StaticText",
+        "font": "default",
+        "color": { "key": "MainMenu.Color.Options" },
+        "text": "Options",
+        "x": 320,
+        "y": 64,
+        "horizontalAlignment": 0,
+        "dropShadow": true,
+        "dropShadowColor": "Black",
+        "dropShadowX": 2,
+        "dropShadowY": 2
+    },
+    {
+        "type": "StaticText",
+        "font": "default",
+        "color": { "key": "MainMenu.Color.Quit" },
+        "text": "Quit",
+        "x": 320,
+        "y": 80,
+        "horizontalAlignment": 0,
+        "dropShadow": true,
+        "dropShadowColor": "Black",
+        "dropShadowX": 2,
+        "dropShadowY": 2
+    }
+]

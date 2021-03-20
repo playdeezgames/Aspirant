@@ -1,0 +1,35 @@
+[
+    {
+        "type": "StaticImage",
+        "sprite": "Splash",
+        "color": "White",
+        "x": 0,
+        "y": 0
+    },
+    {
+        "type": "StaticText",
+        "font": "default",
+        "color": "Cyan",
+        "text": "Aspirant of SPLORR!!",
+        "x": 320,
+        "y": 172,
+        "horizontalAlignment": 0,
+        "dropShadow": true,
+        "dropShadowColor": "Black",
+        "dropShadowX": 2,
+        "dropShadowY": 2
+    },
+    {
+        "type": "StaticText",
+        "font": "font5x7",
+        "color": "Gray",
+        "text": "A Production of TheGrumpyGameDev",
+        "x": 320,
+        "y": 340,
+        "horizontalAlignment": 0,
+        "dropShadow": true,
+        "dropShadowColor": "Black",
+        "dropShadowX": 1,
+        "dropShadowY": 1
+    }
+]
