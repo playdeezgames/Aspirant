@@ -17,7 +17,7 @@ namespace aspirant::navigationui::StartGameStateHandler
 		BACK
 	};
 
-	static StartGameItem current;
+	static StartGameItem current = StartGameItem::BACK;
 	static std::map<StartGameItem, aspirant::commonui::MenuItemDescriptor<StartGameItem>> items;
 
 	static void ActivateItem()

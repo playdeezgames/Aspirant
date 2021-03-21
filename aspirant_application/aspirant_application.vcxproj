@@ -156,6 +156,7 @@
     <ClCompile Include="CreatureDescriptor.cpp" />
     <ClCompile Include="CreatureInstance.cpp" />
     <ClCompile Include="DescriptorManager.cpp" />
+    <ClCompile Include="EditorScenarioSelector.cpp" />
     <ClCompile Include="FinishManager.cpp" />
     <ClCompile Include="FlagManager.cpp" />
     <ClCompile Include="FontManager.cpp" />
@@ -175,6 +176,7 @@
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="SpriteFont.cpp" />
     <ClCompile Include="SpriteManager.cpp" />
+    <ClCompile Include="StartEditorStateHandler.cpp" />
     <ClCompile Include="StartGameStateHandler.cpp" />
     <ClCompile Include="StaticImage.cpp" />
     <ClCompile Include="StaticText.cpp" />
@@ -199,6 +201,7 @@
     <ClInclude Include="CreatureInstance.h" />
     <ClInclude Include="DescriptorManager.h" />
     <ClInclude Include="Drawn.h" />
+    <ClInclude Include="EditorScenarioSelector.h" />
     <ClInclude Include="FinishManager.h" />
     <ClInclude Include="FinishUtility.h" />
     <ClInclude Include="FlagManager.h" />
@@ -222,6 +225,7 @@
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="SpriteFont.h" />
     <ClInclude Include="SpriteManager.h" />
+    <ClInclude Include="StartEditorStateHandler.h" />
     <ClInclude Include="StartGameStateHandler.h" />
     <ClInclude Include="StaticImage.h" />
     <ClInclude Include="StaticText.h" />

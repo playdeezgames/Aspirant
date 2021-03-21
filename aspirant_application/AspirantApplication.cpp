@@ -23,7 +23,7 @@
 #include "ConfirmQuitStateHandler.h"
 #include "OptionsStateHandler.h"
 #include "StartGameStateHandler.h"
-
+#include "StartEditorStateHandler.h"
 #include <map>
 namespace aspirant::ConfigurationConstants
 {
@@ -172,7 +172,7 @@ namespace tggd::common::Application
 		aspirant::navigationui::ConfirmQuitStateHandler::Start();
 		aspirant::navigationui::OptionsStateHandler::Start();
 		aspirant::navigationui::StartGameStateHandler::Start();
-		//new aspirant::editorui::StartEditorStateHandler(this, editorContext, uiContext);
+		aspirant::editorui::StartEditorStateHandler::Start();
 		//new aspirant::editorui::EditScenarioSelectorStateHandler(this, editorContext, uiContext);
 		//new aspirant::editorui::EditScenarioStateHandler(this, editorContext, uiContext);
 		//new aspirant::editorui::EditPickRoomStateHandler(this, editorContext, uiContext);
