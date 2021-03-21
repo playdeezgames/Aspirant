@@ -16,6 +16,14 @@
 #include "SoundManager.h"
 #include "OptionsManager.h"
 #include "DescriptorManager.h"
+#include "ScenarioDescriptorManager.h"
+#include "SplashStateHandler.h"
+#include "MainMenuStateHandler.h"
+#include "AboutStateHandler.h"
+#include "ConfirmQuitStateHandler.h"
+#include "OptionsStateHandler.h"
+#include "StartGameStateHandler.h"
+
 #include <map>
 namespace aspirant::ConfigurationConstants
 {
@@ -156,14 +164,14 @@ namespace tggd::common::Application
 		tggd::common::SoundManager::Start(aspirant::ConfigurationConstants::SFX, aspirant::ConfigurationConstants::MUX);
 		aspirant::navigationui::OptionsManager::Start(aspirant::ConfigurationConstants::OPTIONS);
 		aspirant::game::DescriptorManager::Start(aspirant::ConfigurationConstants::DESCRIPTORS);
-		//scenarios.Load();
+		aspirant::game::ScenarioDescriptorManager::Load(aspirant::ConfigurationConstants::SCENARIOS);
 
-		//new aspirant::navigationui::SplashStateHandler(this, uiContext);
-		//new aspirant::navigationui::MainMenuStateHandler(this, uiContext);
-		//new aspirant::navigationui::AboutStateHandler(this, uiContext);
-		//new aspirant::navigationui::ConfirmQuitStateHandler(this, uiContext);
-		//new aspirant::navigationui::OptionsStateHandler(this, soundManager, optionsManager, uiContext);
-		//new aspirant::navigationui::StartGameStateHandler(this, uiContext);
+		aspirant::navigationui::SplashStateHandler::Start();
+		aspirant::navigationui::MainMenuStateHandler::Start();
+		aspirant::navigationui::AboutStateHandler::Start();
+		aspirant::navigationui::ConfirmQuitStateHandler::Start();
+		aspirant::navigationui::OptionsStateHandler::Start();
+		aspirant::navigationui::StartGameStateHandler::Start();
 		//new aspirant::editorui::StartEditorStateHandler(this, editorContext, uiContext);
 		//new aspirant::editorui::EditScenarioSelectorStateHandler(this, editorContext, uiContext);
 		//new aspirant::editorui::EditScenarioStateHandler(this, editorContext, uiContext);

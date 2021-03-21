@@ -39,4 +39,10 @@ namespace tggd::graphics::LayoutManager
 				ParseDescriptor(identifier, item.value());
 		}
 	}
+
+	const Layout& Get(const std::string& key)
+	{
+		return *descriptors[key];
+	}
+
 }

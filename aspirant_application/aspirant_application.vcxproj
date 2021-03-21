@@ -147,10 +147,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AboutStateHandler.cpp" />
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="AspirantApplication.cpp" />
     <ClCompile Include="BoolSource.cpp" />
     <ClCompile Include="ColorManager.cpp" />
+    <ClCompile Include="ConfirmQuitStateHandler.cpp" />
     <ClCompile Include="CreatureDescriptor.cpp" />
     <ClCompile Include="CreatureInstance.cpp" />
     <ClCompile Include="DescriptorManager.cpp" />
@@ -163,12 +165,17 @@
     <ClCompile Include="Layout.cpp" />
     <ClCompile Include="LayoutManager.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MainMenuStateHandler.cpp" />
     <ClCompile Include="OptionsManager.cpp" />
+    <ClCompile Include="OptionsStateHandler.cpp" />
     <ClCompile Include="RNGUtility.cpp" />
+    <ClCompile Include="ScenarioDescriptorManager.cpp" />
     <ClCompile Include="SoundManager.cpp" />
+    <ClCompile Include="SplashStateHandler.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="SpriteFont.cpp" />
     <ClCompile Include="SpriteManager.cpp" />
+    <ClCompile Include="StartGameStateHandler.cpp" />
     <ClCompile Include="StaticImage.cpp" />
     <ClCompile Include="StaticText.cpp" />
     <ClCompile Include="StringManager.cpp" />
@@ -179,6 +186,7 @@
     <ClCompile Include="Utility.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AboutStateHandler.h" />
     <ClInclude Include="Application.h" />
     <ClInclude Include="AspirantApplication.h" />
     <ClInclude Include="BaseDescriptor.h" />
@@ -186,6 +194,7 @@
     <ClInclude Include="ColorManager.h" />
     <ClInclude Include="Command.h" />
     <ClInclude Include="CommonDescriptor.h" />
+    <ClInclude Include="ConfirmQuitStateHandler.h" />
     <ClInclude Include="CreatureDescriptor.h" />
     <ClInclude Include="CreatureInstance.h" />
     <ClInclude Include="DescriptorManager.h" />
@@ -200,13 +209,20 @@
     <ClInclude Include="JSONUtility.h" />
     <ClInclude Include="Layout.h" />
     <ClInclude Include="LayoutManager.h" />
+    <ClInclude Include="MainMenuStateHandler.h" />
+    <ClInclude Include="MenuItemDescriptor.h" />
     <ClInclude Include="OptionsManager.h" />
+    <ClInclude Include="OptionsStateHandler.h" />
     <ClInclude Include="RNGUtility.h" />
+    <ClInclude Include="ScenarioDescriptor.h" />
+    <ClInclude Include="ScenarioDescriptorManager.h" />
     <ClInclude Include="ScenarioObjectInstance.h" />
     <ClInclude Include="SoundManager.h" />
+    <ClInclude Include="SplashStateHandler.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="SpriteFont.h" />
     <ClInclude Include="SpriteManager.h" />
+    <ClInclude Include="StartGameStateHandler.h" />
     <ClInclude Include="StaticImage.h" />
     <ClInclude Include="StaticText.h" />
     <ClInclude Include="StringManager.h" />
