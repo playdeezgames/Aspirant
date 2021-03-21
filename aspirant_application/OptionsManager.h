@@ -4,5 +4,5 @@
 namespace aspirant::navigationui::OptionsManager
 {
 	void Start(const std::string&);
-	void Save(const std::string&);
+	void Save();
 }

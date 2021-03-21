@@ -28,10 +28,10 @@ namespace tggd::common::Utility
 		return result;
 	}
 
-	//int ToPercentage(int value, int maximum)
-	//{
-	//	return value * 100 / maximum;
-	//}
+	int ToPercentage(int value, int maximum)
+	{
+		return value * 100 / maximum;
+	}
 
 	//size_t NextIndex(size_t index, size_t count)
 	//{
