@@ -157,6 +157,7 @@
     <ClCompile Include="CreatureInstance.cpp" />
     <ClCompile Include="DescriptorManager.cpp" />
     <ClCompile Include="EditorScenarioSelector.cpp" />
+    <ClCompile Include="EditScenarioSelectorStateHandler.cpp" />
     <ClCompile Include="FinishManager.cpp" />
     <ClCompile Include="FlagManager.cpp" />
     <ClCompile Include="FontManager.cpp" />
@@ -202,6 +203,7 @@
     <ClInclude Include="DescriptorManager.h" />
     <ClInclude Include="Drawn.h" />
     <ClInclude Include="EditorScenarioSelector.h" />
+    <ClInclude Include="EditScenarioSelectorStateHandler.h" />
     <ClInclude Include="FinishManager.h" />
     <ClInclude Include="FinishUtility.h" />
     <ClInclude Include="FlagManager.h" />
