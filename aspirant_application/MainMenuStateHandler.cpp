@@ -23,7 +23,6 @@ namespace aspirant::navigationui::MainMenuStateHandler
 	};
 
 	static MainMenuItem current = MainMenuItem::START;
-
 	static std::map<MainMenuItem, aspirant::commonui::MenuItemDescriptor<MainMenuItem>> items;
 
 	static void ActivateItem()
