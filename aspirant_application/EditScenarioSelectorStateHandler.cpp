@@ -6,6 +6,8 @@
 #include "EditorScenarioSelector.h"
 #include "StringManager.h"
 #include <sstream>
+#include "EditorContext.h"
+#include "JSONUtility.h"
 namespace aspirant::editorui::EditScenarioSelectorStateHandler
 {
 	const std::string LAYOUT_NAME = "EditScenarioSelector";
@@ -30,7 +32,7 @@ namespace aspirant::editorui::EditScenarioSelectorStateHandler
 			aspirant::editor::context::EditorScenarioSelector::Previous();
 			break;
 		case aspirant::commonui::Command::GREEN:
-			//LoadScenario();
+			aspirant::editor::context::EditorContext::LoadScenario();
 			aspirant::Application::SetUIState(aspirant::commonui::UIState::EDIT_SCENARIO);
 			break;
 		}

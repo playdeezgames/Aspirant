@@ -6,6 +6,6 @@
 namespace aspirant::game::DescriptorManager
 {
 	void Start(const std::string&);
-	const aspirant::game::BaseDescriptor<ScenarioObjectInstance>* Get(std::string&);
+	const aspirant::game::BaseDescriptor<ScenarioObjectInstance>* Get(const std::string&);
 	const std::vector<std::string>& GetIdentifiers();
 }

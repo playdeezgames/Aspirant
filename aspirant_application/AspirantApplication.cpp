@@ -25,6 +25,7 @@
 #include "StartGameStateHandler.h"
 #include "StartEditorStateHandler.h"
 #include "EditScenarioSelectorStateHandler.h"
+#include "EditScenarioStateHandler.h"
 #include <map>
 namespace aspirant::ConfigurationConstants
 {
@@ -175,7 +176,7 @@ namespace tggd::common::Application
 		aspirant::navigationui::StartGameStateHandler::Start();
 		aspirant::editorui::StartEditorStateHandler::Start();
 		aspirant::editorui::EditScenarioSelectorStateHandler::Start();
-		//new aspirant::editorui::EditScenarioStateHandler(this, editorContext, uiContext);
+		aspirant::editorui::EditScenarioStateHandler::Start();
 		//new aspirant::editorui::EditPickRoomStateHandler(this, editorContext, uiContext);
 		//new aspirant::editorui::EditNewRoomStateHandler(this, editorContext, uiContext);
 		//new aspirant::editorui::EditScenarioDescriptorStateHandler(this, editorContext, uiContext);

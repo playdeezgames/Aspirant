@@ -58,7 +58,7 @@ namespace aspirant::game::DescriptorManager
 		}
 	}
 
-	const aspirant::game::BaseDescriptor<ScenarioObjectInstance>* Get(std::string& key)
+	const aspirant::game::BaseDescriptor<ScenarioObjectInstance>* Get(const std::string& key)
 	{
 		return descriptors[key];
 	}

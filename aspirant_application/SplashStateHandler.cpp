@@ -4,9 +4,9 @@
 #include "LayoutManager.h"
 namespace aspirant::navigationui::SplashStateHandler
 {
-	const int TICKS_TOTAL = 3000;
+	const size_t TICKS_TOTAL = 3000;
 	const std::string LAYOUT_NAME = "Splash";
-	static int ticksLeft = TICKS_TOTAL;
+	static size_t ticksLeft = TICKS_TOTAL;
 
 	static void OnCommand(const aspirant::commonui::Command& command)
 	{

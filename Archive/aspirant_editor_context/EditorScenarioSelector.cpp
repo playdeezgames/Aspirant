@@ -58,6 +58,4 @@ namespace aspirant::editor::context
 		Get()->SetBrief(Get()->GetBrief() + text);
 		GetAll().Save();
 	}
-
-
 }
