@@ -188,6 +188,9 @@
     <ClCompile Include="EditorBaseControl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="EditDescriptorSelectorStateHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h">
@@ -389,6 +392,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="EditorBaseControl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EditDescriptorSelectorStateHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

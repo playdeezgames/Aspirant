@@ -157,6 +157,7 @@
     <ClCompile Include="CreatureInstance.cpp" />
     <ClCompile Include="DescriptorManager.cpp" />
     <ClCompile Include="DescriptorSelectorRenderer.cpp" />
+    <ClCompile Include="EditDescriptorSelectorStateHandler.cpp" />
     <ClCompile Include="EditNavigateRoomStateHandler.cpp" />
     <ClCompile Include="EditNewRoomStateHandler.cpp" />
     <ClCompile Include="EditorBaseControl.cpp" />
@@ -222,6 +223,7 @@
     <ClInclude Include="DescriptorManager.h" />
     <ClInclude Include="DescriptorSelectorRenderer.h" />
     <ClInclude Include="Drawn.h" />
+    <ClInclude Include="EditDescriptorSelectorStateHandler.h" />
     <ClInclude Include="EditNavigateRoomStateHandler.h" />
     <ClInclude Include="EditNewRoomStateHandler.h" />
     <ClInclude Include="EditorBaseControl.h" />
