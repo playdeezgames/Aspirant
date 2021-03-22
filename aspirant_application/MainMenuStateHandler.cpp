@@ -4,7 +4,7 @@
 #include "LayoutManager.h"
 #include "MenuItemDescriptor.h"
 #include <map>
-#include "StringManager.h"
+#include "Data.Strings.h"
 namespace aspirant::navigationui::MainMenuStateHandler
 {
 	const std::string LAYOUT_NAME = "MainMenu";

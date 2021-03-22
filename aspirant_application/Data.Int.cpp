@@ -1,5 +1,5 @@
 #include "Data.Int.h"
-#include "IntManager.h"
+#include "Data.Ints.h"
 namespace data
 {
 #define PROPERTY_KEY "key"

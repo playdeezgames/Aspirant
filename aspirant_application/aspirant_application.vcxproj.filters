@@ -29,13 +29,13 @@
     <ClCompile Include="Aspirant.Application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="StringManager.cpp">
+    <ClCompile Include="Data.Strings.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="IntManager.cpp">
+    <ClCompile Include="Data.Ints.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FlagManager.cpp">
+    <ClCompile Include="Data.Bools.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Graphics.Colors.cpp">
@@ -217,13 +217,13 @@
     <ClInclude Include="Aspirant.Command.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="StringManager.h">
+    <ClInclude Include="Data.Strings.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="IntManager.h">
+    <ClInclude Include="Data.Ints.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FlagManager.h">
+    <ClInclude Include="Data.Bools.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Graphics.Colors.h">

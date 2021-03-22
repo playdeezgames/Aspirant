@@ -3,9 +3,9 @@
 #include "UIState.h"
 #include "Aspirant.Command.h"
 #include <optional>
-#include "StringManager.h"
-#include "IntManager.h"
-#include "FlagManager.h"
+#include "Data.Strings.h"
+#include "Data.Ints.h"
+#include "Data.Bools.h"
 #include "Aspirant.Application.h"
 #include "FinishManager.h"
 #include "Graphics.Colors.h"

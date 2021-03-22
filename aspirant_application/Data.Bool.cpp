@@ -1,5 +1,5 @@
 #include "Data.Bool.h"
-#include "FlagManager.h"
+#include "Data.Bools.h"
 namespace data
 {
 #define PROPERTY_KEY "key"

@@ -7,7 +7,7 @@
 #include "RoomCellObjectsRenderer.h"
 #include "EditorRoomViewContext.h"
 #include <sstream>
-#include "StringManager.h"
+#include "Data.Strings.h"
 #include "EditorContext.h"
 #include "Utility.h"
 #include "EditorRoomListContext.h"

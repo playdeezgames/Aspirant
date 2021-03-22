@@ -4,7 +4,7 @@
 #include "LayoutManager.h"
 #include <map>
 #include "MenuItemDescriptor.h"
-#include "StringManager.h"
+#include "Data.Strings.h"
 namespace aspirant::state::ConfirmQuit
 {
 	const std::string CONFIRM_ITEM_NO_COLOR_NAME = "ConfirmQuit.Color.No";

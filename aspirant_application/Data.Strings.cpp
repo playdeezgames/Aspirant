@@ -1,4 +1,4 @@
-#include "StringManager.h"
+#include "Data.Strings.h"
 #include "JSONUtility.h"
 #include <map>
 namespace tggd::data::StringManager

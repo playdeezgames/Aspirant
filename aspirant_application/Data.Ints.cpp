@@ -1,4 +1,4 @@
-#include "IntManager.h"
+#include "Data.Ints.h"
 #include "JSONUtility.h"
 #include <map>
 namespace tggd::data::IntManager

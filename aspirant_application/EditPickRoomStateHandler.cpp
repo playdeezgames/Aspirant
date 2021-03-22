@@ -4,7 +4,7 @@
 #include "UIState.h"
 #include "LayoutManager.h"
 #include "EditorRoomListContext.h"
-#include "StringManager.h"
+#include "Data.Strings.h"
 #include "EditorRoomViewContext.h"
 namespace aspirant::editorui::EditPickRoomStateHandler
 {

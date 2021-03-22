@@ -4,7 +4,7 @@
 #include "LayoutManager.h"
 #include "ScenarioDescriptorManager.h"
 #include "EditorScenarioSelector.h"
-#include "StringManager.h"
+#include "Data.Strings.h"
 #include <sstream>
 #include "MenuItemDescriptor.h"
 #include "ScenarioDescriptorManager.h"

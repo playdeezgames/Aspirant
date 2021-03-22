@@ -4,7 +4,7 @@
 #include "LayoutManager.h"
 #include "MenuItemDescriptor.h"
 #include <map>
-#include "StringManager.h"
+#include "Data.Strings.h"
 #include "ScenarioDescriptorManager.h"
 #include <sstream>
 #include "JSONUtility.h"

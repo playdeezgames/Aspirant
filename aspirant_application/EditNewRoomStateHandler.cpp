@@ -4,7 +4,7 @@
 #include "LayoutManager.h"
 #include "MenuItemDescriptor.h"
 #include <sstream>
-#include "StringManager.h"
+#include "Data.Strings.h"
 #include "EditorContext.h"
 #include "EditorNewRoomContext.h"
 #include "EditorRoomListContext.h"

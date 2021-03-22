@@ -4,7 +4,7 @@
 #include "MenuItemDescriptor.h"
 #include <map>
 #include "LayoutManager.h"
-#include "StringManager.h"
+#include "Data.Strings.h"
 namespace aspirant::navigationui::StartGameStateHandler
 {
 	const std::string START_GAME_EDITOR_COLOR_NAME = "StartGame.Color.Editor";

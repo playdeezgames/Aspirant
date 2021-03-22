@@ -4,7 +4,7 @@
 #include <map>
 #include "MenuItemDescriptor.h"
 #include "LayoutManager.h"
-#include "StringManager.h"
+#include "Data.Strings.h"
 #include "SoundManager.h"
 #include "OptionsManager.h"
 #include <sstream>

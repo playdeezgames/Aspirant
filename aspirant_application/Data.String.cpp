@@ -1,5 +1,5 @@
 #include "Data.String.h"
-#include "StringManager.h"
+#include "Data.Strings.h"
 namespace data
 {
 #define PROPERTY_KEY "key"

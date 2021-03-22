@@ -4,7 +4,7 @@
 #include "LayoutManager.h"
 #include "MenuItemDescriptor.h"
 #include "EditorScenarioSelector.h"
-#include "StringManager.h"
+#include "Data.Strings.h"
 #include "ScenarioDescriptorManager.h"
 namespace aspirant::editorui::EditScenarioDescriptorStateHandler
 {
