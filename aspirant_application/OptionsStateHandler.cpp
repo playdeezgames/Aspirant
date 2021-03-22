@@ -127,26 +127,26 @@ namespace aspirant::navigationui::OptionsStateHandler
 	{
 		for (auto& item : items)
 		{
-			tggd::data::StringManager::Set(item.second.GetItemColorName(), (item.first == current) ? ("Cyan") : ("Gray"));
+			::data::Strings::Set(item.second.GetItemColorName(), (item.first == current) ? ("Cyan") : ("Gray"));
 		}
 
 		if (tggd::common::SoundManager::IsMuted())
 		{
-			tggd::data::StringManager::Set(TOGGLE_MUTE_STRING_NAME, UNMUTE);
+			::data::Strings::Set(TOGGLE_MUTE_STRING_NAME, UNMUTE);
 		}
 		else
 		{
-			tggd::data::StringManager::Set(TOGGLE_MUTE_STRING_NAME, MUTE);
+			::data::Strings::Set(TOGGLE_MUTE_STRING_NAME, MUTE);
 		}
 		std::stringstream ss;
 		//text for sfx volume
 		ss << "SFX Volume (" << tggd::common::Utility::ToPercentage(tggd::common::SoundManager::GetSfxVolume(), MIX_MAX_VOLUME) << "%)";
-		tggd::data::StringManager::Set(SFX_VOLUME_STRING_NAME, ss.str());
+		::data::Strings::Set(SFX_VOLUME_STRING_NAME, ss.str());
 
 		//text for mux volume
 		ss.str("");
 		ss << "MUX Volume (" << tggd::common::Utility::ToPercentage(tggd::common::SoundManager::GetMuxVolume(), MIX_MAX_VOLUME) << "%)";
-		tggd::data::StringManager::Set(MUX_VOLUME_STRING_NAME, ss.str());
+		::data::Strings::Set(MUX_VOLUME_STRING_NAME, ss.str());
 
 	}
 

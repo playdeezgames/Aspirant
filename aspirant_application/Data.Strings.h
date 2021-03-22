@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include <map>
-namespace tggd::data::StringManager
+namespace data::Strings
 {
 	void Start(const std::string&);
 	const std::string& Get(const std::string&);

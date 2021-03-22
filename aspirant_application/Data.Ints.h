@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-namespace tggd::data::IntManager
+namespace data::Ints
 {
 	void Start(const std::string&);
 	const int& Get(const std::string&);

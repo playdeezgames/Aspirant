@@ -99,7 +99,7 @@ namespace aspirant::editorui::EditNavigateRoomStateHandler
 		auto& cursorPosition = aspirant::editor::context::EditorRoomViewContext::GetCursor();
 		std::stringstream ss;
 		ss << "(" << cursorPosition.GetX() << "," << cursorPosition.GetY() << ")";//TODO: magic string
-		tggd::data::StringManager::Set(TEXT_ROOM_VIEW_POSITION_NAME, ss.str());
+		::data::Strings::Set(TEXT_ROOM_VIEW_POSITION_NAME, ss.str());
 	}
 
 	void Start()

@@ -8,7 +8,7 @@ namespace data
 	{
 		if (indirect)
 		{
-			return tggd::data::IntManager::Get(key);
+			return ::data::Ints::Get(key);
 		}
 		else
 		{

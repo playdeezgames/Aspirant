@@ -79,7 +79,7 @@ namespace aspirant::editorui::EditScenarioStateHandler
 		std::stringstream ss;
 		auto scenario = aspirant::game::ScenarioDescriptorManager::Get(aspirant::editor::context::EditorScenarioSelector::GetIndex());
 		ss << scenario->GetName() << "(id=" << scenario->GetId() << ")";//TODO: magic strings
-		tggd::data::StringManager::Set(HEADER_TEXT_NAME, ss.str());
+		::data::Strings::Set(HEADER_TEXT_NAME, ss.str());
 	}
 
 	static void OnUpdate(const Uint32& ticks)
@@ -87,7 +87,7 @@ namespace aspirant::editorui::EditScenarioStateHandler
 		UpdateHeader();
 		for (auto& item : items)
 		{
-			tggd::data::StringManager::Set(item.second.GetItemColorName(), (item.first == current) ? ("Cyan") : ("Gray"));
+			::data::Strings::Set(item.second.GetItemColorName(), (item.first == current) ? ("Cyan") : ("Gray"));
 		}
 	}
 

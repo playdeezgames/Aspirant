@@ -1,7 +1,7 @@
 #include "Data.Bools.h"
 #include "JSONUtility.h"
 #include <set>
-namespace tggd::data::FlagManager
+namespace data::Bools
 {
 	void Start
 	(

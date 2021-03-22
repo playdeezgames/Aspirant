@@ -43,11 +43,11 @@ namespace aspirant::editorui::EditPickRoomStateHandler
 		if (aspirant::editor::context::EditorRoomListContext::GetRoomCount() > 0)
 		{
 			auto& roomName = aspirant::editor::context::EditorRoomListContext::GetRoomList()[aspirant::editor::context::EditorRoomListContext::GetRoomIndex()];
-			tggd::data::StringManager::Set(TEXT_NAME_STRING_ROOM_NAME, roomName);
+			::data::Strings::Set(TEXT_NAME_STRING_ROOM_NAME, roomName);
 		}
 		else
 		{
-			tggd::data::StringManager::Set(TEXT_NAME_STRING_ROOM_NAME, "-");
+			::data::Strings::Set(TEXT_NAME_STRING_ROOM_NAME, "-");
 		}
 	}
 

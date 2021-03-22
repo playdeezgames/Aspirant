@@ -160,9 +160,9 @@ namespace common::Application
 
 	void Start(SDL_Renderer* renderer)
 	{
-		tggd::data::StringManager::Start(aspirant::ConfigurationConstants::STRINGS);
-		tggd::data::IntManager::Start(aspirant::ConfigurationConstants::INTS);
-		tggd::data::FlagManager::Start(aspirant::ConfigurationConstants::FLAGS);
+		::data::Strings::Start(aspirant::ConfigurationConstants::STRINGS);
+		::data::Ints::Start(aspirant::ConfigurationConstants::INTS);
+		::data::Bools::Start(aspirant::ConfigurationConstants::FLAGS);
 		::graphics::Colors::Start(aspirant::ConfigurationConstants::COLOR);
 		tggd::graphics::TextureManager::Start(renderer, aspirant::ConfigurationConstants::TEXTURE);
 		tggd::graphics::SpriteManager::Start(aspirant::ConfigurationConstants::SPRITE);

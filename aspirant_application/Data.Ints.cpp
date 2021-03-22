@@ -1,7 +1,7 @@
 #include "Data.Ints.h"
 #include "JSONUtility.h"
 #include <map>
-namespace tggd::data::IntManager
+namespace data::Ints
 {
 	static std::map<std::string, int> table;
 

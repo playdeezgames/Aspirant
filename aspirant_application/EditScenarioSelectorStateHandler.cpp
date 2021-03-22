@@ -49,11 +49,11 @@ namespace aspirant::editorui::EditScenarioSelectorStateHandler
 		{
 			std::stringstream ss;
 			ss << "Scenario " << (aspirant::editor::context::EditorScenarioSelector::GetIndex() + 1) << "/" << aspirant::game::ScenarioDescriptorManager::GetCount();
-			tggd::data::StringManager::Set(TEXT_INDEX_STRING_NAME, ss.str());
+			::data::Strings::Set(TEXT_INDEX_STRING_NAME, ss.str());
 		}
 		else
 		{
-			tggd::data::StringManager::Set(TEXT_INDEX_STRING_NAME, "No Scenarios");//TODO: magic string
+			::data::Strings::Set(TEXT_INDEX_STRING_NAME, "No Scenarios");//TODO: magic string
 		}
 	}
 
@@ -61,11 +61,11 @@ namespace aspirant::editorui::EditScenarioSelectorStateHandler
 	{
 		if (scenario)
 		{
-			tggd::data::StringManager::Set(TEXT_NAME_STRING_NAME, scenario->GetName());
+			::data::Strings::Set(TEXT_NAME_STRING_NAME, scenario->GetName());
 		}
 		else
 		{
-			tggd::data::StringManager::Set(TEXT_NAME_STRING_NAME, "-");//TODO: magic string
+			::data::Strings::Set(TEXT_NAME_STRING_NAME, "-");//TODO: magic string
 		}
 	}
 
@@ -75,11 +75,11 @@ namespace aspirant::editorui::EditScenarioSelectorStateHandler
 		{
 			std::stringstream ss;
 			ss << scenario->GetId();
-			tggd::data::StringManager::Set(TEXT_ID_STRING_NAME, ss.str());
+			::data::Strings::Set(TEXT_ID_STRING_NAME, ss.str());
 		}
 		else
 		{
-			tggd::data::StringManager::Set(TEXT_ID_STRING_NAME, "-");//TODO: magic string
+			::data::Strings::Set(TEXT_ID_STRING_NAME, "-");//TODO: magic string
 		}
 
 	}
@@ -88,11 +88,11 @@ namespace aspirant::editorui::EditScenarioSelectorStateHandler
 	{
 		if (scenario)
 		{
-			tggd::data::StringManager::Set(TEXT_BRIEF_STRING_NAME, scenario->GetBrief());
+			::data::Strings::Set(TEXT_BRIEF_STRING_NAME, scenario->GetBrief());
 		}
 		else
 		{
-			tggd::data::StringManager::Set(TEXT_BRIEF_STRING_NAME, "-");//TODO: magic string
+			::data::Strings::Set(TEXT_BRIEF_STRING_NAME, "-");//TODO: magic string
 		}
 	}
 

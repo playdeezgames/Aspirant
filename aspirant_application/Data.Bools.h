@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include <set>
-namespace tggd::data::FlagManager
+namespace data::Bools
 {
 	void Start(const std::string&);
 	const bool& Get(const std::string&);

@@ -74,11 +74,11 @@ namespace aspirant::editorui::EditScenarioDescriptorStateHandler
 	static void OnUpdate(const Uint32& ticks)
 	{
 		auto descriptor = aspirant::game::ScenarioDescriptorManager::Get(aspirant::editor::context::EditorScenarioSelector::GetIndex());
-		tggd::data::StringManager::Set(TEXT_NAME_SCENARIO_NAME, descriptor->GetName());
-		tggd::data::StringManager::Set(TEXT_NAME_BRIEF, descriptor->GetBrief());
+		::data::Strings::Set(TEXT_NAME_SCENARIO_NAME, descriptor->GetName());
+		::data::Strings::Set(TEXT_NAME_BRIEF, descriptor->GetBrief());
 		for (auto& item : items)
 		{
-			tggd::data::StringManager::Set(item.second.GetItemColorName(), (item.first == current) ? ("Cyan") : ("Gray"));
+			::data::Strings::Set(item.second.GetItemColorName(), (item.first == current) ? ("Cyan") : ("Gray"));
 		}
 	}
 

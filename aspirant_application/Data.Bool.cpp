@@ -8,7 +8,7 @@ namespace data
 	{
 		if (indirect)
 		{
-			return tggd::data::FlagManager::Get(key);
+			return ::data::Bools::Get(key);
 		}
 		else
 		{

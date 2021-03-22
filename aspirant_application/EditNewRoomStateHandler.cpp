@@ -124,18 +124,18 @@ namespace aspirant::editorui::EditNewRoomStateHandler
 	{
 		for (auto& item : items)
 		{
-			tggd::data::StringManager::Set(item.second.GetItemColorName(), (item.first == current) ? ("Cyan") : ("Gray"));
+			::data::Strings::Set(item.second.GetItemColorName(), (item.first == current) ? ("Cyan") : ("Gray"));
 		}
 
-		tggd::data::StringManager::Set(TEXT_NAME_ROOM_NAME, aspirant::editor::context::EditorNewRoomContext::GetNewRoomName());
+		::data::Strings::Set(TEXT_NAME_ROOM_NAME, aspirant::editor::context::EditorNewRoomContext::GetNewRoomName());
 
 		std::stringstream ss;
 		ss << aspirant::editor::context::EditorNewRoomContext::GetNewRoomColumns();
-		tggd::data::StringManager::Set(TEXT_NAME_COLUMNS, ss.str());
+		::data::Strings::Set(TEXT_NAME_COLUMNS, ss.str());
 
 		ss.str("");
 		ss << aspirant::editor::context::EditorNewRoomContext::GetNewRoomRows();
-		tggd::data::StringManager::Set(TEXT_NAME_ROWS, ss.str());
+		::data::Strings::Set(TEXT_NAME_ROWS, ss.str());
 	}
 
 	static void OnTextInput(const std::string& text)

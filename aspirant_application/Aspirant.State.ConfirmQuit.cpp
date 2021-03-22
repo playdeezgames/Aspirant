@@ -61,7 +61,7 @@ namespace aspirant::state::ConfirmQuit
 	{
 		for (auto& item : items)
 		{
-			tggd::data::StringManager::Set(item.second.GetItemColorName(), (item.first == current) ? ("Cyan") : ("Gray"));
+			::data::Strings::Set(item.second.GetItemColorName(), (item.first == current) ? ("Cyan") : ("Gray"));
 		}
 	}
 

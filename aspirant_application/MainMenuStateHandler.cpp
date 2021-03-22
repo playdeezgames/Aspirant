@@ -36,7 +36,7 @@ namespace aspirant::navigationui::MainMenuStateHandler
 			aspirant::Application::SetUIState(aspirant::commonui::UIState::OPTIONS);
 			return;
 		case MainMenuItem::ABOUT:
-			SDL_SetClipboardText(tggd::data::StringManager::Get(ITCH_URL_STRING).c_str());
+			SDL_SetClipboardText(::data::Strings::Get(ITCH_URL_STRING).c_str());
 			aspirant::Application::SetUIState(aspirant::commonui::UIState::ABOUT);
 			return;
 		case MainMenuItem::QUIT:
@@ -73,7 +73,7 @@ namespace aspirant::navigationui::MainMenuStateHandler
 	{
 		for (auto& item : items)
 		{
-			tggd::data::StringManager::Set(item.second.GetItemColorName(), (item.first == current) ? ("Cyan") : ("Gray"));
+			::data::Strings::Set(item.second.GetItemColorName(), (item.first == current) ? ("Cyan") : ("Gray"));
 		}
 	}
 
