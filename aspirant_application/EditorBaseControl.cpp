@@ -14,7 +14,7 @@ namespace aspirant::editor::controls::EditorBaseControl
 	(
 		SDL_Renderer* renderer,
 		tggd::common::XY<int> position,
-		const aspirant::game::BaseDescriptor<aspirant::game::ScenarioObjectInstance>& descriptor
+		const aspirant::game::CommonDescriptor& descriptor
 	)
 	{
 		if (descriptor.GetType() == TYPE_TERRAIN)

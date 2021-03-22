@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include <vector>
-namespace tggd::common::Application
+namespace common::Application
 {
 	int Run(const std::vector<std::string>&);
 }

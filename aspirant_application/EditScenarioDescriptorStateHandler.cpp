@@ -1,5 +1,5 @@
 #include "EditScenarioDescriptorStateHandler.h"
-#include "AspirantApplication.h"
+#include "Aspirant.Application.h"
 #include "UIState.h"
 #include "LayoutManager.h"
 #include "MenuItemDescriptor.h"

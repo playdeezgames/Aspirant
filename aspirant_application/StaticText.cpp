@@ -56,7 +56,7 @@ namespace tggd::graphics
 	{
 		if (properties.count(PROPERTY_DROP_SHADOW) > 0)
 		{
-			hasDropShadow = tggd::data::BoolSource::FromJSON(properties[PROPERTY_DROP_SHADOW]);
+			hasDropShadow = ::data::Bool::FromJSON(properties[PROPERTY_DROP_SHADOW]);
 		}
 		if (properties.count(PROPERTY_HORIZONTAL_ALIGNMENT) > 0)
 		{

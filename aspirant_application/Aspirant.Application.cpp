@@ -6,7 +6,7 @@
 #include "StringManager.h"
 #include "IntManager.h"
 #include "FlagManager.h"
-#include "AspirantApplication.h"
+#include "Aspirant.Application.h"
 #include "FinishManager.h"
 #include "ColorManager.h"
 #include "TextureManager.h"
@@ -19,7 +19,7 @@
 #include "ScenarioDescriptorManager.h"
 #include "SplashStateHandler.h"
 #include "MainMenuStateHandler.h"
-#include "AboutStateHandler.h"
+#include "Aspirant.State.About.h"
 #include "ConfirmQuitStateHandler.h"
 #include "OptionsStateHandler.h"
 #include "StartGameStateHandler.h"
@@ -150,7 +150,7 @@ namespace aspirant::Application
 		renderHandlers[state] = handler;
 	}
 }
-namespace tggd::common::Application
+namespace common::Application
 {
 
 	namespace ConfigurationConstants
@@ -175,7 +175,7 @@ namespace tggd::common::Application
 
 		aspirant::navigationui::SplashStateHandler::Start();
 		aspirant::navigationui::MainMenuStateHandler::Start();
-		aspirant::navigationui::AboutStateHandler::Start();
+		aspirant::state::About::Start();
 		aspirant::navigationui::ConfirmQuitStateHandler::Start();
 		aspirant::navigationui::OptionsStateHandler::Start();
 		aspirant::navigationui::StartGameStateHandler::Start();

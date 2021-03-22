@@ -1,9 +1,9 @@
-#include "Application.h"
+#include "Common.Application.h"
 #include <SDL.h>
 #include <SDL_mixer.h>
 #include <SDL_image.h>
 #include "JSONUtility.h"
-namespace tggd::common::Application
+namespace common::Application
 {
 #define PROPERTY_WIDTH "width"
 #define PROPERTY_HEIGHT "height"

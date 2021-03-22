@@ -1,16 +1,16 @@
 #pragma once
 #include <string>
-#include "BaseDescriptor.h"
+#include "CommonDescriptor.h"
 #include "json.hpp"
 namespace aspirant::game
 {
 	class ScenarioObjectInstance
 	{
 	private:
-		const aspirant::game::BaseDescriptor<ScenarioObjectInstance>& descriptor;
+		const aspirant::game::CommonDescriptor& descriptor;
 	public:
-		ScenarioObjectInstance(const aspirant::game::BaseDescriptor<ScenarioObjectInstance>& descriptor) : descriptor(descriptor) {}
-		const aspirant::game::BaseDescriptor<ScenarioObjectInstance>& GetDescriptor() const
+		ScenarioObjectInstance(const aspirant::game::CommonDescriptor& descriptor) : descriptor(descriptor) {}
+		const aspirant::game::CommonDescriptor& GetDescriptor() const
 		{
 			return descriptor;
 		}

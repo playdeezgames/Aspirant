@@ -20,13 +20,13 @@
     <ClCompile Include="Utility.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Application.cpp">
+    <ClCompile Include="Common.Application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="JSONUtility.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="AspirantApplication.cpp">
+    <ClCompile Include="Aspirant.Application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="StringManager.cpp">
@@ -68,7 +68,7 @@
     <ClCompile Include="StringSource.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BoolSource.cpp">
+    <ClCompile Include="Data.Bool.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="StaticText.cpp">
@@ -116,7 +116,7 @@
     <ClCompile Include="MainMenuStateHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="AboutStateHandler.cpp">
+    <ClCompile Include="Aspirant.State.About.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ConfirmQuitStateHandler.cpp">
@@ -193,7 +193,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Application.h">
+    <ClInclude Include="Common.Application.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="RNGUtility.h">
@@ -211,7 +211,7 @@
     <ClInclude Include="UIState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="AspirantApplication.h">
+    <ClInclude Include="Aspirant.Application.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Command.h">
@@ -268,7 +268,7 @@
     <ClInclude Include="StaticText.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BoolSource.h">
+    <ClInclude Include="Data.Bool.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Layout.h">
@@ -284,9 +284,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DescriptorManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BaseDescriptor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ScenarioObjectInstance.h">
@@ -319,7 +316,7 @@
     <ClInclude Include="MainMenuStateHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="AboutStateHandler.h">
+    <ClInclude Include="Aspirant.State.About.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ConfirmQuitStateHandler.h">

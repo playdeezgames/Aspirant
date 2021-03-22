@@ -1,5 +1,5 @@
 #include "SplashStateHandler.h"
-#include "AspirantApplication.h"
+#include "Aspirant.Application.h"
 #include "UIState.h"
 #include "LayoutManager.h"
 namespace aspirant::navigationui::SplashStateHandler

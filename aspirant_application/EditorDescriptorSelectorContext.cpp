@@ -16,7 +16,7 @@ namespace aspirant::editor::context::EditorDescriptorSelectorContext
 	{
 		return aspirant::game::DescriptorManager::GetIdentifiers().size();
 	}
-	const aspirant::game::BaseDescriptor<aspirant::game::ScenarioObjectInstance>* GetDescriptor(size_t idx)
+	const aspirant::game::CommonDescriptor* GetDescriptor(size_t idx)
 	{
 		return aspirant::game::DescriptorManager::Get(aspirant::game::DescriptorManager::GetIdentifiers()[idx]);
 	}

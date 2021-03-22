@@ -6,7 +6,7 @@
 #include "Drawn.h"
 #include "IntSource.h"
 #include "StringSource.h"
-#include "BoolSource.h"
+#include "Data.Bool.h"
 namespace tggd::graphics
 {
 	class StaticText : public Drawn
@@ -22,7 +22,7 @@ namespace tggd::graphics
 		tggd::data::StringSource fontName;
 		tggd::data::StringSource color;
 		tggd::data::StringSource dropShadowColor;
-		tggd::data::BoolSource hasDropShadow;
+		::data::Bool hasDropShadow;
 		tggd::data::IntSource x;
 		tggd::data::IntSource y;
 		tggd::data::IntSource dropShadowX;
