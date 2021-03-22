@@ -1,11 +1,11 @@
-#include "ConfirmQuitStateHandler.h"
+#include "Aspirant.State.ConfirmQuit.h"
 #include "Aspirant.Application.h"
 #include "UIState.h"
 #include "LayoutManager.h"
 #include <map>
 #include "MenuItemDescriptor.h"
 #include "StringManager.h"
-namespace aspirant::navigationui::ConfirmQuitStateHandler
+namespace aspirant::state::ConfirmQuit
 {
 	const std::string CONFIRM_ITEM_NO_COLOR_NAME = "ConfirmQuit.Color.No";
 	const std::string CONFIRM_ITEM_YES_COLOR_NAME = "ConfirmQuit.Color.Yes";

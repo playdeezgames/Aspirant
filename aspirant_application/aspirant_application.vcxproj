@@ -152,7 +152,7 @@
     <ClCompile Include="Aspirant.Application.cpp" />
     <ClCompile Include="Data.Bool.cpp" />
     <ClCompile Include="Graphics.Colors.cpp" />
-    <ClCompile Include="ConfirmQuitStateHandler.cpp" />
+    <ClCompile Include="Aspirant.State.ConfirmQuit.cpp" />
     <ClCompile Include="CreatureDescriptor.cpp" />
     <ClCompile Include="CreatureInstance.cpp" />
     <ClCompile Include="DescriptorManager.cpp" />
@@ -216,7 +216,7 @@
     <ClInclude Include="Graphics.Colors.h" />
     <ClInclude Include="Aspirant.Command.h" />
     <ClInclude Include="CommonDescriptor.h" />
-    <ClInclude Include="ConfirmQuitStateHandler.h" />
+    <ClInclude Include="Aspirant.State.ConfirmQuit.h" />
     <ClInclude Include="CreatureDescriptor.h" />
     <ClInclude Include="CreatureInstance.h" />
     <ClInclude Include="DescriptorManager.h" />

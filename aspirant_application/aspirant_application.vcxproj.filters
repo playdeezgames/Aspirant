@@ -119,7 +119,7 @@
     <ClCompile Include="Aspirant.State.About.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ConfirmQuitStateHandler.cpp">
+    <ClCompile Include="Aspirant.State.ConfirmQuit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="StartEditorStateHandler.cpp">
@@ -319,7 +319,7 @@
     <ClInclude Include="Aspirant.State.About.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ConfirmQuitStateHandler.h">
+    <ClInclude Include="Aspirant.State.ConfirmQuit.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="OptionsStateHandler.h">

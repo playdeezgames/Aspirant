@@ -20,7 +20,7 @@
 #include "SplashStateHandler.h"
 #include "MainMenuStateHandler.h"
 #include "Aspirant.State.About.h"
-#include "ConfirmQuitStateHandler.h"
+#include "Aspirant.State.ConfirmQuit.h"
 #include "OptionsStateHandler.h"
 #include "StartGameStateHandler.h"
 #include "StartEditorStateHandler.h"
@@ -176,7 +176,7 @@ namespace common::Application
 		aspirant::navigationui::SplashStateHandler::Start();
 		aspirant::navigationui::MainMenuStateHandler::Start();
 		aspirant::state::About::Start();
-		aspirant::navigationui::ConfirmQuitStateHandler::Start();
+		aspirant::state::ConfirmQuit::Start();
 		aspirant::navigationui::OptionsStateHandler::Start();
 		aspirant::navigationui::StartGameStateHandler::Start();
 		aspirant::editorui::StartEditorStateHandler::Start();
