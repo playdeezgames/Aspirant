@@ -89,10 +89,10 @@
     <ClCompile Include="DescriptorManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TerrainDescriptor.cpp">
+    <ClCompile Include="Game.Descriptor.Terrain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CreatureDescriptor.cpp">
+    <ClCompile Include="Game.Descriptor.Creature.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="TerrainInstance.cpp">
@@ -289,13 +289,13 @@
     <ClInclude Include="ScenarioObjectInstance.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TerrainDescriptor.h">
+    <ClInclude Include="Game.Descriptor.Terrain.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CreatureDescriptor.h">
+    <ClInclude Include="Game.Descriptor.Creature.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CommonDescriptor.h">
+    <ClInclude Include="Game.Descriptor.Common.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CreatureInstance.h">

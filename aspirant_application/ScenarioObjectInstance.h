@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include "CommonDescriptor.h"
+#include "Game.Descriptor.Common.h"
 #include "json.hpp"
 namespace aspirant::game
 {

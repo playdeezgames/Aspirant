@@ -1,4 +1,4 @@
-#include "TerrainDescriptor.h"
+#include "Game.Descriptor.Terrain.h"
 #include "TerrainInstance.h"
 namespace aspirant::game
 {

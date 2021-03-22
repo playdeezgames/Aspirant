@@ -1,5 +1,5 @@
 #pragma once
-#include "CommonDescriptor.h"
+#include "Game.Descriptor.Common.h"
 #include "ScenarioObjectInstance.h"
 namespace aspirant::editor::context::EditorDescriptorSelectorContext
 {

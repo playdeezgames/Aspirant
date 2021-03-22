@@ -1,4 +1,4 @@
-#include "CreatureDescriptor.h"
+#include "Game.Descriptor.Creature.h"
 #include "CreatureInstance.h"
 namespace aspirant::game
 {

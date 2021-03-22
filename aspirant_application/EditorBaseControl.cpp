@@ -3,8 +3,8 @@
 #include "FinishManager.h"
 #include "ScenarioObjectInstance.h"
 #include "FinishUtility.h"
-#include "CreatureDescriptor.h"
-#include "TerrainDescriptor.h"
+#include "Game.Descriptor.Creature.h"
+#include "Game.Descriptor.Terrain.h"
 namespace aspirant::editor::controls::EditorBaseControl
 {
 	const std::string TYPE_TERRAIN = "terrain";

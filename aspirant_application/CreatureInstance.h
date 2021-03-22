@@ -1,6 +1,6 @@
 #pragma once
 #include "ScenarioObjectInstance.h"
-#include "CreatureDescriptor.h"
+#include "Game.Descriptor.Creature.h"
 namespace aspirant::game
 {
 	class CreatureInstance : public ScenarioObjectInstance

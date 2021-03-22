@@ -153,7 +153,7 @@
     <ClCompile Include="Data.Bool.cpp" />
     <ClCompile Include="Graphics.Colors.cpp" />
     <ClCompile Include="Aspirant.State.ConfirmQuit.cpp" />
-    <ClCompile Include="CreatureDescriptor.cpp" />
+    <ClCompile Include="Game.Descriptor.Creature.cpp" />
     <ClCompile Include="CreatureInstance.cpp" />
     <ClCompile Include="DescriptorManager.cpp" />
     <ClCompile Include="DescriptorSelectorRenderer.cpp" />
@@ -203,7 +203,7 @@
     <ClCompile Include="StaticText.cpp" />
     <ClCompile Include="StringManager.cpp" />
     <ClCompile Include="Data.String.cpp" />
-    <ClCompile Include="TerrainDescriptor.cpp" />
+    <ClCompile Include="Game.Descriptor.Terrain.cpp" />
     <ClCompile Include="TerrainInstance.cpp" />
     <ClCompile Include="TextureManager.cpp" />
     <ClCompile Include="Utility.cpp" />
@@ -215,9 +215,9 @@
     <ClInclude Include="Data.Bool.h" />
     <ClInclude Include="Graphics.Colors.h" />
     <ClInclude Include="Aspirant.Command.h" />
-    <ClInclude Include="CommonDescriptor.h" />
+    <ClInclude Include="Game.Descriptor.Common.h" />
     <ClInclude Include="Aspirant.State.ConfirmQuit.h" />
-    <ClInclude Include="CreatureDescriptor.h" />
+    <ClInclude Include="Game.Descriptor.Creature.h" />
     <ClInclude Include="CreatureInstance.h" />
     <ClInclude Include="DescriptorManager.h" />
     <ClInclude Include="DescriptorSelectorRenderer.h" />
@@ -270,7 +270,7 @@
     <ClInclude Include="StaticText.h" />
     <ClInclude Include="StringManager.h" />
     <ClInclude Include="Data.String.h" />
-    <ClInclude Include="TerrainDescriptor.h" />
+    <ClInclude Include="Game.Descriptor.Terrain.h" />
     <ClInclude Include="TerrainInstance.h" />
     <ClInclude Include="TextureManager.h" />
     <ClInclude Include="UIState.h" />

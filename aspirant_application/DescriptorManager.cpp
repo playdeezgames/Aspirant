@@ -3,8 +3,8 @@
 #include <map>
 #include "FinishUtility.h"
 #include "JSONUtility.h"
-#include "TerrainDescriptor.h"
-#include "CreatureDescriptor.h"
+#include "Game.Descriptor.Terrain.h"
+#include "Game.Descriptor.Creature.h"
 namespace aspirant::game::DescriptorManager
 {
 	const std::string PROPERTY_TYPE = "type";
