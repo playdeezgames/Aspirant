@@ -6,5 +6,5 @@ namespace aspirant::editor::context::EditorDescriptorSelectorContext
 	size_t GetIndex();
 	void SetIndex(size_t idx);
 	size_t GetCount();
-	const aspirant::game::CommonDescriptor* GetDescriptor(size_t);
+	const ::game::descriptor::Common* GetDescriptor(size_t);
 }

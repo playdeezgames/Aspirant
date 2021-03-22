@@ -10,7 +10,7 @@ namespace aspirant::game::DescriptorManager
 	const std::string PROPERTY_TYPE = "type";
 	const std::string TYPE_TERRAIN = "terrain";
 	const std::string TYPE_CREATURE = "creature";
-	static std::map<std::string, aspirant::game::CommonDescriptor*> descriptors;
+	static std::map<std::string, ::game::descriptor::Common*> descriptors;
 	static std::vector<std::string> identifiers;
 
 	static std::string ParseKey(const nlohmann::json& key)
@@ -23,16 +23,16 @@ namespace aspirant::game::DescriptorManager
 		return identifiers;
 	}
 
-	aspirant::game::CommonDescriptor* ParseDescriptor(const std::string& name, const nlohmann::json& properties)
+	::game::descriptor::Common* ParseDescriptor(const std::string& name, const nlohmann::json& properties)
 	{
 		const auto& descriptorType = properties[PROPERTY_TYPE];
 		if (descriptorType == TYPE_TERRAIN)
 		{
-			return new TerrainDescriptor(name, properties);
+			return new ::game::descriptor::Terrain(name, properties);
 		}
 		else if (descriptorType == TYPE_CREATURE)
 		{
-			return new CreatureDescriptor(name, properties);
+			return new ::game::descriptor::Creature(name, properties);
 		}
 		else
 		{
@@ -58,7 +58,7 @@ namespace aspirant::game::DescriptorManager
 		}
 	}
 
-	const aspirant::game::CommonDescriptor* Get(const std::string& key)
+	const ::game::descriptor::Common* Get(const std::string& key)
 	{
 		return descriptors[key];
 	}

@@ -1,11 +1,11 @@
 #pragma once
 #include "Game.Descriptor.Common.h"
-namespace aspirant::game
+namespace game::descriptor
 {
-	class TerrainDescriptor : public CommonDescriptor
+	class Terrain : public Common
 	{
 	public:
-		TerrainDescriptor(const std::string&, const nlohmann::json&);
-		ScenarioObjectInstance* CreateObject() const;
+		Terrain(const std::string&, const nlohmann::json&);
+		aspirant::game::ScenarioObjectInstance* CreateObject() const;
 	};
 }

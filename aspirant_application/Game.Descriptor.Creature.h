@@ -1,11 +1,11 @@
 #pragma once
 #include "Game.Descriptor.Common.h"
-namespace aspirant::game
+namespace game::descriptor
 {
-	class CreatureDescriptor : public CommonDescriptor
+	class Creature : public Common
 	{
 	public:
-		CreatureDescriptor(const std::string&, const nlohmann::json&);
-		ScenarioObjectInstance* CreateObject() const;
+		Creature(const std::string&, const nlohmann::json&);
+		aspirant::game::ScenarioObjectInstance* CreateObject() const;
 	};
 }

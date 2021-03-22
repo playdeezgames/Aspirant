@@ -8,7 +8,7 @@ namespace aspirant::editor::controls::EditorBaseControl
 	(
 		SDL_Renderer* renderer,
 		tggd::common::XY<int> position,
-		const aspirant::game::CommonDescriptor& descriptor
+		const ::game::descriptor::Common& descriptor
 	);
 	void DrawObject
 	(

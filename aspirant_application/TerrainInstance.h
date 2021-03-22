@@ -6,7 +6,7 @@ namespace aspirant::game
 	class TerrainInstance : public ScenarioObjectInstance
 	{
 	public:
-		TerrainInstance(const TerrainDescriptor&);
+		TerrainInstance(const ::game::descriptor::Terrain&);
 		bool CanCover(const ScenarioObjectInstance*) const;
 		bool IsTerrain() const;
 		bool IsCreature() const;

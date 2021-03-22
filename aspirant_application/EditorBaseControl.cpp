@@ -14,17 +14,17 @@ namespace aspirant::editor::controls::EditorBaseControl
 	(
 		SDL_Renderer* renderer,
 		tggd::common::XY<int> position,
-		const aspirant::game::CommonDescriptor& descriptor
+		const ::game::descriptor::Common& descriptor
 	)
 	{
 		if (descriptor.GetType() == TYPE_TERRAIN)
 		{
-			const aspirant::game::TerrainDescriptor& terrainDescriptor = dynamic_cast<const aspirant::game::TerrainDescriptor&>(descriptor);
+			const ::game::descriptor::Terrain& terrainDescriptor = dynamic_cast<const ::game::descriptor::Terrain&>(descriptor);
 			tggd::graphics::SpriteManager::Get(terrainDescriptor.GetSprite()).Draw(renderer, position);
 		}
 		else if (descriptor.GetType() == TYPE_CREATURE)
 		{
-			const aspirant::game::CreatureDescriptor& creatureDescriptor = dynamic_cast<const aspirant::game::CreatureDescriptor&>(descriptor);
+			const ::game::descriptor::Creature& creatureDescriptor = dynamic_cast<const ::game::descriptor::Creature&>(descriptor);
 			tggd::graphics::SpriteManager::Get(creatureDescriptor.GetSprite()).Draw(renderer, position);
 		}
 	}

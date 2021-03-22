@@ -1,16 +1,16 @@
 #include "Game.Descriptor.Terrain.h"
 #include "TerrainInstance.h"
-namespace aspirant::game
+namespace game::descriptor
 {
-	TerrainDescriptor::TerrainDescriptor(const std::string& name, const nlohmann::json& properties)
-		: CommonDescriptor(name, properties)
+	Terrain::Terrain(const std::string& name, const nlohmann::json& properties)
+		: Common(name, properties)
 	{
 
 	}
 
-	ScenarioObjectInstance* TerrainDescriptor::CreateObject() const
+	aspirant::game::ScenarioObjectInstance* Terrain::CreateObject() const
 	{
-		return new TerrainInstance(*this);
+		return new aspirant::game::TerrainInstance(*this);
 	}
 
 }

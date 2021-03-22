@@ -7,10 +7,10 @@ namespace aspirant::game
 	class ScenarioObjectInstance
 	{
 	private:
-		const aspirant::game::CommonDescriptor& descriptor;
+		const ::game::descriptor::Common& descriptor;
 	public:
-		ScenarioObjectInstance(const aspirant::game::CommonDescriptor& descriptor) : descriptor(descriptor) {}
-		const aspirant::game::CommonDescriptor& GetDescriptor() const
+		ScenarioObjectInstance(const ::game::descriptor::Common& descriptor) : descriptor(descriptor) {}
+		const ::game::descriptor::Common& GetDescriptor() const
 		{
 			return descriptor;
 		}

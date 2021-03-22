@@ -4,7 +4,10 @@
 namespace aspirant::game
 {
 	class ScenarioObjectInstance;
-	class CommonDescriptor
+}
+namespace game::descriptor
+{
+	class Common
 	{
 	private:
 		const std::string PROPERTY_TYPE = "type";
@@ -13,7 +16,7 @@ namespace aspirant::game
 		std::string name;
 		std::string sprite;
 	public:
-		CommonDescriptor(const std::string& name, const nlohmann::json& properties)
+		Common(const std::string& name, const nlohmann::json& properties)
 			: descriptorType(properties[PROPERTY_TYPE])
 			, name(name)
 			, sprite(properties[PROPERTY_SPRITE])
@@ -27,7 +30,7 @@ namespace aspirant::game
 		{
 			return name;
 		}
-		virtual ScenarioObjectInstance* CreateObject() const = 0;
+		virtual aspirant::game::ScenarioObjectInstance* CreateObject() const = 0;
 		const std::string& GetSprite() const
 		{
 			return sprite;
