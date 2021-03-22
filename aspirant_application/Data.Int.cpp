@@ -1,0 +1,34 @@
+#include "Data.Int.h"
+#include "IntManager.h"
+namespace data
+{
+#define PROPERTY_KEY "key"
+
+	Int::operator int() const
+	{
+		if (indirect)
+		{
+			return tggd::data::IntManager::Get(key);
+		}
+		else
+		{
+			return value;
+		}
+	}
+
+	Int Int::FromJSON(const nlohmann::json& value)
+	{
+		if (value.is_number_integer())
+		{
+			return Int((int)value);
+		}
+		else if (value.is_object())
+		{
+			return Int((const std::string&)value[PROPERTY_KEY]);
+		}
+		else
+		{
+			throw "BAD VALUE!";
+		}
+	}
+}

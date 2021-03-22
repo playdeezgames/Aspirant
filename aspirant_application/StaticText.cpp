@@ -43,11 +43,11 @@ namespace tggd::graphics
 	(
 		const nlohmann::json& properties
 	)
-		: text(tggd::data::StringSource::FromJSON(properties[PROPERTY_TEXT]))
-		, fontName(tggd::data::StringSource::FromJSON(properties[PROPERTY_FONT]))
-		, color(tggd::data::StringSource::FromJSON(properties[PROPERTY_COLOR]))
-		, x(tggd::data::IntSource::FromJSON(properties[PROPERTY_X]))
-		, y(tggd::data::IntSource::FromJSON(properties[PROPERTY_Y]))
+		: text(::data::String::FromJSON(properties[PROPERTY_TEXT]))
+		, fontName(::data::String::FromJSON(properties[PROPERTY_FONT]))
+		, color(::data::String::FromJSON(properties[PROPERTY_COLOR]))
+		, x(::data::Int::FromJSON(properties[PROPERTY_X]))
+		, y(::data::Int::FromJSON(properties[PROPERTY_Y]))
 		, hasDropShadow(false)
 		, dropShadowColor("", false)
 		, dropShadowX(0)
@@ -60,19 +60,19 @@ namespace tggd::graphics
 		}
 		if (properties.count(PROPERTY_HORIZONTAL_ALIGNMENT) > 0)
 		{
-			alignment = tggd::data::IntSource::FromJSON(properties[PROPERTY_HORIZONTAL_ALIGNMENT]);
+			alignment = ::data::Int::FromJSON(properties[PROPERTY_HORIZONTAL_ALIGNMENT]);
 		}
 		if (properties.count(PROPERTY_DROP_SHADOW) > 0)
 		{
-			dropShadowColor = tggd::data::StringSource::FromJSON(properties[PROPERTY_DROP_SHADOW_COLOR]);
+			dropShadowColor = ::data::String::FromJSON(properties[PROPERTY_DROP_SHADOW_COLOR]);
 		}
 		if (properties.count(PROPERTY_DROP_SHADOW_X) > 0)
 		{
-			dropShadowX = tggd::data::IntSource::FromJSON(properties[PROPERTY_DROP_SHADOW_X]);
+			dropShadowX = ::data::Int::FromJSON(properties[PROPERTY_DROP_SHADOW_X]);
 		}
 		if (properties.count(PROPERTY_DROP_SHADOW_Y) > 0)
 		{
-			dropShadowY = tggd::data::IntSource::FromJSON(properties[PROPERTY_DROP_SHADOW_Y]);
+			dropShadowY = ::data::Int::FromJSON(properties[PROPERTY_DROP_SHADOW_Y]);
 		}
 	}
 

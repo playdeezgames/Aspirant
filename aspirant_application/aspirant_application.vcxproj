@@ -177,7 +177,7 @@
     <ClCompile Include="FlagManager.cpp" />
     <ClCompile Include="FontManager.cpp" />
     <ClCompile Include="IntManager.cpp" />
-    <ClCompile Include="IntSource.cpp" />
+    <ClCompile Include="Data.Int.cpp" />
     <ClCompile Include="JSONUtility.cpp" />
     <ClCompile Include="Layout.cpp" />
     <ClCompile Include="LayoutManager.cpp" />
@@ -202,7 +202,7 @@
     <ClCompile Include="StaticImage.cpp" />
     <ClCompile Include="StaticText.cpp" />
     <ClCompile Include="StringManager.cpp" />
-    <ClCompile Include="StringSource.cpp" />
+    <ClCompile Include="Data.String.cpp" />
     <ClCompile Include="TerrainDescriptor.cpp" />
     <ClCompile Include="TerrainInstance.cpp" />
     <ClCompile Include="TextureManager.cpp" />
@@ -241,7 +241,7 @@
     <ClInclude Include="FlagManager.h" />
     <ClInclude Include="FontManager.h" />
     <ClInclude Include="IntManager.h" />
-    <ClInclude Include="IntSource.h" />
+    <ClInclude Include="Data.Int.h" />
     <ClInclude Include="json.hpp" />
     <ClInclude Include="JSONUtility.h" />
     <ClInclude Include="Layout.h" />
@@ -269,7 +269,7 @@
     <ClInclude Include="StaticImage.h" />
     <ClInclude Include="StaticText.h" />
     <ClInclude Include="StringManager.h" />
-    <ClInclude Include="StringSource.h" />
+    <ClInclude Include="Data.String.h" />
     <ClInclude Include="TerrainDescriptor.h" />
     <ClInclude Include="TerrainInstance.h" />
     <ClInclude Include="TextureManager.h" />

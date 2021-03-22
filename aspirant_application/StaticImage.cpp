@@ -14,10 +14,10 @@ namespace tggd::graphics
 	(
 		const nlohmann::json& properties
 	)
-		: spriteName(tggd::data::StringSource::FromJSON(properties[PROPERTY_SPRITE]))
-		, colorName(tggd::data::StringSource::FromJSON(properties[PROPERTY_COLOR]))
-		, x(tggd::data::IntSource::FromJSON(properties[PROPERTY_X]))
-		, y(tggd::data::IntSource::FromJSON(properties[PROPERTY_Y]))
+		: spriteName(::data::String::FromJSON(properties[PROPERTY_SPRITE]))
+		, colorName(::data::String::FromJSON(properties[PROPERTY_COLOR]))
+		, x(::data::Int::FromJSON(properties[PROPERTY_X]))
+		, y(::data::Int::FromJSON(properties[PROPERTY_Y]))
 	{
 	}
 
@@ -27,10 +27,10 @@ namespace tggd::graphics
 		const std::string colorName,
 		tggd::common::XY<int> xy
 	)
-		: spriteName(tggd::data::StringSource(spriteName, false))
-		, colorName(tggd::data::StringSource(colorName, false))
-		, x(tggd::data::IntSource(xy.GetX()))
-		, y(tggd::data::IntSource(xy.GetX()))
+		: spriteName(::data::String(spriteName, false))
+		, colorName(::data::String(colorName, false))
+		, x(::data::Int(xy.GetX()))
+		, y(::data::Int(xy.GetX()))
 	{
 	}
 

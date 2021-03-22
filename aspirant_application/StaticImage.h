@@ -3,8 +3,8 @@
 #include "Drawn.h"
 #include "json.hpp"
 #include "Sprite.h"
-#include "StringSource.h"
-#include "IntSource.h"
+#include "Data.String.h"
+#include "Data.Int.h"
 namespace tggd::graphics
 {
 	class StaticImage : public Drawn
@@ -15,10 +15,10 @@ namespace tggd::graphics
 		StaticImage& operator=(const StaticImage&) = delete;
 		StaticImage& operator=(StaticImage&&) = delete;
 	private:
-		tggd::data::StringSource spriteName;
-		tggd::data::StringSource colorName;
-		tggd::data::IntSource x;
-		tggd::data::IntSource y;
+		::data::String spriteName;
+		::data::String colorName;
+		::data::Int x;
+		::data::Int y;
 	public:
 		StaticImage
 		(

@@ -62,10 +62,10 @@
     <ClCompile Include="StaticImage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="IntSource.cpp">
+    <ClCompile Include="Data.Int.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="StringSource.cpp">
+    <ClCompile Include="Data.String.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Data.Bool.cpp">
@@ -259,10 +259,10 @@
     <ClInclude Include="StaticImage.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="IntSource.h">
+    <ClInclude Include="Data.Int.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="StringSource.h">
+    <ClInclude Include="Data.String.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="StaticText.h">

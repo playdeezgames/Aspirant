@@ -4,8 +4,8 @@
 #include "SpriteFont.h"
 #include "json.hpp"
 #include "Drawn.h"
-#include "IntSource.h"
-#include "StringSource.h"
+#include "Data.Int.h"
+#include "Data.String.h"
 #include "Data.Bool.h"
 namespace tggd::graphics
 {
@@ -17,16 +17,16 @@ namespace tggd::graphics
 		StaticText& operator=(const StaticText&) = delete;
 		StaticText& operator=(StaticText&&) = delete;
 	private:
-		tggd::data::IntSource alignment;
-		tggd::data::StringSource text;
-		tggd::data::StringSource fontName;
-		tggd::data::StringSource color;
-		tggd::data::StringSource dropShadowColor;
+		data::Int alignment;
+		data::String text;
+		data::String fontName;
+		data::String color;
+		data::String dropShadowColor;
 		::data::Bool hasDropShadow;
-		tggd::data::IntSource x;
-		tggd::data::IntSource y;
-		tggd::data::IntSource dropShadowX;
-		tggd::data::IntSource dropShadowY;
+		data::Int x;
+		data::Int y;
+		data::Int dropShadowX;
+		data::Int dropShadowY;
 	public:
 		StaticText
 		(
