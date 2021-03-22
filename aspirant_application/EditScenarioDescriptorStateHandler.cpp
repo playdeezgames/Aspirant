@@ -45,10 +45,13 @@ namespace aspirant::editorui::EditScenarioDescriptorStateHandler
 			{
 			case EditScenarioDescriptorItem::SCENARIO_NAME:
 				descriptor->SetName("");
+				break;
 			case EditScenarioDescriptorItem::BRIEF:
 				descriptor->SetBrief("");
+				break;
 			default:
 				aspirant::Application::SetUIState(aspirant::commonui::UIState::EDIT_SCENARIO);;
+				break;
 			}
 			break;
 		case aspirant::commonui::Command::UP:
