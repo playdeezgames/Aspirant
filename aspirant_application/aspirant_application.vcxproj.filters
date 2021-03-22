@@ -155,6 +155,15 @@
     <ClCompile Include="EditorNewRoomContext.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="EditPickRoomStateHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EditorRoomViewContext.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EditNewRoomStateHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h">
@@ -323,6 +332,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="EditorContext.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EditPickRoomStateHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EditorRoomViewContext.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EditNewRoomStateHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

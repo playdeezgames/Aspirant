@@ -156,11 +156,14 @@
     <ClCompile Include="CreatureDescriptor.cpp" />
     <ClCompile Include="CreatureInstance.cpp" />
     <ClCompile Include="DescriptorManager.cpp" />
+    <ClCompile Include="EditNewRoomStateHandler.cpp" />
     <ClCompile Include="EditorContext.cpp" />
     <ClCompile Include="EditorNewRoomContext.cpp" />
     <ClCompile Include="EditorNewRoomContext.h" />
     <ClCompile Include="EditorRoomListContext.cpp" />
+    <ClCompile Include="EditorRoomViewContext.cpp" />
     <ClCompile Include="EditorScenarioSelector.cpp" />
+    <ClCompile Include="EditPickRoomStateHandler.cpp" />
     <ClCompile Include="EditScenarioSelectorStateHandler.cpp" />
     <ClCompile Include="EditScenarioStateHandler.cpp" />
     <ClCompile Include="FinishManager.cpp" />
@@ -210,9 +213,12 @@
     <ClInclude Include="CreatureInstance.h" />
     <ClInclude Include="DescriptorManager.h" />
     <ClInclude Include="Drawn.h" />
+    <ClInclude Include="EditNewRoomStateHandler.h" />
     <ClInclude Include="EditorContext.h" />
     <ClInclude Include="EditorRoomListContext.h" />
+    <ClInclude Include="EditorRoomViewContext.h" />
     <ClInclude Include="EditorScenarioSelector.h" />
+    <ClInclude Include="EditPickRoomStateHandler.h" />
     <ClInclude Include="EditScenarioSelectorStateHandler.h" />
     <ClInclude Include="EditScenarioStateHandler.h" />
     <ClInclude Include="FinishManager.h" />
