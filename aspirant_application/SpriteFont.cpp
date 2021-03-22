@@ -2,7 +2,7 @@
 #include "Utility.h"
 #include "JSONUtility.h"
 #include "SpriteManager.h"
-#include "ColorManager.h"
+#include "Graphics.Colors.h"
 namespace tggd::graphics
 {
 	SpriteFont::SpriteFont
@@ -28,7 +28,7 @@ namespace tggd::graphics
 	tggd::common::XY<int> SpriteFont::WriteGlyph(SDL_Renderer* renderer, const tggd::common::XY<int>& xy, char ch, const std::string& color) const
 	{
 		const auto& sprite = GetGlyphSprite(ch);
-		sprite.Draw(renderer, xy, ColorManager::Get(color));
+		sprite.Draw(renderer, xy, ::graphics::Colors::Get(color));
 		return tggd::common::XY(xy.GetX() + sprite.GetWidth(), xy.GetY());
 	}
 

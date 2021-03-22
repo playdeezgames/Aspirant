@@ -11,22 +11,22 @@ namespace aspirant::editorui::EditPickRoomStateHandler
 	const std::string LAYOUT_NAME = "EditPickRoom";
 	const std::string TEXT_NAME_STRING_ROOM_NAME = "EditPickRoom.Text.RoomName";
 
-	static void OnCommand(const aspirant::commonui::Command& command)
+	static void OnCommand(const aspirant::Command& command)
 	{
 		switch (command)
 		{
-		case aspirant::commonui::Command::BACK:
+		case aspirant::Command::BACK:
 			aspirant::Application::SetUIState(aspirant::commonui::UIState::EDIT_SCENARIO);
 			break;
-		case aspirant::commonui::Command::RIGHT:
-		case aspirant::commonui::Command::NEXT:
+		case aspirant::Command::RIGHT:
+		case aspirant::Command::NEXT:
 			aspirant::editor::context::EditorRoomListContext::NextRoom();
 			break;
-		case aspirant::commonui::Command::LEFT:
-		case aspirant::commonui::Command::PREVIOUS:
+		case aspirant::Command::LEFT:
+		case aspirant::Command::PREVIOUS:
 			aspirant::editor::context::EditorRoomListContext::PreviousRoom();
 			break;
-		case aspirant::commonui::Command::GREEN:
+		case aspirant::Command::GREEN:
 			aspirant::editor::context::EditorRoomViewContext::SetCursor({ 0,0 });
 			aspirant::Application::SetUIState(aspirant::commonui::UIState::EDIT_NAVIGATE_ROOM);
 			break;

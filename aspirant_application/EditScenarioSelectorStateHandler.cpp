@@ -16,22 +16,22 @@ namespace aspirant::editorui::EditScenarioSelectorStateHandler
 	const std::string TEXT_NAME_STRING_NAME = "EditScenarioSelector.Text.Name";
 	const std::string TEXT_BRIEF_STRING_NAME = "EditScenarioSelector.Text.Brief";
 
-	static void OnCommand(const aspirant::commonui::Command& command)
+	static void OnCommand(const aspirant::Command& command)
 	{
 		switch (command)
 		{
-		case aspirant::commonui::Command::BACK:
+		case aspirant::Command::BACK:
 			aspirant::Application::SetUIState(aspirant::commonui::UIState::START_EDITOR);
 			break;
-		case aspirant::commonui::Command::NEXT:
-		case aspirant::commonui::Command::RIGHT:
+		case aspirant::Command::NEXT:
+		case aspirant::Command::RIGHT:
 			aspirant::editor::context::EditorScenarioSelector::Next();
 			break;
-		case aspirant::commonui::Command::PREVIOUS:
-		case aspirant::commonui::Command::LEFT:
+		case aspirant::Command::PREVIOUS:
+		case aspirant::Command::LEFT:
 			aspirant::editor::context::EditorScenarioSelector::Previous();
 			break;
-		case aspirant::commonui::Command::GREEN:
+		case aspirant::Command::GREEN:
 			aspirant::editor::context::EditorContext::LoadScenario();
 			aspirant::Application::SetUIState(aspirant::commonui::UIState::EDIT_SCENARIO);
 			break;

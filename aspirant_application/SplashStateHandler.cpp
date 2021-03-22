@@ -8,7 +8,7 @@ namespace aspirant::navigationui::SplashStateHandler
 	const std::string LAYOUT_NAME = "Splash";
 	static size_t ticksLeft = TICKS_TOTAL;
 
-	static void OnCommand(const aspirant::commonui::Command& command)
+	static void OnCommand(const aspirant::Command& command)
 	{
 		ticksLeft = 0;
 	}

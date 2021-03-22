@@ -151,7 +151,7 @@
     <ClCompile Include="Common.Application.cpp" />
     <ClCompile Include="Aspirant.Application.cpp" />
     <ClCompile Include="Data.Bool.cpp" />
-    <ClCompile Include="ColorManager.cpp" />
+    <ClCompile Include="Graphics.Colors.cpp" />
     <ClCompile Include="ConfirmQuitStateHandler.cpp" />
     <ClCompile Include="CreatureDescriptor.cpp" />
     <ClCompile Include="CreatureInstance.cpp" />
@@ -213,8 +213,8 @@
     <ClInclude Include="Common.Application.h" />
     <ClInclude Include="Aspirant.Application.h" />
     <ClInclude Include="Data.Bool.h" />
-    <ClInclude Include="ColorManager.h" />
-    <ClInclude Include="Command.h" />
+    <ClInclude Include="Graphics.Colors.h" />
+    <ClInclude Include="Aspirant.Command.h" />
     <ClInclude Include="CommonDescriptor.h" />
     <ClInclude Include="ConfirmQuitStateHandler.h" />
     <ClInclude Include="CreatureDescriptor.h" />

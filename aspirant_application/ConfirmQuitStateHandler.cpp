@@ -33,20 +33,20 @@ namespace aspirant::navigationui::ConfirmQuitStateHandler
 		}
 	}
 
-	static void OnCommand(const aspirant::commonui::Command& command)
+	static void OnCommand(const aspirant::Command& command)
 	{
 		switch (command)
 		{
-		case aspirant::commonui::Command::UP:
+		case aspirant::Command::UP:
 			current = items[current].GetPreviousMenuItem();
 			break;
-		case aspirant::commonui::Command::DOWN:
+		case aspirant::Command::DOWN:
 			current = items[current].GetNextMenuItem();
 			break;
-		case aspirant::commonui::Command::GREEN:
+		case aspirant::Command::GREEN:
 			ActivateItem();
 			break;
-		case aspirant::commonui::Command::BACK:
+		case aspirant::Command::BACK:
 			aspirant::Application::SetUIState(aspirant::commonui::UIState::MAIN_MENU);
 			break;
 		}

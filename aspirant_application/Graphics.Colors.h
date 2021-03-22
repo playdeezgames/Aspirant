@@ -2,7 +2,7 @@
 #include <string>
 #include <SDL.h>
 #include <vector>
-namespace tggd::graphics::ColorManager
+namespace graphics::Colors
 {
 	void Start(const std::string&);
 	const SDL_Color& Get(const std::string&);

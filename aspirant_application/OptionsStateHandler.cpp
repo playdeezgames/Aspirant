@@ -93,26 +93,26 @@ namespace aspirant::navigationui::OptionsStateHandler
 
 	static std::map<OptionsItem, aspirant::commonui::MenuItemDescriptor<OptionsItem>> items;
 
-	static void OnCommand(const aspirant::commonui::Command& command)
+	static void OnCommand(const aspirant::Command& command)
 	{
 		switch (command)
 		{
-		case aspirant::commonui::Command::UP:
+		case aspirant::Command::UP:
 			current = items[current].GetPreviousMenuItem();
 			break;
-		case aspirant::commonui::Command::DOWN:
+		case aspirant::Command::DOWN:
 			current = items[current].GetNextMenuItem();
 			break;
-		case aspirant::commonui::Command::LEFT:
+		case aspirant::Command::LEFT:
 			DecreaseItem();
 			break;
-		case aspirant::commonui::Command::RIGHT:
+		case aspirant::Command::RIGHT:
 			IncreaseItem();
 			break;
-		case aspirant::commonui::Command::BACK:
+		case aspirant::Command::BACK:
 			aspirant::Application::SetUIState(aspirant::commonui::UIState::MAIN_MENU);
 			break;
-		case aspirant::commonui::Command::GREEN:
+		case aspirant::Command::GREEN:
 			ActivateItem();
 			break;
 		}

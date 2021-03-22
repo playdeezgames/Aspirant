@@ -1,14 +1,14 @@
 #include <SDL.h>
 #include <string>
 #include "UIState.h"
-#include "Command.h"
+#include "Aspirant.Command.h"
 #include <optional>
 #include "StringManager.h"
 #include "IntManager.h"
 #include "FlagManager.h"
 #include "Aspirant.Application.h"
 #include "FinishManager.h"
-#include "ColorManager.h"
+#include "Graphics.Colors.h"
 #include "TextureManager.h"
 #include "SpriteManager.h"
 #include "FontManager.h"
@@ -62,9 +62,9 @@ namespace aspirant::Application
 		return uiState;
 	}
 
-	static std::map<aspirant::commonui::UIState, aspirant::commonui::CommandHandler> commandHandlers;
+	static std::map<aspirant::commonui::UIState, aspirant::CommandHandler> commandHandlers;
 
-	static void HandleCommand(const aspirant::commonui::Command& command)
+	static void HandleCommand(const aspirant::Command& command)
 	{
 		auto handler = commandHandlers.find(GetUIState());
 		if (handler != commandHandlers.end())
@@ -73,36 +73,36 @@ namespace aspirant::Application
 		}
 	}
 
-	static std::optional<aspirant::commonui::Command> KeyCodeToCommand(const SDL_Keycode& code)
+	static std::optional<aspirant::Command> KeyCodeToCommand(const SDL_Keycode& code)
 	{
 		switch (code)
 		{
 		case SDLK_UP:
-			return std::optional<aspirant::commonui::Command>(aspirant::commonui::Command::UP);
+			return std::optional<aspirant::Command>(aspirant::Command::UP);
 		case SDLK_DOWN:
-			return std::optional<aspirant::commonui::Command>(aspirant::commonui::Command::DOWN);
+			return std::optional<aspirant::Command>(aspirant::Command::DOWN);
 		case SDLK_LEFT:
-			return std::optional<aspirant::commonui::Command>(aspirant::commonui::Command::LEFT);
+			return std::optional<aspirant::Command>(aspirant::Command::LEFT);
 		case SDLK_RIGHT:
-			return std::optional<aspirant::commonui::Command>(aspirant::commonui::Command::RIGHT);
+			return std::optional<aspirant::Command>(aspirant::Command::RIGHT);
 		case SDLK_SPACE:
-			return std::optional<aspirant::commonui::Command>(aspirant::commonui::Command::GREEN);
+			return std::optional<aspirant::Command>(aspirant::Command::GREEN);
 		case SDLK_RETURN:
-			return std::optional<aspirant::commonui::Command>(aspirant::commonui::Command::START);
+			return std::optional<aspirant::Command>(aspirant::Command::START);
 		case SDLK_ESCAPE:
-			return std::optional<aspirant::commonui::Command>(aspirant::commonui::Command::RED);
+			return std::optional<aspirant::Command>(aspirant::Command::RED);
 		case SDLK_COMMA:
-			return std::optional<aspirant::commonui::Command>(aspirant::commonui::Command::PREVIOUS);
+			return std::optional<aspirant::Command>(aspirant::Command::PREVIOUS);
 		case SDLK_PERIOD:
-			return std::optional<aspirant::commonui::Command>(aspirant::commonui::Command::NEXT);
+			return std::optional<aspirant::Command>(aspirant::Command::NEXT);
 		case SDLK_BACKSPACE:
-			return std::optional<aspirant::commonui::Command>(aspirant::commonui::Command::BACK);
+			return std::optional<aspirant::Command>(aspirant::Command::BACK);
 		case SDLK_TAB:
-			return std::optional<aspirant::commonui::Command>(aspirant::commonui::Command::YELLOW);
+			return std::optional<aspirant::Command>(aspirant::Command::YELLOW);
 		case SDLK_z:
-			return std::optional<aspirant::commonui::Command>(aspirant::commonui::Command::BLUE);
+			return std::optional<aspirant::Command>(aspirant::Command::BLUE);
 		default:
-			return std::optional<aspirant::commonui::Command>();
+			return std::optional<aspirant::Command>();
 		}
 	}
 
@@ -126,7 +126,7 @@ namespace aspirant::Application
 		}
 	}
 
-	void SetCommandHandler(const aspirant::commonui::UIState& state, aspirant::commonui::CommandHandler handler)
+	void SetCommandHandler(const aspirant::commonui::UIState& state, aspirant::CommandHandler handler)
 	{
 		commandHandlers[state] = handler;
 	}
@@ -163,7 +163,7 @@ namespace common::Application
 		tggd::data::StringManager::Start(aspirant::ConfigurationConstants::STRINGS);
 		tggd::data::IntManager::Start(aspirant::ConfigurationConstants::INTS);
 		tggd::data::FlagManager::Start(aspirant::ConfigurationConstants::FLAGS);
-		tggd::graphics::ColorManager::Start(aspirant::ConfigurationConstants::COLOR);
+		::graphics::Colors::Start(aspirant::ConfigurationConstants::COLOR);
 		tggd::graphics::TextureManager::Start(renderer, aspirant::ConfigurationConstants::TEXTURE);
 		tggd::graphics::SpriteManager::Start(aspirant::ConfigurationConstants::SPRITE);
 		tggd::graphics::FontManager::Start(aspirant::ConfigurationConstants::FONTS);

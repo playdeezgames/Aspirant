@@ -19,28 +19,28 @@ namespace aspirant::editorui::EditDescriptorSelectorStateHandler
 				aspirant::editor::context::EditorDescriptorSelectorContext::GetCount()));
 	}
 
-	static void OnCommand(const aspirant::commonui::Command& command)
+	static void OnCommand(const aspirant::Command& command)
 	{
 		const int ROW_DELTA = 7;
 		const int COLUMN_DELTA = 1;
 		switch (command)
 		{
-		case aspirant::commonui::Command::BACK:
+		case aspirant::Command::BACK:
 			aspirant::Application::SetUIState(aspirant::commonui::UIState::EDIT_PICK_ROOM);
 			break;
-		case aspirant::commonui::Command::UP:
+		case aspirant::Command::UP:
 			ChangeIndex(-ROW_DELTA);
 			break;
-		case aspirant::commonui::Command::DOWN:
+		case aspirant::Command::DOWN:
 			ChangeIndex(+ROW_DELTA);
 			break;
-		case aspirant::commonui::Command::LEFT:
+		case aspirant::Command::LEFT:
 			ChangeIndex(-COLUMN_DELTA);
 			break;
-		case aspirant::commonui::Command::RIGHT:
+		case aspirant::Command::RIGHT:
 			ChangeIndex(COLUMN_DELTA);
 			break;
-		case aspirant::commonui::Command::NEXT:
+		case aspirant::Command::NEXT:
 			aspirant::Application::SetUIState(aspirant::commonui::UIState::EDIT_NAVIGATE_ROOM);
 			break;
 		}

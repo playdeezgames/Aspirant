@@ -38,7 +38,7 @@
     <ClCompile Include="FlagManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ColorManager.cpp">
+    <ClCompile Include="Graphics.Colors.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FinishManager.cpp">
@@ -214,7 +214,7 @@
     <ClInclude Include="Aspirant.Application.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Command.h">
+    <ClInclude Include="Aspirant.Command.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="StringManager.h">
@@ -226,7 +226,7 @@
     <ClInclude Include="FlagManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ColorManager.h">
+    <ClInclude Include="Graphics.Colors.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FinishManager.h">

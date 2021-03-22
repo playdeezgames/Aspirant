@@ -1,12 +1,12 @@
 #pragma once
 #include "UIState.h"
-#include "Command.h"
+#include "Aspirant.Command.h"
 #include <string>
 #include <SDL.h>
 namespace aspirant::Application
 {
 	void SetUIState(const aspirant::commonui::UIState&);
-	void SetCommandHandler(const aspirant::commonui::UIState&, aspirant::commonui::CommandHandler);
+	void SetCommandHandler(const aspirant::commonui::UIState&, aspirant::CommandHandler);
 	typedef void (*TextInputHandler)(const std::string&);
 	void SetTextInputHandler(const aspirant::commonui::UIState&, TextInputHandler);
 	typedef void (*UpdateHandler)(const Uint32&);

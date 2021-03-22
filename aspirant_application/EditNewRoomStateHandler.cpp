@@ -82,11 +82,11 @@ namespace aspirant::editorui::EditNewRoomStateHandler
 		}
 	}
 
-	static void OnCommand(const aspirant::commonui::Command& command)
+	static void OnCommand(const aspirant::Command& command)
 	{
 		switch (command)
 		{
-		case aspirant::commonui::Command::BACK:
+		case aspirant::Command::BACK:
 			if (current == NewRoomItem::NAME)
 			{
 				aspirant::editor::context::EditorNewRoomContext::ClearNewRoomName();
@@ -96,19 +96,19 @@ namespace aspirant::editorui::EditNewRoomStateHandler
 				aspirant::Application::SetUIState(aspirant::commonui::UIState::EDIT_SCENARIO);
 			}
 			break;
-		case aspirant::commonui::Command::UP:
+		case aspirant::Command::UP:
 			current = items[current].GetPreviousMenuItem();
 			break;
-		case aspirant::commonui::Command::DOWN:
+		case aspirant::Command::DOWN:
 			current = items[current].GetNextMenuItem();
 			break;
-		case aspirant::commonui::Command::LEFT:
+		case aspirant::Command::LEFT:
 			DecreaseItem();
 			break;
-		case aspirant::commonui::Command::RIGHT:
+		case aspirant::Command::RIGHT:
 			IncreaseItem();
 			break;
-		case aspirant::commonui::Command::GREEN:
+		case aspirant::Command::GREEN:
 			ActivateItem();
 			break;
 		}

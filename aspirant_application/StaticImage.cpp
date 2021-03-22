@@ -1,7 +1,7 @@
 #include "StaticImage.h"
 #include "Utility.h"
 #include "SpriteManager.h"
-#include "ColorManager.h"
+#include "Graphics.Colors.h"
 #include "XY.h"
 namespace tggd::graphics
 {
@@ -41,7 +41,7 @@ namespace tggd::graphics
 			(
 				renderer,
 				tggd::common::XY<int>(x,y),
-				ColorManager::Get(colorName)
+				::graphics::Colors::Get(colorName)
 			);
 	}
 }

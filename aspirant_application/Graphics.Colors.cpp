@@ -1,8 +1,8 @@
-#include "ColorManager.h"
+#include "Graphics.Colors.h"
 #include "JSONUtility.h"
 #include <map>
 #include <vector>
-namespace tggd::graphics::ColorManager
+namespace graphics::Colors
 {
 	const std::string PROPERTY_RED = "r";
 	const std::string PROPERTY_GREEN = "g";

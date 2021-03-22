@@ -35,12 +35,12 @@ namespace aspirant::editorui::EditScenarioDescriptorStateHandler
 		}
 	}
 
-	static void OnCommand(const aspirant::commonui::Command& command)
+	static void OnCommand(const aspirant::Command& command)
 	{
 		auto descriptor = aspirant::game::ScenarioDescriptorManager::Get(aspirant::editor::context::EditorScenarioSelector::GetIndex());
 		switch (command)
 		{
-		case aspirant::commonui::Command::BACK:
+		case aspirant::Command::BACK:
 			switch (current)
 			{
 			case EditScenarioDescriptorItem::SCENARIO_NAME:
@@ -54,13 +54,13 @@ namespace aspirant::editorui::EditScenarioDescriptorStateHandler
 				break;
 			}
 			break;
-		case aspirant::commonui::Command::UP:
+		case aspirant::Command::UP:
 			current = items[current].GetPreviousMenuItem();
 			break;
-		case aspirant::commonui::Command::DOWN:
+		case aspirant::Command::DOWN:
 			current = items[current].GetNextMenuItem();
 			break;
-		case aspirant::commonui::Command::GREEN:
+		case aspirant::Command::GREEN:
 			ActivateItem();
 			break;
 		}

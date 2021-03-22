@@ -4,7 +4,7 @@
 #include <list>
 #include "json.hpp"
 #include "SpriteManager.h"
-#include "ColorManager.h"
+#include "Graphics.Colors.h"
 #include "FontManager.h"
 namespace tggd::graphics
 {

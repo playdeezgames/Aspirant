@@ -1,5 +1,5 @@
 #pragma once
-namespace aspirant::commonui
+namespace aspirant
 {
 	enum class Command
 	{

@@ -53,33 +53,33 @@ namespace aspirant::editorui::EditNavigateRoomStateHandler
 		}
 	}
 
-	static void OnCommand(const aspirant::commonui::Command& command)
+	static void OnCommand(const aspirant::Command& command)
 	{
 		switch (command)
 		{
-		case aspirant::commonui::Command::BACK:
+		case aspirant::Command::BACK:
 			aspirant::editor::context::EditorContext::SaveScenario();
 			aspirant::Application::SetUIState(aspirant::commonui::UIState::EDIT_PICK_ROOM);
 			break;
-		case aspirant::commonui::Command::UP:
+		case aspirant::Command::UP:
 			MoveCursor({ 0,-1 });
 			break;
-		case aspirant::commonui::Command::DOWN:
+		case aspirant::Command::DOWN:
 			MoveCursor({ 0,1 });
 			break;
-		case aspirant::commonui::Command::LEFT:
+		case aspirant::Command::LEFT:
 			MoveCursor({ -1, 0 });
 			break;
-		case aspirant::commonui::Command::RIGHT:
+		case aspirant::Command::RIGHT:
 			MoveCursor({ 1, 0 });
 			break;
-		case aspirant::commonui::Command::GREEN:
+		case aspirant::Command::GREEN:
 			PlaceObject();
 			break;
-		case aspirant::commonui::Command::RED:
+		case aspirant::Command::RED:
 			RemoveObject();
 			break;
-		case aspirant::commonui::Command::NEXT:
+		case aspirant::Command::NEXT:
 			aspirant::Application::SetUIState(aspirant::commonui::UIState::EDIT_DESCRIPTOR_SELECTOR);
 			break;
 		}

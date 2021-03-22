@@ -6,14 +6,11 @@ namespace aspirant::state::About
 {
 	const std::string LAYOUT_NAME = "About";
 
-	static void OnCommand(const aspirant::commonui::Command& command)
+	static void OnCommand(const aspirant::Command& command)
 	{
 		switch (command)
 		{
-		case aspirant::commonui::Command::GREEN:
-		case aspirant::commonui::Command::RED:
-		case aspirant::commonui::Command::BACK:
-		case aspirant::commonui::Command::START:
+		case aspirant::Command::BACK:
 			aspirant::Application::SetUIState(aspirant::commonui::UIState::MAIN_MENU);
 			break;
 		}
