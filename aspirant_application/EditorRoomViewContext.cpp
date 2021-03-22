@@ -2,7 +2,7 @@
 #include "XY.h"
 namespace aspirant::editor::context::EditorRoomViewContext
 {
-	static tggd::common::XY<size_t> gridSize;
+	static tggd::common::XY<size_t> gridSize = { 10,10 };
 	static tggd::common::XY<size_t> gridAnchor;
 	static tggd::common::XY<size_t> gridCursor;
 	const tggd::common::XY<size_t>& GetSize()
@@ -24,5 +24,8 @@ namespace aspirant::editor::context::EditorRoomViewContext
 	void SetCursor(const tggd::common::XY<size_t>& value)
 	{
 		gridCursor = value;
+		size_t newAnchorX = gridCursor.GetX() - gridSize.GetX() / 2;
+		size_t newAnchorY = gridCursor.GetY() - gridSize.GetY() / 2;
+		SetAnchor({ newAnchorX, newAnchorY });
 	}
 }

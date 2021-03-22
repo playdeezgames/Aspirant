@@ -58,10 +58,10 @@ namespace tggd::common::Utility
 
 	}
 
-	//int PositiveModulo(int dividend, size_t divisor)
-	//{
-	//	dividend %= (int)divisor;
-	//	return (dividend < 0) ? (dividend + (int)divisor) : (dividend);
-	//}
+	int PositiveModulo(int dividend, size_t divisor)
+	{
+		dividend %= (int)divisor;
+		return (dividend < 0) ? (dividend + (int)divisor) : (dividend);
+	}
 }
 

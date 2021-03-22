@@ -30,6 +30,7 @@
 #include <map>
 #include "EditNewRoomStateHandler.h"
 #include "EditScenarioDescriptorStateHandler.h"
+#include "EditNavigateRoomStateHandler.h"
 namespace aspirant::ConfigurationConstants
 {
 	const std::string TEXTURE = "config/graphics/textures.json";
@@ -183,15 +184,7 @@ namespace tggd::common::Application
 		aspirant::editorui::EditPickRoomStateHandler::Start();
 		aspirant::editorui::EditNewRoomStateHandler::Start();
 		aspirant::editorui::EditScenarioDescriptorStateHandler::Start();
-		//new aspirant::editorui::EditNavigateRoomStateHandler
-		//(
-		//	this,
-		//	editorContext,
-		//	uiContext,
-		//	roomRenderer,
-		//	roomCellObjectsRenderer,
-		//	descriptorSelectorRenderer
-		//);
+		aspirant::editorui::EditNavigateRoomStateHandler::Start();
 		//new aspirant::editorui::EditDescriptorSelectorStateHandler
 		//(
 		//	this,

@@ -8,6 +8,6 @@ namespace tggd::common::Utility
 	int ToPercentage(int, int);
 	size_t NextIndex(size_t, size_t);
 	size_t PreviousIndex(size_t, size_t);
-	//int PositiveModulo(int, size_t);
+	int PositiveModulo(int, size_t);
 }
 
