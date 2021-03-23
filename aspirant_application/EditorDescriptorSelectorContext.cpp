@@ -1,5 +1,5 @@
 #include "EditorDescriptorSelectorContext.h"
-#include "DescriptorManager.h"
+#include "Game.Descriptors.h"
 namespace aspirant::editor::context::EditorDescriptorSelectorContext
 {
 	static size_t index;
@@ -14,10 +14,10 @@ namespace aspirant::editor::context::EditorDescriptorSelectorContext
 	}
 	size_t GetCount()
 	{
-		return aspirant::game::DescriptorManager::GetIdentifiers().size();
+		return ::game::Descriptors::GetIdentifiers().size();
 	}
 	const ::game::descriptor::Common* GetDescriptor(size_t idx)
 	{
-		return aspirant::game::DescriptorManager::Get(aspirant::game::DescriptorManager::GetIdentifiers()[idx]);
+		return ::game::Descriptors::Get(::game::Descriptors::GetIdentifiers()[idx]);
 	}
 }

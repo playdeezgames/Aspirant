@@ -1,7 +1,7 @@
 #include "SpriteManager.h"
 #include "Utility.h"
 #include "JSONUtility.h"
-#include "TextureManager.h"
+#include "Graphics.Textures.h"
 //#include <FinishUtility.h>
 namespace tggd::graphics::SpriteManager
 {
@@ -33,7 +33,7 @@ namespace tggd::graphics::SpriteManager
 		for (auto& item : j.items())
 		{
 			auto& properties = item.value();
-			SDL_Texture* texture = TextureManager::Get(properties[PROPERTY_TEXTURE]);
+			SDL_Texture* texture = ::graphics::Textures::Get(properties[PROPERTY_TEXTURE]);
 			SDL_Rect source;
 			source.x = properties[PROPERTY_X];
 			source.y = properties[PROPERTY_Y];

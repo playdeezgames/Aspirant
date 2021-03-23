@@ -1,10 +1,10 @@
-#include "TextureManager.h"
+#include "Graphics.Textures.h"
 #include "Utility.h"
 #include <SDL_image.h>
 #include "JSONUtility.h"
 #include "FinishManager.h"
 #include <map>
-namespace tggd::graphics::TextureManager
+namespace graphics::Textures
 {
 	static std::map<std::string, SDL_Texture*> textures;
 

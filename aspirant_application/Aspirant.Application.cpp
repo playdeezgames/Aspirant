@@ -9,13 +9,13 @@
 #include "Aspirant.Application.h"
 #include "FinishManager.h"
 #include "Graphics.Colors.h"
-#include "TextureManager.h"
+#include "Graphics.Textures.h"
 #include "SpriteManager.h"
 #include "FontManager.h"
 #include "LayoutManager.h"
 #include "SoundManager.h"
 #include "OptionsManager.h"
-#include "DescriptorManager.h"
+#include "Game.Descriptors.h"
 #include "ScenarioDescriptorManager.h"
 #include "SplashStateHandler.h"
 #include "MainMenuStateHandler.h"
@@ -164,13 +164,13 @@ namespace common::Application
 		::data::Ints::Start(aspirant::ConfigurationConstants::INTS);
 		::data::Bools::Start(aspirant::ConfigurationConstants::FLAGS);
 		::graphics::Colors::Start(aspirant::ConfigurationConstants::COLOR);
-		tggd::graphics::TextureManager::Start(renderer, aspirant::ConfigurationConstants::TEXTURE);
+		::graphics::Textures::Start(renderer, aspirant::ConfigurationConstants::TEXTURE);
 		tggd::graphics::SpriteManager::Start(aspirant::ConfigurationConstants::SPRITE);
 		tggd::graphics::FontManager::Start(aspirant::ConfigurationConstants::FONTS);
 		tggd::graphics::LayoutManager::Start(aspirant::ConfigurationConstants::LAYOUTS);
 		tggd::common::SoundManager::Start(aspirant::ConfigurationConstants::SFX, aspirant::ConfigurationConstants::MUX);
 		aspirant::navigationui::OptionsManager::Start(aspirant::ConfigurationConstants::OPTIONS);
-		aspirant::game::DescriptorManager::Start(aspirant::ConfigurationConstants::DESCRIPTORS);
+		::game::Descriptors::Start(aspirant::ConfigurationConstants::DESCRIPTORS);
 		aspirant::game::ScenarioDescriptorManager::Load(aspirant::ConfigurationConstants::SCENARIOS);
 
 		aspirant::navigationui::SplashStateHandler::Start();

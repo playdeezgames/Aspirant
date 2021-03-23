@@ -1,11 +1,11 @@
-#include "DescriptorManager.h"
+#include "Game.Descriptors.h"
 #include "FinishManager.h"
 #include <map>
 #include "FinishUtility.h"
 #include "JSONUtility.h"
 #include "Game.Descriptor.Terrain.h"
 #include "Game.Descriptor.Creature.h"
-namespace aspirant::game::DescriptorManager
+namespace game::Descriptors
 {
 	const std::string PROPERTY_TYPE = "type";
 	const std::string TYPE_TERRAIN = "terrain";

@@ -1,12 +1,12 @@
 #include "ScenarioRoomCell.h"
-#include "DescriptorManager.h"
+#include "Game.Descriptors.h"
 namespace aspirant::game
 {
 	const std::string PROPERTY_TYPE = "type";
 
 	ScenarioObjectInstance* ScenarioRoomCell::ObjectFromJSON(const nlohmann::json& properties)
 	{
-		auto obj = DescriptorManager::Get(properties[PROPERTY_TYPE])->CreateObject();
+		auto obj = ::game::Descriptors::Get(properties[PROPERTY_TYPE])->CreateObject();
 		obj->FromJSON(properties);
 		return obj;
 	}

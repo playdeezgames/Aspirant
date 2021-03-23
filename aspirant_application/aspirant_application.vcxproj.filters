@@ -44,7 +44,7 @@
     <ClCompile Include="FinishManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TextureManager.cpp">
+    <ClCompile Include="Graphics.Textures.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SpriteManager.cpp">
@@ -86,7 +86,7 @@
     <ClCompile Include="OptionsManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DescriptorManager.cpp">
+    <ClCompile Include="Game.Descriptors.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Game.Descriptor.Terrain.cpp">
@@ -232,7 +232,7 @@
     <ClInclude Include="FinishManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TextureManager.h">
+    <ClInclude Include="Graphics.Textures.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SpriteManager.h">
@@ -253,7 +253,7 @@
     <ClInclude Include="FinishUtility.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Drawn.h">
+    <ClInclude Include="Graphics.Drawn.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="StaticImage.h">
@@ -283,7 +283,7 @@
     <ClInclude Include="OptionsManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DescriptorManager.h">
+    <ClInclude Include="Game.Descriptors.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ScenarioObjectInstance.h">

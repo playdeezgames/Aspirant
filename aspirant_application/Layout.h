@@ -1,5 +1,5 @@
 #pragma once
-#include "Drawn.h"
+#include "Graphics.Drawn.h"
 #include "FinishManager.h"
 #include <list>
 #include "json.hpp"
@@ -9,7 +9,7 @@
 namespace tggd::graphics
 {
 	class Layout
-		: public Drawn
+		: public ::graphics::Drawn
 	{
 		Layout() = delete;
 		Layout(const Layout&) = delete;
@@ -17,7 +17,7 @@ namespace tggd::graphics
 		Layout& operator=(const Layout&) = delete;
 		Layout& operator=(Layout&&) = delete;
 	private:
-		std::list<Drawn*> drawnItems;
+		std::list<::graphics::Drawn*> drawnItems;
 	public:
 		Layout
 		(

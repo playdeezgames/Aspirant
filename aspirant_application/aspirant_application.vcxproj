@@ -155,7 +155,7 @@
     <ClCompile Include="Aspirant.State.ConfirmQuit.cpp" />
     <ClCompile Include="Game.Descriptor.Creature.cpp" />
     <ClCompile Include="CreatureInstance.cpp" />
-    <ClCompile Include="DescriptorManager.cpp" />
+    <ClCompile Include="Game.Descriptors.cpp" />
     <ClCompile Include="DescriptorSelectorRenderer.cpp" />
     <ClCompile Include="EditDescriptorSelectorStateHandler.cpp" />
     <ClCompile Include="EditNavigateRoomStateHandler.cpp" />
@@ -205,7 +205,7 @@
     <ClCompile Include="Data.String.cpp" />
     <ClCompile Include="Game.Descriptor.Terrain.cpp" />
     <ClCompile Include="TerrainInstance.cpp" />
-    <ClCompile Include="TextureManager.cpp" />
+    <ClCompile Include="Graphics.Textures.cpp" />
     <ClCompile Include="Utility.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -219,9 +219,9 @@
     <ClInclude Include="Aspirant.State.ConfirmQuit.h" />
     <ClInclude Include="Game.Descriptor.Creature.h" />
     <ClInclude Include="CreatureInstance.h" />
-    <ClInclude Include="DescriptorManager.h" />
+    <ClInclude Include="Game.Descriptors.h" />
     <ClInclude Include="DescriptorSelectorRenderer.h" />
-    <ClInclude Include="Drawn.h" />
+    <ClInclude Include="Graphics.Drawn.h" />
     <ClInclude Include="EditDescriptorSelectorStateHandler.h" />
     <ClInclude Include="EditNavigateRoomStateHandler.h" />
     <ClInclude Include="EditNewRoomStateHandler.h" />
@@ -272,7 +272,7 @@
     <ClInclude Include="Data.String.h" />
     <ClInclude Include="Game.Descriptor.Terrain.h" />
     <ClInclude Include="TerrainInstance.h" />
-    <ClInclude Include="TextureManager.h" />
+    <ClInclude Include="Graphics.Textures.h" />
     <ClInclude Include="UIState.h" />
     <ClInclude Include="Utility.h" />
     <ClInclude Include="XY.h" />

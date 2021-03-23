@@ -1,6 +1,6 @@
 #pragma once
 #include "ScenarioObjectInstance.h"
-#include "DescriptorManager.h"
+#include "Game.Descriptors.h"
 #include "FinishUtility.h"
 namespace aspirant::game
 {

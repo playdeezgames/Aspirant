@@ -3,7 +3,7 @@
 #include <map>
 #include <string>
 #include "ScenarioRoomCell.h"
-#include "DescriptorManager.h"
+#include "Game.Descriptors.h"
 #include "ScenarioRoom.h"
 #include <vector>
 namespace aspirant::game

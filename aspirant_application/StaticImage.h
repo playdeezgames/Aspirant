@@ -1,13 +1,13 @@
 #pragma once
 #include "XY.h"
-#include "Drawn.h"
+#include "Graphics.Drawn.h"
 #include "json.hpp"
 #include "Sprite.h"
 #include "Data.String.h"
 #include "Data.Int.h"
 namespace tggd::graphics
 {
-	class StaticImage : public Drawn
+	class StaticImage : public ::graphics::Drawn
 	{
 		StaticImage() = delete;
 		StaticImage(const StaticImage&) = delete;

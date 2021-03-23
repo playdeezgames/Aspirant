@@ -3,13 +3,13 @@
 #include <string>
 #include "SpriteFont.h"
 #include "json.hpp"
-#include "Drawn.h"
+#include "Graphics.Drawn.h"
 #include "Data.Int.h"
 #include "Data.String.h"
 #include "Data.Bool.h"
 namespace tggd::graphics
 {
-	class StaticText : public Drawn
+	class StaticText : public ::graphics::Drawn
 	{
 		StaticText() = delete;
 		StaticText(const StaticText&) = delete;
