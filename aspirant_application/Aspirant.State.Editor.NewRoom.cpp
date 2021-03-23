@@ -7,7 +7,7 @@
 #include "Data.Strings.h"
 #include "Aspirant.Context.Editor.Scenario.h"
 #include "Aspirant.Context.Editor.NewRoom.h"
-#include "Aspirant.Context.Editor.RoomList.h"
+#include "Aspirant.Context.Editor.Rooms.h"
 namespace aspirant::state::editor::NewRoom
 {
 	const std::string LAYOUT_NAME = "EditNewRoom";
@@ -46,7 +46,7 @@ namespace aspirant::state::editor::NewRoom
 		{
 		case NewRoomItem::CREATE:
 			CreateRoom();
-			aspirant::context::editor::RoomList::UpdateRoomList();
+			aspirant::context::editor::Rooms::UpdateRoomList();
 			aspirant::Application::SetUIState(aspirant::UIState::EDIT_PICK_ROOM);
 			break;
 		case NewRoomItem::CANCEL:

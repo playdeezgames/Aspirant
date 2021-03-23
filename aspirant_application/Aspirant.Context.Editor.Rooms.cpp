@@ -1,9 +1,9 @@
-#include "Aspirant.Context.Editor.RoomList.h"
+#include "Aspirant.Context.Editor.Rooms.h"
 #include "Common.Utility.h"
 #include "Aspirant.Context.Editor.Scenario.h"
 #include <vector>
 #include <string>
-namespace aspirant::context::editor::RoomList
+namespace aspirant::context::editor::Rooms
 {
 	static std::vector<std::string> roomList;
 	static size_t roomIndex = 0;

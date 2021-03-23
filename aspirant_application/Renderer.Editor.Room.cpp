@@ -2,7 +2,7 @@
 #include "Common.XY.h"
 #include "Aspirant.Context.Editor.RoomView.h"
 #include "Graphics.Sprites.h"
-#include "Aspirant.Context.Editor.RoomList.h"
+#include "Aspirant.Context.Editor.Rooms.h"
 #include "Renderer.Editor.Common.h"
 namespace renderer::editor::Room
 {
@@ -68,7 +68,7 @@ namespace renderer::editor::Room
 
 	void Draw(SDL_Renderer* renderer)
 	{
-		DrawRoom(renderer, aspirant::context::editor::RoomList::GetRoom());
+		DrawRoom(renderer, aspirant::context::editor::Rooms::GetRoom());
 		DrawMapCursor(renderer);
 	}
 }

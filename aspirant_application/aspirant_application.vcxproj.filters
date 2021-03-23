@@ -143,7 +143,7 @@
     <ClCompile Include="Aspirant.State.Editor.Scenario.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Aspirant.Context.Editor.RoomList.cpp">
+    <ClCompile Include="Aspirant.Context.Editor.Rooms.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Aspirant.Context.Editor.Scenario.cpp">
@@ -352,7 +352,7 @@
     <ClInclude Include="Aspirant.State.Editor.Scenario.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Aspirant.Context.Editor.RoomList.h">
+    <ClInclude Include="Aspirant.Context.Editor.Rooms.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Aspirant.Context.Editor.Scenario.h">

@@ -10,7 +10,7 @@
 #include "Data.Strings.h"
 #include "Aspirant.Context.Editor.Scenario.h"
 #include "Common.Utility.h"
-#include "Aspirant.Context.Editor.RoomList.h"
+#include "Aspirant.Context.Editor.Rooms.h"
 #include "Aspirant.Context.Editor.Cell.h"
 #include "Aspirant.Context.Editor.PickDescriptor.h"
 namespace aspirant::state::editor::RoomCells
@@ -23,7 +23,7 @@ namespace aspirant::state::editor::RoomCells
 	{
 		int newCursorX = (int)aspirant::context::editor::RoomView::GetCursor().GetX() + delta.GetX();
 		int newCursorY = (int)aspirant::context::editor::RoomView::GetCursor().GetY() + delta.GetY();
-		auto room = aspirant::context::editor::RoomList::GetRoom();
+		auto room = aspirant::context::editor::Rooms::GetRoom();
 		newCursorX = common::Utility::PositiveModulo(newCursorX, room->GetColumns());
 		newCursorY = common::Utility::PositiveModulo(newCursorY, room->GetRows());
 		aspirant::context::editor::RoomView::SetCursor({ (size_t)newCursorX, (size_t)newCursorY });
@@ -34,7 +34,7 @@ namespace aspirant::state::editor::RoomCells
 	{
 		auto& cursorPosition = aspirant::context::editor::RoomView::GetCursor();
 		auto descriptor = aspirant::context::editor::PickDescriptor::GetDescriptor(aspirant::context::editor::PickDescriptor::GetIndex());
-		auto roomCell = aspirant::context::editor::RoomList::GetRoom()->GetCell(cursorPosition.GetX(), cursorPosition.GetY());
+		auto roomCell = aspirant::context::editor::Rooms::GetRoom()->GetCell(cursorPosition.GetX(), cursorPosition.GetY());
 		auto obj = descriptor->CreateObject();
 		if (!roomCell->AddObject(obj))
 		{
@@ -45,7 +45,7 @@ namespace aspirant::state::editor::RoomCells
 	static void RemoveObject()
 	{
 		auto& cursorPosition = aspirant::context::editor::RoomView::GetCursor();
-		auto roomCell = aspirant::context::editor::RoomList::GetRoom()->GetCell(cursorPosition.GetX(), cursorPosition.GetY());
+		auto roomCell = aspirant::context::editor::Rooms::GetRoom()->GetCell(cursorPosition.GetX(), cursorPosition.GetY());
 		auto obj = roomCell->RemoveObject();
 		if (obj)
 		{
