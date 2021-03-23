@@ -167,7 +167,7 @@
     <ClCompile Include="Aspirant.Context.Editor.PickDescriptor.cpp" />
     <ClCompile Include="Aspirant.Context.Editor.NewRoom.cpp" />
     <ClCompile Include="Aspirant.Context.Editor.NewRoom.h" />
-    <ClCompile Include="Aspirant.Context.Editor.RoomCellObjects.cpp" />
+    <ClCompile Include="Aspirant.Context.Editor.Cell.cpp" />
     <ClCompile Include="Aspirant.Context.Editor.RoomList.cpp" />
     <ClCompile Include="Aspirant.Context.Editor.RoomView.cpp" />
     <ClCompile Include="Aspirant.Context.Editor.Scenarios.cpp" />
@@ -188,7 +188,7 @@
     <ClCompile Include="Aspirant.Options.cpp" />
     <ClCompile Include="Aspirant.State.Options.cpp" />
     <ClCompile Include="Common.RNG.cpp" />
-    <ClCompile Include="Renderer.Editor.RoomCellObjects.cpp" />
+    <ClCompile Include="Renderer.Editor.Cell.cpp" />
     <ClCompile Include="Renderer.Editor.Room.cpp" />
     <ClCompile Include="Game.Scenario.cpp" />
     <ClCompile Include="Game.ScenarioDescriptors.cpp" />
@@ -230,7 +230,7 @@
     <ClInclude Include="Renderer.Editor.Common.h" />
     <ClInclude Include="Aspirant.Context.Editor.Scenario.h" />
     <ClInclude Include="Aspirant.Context.Editor.PickDescriptor.h" />
-    <ClInclude Include="Aspirant.Context.Editor.RoomCellObjects.h" />
+    <ClInclude Include="Aspirant.Context.Editor.Cell.h" />
     <ClInclude Include="Aspirant.Context.Editor.RoomList.h" />
     <ClInclude Include="Aspirant.Context.Editor.RoomView.h" />
     <ClInclude Include="Aspirant.Context.Editor.Scenarios.h" />
@@ -253,7 +253,7 @@
     <ClInclude Include="Aspirant.Options.h" />
     <ClInclude Include="Aspirant.State.Options.h" />
     <ClInclude Include="Common.RNG.h" />
-    <ClInclude Include="Renderer.Editor.RoomCellObjects.h" />
+    <ClInclude Include="Renderer.Editor.Cell.h" />
     <ClInclude Include="Renderer.Editor.Room.h" />
     <ClInclude Include="Game.Scenario.h" />
     <ClInclude Include="Game.ScenarioDescriptor.h" />

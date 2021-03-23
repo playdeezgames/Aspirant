@@ -1,8 +1,8 @@
 #pragma once
-#include "Aspirant.Context.Editor.RoomCellObjects.h"
+#include "Aspirant.Context.Editor.Cell.h"
 #include "Aspirant.Context.Editor.RoomList.h"
 #include "Aspirant.Context.Editor.RoomView.h"
-namespace aspirant::context::editor::RoomCellObjects
+namespace aspirant::context::editor::Cell
 {
 	static size_t index;
 

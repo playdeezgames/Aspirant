@@ -3,7 +3,7 @@
 #include "Aspirant.UIState.h"
 #include "Graphics.Layouts.h"
 #include "Renderer.Editor.Room.h"
-#include "Renderer.Editor.RoomCellObjects.h"
+#include "Renderer.Editor.Cell.h"
 #include "Renderer.Editor.PickDescriptor.h"
 #include "Common.Utility.h"
 #include "Aspirant.Context.Editor.PickDescriptor.h"

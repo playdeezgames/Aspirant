@@ -4,14 +4,14 @@
 #include "Graphics.Layouts.h"
 #include "Renderer.Editor.Room.h"
 #include "Renderer.Editor.PickDescriptor.h"
-#include "Renderer.Editor.RoomCellObjects.h"
+#include "Renderer.Editor.Cell.h"
 #include "Aspirant.Context.Editor.RoomView.h"
 #include <sstream>
 #include "Data.Strings.h"
 #include "Aspirant.Context.Editor.Scenario.h"
 #include "Common.Utility.h"
 #include "Aspirant.Context.Editor.RoomList.h"
-#include "Aspirant.Context.Editor.RoomCellObjects.h"
+#include "Aspirant.Context.Editor.Cell.h"
 #include "Aspirant.Context.Editor.PickDescriptor.h"
 namespace aspirant::state::editor::RoomCells
 {
@@ -27,7 +27,7 @@ namespace aspirant::state::editor::RoomCells
 		newCursorX = common::Utility::PositiveModulo(newCursorX, room->GetColumns());
 		newCursorY = common::Utility::PositiveModulo(newCursorY, room->GetRows());
 		aspirant::context::editor::RoomView::SetCursor({ (size_t)newCursorX, (size_t)newCursorY });
-		aspirant::context::editor::RoomCellObjects::Reset();
+		aspirant::context::editor::Cell::Reset();
 	}
 
 	static void PlaceObject()
