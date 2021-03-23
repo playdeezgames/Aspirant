@@ -7,7 +7,7 @@
 #include "Data.Strings.h"
 #include <sstream>
 #include "EditorContext.h"
-#include "JSONUtility.h"
+#include "Data.JSON.h"
 namespace aspirant::editorui::EditScenarioSelectorStateHandler
 {
 	const std::string LAYOUT_NAME = "EditScenarioSelector";

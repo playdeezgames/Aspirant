@@ -1,5 +1,5 @@
 #include "Data.Bools.h"
-#include "JSONUtility.h"
+#include "Data.JSON.h"
 #include <set>
 namespace data::Bools
 {
@@ -8,7 +8,7 @@ namespace data::Bools
 		const std::string& fileName
 	)
 	{
-		auto properties = tggd::data::JSONUtility::LoadJSON(fileName);
+		auto properties = data::JSON::Load(fileName);
 		for (auto& item : properties)
 		{
 			Set(item);

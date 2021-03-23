@@ -23,7 +23,7 @@
     <ClCompile Include="Common.Application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="JSONUtility.cpp">
+    <ClCompile Include="Data.JSON.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Aspirant.Application.cpp">
@@ -205,7 +205,7 @@
     <ClInclude Include="json.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="JSONUtility.h">
+    <ClInclude Include="Data.JSON.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="UIState.h">

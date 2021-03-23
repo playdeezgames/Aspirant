@@ -1,5 +1,5 @@
 #include "FontManager.h"
-#include "JSONUtility.h"
+#include "Data.JSON.h"
 #include "FinishUtility.h"
 #include "FinishManager.h"
 namespace tggd::graphics::FontManager
@@ -35,7 +35,7 @@ namespace tggd::graphics::FontManager
 	void Start(const std::string& fileName)
 	{
 		tggd::common::FinishManager::Add(Finish);
-		nlohmann::json properties = tggd::data::JSONUtility::LoadJSON(fileName);
+		nlohmann::json properties = data::JSON::Load(fileName);
 		for (auto& item : properties.items())
 		{
 			auto identifier = ParseKey(item.key());

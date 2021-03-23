@@ -1,8 +1,7 @@
 #include "SpriteManager.h"
 #include "Utility.h"
-#include "JSONUtility.h"
+#include "Data.JSON.h"
 #include "Graphics.Textures.h"
-//#include <FinishUtility.h>
 namespace tggd::graphics::SpriteManager
 {
 	static std::map<std::string, Sprite> sprites;
@@ -29,7 +28,7 @@ namespace tggd::graphics::SpriteManager
 
 	void Start(const std::string& fileName)
 	{
-		nlohmann::json j = tggd::data::JSONUtility::LoadJSON(fileName);
+		nlohmann::json j = data::JSON::Load(fileName);
 		for (auto& item : j.items())
 		{
 			auto& properties = item.value();

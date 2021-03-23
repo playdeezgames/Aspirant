@@ -1,12 +1,12 @@
 #include "LayoutManager.h"
-#include "JSONUtility.h"
+#include "Data.JSON.h"
 #include "FinishManager.h"
 #include "FinishUtility.h"
 namespace tggd::graphics::LayoutManager
 {
 	Layout* ParseDescriptor(const std::string&, const nlohmann::json& properties)
 	{
-		return new Layout(tggd::data::JSONUtility::LoadJSON(properties));
+		return new Layout(data::JSON::Load(properties));
 	}
 
 	static std::string ParseKey(const nlohmann::json& key)
@@ -30,7 +30,7 @@ namespace tggd::graphics::LayoutManager
 	void Start(const std::string& fileName)
 	{
 		tggd::common::FinishManager::Add(Finish);
-		nlohmann::json properties = tggd::data::JSONUtility::LoadJSON(fileName);
+		nlohmann::json properties = data::JSON::Load(fileName);
 		for (auto& item : properties.items())
 		{
 			auto identifier = ParseKey(item.key());

@@ -1,6 +1,6 @@
 #include "ScenarioDescriptorManager.h"
 #include "Utility.h"
-#include "JSONUtility.h"
+#include "Data.JSON.h"
 #include "FinishUtility.h"
 namespace aspirant::game::ScenarioDescriptorManager
 {
@@ -20,7 +20,7 @@ namespace aspirant::game::ScenarioDescriptorManager
 	{
 		tggd::common::FinishManager::Add(Finish);
 		fileName = filename;
-		auto descriptorList = tggd::data::JSONUtility::LoadJSON(fileName);
+		auto descriptorList = data::JSON::Load(fileName);
 		for (auto& properties : descriptorList)
 		{
 			descriptors.push_back(new ScenarioDescriptor(properties));
@@ -34,7 +34,7 @@ namespace aspirant::game::ScenarioDescriptorManager
 		{
 			descriptorList.push_back(descriptor->ToJSON());
 		}
-		tggd::data::JSONUtility::SaveJSON(fileName, descriptorList);
+		data::JSON::Save(fileName, descriptorList);
 	}
 
 	int GetNextId()

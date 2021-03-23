@@ -1,5 +1,5 @@
 #include "OptionsManager.h"
-#include "JSONUtility.h"
+#include "Data.JSON.h"
 #include "SoundManager.h"
 namespace aspirant::navigationui::OptionsManager
 {
@@ -11,7 +11,7 @@ namespace aspirant::navigationui::OptionsManager
 	void Start(const std::string& filename)
 	{
 		fileName = filename;
-		auto properties = tggd::data::JSONUtility::LoadJSON(fileName);
+		auto properties = data::JSON::Load(fileName);
 		tggd::common::SoundManager::SetMuted((bool)properties[PROPERTY_MUTED]);
 		tggd::common::SoundManager::SetSfxVolume((int)properties[PROPERTY_SFX_VOLUME]);
 		tggd::common::SoundManager::SetMuxVolume((int)properties[PROPERTY_MUX_VOLUME]);
@@ -23,6 +23,6 @@ namespace aspirant::navigationui::OptionsManager
 		properties[PROPERTY_MUTED] = tggd::common::SoundManager::IsMuted();
 		properties[PROPERTY_MUX_VOLUME] = tggd::common::SoundManager::GetMuxVolume();
 		properties[PROPERTY_SFX_VOLUME] = tggd::common::SoundManager::GetSfxVolume();
-		tggd::data::JSONUtility::SaveJSON(fileName, properties);
+		data::JSON::Save(fileName, properties);
 	}
 }

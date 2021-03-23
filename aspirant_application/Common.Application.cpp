@@ -2,7 +2,7 @@
 #include <SDL.h>
 #include <SDL_mixer.h>
 #include <SDL_image.h>
-#include "JSONUtility.h"
+#include "Data.JSON.h"
 namespace common::Application
 {
 #define PROPERTY_WIDTH "width"
@@ -34,7 +34,7 @@ namespace common::Application
 	{
 		SDL_Init(SDL_INIT_EVERYTHING);
 		Mix_Init(MIX_INIT_OGG);
-		auto properties = tggd::data::JSONUtility::LoadJSON(ConfigurationConstants::APPLICATION);
+		auto properties = data::JSON::Load(ConfigurationConstants::APPLICATION);
 		int windowWidth = properties[PROPERTY_WIDTH];
 		int windowHeight = properties[PROPERTY_HEIGHT];
 		int logicalWidth = properties[PROPERTY_LOGICAL_WIDTH];

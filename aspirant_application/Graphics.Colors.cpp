@@ -1,5 +1,5 @@
 #include "Graphics.Colors.h"
-#include "JSONUtility.h"
+#include "Data.JSON.h"
 #include <map>
 #include <vector>
 namespace graphics::Colors
@@ -34,7 +34,7 @@ namespace graphics::Colors
 
 	void Start(const std::string& fileName)
 	{
-		nlohmann::json properties = tggd::data::JSONUtility::LoadJSON(fileName);
+		nlohmann::json properties = data::JSON::Load(fileName);
 		for (auto& item : properties.items())
 		{
 			auto identifier = ParseKey(item.key());

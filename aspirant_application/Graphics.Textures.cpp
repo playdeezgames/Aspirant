@@ -1,7 +1,7 @@
 #include "Graphics.Textures.h"
 #include "Utility.h"
 #include <SDL_image.h>
-#include "JSONUtility.h"
+#include "Data.JSON.h"
 #include "FinishManager.h"
 #include <map>
 namespace graphics::Textures
@@ -29,7 +29,7 @@ namespace graphics::Textures
 	void Start(SDL_Renderer* renderer, const std::string& fileName)
 	{
 		tggd::common::FinishManager::Add(Finish);
-		auto properties = tggd::data::JSONUtility::LoadJSON(fileName);
+		auto properties = data::JSON::Load(fileName);
 		for (auto& entry : properties.items())
 		{
 			std::string imageFileName = entry.value();

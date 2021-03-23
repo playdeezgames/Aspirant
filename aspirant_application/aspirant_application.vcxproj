@@ -178,7 +178,7 @@
     <ClCompile Include="FontManager.cpp" />
     <ClCompile Include="Data.Ints.cpp" />
     <ClCompile Include="Data.Int.cpp" />
-    <ClCompile Include="JSONUtility.cpp" />
+    <ClCompile Include="Data.JSON.cpp" />
     <ClCompile Include="Layout.cpp" />
     <ClCompile Include="LayoutManager.cpp" />
     <ClCompile Include="main.cpp" />
@@ -243,7 +243,7 @@
     <ClInclude Include="Data.Ints.h" />
     <ClInclude Include="Data.Int.h" />
     <ClInclude Include="json.hpp" />
-    <ClInclude Include="JSONUtility.h" />
+    <ClInclude Include="Data.JSON.h" />
     <ClInclude Include="Layout.h" />
     <ClInclude Include="LayoutManager.h" />
     <ClInclude Include="Aspirant.State.MainMenu.h" />

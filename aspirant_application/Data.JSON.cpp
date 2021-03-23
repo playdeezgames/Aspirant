@@ -1,8 +1,8 @@
-#include "JSONUtility.h"
+#include "Data.JSON.h"
 #include <fstream>
-namespace tggd::data::JSONUtility
+namespace data::JSON
 {
-	nlohmann::json LoadJSON(const std::string& fileName)
+	nlohmann::json Load(const std::string& fileName)
 	{
 		nlohmann::json document;
 		std::ifstream input(fileName);
@@ -14,7 +14,7 @@ namespace tggd::data::JSONUtility
 		return document;
 	}
 
-	void SaveJSON(const std::string& fileName, const nlohmann::json& document)
+	void Save(const std::string& fileName, const nlohmann::json& document)
 	{
 		std::ofstream output(fileName);
 		if (output.is_open())

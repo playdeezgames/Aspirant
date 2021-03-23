@@ -7,7 +7,7 @@
 #include "Data.Strings.h"
 #include "ScenarioDescriptorManager.h"
 #include <sstream>
-#include "JSONUtility.h"
+#include "Data.JSON.h"
 #include "EditorScenarioSelector.h"
 namespace aspirant::editorui::StartEditorStateHandler
 {
@@ -30,7 +30,7 @@ namespace aspirant::editorui::StartEditorStateHandler
 	{
 		nlohmann::json properties;
 		properties["rooms"] = nlohmann::json({});//TODO: magic string
-		tggd::data::JSONUtility::SaveJSON(fileName, properties);
+		data::JSON::Save(fileName, properties);
 	}
 
 

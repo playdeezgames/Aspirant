@@ -1,6 +1,6 @@
 #include "SpriteFont.h"
 #include "Utility.h"
-#include "JSONUtility.h"
+#include "Data.JSON.h"
 #include "SpriteManager.h"
 #include "Graphics.Colors.h"
 namespace tggd::graphics
@@ -11,7 +11,7 @@ namespace tggd::graphics
 	)
 		: glyphs()
 	{
-		nlohmann::json properties = tggd::data::JSONUtility::LoadJSON(fileName);
+		nlohmann::json properties = data::JSON::Load(fileName);
 		for (auto& item : properties.items())
 		{
 			char ch = (char)tggd::common::Utility::StringToInt(item.key());

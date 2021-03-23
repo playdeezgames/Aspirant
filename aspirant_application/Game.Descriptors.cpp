@@ -2,7 +2,7 @@
 #include "FinishManager.h"
 #include <map>
 #include "FinishUtility.h"
-#include "JSONUtility.h"
+#include "Data.JSON.h"
 #include "Game.Descriptor.Terrain.h"
 #include "Game.Descriptor.Creature.h"
 namespace game::Descriptors
@@ -48,7 +48,7 @@ namespace game::Descriptors
 	void Start(const std::string& filename)
 	{
 		tggd::common::FinishManager::Add(Finish);
-		nlohmann::json properties = tggd::data::JSONUtility::LoadJSON(filename);
+		nlohmann::json properties = data::JSON::Load(filename);
 		for (auto& item : properties.items())
 		{
 			auto identifier = ParseKey(item.key());

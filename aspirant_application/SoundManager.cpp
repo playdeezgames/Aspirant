@@ -2,7 +2,7 @@
 #include <fstream>
 #include "Utility.h"
 #include <fstream>
-#include "JSONUtility.h"
+#include "Data.JSON.h"
 #include "FinishManager.h"
 namespace tggd::common::SoundManager
 {
@@ -136,7 +136,7 @@ namespace tggd::common::SoundManager
 
 	static void StartSound(const std::string& sfxFileName)
 	{
-		nlohmann::json j = tggd::data::JSONUtility::LoadJSON(sfxFileName);
+		nlohmann::json j = data::JSON::Load(sfxFileName);
 		for (auto& i : j.items())
 		{
 			AddSound(i.key(), i.value());
@@ -145,7 +145,7 @@ namespace tggd::common::SoundManager
 
 	static void StartMusic(const std::string& muxFileName)
 	{
-		nlohmann::json j = tggd::data::JSONUtility::LoadJSON(muxFileName);
+		nlohmann::json j = data::JSON::Load(muxFileName);
 		for (auto& i : j.items())
 		{
 			AddMusic(i.key(), i.value());

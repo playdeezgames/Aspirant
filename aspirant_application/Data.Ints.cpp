@@ -1,5 +1,5 @@
 #include "Data.Ints.h"
-#include "JSONUtility.h"
+#include "Data.JSON.h"
 #include <map>
 namespace data::Ints
 {
@@ -10,7 +10,7 @@ namespace data::Ints
 		const std::string& fileName
 	)
 	{
-		auto properties = tggd::data::JSONUtility::LoadJSON(fileName);
+		auto properties = data::JSON::Load(fileName);
 		for (auto& item : properties.items())
 		{
 			Set(item.key(), item.value());
