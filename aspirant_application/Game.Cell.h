@@ -2,9 +2,9 @@
 #include "Game.Object.Common.h"
 #include "Game.Descriptors.h"
 #include "FinishUtility.h"
-namespace aspirant::game
+namespace game
 {
-	class ScenarioRoomCell
+	class Cell
 	{
 	private:
 		const std::string PROPERTY_OBJECTS = "objects";
@@ -24,7 +24,7 @@ namespace aspirant::game
 		::game::object::Common* ObjectFromJSON(const nlohmann::json&);
 		bool CanCover(const ::game::object::Common*, const ::game::object::Common*) const;
 	public:
-		ScenarioRoomCell(size_t column, size_t row)
+		Cell(size_t column, size_t row)
 			: objects()
 			, column(column)
 			, row(row)
@@ -38,7 +38,7 @@ namespace aspirant::game
 				AddObject(ObjectFromJSON(object));
 			}
 		}
-		~ScenarioRoomCell()
+		~Cell()
 		{
 			ClearObjects();
 		}

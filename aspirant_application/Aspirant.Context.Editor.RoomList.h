@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 #include <string>
-#include "Scenario.h"
+#include "Game.Scenario.h"
 namespace aspirant::context::editor::RoomList
 {
 	void UpdateRoomList();
@@ -11,5 +11,5 @@ namespace aspirant::context::editor::RoomList
 	size_t GetRoomCount();
 	void NextRoom();
 	void PreviousRoom();
-	aspirant::game::ScenarioRoom* GetRoom();
+	::game::Room* GetRoom();
 }

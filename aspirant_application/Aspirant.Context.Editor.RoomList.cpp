@@ -47,7 +47,7 @@ namespace aspirant::context::editor::RoomList
 		SetRoomIndex(common::Utility::PreviousIndex(GetRoomIndex(), GetRoomCount()));
 	}
 
-	aspirant::game::ScenarioRoom* GetRoom()
+	::game::Room* GetRoom()
 	{
 		if (GetRoomCount() > GetRoomIndex())
 		{

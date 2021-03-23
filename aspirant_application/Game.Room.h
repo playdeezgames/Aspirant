@@ -1,13 +1,13 @@
 #pragma once
-#include "ScenarioRoomCell.h"
-namespace aspirant::game
+#include "Game.Cell.h"
+namespace game
 {
-	class ScenarioRoom
+	class Room
 	{
 	private:
 		size_t columns;
 		size_t rows;
-		std::vector<ScenarioRoomCell*> cells;
+		std::vector<Cell*> cells;
 		void Clear()
 		{
 			for (auto& item : cells)
@@ -31,22 +31,22 @@ namespace aspirant::game
 			{
 				for (size_t column = 0; column < columns; ++column)
 				{
-					cells.push_back(new ScenarioRoomCell(column, row));
+					cells.push_back(new Cell(column, row));
 				}
 			}
 		}
-		ScenarioRoom()
+		Room()
 			: columns(0)
 			, rows(0)
 			, cells()
 		{
 
 		}
-		~ScenarioRoom()
+		~Room()
 		{
 			Clear();
 		}
-		const ScenarioRoomCell* GetCell(size_t column, size_t row) const
+		const Cell* GetCell(size_t column, size_t row) const
 		{
 			if (column < columns && row < rows)
 			{
@@ -54,7 +54,7 @@ namespace aspirant::game
 			}
 			return nullptr;
 		}
-		ScenarioRoomCell* GetCell(size_t column, size_t row)
+		Cell* GetCell(size_t column, size_t row)
 		{
 			if (column < columns && row < rows)
 			{

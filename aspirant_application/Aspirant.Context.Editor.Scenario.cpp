@@ -4,9 +4,9 @@
 #include "ScenarioDescriptorManager.h"
 namespace aspirant::context::editor::Scenario
 {
-	static aspirant::game::Scenario scenario;
+	static ::game::Scenario scenario;
 
-	aspirant::game::Scenario& Get()
+	::game::Scenario& Get()
 	{
 		return scenario;
 	}

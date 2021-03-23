@@ -2,16 +2,16 @@
 #include "json.hpp"
 #include <map>
 #include <string>
-#include "ScenarioRoomCell.h"
+#include "Game.Cell.h"
 #include "Game.Descriptors.h"
-#include "ScenarioRoom.h"
+#include "Game.Room.h"
 #include <vector>
-namespace aspirant::game
+namespace game
 {
 	class Scenario
 	{
 	private:
-		std::map<std::string, ScenarioRoom*> rooms;
+		std::map<std::string, Room*> rooms;
 		void Clear();
 	public:
 		Scenario();
@@ -20,7 +20,7 @@ namespace aspirant::game
 		nlohmann::json ToJSON() const;
 		std::vector<std::string> GetRoomKeys() const;
 		void AddRoom(const std::string&, size_t, size_t);
-		const ScenarioRoom* GetRoom(const std::string&) const;
-		ScenarioRoom* GetRoom(const std::string&);
+		const Room* GetRoom(const std::string&) const;
+		Room* GetRoom(const std::string&);
 	};
 }

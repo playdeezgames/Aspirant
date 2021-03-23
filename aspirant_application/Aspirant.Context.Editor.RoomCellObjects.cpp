@@ -11,7 +11,7 @@ namespace aspirant::context::editor::RoomCellObjects
 		return index;
 	}
 
-	aspirant::game::ScenarioRoomCell* GetCell()
+	::game::Cell* GetCell()
 	{
 		if (::aspirant::context::editor::RoomList::GetRoom())
 		{

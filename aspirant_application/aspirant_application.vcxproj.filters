@@ -131,13 +131,13 @@
     <ClCompile Include="Aspirant.State.Editor.Scenarios.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ScenarioRoomCell.cpp">
+    <ClCompile Include="Game.Cell.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ScenarioRoom.cpp">
+    <ClCompile Include="Game.Room.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Scenario.cpp">
+    <ClCompile Include="Game.Scenario.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Aspirant.State.Editor.Scenario.cpp">
@@ -340,13 +340,13 @@
     <ClInclude Include="Aspirant.State.Editor.Scenarios.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ScenarioRoomCell.h">
+    <ClInclude Include="Game.Cell.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ScenarioRoom.h">
+    <ClInclude Include="Game.Room.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Scenario.h">
+    <ClInclude Include="Game.Scenario.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Aspirant.State.Editor.Scenario.h">

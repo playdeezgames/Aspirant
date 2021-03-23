@@ -1,7 +1,7 @@
-#include "ScenarioRoom.h"
-namespace aspirant::game
+#include "Game.Room.h"
+namespace game
 {
-	void ScenarioRoom::FromJSON(const nlohmann::json& properties)
+	void Room::FromJSON(const nlohmann::json& properties)
 	{
 		size_t row = 0;
 		for (auto& rowProperties : properties)
@@ -16,7 +16,7 @@ namespace aspirant::game
 		}
 	}
 
-	nlohmann::json ScenarioRoom::ToJSON() const
+	nlohmann::json Room::ToJSON() const
 	{
 		nlohmann::json properties = nlohmann::json(nlohmann::detail::value_t::array);
 		for (size_t row = 0; row < GetRows(); ++row)

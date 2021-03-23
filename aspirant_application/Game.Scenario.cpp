@@ -1,6 +1,6 @@
-#include "Scenario.h"
+#include "Game.Scenario.h"
 #include "Common.Utility.h"
-namespace aspirant::game
+namespace game
 {
 	Scenario::Scenario()
 		: rooms()
@@ -25,7 +25,7 @@ namespace aspirant::game
 			auto rows = room.size();
 			auto columns = room[0].size();
 			auto& key = item.key();
-			rooms[key] = new ScenarioRoom();
+			rooms[key] = new Room();
 			rooms[key]->SetSize(columns, rows);
 			rooms[key]->FromJSON(room);
 		}
@@ -62,17 +62,17 @@ namespace aspirant::game
 		{
 			tggd::common::FinishUtility::SafeDelete(rooms[name]);
 		}
-		rooms[name] = new ScenarioRoom();
+		rooms[name] = new Room();
 		rooms[name]->SetSize(columns, rows);
 	}
 
-	const ScenarioRoom* Scenario::GetRoom(const std::string& key) const
+	const Room* Scenario::GetRoom(const std::string& key) const
 	{
 		auto iter = rooms.find(key);
 		return iter->second;
 	}
 
-	ScenarioRoom* Scenario::GetRoom(const std::string& key)
+	Room* Scenario::GetRoom(const std::string& key)
 	{
 		auto iter = rooms.find(key);
 		return iter->second;

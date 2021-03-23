@@ -11,7 +11,7 @@ namespace renderer::editor::Room
 		return common::XY<int>((int)position.GetX() * 36, (int)position.GetY() * 36);
 	}
 
-	static void DrawCell(SDL_Renderer* renderer, const common::XY<size_t>& viewPosition, const aspirant::game::ScenarioRoomCell* cell)
+	static void DrawCell(SDL_Renderer* renderer, const common::XY<size_t>& viewPosition, const ::game::Cell* cell)
 	{
 		if (cell)
 		{
@@ -24,7 +24,7 @@ namespace renderer::editor::Room
 		}
 	}
 
-	static void DrawRoom(SDL_Renderer* renderer, const aspirant::game::ScenarioRoom* room)
+	static void DrawRoom(SDL_Renderer* renderer, const ::game::Room* room)
 	{
 		if (room)
 		{

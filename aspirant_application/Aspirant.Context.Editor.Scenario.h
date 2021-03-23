@@ -1,8 +1,8 @@
 #pragma once
-#include "Scenario.h"
+#include "Game.Scenario.h"
 namespace aspirant::context::editor::Scenario
 {
-	aspirant::game::Scenario& Get();
+	::game::Scenario& Get();
 	void Save();
 	void Load();
 }
