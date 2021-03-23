@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 #include <string>
-namespace tggd::common::Utility
+namespace common::Utility
 {
 	std::vector<std::string> CommandLineToStringVector(int, char**);
 	int StringToInt(const std::string&);

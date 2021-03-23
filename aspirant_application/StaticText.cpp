@@ -1,5 +1,5 @@
 #include "StaticText.h"
-#include "Utility.h"
+#include "Common.Utility.h"
 #include "FontManager.h"
 namespace tggd::graphics
 {

@@ -1,5 +1,5 @@
 #include "SpriteManager.h"
-#include "Utility.h"
+#include "Common.Utility.h"
 #include "Data.JSON.h"
 #include "Graphics.Textures.h"
 namespace tggd::graphics::SpriteManager

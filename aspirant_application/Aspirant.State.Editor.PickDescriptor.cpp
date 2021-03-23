@@ -5,7 +5,7 @@
 #include "RoomRenderer.h"
 #include "RoomCellObjectsRenderer.h"
 #include "Renderer.Editor.PickDescriptor.h"
-#include "Utility.h"
+#include "Common.Utility.h"
 #include "EditorDescriptorSelectorContext.h"
 namespace aspirant::state::editor::PickDescriptor
 {
@@ -14,7 +14,7 @@ namespace aspirant::state::editor::PickDescriptor
 	static void ChangeIndex(int delta)
 	{
 		aspirant::editor::context::EditorDescriptorSelectorContext::SetIndex(
-			(size_t)tggd::common::Utility::PositiveModulo(
+			(size_t)common::Utility::PositiveModulo(
 				aspirant::editor::context::EditorDescriptorSelectorContext::GetIndex() + delta, 
 				aspirant::editor::context::EditorDescriptorSelectorContext::GetCount()));
 	}

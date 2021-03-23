@@ -1,5 +1,5 @@
 #include "StaticImage.h"
-#include "Utility.h"
+#include "Common.Utility.h"
 #include "SpriteManager.h"
 #include "Graphics.Colors.h"
 #include "XY.h"

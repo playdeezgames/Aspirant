@@ -9,7 +9,7 @@
 #include <sstream>
 #include "Data.Strings.h"
 #include "EditorContext.h"
-#include "Utility.h"
+#include "Common.Utility.h"
 #include "EditorRoomListContext.h"
 #include "EditorRoomCellObjectsContext.h"
 #include "EditorDescriptorSelectorContext.h"
@@ -24,8 +24,8 @@ namespace aspirant::state::editor::RoomCells
 		int newCursorX = (int)aspirant::editor::context::EditorRoomViewContext::GetCursor().GetX() + delta.GetX();
 		int newCursorY = (int)aspirant::editor::context::EditorRoomViewContext::GetCursor().GetY() + delta.GetY();
 		auto room = aspirant::editor::context::EditorRoomListContext::GetRoom();
-		newCursorX = tggd::common::Utility::PositiveModulo(newCursorX, room->GetColumns());
-		newCursorY = tggd::common::Utility::PositiveModulo(newCursorY, room->GetRows());
+		newCursorX = common::Utility::PositiveModulo(newCursorX, room->GetColumns());
+		newCursorY = common::Utility::PositiveModulo(newCursorY, room->GetRows());
 		aspirant::editor::context::EditorRoomViewContext::SetCursor({ (size_t)newCursorX, (size_t)newCursorY });
 		aspirant::editor::context::EditorRoomCellObjectsContext::Reset();
 	}

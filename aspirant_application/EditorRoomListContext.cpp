@@ -1,5 +1,5 @@
 #include "EditorRoomListContext.h"
-#include "Utility.h"
+#include "Common.Utility.h"
 #include "EditorContext.h"
 #include <vector>
 #include <string>
@@ -39,12 +39,12 @@ namespace aspirant::editor::context::EditorRoomListContext
 
 	void NextRoom()
 	{
-		SetRoomIndex(tggd::common::Utility::NextIndex(GetRoomIndex(), GetRoomCount()));
+		SetRoomIndex(common::Utility::NextIndex(GetRoomIndex(), GetRoomCount()));
 	}
 
 	void PreviousRoom()
 	{
-		SetRoomIndex(tggd::common::Utility::PreviousIndex(GetRoomIndex(), GetRoomCount()));
+		SetRoomIndex(common::Utility::PreviousIndex(GetRoomIndex(), GetRoomCount()));
 	}
 
 	aspirant::game::ScenarioRoom* GetRoom()

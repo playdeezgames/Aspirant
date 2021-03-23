@@ -1,5 +1,5 @@
 #include "Scenario.h"
-#include "Utility.h"
+#include "Common.Utility.h"
 namespace aspirant::game
 {
 	Scenario::Scenario()

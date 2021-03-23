@@ -1,12 +1,6 @@
-#include "Utility.h"
-//#include <stdlib.h>
-//#include <time.h>
-//#include <fstream>
+#include "Common.Utility.h"
 #include <sstream>
-//#include "ConstantValue.h"
-//#include "DynamicValue.h"
-//#include <direct.h>
-namespace tggd::common::Utility
+namespace common::Utility
 {
 	std::vector<std::string> CommandLineToStringVector(int argc, char** argv)
 	{

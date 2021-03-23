@@ -8,7 +8,7 @@
 #include "SoundManager.h"
 #include "OptionsManager.h"
 #include <sstream>
-#include "Utility.h"
+#include "Common.Utility.h"
 namespace aspirant::state::Options
 {
 	const std::string LAYOUT_NAME = "Options";
@@ -140,12 +140,12 @@ namespace aspirant::state::Options
 		}
 		std::stringstream ss;
 		//text for sfx volume
-		ss << "SFX Volume (" << tggd::common::Utility::ToPercentage(tggd::common::SoundManager::GetSfxVolume(), MIX_MAX_VOLUME) << "%)";
+		ss << "SFX Volume (" << common::Utility::ToPercentage(tggd::common::SoundManager::GetSfxVolume(), MIX_MAX_VOLUME) << "%)";
 		::data::Strings::Set(SFX_VOLUME_STRING_NAME, ss.str());
 
 		//text for mux volume
 		ss.str("");
-		ss << "MUX Volume (" << tggd::common::Utility::ToPercentage(tggd::common::SoundManager::GetMuxVolume(), MIX_MAX_VOLUME) << "%)";
+		ss << "MUX Volume (" << common::Utility::ToPercentage(tggd::common::SoundManager::GetMuxVolume(), MIX_MAX_VOLUME) << "%)";
 		::data::Strings::Set(MUX_VOLUME_STRING_NAME, ss.str());
 
 	}

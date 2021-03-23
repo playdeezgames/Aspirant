@@ -1,6 +1,6 @@
 #include "EditorScenarioSelector.h"
 #include "ScenarioDescriptorManager.h"
-#include "Utility.h"
+#include "Common.Utility.h"
 namespace aspirant::editor::context::EditorScenarioSelector
 {
 	static size_t scenarioIndex = 0;
@@ -25,11 +25,11 @@ namespace aspirant::editor::context::EditorScenarioSelector
 
 	void EditorScenarioSelector::Next()
 	{
-		SetIndex(tggd::common::Utility::NextIndex(GetIndex(), aspirant::game::ScenarioDescriptorManager::GetCount()));
+		SetIndex(common::Utility::NextIndex(GetIndex(), aspirant::game::ScenarioDescriptorManager::GetCount()));
 	}
 
 	void EditorScenarioSelector::Previous()
 	{
-		SetIndex(tggd::common::Utility::PreviousIndex(GetIndex(), aspirant::game::ScenarioDescriptorManager::GetCount()));
+		SetIndex(common::Utility::PreviousIndex(GetIndex(), aspirant::game::ScenarioDescriptorManager::GetCount()));
 	}
 }
