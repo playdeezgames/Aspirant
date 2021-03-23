@@ -1,11 +1,11 @@
-#include "EditorBaseControl.h"
+#include "Renderer.Editor.Common.h"
 #include "SpriteManager.h"
 #include "FinishManager.h"
 #include "Game.Object.Common.h"
 #include "FinishUtility.h"
 #include "Game.Descriptor.Creature.h"
 #include "Game.Descriptor.Terrain.h"
-namespace aspirant::editor::controls::EditorBaseControl
+namespace renderer::editor::Common
 {
 	const std::string TYPE_TERRAIN = "terrain";
 	const std::string TYPE_CREATURE = "creature";

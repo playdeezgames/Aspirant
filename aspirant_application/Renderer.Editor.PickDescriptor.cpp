@@ -1,9 +1,9 @@
-#include "DescriptorSelectorRenderer.h"
+#include "Renderer.Editor.PickDescriptor.h"
 #include "XY.h"
-#include "EditorBaseControl.h"
+#include "Renderer.Editor.Common.h"
 #include "SpriteManager.h"
 #include "EditorDescriptorSelectorContext.h"
-namespace aspirant::editor::controls::DescriptorSelectorRenderer
+namespace renderer::editor::PickDescriptor
 {
 	tggd::common::XY<int> Plot(const tggd::common::XY<size_t>& position)
 	{
@@ -19,7 +19,7 @@ namespace aspirant::editor::controls::DescriptorSelectorRenderer
 			auto descriptor = aspirant::editor::context::EditorDescriptorSelectorContext::GetDescriptor(idx);
 			if (descriptor)
 			{
-				aspirant::editor::controls::EditorBaseControl::DrawDescriptor(renderer, position, *descriptor);
+				renderer::editor::Common::DrawDescriptor(renderer, position, *descriptor);
 			}
 			if (idx == aspirant::editor::context::EditorDescriptorSelectorContext::GetIndex())
 			{

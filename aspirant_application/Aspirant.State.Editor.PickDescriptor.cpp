@@ -4,7 +4,7 @@
 #include "LayoutManager.h"
 #include "RoomRenderer.h"
 #include "RoomCellObjectsRenderer.h"
-#include "DescriptorSelectorRenderer.h"
+#include "Renderer.Editor.PickDescriptor.h"
 #include "Utility.h"
 #include "EditorDescriptorSelectorContext.h"
 namespace aspirant::state::editor::PickDescriptor
@@ -51,7 +51,7 @@ namespace aspirant::state::editor::PickDescriptor
 		tggd::graphics::LayoutManager::Get(LAYOUT_NAME).Draw(renderer);
 		aspirant::editor::controls::RoomRenderer::Draw(renderer);
 		aspirant::editor::controls::RoomCellObjectsRenderer::Draw(renderer);
-		aspirant::editor::controls::DescriptorSelectorRenderer::Draw(renderer);
+		renderer::editor::PickDescriptor::Draw(renderer);
 	}
 
 	static void OnUpdate(const Uint32& ticks)

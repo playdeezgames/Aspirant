@@ -3,7 +3,7 @@
 #include "UIState.h"
 #include "LayoutManager.h"
 #include "RoomRenderer.h"
-#include "DescriptorSelectorRenderer.h"
+#include "Renderer.Editor.PickDescriptor.h"
 #include "RoomCellObjectsRenderer.h"
 #include "EditorRoomViewContext.h"
 #include <sstream>
@@ -90,7 +90,7 @@ namespace aspirant::state::editor::RoomCells
 		tggd::graphics::LayoutManager::Get(LAYOUT_NAME).Draw(renderer);
 		aspirant::editor::controls::RoomRenderer::Draw(renderer);
 		aspirant::editor::controls::RoomCellObjectsRenderer::Draw(renderer);
-		aspirant::editor::controls::DescriptorSelectorRenderer::Draw(renderer);
+		renderer::editor::PickDescriptor::Draw(renderer);
 		tggd::graphics::LayoutManager::Get(LAYOUT_ROOM_VIEW_POSITION).Draw(renderer);
 	}
 

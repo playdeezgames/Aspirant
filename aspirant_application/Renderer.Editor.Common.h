@@ -2,7 +2,7 @@
 #include "Game.Object.Common.h"
 #include "XY.h"
 #include <SDL.h>
-namespace aspirant::editor::controls::EditorBaseControl
+namespace renderer::editor::Common
 {
 	void DrawDescriptor
 	(

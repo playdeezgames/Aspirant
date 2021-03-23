@@ -173,7 +173,7 @@
     <ClCompile Include="RoomCellObjectsRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DescriptorSelectorRenderer.cpp">
+    <ClCompile Include="Renderer.Editor.PickDescriptor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Aspirant.State.Editor.RoomCells.cpp">
@@ -185,7 +185,7 @@
     <ClCompile Include="EditorDescriptorSelectorContext.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="EditorBaseControl.cpp">
+    <ClCompile Include="Renderer.Editor.Common.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Aspirant.State.Editor.PickDescriptor.cpp">
@@ -376,7 +376,7 @@
     <ClInclude Include="RoomCellObjectsRenderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DescriptorSelectorRenderer.h">
+    <ClInclude Include="Renderer.Editor.PickDescriptor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Aspirant.State.Editor.RoomCells.h">
@@ -388,7 +388,7 @@
     <ClInclude Include="EditorRoomCellObjectsContext.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="EditorBaseControl.h">
+    <ClInclude Include="Renderer.Editor.Common.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Aspirant.State.Editor.PickDescriptor.h">

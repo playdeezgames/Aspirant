@@ -3,7 +3,7 @@
 #include "EditorRoomViewContext.h"
 #include "SpriteManager.h"
 #include "EditorRoomListContext.h"
-#include "EditorBaseControl.h"
+#include "Renderer.Editor.Common.h"
 namespace aspirant::editor::controls::RoomRenderer
 {
 	static tggd::common::XY<int> Plot(const tggd::common::XY<size_t>& position)
@@ -19,7 +19,7 @@ namespace aspirant::editor::controls::RoomRenderer
 			for (auto& obj : objs)
 			{
 				auto plotPosition = Plot(viewPosition);
-				aspirant::editor::controls::EditorBaseControl::DrawObject(renderer, plotPosition, obj);
+				renderer::editor::Common::DrawObject(renderer, plotPosition, obj);
 			}
 		}
 	}
@@ -47,7 +47,7 @@ namespace aspirant::editor::controls::RoomRenderer
 						for (auto& obj : objs)
 						{
 							auto plotPosition = Plot(viewPosition);
-							aspirant::editor::controls::EditorBaseControl::DrawObject(renderer, plotPosition, obj);
+							renderer::editor::Common::DrawObject(renderer, plotPosition, obj);
 						}
 					}
 				}
