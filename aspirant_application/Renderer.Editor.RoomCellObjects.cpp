@@ -1,9 +1,9 @@
-#include "RoomCellObjectsRenderer.h"
+#include "Renderer.Editor.RoomCellObjects.h"
 #include "Common.XY.h"
 #include "Renderer.Editor.Common.h"
 #include "Aspirant.Context.Editor.RoomCellObjects.h"
 #include "SpriteManager.h"
-namespace aspirant::editor::controls::RoomCellObjectsRenderer
+namespace renderer::editor::RoomCellObjects
 {
 	common::XY<int> Plot(const common::XY<size_t>& position)
 	{

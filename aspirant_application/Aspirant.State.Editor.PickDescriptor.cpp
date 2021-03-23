@@ -3,7 +3,7 @@
 #include "UIState.h"
 #include "Graphics.Layouts.h"
 #include "RoomRenderer.h"
-#include "RoomCellObjectsRenderer.h"
+#include "Renderer.Editor.RoomCellObjects.h"
 #include "Renderer.Editor.PickDescriptor.h"
 #include "Common.Utility.h"
 #include "Aspirant.Context.Editor.PickDescriptor.h"
@@ -50,7 +50,7 @@ namespace aspirant::state::editor::PickDescriptor
 	{
 		graphics::Layouts::Get(LAYOUT_NAME).Draw(renderer);
 		aspirant::editor::controls::RoomRenderer::Draw(renderer);
-		aspirant::editor::controls::RoomCellObjectsRenderer::Draw(renderer);
+		renderer::editor::RoomCellObjects::Draw(renderer);
 		renderer::editor::PickDescriptor::Draw(renderer);
 	}
 

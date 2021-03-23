@@ -170,7 +170,7 @@
     <ClCompile Include="RoomRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RoomCellObjectsRenderer.cpp">
+    <ClCompile Include="Renderer.Editor.RoomCellObjects.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Renderer.Editor.PickDescriptor.cpp">
@@ -373,7 +373,7 @@
     <ClInclude Include="RoomRenderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RoomCellObjectsRenderer.h">
+    <ClInclude Include="Renderer.Editor.RoomCellObjects.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Renderer.Editor.PickDescriptor.h">
