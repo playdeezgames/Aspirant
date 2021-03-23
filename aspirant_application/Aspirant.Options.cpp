@@ -1,6 +1,6 @@
 #include "Aspirant.Options.h"
 #include "Data.JSON.h"
-#include "SoundManager.h"
+#include "Common.Sounds.h"
 namespace aspirant::Options
 {
 	const std::string PROPERTY_MUTED = "muted";
@@ -12,17 +12,17 @@ namespace aspirant::Options
 	{
 		fileName = filename;
 		auto properties = data::JSON::Load(fileName);
-		tggd::common::SoundManager::SetMuted((bool)properties[PROPERTY_MUTED]);
-		tggd::common::SoundManager::SetSfxVolume((int)properties[PROPERTY_SFX_VOLUME]);
-		tggd::common::SoundManager::SetMuxVolume((int)properties[PROPERTY_MUX_VOLUME]);
+		common::Sounds::SetMuted((bool)properties[PROPERTY_MUTED]);
+		common::Sounds::SetSfxVolume((int)properties[PROPERTY_SFX_VOLUME]);
+		common::Sounds::SetMuxVolume((int)properties[PROPERTY_MUX_VOLUME]);
 	}
 
 	void Save()
 	{
 		nlohmann::json properties;
-		properties[PROPERTY_MUTED] = tggd::common::SoundManager::IsMuted();
-		properties[PROPERTY_MUX_VOLUME] = tggd::common::SoundManager::GetMuxVolume();
-		properties[PROPERTY_SFX_VOLUME] = tggd::common::SoundManager::GetSfxVolume();
+		properties[PROPERTY_MUTED] = common::Sounds::IsMuted();
+		properties[PROPERTY_MUX_VOLUME] = common::Sounds::GetMuxVolume();
+		properties[PROPERTY_SFX_VOLUME] = common::Sounds::GetSfxVolume();
 		data::JSON::Save(fileName, properties);
 	}
 }

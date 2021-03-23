@@ -1,10 +1,10 @@
-#include "SoundManager.h"
+#include "Common.Sounds.h"
 #include <fstream>
 #include "Common.Utility.h"
 #include <fstream>
 #include "Data.JSON.h"
 #include "Common.Finishers.h"
-namespace tggd::common::SoundManager
+namespace common::Sounds
 {
 	static std::map<std::string, Mix_Chunk*> sounds;
 	static int sfxVolume = MIX_MAX_VOLUME;

@@ -80,7 +80,7 @@
     <ClCompile Include="Graphics.Layouts.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SoundManager.cpp">
+    <ClCompile Include="Common.Sounds.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Aspirant.Options.cpp">
@@ -277,7 +277,7 @@
     <ClInclude Include="Graphics.Layouts.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SoundManager.h">
+    <ClInclude Include="Common.Sounds.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Aspirant.Options.h">

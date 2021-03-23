@@ -194,7 +194,7 @@
     <ClCompile Include="ScenarioDescriptorManager.cpp" />
     <ClCompile Include="Game.Room.cpp" />
     <ClCompile Include="Game.Cell.cpp" />
-    <ClCompile Include="SoundManager.cpp" />
+    <ClCompile Include="Common.Sounds.cpp" />
     <ClCompile Include="Aspirant.State.Splash.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="SpriteFont.cpp" />
@@ -261,7 +261,7 @@
     <ClInclude Include="Game.Object.Common.h" />
     <ClInclude Include="Game.Room.h" />
     <ClInclude Include="Game.Cell.h" />
-    <ClInclude Include="SoundManager.h" />
+    <ClInclude Include="Common.Sounds.h" />
     <ClInclude Include="Aspirant.State.Splash.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="SpriteFont.h" />

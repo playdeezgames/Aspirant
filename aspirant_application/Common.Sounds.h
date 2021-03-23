@@ -2,7 +2,7 @@
 #include <map>
 #include <string>
 #include <SDL_Mixer.h>
-namespace tggd::common::SoundManager
+namespace common::Sounds
 {
 	void Start(const std::string&, const std::string&);
 

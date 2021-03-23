@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include "SoundManager.h"
+#include "Common.Sounds.h"
 namespace aspirant::Options
 {
 	void Start(const std::string&);

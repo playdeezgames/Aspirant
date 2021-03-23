@@ -13,7 +13,7 @@
 #include "SpriteManager.h"
 #include "Graphics.Fonts.h"
 #include "Graphics.Layouts.h"
-#include "SoundManager.h"
+#include "Common.Sounds.h"
 #include "Aspirant.Options.h"
 #include "Game.Descriptors.h"
 #include "ScenarioDescriptorManager.h"
@@ -168,7 +168,7 @@ namespace common::Application
 		tggd::graphics::SpriteManager::Start(aspirant::ConfigurationConstants::SPRITE);
 		graphics::Fonts::Start(aspirant::ConfigurationConstants::FONTS);
 		graphics::Layouts::Start(aspirant::ConfigurationConstants::LAYOUTS);
-		tggd::common::SoundManager::Start(aspirant::ConfigurationConstants::SFX, aspirant::ConfigurationConstants::MUX);
+		common::Sounds::Start(aspirant::ConfigurationConstants::SFX, aspirant::ConfigurationConstants::MUX);
 		aspirant::Options::Start(aspirant::ConfigurationConstants::OPTIONS);
 		::game::Descriptors::Start(aspirant::ConfigurationConstants::DESCRIPTORS);
 		aspirant::game::ScenarioDescriptorManager::Load(aspirant::ConfigurationConstants::SCENARIOS);

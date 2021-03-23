@@ -5,7 +5,7 @@
 #include "MenuItemDescriptor.h"
 #include "Graphics.Layouts.h"
 #include "Data.Strings.h"
-#include "SoundManager.h"
+#include "Common.Sounds.h"
 #include "Aspirant.Options.h"
 #include <sstream>
 #include "Common.Utility.h"
@@ -38,15 +38,15 @@ namespace aspirant::state::Options
 
 	static void AdjustSfxVolume(int delta)
 	{
-		tggd::common::SoundManager::SetSfxVolume(tggd::common::SoundManager::GetSfxVolume() + delta);
-		tggd::common::SoundManager::PlaySound(SFX_SAMPLE_NAME);
+		common::Sounds::SetSfxVolume(common::Sounds::GetSfxVolume() + delta);
+		common::Sounds::PlaySound(SFX_SAMPLE_NAME);
 		
 		aspirant::Options::Save();
 	}
 
 	static void AdjustMuxVolume(int delta)
 	{
-		tggd::common::SoundManager::SetMuxVolume(tggd::common::SoundManager::GetMuxVolume() + delta);//TODO: magic number
+		common::Sounds::SetMuxVolume(common::Sounds::GetMuxVolume() + delta);//TODO: magic number
 		aspirant::Options::Save();
 	}
 
@@ -82,7 +82,7 @@ namespace aspirant::state::Options
 		switch (current)
 		{
 		case OptionsItem::TOGGLE_MUTE:
-			tggd::common::SoundManager::SetMuted(!tggd::common::SoundManager::IsMuted());
+			common::Sounds::SetMuted(!common::Sounds::IsMuted());
 			aspirant::Options::Save();
 			break;
 		case OptionsItem::BACK:
@@ -130,7 +130,7 @@ namespace aspirant::state::Options
 			::data::Strings::Set(item.second.GetItemColorName(), (item.first == current) ? ("Cyan") : ("Gray"));
 		}
 
-		if (tggd::common::SoundManager::IsMuted())
+		if (common::Sounds::IsMuted())
 		{
 			::data::Strings::Set(TOGGLE_MUTE_STRING_NAME, UNMUTE);
 		}
@@ -140,12 +140,12 @@ namespace aspirant::state::Options
 		}
 		std::stringstream ss;
 		//text for sfx volume
-		ss << "SFX Volume (" << common::Utility::ToPercentage(tggd::common::SoundManager::GetSfxVolume(), MIX_MAX_VOLUME) << "%)";
+		ss << "SFX Volume (" << common::Utility::ToPercentage(common::Sounds::GetSfxVolume(), MIX_MAX_VOLUME) << "%)";
 		::data::Strings::Set(SFX_VOLUME_STRING_NAME, ss.str());
 
 		//text for mux volume
 		ss.str("");
-		ss << "MUX Volume (" << common::Utility::ToPercentage(tggd::common::SoundManager::GetMuxVolume(), MIX_MAX_VOLUME) << "%)";
+		ss << "MUX Volume (" << common::Utility::ToPercentage(common::Sounds::GetMuxVolume(), MIX_MAX_VOLUME) << "%)";
 		::data::Strings::Set(MUX_VOLUME_STRING_NAME, ss.str());
 
 	}
