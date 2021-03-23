@@ -2,7 +2,7 @@
 #include "Common.XY.h"
 #include "Renderer.Editor.Common.h"
 #include "Aspirant.Context.Editor.RoomCellObjects.h"
-#include "SpriteManager.h"
+#include "Graphics.Sprites.h"
 namespace renderer::editor::RoomCellObjects
 {
 	common::XY<int> Plot(const common::XY<size_t>& position)
@@ -18,6 +18,6 @@ namespace renderer::editor::RoomCellObjects
 		{
 			renderer::editor::Common::DrawObject(renderer, Plot({ column++, 0 }), obj);
 		}
-		tggd::graphics::SpriteManager::Get("MapCursor").Draw(renderer, Plot({ aspirant::context::editor::RoomCellObjects::GetIndex(), 0 }));
+		graphics::Sprites::Get("MapCursor").Draw(renderer, Plot({ aspirant::context::editor::RoomCellObjects::GetIndex(), 0 }));
 	}
 }

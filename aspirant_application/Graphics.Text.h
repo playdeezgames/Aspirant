@@ -1,21 +1,21 @@
 #pragma once
 #include "Common.XY.h"
 #include <string>
-#include "SpriteFont.h"
+#include "Graphics.Font.h"
 #include "json.hpp"
 #include "Graphics.Drawn.h"
 #include "Data.Int.h"
 #include "Data.String.h"
 #include "Data.Bool.h"
-namespace tggd::graphics
+namespace graphics
 {
-	class StaticText : public ::graphics::Drawn
+	class Text : public ::graphics::Drawn
 	{
-		StaticText() = delete;
-		StaticText(const StaticText&) = delete;
-		StaticText(StaticText&&) = delete;
-		StaticText& operator=(const StaticText&) = delete;
-		StaticText& operator=(StaticText&&) = delete;
+		Text() = delete;
+		Text(const Text&) = delete;
+		Text(Text&&) = delete;
+		Text& operator=(const Text&) = delete;
+		Text& operator=(Text&&) = delete;
 	private:
 		data::Int alignment;
 		data::String text;
@@ -28,7 +28,7 @@ namespace tggd::graphics
 		data::Int dropShadowX;
 		data::Int dropShadowY;
 	public:
-		StaticText
+		Text
 		(
 			const common::XY<int>&,
 			const std::string&,
@@ -39,7 +39,7 @@ namespace tggd::graphics
 			const std::string&,
 			const HorizontalAlignment&
 		);
-		StaticText
+		Text
 		(
 			const nlohmann::json&
 		);

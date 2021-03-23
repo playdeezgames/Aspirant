@@ -1,9 +1,9 @@
-#include "StaticText.h"
+#include "Graphics.Text.h"
 #include "Common.Utility.h"
 #include "Graphics.Fonts.h"
-namespace tggd::graphics
+namespace graphics
 {
-	StaticText::StaticText
+	Text::Text
 	(
 		const common::XY<int>& xy,
 		const std::string& text,
@@ -39,7 +39,7 @@ namespace tggd::graphics
 	const std::string PROPERTY_DROP_SHADOW_Y = "dropShadowY";
 	const std::string PROPERTY_HORIZONTAL_ALIGNMENT = "horizontalAlignment";
 
-	StaticText::StaticText
+	Text::Text
 	(
 		const nlohmann::json& properties
 	)
@@ -76,7 +76,7 @@ namespace tggd::graphics
 		}
 	}
 
-	void StaticText::Draw(SDL_Renderer* renderer) const
+	void Text::Draw(SDL_Renderer* renderer) const
 	{
 		if (hasDropShadow)
 		{

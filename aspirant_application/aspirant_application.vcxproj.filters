@@ -11,7 +11,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Common.RNG.cpp">
@@ -47,19 +47,19 @@
     <ClCompile Include="Graphics.Textures.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SpriteManager.cpp">
+    <ClCompile Include="Graphics.Sprites.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Sprite.cpp">
+    <ClCompile Include="Graphics.Sprite.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SpriteFont.cpp">
+    <ClCompile Include="Graphics.Font.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Graphics.Fonts.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="StaticImage.cpp">
+    <ClCompile Include="Graphics.Image.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Data.Int.cpp">
@@ -71,7 +71,7 @@
     <ClCompile Include="Data.Bool.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="StaticText.cpp">
+    <ClCompile Include="Graphics.Text.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Graphics.Layout.cpp">
@@ -122,7 +122,7 @@
     <ClCompile Include="Aspirant.State.ConfirmQuit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="StartEditorStateHandler.cpp">
+    <ClCompile Include="Aspirant.State.Editor.Start.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Aspirant.Context.Editor.Scenarios.cpp">
@@ -235,16 +235,16 @@
     <ClInclude Include="Graphics.Textures.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SpriteManager.h">
+    <ClInclude Include="Graphics.Sprites.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Sprite.h">
+    <ClInclude Include="Graphics.Sprite.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Common.XY.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SpriteFont.h">
+    <ClInclude Include="Graphics.Font.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Graphics.Fonts.h">
@@ -256,7 +256,7 @@
     <ClInclude Include="Graphics.Drawn.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="StaticImage.h">
+    <ClInclude Include="Graphics.Image.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Data.Int.h">
@@ -265,7 +265,7 @@
     <ClInclude Include="Data.String.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="StaticText.h">
+    <ClInclude Include="Graphics.Text.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Data.Bool.h">
@@ -331,7 +331,7 @@
     <ClInclude Include="MenuItemDescriptor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="StartEditorStateHandler.h">
+    <ClInclude Include="Aspirant.State.Editor.Start.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Aspirant.Context.Editor.Scenarios.h">

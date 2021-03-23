@@ -1,8 +1,8 @@
-#include "SpriteManager.h"
+#include "Graphics.Sprites.h"
 #include "Common.Utility.h"
 #include "Data.JSON.h"
 #include "Graphics.Textures.h"
-namespace tggd::graphics::SpriteManager
+namespace graphics::Sprites
 {
 	static std::map<std::string, Sprite> sprites;
 

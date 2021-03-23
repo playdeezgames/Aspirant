@@ -3,7 +3,7 @@
 #include "Common.Finishers.h"
 #include <list>
 #include "json.hpp"
-#include "SpriteManager.h"
+#include "Graphics.Sprites.h"
 #include "Graphics.Colors.h"
 #include "Graphics.Fonts.h"
 namespace graphics

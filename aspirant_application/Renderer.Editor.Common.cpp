@@ -1,5 +1,5 @@
 #include "Renderer.Editor.Common.h"
-#include "SpriteManager.h"
+#include "Graphics.Sprites.h"
 #include "Common.Finishers.h"
 #include "Game.Object.Common.h"
 #include "FinishUtility.h"
@@ -20,12 +20,12 @@ namespace renderer::editor::Common
 		if (descriptor.GetType() == TYPE_TERRAIN)
 		{
 			const ::game::descriptor::Terrain& terrainDescriptor = dynamic_cast<const ::game::descriptor::Terrain&>(descriptor);
-			tggd::graphics::SpriteManager::Get(terrainDescriptor.GetSprite()).Draw(renderer, position);
+			graphics::Sprites::Get(terrainDescriptor.GetSprite()).Draw(renderer, position);
 		}
 		else if (descriptor.GetType() == TYPE_CREATURE)
 		{
 			const ::game::descriptor::Creature& creatureDescriptor = dynamic_cast<const ::game::descriptor::Creature&>(descriptor);
-			tggd::graphics::SpriteManager::Get(creatureDescriptor.GetSprite()).Draw(renderer, position);
+			graphics::Sprites::Get(creatureDescriptor.GetSprite()).Draw(renderer, position);
 		}
 	}
 	void DrawObject

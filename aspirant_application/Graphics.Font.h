@@ -1,9 +1,9 @@
 #pragma once
-#include "Sprite.h"
+#include "Graphics.Sprite.h"
 #include <string>
 #include <map>
 #include "Common.XY.h"
-namespace tggd::graphics
+namespace graphics
 {
 	enum class HorizontalAlignment
 	{
@@ -11,22 +11,22 @@ namespace tggd::graphics
 		CENTER = 0,
 		LEFT = 1
 	};
-	class SpriteFont
+	class Font
 	{
-		SpriteFont() = delete;
-		SpriteFont(const SpriteFont&) = delete;
-		SpriteFont(SpriteFont&&) = delete;
-		SpriteFont& operator=(const SpriteFont&) = delete;
-		SpriteFont& operator=(SpriteFont&&) = delete;
+		Font() = delete;
+		Font(const Font&) = delete;
+		Font(Font&&) = delete;
+		Font& operator=(const Font&) = delete;
+		Font& operator=(Font&&) = delete;
 	private:
 		std::map<char, std::string> glyphs;
-		const tggd::graphics::Sprite& GetGlyphSprite(char) const;
+		const graphics::Sprite& GetGlyphSprite(char) const;
 		void WriteTextCentered(SDL_Renderer*, const common::XY<int>&, const std::string&, const std::string&) const;
 		common::XY<int> WriteTextLeft(SDL_Renderer*, const common::XY<int>&, const std::string&, const std::string&) const;
 		void WriteTextRight(SDL_Renderer*, const common::XY<int>&, const std::string&, const std::string&) const;
 		common::XY<int> WriteGlyph(SDL_Renderer*, const common::XY<int>&, char, const std::string&) const;
 	public:
-		SpriteFont
+		Font
 		(
 			const std::string&
 		);

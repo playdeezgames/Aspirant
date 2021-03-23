@@ -1,16 +1,16 @@
-#include "StaticImage.h"
+#include "Graphics.Image.h"
 #include "Common.Utility.h"
-#include "SpriteManager.h"
+#include "Graphics.Sprites.h"
 #include "Graphics.Colors.h"
 #include "Common.XY.h"
-namespace tggd::graphics
+namespace graphics
 {
 	const std::string PROPERTY_SPRITE = "sprite";
 	const std::string PROPERTY_COLOR = "color";
 	const std::string PROPERTY_X = "x";
 	const std::string PROPERTY_Y = "y";
 
-	StaticImage::StaticImage
+	Image::Image
 	(
 		const nlohmann::json& properties
 	)
@@ -21,7 +21,7 @@ namespace tggd::graphics
 	{
 	}
 
-	StaticImage::StaticImage
+	Image::Image
 	(
 		const std::string spriteName,
 		const std::string colorName,
@@ -34,9 +34,9 @@ namespace tggd::graphics
 	{
 	}
 
-	void StaticImage::Draw(SDL_Renderer* renderer) const
+	void Image::Draw(SDL_Renderer* renderer) const
 	{
-		SpriteManager::Get(spriteName)
+		Sprites::Get(spriteName)
 			.Draw
 			(
 				renderer,

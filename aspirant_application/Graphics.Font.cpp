@@ -1,11 +1,11 @@
-#include "SpriteFont.h"
+#include "Graphics.Font.h"
 #include "Common.Utility.h"
 #include "Data.JSON.h"
-#include "SpriteManager.h"
+#include "Graphics.Sprites.h"
 #include "Graphics.Colors.h"
-namespace tggd::graphics
+namespace graphics
 {
-	SpriteFont::SpriteFont
+	Font::Font
 	(
 		const std::string& fileName
 	)
@@ -19,20 +19,20 @@ namespace tggd::graphics
 		}
 	}
 
-	const tggd::graphics::Sprite& SpriteFont::GetGlyphSprite(char ch) const
+	const graphics::Sprite& Font::GetGlyphSprite(char ch) const
 	{
 		auto iter = glyphs.find(ch);
-		return SpriteManager::Get(iter->second);
+		return Sprites::Get(iter->second);
 	}
 
-	common::XY<int> SpriteFont::WriteGlyph(SDL_Renderer* renderer, const common::XY<int>& xy, char ch, const std::string& color) const
+	common::XY<int> Font::WriteGlyph(SDL_Renderer* renderer, const common::XY<int>& xy, char ch, const std::string& color) const
 	{
 		const auto& sprite = GetGlyphSprite(ch);
 		sprite.Draw(renderer, xy, ::graphics::Colors::Get(color));
 		return common::XY(xy.GetX() + sprite.GetWidth(), xy.GetY());
 	}
 
-	common::XY<int> SpriteFont::WriteTextLeft(SDL_Renderer* renderer, const common::XY<int>& xy, const std::string& text, const std::string& color) const
+	common::XY<int> Font::WriteTextLeft(SDL_Renderer* renderer, const common::XY<int>& xy, const std::string& text, const std::string& color) const
 	{
 		common::XY<int> temp = xy;
 		for (auto ch : text)
@@ -42,7 +42,7 @@ namespace tggd::graphics
 		return temp;
 	}
 
-	void SpriteFont::WriteTextCentered(SDL_Renderer* renderer, const common::XY<int>& xy, const std::string& text, const std::string& color) const
+	void Font::WriteTextCentered(SDL_Renderer* renderer, const common::XY<int>& xy, const std::string& text, const std::string& color) const
 	{
 		int width = 0;
 		for (auto ch : text)
@@ -54,7 +54,7 @@ namespace tggd::graphics
 		WriteTextLeft(renderer, adjustedXY, text, color);
 	}
 
-	void SpriteFont::WriteTextRight(SDL_Renderer* renderer, const common::XY<int>& xy, const std::string& text, const std::string& color) const
+	void Font::WriteTextRight(SDL_Renderer* renderer, const common::XY<int>& xy, const std::string& text, const std::string& color) const
 	{
 		int width = 0;
 		for (auto ch : text)
@@ -66,7 +66,7 @@ namespace tggd::graphics
 		WriteTextLeft(renderer, adjustedXY, text, color);
 	}
 
-	void SpriteFont::WriteText
+	void Font::WriteText
 	(
 		SDL_Renderer* renderer,
 		const common::XY<int>& xy,

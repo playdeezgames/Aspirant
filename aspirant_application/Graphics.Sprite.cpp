@@ -1,5 +1,5 @@
-#include "Sprite.h"
-namespace tggd::graphics
+#include "Graphics.Sprite.h"
+namespace graphics
 {
 	Sprite::Sprite
 	(

@@ -1,8 +1,8 @@
 #include <SDL.h>
 #include <string>
+#include <optional>
 #include "Aspirant.UIState.h"
 #include "Aspirant.Command.h"
-#include <optional>
 #include "Data.Strings.h"
 #include "Data.Ints.h"
 #include "Data.Bools.h"
@@ -10,7 +10,7 @@
 #include "Common.Finishers.h"
 #include "Graphics.Colors.h"
 #include "Graphics.Textures.h"
-#include "SpriteManager.h"
+#include "Graphics.Sprites.h"
 #include "Graphics.Fonts.h"
 #include "Graphics.Layouts.h"
 #include "Common.Sounds.h"
@@ -23,7 +23,7 @@
 #include "Aspirant.State.ConfirmQuit.h"
 #include "Aspirant.State.Options.h"
 #include "Aspirant.State.Start.h"
-#include "StartEditorStateHandler.h"
+#include "Aspirant.State.Editor.Start.h"
 #include "Aspirant.State.Editor.Scenarios.h"
 #include "Aspirant.State.Editor.Scenario.h"
 #include "Aspirant.State.Editor.PickRoom.h"
@@ -165,7 +165,7 @@ namespace common::Application
 		::data::Bools::Start(aspirant::ConfigurationConstants::FLAGS);
 		::graphics::Colors::Start(aspirant::ConfigurationConstants::COLOR);
 		::graphics::Textures::Start(renderer, aspirant::ConfigurationConstants::TEXTURE);
-		tggd::graphics::SpriteManager::Start(aspirant::ConfigurationConstants::SPRITE);
+		::graphics::Sprites::Start(aspirant::ConfigurationConstants::SPRITE);
 		graphics::Fonts::Start(aspirant::ConfigurationConstants::FONTS);
 		graphics::Layouts::Start(aspirant::ConfigurationConstants::LAYOUTS);
 		common::Sounds::Start(aspirant::ConfigurationConstants::SFX, aspirant::ConfigurationConstants::MUX);
@@ -179,7 +179,7 @@ namespace common::Application
 		aspirant::state::ConfirmQuit::Start();
 		aspirant::state::Options::Start();
 		aspirant::state::Start::Start();
-		aspirant::editorui::StartEditorStateHandler::Start();
+		aspirant::state::editor::Start::Start();
 		aspirant::state::editor::Scenarios::Start();
 		aspirant::state::editor::Scenario::Start();
 		aspirant::state::editor::PickRoom::Start();

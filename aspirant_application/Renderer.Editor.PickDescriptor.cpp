@@ -1,7 +1,7 @@
 #include "Renderer.Editor.PickDescriptor.h"
 #include "Common.XY.h"
 #include "Renderer.Editor.Common.h"
-#include "SpriteManager.h"
+#include "Graphics.Sprites.h"
 #include "Aspirant.Context.Editor.PickDescriptor.h"
 namespace renderer::editor::PickDescriptor
 {
@@ -23,7 +23,7 @@ namespace renderer::editor::PickDescriptor
 			}
 			if (idx == aspirant::context::editor::PickDescriptor::GetIndex())
 			{
-				tggd::graphics::SpriteManager::Get("MapCursor").Draw(renderer, position);//TODO: magic string
+				graphics::Sprites::Get("MapCursor").Draw(renderer, position);//TODO: magic string
 			}
 		}
 	}

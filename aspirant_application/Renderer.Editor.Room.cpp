@@ -1,7 +1,7 @@
 #include "Renderer.Editor.Room.h"
 #include "Common.XY.h"
 #include "Aspirant.Context.Editor.RoomView.h"
-#include "SpriteManager.h"
+#include "Graphics.Sprites.h"
 #include "Aspirant.Context.Editor.RoomList.h"
 #include "Renderer.Editor.Common.h"
 namespace renderer::editor::Room
@@ -63,7 +63,7 @@ namespace renderer::editor::Room
 		auto& anchorPosition = aspirant::context::editor::RoomView::GetAnchor();
 		common::XY<size_t> viewPosition = { cursorPosition.GetX() - anchorPosition.GetX(), cursorPosition.GetY() - anchorPosition.GetY() };
 		//TODO: magic string vv
-		tggd::graphics::SpriteManager::Get("MapCursor").Draw(renderer, Plot(viewPosition));
+		graphics::Sprites::Get("MapCursor").Draw(renderer, Plot(viewPosition));
 	}
 
 	void Draw(SDL_Renderer* renderer)

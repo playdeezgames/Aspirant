@@ -1,7 +1,7 @@
 #include "Graphics.Layout.h"
 #include "Common.Utility.h"
-#include "StaticImage.h"
-#include "StaticText.h"
+#include "Graphics.Image.h"
+#include "Graphics.Text.h"
 #include "FinishUtility.h"
 namespace graphics
 {
@@ -22,14 +22,14 @@ namespace graphics
 			{
 				drawnItems.push_back
 				(
-					new tggd::graphics::StaticImage(itemDescriptor)
+					new graphics::Image(itemDescriptor)
 				);
 			}
 			else if (itemType == TYPE_STATIC_TEXT)
 			{
 				drawnItems.push_back
 				(
-					new tggd::graphics::StaticText(itemDescriptor)
+					new graphics::Text(itemDescriptor)
 				);
 			}
 		}

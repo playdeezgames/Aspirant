@@ -2,31 +2,31 @@
 #include "Common.XY.h"
 #include "Graphics.Drawn.h"
 #include "json.hpp"
-#include "Sprite.h"
+#include "Graphics.Sprite.h"
 #include "Data.String.h"
 #include "Data.Int.h"
-namespace tggd::graphics
+namespace graphics
 {
-	class StaticImage : public ::graphics::Drawn
+	class Image : public ::graphics::Drawn
 	{
-		StaticImage() = delete;
-		StaticImage(const StaticImage&) = delete;
-		StaticImage(StaticImage&&) = delete;
-		StaticImage& operator=(const StaticImage&) = delete;
-		StaticImage& operator=(StaticImage&&) = delete;
+		Image() = delete;
+		Image(const Image&) = delete;
+		Image(Image&&) = delete;
+		Image& operator=(const Image&) = delete;
+		Image& operator=(Image&&) = delete;
 	private:
 		::data::String spriteName;
 		::data::String colorName;
 		::data::Int x;
 		::data::Int y;
 	public:
-		StaticImage
+		Image
 		(
 			const std::string,
 			const std::string,
 			common::XY<int>
 		);
-		StaticImage
+		Image
 		(
 			const nlohmann::json&
 		);

@@ -1,4 +1,4 @@
-#include "StartEditorStateHandler.h"
+#include "Aspirant.State.Editor.Start.h"
 #include "Aspirant.Application.h"
 #include "Aspirant.UIState.h"
 #include "Graphics.Layouts.h"
@@ -9,7 +9,7 @@
 #include <sstream>
 #include "Data.JSON.h"
 #include "Aspirant.Context.Editor.Scenarios.h"
-namespace aspirant::editorui::StartEditorStateHandler
+namespace aspirant::state::editor::Start
 {
 	const std::string START_EDITOR_NEW_COLOR_NAME = "StartEditor.Color.New";
 	const std::string START_EDITOR_BACK_COLOR_NAME = "StartEditor.Color.Back";
