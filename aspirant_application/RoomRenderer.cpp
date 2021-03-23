@@ -1,6 +1,6 @@
 #include "RoomRenderer.h"
 #include "Common.XY.h"
-#include "EditorRoomViewContext.h"
+#include "Aspirant.Context.Editor.RoomView.h"
 #include "SpriteManager.h"
 #include "Aspirant.Context.Editor.RoomList.h"
 #include "Renderer.Editor.Common.h"
@@ -28,9 +28,9 @@ namespace aspirant::editor::controls::RoomRenderer
 	{
 		if (room)
 		{
-			for (size_t viewRow = 0; viewRow < aspirant::editor::context::EditorRoomViewContext::GetSize().GetY(); ++viewRow)
+			for (size_t viewRow = 0; viewRow < aspirant::context::editor::RoomView::GetSize().GetY(); ++viewRow)
 			{
-				for (size_t viewColumn = 0; viewColumn < aspirant::editor::context::EditorRoomViewContext::GetSize().GetX(); ++viewColumn)
+				for (size_t viewColumn = 0; viewColumn < aspirant::context::editor::RoomView::GetSize().GetX(); ++viewColumn)
 				{
 					common::XY<size_t> viewPosition =
 						common::XY<size_t>
@@ -39,7 +39,7 @@ namespace aspirant::editor::controls::RoomRenderer
 							viewRow
 							);
 					common::XY<size_t> cellPosition =
-						viewPosition + aspirant::editor::context::EditorRoomViewContext::GetAnchor();
+						viewPosition + aspirant::context::editor::RoomView::GetAnchor();
 					auto cell = room->GetCell(cellPosition.GetX(), cellPosition.GetY());
 					if (cell)
 					{
@@ -59,8 +59,8 @@ namespace aspirant::editor::controls::RoomRenderer
 	{
 		//MapCursor
 		//vp = cp - an
-		auto& cursorPosition = aspirant::editor::context::EditorRoomViewContext::GetCursor();
-		auto& anchorPosition = aspirant::editor::context::EditorRoomViewContext::GetAnchor();
+		auto& cursorPosition = aspirant::context::editor::RoomView::GetCursor();
+		auto& anchorPosition = aspirant::context::editor::RoomView::GetAnchor();
 		common::XY<size_t> viewPosition = { cursorPosition.GetX() - anchorPosition.GetX(), cursorPosition.GetY() - anchorPosition.GetY() };
 		//TODO: magic string vv
 		tggd::graphics::SpriteManager::Get("MapCursor").Draw(renderer, Plot(viewPosition));

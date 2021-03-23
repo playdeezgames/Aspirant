@@ -4,7 +4,7 @@
 #include "LayoutManager.h"
 #include "Aspirant.Context.Editor.RoomList.h"
 #include "Data.Strings.h"
-#include "EditorRoomViewContext.h"
+#include "Aspirant.Context.Editor.RoomView.h"
 namespace aspirant::state::editor::PickRoom
 {
 	const std::string LAYOUT_NAME = "EditPickRoom";
@@ -26,7 +26,7 @@ namespace aspirant::state::editor::PickRoom
 			aspirant::context::editor::RoomList::PreviousRoom();
 			break;
 		case aspirant::Command::GREEN:
-			aspirant::editor::context::EditorRoomViewContext::SetCursor({ 0,0 });
+			aspirant::context::editor::RoomView::SetCursor({ 0,0 });
 			aspirant::Application::SetUIState(aspirant::commonui::UIState::EDIT_NAVIGATE_ROOM);
 			break;
 		}
