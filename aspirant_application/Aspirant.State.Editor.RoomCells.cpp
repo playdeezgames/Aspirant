@@ -11,7 +11,7 @@
 #include "Aspirant.Context.Editor.Scenario.h"
 #include "Common.Utility.h"
 #include "EditorRoomListContext.h"
-#include "EditorRoomCellObjectsContext.h"
+#include "Aspirant.Context.Editor.RoomCellObjects.h"
 #include "Aspirant.Context.Editor.PickDescriptor.h"
 namespace aspirant::state::editor::RoomCells
 {
@@ -27,7 +27,7 @@ namespace aspirant::state::editor::RoomCells
 		newCursorX = common::Utility::PositiveModulo(newCursorX, room->GetColumns());
 		newCursorY = common::Utility::PositiveModulo(newCursorY, room->GetRows());
 		aspirant::editor::context::EditorRoomViewContext::SetCursor({ (size_t)newCursorX, (size_t)newCursorY });
-		aspirant::editor::context::EditorRoomCellObjectsContext::Reset();
+		aspirant::context::editor::RoomCellObjects::Reset();
 	}
 
 	static void PlaceObject()

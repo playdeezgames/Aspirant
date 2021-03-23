@@ -1,7 +1,7 @@
 #include "RoomCellObjectsRenderer.h"
 #include "Common.XY.h"
 #include "Renderer.Editor.Common.h"
-#include "EditorRoomCellObjectsContext.h"
+#include "Aspirant.Context.Editor.RoomCellObjects.h"
 #include "SpriteManager.h"
 namespace aspirant::editor::controls::RoomCellObjectsRenderer
 {
@@ -12,12 +12,12 @@ namespace aspirant::editor::controls::RoomCellObjectsRenderer
 
 	void Draw(SDL_Renderer* renderer)
 	{
-		auto& objs = aspirant::editor::context::EditorRoomCellObjectsContext::GetCell()->GetObjects();
+		auto& objs = aspirant::context::editor::RoomCellObjects::GetCell()->GetObjects();
 		size_t column = 0;
 		for (auto& obj : objs)
 		{
 			renderer::editor::Common::DrawObject(renderer, Plot({ column++, 0 }), obj);
 		}
-		tggd::graphics::SpriteManager::Get("MapCursor").Draw(renderer, Plot({ aspirant::editor::context::EditorRoomCellObjectsContext::GetIndex(), 0 }));
+		tggd::graphics::SpriteManager::Get("MapCursor").Draw(renderer, Plot({ aspirant::context::editor::RoomCellObjects::GetIndex(), 0 }));
 	}
 }
