@@ -1,5 +1,5 @@
 #pragma once
-namespace tggd::common::RNGUtility
+namespace common::RNG
 {
 	void Seed();
 	int GenerateFromRange(int, int);

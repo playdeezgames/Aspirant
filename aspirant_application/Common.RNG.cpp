@@ -1,7 +1,7 @@
-#include "RNGUtility.h"
+#include "Common.RNG.h"
 #include <stdlib.h>
 #include <time.h>
-namespace tggd::common::RNGUtility
+namespace common::RNG
 {
 	void Seed()
 	{

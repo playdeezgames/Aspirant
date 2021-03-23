@@ -14,7 +14,7 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RNGUtility.cpp">
+    <ClCompile Include="Common.RNG.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Common.Utility.cpp">
@@ -196,7 +196,7 @@
     <ClInclude Include="Common.Application.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RNGUtility.h">
+    <ClInclude Include="Common.RNG.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Common.Utility.h">

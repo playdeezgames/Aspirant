@@ -1,10 +1,10 @@
 #include "Common.Application.h"
-#include "RNGUtility.h"
+#include "Common.RNG.h"
 #include "Common.Utility.h"
 #include <SDL.h>
 int main(int argc, char** argv)
 {
-	tggd::common::RNGUtility::Seed();
+	common::RNG::Seed();
 	auto arguments = common::Utility::CommandLineToStringVector(argc, argv);
 	return common::Application::Run(arguments);
 }

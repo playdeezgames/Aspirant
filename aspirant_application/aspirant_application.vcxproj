@@ -187,7 +187,7 @@
     <ClCompile Include="Aspirant.State.MainMenu.cpp" />
     <ClCompile Include="Aspirant.Options.cpp" />
     <ClCompile Include="Aspirant.State.Options.cpp" />
-    <ClCompile Include="RNGUtility.cpp" />
+    <ClCompile Include="Common.RNG.cpp" />
     <ClCompile Include="RoomCellObjectsRenderer.cpp" />
     <ClCompile Include="RoomRenderer.cpp" />
     <ClCompile Include="Scenario.cpp" />
@@ -252,7 +252,7 @@
     <ClInclude Include="MenuItemDescriptor.h" />
     <ClInclude Include="Aspirant.Options.h" />
     <ClInclude Include="Aspirant.State.Options.h" />
-    <ClInclude Include="RNGUtility.h" />
+    <ClInclude Include="Common.RNG.h" />
     <ClInclude Include="RoomCellObjectsRenderer.h" />
     <ClInclude Include="RoomRenderer.h" />
     <ClInclude Include="Scenario.h" />
