@@ -93,6 +93,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -109,6 +110,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -157,9 +159,9 @@
     <ClCompile Include="Game.Object.Creature.cpp" />
     <ClCompile Include="Game.Descriptors.cpp" />
     <ClCompile Include="DescriptorSelectorRenderer.cpp" />
-    <ClCompile Include="EditDescriptorSelectorStateHandler.cpp" />
-    <ClCompile Include="EditNavigateRoomStateHandler.cpp" />
-    <ClCompile Include="EditNewRoomStateHandler.cpp" />
+    <ClCompile Include="Aspirant.State.Editor.PickDescriptor.cpp" />
+    <ClCompile Include="Aspirant.State.Editor.RoomCells.cpp" />
+    <ClCompile Include="Aspirant.State.Editor.NewRoom.cpp" />
     <ClCompile Include="EditorBaseControl.cpp" />
     <ClCompile Include="EditorContext.cpp" />
     <ClCompile Include="EditorDescriptorSelectorContext.cpp" />
@@ -169,10 +171,10 @@
     <ClCompile Include="EditorRoomListContext.cpp" />
     <ClCompile Include="EditorRoomViewContext.cpp" />
     <ClCompile Include="EditorScenarioSelector.cpp" />
-    <ClCompile Include="EditPickRoomStateHandler.cpp" />
-    <ClCompile Include="EditScenarioDescriptorStateHandler.cpp" />
-    <ClCompile Include="EditScenarioSelectorStateHandler.cpp" />
-    <ClCompile Include="EditScenarioStateHandler.cpp" />
+    <ClCompile Include="Aspirant.State.Editor.PickRoom.cpp" />
+    <ClCompile Include="Aspirant.State.Editor.ScenarioDescriptor.cpp" />
+    <ClCompile Include="Aspirant.State.Editor.Scenarios.cpp" />
+    <ClCompile Include="Aspirant.State.Editor.Scenario.cpp" />
     <ClCompile Include="FinishManager.cpp" />
     <ClCompile Include="Data.Bools.cpp" />
     <ClCompile Include="FontManager.cpp" />
@@ -222,9 +224,9 @@
     <ClInclude Include="Game.Descriptors.h" />
     <ClInclude Include="DescriptorSelectorRenderer.h" />
     <ClInclude Include="Graphics.Drawn.h" />
-    <ClInclude Include="EditDescriptorSelectorStateHandler.h" />
-    <ClInclude Include="EditNavigateRoomStateHandler.h" />
-    <ClInclude Include="EditNewRoomStateHandler.h" />
+    <ClInclude Include="Aspirant.State.Editor.PickDescriptor.h" />
+    <ClInclude Include="Aspirant.State.Editor.RoomCells.h" />
+    <ClInclude Include="Aspirant.State.Editor.NewRoom.h" />
     <ClInclude Include="EditorBaseControl.h" />
     <ClInclude Include="EditorContext.h" />
     <ClInclude Include="EditorDescriptorSelectorContext.h" />
@@ -232,10 +234,10 @@
     <ClInclude Include="EditorRoomListContext.h" />
     <ClInclude Include="EditorRoomViewContext.h" />
     <ClInclude Include="EditorScenarioSelector.h" />
-    <ClInclude Include="EditPickRoomStateHandler.h" />
-    <ClInclude Include="EditScenarioDescriptorStateHandler.h" />
-    <ClInclude Include="EditScenarioSelectorStateHandler.h" />
-    <ClInclude Include="EditScenarioStateHandler.h" />
+    <ClInclude Include="Aspirant.State.Editor.PickRoom.h" />
+    <ClInclude Include="Aspirant.State.Editor.ScenarioDescriptor.h" />
+    <ClInclude Include="Aspirant.State.Editor.Scenarios.h" />
+    <ClInclude Include="Aspirant.State.Editor.Scenario.h" />
     <ClInclude Include="FinishManager.h" />
     <ClInclude Include="FinishUtility.h" />
     <ClInclude Include="Data.Bools.h" />

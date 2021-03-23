@@ -128,7 +128,7 @@
     <ClCompile Include="EditorScenarioSelector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="EditScenarioSelectorStateHandler.cpp">
+    <ClCompile Include="Aspirant.State.Editor.Scenarios.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ScenarioRoomCell.cpp">
@@ -140,7 +140,7 @@
     <ClCompile Include="Scenario.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="EditScenarioStateHandler.cpp">
+    <ClCompile Include="Aspirant.State.Editor.Scenario.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="EditorRoomListContext.cpp">
@@ -155,16 +155,16 @@
     <ClCompile Include="EditorNewRoomContext.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="EditPickRoomStateHandler.cpp">
+    <ClCompile Include="Aspirant.State.Editor.PickRoom.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="EditorRoomViewContext.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="EditNewRoomStateHandler.cpp">
+    <ClCompile Include="Aspirant.State.Editor.NewRoom.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="EditScenarioDescriptorStateHandler.cpp">
+    <ClCompile Include="Aspirant.State.Editor.ScenarioDescriptor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="RoomRenderer.cpp">
@@ -176,7 +176,7 @@
     <ClCompile Include="DescriptorSelectorRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="EditNavigateRoomStateHandler.cpp">
+    <ClCompile Include="Aspirant.State.Editor.RoomCells.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="EditorRoomCellObjectsContext.cpp">
@@ -188,7 +188,7 @@
     <ClCompile Include="EditorBaseControl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="EditDescriptorSelectorStateHandler.cpp">
+    <ClCompile Include="Aspirant.State.Editor.PickDescriptor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -337,7 +337,7 @@
     <ClInclude Include="EditorScenarioSelector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="EditScenarioSelectorStateHandler.h">
+    <ClInclude Include="Aspirant.State.Editor.Scenarios.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ScenarioRoomCell.h">
@@ -349,7 +349,7 @@
     <ClInclude Include="Scenario.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="EditScenarioStateHandler.h">
+    <ClInclude Include="Aspirant.State.Editor.Scenario.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="EditorRoomListContext.h">
@@ -358,16 +358,16 @@
     <ClInclude Include="EditorContext.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="EditPickRoomStateHandler.h">
+    <ClInclude Include="Aspirant.State.Editor.PickRoom.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="EditorRoomViewContext.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="EditNewRoomStateHandler.h">
+    <ClInclude Include="Aspirant.State.Editor.NewRoom.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="EditScenarioDescriptorStateHandler.h">
+    <ClInclude Include="Aspirant.State.Editor.ScenarioDescriptor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="RoomRenderer.h">
@@ -379,7 +379,7 @@
     <ClInclude Include="DescriptorSelectorRenderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="EditNavigateRoomStateHandler.h">
+    <ClInclude Include="Aspirant.State.Editor.RoomCells.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="EditorDescriptorSelectorContext.h">
@@ -391,7 +391,7 @@
     <ClInclude Include="EditorBaseControl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="EditDescriptorSelectorStateHandler.h">
+    <ClInclude Include="Aspirant.State.Editor.PickDescriptor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

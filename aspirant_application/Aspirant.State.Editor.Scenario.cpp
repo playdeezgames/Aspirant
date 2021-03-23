@@ -1,4 +1,4 @@
-#include "EditScenarioSelectorStateHandler.h"
+#include "Aspirant.State.Editor.Scenario.h"
 #include "Aspirant.Application.h"
 #include "UIState.h"
 #include "LayoutManager.h"
@@ -10,7 +10,7 @@
 #include "ScenarioDescriptorManager.h"
 #include "EditorRoomListContext.h"
 #include "EditorNewRoomContext.h"
-namespace aspirant::editorui::EditScenarioStateHandler
+namespace aspirant::state::editor::Scenario
 {
 	const std::string LAYOUT_NAME = "EditScenario";
 	const std::string ITEM_DESCRIPTOR_COLOR_NAME = "EditScenario.Color.Descriptor";

@@ -1,4 +1,4 @@
-#include "EditDescriptorSelectorStateHandler.h"
+#include "Aspirant.State.Editor.PickDescriptor.h"
 #include "Aspirant.Application.h"
 #include "UIState.h"
 #include "LayoutManager.h"
@@ -7,7 +7,7 @@
 #include "DescriptorSelectorRenderer.h"
 #include "Utility.h"
 #include "EditorDescriptorSelectorContext.h"
-namespace aspirant::editorui::EditDescriptorSelectorStateHandler
+namespace aspirant::state::editor::PickDescriptor
 {
 	const std::string LAYOUT_NAME = "EditDescriptorSelector";
 

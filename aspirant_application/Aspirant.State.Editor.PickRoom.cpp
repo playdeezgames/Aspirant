@@ -1,11 +1,11 @@
-#include "EditPickRoomStateHandler.h"
+#include "Aspirant.State.Editor.PickRoom.h"
 #include "Aspirant.Application.h"
 #include "UIState.h"
 #include "LayoutManager.h"
 #include "EditorRoomListContext.h"
 #include "Data.Strings.h"
 #include "EditorRoomViewContext.h"
-namespace aspirant::editorui::EditPickRoomStateHandler
+namespace aspirant::state::editor::PickRoom
 {
 	const std::string LAYOUT_NAME = "EditPickRoom";
 	const std::string TEXT_NAME_STRING_ROOM_NAME = "EditPickRoom.Text.RoomName";

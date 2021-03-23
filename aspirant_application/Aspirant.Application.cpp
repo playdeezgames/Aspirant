@@ -24,14 +24,14 @@
 #include "Aspirant.State.Options.h"
 #include "Aspirant.State.Start.h"
 #include "StartEditorStateHandler.h"
-#include "EditScenarioSelectorStateHandler.h"
-#include "EditScenarioStateHandler.h"
-#include "EditPickRoomStateHandler.h"
+#include "Aspirant.State.Editor.Scenarios.h"
+#include "Aspirant.State.Editor.Scenario.h"
+#include "Aspirant.State.Editor.PickRoom.h"
 #include <map>
-#include "EditNewRoomStateHandler.h"
-#include "EditScenarioDescriptorStateHandler.h"
-#include "EditNavigateRoomStateHandler.h"
-#include "EditDescriptorSelectorStateHandler.h"
+#include "Aspirant.State.Editor.NewRoom.h"
+#include "Aspirant.State.Editor.ScenarioDescriptor.h"
+#include "Aspirant.State.Editor.RoomCells.h"
+#include "Aspirant.State.Editor.PickDescriptor.h"
 namespace aspirant::ConfigurationConstants
 {
 	const std::string TEXTURE = "config/graphics/textures.json";
@@ -180,13 +180,13 @@ namespace common::Application
 		aspirant::state::Options::Start();
 		aspirant::state::Start::Start();
 		aspirant::editorui::StartEditorStateHandler::Start();
-		aspirant::editorui::EditScenarioSelectorStateHandler::Start();
-		aspirant::editorui::EditScenarioStateHandler::Start();
-		aspirant::editorui::EditPickRoomStateHandler::Start();
-		aspirant::editorui::EditNewRoomStateHandler::Start();
-		aspirant::editorui::EditScenarioDescriptorStateHandler::Start();
-		aspirant::editorui::EditNavigateRoomStateHandler::Start();
-		aspirant::editorui::EditDescriptorSelectorStateHandler::Start();
+		aspirant::state::editor::Scenarios::Start();
+		aspirant::state::editor::Scenario::Start();
+		aspirant::state::editor::PickRoom::Start();
+		aspirant::state::editor::NewRoom::Start();
+		aspirant::state::editor::ScenarioDescriptor::Start();
+		aspirant::state::editor::RoomCells::Start();
+		aspirant::state::editor::PickDescriptor::Start();
 	}
 
 	bool IsRunning()

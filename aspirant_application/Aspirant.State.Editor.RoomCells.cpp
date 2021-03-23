@@ -1,4 +1,4 @@
-#include "EditNavigateRoomStateHandler.h"
+#include "Aspirant.State.Editor.RoomCells.h"
 #include "Aspirant.Application.h"
 #include "UIState.h"
 #include "LayoutManager.h"
@@ -13,7 +13,7 @@
 #include "EditorRoomListContext.h"
 #include "EditorRoomCellObjectsContext.h"
 #include "EditorDescriptorSelectorContext.h"
-namespace aspirant::editorui::EditNavigateRoomStateHandler
+namespace aspirant::state::editor::RoomCells
 {
 	const std::string LAYOUT_NAME = "EditNavigateRoom";
 	const std::string LAYOUT_ROOM_VIEW_POSITION = "RoomViewPosition";
