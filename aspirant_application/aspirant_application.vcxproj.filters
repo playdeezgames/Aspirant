@@ -83,7 +83,7 @@
     <ClCompile Include="SoundManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="OptionsManager.cpp">
+    <ClCompile Include="Aspirant.Options.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Game.Descriptors.cpp">
@@ -280,7 +280,7 @@
     <ClInclude Include="SoundManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="OptionsManager.h">
+    <ClInclude Include="Aspirant.Options.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Game.Descriptors.h">

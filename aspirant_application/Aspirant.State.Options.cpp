@@ -6,7 +6,7 @@
 #include "LayoutManager.h"
 #include "Data.Strings.h"
 #include "SoundManager.h"
-#include "OptionsManager.h"
+#include "Aspirant.Options.h"
 #include <sstream>
 #include "Common.Utility.h"
 namespace aspirant::state::Options
@@ -41,13 +41,13 @@ namespace aspirant::state::Options
 		tggd::common::SoundManager::SetSfxVolume(tggd::common::SoundManager::GetSfxVolume() + delta);
 		tggd::common::SoundManager::PlaySound(SFX_SAMPLE_NAME);
 		
-		aspirant::navigationui::OptionsManager::Save();
+		aspirant::Options::Save();
 	}
 
 	static void AdjustMuxVolume(int delta)
 	{
 		tggd::common::SoundManager::SetMuxVolume(tggd::common::SoundManager::GetMuxVolume() + delta);//TODO: magic number
-		aspirant::navigationui::OptionsManager::Save();
+		aspirant::Options::Save();
 	}
 
 
@@ -83,7 +83,7 @@ namespace aspirant::state::Options
 		{
 		case OptionsItem::TOGGLE_MUTE:
 			tggd::common::SoundManager::SetMuted(!tggd::common::SoundManager::IsMuted());
-			aspirant::navigationui::OptionsManager::Save();
+			aspirant::Options::Save();
 			break;
 		case OptionsItem::BACK:
 			aspirant::Application::SetUIState(aspirant::commonui::UIState::MAIN_MENU);

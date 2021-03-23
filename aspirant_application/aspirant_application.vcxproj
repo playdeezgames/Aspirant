@@ -185,7 +185,7 @@
     <ClCompile Include="LayoutManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Aspirant.State.MainMenu.cpp" />
-    <ClCompile Include="OptionsManager.cpp" />
+    <ClCompile Include="Aspirant.Options.cpp" />
     <ClCompile Include="Aspirant.State.Options.cpp" />
     <ClCompile Include="RNGUtility.cpp" />
     <ClCompile Include="RoomCellObjectsRenderer.cpp" />
@@ -250,7 +250,7 @@
     <ClInclude Include="LayoutManager.h" />
     <ClInclude Include="Aspirant.State.MainMenu.h" />
     <ClInclude Include="MenuItemDescriptor.h" />
-    <ClInclude Include="OptionsManager.h" />
+    <ClInclude Include="Aspirant.Options.h" />
     <ClInclude Include="Aspirant.State.Options.h" />
     <ClInclude Include="RNGUtility.h" />
     <ClInclude Include="RoomCellObjectsRenderer.h" />

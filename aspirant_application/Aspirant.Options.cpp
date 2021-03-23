@@ -1,7 +1,7 @@
-#include "OptionsManager.h"
+#include "Aspirant.Options.h"
 #include "Data.JSON.h"
 #include "SoundManager.h"
-namespace aspirant::navigationui::OptionsManager
+namespace aspirant::Options
 {
 	const std::string PROPERTY_MUTED = "muted";
 	const std::string PROPERTY_SFX_VOLUME = "sfxVolume";

@@ -14,7 +14,7 @@
 #include "FontManager.h"
 #include "LayoutManager.h"
 #include "SoundManager.h"
-#include "OptionsManager.h"
+#include "Aspirant.Options.h"
 #include "Game.Descriptors.h"
 #include "ScenarioDescriptorManager.h"
 #include "Aspirant.State.Splash.h"
@@ -169,7 +169,7 @@ namespace common::Application
 		tggd::graphics::FontManager::Start(aspirant::ConfigurationConstants::FONTS);
 		tggd::graphics::LayoutManager::Start(aspirant::ConfigurationConstants::LAYOUTS);
 		tggd::common::SoundManager::Start(aspirant::ConfigurationConstants::SFX, aspirant::ConfigurationConstants::MUX);
-		aspirant::navigationui::OptionsManager::Start(aspirant::ConfigurationConstants::OPTIONS);
+		aspirant::Options::Start(aspirant::ConfigurationConstants::OPTIONS);
 		::game::Descriptors::Start(aspirant::ConfigurationConstants::DESCRIPTORS);
 		aspirant::game::ScenarioDescriptorManager::Load(aspirant::ConfigurationConstants::SCENARIOS);
 
