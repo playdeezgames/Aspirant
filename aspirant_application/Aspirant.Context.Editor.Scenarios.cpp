@@ -1,7 +1,7 @@
-#include "EditorScenarioSelector.h"
+#include "Aspirant.Context.Editor.Scenarios.h"
 #include "ScenarioDescriptorManager.h"
 #include "Common.Utility.h"
-namespace aspirant::editor::context::EditorScenarioSelector
+namespace aspirant::context::editor::Scenarios
 {
 	static size_t scenarioIndex = 0;
 	static void DoBusinessRules()
@@ -23,12 +23,12 @@ namespace aspirant::editor::context::EditorScenarioSelector
 		return scenarioIndex;
 	}
 
-	void EditorScenarioSelector::Next()
+	void Next()
 	{
 		SetIndex(common::Utility::NextIndex(GetIndex(), aspirant::game::ScenarioDescriptorManager::GetCount()));
 	}
 
-	void EditorScenarioSelector::Previous()
+	void Previous()
 	{
 		SetIndex(common::Utility::PreviousIndex(GetIndex(), aspirant::game::ScenarioDescriptorManager::GetCount()));
 	}

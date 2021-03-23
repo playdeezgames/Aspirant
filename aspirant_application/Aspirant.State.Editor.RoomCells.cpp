@@ -12,7 +12,7 @@
 #include "Common.Utility.h"
 #include "EditorRoomListContext.h"
 #include "EditorRoomCellObjectsContext.h"
-#include "EditorDescriptorSelectorContext.h"
+#include "Aspirant.Context.Editor.PickDescriptor.h"
 namespace aspirant::state::editor::RoomCells
 {
 	const std::string LAYOUT_NAME = "EditNavigateRoom";
@@ -33,7 +33,7 @@ namespace aspirant::state::editor::RoomCells
 	static void PlaceObject()
 	{
 		auto& cursorPosition = aspirant::editor::context::EditorRoomViewContext::GetCursor();
-		auto descriptor = aspirant::editor::context::EditorDescriptorSelectorContext::GetDescriptor(aspirant::editor::context::EditorDescriptorSelectorContext::GetIndex());
+		auto descriptor = aspirant::context::editor::PickDescriptor::GetDescriptor(aspirant::context::editor::PickDescriptor::GetIndex());
 		auto roomCell = aspirant::editor::context::EditorRoomListContext::GetRoom()->GetCell(cursorPosition.GetX(), cursorPosition.GetY());
 		auto obj = descriptor->CreateObject();
 		if (!roomCell->AddObject(obj))

@@ -1,7 +1,7 @@
 #pragma once
 #include "Game.Descriptor.Common.h"
 #include "Game.Object.Common.h"
-namespace aspirant::editor::context::EditorDescriptorSelectorContext
+namespace aspirant::context::editor::PickDescriptor
 {
 	size_t GetIndex();
 	void SetIndex(size_t idx);

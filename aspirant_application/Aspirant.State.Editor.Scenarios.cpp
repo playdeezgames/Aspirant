@@ -3,7 +3,7 @@
 #include "UIState.h"
 #include "LayoutManager.h"
 #include "ScenarioDescriptorManager.h"
-#include "EditorScenarioSelector.h"
+#include "Aspirant.Context.Editor.Scenarios.h"
 #include "Data.Strings.h"
 #include <sstream>
 #include "Aspirant.Context.Editor.Scenario.h"
@@ -25,11 +25,11 @@ namespace aspirant::state::editor::Scenarios
 			break;
 		case aspirant::Command::NEXT:
 		case aspirant::Command::RIGHT:
-			aspirant::editor::context::EditorScenarioSelector::Next();
+			aspirant::context::editor::Scenarios::Next();
 			break;
 		case aspirant::Command::PREVIOUS:
 		case aspirant::Command::LEFT:
-			aspirant::editor::context::EditorScenarioSelector::Previous();
+			aspirant::context::editor::Scenarios::Previous();
 			break;
 		case aspirant::Command::GREEN:
 			aspirant::context::editor::Scenario::LoadScenario();
@@ -48,7 +48,7 @@ namespace aspirant::state::editor::Scenarios
 		if (scenario)
 		{
 			std::stringstream ss;
-			ss << "Scenario " << (aspirant::editor::context::EditorScenarioSelector::GetIndex() + 1) << "/" << aspirant::game::ScenarioDescriptorManager::GetCount();
+			ss << "Scenario " << (aspirant::context::editor::Scenarios::GetIndex() + 1) << "/" << aspirant::game::ScenarioDescriptorManager::GetCount();
 			::data::Strings::Set(TEXT_INDEX_STRING_NAME, ss.str());
 		}
 		else
@@ -99,7 +99,7 @@ namespace aspirant::state::editor::Scenarios
 
 	static void OnUpdate(const Uint32& ticks)
 	{
-		auto scenario = aspirant::game::ScenarioDescriptorManager::Get(aspirant::editor::context::EditorScenarioSelector::GetIndex());
+		auto scenario = aspirant::game::ScenarioDescriptorManager::Get(aspirant::context::editor::Scenarios::GetIndex());
 		UpdateBriefText(scenario);
 		UpdateIdText(scenario);
 		UpdateIndexText(scenario);

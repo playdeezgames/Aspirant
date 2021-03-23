@@ -125,7 +125,7 @@
     <ClCompile Include="StartEditorStateHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="EditorScenarioSelector.cpp">
+    <ClCompile Include="Aspirant.Context.Editor.Scenarios.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Aspirant.State.Editor.Scenarios.cpp">
@@ -182,7 +182,7 @@
     <ClCompile Include="EditorRoomCellObjectsContext.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="EditorDescriptorSelectorContext.cpp">
+    <ClCompile Include="Aspirant.Context.Editor.PickDescriptor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Renderer.Editor.Common.cpp">
@@ -334,7 +334,7 @@
     <ClInclude Include="StartEditorStateHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="EditorScenarioSelector.h">
+    <ClInclude Include="Aspirant.Context.Editor.Scenarios.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Aspirant.State.Editor.Scenarios.h">
@@ -382,7 +382,7 @@
     <ClInclude Include="Aspirant.State.Editor.RoomCells.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="EditorDescriptorSelectorContext.h">
+    <ClInclude Include="Aspirant.Context.Editor.PickDescriptor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="EditorRoomCellObjectsContext.h">

@@ -8,7 +8,7 @@
 #include "ScenarioDescriptorManager.h"
 #include <sstream>
 #include "Data.JSON.h"
-#include "EditorScenarioSelector.h"
+#include "Aspirant.Context.Editor.Scenarios.h"
 namespace aspirant::editorui::StartEditorStateHandler
 {
 	const std::string START_EDITOR_NEW_COLOR_NAME = "StartEditor.Color.New";
@@ -47,7 +47,7 @@ namespace aspirant::editorui::StartEditorStateHandler
 			ss.str()
 		);
 		CreateScenarioFile(ss.str());
-		aspirant::editor::context::EditorScenarioSelector::SetIndex(aspirant::game::ScenarioDescriptorManager::Add(descriptor));
+		aspirant::context::editor::Scenarios::SetIndex(aspirant::game::ScenarioDescriptorManager::Add(descriptor));
 		aspirant::Application::SetUIState(aspirant::commonui::UIState::EDIT_SCENARIO);
 	}
 
