@@ -1,6 +1,6 @@
 #include "Aspirant.State.Options.h"
 #include "Aspirant.Application.h"
-#include "UIState.h"
+#include "Aspirant.UIState.h"
 #include <map>
 #include "MenuItemDescriptor.h"
 #include "Graphics.Layouts.h"
@@ -86,7 +86,7 @@ namespace aspirant::state::Options
 			aspirant::Options::Save();
 			break;
 		case OptionsItem::BACK:
-			aspirant::Application::SetUIState(aspirant::commonui::UIState::MAIN_MENU);
+			aspirant::Application::SetUIState(aspirant::UIState::MAIN_MENU);
 			break;
 		}
 	}
@@ -110,7 +110,7 @@ namespace aspirant::state::Options
 			IncreaseItem();
 			break;
 		case aspirant::Command::BACK:
-			aspirant::Application::SetUIState(aspirant::commonui::UIState::MAIN_MENU);
+			aspirant::Application::SetUIState(aspirant::UIState::MAIN_MENU);
 			break;
 		case aspirant::Command::GREEN:
 			ActivateItem();
@@ -152,9 +152,9 @@ namespace aspirant::state::Options
 
 	void Start()
 	{
-		aspirant::Application::SetCommandHandler(aspirant::commonui::UIState::OPTIONS, OnCommand);
-		aspirant::Application::SetRenderHandler(aspirant::commonui::UIState::OPTIONS, OnDraw);
-		aspirant::Application::SetUpdateHandler(aspirant::commonui::UIState::OPTIONS, OnUpdate);
+		aspirant::Application::SetCommandHandler(aspirant::UIState::OPTIONS, OnCommand);
+		aspirant::Application::SetRenderHandler(aspirant::UIState::OPTIONS, OnDraw);
+		aspirant::Application::SetUpdateHandler(aspirant::UIState::OPTIONS, OnUpdate);
 		items[OptionsItem::TOGGLE_MUTE]=
 			aspirant::commonui::MenuItemDescriptor<OptionsItem>
 			(

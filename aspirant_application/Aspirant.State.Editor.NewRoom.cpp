@@ -1,6 +1,6 @@
 #include "Aspirant.State.Editor.NewRoom.h"
 #include "Aspirant.Application.h"
-#include "UIState.h"
+#include "Aspirant.UIState.h"
 #include "Graphics.Layouts.h"
 #include "MenuItemDescriptor.h"
 #include <sstream>
@@ -47,10 +47,10 @@ namespace aspirant::state::editor::NewRoom
 		case NewRoomItem::CREATE:
 			CreateRoom();
 			aspirant::context::editor::RoomList::UpdateRoomList();
-			aspirant::Application::SetUIState(aspirant::commonui::UIState::EDIT_PICK_ROOM);
+			aspirant::Application::SetUIState(aspirant::UIState::EDIT_PICK_ROOM);
 			break;
 		case NewRoomItem::CANCEL:
-			aspirant::Application::SetUIState(aspirant::commonui::UIState::EDIT_SCENARIO);
+			aspirant::Application::SetUIState(aspirant::UIState::EDIT_SCENARIO);
 			break;
 		}
 	}
@@ -93,7 +93,7 @@ namespace aspirant::state::editor::NewRoom
 			}
 			else
 			{
-				aspirant::Application::SetUIState(aspirant::commonui::UIState::EDIT_SCENARIO);
+				aspirant::Application::SetUIState(aspirant::UIState::EDIT_SCENARIO);
 			}
 			break;
 		case aspirant::Command::UP:
@@ -145,10 +145,10 @@ namespace aspirant::state::editor::NewRoom
 
 	void Start()
 	{
-		aspirant::Application::SetCommandHandler(aspirant::commonui::UIState::EDIT_NEW_ROOM, OnCommand);
-		aspirant::Application::SetRenderHandler(aspirant::commonui::UIState::EDIT_NEW_ROOM, OnDraw);
-		aspirant::Application::SetUpdateHandler(aspirant::commonui::UIState::EDIT_NEW_ROOM, OnUpdate);
-		aspirant::Application::SetTextInputHandler(aspirant::commonui::UIState::EDIT_NEW_ROOM, OnTextInput);
+		aspirant::Application::SetCommandHandler(aspirant::UIState::EDIT_NEW_ROOM, OnCommand);
+		aspirant::Application::SetRenderHandler(aspirant::UIState::EDIT_NEW_ROOM, OnDraw);
+		aspirant::Application::SetUpdateHandler(aspirant::UIState::EDIT_NEW_ROOM, OnUpdate);
+		aspirant::Application::SetTextInputHandler(aspirant::UIState::EDIT_NEW_ROOM, OnTextInput);
 		items[NewRoomItem::NAME] = aspirant::commonui::MenuItemDescriptor<NewRoomItem>(COLOR_NAME_ROOM_NAME, NewRoomItem::CANCEL, NewRoomItem::COLUMNS);
 		items[NewRoomItem::COLUMNS] = aspirant::commonui::MenuItemDescriptor<NewRoomItem>(COLOR_NAME_COLUMNS, NewRoomItem::NAME, NewRoomItem::ROWS);
 		items[NewRoomItem::ROWS] = aspirant::commonui::MenuItemDescriptor<NewRoomItem>(COLOR_NAME_ROWS, NewRoomItem::COLUMNS, NewRoomItem::CREATE);

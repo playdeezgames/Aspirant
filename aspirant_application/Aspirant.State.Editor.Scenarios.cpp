@@ -1,6 +1,6 @@
 #include "Aspirant.State.Editor.Scenarios.h"
 #include "Aspirant.Application.h"
-#include "UIState.h"
+#include "Aspirant.UIState.h"
 #include "Graphics.Layouts.h"
 #include "ScenarioDescriptorManager.h"
 #include "Aspirant.Context.Editor.Scenarios.h"
@@ -21,7 +21,7 @@ namespace aspirant::state::editor::Scenarios
 		switch (command)
 		{
 		case aspirant::Command::BACK:
-			aspirant::Application::SetUIState(aspirant::commonui::UIState::START_EDITOR);
+			aspirant::Application::SetUIState(aspirant::UIState::START_EDITOR);
 			break;
 		case aspirant::Command::NEXT:
 		case aspirant::Command::RIGHT:
@@ -33,7 +33,7 @@ namespace aspirant::state::editor::Scenarios
 			break;
 		case aspirant::Command::GREEN:
 			aspirant::context::editor::Scenario::Load();
-			aspirant::Application::SetUIState(aspirant::commonui::UIState::EDIT_SCENARIO);
+			aspirant::Application::SetUIState(aspirant::UIState::EDIT_SCENARIO);
 			break;
 		}
 	}
@@ -108,8 +108,8 @@ namespace aspirant::state::editor::Scenarios
 
 	void Start()
 	{
-		aspirant::Application::SetCommandHandler(aspirant::commonui::UIState::EDIT_SCENARIO_SELECTOR, OnCommand);
-		aspirant::Application::SetRenderHandler(aspirant::commonui::UIState::EDIT_SCENARIO_SELECTOR, OnDraw);
-		aspirant::Application::SetUpdateHandler(aspirant::commonui::UIState::EDIT_SCENARIO_SELECTOR, OnUpdate);
+		aspirant::Application::SetCommandHandler(aspirant::UIState::EDIT_SCENARIO_SELECTOR, OnCommand);
+		aspirant::Application::SetRenderHandler(aspirant::UIState::EDIT_SCENARIO_SELECTOR, OnDraw);
+		aspirant::Application::SetUpdateHandler(aspirant::UIState::EDIT_SCENARIO_SELECTOR, OnUpdate);
 	}
 }

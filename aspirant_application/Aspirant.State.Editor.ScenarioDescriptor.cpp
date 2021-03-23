@@ -1,6 +1,6 @@
 #include "Aspirant.State.Editor.ScenarioDescriptor.h"
 #include "Aspirant.Application.h"
-#include "UIState.h"
+#include "Aspirant.UIState.h"
 #include "Graphics.Layouts.h"
 #include "MenuItemDescriptor.h"
 #include "Aspirant.Context.Editor.Scenarios.h"
@@ -30,7 +30,7 @@ namespace aspirant::state::editor::ScenarioDescriptor
 		switch (current)
 		{
 		case EditScenarioDescriptorItem::BACK:
-			aspirant::Application::SetUIState(aspirant::commonui::UIState::EDIT_SCENARIO);
+			aspirant::Application::SetUIState(aspirant::UIState::EDIT_SCENARIO);
 			break;
 		}
 	}
@@ -50,7 +50,7 @@ namespace aspirant::state::editor::ScenarioDescriptor
 				descriptor->SetBrief("");
 				break;
 			default:
-				aspirant::Application::SetUIState(aspirant::commonui::UIState::EDIT_SCENARIO);;
+				aspirant::Application::SetUIState(aspirant::UIState::EDIT_SCENARIO);;
 				break;
 			}
 			break;
@@ -99,10 +99,10 @@ namespace aspirant::state::editor::ScenarioDescriptor
 
 	void Start()
 	{
-		aspirant::Application::SetCommandHandler(aspirant::commonui::UIState::EDIT_SCENARIO_DESCRIPTOR, OnCommand);
-		aspirant::Application::SetRenderHandler(aspirant::commonui::UIState::EDIT_SCENARIO_DESCRIPTOR, OnDraw);
-		aspirant::Application::SetUpdateHandler(aspirant::commonui::UIState::EDIT_SCENARIO_DESCRIPTOR, OnUpdate);
-		aspirant::Application::SetTextInputHandler(aspirant::commonui::UIState::EDIT_SCENARIO_DESCRIPTOR, OnTextInput);
+		aspirant::Application::SetCommandHandler(aspirant::UIState::EDIT_SCENARIO_DESCRIPTOR, OnCommand);
+		aspirant::Application::SetRenderHandler(aspirant::UIState::EDIT_SCENARIO_DESCRIPTOR, OnDraw);
+		aspirant::Application::SetUpdateHandler(aspirant::UIState::EDIT_SCENARIO_DESCRIPTOR, OnUpdate);
+		aspirant::Application::SetTextInputHandler(aspirant::UIState::EDIT_SCENARIO_DESCRIPTOR, OnTextInput);
 		items[EditScenarioDescriptorItem::SCENARIO_NAME]= aspirant::commonui::MenuItemDescriptor<EditScenarioDescriptorItem>(COLOR_NAME_SCENARIO_NAME, EditScenarioDescriptorItem::BACK, EditScenarioDescriptorItem::BRIEF);
 		items[EditScenarioDescriptorItem::BRIEF]= aspirant::commonui::MenuItemDescriptor<EditScenarioDescriptorItem>(COLOR_NAME_BRIEF, EditScenarioDescriptorItem::SCENARIO_NAME, EditScenarioDescriptorItem::BACK);
 		items[EditScenarioDescriptorItem::BACK]= aspirant::commonui::MenuItemDescriptor<EditScenarioDescriptorItem>(COLOR_NAME_BACK, EditScenarioDescriptorItem::BRIEF, EditScenarioDescriptorItem::SCENARIO_NAME);

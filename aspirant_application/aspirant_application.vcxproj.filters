@@ -208,7 +208,7 @@
     <ClInclude Include="Data.JSON.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="UIState.h">
+    <ClInclude Include="Aspirant.UIState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Aspirant.Application.h">

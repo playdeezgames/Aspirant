@@ -1,6 +1,6 @@
 #include "Aspirant.State.MainMenu.h"
 #include "Aspirant.Application.h"
-#include "UIState.h"
+#include "Aspirant.UIState.h"
 #include "Graphics.Layouts.h"
 #include "MenuItemDescriptor.h"
 #include <map>
@@ -30,17 +30,17 @@ namespace aspirant::state::MainMenu
 		switch (current)
 		{
 		case MainMenuItem::START:
-			aspirant::Application::SetUIState(aspirant::commonui::UIState::START_GAME);
+			aspirant::Application::SetUIState(aspirant::UIState::START_GAME);
 			return;
 		case MainMenuItem::OPTIONS:
-			aspirant::Application::SetUIState(aspirant::commonui::UIState::OPTIONS);
+			aspirant::Application::SetUIState(aspirant::UIState::OPTIONS);
 			return;
 		case MainMenuItem::ABOUT:
 			SDL_SetClipboardText(::data::Strings::Get(ITCH_URL_STRING).c_str());
-			aspirant::Application::SetUIState(aspirant::commonui::UIState::ABOUT);
+			aspirant::Application::SetUIState(aspirant::UIState::ABOUT);
 			return;
 		case MainMenuItem::QUIT:
-			aspirant::Application::SetUIState(aspirant::commonui::UIState::CONFIRM_QUIT);
+			aspirant::Application::SetUIState(aspirant::UIState::CONFIRM_QUIT);
 			return;
 		}
 	}
@@ -59,7 +59,7 @@ namespace aspirant::state::MainMenu
 			ActivateItem();
 			break;
 		case aspirant::Command::BACK:
-			aspirant::Application::SetUIState(aspirant::commonui::UIState::CONFIRM_QUIT);
+			aspirant::Application::SetUIState(aspirant::UIState::CONFIRM_QUIT);
 			break;
 		}
 	}
@@ -79,9 +79,9 @@ namespace aspirant::state::MainMenu
 
 	void Start()
 	{
-		aspirant::Application::SetCommandHandler(aspirant::commonui::UIState::MAIN_MENU, OnCommand);
-		aspirant::Application::SetRenderHandler(aspirant::commonui::UIState::MAIN_MENU, OnDraw);
-		aspirant::Application::SetUpdateHandler(aspirant::commonui::UIState::MAIN_MENU, OnUpdate);
+		aspirant::Application::SetCommandHandler(aspirant::UIState::MAIN_MENU, OnCommand);
+		aspirant::Application::SetRenderHandler(aspirant::UIState::MAIN_MENU, OnDraw);
+		aspirant::Application::SetUpdateHandler(aspirant::UIState::MAIN_MENU, OnUpdate);
 		items[MainMenuItem::START] = aspirant::commonui::MenuItemDescriptor<MainMenuItem>
 		(
 			MENU_ITEM_START_COLOR_NAME,

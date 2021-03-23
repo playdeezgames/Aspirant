@@ -1,6 +1,6 @@
 #include "Aspirant.State.Editor.RoomCells.h"
 #include "Aspirant.Application.h"
-#include "UIState.h"
+#include "Aspirant.UIState.h"
 #include "Graphics.Layouts.h"
 #include "Renderer.Editor.Room.h"
 #include "Renderer.Editor.PickDescriptor.h"
@@ -59,7 +59,7 @@ namespace aspirant::state::editor::RoomCells
 		{
 		case aspirant::Command::BACK:
 			aspirant::context::editor::Scenario::Save();
-			aspirant::Application::SetUIState(aspirant::commonui::UIState::EDIT_PICK_ROOM);
+			aspirant::Application::SetUIState(aspirant::UIState::EDIT_PICK_ROOM);
 			break;
 		case aspirant::Command::UP:
 			MoveCursor({ 0,-1 });
@@ -80,7 +80,7 @@ namespace aspirant::state::editor::RoomCells
 			RemoveObject();
 			break;
 		case aspirant::Command::NEXT:
-			aspirant::Application::SetUIState(aspirant::commonui::UIState::EDIT_DESCRIPTOR_SELECTOR);
+			aspirant::Application::SetUIState(aspirant::UIState::EDIT_DESCRIPTOR_SELECTOR);
 			break;
 		}
 	}
@@ -104,8 +104,8 @@ namespace aspirant::state::editor::RoomCells
 
 	void Start()
 	{
-		aspirant::Application::SetCommandHandler(aspirant::commonui::UIState::EDIT_NAVIGATE_ROOM, OnCommand);
-		aspirant::Application::SetRenderHandler(aspirant::commonui::UIState::EDIT_NAVIGATE_ROOM, OnDraw);
-		aspirant::Application::SetUpdateHandler(aspirant::commonui::UIState::EDIT_NAVIGATE_ROOM, OnUpdate);
+		aspirant::Application::SetCommandHandler(aspirant::UIState::EDIT_NAVIGATE_ROOM, OnCommand);
+		aspirant::Application::SetRenderHandler(aspirant::UIState::EDIT_NAVIGATE_ROOM, OnDraw);
+		aspirant::Application::SetUpdateHandler(aspirant::UIState::EDIT_NAVIGATE_ROOM, OnUpdate);
 	}
 }

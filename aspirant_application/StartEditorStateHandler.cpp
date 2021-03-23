@@ -1,6 +1,6 @@
 #include "StartEditorStateHandler.h"
 #include "Aspirant.Application.h"
-#include "UIState.h"
+#include "Aspirant.UIState.h"
 #include "Graphics.Layouts.h"
 #include "MenuItemDescriptor.h"
 #include <map>
@@ -48,7 +48,7 @@ namespace aspirant::editorui::StartEditorStateHandler
 		);
 		CreateScenarioFile(ss.str());
 		aspirant::context::editor::Scenarios::SetIndex(aspirant::game::ScenarioDescriptorManager::Add(descriptor));
-		aspirant::Application::SetUIState(aspirant::commonui::UIState::EDIT_SCENARIO);
+		aspirant::Application::SetUIState(aspirant::UIState::EDIT_SCENARIO);
 	}
 
 	static void ActivateItem()
@@ -56,14 +56,14 @@ namespace aspirant::editorui::StartEditorStateHandler
 		switch (current)
 		{
 		case StartEditorItem::BACK:
-			aspirant::Application::SetUIState(aspirant::commonui::UIState::START_GAME);
+			aspirant::Application::SetUIState(aspirant::UIState::START_GAME);
 			break;
 		case StartEditorItem::NEW:
 			CreateNewScenario();
 			break;
 		case StartEditorItem::OPEN:
 			//TODO: what to do when there are no scenarios to open?
-			aspirant::Application::SetUIState(aspirant::commonui::UIState::EDIT_SCENARIO_SELECTOR);
+			aspirant::Application::SetUIState(aspirant::UIState::EDIT_SCENARIO_SELECTOR);
 			break;
 		}
 	}
@@ -79,7 +79,7 @@ namespace aspirant::editorui::StartEditorStateHandler
 			current = items[current].GetNextMenuItem();
 			break;
 		case aspirant::Command::BACK:
-			aspirant::Application::SetUIState(aspirant::commonui::UIState::START_GAME);
+			aspirant::Application::SetUIState(aspirant::UIState::START_GAME);
 			break;
 		case aspirant::Command::GREEN:
 			ActivateItem();
@@ -102,9 +102,9 @@ namespace aspirant::editorui::StartEditorStateHandler
 
 	void Start()
 	{
-		aspirant::Application::SetCommandHandler(aspirant::commonui::UIState::START_EDITOR, OnCommand);
-		aspirant::Application::SetRenderHandler(aspirant::commonui::UIState::START_EDITOR, OnDraw);
-		aspirant::Application::SetUpdateHandler(aspirant::commonui::UIState::START_EDITOR, OnUpdate);
+		aspirant::Application::SetCommandHandler(aspirant::UIState::START_EDITOR, OnCommand);
+		aspirant::Application::SetRenderHandler(aspirant::UIState::START_EDITOR, OnDraw);
+		aspirant::Application::SetUpdateHandler(aspirant::UIState::START_EDITOR, OnUpdate);
 		items[StartEditorItem::NEW] = 
 			aspirant::commonui::MenuItemDescriptor<StartEditorItem>(START_EDITOR_NEW_COLOR_NAME, StartEditorItem::BACK, StartEditorItem::OPEN);
 		items[StartEditorItem::OPEN]=

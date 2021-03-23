@@ -275,7 +275,7 @@
     <ClInclude Include="Game.Descriptor.Terrain.h" />
     <ClInclude Include="Game.Object.Terrain.h" />
     <ClInclude Include="Graphics.Textures.h" />
-    <ClInclude Include="UIState.h" />
+    <ClInclude Include="Aspirant.UIState.h" />
     <ClInclude Include="Common.Utility.h" />
     <ClInclude Include="Common.XY.h" />
   </ItemGroup>

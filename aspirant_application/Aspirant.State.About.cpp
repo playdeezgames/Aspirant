@@ -1,6 +1,6 @@
 #include "Aspirant.State.About.h"
 #include "Aspirant.Application.h"
-#include "UIState.h"
+#include "Aspirant.UIState.h"
 #include "Graphics.Layouts.h"
 namespace aspirant::state::About
 {
@@ -11,7 +11,7 @@ namespace aspirant::state::About
 		switch (command)
 		{
 		case aspirant::Command::BACK:
-			aspirant::Application::SetUIState(aspirant::commonui::UIState::MAIN_MENU);
+			aspirant::Application::SetUIState(aspirant::UIState::MAIN_MENU);
 			break;
 		}
 	}
@@ -23,7 +23,7 @@ namespace aspirant::state::About
 
 	void Start()
 	{
-		aspirant::Application::SetCommandHandler(aspirant::commonui::UIState::ABOUT, OnCommand);
-		aspirant::Application::SetRenderHandler(aspirant::commonui::UIState::ABOUT, OnDraw);
+		aspirant::Application::SetCommandHandler(aspirant::UIState::ABOUT, OnCommand);
+		aspirant::Application::SetRenderHandler(aspirant::UIState::ABOUT, OnDraw);
 	}
 }
