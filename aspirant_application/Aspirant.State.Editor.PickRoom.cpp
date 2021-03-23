@@ -1,7 +1,7 @@
 #include "Aspirant.State.Editor.PickRoom.h"
 #include "Aspirant.Application.h"
 #include "UIState.h"
-#include "LayoutManager.h"
+#include "Graphics.Layouts.h"
 #include "Aspirant.Context.Editor.RoomList.h"
 #include "Data.Strings.h"
 #include "Aspirant.Context.Editor.RoomView.h"
@@ -34,7 +34,7 @@ namespace aspirant::state::editor::PickRoom
 
 	static void OnDraw(SDL_Renderer* renderer)
 	{
-		tggd::graphics::LayoutManager::Get(LAYOUT_NAME).Draw(renderer);
+		graphics::Layouts::Get(LAYOUT_NAME).Draw(renderer);
 	}
 
 	static void OnUpdate(const Uint32& ticks)

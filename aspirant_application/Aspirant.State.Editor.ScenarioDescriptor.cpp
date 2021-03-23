@@ -1,7 +1,7 @@
 #include "Aspirant.State.Editor.ScenarioDescriptor.h"
 #include "Aspirant.Application.h"
 #include "UIState.h"
-#include "LayoutManager.h"
+#include "Graphics.Layouts.h"
 #include "MenuItemDescriptor.h"
 #include "Aspirant.Context.Editor.Scenarios.h"
 #include "Data.Strings.h"
@@ -68,7 +68,7 @@ namespace aspirant::state::editor::ScenarioDescriptor
 
 	static void OnDraw(SDL_Renderer* renderer)
 	{
-		tggd::graphics::LayoutManager::Get(LAYOUT_NAME).Draw(renderer);
+		graphics::Layouts::Get(LAYOUT_NAME).Draw(renderer);
 	}
 
 	static void OnUpdate(const Uint32& ticks)

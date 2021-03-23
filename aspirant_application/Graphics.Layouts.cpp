@@ -1,12 +1,12 @@
-#include "LayoutManager.h"
+#include "Graphics.Layouts.h"
 #include "Data.JSON.h"
 #include "Common.Finishers.h"
 #include "FinishUtility.h"
-namespace tggd::graphics::LayoutManager
+namespace graphics::Layouts
 {
-	Layout* ParseDescriptor(const std::string&, const nlohmann::json& properties)
+	graphics::Layout* ParseDescriptor(const std::string&, const nlohmann::json& properties)
 	{
-		return new Layout(data::JSON::Load(properties));
+		return new graphics::Layout(data::JSON::Load(properties));
 	}
 
 	static std::string ParseKey(const nlohmann::json& key)
@@ -14,7 +14,7 @@ namespace tggd::graphics::LayoutManager
 		return key;
 	}
 
-	static std::map<std::string, Layout*> descriptors;
+	static std::map<std::string, graphics::Layout*> descriptors;
 	static std::vector<std::string> identifiers;
 
 	const std::vector<std::string>& GetIdentifiers()
@@ -40,7 +40,7 @@ namespace tggd::graphics::LayoutManager
 		}
 	}
 
-	const Layout& Get(const std::string& key)
+	const graphics::Layout& Get(const std::string& key)
 	{
 		return *descriptors[key];
 	}

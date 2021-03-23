@@ -1,9 +1,9 @@
-#include "Layout.h"
+#include "Graphics.Layout.h"
 #include "Common.Utility.h"
 #include "StaticImage.h"
 #include "StaticText.h"
 #include "FinishUtility.h"
-namespace tggd::graphics
+namespace graphics
 {
 	const std::string PROPERTY_TYPE = "type";
 	const std::string TYPE_STATIC_IMAGE = "StaticImage";
@@ -22,14 +22,14 @@ namespace tggd::graphics
 			{
 				drawnItems.push_back
 				(
-					new StaticImage(itemDescriptor)
+					new tggd::graphics::StaticImage(itemDescriptor)
 				);
 			}
 			else if (itemType == TYPE_STATIC_TEXT)
 			{
 				drawnItems.push_back
 				(
-					new StaticText(itemDescriptor)
+					new tggd::graphics::StaticText(itemDescriptor)
 				);
 			}
 		}

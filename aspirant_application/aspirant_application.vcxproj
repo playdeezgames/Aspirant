@@ -181,8 +181,8 @@
     <ClCompile Include="Data.Ints.cpp" />
     <ClCompile Include="Data.Int.cpp" />
     <ClCompile Include="Data.JSON.cpp" />
-    <ClCompile Include="Layout.cpp" />
-    <ClCompile Include="LayoutManager.cpp" />
+    <ClCompile Include="Graphics.Layout.cpp" />
+    <ClCompile Include="Graphics.Layouts.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Aspirant.State.MainMenu.cpp" />
     <ClCompile Include="Aspirant.Options.cpp" />
@@ -246,8 +246,8 @@
     <ClInclude Include="Data.Int.h" />
     <ClInclude Include="json.hpp" />
     <ClInclude Include="Data.JSON.h" />
-    <ClInclude Include="Layout.h" />
-    <ClInclude Include="LayoutManager.h" />
+    <ClInclude Include="Graphics.Layout.h" />
+    <ClInclude Include="Graphics.Layouts.h" />
     <ClInclude Include="Aspirant.State.MainMenu.h" />
     <ClInclude Include="MenuItemDescriptor.h" />
     <ClInclude Include="Aspirant.Options.h" />

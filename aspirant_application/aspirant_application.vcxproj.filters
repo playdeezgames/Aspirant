@@ -74,10 +74,10 @@
     <ClCompile Include="StaticText.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Layout.cpp">
+    <ClCompile Include="Graphics.Layout.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="LayoutManager.cpp">
+    <ClCompile Include="Graphics.Layouts.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SoundManager.cpp">
@@ -271,10 +271,10 @@
     <ClInclude Include="Data.Bool.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Layout.h">
+    <ClInclude Include="Graphics.Layout.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="LayoutManager.h">
+    <ClInclude Include="Graphics.Layouts.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SoundManager.h">

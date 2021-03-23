@@ -6,7 +6,7 @@
 #include "SpriteManager.h"
 #include "Graphics.Colors.h"
 #include "Graphics.Fonts.h"
-namespace tggd::graphics
+namespace graphics
 {
 	class Layout
 		: public ::graphics::Drawn

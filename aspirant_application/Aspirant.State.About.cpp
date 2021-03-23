@@ -1,7 +1,7 @@
 #include "Aspirant.State.About.h"
 #include "Aspirant.Application.h"
 #include "UIState.h"
-#include "LayoutManager.h"
+#include "Graphics.Layouts.h"
 namespace aspirant::state::About
 {
 	const std::string LAYOUT_NAME = "About";
@@ -18,7 +18,7 @@ namespace aspirant::state::About
 
 	static void OnDraw(SDL_Renderer* renderer)
 	{
-		tggd::graphics::LayoutManager::Get(LAYOUT_NAME).Draw(renderer);
+		graphics::Layouts::Get(LAYOUT_NAME).Draw(renderer);
 	}
 
 	void Start()

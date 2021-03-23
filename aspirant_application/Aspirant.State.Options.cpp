@@ -3,7 +3,7 @@
 #include "UIState.h"
 #include <map>
 #include "MenuItemDescriptor.h"
-#include "LayoutManager.h"
+#include "Graphics.Layouts.h"
 #include "Data.Strings.h"
 #include "SoundManager.h"
 #include "Aspirant.Options.h"
@@ -120,7 +120,7 @@ namespace aspirant::state::Options
 
 	static void OnDraw(SDL_Renderer* renderer)
 	{
-		tggd::graphics::LayoutManager::Get(LAYOUT_NAME).Draw(renderer);
+		graphics::Layouts::Get(LAYOUT_NAME).Draw(renderer);
 	}
 
 	static void OnUpdate(const Uint32& ticks)

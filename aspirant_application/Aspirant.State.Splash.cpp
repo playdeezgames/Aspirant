@@ -1,7 +1,7 @@
 #include "Aspirant.State.Splash.h"
 #include "Aspirant.Application.h"
 #include "UIState.h"
-#include "LayoutManager.h"
+#include "Graphics.Layouts.h"
 namespace aspirant::state::Splash
 {
 	const size_t TICKS_TOTAL = 3000;
@@ -15,7 +15,7 @@ namespace aspirant::state::Splash
 
 	static void OnDraw(SDL_Renderer* renderer)
 	{
-		tggd::graphics::LayoutManager::Get(LAYOUT_NAME).Draw(renderer);
+		graphics::Layouts::Get(LAYOUT_NAME).Draw(renderer);
 	}
 
 	static void OnUpdate(const Uint32& ticks)

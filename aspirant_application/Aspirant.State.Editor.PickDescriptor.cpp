@@ -1,7 +1,7 @@
 #include "Aspirant.State.Editor.PickDescriptor.h"
 #include "Aspirant.Application.h"
 #include "UIState.h"
-#include "LayoutManager.h"
+#include "Graphics.Layouts.h"
 #include "RoomRenderer.h"
 #include "RoomCellObjectsRenderer.h"
 #include "Renderer.Editor.PickDescriptor.h"
@@ -48,7 +48,7 @@ namespace aspirant::state::editor::PickDescriptor
 
 	static void OnDraw(SDL_Renderer* renderer)
 	{
-		tggd::graphics::LayoutManager::Get(LAYOUT_NAME).Draw(renderer);
+		graphics::Layouts::Get(LAYOUT_NAME).Draw(renderer);
 		aspirant::editor::controls::RoomRenderer::Draw(renderer);
 		aspirant::editor::controls::RoomCellObjectsRenderer::Draw(renderer);
 		renderer::editor::PickDescriptor::Draw(renderer);

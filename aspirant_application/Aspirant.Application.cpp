@@ -12,7 +12,7 @@
 #include "Graphics.Textures.h"
 #include "SpriteManager.h"
 #include "Graphics.Fonts.h"
-#include "LayoutManager.h"
+#include "Graphics.Layouts.h"
 #include "SoundManager.h"
 #include "Aspirant.Options.h"
 #include "Game.Descriptors.h"
@@ -167,7 +167,7 @@ namespace common::Application
 		::graphics::Textures::Start(renderer, aspirant::ConfigurationConstants::TEXTURE);
 		tggd::graphics::SpriteManager::Start(aspirant::ConfigurationConstants::SPRITE);
 		graphics::Fonts::Start(aspirant::ConfigurationConstants::FONTS);
-		tggd::graphics::LayoutManager::Start(aspirant::ConfigurationConstants::LAYOUTS);
+		graphics::Layouts::Start(aspirant::ConfigurationConstants::LAYOUTS);
 		tggd::common::SoundManager::Start(aspirant::ConfigurationConstants::SFX, aspirant::ConfigurationConstants::MUX);
 		aspirant::Options::Start(aspirant::ConfigurationConstants::OPTIONS);
 		::game::Descriptors::Start(aspirant::ConfigurationConstants::DESCRIPTORS);
