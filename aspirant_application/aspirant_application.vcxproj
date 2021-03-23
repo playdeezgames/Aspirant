@@ -154,7 +154,7 @@
     <ClCompile Include="Graphics.Colors.cpp" />
     <ClCompile Include="Aspirant.State.ConfirmQuit.cpp" />
     <ClCompile Include="Game.Descriptor.Creature.cpp" />
-    <ClCompile Include="CreatureInstance.cpp" />
+    <ClCompile Include="Game.Object.Creature.cpp" />
     <ClCompile Include="Game.Descriptors.cpp" />
     <ClCompile Include="DescriptorSelectorRenderer.cpp" />
     <ClCompile Include="EditDescriptorSelectorStateHandler.cpp" />
@@ -204,7 +204,7 @@
     <ClCompile Include="Data.Strings.cpp" />
     <ClCompile Include="Data.String.cpp" />
     <ClCompile Include="Game.Descriptor.Terrain.cpp" />
-    <ClCompile Include="TerrainInstance.cpp" />
+    <ClCompile Include="Game.Object.Terrain.cpp" />
     <ClCompile Include="Graphics.Textures.cpp" />
     <ClCompile Include="Utility.cpp" />
   </ItemGroup>
@@ -218,7 +218,7 @@
     <ClInclude Include="Game.Descriptor.Common.h" />
     <ClInclude Include="Aspirant.State.ConfirmQuit.h" />
     <ClInclude Include="Game.Descriptor.Creature.h" />
-    <ClInclude Include="CreatureInstance.h" />
+    <ClInclude Include="Game.Object.Creature.h" />
     <ClInclude Include="Game.Descriptors.h" />
     <ClInclude Include="DescriptorSelectorRenderer.h" />
     <ClInclude Include="Graphics.Drawn.h" />
@@ -256,7 +256,7 @@
     <ClInclude Include="Scenario.h" />
     <ClInclude Include="ScenarioDescriptor.h" />
     <ClInclude Include="ScenarioDescriptorManager.h" />
-    <ClInclude Include="ScenarioObjectInstance.h" />
+    <ClInclude Include="Game.Object.Common.h" />
     <ClInclude Include="ScenarioRoom.h" />
     <ClInclude Include="ScenarioRoomCell.h" />
     <ClInclude Include="SoundManager.h" />
@@ -271,7 +271,7 @@
     <ClInclude Include="Data.Strings.h" />
     <ClInclude Include="Data.String.h" />
     <ClInclude Include="Game.Descriptor.Terrain.h" />
-    <ClInclude Include="TerrainInstance.h" />
+    <ClInclude Include="Game.Object.Terrain.h" />
     <ClInclude Include="Graphics.Textures.h" />
     <ClInclude Include="UIState.h" />
     <ClInclude Include="Utility.h" />

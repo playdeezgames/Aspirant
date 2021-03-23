@@ -1,5 +1,5 @@
 #include "Game.Descriptor.Terrain.h"
-#include "TerrainInstance.h"
+#include "Game.Object.Terrain.h"
 namespace game::descriptor
 {
 	Terrain::Terrain(const std::string& name, const nlohmann::json& properties)
@@ -8,9 +8,8 @@ namespace game::descriptor
 
 	}
 
-	aspirant::game::ScenarioObjectInstance* Terrain::CreateObject() const
+	game::object::Common* Terrain::CreateObject() const
 	{
-		return new aspirant::game::TerrainInstance(*this);
+		return new ::game::object::Terrain(*this);
 	}
-
 }

@@ -1,5 +1,5 @@
 #pragma once
-#include "ScenarioObjectInstance.h"
+#include "Game.Object.Common.h"
 #include "Game.Descriptors.h"
 #include "FinishUtility.h"
 namespace aspirant::game
@@ -8,7 +8,7 @@ namespace aspirant::game
 	{
 	private:
 		const std::string PROPERTY_OBJECTS = "objects";
-		std::vector<ScenarioObjectInstance*> objects;
+		std::vector<::game::object::Common*> objects;
 		size_t column;
 		size_t row;
 		void ClearObjects()
@@ -20,9 +20,9 @@ namespace aspirant::game
 			}
 		}
 	protected:
-		nlohmann::json ObjectToJSON(const ScenarioObjectInstance*) const;
-		ScenarioObjectInstance* ObjectFromJSON(const nlohmann::json&);
-		bool CanCover(const ScenarioObjectInstance*, const ScenarioObjectInstance*) const;
+		nlohmann::json ObjectToJSON(const ::game::object::Common*) const;
+		::game::object::Common* ObjectFromJSON(const nlohmann::json&);
+		bool CanCover(const ::game::object::Common*, const ::game::object::Common*) const;
 	public:
 		ScenarioRoomCell(size_t column, size_t row)
 			: objects()
@@ -42,7 +42,7 @@ namespace aspirant::game
 		{
 			ClearObjects();
 		}
-		bool AddObject(ScenarioObjectInstance* newObject)
+		bool AddObject(::game::object::Common* newObject)
 		{
 			if (newObject && CanCover(newObject, GetObject()))
 			{
@@ -51,17 +51,17 @@ namespace aspirant::game
 			}
 			return false;
 		}
-		const std::vector<ScenarioObjectInstance*>& GetObjects() const
+		const std::vector<::game::object::Common*>& GetObjects() const
 		{
 			return objects;
 		}
-		const ScenarioObjectInstance* GetObject() const
+		const ::game::object::Common* GetObject() const
 		{
 			return
 				(objects.empty()) ? (nullptr) :
 				(objects.back());
 		}
-		ScenarioObjectInstance* GetObject()
+		::game::object::Common* GetObject()
 		{
 			return
 				(objects.empty()) ? (nullptr) :
@@ -70,7 +70,7 @@ namespace aspirant::game
 		bool HasObjects() const { return !objects.empty(); }
 		size_t GetColumn() const { return column; }
 		size_t GetRow() const { return row; }
-		ScenarioObjectInstance* RemoveObject()
+		::game::object::Common* RemoveObject()
 		{
 			if (!objects.empty())
 			{

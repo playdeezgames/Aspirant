@@ -1,6 +1,6 @@
 #pragma once
 #include "Game.Descriptor.Common.h"
-#include "ScenarioObjectInstance.h"
+#include "Game.Object.Common.h"
 namespace aspirant::editor::context::EditorDescriptorSelectorContext
 {
 	size_t GetIndex();

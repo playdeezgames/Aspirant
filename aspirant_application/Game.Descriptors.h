@@ -1,7 +1,6 @@
 #pragma once
 #include <string>
 #include "Game.Descriptor.Common.h"
-#include "ScenarioObjectInstance.h"
 #include <vector>
 namespace game::Descriptors
 {

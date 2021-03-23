@@ -6,6 +6,6 @@ namespace game::descriptor
 	{
 	public:
 		Terrain(const std::string&, const nlohmann::json&);
-		aspirant::game::ScenarioObjectInstance* CreateObject() const;
+		game::object::Common* CreateObject() const;
 	};
 }

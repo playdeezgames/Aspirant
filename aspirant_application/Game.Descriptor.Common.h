@@ -1,9 +1,9 @@
 #pragma once
 #include <string>
 #include "json.hpp"
-namespace aspirant::game
+namespace game::object
 {
-	class ScenarioObjectInstance;
+	class Common;
 }
 namespace game::descriptor
 {
@@ -30,7 +30,7 @@ namespace game::descriptor
 		{
 			return name;
 		}
-		virtual aspirant::game::ScenarioObjectInstance* CreateObject() const = 0;
+		virtual game::object::Common* CreateObject() const = 0;
 		const std::string& GetSprite() const
 		{
 			return sprite;

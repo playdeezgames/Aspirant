@@ -1,5 +1,5 @@
 #include "Game.Descriptor.Creature.h"
-#include "CreatureInstance.h"
+#include "Game.Object.Creature.h"
 namespace game::descriptor
 {
 	Creature::Creature(const std::string& name, const nlohmann::json& properties)
@@ -8,9 +8,9 @@ namespace game::descriptor
 
 	}
 
-	aspirant::game::ScenarioObjectInstance* Creature::CreateObject() const
+	game::object::Common* Creature::CreateObject() const
 	{
-		return new aspirant::game::CreatureInstance(*this);
+		return new game::object::Creature(*this);
 	}
 
 }

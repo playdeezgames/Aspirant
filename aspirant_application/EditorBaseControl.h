@@ -1,5 +1,5 @@
 #pragma once
-#include "ScenarioObjectInstance.h"
+#include "Game.Object.Common.h"
 #include "XY.h"
 #include <SDL.h>
 namespace aspirant::editor::controls::EditorBaseControl
@@ -14,6 +14,6 @@ namespace aspirant::editor::controls::EditorBaseControl
 	(
 		SDL_Renderer* renderer,
 		tggd::common::XY<int> position,
-		const aspirant::game::ScenarioObjectInstance* obj
+		const ::game::object::Common* obj
 	);
 }

@@ -1,7 +1,7 @@
 #include "EditorBaseControl.h"
 #include "SpriteManager.h"
 #include "FinishManager.h"
-#include "ScenarioObjectInstance.h"
+#include "Game.Object.Common.h"
 #include "FinishUtility.h"
 #include "Game.Descriptor.Creature.h"
 #include "Game.Descriptor.Terrain.h"
@@ -32,7 +32,7 @@ namespace aspirant::editor::controls::EditorBaseControl
 	(
 		SDL_Renderer* renderer,
 		tggd::common::XY<int> position,
-		const aspirant::game::ScenarioObjectInstance* obj
+		const game::object::Common* obj
 	)
 	{
 		if (obj)
