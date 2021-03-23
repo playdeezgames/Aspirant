@@ -2,7 +2,7 @@
 #include "Common.XY.h"
 #include "EditorRoomViewContext.h"
 #include "SpriteManager.h"
-#include "EditorRoomListContext.h"
+#include "Aspirant.Context.Editor.RoomList.h"
 #include "Renderer.Editor.Common.h"
 namespace aspirant::editor::controls::RoomRenderer
 {
@@ -68,7 +68,7 @@ namespace aspirant::editor::controls::RoomRenderer
 
 	void Draw(SDL_Renderer* renderer)
 	{
-		DrawRoom(renderer, aspirant::editor::context::EditorRoomListContext::GetRoom());
+		DrawRoom(renderer, aspirant::context::editor::RoomList::GetRoom());
 		DrawMapCursor(renderer);
 	}
 }

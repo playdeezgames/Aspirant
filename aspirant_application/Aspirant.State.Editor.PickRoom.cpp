@@ -2,7 +2,7 @@
 #include "Aspirant.Application.h"
 #include "UIState.h"
 #include "LayoutManager.h"
-#include "EditorRoomListContext.h"
+#include "Aspirant.Context.Editor.RoomList.h"
 #include "Data.Strings.h"
 #include "EditorRoomViewContext.h"
 namespace aspirant::state::editor::PickRoom
@@ -19,11 +19,11 @@ namespace aspirant::state::editor::PickRoom
 			break;
 		case aspirant::Command::RIGHT:
 		case aspirant::Command::NEXT:
-			aspirant::editor::context::EditorRoomListContext::NextRoom();
+			aspirant::context::editor::RoomList::NextRoom();
 			break;
 		case aspirant::Command::LEFT:
 		case aspirant::Command::PREVIOUS:
-			aspirant::editor::context::EditorRoomListContext::PreviousRoom();
+			aspirant::context::editor::RoomList::PreviousRoom();
 			break;
 		case aspirant::Command::GREEN:
 			aspirant::editor::context::EditorRoomViewContext::SetCursor({ 0,0 });
@@ -39,9 +39,9 @@ namespace aspirant::state::editor::PickRoom
 
 	static void OnUpdate(const Uint32& ticks)
 	{
-		if (aspirant::editor::context::EditorRoomListContext::GetRoomCount() > 0)
+		if (aspirant::context::editor::RoomList::GetRoomCount() > 0)
 		{
-			auto& roomName = aspirant::editor::context::EditorRoomListContext::GetRoomList()[aspirant::editor::context::EditorRoomListContext::GetRoomIndex()];
+			auto& roomName = aspirant::context::editor::RoomList::GetRoomList()[aspirant::context::editor::RoomList::GetRoomIndex()];
 			::data::Strings::Set(TEXT_NAME_STRING_ROOM_NAME, roomName);
 		}
 		else

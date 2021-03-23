@@ -7,7 +7,7 @@
 #include "Data.Strings.h"
 #include "Aspirant.Context.Editor.Scenario.h"
 #include "Aspirant.Context.Editor.NewRoom.h"
-#include "EditorRoomListContext.h"
+#include "Aspirant.Context.Editor.RoomList.h"
 namespace aspirant::state::editor::NewRoom
 {
 	const std::string LAYOUT_NAME = "EditNewRoom";
@@ -35,8 +35,8 @@ namespace aspirant::state::editor::NewRoom
 
 	static void CreateRoom()
 	{
-		aspirant::context::editor::Scenario::GetScenario().AddRoom(aspirant::context::editor::NewRoom::GetNewRoomName(), aspirant::context::editor::NewRoom::GetNewRoomColumns(), aspirant::context::editor::NewRoom::GetNewRoomRows());
-		aspirant::context::editor::Scenario::SaveScenario();
+		aspirant::context::editor::Scenario::Get().AddRoom(aspirant::context::editor::NewRoom::GetNewRoomName(), aspirant::context::editor::NewRoom::GetNewRoomColumns(), aspirant::context::editor::NewRoom::GetNewRoomRows());
+		aspirant::context::editor::Scenario::Save();
 	}
 
 
@@ -46,7 +46,7 @@ namespace aspirant::state::editor::NewRoom
 		{
 		case NewRoomItem::CREATE:
 			CreateRoom();
-			aspirant::editor::context::EditorRoomListContext::UpdateRoomList();
+			aspirant::context::editor::RoomList::UpdateRoomList();
 			aspirant::Application::SetUIState(aspirant::commonui::UIState::EDIT_PICK_ROOM);
 			break;
 		case NewRoomItem::CANCEL:

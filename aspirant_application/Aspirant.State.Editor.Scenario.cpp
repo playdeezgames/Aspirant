@@ -8,7 +8,7 @@
 #include <sstream>
 #include "MenuItemDescriptor.h"
 #include "ScenarioDescriptorManager.h"
-#include "EditorRoomListContext.h"
+#include "Aspirant.Context.Editor.RoomList.h"
 #include "Aspirant.Context.Editor.NewRoom.h"
 namespace aspirant::state::editor::Scenario
 {
@@ -40,7 +40,7 @@ namespace aspirant::state::editor::Scenario
 			aspirant::Application::SetUIState(aspirant::commonui::UIState::EDIT_SCENARIO_DESCRIPTOR);
 			break;
 		case EditScenarioItem::OPEN_ROOM:
-			aspirant::editor::context::EditorRoomListContext::UpdateRoomList();
+			aspirant::context::editor::RoomList::UpdateRoomList();
 			aspirant::Application::SetUIState(aspirant::commonui::UIState::EDIT_PICK_ROOM);
 			break;
 		case EditScenarioItem::NEW_ROOM:

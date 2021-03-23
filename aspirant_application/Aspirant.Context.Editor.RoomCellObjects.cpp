@@ -1,6 +1,6 @@
 #pragma once
 #include "Aspirant.Context.Editor.RoomCellObjects.h"
-#include "EditorRoomListContext.h"
+#include "Aspirant.Context.Editor.RoomList.h"
 #include "EditorRoomViewContext.h"
 namespace aspirant::context::editor::RoomCellObjects
 {
@@ -13,9 +13,9 @@ namespace aspirant::context::editor::RoomCellObjects
 
 	aspirant::game::ScenarioRoomCell* GetCell()
 	{
-		if (::aspirant::editor::context::EditorRoomListContext::GetRoom())
+		if (::aspirant::context::editor::RoomList::GetRoom())
 		{
-			return ::aspirant::editor::context::EditorRoomListContext::GetRoom()->GetCell(::aspirant::editor::context::EditorRoomViewContext::GetCursor().GetX(), ::aspirant::editor::context::EditorRoomViewContext::GetCursor().GetY());
+			return ::aspirant::context::editor::RoomList::GetRoom()->GetCell(::aspirant::editor::context::EditorRoomViewContext::GetCursor().GetX(), ::aspirant::editor::context::EditorRoomViewContext::GetCursor().GetY());
 		}
 		return nullptr;
 	}

@@ -2,7 +2,7 @@
 #include <vector>
 #include <string>
 #include "Scenario.h"
-namespace aspirant::editor::context::EditorRoomListContext
+namespace aspirant::context::editor::RoomList
 {
 	void UpdateRoomList();
 	void SetRoomIndex(size_t);

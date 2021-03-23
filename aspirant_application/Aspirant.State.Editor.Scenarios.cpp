@@ -32,7 +32,7 @@ namespace aspirant::state::editor::Scenarios
 			aspirant::context::editor::Scenarios::Previous();
 			break;
 		case aspirant::Command::GREEN:
-			aspirant::context::editor::Scenario::LoadScenario();
+			aspirant::context::editor::Scenario::Load();
 			aspirant::Application::SetUIState(aspirant::commonui::UIState::EDIT_SCENARIO);
 			break;
 		}
