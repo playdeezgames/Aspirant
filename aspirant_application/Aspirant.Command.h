@@ -16,5 +16,4 @@ namespace aspirant
 		BACK,
 		START
 	};
-	typedef void (*CommandHandler)(const Command&);
 }

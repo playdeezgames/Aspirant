@@ -6,11 +6,14 @@
 namespace aspirant::Application
 {
 	void SetUIState(const aspirant::UIState&);
-	void SetCommandHandler(const aspirant::UIState&, aspirant::CommandHandler);
+
+	typedef void (*CommandHandler)(const aspirant::Command&);
 	typedef void (*TextInputHandler)(const std::string&);
-	void SetTextInputHandler(const aspirant::UIState&, TextInputHandler);
 	typedef void (*UpdateHandler)(const Uint32&);
-	void SetUpdateHandler(const aspirant::UIState&, UpdateHandler);
 	typedef void (*RenderHandler)(SDL_Renderer*);
+
+	void SetCommandHandler(const aspirant::UIState&, CommandHandler);
+	void SetTextInputHandler(const aspirant::UIState&, TextInputHandler);
+	void SetUpdateHandler(const aspirant::UIState&, UpdateHandler);
 	void SetRenderHandler(const aspirant::UIState&, RenderHandler);
 }

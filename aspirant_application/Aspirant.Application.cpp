@@ -62,7 +62,7 @@ namespace aspirant::Application
 		return uiState;
 	}
 
-	static std::map<aspirant::UIState, aspirant::CommandHandler> commandHandlers;
+	static std::map<aspirant::UIState, aspirant::Application::CommandHandler> commandHandlers;
 
 	static void HandleCommand(const aspirant::Command& command)
 	{
@@ -126,7 +126,7 @@ namespace aspirant::Application
 		}
 	}
 
-	void SetCommandHandler(const aspirant::UIState& state, aspirant::CommandHandler handler)
+	void SetCommandHandler(const aspirant::UIState& state, aspirant::Application::CommandHandler handler)
 	{
 		commandHandlers[state] = handler;
 	}
