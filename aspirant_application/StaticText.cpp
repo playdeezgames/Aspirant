@@ -1,6 +1,6 @@
 #include "StaticText.h"
 #include "Common.Utility.h"
-#include "FontManager.h"
+#include "Graphics.Fonts.h"
 namespace tggd::graphics
 {
 	StaticText::StaticText
@@ -80,8 +80,8 @@ namespace tggd::graphics
 	{
 		if (hasDropShadow)
 		{
-			FontManager::Get(fontName).WriteText(renderer, common::XY<int>(x + dropShadowX, y + dropShadowY), text, dropShadowColor, (HorizontalAlignment)(int)alignment);
+			::graphics::Fonts::Get(fontName).WriteText(renderer, common::XY<int>(x + dropShadowX, y + dropShadowY), text, dropShadowColor, (HorizontalAlignment)(int)alignment);
 		}
-		FontManager::Get(fontName).WriteText(renderer, common::XY<int>(x, y), text, color, (HorizontalAlignment)(int)alignment);
+		::graphics::Fonts::Get(fontName).WriteText(renderer, common::XY<int>(x, y), text, color, (HorizontalAlignment)(int)alignment);
 	}
 }

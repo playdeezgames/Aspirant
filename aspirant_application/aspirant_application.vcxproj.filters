@@ -56,7 +56,7 @@
     <ClCompile Include="SpriteFont.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FontManager.cpp">
+    <ClCompile Include="Graphics.Fonts.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="StaticImage.cpp">
@@ -247,7 +247,7 @@
     <ClInclude Include="SpriteFont.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FontManager.h">
+    <ClInclude Include="Graphics.Fonts.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FinishUtility.h">

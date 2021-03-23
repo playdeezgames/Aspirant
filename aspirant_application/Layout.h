@@ -5,7 +5,7 @@
 #include "json.hpp"
 #include "SpriteManager.h"
 #include "Graphics.Colors.h"
-#include "FontManager.h"
+#include "Graphics.Fonts.h"
 namespace tggd::graphics
 {
 	class Layout

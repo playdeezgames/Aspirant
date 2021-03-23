@@ -1,18 +1,18 @@
-#include "FontManager.h"
+#include "Graphics.Fonts.h"
 #include "Data.JSON.h"
 #include "FinishUtility.h"
 #include "Common.Finishers.h"
-namespace tggd::graphics::FontManager
+namespace graphics::Fonts
 {
-	static SpriteFont* ParseDescriptor(const std::string&, const nlohmann::json& properties)
+	static tggd::graphics::SpriteFont* ParseDescriptor(const std::string&, const nlohmann::json& properties)
 	{
-		return new SpriteFont(properties);
+		return new tggd::graphics::SpriteFont(properties);
 	}
 
-	static std::map<std::string, SpriteFont*> descriptors;
+	static std::map<std::string, tggd::graphics::SpriteFont*> descriptors;
 	static std::vector<std::string> identifiers;
 
-	const SpriteFont& Get(const std::string& key)
+	const tggd::graphics::SpriteFont& Get(const std::string& key)
 	{
 		return *descriptors[key];
 	}

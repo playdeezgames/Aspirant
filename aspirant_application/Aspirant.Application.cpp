@@ -11,7 +11,7 @@
 #include "Graphics.Colors.h"
 #include "Graphics.Textures.h"
 #include "SpriteManager.h"
-#include "FontManager.h"
+#include "Graphics.Fonts.h"
 #include "LayoutManager.h"
 #include "SoundManager.h"
 #include "Aspirant.Options.h"
@@ -166,7 +166,7 @@ namespace common::Application
 		::graphics::Colors::Start(aspirant::ConfigurationConstants::COLOR);
 		::graphics::Textures::Start(renderer, aspirant::ConfigurationConstants::TEXTURE);
 		tggd::graphics::SpriteManager::Start(aspirant::ConfigurationConstants::SPRITE);
-		tggd::graphics::FontManager::Start(aspirant::ConfigurationConstants::FONTS);
+		graphics::Fonts::Start(aspirant::ConfigurationConstants::FONTS);
 		tggd::graphics::LayoutManager::Start(aspirant::ConfigurationConstants::LAYOUTS);
 		tggd::common::SoundManager::Start(aspirant::ConfigurationConstants::SFX, aspirant::ConfigurationConstants::MUX);
 		aspirant::Options::Start(aspirant::ConfigurationConstants::OPTIONS);
