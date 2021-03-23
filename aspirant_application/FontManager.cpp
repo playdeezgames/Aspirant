@@ -1,7 +1,7 @@
 #include "FontManager.h"
 #include "Data.JSON.h"
 #include "FinishUtility.h"
-#include "FinishManager.h"
+#include "Common.Finishers.h"
 namespace tggd::graphics::FontManager
 {
 	static SpriteFont* ParseDescriptor(const std::string&, const nlohmann::json& properties)
@@ -34,7 +34,7 @@ namespace tggd::graphics::FontManager
 
 	void Start(const std::string& fileName)
 	{
-		tggd::common::FinishManager::Add(Finish);
+		::common::Finishers::Add(Finish);
 		nlohmann::json properties = data::JSON::Load(fileName);
 		for (auto& item : properties.items())
 		{

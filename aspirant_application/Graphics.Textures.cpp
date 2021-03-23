@@ -2,7 +2,7 @@
 #include "Common.Utility.h"
 #include <SDL_image.h>
 #include "Data.JSON.h"
-#include "FinishManager.h"
+#include "Common.Finishers.h"
 #include <map>
 namespace graphics::Textures
 {
@@ -28,7 +28,7 @@ namespace graphics::Textures
 
 	void Start(SDL_Renderer* renderer, const std::string& fileName)
 	{
-		tggd::common::FinishManager::Add(Finish);
+		common::Finishers::Add(Finish);
 		auto properties = data::JSON::Load(fileName);
 		for (auto& entry : properties.items())
 		{

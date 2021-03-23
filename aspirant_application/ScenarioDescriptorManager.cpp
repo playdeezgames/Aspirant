@@ -18,7 +18,7 @@ namespace aspirant::game::ScenarioDescriptorManager
 
 	void Load(const std::string& filename)
 	{
-		tggd::common::FinishManager::Add(Finish);
+		common::Finishers::Add(Finish);
 		fileName = filename;
 		auto descriptorList = data::JSON::Load(fileName);
 		for (auto& properties : descriptorList)

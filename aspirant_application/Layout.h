@@ -1,6 +1,6 @@
 #pragma once
 #include "Graphics.Drawn.h"
-#include "FinishManager.h"
+#include "Common.Finishers.h"
 #include <list>
 #include "json.hpp"
 #include "SpriteManager.h"

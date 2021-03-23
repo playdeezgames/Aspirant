@@ -1,6 +1,6 @@
 #pragma once
 #include <set>
-namespace tggd::common::FinishManager
+namespace common::Finishers
 {
 	typedef void(*Finisher)();
 	void Add(Finisher);

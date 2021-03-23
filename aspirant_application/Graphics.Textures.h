@@ -2,7 +2,7 @@
 #include <SDL.h>
 #include <map>
 #include <string>
-#include "FinishManager.h"
+#include "Common.Finishers.h"
 namespace graphics::Textures
 {
 	void Start(SDL_Renderer*, const std::string&);

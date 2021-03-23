@@ -1,5 +1,5 @@
 #include "Game.Descriptors.h"
-#include "FinishManager.h"
+#include "Common.Finishers.h"
 #include <map>
 #include "FinishUtility.h"
 #include "Data.JSON.h"
@@ -47,7 +47,7 @@ namespace game::Descriptors
 
 	void Start(const std::string& filename)
 	{
-		tggd::common::FinishManager::Add(Finish);
+		common::Finishers::Add(Finish);
 		nlohmann::json properties = data::JSON::Load(filename);
 		for (auto& item : properties.items())
 		{

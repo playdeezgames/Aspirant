@@ -7,7 +7,7 @@
 #include "Data.Ints.h"
 #include "Data.Bools.h"
 #include "Aspirant.Application.h"
-#include "FinishManager.h"
+#include "Common.Finishers.h"
 #include "Graphics.Colors.h"
 #include "Graphics.Textures.h"
 #include "SpriteManager.h"
@@ -230,7 +230,7 @@ namespace common::Application
 
 	void Finish()
 	{
-		tggd::common::FinishManager::Finish();
+		common::Finishers::Finish();
 	}
 
 }

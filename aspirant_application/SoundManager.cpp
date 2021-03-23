@@ -3,7 +3,7 @@
 #include "Common.Utility.h"
 #include <fstream>
 #include "Data.JSON.h"
-#include "FinishManager.h"
+#include "Common.Finishers.h"
 namespace tggd::common::SoundManager
 {
 	static std::map<std::string, Mix_Chunk*> sounds;
@@ -154,7 +154,7 @@ namespace tggd::common::SoundManager
 
 	void Start(const std::string& sfxFileName, const std::string& muxFileName)
 	{
-		tggd::common::FinishManager::Add(Finish);
+		::common::Finishers::Add(Finish);
 		StartSound(sfxFileName);
 		StartMusic(muxFileName);
 	}

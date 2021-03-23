@@ -41,7 +41,7 @@
     <ClCompile Include="Graphics.Colors.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FinishManager.cpp">
+    <ClCompile Include="Common.Finishers.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Graphics.Textures.cpp">
@@ -229,7 +229,7 @@
     <ClInclude Include="Graphics.Colors.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FinishManager.h">
+    <ClInclude Include="Common.Finishers.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Graphics.Textures.h">

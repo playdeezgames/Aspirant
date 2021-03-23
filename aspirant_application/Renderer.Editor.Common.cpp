@@ -1,6 +1,6 @@
 #include "Renderer.Editor.Common.h"
 #include "SpriteManager.h"
-#include "FinishManager.h"
+#include "Common.Finishers.h"
 #include "Game.Object.Common.h"
 #include "FinishUtility.h"
 #include "Game.Descriptor.Creature.h"

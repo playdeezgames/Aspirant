@@ -1,6 +1,6 @@
-#include "FinishManager.h"
+#include "Common.Finishers.h"
 #include <set>
-namespace tggd::common::FinishManager
+namespace common::Finishers
 {
 	static std::set<Finisher> finishers;
 

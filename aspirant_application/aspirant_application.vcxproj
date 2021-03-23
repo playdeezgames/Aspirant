@@ -175,7 +175,7 @@
     <ClCompile Include="Aspirant.State.Editor.ScenarioDescriptor.cpp" />
     <ClCompile Include="Aspirant.State.Editor.Scenarios.cpp" />
     <ClCompile Include="Aspirant.State.Editor.Scenario.cpp" />
-    <ClCompile Include="FinishManager.cpp" />
+    <ClCompile Include="Common.Finishers.cpp" />
     <ClCompile Include="Data.Bools.cpp" />
     <ClCompile Include="FontManager.cpp" />
     <ClCompile Include="Data.Ints.cpp" />
@@ -238,7 +238,7 @@
     <ClInclude Include="Aspirant.State.Editor.ScenarioDescriptor.h" />
     <ClInclude Include="Aspirant.State.Editor.Scenarios.h" />
     <ClInclude Include="Aspirant.State.Editor.Scenario.h" />
-    <ClInclude Include="FinishManager.h" />
+    <ClInclude Include="Common.Finishers.h" />
     <ClInclude Include="FinishUtility.h" />
     <ClInclude Include="Data.Bools.h" />
     <ClInclude Include="FontManager.h" />

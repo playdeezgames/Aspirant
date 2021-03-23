@@ -1,6 +1,6 @@
 #pragma once
 #include "ScenarioDescriptor.h"
-#include "FinishManager.h"
+#include "Common.Finishers.h"
 #include <string>
 #include <vector>
 namespace aspirant::game::ScenarioDescriptorManager

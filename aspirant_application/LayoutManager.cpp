@@ -1,6 +1,6 @@
 #include "LayoutManager.h"
 #include "Data.JSON.h"
-#include "FinishManager.h"
+#include "Common.Finishers.h"
 #include "FinishUtility.h"
 namespace tggd::graphics::LayoutManager
 {
@@ -29,7 +29,7 @@ namespace tggd::graphics::LayoutManager
 
 	void Start(const std::string& fileName)
 	{
-		tggd::common::FinishManager::Add(Finish);
+		::common::Finishers::Add(Finish);
 		nlohmann::json properties = data::JSON::Load(fileName);
 		for (auto& item : properties.items())
 		{
