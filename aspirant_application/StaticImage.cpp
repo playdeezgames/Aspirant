@@ -2,7 +2,7 @@
 #include "Common.Utility.h"
 #include "SpriteManager.h"
 #include "Graphics.Colors.h"
-#include "XY.h"
+#include "Common.XY.h"
 namespace tggd::graphics
 {
 	const std::string PROPERTY_SPRITE = "sprite";
@@ -25,7 +25,7 @@ namespace tggd::graphics
 	(
 		const std::string spriteName,
 		const std::string colorName,
-		tggd::common::XY<int> xy
+		common::XY<int> xy
 	)
 		: spriteName(::data::String(spriteName, false))
 		, colorName(::data::String(colorName, false))
@@ -40,7 +40,7 @@ namespace tggd::graphics
 			.Draw
 			(
 				renderer,
-				tggd::common::XY<int>(x,y),
+				common::XY<int>(x,y),
 				::graphics::Colors::Get(colorName)
 			);
 	}

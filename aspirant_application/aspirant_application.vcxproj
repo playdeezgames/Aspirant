@@ -277,7 +277,7 @@
     <ClInclude Include="Graphics.Textures.h" />
     <ClInclude Include="UIState.h" />
     <ClInclude Include="Common.Utility.h" />
-    <ClInclude Include="XY.h" />
+    <ClInclude Include="Common.XY.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

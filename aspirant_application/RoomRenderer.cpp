@@ -1,17 +1,17 @@
 #include "RoomRenderer.h"
-#include "XY.h"
+#include "Common.XY.h"
 #include "EditorRoomViewContext.h"
 #include "SpriteManager.h"
 #include "EditorRoomListContext.h"
 #include "Renderer.Editor.Common.h"
 namespace aspirant::editor::controls::RoomRenderer
 {
-	static tggd::common::XY<int> Plot(const tggd::common::XY<size_t>& position)
+	static common::XY<int> Plot(const common::XY<size_t>& position)
 	{
-		return tggd::common::XY<int>((int)position.GetX() * 36, (int)position.GetY() * 36);
+		return common::XY<int>((int)position.GetX() * 36, (int)position.GetY() * 36);
 	}
 
-	static void DrawCell(SDL_Renderer* renderer, const tggd::common::XY<size_t>& viewPosition, const aspirant::game::ScenarioRoomCell* cell)
+	static void DrawCell(SDL_Renderer* renderer, const common::XY<size_t>& viewPosition, const aspirant::game::ScenarioRoomCell* cell)
 	{
 		if (cell)
 		{
@@ -32,13 +32,13 @@ namespace aspirant::editor::controls::RoomRenderer
 			{
 				for (size_t viewColumn = 0; viewColumn < aspirant::editor::context::EditorRoomViewContext::GetSize().GetX(); ++viewColumn)
 				{
-					tggd::common::XY<size_t> viewPosition =
-						tggd::common::XY<size_t>
+					common::XY<size_t> viewPosition =
+						common::XY<size_t>
 						(
 							viewColumn,
 							viewRow
 							);
-					tggd::common::XY<size_t> cellPosition =
+					common::XY<size_t> cellPosition =
 						viewPosition + aspirant::editor::context::EditorRoomViewContext::GetAnchor();
 					auto cell = room->GetCell(cellPosition.GetX(), cellPosition.GetY());
 					if (cell)
@@ -61,7 +61,7 @@ namespace aspirant::editor::controls::RoomRenderer
 		//vp = cp - an
 		auto& cursorPosition = aspirant::editor::context::EditorRoomViewContext::GetCursor();
 		auto& anchorPosition = aspirant::editor::context::EditorRoomViewContext::GetAnchor();
-		tggd::common::XY<size_t> viewPosition = { cursorPosition.GetX() - anchorPosition.GetX(), cursorPosition.GetY() - anchorPosition.GetY() };
+		common::XY<size_t> viewPosition = { cursorPosition.GetX() - anchorPosition.GetX(), cursorPosition.GetY() - anchorPosition.GetY() };
 		//TODO: magic string vv
 		tggd::graphics::SpriteManager::Get("MapCursor").Draw(renderer, Plot(viewPosition));
 	}

@@ -241,7 +241,7 @@
     <ClInclude Include="Sprite.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="XY.h">
+    <ClInclude Include="Common.XY.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SpriteFont.h">

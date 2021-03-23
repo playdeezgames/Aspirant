@@ -1,5 +1,5 @@
 #pragma once
-#include "XY.h"
+#include "Common.XY.h"
 #include "Graphics.Drawn.h"
 #include "json.hpp"
 #include "Sprite.h"
@@ -24,7 +24,7 @@ namespace tggd::graphics
 		(
 			const std::string,
 			const std::string,
-			tggd::common::XY<int>
+			common::XY<int>
 		);
 		StaticImage
 		(

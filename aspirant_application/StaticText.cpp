@@ -5,12 +5,12 @@ namespace tggd::graphics
 {
 	StaticText::StaticText
 	(
-		const tggd::common::XY<int>& xy,
+		const common::XY<int>& xy,
 		const std::string& text,
 		const std::string& fontName,
 		const std::string& color,
 		bool hasDropShadow,
-		const tggd::common::XY<int>& dropShadowOffset,
+		const common::XY<int>& dropShadowOffset,
 		const std::string& dropShadowColor,
 		const HorizontalAlignment& alignment
 	)
@@ -80,8 +80,8 @@ namespace tggd::graphics
 	{
 		if (hasDropShadow)
 		{
-			FontManager::Get(fontName).WriteText(renderer, tggd::common::XY<int>(x + dropShadowX, y + dropShadowY), text, dropShadowColor, (HorizontalAlignment)(int)alignment);
+			FontManager::Get(fontName).WriteText(renderer, common::XY<int>(x + dropShadowX, y + dropShadowY), text, dropShadowColor, (HorizontalAlignment)(int)alignment);
 		}
-		FontManager::Get(fontName).WriteText(renderer, tggd::common::XY<int>(x, y), text, color, (HorizontalAlignment)(int)alignment);
+		FontManager::Get(fontName).WriteText(renderer, common::XY<int>(x, y), text, color, (HorizontalAlignment)(int)alignment);
 	}
 }

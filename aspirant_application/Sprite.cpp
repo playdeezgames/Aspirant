@@ -5,7 +5,7 @@ namespace tggd::graphics
 	(
 		SDL_Texture* texture,
 		const SDL_Rect& source,
-		const tggd::common::XY<int>& offset
+		const common::XY<int>& offset
 	)
 		: texture(texture)
 		, source(source)
@@ -14,13 +14,13 @@ namespace tggd::graphics
 
 	}
 
-	void Sprite::Draw(SDL_Renderer* renderer, const tggd::common::XY<int>& xy) const
+	void Sprite::Draw(SDL_Renderer* renderer, const common::XY<int>& xy) const
 	{
 		Draw(renderer, xy, { 255,255,255,255 });
 	}
 
 
-	void Sprite::Draw(SDL_Renderer* renderer, const tggd::common::XY<int>& xy, const SDL_Color& color) const
+	void Sprite::Draw(SDL_Renderer* renderer, const common::XY<int>& xy, const SDL_Color& color) const
 	{
 		SDL_SetTextureColorMod
 		(

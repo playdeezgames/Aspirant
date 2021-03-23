@@ -1,11 +1,11 @@
 #include "RoomCellObjectsRenderer.h"
-#include "XY.h"
+#include "Common.XY.h"
 #include "Renderer.Editor.Common.h"
 #include "EditorRoomCellObjectsContext.h"
 #include "SpriteManager.h"
 namespace aspirant::editor::controls::RoomCellObjectsRenderer
 {
-	tggd::common::XY<int> Plot(const tggd::common::XY<size_t>& position)
+	common::XY<int> Plot(const common::XY<size_t>& position)
 	{
 		return { 360 + (int)position.GetX() * 36, 0 };//TODO: magic numbers
 	}

@@ -1,5 +1,5 @@
 #pragma once
-namespace tggd::common
+namespace common
 {
 	template<typename TDimension>
 	class XY

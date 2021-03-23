@@ -40,7 +40,7 @@ namespace tggd::graphics::SpriteManager
 			source.h = properties[PROPERTY_H];
 			int offsetX = (properties.count(PROPERTY_OFFSET_X) > 0) ? ((int)properties[PROPERTY_OFFSET_X]) : (0);
 			int offsetY = (properties.count(PROPERTY_OFFSET_Y) > 0) ? ((int)properties[PROPERTY_OFFSET_Y]) : (0);
-			tggd::common::XY<int> offset(offsetX, offsetY);
+			common::XY<int> offset(offsetX, offsetY);
 			Sprite sprite(texture, source, offset);
 			Add(item.key(), sprite);
 		}

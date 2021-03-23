@@ -19,7 +19,7 @@ namespace aspirant::state::editor::RoomCells
 	const std::string LAYOUT_ROOM_VIEW_POSITION = "RoomViewPosition";
 	const std::string TEXT_ROOM_VIEW_POSITION_NAME = "RoomViewPosition.Text.Position";
 
-	static void MoveCursor(const tggd::common::XY<int>& delta)
+	static void MoveCursor(const common::XY<int>& delta)
 	{
 		int newCursorX = (int)aspirant::editor::context::EditorRoomViewContext::GetCursor().GetX() + delta.GetX();
 		int newCursorY = (int)aspirant::editor::context::EditorRoomViewContext::GetCursor().GetY() + delta.GetY();

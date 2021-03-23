@@ -1,5 +1,5 @@
 #pragma once
-#include "XY.h"
+#include "Common.XY.h"
 #include <string>
 #include "SpriteFont.h"
 #include "json.hpp"
@@ -30,12 +30,12 @@ namespace tggd::graphics
 	public:
 		StaticText
 		(
-			const tggd::common::XY<int>&,
+			const common::XY<int>&,
 			const std::string&,
 			const std::string&,
 			const std::string&,
 			bool,
-			const tggd::common::XY<int>&,
+			const common::XY<int>&,
 			const std::string&,
 			const HorizontalAlignment&
 		);
