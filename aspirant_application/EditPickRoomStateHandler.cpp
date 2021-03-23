@@ -1,5 +1,4 @@
 #include "EditPickRoomStateHandler.h"
-#include "SplashStateHandler.h"
 #include "Aspirant.Application.h"
 #include "UIState.h"
 #include "LayoutManager.h"

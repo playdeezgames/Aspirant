@@ -1,8 +1,8 @@
-#include "SplashStateHandler.h"
+#include "Aspirant.State.Splash.h"
 #include "Aspirant.Application.h"
 #include "UIState.h"
 #include "LayoutManager.h"
-namespace aspirant::navigationui::SplashStateHandler
+namespace aspirant::state::Splash
 {
 	const size_t TICKS_TOTAL = 3000;
 	const std::string LAYOUT_NAME = "Splash";

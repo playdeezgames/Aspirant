@@ -104,13 +104,13 @@
     <ClCompile Include="ScenarioDescriptorManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SplashStateHandler.cpp">
+    <ClCompile Include="Aspirant.State.Splash.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="StartGameStateHandler.cpp">
+    <ClCompile Include="Aspirant.State.Start.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="OptionsStateHandler.cpp">
+    <ClCompile Include="Aspirant.State.Options.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Aspirant.State.MainMenu.cpp">
@@ -310,7 +310,7 @@
     <ClInclude Include="ScenarioDescriptorManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SplashStateHandler.h">
+    <ClInclude Include="Aspirant.State.Splash.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Aspirant.State.MainMenu.h">
@@ -322,10 +322,10 @@
     <ClInclude Include="Aspirant.State.ConfirmQuit.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="OptionsStateHandler.h">
+    <ClInclude Include="Aspirant.State.Options.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="StartGameStateHandler.h">
+    <ClInclude Include="Aspirant.State.Start.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MenuItemDescriptor.h">

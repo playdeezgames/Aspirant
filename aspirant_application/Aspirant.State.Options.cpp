@@ -1,4 +1,4 @@
-#include "OptionsStateHandler.h"
+#include "Aspirant.State.Options.h"
 #include "Aspirant.Application.h"
 #include "UIState.h"
 #include <map>
@@ -9,7 +9,7 @@
 #include "OptionsManager.h"
 #include <sstream>
 #include "Utility.h"
-namespace aspirant::navigationui::OptionsStateHandler
+namespace aspirant::state::Options
 {
 	const std::string LAYOUT_NAME = "Options";
 	const std::string OPTION_ITEM_TOGGLE_MUTE_COLOR_NAME = "Options.Color.ToggleMute";

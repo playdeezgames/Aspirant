@@ -184,7 +184,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Aspirant.State.MainMenu.cpp" />
     <ClCompile Include="OptionsManager.cpp" />
-    <ClCompile Include="OptionsStateHandler.cpp" />
+    <ClCompile Include="Aspirant.State.Options.cpp" />
     <ClCompile Include="RNGUtility.cpp" />
     <ClCompile Include="RoomCellObjectsRenderer.cpp" />
     <ClCompile Include="RoomRenderer.cpp" />
@@ -193,12 +193,12 @@
     <ClCompile Include="ScenarioRoom.cpp" />
     <ClCompile Include="ScenarioRoomCell.cpp" />
     <ClCompile Include="SoundManager.cpp" />
-    <ClCompile Include="SplashStateHandler.cpp" />
+    <ClCompile Include="Aspirant.State.Splash.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="SpriteFont.cpp" />
     <ClCompile Include="SpriteManager.cpp" />
     <ClCompile Include="StartEditorStateHandler.cpp" />
-    <ClCompile Include="StartGameStateHandler.cpp" />
+    <ClCompile Include="Aspirant.State.Start.cpp" />
     <ClCompile Include="StaticImage.cpp" />
     <ClCompile Include="StaticText.cpp" />
     <ClCompile Include="Data.Strings.cpp" />
@@ -249,7 +249,7 @@
     <ClInclude Include="Aspirant.State.MainMenu.h" />
     <ClInclude Include="MenuItemDescriptor.h" />
     <ClInclude Include="OptionsManager.h" />
-    <ClInclude Include="OptionsStateHandler.h" />
+    <ClInclude Include="Aspirant.State.Options.h" />
     <ClInclude Include="RNGUtility.h" />
     <ClInclude Include="RoomCellObjectsRenderer.h" />
     <ClInclude Include="RoomRenderer.h" />
@@ -260,12 +260,12 @@
     <ClInclude Include="ScenarioRoom.h" />
     <ClInclude Include="ScenarioRoomCell.h" />
     <ClInclude Include="SoundManager.h" />
-    <ClInclude Include="SplashStateHandler.h" />
+    <ClInclude Include="Aspirant.State.Splash.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="SpriteFont.h" />
     <ClInclude Include="SpriteManager.h" />
     <ClInclude Include="StartEditorStateHandler.h" />
-    <ClInclude Include="StartGameStateHandler.h" />
+    <ClInclude Include="Aspirant.State.Start.h" />
     <ClInclude Include="StaticImage.h" />
     <ClInclude Include="StaticText.h" />
     <ClInclude Include="Data.Strings.h" />
