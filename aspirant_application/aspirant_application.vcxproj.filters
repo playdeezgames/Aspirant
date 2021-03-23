@@ -167,7 +167,7 @@
     <ClCompile Include="Aspirant.State.Editor.ScenarioDescriptor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RoomRenderer.cpp">
+    <ClCompile Include="Renderer.Editor.Room.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Renderer.Editor.RoomCellObjects.cpp">
@@ -370,7 +370,7 @@
     <ClInclude Include="Aspirant.State.Editor.ScenarioDescriptor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RoomRenderer.h">
+    <ClInclude Include="Renderer.Editor.Room.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Renderer.Editor.RoomCellObjects.h">

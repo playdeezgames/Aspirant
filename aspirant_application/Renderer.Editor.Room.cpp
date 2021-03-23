@@ -1,10 +1,10 @@
-#include "RoomRenderer.h"
+#include "Renderer.Editor.Room.h"
 #include "Common.XY.h"
 #include "Aspirant.Context.Editor.RoomView.h"
 #include "SpriteManager.h"
 #include "Aspirant.Context.Editor.RoomList.h"
 #include "Renderer.Editor.Common.h"
-namespace aspirant::editor::controls::RoomRenderer
+namespace renderer::editor::Room
 {
 	static common::XY<int> Plot(const common::XY<size_t>& position)
 	{
