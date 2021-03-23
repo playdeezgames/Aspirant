@@ -6,7 +6,7 @@
 #include "EditorScenarioSelector.h"
 #include "Data.Strings.h"
 #include <sstream>
-#include "EditorContext.h"
+#include "Aspirant.Context.Editor.Scenario.h"
 #include "Data.JSON.h"
 namespace aspirant::state::editor::Scenarios
 {
@@ -32,7 +32,7 @@ namespace aspirant::state::editor::Scenarios
 			aspirant::editor::context::EditorScenarioSelector::Previous();
 			break;
 		case aspirant::Command::GREEN:
-			aspirant::editor::context::EditorContext::LoadScenario();
+			aspirant::context::editor::Scenario::LoadScenario();
 			aspirant::Application::SetUIState(aspirant::commonui::UIState::EDIT_SCENARIO);
 			break;
 		}

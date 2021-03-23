@@ -146,7 +146,7 @@
     <ClCompile Include="EditorRoomListContext.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="EditorContext.cpp">
+    <ClCompile Include="Aspirant.Context.Editor.Scenario.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="EditorNewRoomContext.h">
@@ -355,7 +355,7 @@
     <ClInclude Include="EditorRoomListContext.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="EditorContext.h">
+    <ClInclude Include="Aspirant.Context.Editor.Scenario.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Aspirant.State.Editor.PickRoom.h">

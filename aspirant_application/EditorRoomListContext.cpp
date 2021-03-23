@@ -1,6 +1,6 @@
 #include "EditorRoomListContext.h"
 #include "Common.Utility.h"
-#include "EditorContext.h"
+#include "Aspirant.Context.Editor.Scenario.h"
 #include <vector>
 #include <string>
 namespace aspirant::editor::context::EditorRoomListContext
@@ -10,7 +10,7 @@ namespace aspirant::editor::context::EditorRoomListContext
 
 	void UpdateRoomList()
 	{
-		roomList = EditorContext::GetScenario().GetRoomKeys();
+		roomList = aspirant::context::editor::Scenario::GetScenario().GetRoomKeys();
 		if (roomIndex >= roomList.size())
 		{
 			roomIndex = 0;
@@ -51,7 +51,7 @@ namespace aspirant::editor::context::EditorRoomListContext
 	{
 		if (GetRoomCount() > GetRoomIndex())
 		{
-			return EditorContext::GetScenario().GetRoom(GetRoomList()[GetRoomIndex()]);
+			return aspirant::context::editor::Scenario::GetScenario().GetRoom(GetRoomList()[GetRoomIndex()]);
 		}
 		else
 		{

@@ -1,8 +1,8 @@
-#include "EditorContext.h"
+#include "Aspirant.Context.Editor.Scenario.h"
 #include "Data.JSON.h"
 #include "EditorScenarioSelector.h"
 #include "ScenarioDescriptorManager.h"
-namespace aspirant::editor::context::EditorContext
+namespace aspirant::context::editor::Scenario
 {
 	static aspirant::game::Scenario scenario;
 
@@ -13,12 +13,13 @@ namespace aspirant::editor::context::EditorContext
 
 	void SaveScenario()
 	{
-		data::JSON::Save(aspirant::game::ScenarioDescriptorManager::Get(EditorScenarioSelector::GetIndex())->GetFileName(), GetScenario().ToJSON());
+		
+		data::JSON::Save(aspirant::game::ScenarioDescriptorManager::Get(::aspirant::editor::context::EditorScenarioSelector::GetIndex())->GetFileName(), GetScenario().ToJSON());
 	}
 
 	void LoadScenario()
 	{
-		aspirant::editor::context::EditorContext::GetScenario()
+		aspirant::context::editor::Scenario::GetScenario()
 			.FromJSON(
 				data::JSON::Load(
 					aspirant::game::ScenarioDescriptorManager::Get(

@@ -5,7 +5,7 @@
 #include "MenuItemDescriptor.h"
 #include <sstream>
 #include "Data.Strings.h"
-#include "EditorContext.h"
+#include "Aspirant.Context.Editor.Scenario.h"
 #include "EditorNewRoomContext.h"
 #include "EditorRoomListContext.h"
 namespace aspirant::state::editor::NewRoom
@@ -35,8 +35,8 @@ namespace aspirant::state::editor::NewRoom
 
 	static void CreateRoom()
 	{
-		aspirant::editor::context::EditorContext::GetScenario().AddRoom(aspirant::editor::context::EditorNewRoomContext::GetNewRoomName(), aspirant::editor::context::EditorNewRoomContext::GetNewRoomColumns(), aspirant::editor::context::EditorNewRoomContext::GetNewRoomRows());
-		aspirant::editor::context::EditorContext::SaveScenario();
+		aspirant::context::editor::Scenario::GetScenario().AddRoom(aspirant::editor::context::EditorNewRoomContext::GetNewRoomName(), aspirant::editor::context::EditorNewRoomContext::GetNewRoomColumns(), aspirant::editor::context::EditorNewRoomContext::GetNewRoomRows());
+		aspirant::context::editor::Scenario::SaveScenario();
 	}
 
 

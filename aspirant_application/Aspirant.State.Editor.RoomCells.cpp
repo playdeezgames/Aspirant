@@ -8,7 +8,7 @@
 #include "EditorRoomViewContext.h"
 #include <sstream>
 #include "Data.Strings.h"
-#include "EditorContext.h"
+#include "Aspirant.Context.Editor.Scenario.h"
 #include "Common.Utility.h"
 #include "EditorRoomListContext.h"
 #include "EditorRoomCellObjectsContext.h"
@@ -58,7 +58,7 @@ namespace aspirant::state::editor::RoomCells
 		switch (command)
 		{
 		case aspirant::Command::BACK:
-			aspirant::editor::context::EditorContext::SaveScenario();
+			aspirant::context::editor::Scenario::SaveScenario();
 			aspirant::Application::SetUIState(aspirant::commonui::UIState::EDIT_PICK_ROOM);
 			break;
 		case aspirant::Command::UP:
