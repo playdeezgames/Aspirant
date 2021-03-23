@@ -39,7 +39,7 @@ namespace aspirant::editorui::StartEditorStateHandler
 		int scenarioId = aspirant::game::ScenarioDescriptorManager::GetNextId();
 		std::stringstream ss;
 		ss << "scenarios/scenario_" << scenarioId << ".json";//TODO: magic string
-		aspirant::game::ScenarioDescriptor* descriptor = new aspirant::game::ScenarioDescriptor
+		::game::ScenarioDescriptor* descriptor = new ::game::ScenarioDescriptor
 		(
 			scenarioId,
 			"New Scenario",//TODO: magic string

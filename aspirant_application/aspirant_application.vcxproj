@@ -256,7 +256,7 @@
     <ClInclude Include="Renderer.Editor.RoomCellObjects.h" />
     <ClInclude Include="Renderer.Editor.Room.h" />
     <ClInclude Include="Game.Scenario.h" />
-    <ClInclude Include="ScenarioDescriptor.h" />
+    <ClInclude Include="Game.ScenarioDescriptor.h" />
     <ClInclude Include="ScenarioDescriptorManager.h" />
     <ClInclude Include="Game.Object.Common.h" />
     <ClInclude Include="Game.Room.h" />

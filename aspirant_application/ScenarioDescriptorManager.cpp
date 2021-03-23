@@ -4,7 +4,7 @@
 #include "FinishUtility.h"
 namespace aspirant::game::ScenarioDescriptorManager
 {
-	static std::vector<ScenarioDescriptor*> descriptors;
+	static std::vector<::game::ScenarioDescriptor*> descriptors;
 	static std::string fileName;
 
 	static void Finish()
@@ -23,7 +23,7 @@ namespace aspirant::game::ScenarioDescriptorManager
 		auto descriptorList = data::JSON::Load(fileName);
 		for (auto& properties : descriptorList)
 		{
-			descriptors.push_back(new ScenarioDescriptor(properties));
+			descriptors.push_back(new ::game::ScenarioDescriptor(properties));
 		}
 	}
 
@@ -47,7 +47,7 @@ namespace aspirant::game::ScenarioDescriptorManager
 		return maximum + 1;
 	}
 
-	size_t Add(ScenarioDescriptor* descriptor)
+	size_t Add(::game::ScenarioDescriptor* descriptor)
 	{
 		size_t index = descriptors.size();
 		descriptors.push_back(descriptor);
@@ -60,7 +60,7 @@ namespace aspirant::game::ScenarioDescriptorManager
 		return descriptors.size();
 	}
 
-	ScenarioDescriptor* Get(size_t index)
+	::game::ScenarioDescriptor* Get(size_t index)
 	{
 		if (index < descriptors.size())
 		{

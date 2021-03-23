@@ -43,7 +43,7 @@ namespace aspirant::state::editor::Scenarios
 		graphics::Layouts::Get(LAYOUT_NAME).Draw(renderer);
 	}
 
-	static void UpdateIndexText(const aspirant::game::ScenarioDescriptor* scenario)
+	static void UpdateIndexText(const ::game::ScenarioDescriptor* scenario)
 	{
 		if (scenario)
 		{
@@ -57,7 +57,7 @@ namespace aspirant::state::editor::Scenarios
 		}
 	}
 
-	static void UpdateNameText(const aspirant::game::ScenarioDescriptor* scenario)
+	static void UpdateNameText(const ::game::ScenarioDescriptor* scenario)
 	{
 		if (scenario)
 		{
@@ -69,7 +69,7 @@ namespace aspirant::state::editor::Scenarios
 		}
 	}
 
-	static void UpdateIdText(const aspirant::game::ScenarioDescriptor* scenario)
+	static void UpdateIdText(const ::game::ScenarioDescriptor* scenario)
 	{
 		if (scenario)
 		{
@@ -84,7 +84,7 @@ namespace aspirant::state::editor::Scenarios
 
 	}
 
-	static void UpdateBriefText(const aspirant::game::ScenarioDescriptor* scenario)
+	static void UpdateBriefText(const ::game::ScenarioDescriptor* scenario)
 	{
 		if (scenario)
 		{
