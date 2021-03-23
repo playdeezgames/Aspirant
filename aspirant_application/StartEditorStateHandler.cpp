@@ -5,7 +5,7 @@
 #include "MenuItemDescriptor.h"
 #include <map>
 #include "Data.Strings.h"
-#include "ScenarioDescriptorManager.h"
+#include "Game.ScenarioDescriptors.h"
 #include <sstream>
 #include "Data.JSON.h"
 #include "Aspirant.Context.Editor.Scenarios.h"
@@ -36,7 +36,7 @@ namespace aspirant::editorui::StartEditorStateHandler
 
 	static void CreateNewScenario()
 	{
-		int scenarioId = aspirant::game::ScenarioDescriptorManager::GetNextId();
+		int scenarioId = ::game::ScenarioDescriptors::GetNextId();
 		std::stringstream ss;
 		ss << "scenarios/scenario_" << scenarioId << ".json";//TODO: magic string
 		::game::ScenarioDescriptor* descriptor = new ::game::ScenarioDescriptor
@@ -47,7 +47,7 @@ namespace aspirant::editorui::StartEditorStateHandler
 			ss.str()
 		);
 		CreateScenarioFile(ss.str());
-		aspirant::context::editor::Scenarios::SetIndex(aspirant::game::ScenarioDescriptorManager::Add(descriptor));
+		aspirant::context::editor::Scenarios::SetIndex(::game::ScenarioDescriptors::Add(descriptor));
 		aspirant::Application::SetUIState(aspirant::UIState::EDIT_SCENARIO);
 	}
 

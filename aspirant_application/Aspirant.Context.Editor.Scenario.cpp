@@ -1,7 +1,7 @@
 #include "Aspirant.Context.Editor.Scenario.h"
 #include "Data.JSON.h"
 #include "Aspirant.Context.Editor.Scenarios.h"
-#include "ScenarioDescriptorManager.h"
+#include "Game.ScenarioDescriptors.h"
 namespace aspirant::context::editor::Scenario
 {
 	static ::game::Scenario scenario;
@@ -14,7 +14,7 @@ namespace aspirant::context::editor::Scenario
 	void Save()
 	{
 		data::JSON::Save(
-			aspirant::game::ScenarioDescriptorManager::Get(
+			::game::ScenarioDescriptors::Get(
 				::aspirant::context::editor::Scenarios::GetIndex())
 			->GetFileName(), 
 			Get().ToJSON());
@@ -25,7 +25,7 @@ namespace aspirant::context::editor::Scenario
 		aspirant::context::editor::Scenario::Get()
 			.FromJSON(
 				data::JSON::Load(
-					aspirant::game::ScenarioDescriptorManager::Get(
+					::game::ScenarioDescriptors::Get(
 						aspirant::context::editor::Scenarios::GetIndex())
 					->GetFileName()));
 	}

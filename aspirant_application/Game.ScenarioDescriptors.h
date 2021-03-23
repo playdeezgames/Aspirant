@@ -3,7 +3,7 @@
 #include "Common.Finishers.h"
 #include <string>
 #include <vector>
-namespace aspirant::game::ScenarioDescriptorManager
+namespace game::ScenarioDescriptors
 {
 	void Load(const std::string&);
 	void Save();

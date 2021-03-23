@@ -191,7 +191,7 @@
     <ClCompile Include="Renderer.Editor.RoomCellObjects.cpp" />
     <ClCompile Include="Renderer.Editor.Room.cpp" />
     <ClCompile Include="Game.Scenario.cpp" />
-    <ClCompile Include="ScenarioDescriptorManager.cpp" />
+    <ClCompile Include="Game.ScenarioDescriptors.cpp" />
     <ClCompile Include="Game.Room.cpp" />
     <ClCompile Include="Game.Cell.cpp" />
     <ClCompile Include="Common.Sounds.cpp" />
@@ -257,7 +257,7 @@
     <ClInclude Include="Renderer.Editor.Room.h" />
     <ClInclude Include="Game.Scenario.h" />
     <ClInclude Include="Game.ScenarioDescriptor.h" />
-    <ClInclude Include="ScenarioDescriptorManager.h" />
+    <ClInclude Include="Game.ScenarioDescriptors.h" />
     <ClInclude Include="Game.Object.Common.h" />
     <ClInclude Include="Game.Room.h" />
     <ClInclude Include="Game.Cell.h" />

@@ -2,12 +2,11 @@
 #include "Aspirant.Application.h"
 #include "Aspirant.UIState.h"
 #include "Graphics.Layouts.h"
-#include "ScenarioDescriptorManager.h"
+#include "Game.ScenarioDescriptors.h"
 #include "Aspirant.Context.Editor.Scenarios.h"
 #include "Data.Strings.h"
 #include <sstream>
 #include "MenuItemDescriptor.h"
-#include "ScenarioDescriptorManager.h"
 #include "Aspirant.Context.Editor.RoomList.h"
 #include "Aspirant.Context.Editor.NewRoom.h"
 namespace aspirant::state::editor::Scenario
@@ -77,7 +76,7 @@ namespace aspirant::state::editor::Scenario
 	static void UpdateHeader()
 	{
 		std::stringstream ss;
-		auto scenario = aspirant::game::ScenarioDescriptorManager::Get(aspirant::context::editor::Scenarios::GetIndex());
+		auto scenario = ::game::ScenarioDescriptors::Get(aspirant::context::editor::Scenarios::GetIndex());
 		ss << scenario->GetName() << "(id=" << scenario->GetId() << ")";//TODO: magic strings
 		::data::Strings::Set(HEADER_TEXT_NAME, ss.str());
 	}

@@ -16,7 +16,7 @@
 #include "Common.Sounds.h"
 #include "Aspirant.Options.h"
 #include "Game.Descriptors.h"
-#include "ScenarioDescriptorManager.h"
+#include "Game.ScenarioDescriptors.h"
 #include "Aspirant.State.Splash.h"
 #include "Aspirant.State.MainMenu.h"
 #include "Aspirant.State.About.h"
@@ -171,7 +171,7 @@ namespace common::Application
 		common::Sounds::Start(aspirant::ConfigurationConstants::SFX, aspirant::ConfigurationConstants::MUX);
 		aspirant::Options::Start(aspirant::ConfigurationConstants::OPTIONS);
 		::game::Descriptors::Start(aspirant::ConfigurationConstants::DESCRIPTORS);
-		aspirant::game::ScenarioDescriptorManager::Load(aspirant::ConfigurationConstants::SCENARIOS);
+		::game::ScenarioDescriptors::Load(aspirant::ConfigurationConstants::SCENARIOS);
 
 		aspirant::state::Splash::Start();
 		aspirant::state::MainMenu::Start();

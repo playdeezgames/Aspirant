@@ -101,7 +101,7 @@
     <ClCompile Include="Game.Object.Creature.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ScenarioDescriptorManager.cpp">
+    <ClCompile Include="Game.ScenarioDescriptors.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Aspirant.State.Splash.cpp">
@@ -307,7 +307,7 @@
     <ClInclude Include="Game.ScenarioDescriptor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ScenarioDescriptorManager.h">
+    <ClInclude Include="Game.ScenarioDescriptors.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Aspirant.State.Splash.h">

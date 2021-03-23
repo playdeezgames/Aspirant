@@ -1,8 +1,8 @@
-#include "ScenarioDescriptorManager.h"
+#include "Game.ScenarioDescriptors.h"
 #include "Common.Utility.h"
 #include "Data.JSON.h"
 #include "FinishUtility.h"
-namespace aspirant::game::ScenarioDescriptorManager
+namespace game::ScenarioDescriptors
 {
 	static std::vector<::game::ScenarioDescriptor*> descriptors;
 	static std::string fileName;
