@@ -113,7 +113,7 @@
     <ClCompile Include="OptionsStateHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MainMenuStateHandler.cpp">
+    <ClCompile Include="Aspirant.State.MainMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Aspirant.State.About.cpp">
@@ -313,7 +313,7 @@
     <ClInclude Include="SplashStateHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MainMenuStateHandler.h">
+    <ClInclude Include="Aspirant.State.MainMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Aspirant.State.About.h">

@@ -18,7 +18,7 @@
 #include "Game.Descriptors.h"
 #include "ScenarioDescriptorManager.h"
 #include "SplashStateHandler.h"
-#include "MainMenuStateHandler.h"
+#include "Aspirant.State.MainMenu.h"
 #include "Aspirant.State.About.h"
 #include "Aspirant.State.ConfirmQuit.h"
 #include "OptionsStateHandler.h"
@@ -174,7 +174,7 @@ namespace common::Application
 		aspirant::game::ScenarioDescriptorManager::Load(aspirant::ConfigurationConstants::SCENARIOS);
 
 		aspirant::navigationui::SplashStateHandler::Start();
-		aspirant::navigationui::MainMenuStateHandler::Start();
+		aspirant::state::MainMenu::Start();
 		aspirant::state::About::Start();
 		aspirant::state::ConfirmQuit::Start();
 		aspirant::navigationui::OptionsStateHandler::Start();

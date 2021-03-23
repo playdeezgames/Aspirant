@@ -1,11 +1,11 @@
-#include "MainMenuStateHandler.h"
+#include "Aspirant.State.MainMenu.h"
 #include "Aspirant.Application.h"
 #include "UIState.h"
 #include "LayoutManager.h"
 #include "MenuItemDescriptor.h"
 #include <map>
 #include "Data.Strings.h"
-namespace aspirant::navigationui::MainMenuStateHandler
+namespace aspirant::state::MainMenu
 {
 	const std::string LAYOUT_NAME = "MainMenu";
 	const std::string ITCH_URL_STRING = "ItchURL";

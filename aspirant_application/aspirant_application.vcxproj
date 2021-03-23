@@ -182,7 +182,7 @@
     <ClCompile Include="Layout.cpp" />
     <ClCompile Include="LayoutManager.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MainMenuStateHandler.cpp" />
+    <ClCompile Include="Aspirant.State.MainMenu.cpp" />
     <ClCompile Include="OptionsManager.cpp" />
     <ClCompile Include="OptionsStateHandler.cpp" />
     <ClCompile Include="RNGUtility.cpp" />
@@ -246,7 +246,7 @@
     <ClInclude Include="JSONUtility.h" />
     <ClInclude Include="Layout.h" />
     <ClInclude Include="LayoutManager.h" />
-    <ClInclude Include="MainMenuStateHandler.h" />
+    <ClInclude Include="Aspirant.State.MainMenu.h" />
     <ClInclude Include="MenuItemDescriptor.h" />
     <ClInclude Include="OptionsManager.h" />
     <ClInclude Include="OptionsStateHandler.h" />
