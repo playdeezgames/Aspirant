@@ -6,7 +6,7 @@
 #include <sstream>
 #include "Data.Strings.h"
 #include "Aspirant.Context.Editor.Scenario.h"
-#include "EditorNewRoomContext.h"
+#include "Aspirant.Context.Editor.NewRoom.h"
 #include "EditorRoomListContext.h"
 namespace aspirant::state::editor::NewRoom
 {
@@ -35,7 +35,7 @@ namespace aspirant::state::editor::NewRoom
 
 	static void CreateRoom()
 	{
-		aspirant::context::editor::Scenario::GetScenario().AddRoom(aspirant::editor::context::EditorNewRoomContext::GetNewRoomName(), aspirant::editor::context::EditorNewRoomContext::GetNewRoomColumns(), aspirant::editor::context::EditorNewRoomContext::GetNewRoomRows());
+		aspirant::context::editor::Scenario::GetScenario().AddRoom(aspirant::context::editor::NewRoom::GetNewRoomName(), aspirant::context::editor::NewRoom::GetNewRoomColumns(), aspirant::context::editor::NewRoom::GetNewRoomRows());
 		aspirant::context::editor::Scenario::SaveScenario();
 	}
 
@@ -60,10 +60,10 @@ namespace aspirant::state::editor::NewRoom
 		switch (current)
 		{
 		case NewRoomItem::COLUMNS:
-			aspirant::editor::context::EditorNewRoomContext::IncrementNewRoomColumns();
+			aspirant::context::editor::NewRoom::IncrementNewRoomColumns();
 			break;
 		case NewRoomItem::ROWS:
-			aspirant::editor::context::EditorNewRoomContext::IncrementNewRoomRows();
+			aspirant::context::editor::NewRoom::IncrementNewRoomRows();
 			break;
 		}
 	}
@@ -73,11 +73,11 @@ namespace aspirant::state::editor::NewRoom
 		switch (current)
 		{
 		case NewRoomItem::COLUMNS:
-			aspirant::editor::context::EditorNewRoomContext::DecrementNewRoomColumns();
+			aspirant::context::editor::NewRoom::DecrementNewRoomColumns();
 			break;
 
 		case NewRoomItem::ROWS:
-			aspirant::editor::context::EditorNewRoomContext::DecrementNewRoomRows();
+			aspirant::context::editor::NewRoom::DecrementNewRoomRows();
 			break;
 		}
 	}
@@ -89,7 +89,7 @@ namespace aspirant::state::editor::NewRoom
 		case aspirant::Command::BACK:
 			if (current == NewRoomItem::NAME)
 			{
-				aspirant::editor::context::EditorNewRoomContext::ClearNewRoomName();
+				aspirant::context::editor::NewRoom::ClearNewRoomName();
 			}
 			else
 			{
@@ -127,20 +127,20 @@ namespace aspirant::state::editor::NewRoom
 			::data::Strings::Set(item.second.GetItemColorName(), (item.first == current) ? ("Cyan") : ("Gray"));
 		}
 
-		::data::Strings::Set(TEXT_NAME_ROOM_NAME, aspirant::editor::context::EditorNewRoomContext::GetNewRoomName());
+		::data::Strings::Set(TEXT_NAME_ROOM_NAME, aspirant::context::editor::NewRoom::GetNewRoomName());
 
 		std::stringstream ss;
-		ss << aspirant::editor::context::EditorNewRoomContext::GetNewRoomColumns();
+		ss << aspirant::context::editor::NewRoom::GetNewRoomColumns();
 		::data::Strings::Set(TEXT_NAME_COLUMNS, ss.str());
 
 		ss.str("");
-		ss << aspirant::editor::context::EditorNewRoomContext::GetNewRoomRows();
+		ss << aspirant::context::editor::NewRoom::GetNewRoomRows();
 		::data::Strings::Set(TEXT_NAME_ROWS, ss.str());
 	}
 
 	static void OnTextInput(const std::string& text)
 	{
-		aspirant::editor::context::EditorNewRoomContext::AppendNewRoomName(text);
+		aspirant::context::editor::NewRoom::AppendNewRoomName(text);
 	}
 
 	void Start()

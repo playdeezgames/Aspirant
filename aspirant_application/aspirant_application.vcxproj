@@ -165,8 +165,8 @@
     <ClCompile Include="Renderer.Editor.Common.cpp" />
     <ClCompile Include="Aspirant.Context.Editor.Scenario.cpp" />
     <ClCompile Include="Aspirant.Context.Editor.PickDescriptor.cpp" />
-    <ClCompile Include="EditorNewRoomContext.cpp" />
-    <ClCompile Include="EditorNewRoomContext.h" />
+    <ClCompile Include="Aspirant.Context.Editor.NewRoom.cpp" />
+    <ClCompile Include="Aspirant.Context.Editor.NewRoom.h" />
     <ClCompile Include="EditorRoomCellObjectsContext.cpp" />
     <ClCompile Include="EditorRoomListContext.cpp" />
     <ClCompile Include="EditorRoomViewContext.cpp" />

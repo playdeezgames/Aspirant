@@ -9,7 +9,7 @@
 #include "MenuItemDescriptor.h"
 #include "ScenarioDescriptorManager.h"
 #include "EditorRoomListContext.h"
-#include "EditorNewRoomContext.h"
+#include "Aspirant.Context.Editor.NewRoom.h"
 namespace aspirant::state::editor::Scenario
 {
 	const std::string LAYOUT_NAME = "EditScenario";
@@ -44,7 +44,7 @@ namespace aspirant::state::editor::Scenario
 			aspirant::Application::SetUIState(aspirant::commonui::UIState::EDIT_PICK_ROOM);
 			break;
 		case EditScenarioItem::NEW_ROOM:
-			aspirant::editor::context::EditorNewRoomContext::ResetNewRoom();
+			aspirant::context::editor::NewRoom::ResetNewRoom();
 			aspirant::Application::SetUIState(aspirant::commonui::UIState::EDIT_NEW_ROOM);
 			break;
 		}

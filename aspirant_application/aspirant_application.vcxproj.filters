@@ -149,10 +149,10 @@
     <ClCompile Include="Aspirant.Context.Editor.Scenario.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="EditorNewRoomContext.h">
+    <ClCompile Include="Aspirant.Context.Editor.NewRoom.h">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="EditorNewRoomContext.cpp">
+    <ClCompile Include="Aspirant.Context.Editor.NewRoom.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Aspirant.State.Editor.PickRoom.cpp">

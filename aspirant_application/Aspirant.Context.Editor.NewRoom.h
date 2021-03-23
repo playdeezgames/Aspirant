@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-namespace aspirant::editor::context::EditorNewRoomContext
+namespace aspirant::context::editor::NewRoom
 {
 	void ResetNewRoom();
 	const std::string& GetNewRoomName();

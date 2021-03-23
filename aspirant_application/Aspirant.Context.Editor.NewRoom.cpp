@@ -1,5 +1,5 @@
-#include "EditorNewRoomContext.h"
-namespace aspirant::editor::context::EditorNewRoomContext
+#include "Aspirant.Context.Editor.NewRoom.h"
+namespace aspirant::context::editor::NewRoom
 {
 	static std::string newRoomName = "";
 	static size_t newRoomColumns = 0;
