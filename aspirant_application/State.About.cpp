@@ -1,8 +1,8 @@
-#include "Aspirant.State.About.h"
+#include "State.About.h"
 #include "Application.h"
 #include "UIState.h"
 #include "Graphics.Layouts.h"
-namespace aspirant::state::About
+namespace state::About
 {
 	const std::string LAYOUT_NAME = "About";
 

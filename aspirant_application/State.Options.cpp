@@ -1,4 +1,4 @@
-#include "Aspirant.State.Options.h"
+#include "State.Options.h"
 #include "Application.h"
 #include "UIState.h"
 #include <map>
@@ -9,7 +9,7 @@
 #include "Options.h"
 #include <sstream>
 #include "Common.Utility.h"
-namespace aspirant::state::Options
+namespace state::Options
 {
 	const std::string LAYOUT_NAME = "Options";
 	const std::string OPTION_ITEM_TOGGLE_MUTE_COLOR_NAME = "Options.Color.ToggleMute";

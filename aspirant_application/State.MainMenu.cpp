@@ -1,11 +1,11 @@
-#include "Aspirant.State.MainMenu.h"
+#include "State.MainMenu.h"
 #include "Application.h"
 #include "UIState.h"
 #include "Graphics.Layouts.h"
 #include "MenuItem.h"
 #include <map>
 #include "Data.Strings.h"
-namespace aspirant::state::MainMenu
+namespace state::MainMenu
 {
 	const std::string LAYOUT_NAME = "MainMenu";
 	const std::string ITCH_URL_STRING = "ItchURL";

@@ -322,34 +322,34 @@
     <ClInclude Include="Game.ScenarioDescriptors.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Aspirant.State.Splash.h">
+    <ClInclude Include="State.Splash.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Aspirant.State.MainMenu.h">
+    <ClInclude Include="State.MainMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Aspirant.State.About.h">
+    <ClInclude Include="State.About.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Aspirant.State.ConfirmQuit.h">
+    <ClInclude Include="State.ConfirmQuit.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Aspirant.State.Options.h">
+    <ClInclude Include="State.Options.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Aspirant.State.Start.h">
+    <ClInclude Include="State.Start.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MenuItem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Aspirant.State.Editor.Start.h">
+    <ClInclude Include="State.Editor.Start.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Context.Editor.Scenarios.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Aspirant.State.Editor.Scenarios.h">
+    <ClInclude Include="State.Editor.Scenarios.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Game.Cell.h">
@@ -361,7 +361,7 @@
     <ClInclude Include="Game.Scenario.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Aspirant.State.Editor.Scenario.h">
+    <ClInclude Include="State.Editor.Scenario.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Context.Editor.Rooms.h">
@@ -370,16 +370,16 @@
     <ClInclude Include="Context.Editor.Scenario.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Aspirant.State.Editor.PickRoom.h">
+    <ClInclude Include="State.Editor.PickRoom.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Context.Editor.RoomView.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Aspirant.State.Editor.NewRoom.h">
+    <ClInclude Include="State.Editor.NewRoom.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Aspirant.State.Editor.ScenarioDescriptor.h">
+    <ClInclude Include="State.Editor.ScenarioDescriptor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Renderer.Editor.Room.h">
@@ -391,7 +391,7 @@
     <ClInclude Include="Renderer.Editor.PickDescriptor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Aspirant.State.Editor.RoomCells.h">
+    <ClInclude Include="State.Editor.RoomCells.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Context.Editor.PickDescriptor.h">
@@ -400,7 +400,7 @@
     <ClInclude Include="Context.Editor.Cell.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Aspirant.State.Editor.PickDescriptor.h">
+    <ClInclude Include="State.Editor.PickDescriptor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Game.Object.Player.h">

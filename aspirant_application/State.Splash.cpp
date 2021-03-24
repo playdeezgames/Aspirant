@@ -1,8 +1,8 @@
-#include "Aspirant.State.Splash.h"
+#include "State.Splash.h"
 #include "Application.h"
 #include "UIState.h"
 #include "Graphics.Layouts.h"
-namespace aspirant::state::Splash
+namespace state::Splash
 {
 	const size_t TICKS_TOTAL = 3000;
 	const std::string LAYOUT_NAME = "Splash";

@@ -1,4 +1,4 @@
-#include "Aspirant.State.Editor.ScenarioDescriptor.h"
+#include "State.Editor.ScenarioDescriptor.h"
 #include "Application.h"
 #include "UIState.h"
 #include "Graphics.Layouts.h"
@@ -6,7 +6,7 @@
 #include "Context.Editor.Scenarios.h"
 #include "Data.Strings.h"
 #include "Game.ScenarioDescriptors.h"
-namespace aspirant::state::editor::ScenarioDescriptor
+namespace state::editor::ScenarioDescriptor
 {
 	const std::string LAYOUT_NAME = "EditScenarioDescriptor";
 	const std::string COLOR_NAME_SCENARIO_NAME = "EditScenarioDescriptor.Color.ScenarioName";

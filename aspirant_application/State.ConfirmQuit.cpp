@@ -1,11 +1,11 @@
-#include "Aspirant.State.ConfirmQuit.h"
+#include "State.ConfirmQuit.h"
 #include "Application.h"
 #include "UIState.h"
 #include "Graphics.Layouts.h"
 #include <map>
 #include "MenuItem.h"
 #include "Data.Strings.h"
-namespace aspirant::state::ConfirmQuit
+namespace state::ConfirmQuit
 {
 	const std::string CONFIRM_ITEM_NO_COLOR_NAME = "ConfirmQuit.Color.No";
 	const std::string CONFIRM_ITEM_YES_COLOR_NAME = "ConfirmQuit.Color.Yes";

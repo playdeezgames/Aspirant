@@ -1,4 +1,4 @@
-#include "Aspirant.State.Editor.NewRoom.h"
+#include "State.Editor.NewRoom.h"
 #include "Application.h"
 #include "UIState.h"
 #include "Graphics.Layouts.h"
@@ -8,7 +8,7 @@
 #include "Context.Editor.Scenario.h"
 #include "Context.Editor.NewRoom.h"
 #include "Context.Editor.Rooms.h"
-namespace aspirant::state::editor::NewRoom
+namespace state::editor::NewRoom
 {
 	const std::string LAYOUT_NAME = "EditNewRoom";
 

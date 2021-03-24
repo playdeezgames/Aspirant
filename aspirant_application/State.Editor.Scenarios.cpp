@@ -1,4 +1,4 @@
-#include "Aspirant.State.Editor.Scenarios.h"
+#include "State.Editor.Scenarios.h"
 #include "Application.h"
 #include "UIState.h"
 #include "Graphics.Layouts.h"
@@ -8,7 +8,7 @@
 #include <sstream>
 #include "Context.Editor.Scenario.h"
 #include "Data.JSON.h"
-namespace aspirant::state::editor::Scenarios
+namespace state::editor::Scenarios
 {
 	const std::string LAYOUT_NAME = "EditScenarioSelector";
 	const std::string TEXT_INDEX_STRING_NAME = "EditScenarioSelector.Text.Index";

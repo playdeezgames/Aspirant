@@ -17,21 +17,21 @@
 #include "Options.h"
 #include "Game.Descriptors.h"
 #include "Game.ScenarioDescriptors.h"
-#include "Aspirant.State.Splash.h"
-#include "Aspirant.State.MainMenu.h"
-#include "Aspirant.State.About.h"
-#include "Aspirant.State.ConfirmQuit.h"
-#include "Aspirant.State.Options.h"
-#include "Aspirant.State.Start.h"
-#include "Aspirant.State.Editor.Start.h"
-#include "Aspirant.State.Editor.Scenarios.h"
-#include "Aspirant.State.Editor.Scenario.h"
-#include "Aspirant.State.Editor.PickRoom.h"
+#include "State.Splash.h"
+#include "State.MainMenu.h"
+#include "State.About.h"
+#include "State.ConfirmQuit.h"
+#include "State.Options.h"
+#include "State.Start.h"
+#include "State.Editor.Start.h"
+#include "State.Editor.Scenarios.h"
+#include "State.Editor.Scenario.h"
+#include "State.Editor.PickRoom.h"
 #include <map>
-#include "Aspirant.State.Editor.NewRoom.h"
-#include "Aspirant.State.Editor.ScenarioDescriptor.h"
-#include "Aspirant.State.Editor.RoomCells.h"
-#include "Aspirant.State.Editor.PickDescriptor.h"
+#include "State.Editor.NewRoom.h"
+#include "State.Editor.ScenarioDescriptor.h"
+#include "State.Editor.RoomCells.h"
+#include "State.Editor.PickDescriptor.h"
 #include "Context.Editor.NewRoom.h"
 namespace Application
 {
@@ -153,20 +153,20 @@ namespace common::Application
 
 	static std::vector<void(*)()> starters = 
 	{
-		aspirant::state::Splash::Start,
-		aspirant::state::MainMenu::Start,
-		aspirant::state::About::Start,
-		aspirant::state::ConfirmQuit::Start,
-		aspirant::state::Options::Start,
-		aspirant::state::Start::Start,
-		aspirant::state::editor::Start::Start,
-		aspirant::state::editor::Scenarios::Start,
-		aspirant::state::editor::Scenario::Start,
-		aspirant::state::editor::PickRoom::Start,
-		aspirant::state::editor::NewRoom::Start,
-		aspirant::state::editor::ScenarioDescriptor::Start,
-		aspirant::state::editor::RoomCells::Start,
-		aspirant::state::editor::PickDescriptor::Start,
+		state::Splash::Start,
+		state::MainMenu::Start,
+		state::About::Start,
+		state::ConfirmQuit::Start,
+		state::Options::Start,
+		state::Start::Start,
+		state::editor::Start::Start,
+		state::editor::Scenarios::Start,
+		state::editor::Scenario::Start,
+		state::editor::PickRoom::Start,
+		state::editor::NewRoom::Start,
+		state::editor::ScenarioDescriptor::Start,
+		state::editor::RoomCells::Start,
+		state::editor::PickDescriptor::Start,
 		::context::editor::NewRoom::Start
 	};
 

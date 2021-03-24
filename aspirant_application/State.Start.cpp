@@ -1,11 +1,11 @@
-#include "Aspirant.State.Start.h"
+#include "State.Start.h"
 #include "Application.h"
 #include "UIState.h"
 #include "MenuItem.h"
 #include <map>
 #include "Graphics.Layouts.h"
 #include "Data.Strings.h"
-namespace aspirant::state::Start
+namespace state::Start
 {
 	const std::string START_GAME_EDITOR_COLOR_NAME = "StartGame.Color.Editor";
 	const std::string START_GAME_BACK_COLOR_NAME = "StartGame.Color.Back";

@@ -1,11 +1,11 @@
-#include "Aspirant.State.Editor.PickRoom.h"
+#include "State.Editor.PickRoom.h"
 #include "Application.h"
 #include "UIState.h"
 #include "Graphics.Layouts.h"
 #include "Context.Editor.Rooms.h"
 #include "Data.Strings.h"
 #include "Context.Editor.RoomView.h"
-namespace aspirant::state::editor::PickRoom
+namespace state::editor::PickRoom
 {
 	const std::string LAYOUT_NAME = "EditPickRoom";
 	const std::string TEXT_NAME_STRING_ROOM_NAME = "EditPickRoom.Text.RoomName";
