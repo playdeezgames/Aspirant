@@ -10,5 +10,9 @@
     "avatar": {
         "type": "creature",
         "sprite": "AvatarTile"
+    },
+    "rat": {
+        "type": "creature",
+        "sprite": "RatTile"
     }
 }

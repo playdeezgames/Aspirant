@@ -88,6 +88,9 @@
                     "objects": [
                         {
                             "type": "floor"
+                        },
+                        {
+                            "type": "rat"
                         }
                     ]
                 },

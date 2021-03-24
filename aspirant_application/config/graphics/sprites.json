@@ -2728,5 +2728,12 @@
         "y": 1914,
         "w": 36,
         "h": 36
+    },
+    "RatTile":{
+        "texture": "urizen-onebit-tileset",
+        "x": 120,
+        "y": 510,
+        "w": 36,
+        "h": 36
     }
 }
