@@ -43,7 +43,7 @@ namespace aspirant::state::editor::Scenario
 			aspirant::Application::SetUIState(aspirant::UIState::EDIT_PICK_ROOM);
 			break;
 		case EditScenarioItem::NEW_ROOM:
-			aspirant::context::editor::NewRoom::ResetNewRoom();
+			aspirant::context::editor::NewRoom::Reset();
 			aspirant::Application::SetUIState(aspirant::UIState::EDIT_NEW_ROOM);
 			break;
 		}

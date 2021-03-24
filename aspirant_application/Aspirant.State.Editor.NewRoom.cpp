@@ -17,16 +17,19 @@ namespace aspirant::state::editor::NewRoom
 	const std::string COLOR_NAME_ROWS = "EditNewRoom.Color.Rows";
 	const std::string COLOR_NAME_CREATE = "EditNewRoom.Color.Create";
 	const std::string COLOR_NAME_CANCEL = "EditNewRoom.Color.Cancel";
+	const std::string COLOR_NAME_TERRAIN = "EditNewRoom.Color.Terrain";
 
 	const std::string TEXT_NAME_ROOM_NAME = "EditNewRoom.Text.RoomName";
 	const std::string TEXT_NAME_COLUMNS = "EditNewRoom.Text.Columns";
 	const std::string TEXT_NAME_ROWS = "EditNewRoom.Text.Rows";
+	const std::string TEXT_NAME_TERRAIN = "EditNewRoom.Text.Terrain";
 
 	enum class NewRoomItem
 	{
 		NAME,
 		COLUMNS,
 		ROWS,
+		TERRAIN,
 		CREATE,
 		CANCEL
 	};
@@ -35,7 +38,7 @@ namespace aspirant::state::editor::NewRoom
 
 	static void CreateRoom()
 	{
-		aspirant::context::editor::Scenario::Get().AddRoom(aspirant::context::editor::NewRoom::GetNewRoomName(), aspirant::context::editor::NewRoom::GetNewRoomColumns(), aspirant::context::editor::NewRoom::GetNewRoomRows());
+		aspirant::context::editor::Scenario::Get().AddRoom(aspirant::context::editor::NewRoom::GetName(), aspirant::context::editor::NewRoom::GetColumns(), aspirant::context::editor::NewRoom::GetRows());
 		aspirant::context::editor::Scenario::Save();
 	}
 
@@ -60,10 +63,10 @@ namespace aspirant::state::editor::NewRoom
 		switch (current)
 		{
 		case NewRoomItem::COLUMNS:
-			aspirant::context::editor::NewRoom::IncrementNewRoomColumns();
+			aspirant::context::editor::NewRoom::IncrementColumns();
 			break;
 		case NewRoomItem::ROWS:
-			aspirant::context::editor::NewRoom::IncrementNewRoomRows();
+			aspirant::context::editor::NewRoom::IncrementRows();
 			break;
 		}
 	}
@@ -73,11 +76,11 @@ namespace aspirant::state::editor::NewRoom
 		switch (current)
 		{
 		case NewRoomItem::COLUMNS:
-			aspirant::context::editor::NewRoom::DecrementNewRoomColumns();
+			aspirant::context::editor::NewRoom::DecrementColumns();
 			break;
 
 		case NewRoomItem::ROWS:
-			aspirant::context::editor::NewRoom::DecrementNewRoomRows();
+			aspirant::context::editor::NewRoom::DecrementRows();
 			break;
 		}
 	}
@@ -89,11 +92,17 @@ namespace aspirant::state::editor::NewRoom
 		case aspirant::Command::BACK:
 			if (current == NewRoomItem::NAME)
 			{
-				aspirant::context::editor::NewRoom::ClearNewRoomName();
+				aspirant::context::editor::NewRoom::AppendName("\b");
 			}
 			else
 			{
 				aspirant::Application::SetUIState(aspirant::UIState::EDIT_SCENARIO);
+			}
+			break;
+		case aspirant::Command::RED:
+			if (current == NewRoomItem::NAME)
+			{
+				aspirant::context::editor::NewRoom::ClearName();
 			}
 			break;
 		case aspirant::Command::UP:
@@ -127,20 +136,25 @@ namespace aspirant::state::editor::NewRoom
 			::data::Strings::Set(item.second.GetItemColorName(), (item.first == current) ? ("Cyan") : ("Gray"));
 		}
 
-		::data::Strings::Set(TEXT_NAME_ROOM_NAME, aspirant::context::editor::NewRoom::GetNewRoomName());
+		::data::Strings::Set(TEXT_NAME_ROOM_NAME, aspirant::context::editor::NewRoom::GetName());
 
 		std::stringstream ss;
-		ss << aspirant::context::editor::NewRoom::GetNewRoomColumns();
+		ss << aspirant::context::editor::NewRoom::GetColumns();
 		::data::Strings::Set(TEXT_NAME_COLUMNS, ss.str());
 
 		ss.str("");
-		ss << aspirant::context::editor::NewRoom::GetNewRoomRows();
+		ss << aspirant::context::editor::NewRoom::GetRows();
 		::data::Strings::Set(TEXT_NAME_ROWS, ss.str());
+
+		//TODO: TEXT_NAME_TERRAIN
 	}
 
 	static void OnTextInput(const std::string& text)
 	{
-		aspirant::context::editor::NewRoom::AppendNewRoomName(text);
+		if (current == NewRoomItem::NAME)
+		{
+			aspirant::context::editor::NewRoom::AppendName(text);
+		}
 	}
 
 	void Start()
@@ -151,8 +165,9 @@ namespace aspirant::state::editor::NewRoom
 		aspirant::Application::SetTextInputHandler(aspirant::UIState::EDIT_NEW_ROOM, OnTextInput);
 		items[NewRoomItem::NAME] = aspirant::commonui::MenuItemDescriptor<NewRoomItem>(COLOR_NAME_ROOM_NAME, NewRoomItem::CANCEL, NewRoomItem::COLUMNS);
 		items[NewRoomItem::COLUMNS] = aspirant::commonui::MenuItemDescriptor<NewRoomItem>(COLOR_NAME_COLUMNS, NewRoomItem::NAME, NewRoomItem::ROWS);
-		items[NewRoomItem::ROWS] = aspirant::commonui::MenuItemDescriptor<NewRoomItem>(COLOR_NAME_ROWS, NewRoomItem::COLUMNS, NewRoomItem::CREATE);
-		items[NewRoomItem::CREATE] = aspirant::commonui::MenuItemDescriptor<NewRoomItem>(COLOR_NAME_CREATE, NewRoomItem::ROWS, NewRoomItem::CANCEL);
+		items[NewRoomItem::ROWS] = aspirant::commonui::MenuItemDescriptor<NewRoomItem>(COLOR_NAME_ROWS, NewRoomItem::COLUMNS, NewRoomItem::TERRAIN);
+		items[NewRoomItem::TERRAIN] = aspirant::commonui::MenuItemDescriptor<NewRoomItem>(COLOR_NAME_TERRAIN, NewRoomItem::ROWS, NewRoomItem::CREATE);
+		items[NewRoomItem::CREATE] = aspirant::commonui::MenuItemDescriptor<NewRoomItem>(COLOR_NAME_CREATE, NewRoomItem::TERRAIN, NewRoomItem::CANCEL);
 		items[NewRoomItem::CANCEL]= aspirant::commonui::MenuItemDescriptor<NewRoomItem>(COLOR_NAME_CANCEL, NewRoomItem::CREATE, NewRoomItem::NAME);
 	}
 }

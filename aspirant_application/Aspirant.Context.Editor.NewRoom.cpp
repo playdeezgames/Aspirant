@@ -1,59 +1,77 @@
 #include "Aspirant.Context.Editor.NewRoom.h"
 namespace aspirant::context::editor::NewRoom
 {
+	const std::string DEFAULT_ROOM_NAME = "<replace me>";
+	const size_t DEFAULT_ROOM_COLUMNS = 10;
+	const size_t DEFAULT_ROOM_ROWS = 10;
+	const size_t MINIMUM_COLUMNS = 1;
+	const size_t MINIMUM_ROWS = 1;
+	const size_t DELTA_COLUMNS = 1;
+	const size_t DELTA_ROWS = 1;
+
 	static std::string newRoomName = "";
 	static size_t newRoomColumns = 0;
 	static size_t newRoomRows = 0;
 
-	void ResetNewRoom()
+	void Reset()
 	{
-		newRoomName = "<replace me>";//TODO: magic string
-		newRoomColumns = 10;//TODO: magic number
-		newRoomRows = 10;//TODO: magic number
+		newRoomName = DEFAULT_ROOM_NAME;
+		newRoomColumns = DEFAULT_ROOM_COLUMNS;
+		newRoomRows = DEFAULT_ROOM_ROWS;
 	}
 
-	const std::string& GetNewRoomName()
+	const std::string& GetName()
 	{
 		return newRoomName;
 	}
 
-	void AppendNewRoomName(const std::string& text)
+	void AppendName(const std::string& text)
 	{
-		newRoomName += text;
+		if (text == "\b")
+		{
+			if (!newRoomName.empty())
+			{
+				newRoomName.pop_back();
+			}
+		}
+		else
+		{
+			newRoomName += text;
+		}
 	}
 
-	void ClearNewRoomName()
+	void ClearName()
 	{
 		newRoomName = "";
 	}
 
-	size_t GetNewRoomColumns()
+	size_t GetColumns()
 	{
 		return newRoomColumns;
 	}
 
-	void IncrementNewRoomColumns()
+	void IncrementColumns()
 	{
-		newRoomColumns++;
+		newRoomColumns+=DELTA_COLUMNS;
 	}
 
-	void DecrementNewRoomColumns()
+	void DecrementColumns()
 	{
-		newRoomColumns = (newRoomColumns <= 1) ? (1) : (newRoomColumns - 1);
+		newRoomColumns = (newRoomColumns <= MINIMUM_COLUMNS) ? (MINIMUM_COLUMNS) : (newRoomColumns - DELTA_COLUMNS);
 	}
 
-	size_t GetNewRoomRows()
+	size_t GetRows()
 	{
 		return newRoomRows;
 	}
 
-	void IncrementNewRoomRows()
+	void IncrementRows()
 	{
-		newRoomRows++;
+		newRoomRows+=DELTA_ROWS;
 	}
 
-	void DecrementNewRoomRows()
+	void DecrementRows()
 	{
-		newRoomRows = (newRoomRows <= 1) ? (1) : (newRoomRows - 1);
+		newRoomRows = (newRoomRows <= MINIMUM_ROWS) ? (MINIMUM_ROWS) : (newRoomRows - DELTA_ROWS);
 	}
 }

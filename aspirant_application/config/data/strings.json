@@ -36,6 +36,8 @@
     "EditNewRoom.Text.RoomName":"<room name>",
     "EditNewRoom.Text.Columns":"<columns>",
     "EditNewRoom.Text.Rows":"<rows>",
+    "EditNewRoom.Text.Terrain":"<terrain>",
+    "EditNewRoom.Color.Terrain":"Gray",
     "EditScenarioDescriptor.Color.ScenarioName":"Gray",
     "EditScenarioDescriptor.Color.Brief":"Gray",
     "EditScenarioDescriptor.Color.Back":"Gray",

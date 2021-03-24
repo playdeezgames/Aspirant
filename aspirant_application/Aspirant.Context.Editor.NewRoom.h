@@ -2,14 +2,14 @@
 #include <string>
 namespace aspirant::context::editor::NewRoom
 {
-	void ResetNewRoom();
-	const std::string& GetNewRoomName();
-	void AppendNewRoomName(const std::string&);
-	void ClearNewRoomName();
-	size_t GetNewRoomColumns();
-	void IncrementNewRoomColumns();
-	void DecrementNewRoomColumns();
-	size_t GetNewRoomRows();
-	void IncrementNewRoomRows();
-	void DecrementNewRoomRows();
+	void Reset();
+	const std::string& GetName();
+	void AppendName(const std::string&);
+	void ClearName();
+	size_t GetColumns();
+	void IncrementColumns();
+	void DecrementColumns();
+	size_t GetRows();
+	void IncrementRows();
+	void DecrementRows();
 }
