@@ -32,23 +32,6 @@
 #include "Aspirant.State.Editor.ScenarioDescriptor.h"
 #include "Aspirant.State.Editor.RoomCells.h"
 #include "Aspirant.State.Editor.PickDescriptor.h"
-namespace aspirant::ConfigurationConstants
-{
-	const std::string TEXTURE = "config/graphics/textures.json";
-	const std::string SPRITE = "config/graphics/sprites.json";
-	const std::string COLOR = "config/graphics/colors.json";
-	const std::string FONTS = "config/graphics/fonts.json";
-	const std::string LAYOUTS = "config/ui/layouts.json";
-	const std::string STRINGS = "config/data/strings.json";
-	const std::string INTS = "config/data/ints.json";
-	const std::string FLAGS = "config/data/flags.json";
-	const std::string OPTIONS = "config/options.json";
-	const std::string SFX = "config/audio/sfx.json";
-	const std::string MUX = "config/audio/mux.json";
-	const std::string DESCRIPTORS = "config/game/descriptors.json";
-	const std::string SCENARIOS = "scenarios/scenarios.json";
-	
-}
 namespace aspirant::Application
 {
 	static aspirant::UIState uiState = aspirant::UIState::SPLASH;
@@ -153,6 +136,20 @@ namespace aspirant::Application
 }
 namespace common::Application
 {
+	const std::string TEXTURE = "config/graphics/textures.json";
+	const std::string SPRITE = "config/graphics/sprites.json";
+	const std::string COLOR = "config/graphics/colors.json";
+	const std::string FONTS = "config/graphics/fonts.json";
+	const std::string LAYOUTS = "config/ui/layouts.json";
+	const std::string STRINGS = "config/data/strings.json";
+	const std::string INTS = "config/data/ints.json";
+	const std::string FLAGS = "config/data/flags.json";
+	const std::string OPTIONS = "config/options.json";
+	const std::string SFX = "config/audio/sfx.json";
+	const std::string MUX = "config/audio/mux.json";
+	const std::string DESCRIPTORS = "config/game/descriptors.json";
+	const std::string SCENARIOS = "scenarios/scenarios.json";
+
 	static std::vector<void(*)()> starters = 
 	{
 		aspirant::state::Splash::Start,
@@ -173,20 +170,18 @@ namespace common::Application
 
 	void Start(SDL_Renderer* renderer)
 	{
-		::data::Strings::Start(aspirant::ConfigurationConstants::STRINGS);
-		::data::Ints::Start(aspirant::ConfigurationConstants::INTS);
-		::data::Bools::Start(aspirant::ConfigurationConstants::FLAGS);
-		::graphics::Colors::Start(aspirant::ConfigurationConstants::COLOR);
-		::graphics::Textures::Start(renderer, aspirant::ConfigurationConstants::TEXTURE);
-		::graphics::Sprites::Start(aspirant::ConfigurationConstants::SPRITE);
-		graphics::Fonts::Start(aspirant::ConfigurationConstants::FONTS);
-		graphics::Layouts::Start(aspirant::ConfigurationConstants::LAYOUTS);
-		common::Sounds::Start(aspirant::ConfigurationConstants::SFX, aspirant::ConfigurationConstants::MUX);
-		aspirant::Options::Start(aspirant::ConfigurationConstants::OPTIONS);
-		::game::Descriptors::Start(aspirant::ConfigurationConstants::DESCRIPTORS);
-		::game::ScenarioDescriptors::Load(aspirant::ConfigurationConstants::SCENARIOS);
-
-
+		data::Strings::Start(STRINGS);
+		data::Ints::Start(INTS);
+		data::Bools::Start(FLAGS);
+		graphics::Colors::Start(COLOR);
+		graphics::Textures::Start(renderer, TEXTURE);
+		graphics::Sprites::Start(SPRITE);
+		graphics::Fonts::Start(FONTS);
+		graphics::Layouts::Start(LAYOUTS);
+		common::Sounds::Start(SFX, MUX);
+		aspirant::Options::Start(OPTIONS);
+		game::Descriptors::Start(DESCRIPTORS);
+		game::ScenarioDescriptors::Load(SCENARIOS);
 
 		for (auto starter : starters)
 		{
@@ -237,5 +232,4 @@ namespace common::Application
 	{
 		common::Finishers::Finish();
 	}
-
 }
