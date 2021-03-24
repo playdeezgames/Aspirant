@@ -1,8 +1,8 @@
 #include "Renderer.Editor.Room.h"
 #include "Common.XY.h"
-#include "Aspirant.Context.Editor.RoomView.h"
+#include "Context.Editor.RoomView.h"
 #include "Graphics.Sprites.h"
-#include "Aspirant.Context.Editor.Rooms.h"
+#include "Context.Editor.Rooms.h"
 namespace renderer::editor::Room
 {
 	const std::string SPRITE_CURSOR = "MapCursor";
@@ -27,14 +27,14 @@ namespace renderer::editor::Room
 
 	static void DrawRoom(SDL_Renderer* renderer, const ::game::Room* room)
 	{
-		for (size_t viewRow = 0; viewRow < aspirant::context::editor::RoomView::GetSize().GetY(); ++viewRow)
+		for (size_t viewRow = 0; viewRow < ::context::editor::RoomView::GetSize().GetY(); ++viewRow)
 		{
-			for (size_t viewColumn = 0; viewColumn < aspirant::context::editor::RoomView::GetSize().GetX(); ++viewColumn)
+			for (size_t viewColumn = 0; viewColumn < ::context::editor::RoomView::GetSize().GetX(); ++viewColumn)
 			{
 				common::XY<size_t> viewPosition =
 					common::XY<size_t>(viewColumn, viewRow);
 				common::XY<size_t> cellPosition =
-					viewPosition + aspirant::context::editor::RoomView::GetAnchor();
+					viewPosition + ::context::editor::RoomView::GetAnchor();
 				auto cell = room->GetCell(cellPosition.GetX(), cellPosition.GetY());
 				if (cell)
 				{
@@ -46,15 +46,15 @@ namespace renderer::editor::Room
 
 	static void DrawMapCursor(SDL_Renderer* renderer)
 	{
-		auto& cursorPosition = aspirant::context::editor::RoomView::GetCursor();
-		auto& anchorPosition = aspirant::context::editor::RoomView::GetAnchor();
+		auto& cursorPosition = ::context::editor::RoomView::GetCursor();
+		auto& anchorPosition = ::context::editor::RoomView::GetAnchor();
 		common::XY<size_t> viewPosition = { cursorPosition.GetX() - anchorPosition.GetX(), cursorPosition.GetY() - anchorPosition.GetY() };
 		graphics::Sprites::Get(SPRITE_CURSOR).Draw(renderer, Plot(viewPosition));
 	}
 
 	void Draw(SDL_Renderer* renderer)
 	{
-		DrawRoom(renderer, aspirant::context::editor::Rooms::GetRoom());
+		DrawRoom(renderer, ::context::editor::Rooms::GetRoom());
 		DrawMapCursor(renderer);
 	}
 }

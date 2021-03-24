@@ -1,5 +1,5 @@
 #pragma once
-namespace aspirant::context::editor::Scenarios
+namespace context::editor::Scenarios
 {
 	void SetIndex(size_t);
 	size_t GetIndex();

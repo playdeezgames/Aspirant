@@ -1,6 +1,6 @@
 #include "Renderer.Editor.Cell.h"
 #include "Common.XY.h"
-#include "Aspirant.Context.Editor.Cell.h"
+#include "Context.Editor.Cell.h"
 #include "Graphics.Sprites.h"
 namespace renderer::editor::RoomCellObjects
 {
@@ -16,12 +16,12 @@ namespace renderer::editor::RoomCellObjects
 
 	void Draw(SDL_Renderer* renderer)
 	{
-		auto& objs = aspirant::context::editor::Cell::GetCell()->GetObjects();
+		auto& objs = ::context::editor::Cell::GetCell()->GetObjects();
 		size_t column = 0;
 		for (auto& obj : objs)
 		{
 			obj->Draw(renderer, Plot({ column++, 0 }));
 		}
-		graphics::Sprites::Get(SPRITE_CURSOR).Draw(renderer, Plot({ aspirant::context::editor::Cell::GetIndex(), 0 }));
+		graphics::Sprites::Get(SPRITE_CURSOR).Draw(renderer, Plot({ ::context::editor::Cell::GetIndex(), 0 }));
 	}
 }

@@ -1,6 +1,6 @@
 #pragma once
 #include "Common.XY.h"
-namespace aspirant::context::editor::RoomView
+namespace context::editor::RoomView
 {
 	const common::XY<size_t>& GetSize();
 	const common::XY<size_t>& GetAnchor();

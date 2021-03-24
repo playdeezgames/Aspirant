@@ -1,7 +1,7 @@
-#include "Aspirant.Context.Editor.Scenarios.h"
+#include "Context.Editor.Scenarios.h"
 #include "Game.ScenarioDescriptors.h"
 #include "Common.Utility.h"
-namespace aspirant::context::editor::Scenarios
+namespace context::editor::Scenarios
 {
 	static size_t scenarioIndex = 0;
 	static void DoBusinessRules()

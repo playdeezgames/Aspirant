@@ -2,9 +2,9 @@
 #include "Application.h"
 #include "UIState.h"
 #include "Graphics.Layouts.h"
-#include "Aspirant.Context.Editor.Rooms.h"
+#include "Context.Editor.Rooms.h"
 #include "Data.Strings.h"
-#include "Aspirant.Context.Editor.RoomView.h"
+#include "Context.Editor.RoomView.h"
 namespace aspirant::state::editor::PickRoom
 {
 	const std::string LAYOUT_NAME = "EditPickRoom";
@@ -19,14 +19,14 @@ namespace aspirant::state::editor::PickRoom
 			break;
 		case ::Command::RIGHT:
 		case ::Command::NEXT:
-			aspirant::context::editor::Rooms::NextRoom();
+			::context::editor::Rooms::NextRoom();
 			break;
 		case ::Command::LEFT:
 		case ::Command::PREVIOUS:
-			aspirant::context::editor::Rooms::PreviousRoom();
+			::context::editor::Rooms::PreviousRoom();
 			break;
 		case ::Command::GREEN:
-			aspirant::context::editor::RoomView::SetCursor({ 0,0 });
+			::context::editor::RoomView::SetCursor({ 0,0 });
 			::Application::SetUIState(::UIState::EDIT_NAVIGATE_ROOM);
 			break;
 		}
@@ -39,9 +39,9 @@ namespace aspirant::state::editor::PickRoom
 
 	static void OnUpdate(const Uint32& ticks)
 	{
-		if (aspirant::context::editor::Rooms::GetRoomCount() > 0)
+		if (::context::editor::Rooms::GetRoomCount() > 0)
 		{
-			auto& roomName = aspirant::context::editor::Rooms::GetRoomList()[aspirant::context::editor::Rooms::GetRoomIndex()];
+			auto& roomName = ::context::editor::Rooms::GetRoomList()[::context::editor::Rooms::GetRoomIndex()];
 			::data::Strings::Set(TEXT_NAME_STRING_ROOM_NAME, roomName);
 		}
 		else

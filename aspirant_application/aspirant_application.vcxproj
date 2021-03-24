@@ -170,7 +170,7 @@
     <ClCompile Include="Context.Editor.Scenario.cpp" />
     <ClCompile Include="Context.Editor.PickDescriptor.cpp" />
     <ClCompile Include="Context.Editor.NewRoom.cpp" />
-    <ClCompile Include="Aspirant.Context.Editor.NewRoom.h" />
+    <ClCompile Include="Context.Editor.NewRoom.h" />
     <ClCompile Include="Context.Editor.Cell.cpp" />
     <ClCompile Include="Context.Editor.Rooms.cpp" />
     <ClCompile Include="Context.Editor.RoomView.cpp" />
@@ -232,12 +232,12 @@
     <ClInclude Include="Aspirant.State.Editor.PickDescriptor.h" />
     <ClInclude Include="Aspirant.State.Editor.RoomCells.h" />
     <ClInclude Include="Aspirant.State.Editor.NewRoom.h" />
-    <ClInclude Include="Aspirant.Context.Editor.Scenario.h" />
-    <ClInclude Include="Aspirant.Context.Editor.PickDescriptor.h" />
-    <ClInclude Include="Aspirant.Context.Editor.Cell.h" />
-    <ClInclude Include="Aspirant.Context.Editor.Rooms.h" />
-    <ClInclude Include="Aspirant.Context.Editor.RoomView.h" />
-    <ClInclude Include="Aspirant.Context.Editor.Scenarios.h" />
+    <ClInclude Include="Context.Editor.Scenario.h" />
+    <ClInclude Include="Context.Editor.PickDescriptor.h" />
+    <ClInclude Include="Context.Editor.Cell.h" />
+    <ClInclude Include="Context.Editor.Rooms.h" />
+    <ClInclude Include="Context.Editor.RoomView.h" />
+    <ClInclude Include="Context.Editor.Scenarios.h" />
     <ClInclude Include="Aspirant.State.Editor.PickRoom.h" />
     <ClInclude Include="Aspirant.State.Editor.ScenarioDescriptor.h" />
     <ClInclude Include="Aspirant.State.Editor.Scenarios.h" />

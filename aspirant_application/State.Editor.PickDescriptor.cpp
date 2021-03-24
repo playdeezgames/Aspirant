@@ -6,17 +6,17 @@
 #include "Renderer.Editor.Cell.h"
 #include "Renderer.Editor.PickDescriptor.h"
 #include "Common.Utility.h"
-#include "Aspirant.Context.Editor.PickDescriptor.h"
+#include "Context.Editor.PickDescriptor.h"
 namespace aspirant::state::editor::PickDescriptor
 {
 	const std::string LAYOUT_NAME = "EditDescriptorSelector";
 
 	static void ChangeIndex(int delta)
 	{
-		aspirant::context::editor::PickDescriptor::SetIndex(
+		::context::editor::PickDescriptor::SetIndex(
 			(size_t)common::Utility::PositiveModulo(
-				aspirant::context::editor::PickDescriptor::GetIndex() + delta, 
-				aspirant::context::editor::PickDescriptor::GetCount()));
+				::context::editor::PickDescriptor::GetIndex() + delta, 
+				::context::editor::PickDescriptor::GetCount()));
 	}
 
 	static void OnCommand(const ::Command& command)

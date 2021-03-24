@@ -149,7 +149,7 @@
     <ClCompile Include="Context.Editor.Scenario.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Aspirant.Context.Editor.NewRoom.h">
+    <ClCompile Include="Context.Editor.NewRoom.h">
       <Filter>Header Files</Filter>
     </ClCompile>
     <ClCompile Include="Context.Editor.NewRoom.cpp">
@@ -346,7 +346,7 @@
     <ClInclude Include="Aspirant.State.Editor.Start.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Aspirant.Context.Editor.Scenarios.h">
+    <ClInclude Include="Context.Editor.Scenarios.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Aspirant.State.Editor.Scenarios.h">
@@ -364,16 +364,16 @@
     <ClInclude Include="Aspirant.State.Editor.Scenario.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Aspirant.Context.Editor.Rooms.h">
+    <ClInclude Include="Context.Editor.Rooms.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Aspirant.Context.Editor.Scenario.h">
+    <ClInclude Include="Context.Editor.Scenario.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Aspirant.State.Editor.PickRoom.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Aspirant.Context.Editor.RoomView.h">
+    <ClInclude Include="Context.Editor.RoomView.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Aspirant.State.Editor.NewRoom.h">
@@ -394,10 +394,10 @@
     <ClInclude Include="Aspirant.State.Editor.RoomCells.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Aspirant.Context.Editor.PickDescriptor.h">
+    <ClInclude Include="Context.Editor.PickDescriptor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Aspirant.Context.Editor.Cell.h">
+    <ClInclude Include="Context.Editor.Cell.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Aspirant.State.Editor.PickDescriptor.h">

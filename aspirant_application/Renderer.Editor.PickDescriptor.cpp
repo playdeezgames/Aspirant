@@ -1,7 +1,7 @@
 #include "Renderer.Editor.PickDescriptor.h"
 #include "Common.XY.h"
 #include "Graphics.Sprites.h"
-#include "Aspirant.Context.Editor.PickDescriptor.h"
+#include "Context.Editor.PickDescriptor.h"
 namespace renderer::editor::PickDescriptor
 {
 	const std::string SPRITE_CURSOR = "MapCursor";
@@ -18,13 +18,13 @@ namespace renderer::editor::PickDescriptor
 
 	void Draw(SDL_Renderer* renderer)
 	{
-		for (size_t idx = 0; idx < aspirant::context::editor::PickDescriptor::GetCount(); ++idx)
+		for (size_t idx = 0; idx < ::context::editor::PickDescriptor::GetCount(); ++idx)
 		{
 			common::XY<int> position = Plot({ idx % TILE_COLUMNS, idx / TILE_COLUMNS });
 
-			aspirant::context::editor::PickDescriptor::GetDescriptor(idx)->Draw(renderer, position);
+			::context::editor::PickDescriptor::GetDescriptor(idx)->Draw(renderer, position);
 
-			if (idx == aspirant::context::editor::PickDescriptor::GetIndex())
+			if (idx == ::context::editor::PickDescriptor::GetIndex())
 			{
 				graphics::Sprites::Get(SPRITE_CURSOR).Draw(renderer, position);
 			}

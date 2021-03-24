@@ -5,14 +5,14 @@
 #include "Renderer.Editor.Room.h"
 #include "Renderer.Editor.PickDescriptor.h"
 #include "Renderer.Editor.Cell.h"
-#include "Aspirant.Context.Editor.RoomView.h"
+#include "Context.Editor.RoomView.h"
 #include <sstream>
 #include "Data.Strings.h"
-#include "Aspirant.Context.Editor.Scenario.h"
+#include "Context.Editor.Scenario.h"
 #include "Common.Utility.h"
-#include "Aspirant.Context.Editor.Rooms.h"
-#include "Aspirant.Context.Editor.Cell.h"
-#include "Aspirant.Context.Editor.PickDescriptor.h"
+#include "Context.Editor.Rooms.h"
+#include "Context.Editor.Cell.h"
+#include "Context.Editor.PickDescriptor.h"
 namespace aspirant::state::editor::RoomCells
 {
 	const std::string LAYOUT_NAME = "EditNavigateRoom";
@@ -21,20 +21,20 @@ namespace aspirant::state::editor::RoomCells
 
 	static void MoveCursor(const common::XY<int>& delta)
 	{
-		int newCursorX = (int)aspirant::context::editor::RoomView::GetCursor().GetX() + delta.GetX();
-		int newCursorY = (int)aspirant::context::editor::RoomView::GetCursor().GetY() + delta.GetY();
-		auto room = aspirant::context::editor::Rooms::GetRoom();
+		int newCursorX = (int)::context::editor::RoomView::GetCursor().GetX() + delta.GetX();
+		int newCursorY = (int)::context::editor::RoomView::GetCursor().GetY() + delta.GetY();
+		auto room = ::context::editor::Rooms::GetRoom();
 		newCursorX = common::Utility::PositiveModulo(newCursorX, room->GetColumns());
 		newCursorY = common::Utility::PositiveModulo(newCursorY, room->GetRows());
-		aspirant::context::editor::RoomView::SetCursor({ (size_t)newCursorX, (size_t)newCursorY });
-		aspirant::context::editor::Cell::Reset();
+		::context::editor::RoomView::SetCursor({ (size_t)newCursorX, (size_t)newCursorY });
+		::context::editor::Cell::Reset();
 	}
 
 	static void PlaceObject()
 	{
-		auto& cursorPosition = aspirant::context::editor::RoomView::GetCursor();
-		auto descriptor = aspirant::context::editor::PickDescriptor::GetDescriptor(aspirant::context::editor::PickDescriptor::GetIndex());
-		auto roomCell = aspirant::context::editor::Rooms::GetRoom()->GetCell(cursorPosition.GetX(), cursorPosition.GetY());
+		auto& cursorPosition = ::context::editor::RoomView::GetCursor();
+		auto descriptor = ::context::editor::PickDescriptor::GetDescriptor(::context::editor::PickDescriptor::GetIndex());
+		auto roomCell = ::context::editor::Rooms::GetRoom()->GetCell(cursorPosition.GetX(), cursorPosition.GetY());
 		auto obj = descriptor->CreateObject();
 		if (!roomCell->AddObject(obj))
 		{
@@ -44,8 +44,8 @@ namespace aspirant::state::editor::RoomCells
 
 	static void RemoveObject()
 	{
-		auto& cursorPosition = aspirant::context::editor::RoomView::GetCursor();
-		auto roomCell = aspirant::context::editor::Rooms::GetRoom()->GetCell(cursorPosition.GetX(), cursorPosition.GetY());
+		auto& cursorPosition = ::context::editor::RoomView::GetCursor();
+		auto roomCell = ::context::editor::Rooms::GetRoom()->GetCell(cursorPosition.GetX(), cursorPosition.GetY());
 		auto obj = roomCell->RemoveObject();
 		if (obj)
 		{
@@ -58,7 +58,7 @@ namespace aspirant::state::editor::RoomCells
 		switch (command)
 		{
 		case ::Command::BACK:
-			aspirant::context::editor::Scenario::Save();
+			::context::editor::Scenario::Save();
 			::Application::SetUIState(::UIState::EDIT_PICK_ROOM);
 			break;
 		case ::Command::UP:
@@ -96,7 +96,7 @@ namespace aspirant::state::editor::RoomCells
 
 	static void OnUpdate(const Uint32& ticks)
 	{
-		auto& cursorPosition = aspirant::context::editor::RoomView::GetCursor();
+		auto& cursorPosition = ::context::editor::RoomView::GetCursor();
 		std::stringstream ss;
 		ss << "(" << cursorPosition.GetX() << "," << cursorPosition.GetY() << ")";//TODO: magic string
 		::data::Strings::Set(TEXT_ROOM_VIEW_POSITION_NAME, ss.str());

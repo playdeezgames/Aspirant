@@ -3,7 +3,7 @@
 #include "UIState.h"
 #include "Graphics.Layouts.h"
 #include "MenuItem.h"
-#include "Aspirant.Context.Editor.Scenarios.h"
+#include "Context.Editor.Scenarios.h"
 #include "Data.Strings.h"
 #include "Game.ScenarioDescriptors.h"
 namespace aspirant::state::editor::ScenarioDescriptor
@@ -37,7 +37,7 @@ namespace aspirant::state::editor::ScenarioDescriptor
 
 	static void OnCommand(const ::Command& command)
 	{
-		auto descriptor = ::game::ScenarioDescriptors::Get(aspirant::context::editor::Scenarios::GetIndex());
+		auto descriptor = ::game::ScenarioDescriptors::Get(::context::editor::Scenarios::GetIndex());
 		switch (command)
 		{
 		case ::Command::BACK:
@@ -73,7 +73,7 @@ namespace aspirant::state::editor::ScenarioDescriptor
 
 	static void OnUpdate(const Uint32& ticks)
 	{
-		auto descriptor = ::game::ScenarioDescriptors::Get(aspirant::context::editor::Scenarios::GetIndex());
+		auto descriptor = ::game::ScenarioDescriptors::Get(::context::editor::Scenarios::GetIndex());
 		::data::Strings::Set(TEXT_NAME_SCENARIO_NAME, descriptor->GetName());
 		::data::Strings::Set(TEXT_NAME_BRIEF, descriptor->GetBrief());
 		for (auto& item : items)
@@ -84,7 +84,7 @@ namespace aspirant::state::editor::ScenarioDescriptor
 
 	static void OnTextInput(const std::string& text)
 	{
-		auto descriptor = ::game::ScenarioDescriptors::Get(aspirant::context::editor::Scenarios::GetIndex());
+		auto descriptor = ::game::ScenarioDescriptors::Get(::context::editor::Scenarios::GetIndex());
 		switch (current)
 		{
 		case EditScenarioDescriptorItem::SCENARIO_NAME:

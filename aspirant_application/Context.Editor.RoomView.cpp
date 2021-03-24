@@ -1,7 +1,7 @@
 #pragma once
-#include "Aspirant.Context.Editor.RoomView.h"
+#include "Context.Editor.RoomView.h"
 #include "Common.XY.h"
-namespace aspirant::context::editor::RoomView
+namespace context::editor::RoomView
 {
 	static common::XY<size_t> gridSize = { 10,10 };
 	static common::XY<size_t> gridAnchor;

@@ -3,10 +3,10 @@
 #include "UIState.h"
 #include "Graphics.Layouts.h"
 #include "Game.ScenarioDescriptors.h"
-#include "Aspirant.Context.Editor.Scenarios.h"
+#include "Context.Editor.Scenarios.h"
 #include "Data.Strings.h"
 #include <sstream>
-#include "Aspirant.Context.Editor.Scenario.h"
+#include "Context.Editor.Scenario.h"
 #include "Data.JSON.h"
 namespace aspirant::state::editor::Scenarios
 {
@@ -25,14 +25,14 @@ namespace aspirant::state::editor::Scenarios
 			break;
 		case ::Command::NEXT:
 		case ::Command::RIGHT:
-			aspirant::context::editor::Scenarios::Next();
+			::context::editor::Scenarios::Next();
 			break;
 		case ::Command::PREVIOUS:
 		case ::Command::LEFT:
-			aspirant::context::editor::Scenarios::Previous();
+			::context::editor::Scenarios::Previous();
 			break;
 		case ::Command::GREEN:
-			aspirant::context::editor::Scenario::Load();
+			::context::editor::Scenario::Load();
 			::Application::SetUIState(::UIState::EDIT_SCENARIO);
 			break;
 		}
@@ -48,7 +48,7 @@ namespace aspirant::state::editor::Scenarios
 		if (scenario)
 		{
 			std::stringstream ss;
-			ss << "Scenario " << (aspirant::context::editor::Scenarios::GetIndex() + 1) << "/" << ::game::ScenarioDescriptors::GetCount();
+			ss << "Scenario " << (::context::editor::Scenarios::GetIndex() + 1) << "/" << ::game::ScenarioDescriptors::GetCount();
 			::data::Strings::Set(TEXT_INDEX_STRING_NAME, ss.str());
 		}
 		else
@@ -99,7 +99,7 @@ namespace aspirant::state::editor::Scenarios
 
 	static void OnUpdate(const Uint32& ticks)
 	{
-		auto scenario = ::game::ScenarioDescriptors::Get(aspirant::context::editor::Scenarios::GetIndex());
+		auto scenario = ::game::ScenarioDescriptors::Get(::context::editor::Scenarios::GetIndex());
 		UpdateBriefText(scenario);
 		UpdateIdText(scenario);
 		UpdateIndexText(scenario);

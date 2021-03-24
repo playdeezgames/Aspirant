@@ -1,6 +1,6 @@
-#include "Aspirant.Context.Editor.PickDescriptor.h"
+#include "Context.Editor.PickDescriptor.h"
 #include "Game.Descriptors.h"
-namespace aspirant::context::editor::PickDescriptor
+namespace context::editor::PickDescriptor
 {
 	static size_t index;
 

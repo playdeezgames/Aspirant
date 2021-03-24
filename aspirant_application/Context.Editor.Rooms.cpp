@@ -1,16 +1,16 @@
-#include "Aspirant.Context.Editor.Rooms.h"
+#include "Context.Editor.Rooms.h"
 #include "Common.Utility.h"
-#include "Aspirant.Context.Editor.Scenario.h"
+#include "Context.Editor.Scenario.h"
 #include <vector>
 #include <string>
-namespace aspirant::context::editor::Rooms
+namespace context::editor::Rooms
 {
 	static std::vector<std::string> roomList;
 	static size_t roomIndex = 0;
 
 	void UpdateRoomList()
 	{
-		roomList = aspirant::context::editor::Scenario::Get().GetRoomKeys();
+		roomList = ::context::editor::Scenario::Get().GetRoomKeys();
 		if (roomIndex >= roomList.size())
 		{
 			roomIndex = 0;
@@ -51,7 +51,7 @@ namespace aspirant::context::editor::Rooms
 	{
 		if (GetRoomCount() > GetRoomIndex())
 		{
-			return aspirant::context::editor::Scenario::Get().GetRoom(GetRoomList()[GetRoomIndex()]);
+			return ::context::editor::Scenario::Get().GetRoom(GetRoomList()[GetRoomIndex()]);
 		}
 		else
 		{

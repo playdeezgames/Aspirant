@@ -1,9 +1,9 @@
-#include "Aspirant.Context.Editor.NewRoom.h"
+#include "Context.Editor.NewRoom.h"
 #include "Game.Descriptors.h"
 #include <vector>
 #include "Common.Finisher.h"
 #include "Game.Object.Common.h"
-namespace aspirant::context::editor::NewRoom
+namespace context::editor::NewRoom
 {
 	const std::string DEFAULT_ROOM_NAME = "<replace me>";
 	const size_t DEFAULT_ROOM_COLUMNS = 10;

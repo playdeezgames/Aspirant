@@ -1,8 +1,8 @@
 #pragma once
-#include "Aspirant.Context.Editor.Cell.h"
-#include "Aspirant.Context.Editor.Rooms.h"
-#include "Aspirant.Context.Editor.RoomView.h"
-namespace aspirant::context::editor::Cell
+#include "Context.Editor.Cell.h"
+#include "Context.Editor.Rooms.h"
+#include "Context.Editor.RoomView.h"
+namespace context::editor::Cell
 {
 	static size_t index;
 
@@ -13,9 +13,9 @@ namespace aspirant::context::editor::Cell
 
 	::game::Cell* GetCell()
 	{
-		if (::aspirant::context::editor::Rooms::GetRoom())
+		if (::context::editor::Rooms::GetRoom())
 		{
-			return ::aspirant::context::editor::Rooms::GetRoom()->GetCell(::aspirant::context::editor::RoomView::GetCursor().GetX(), ::aspirant::context::editor::RoomView::GetCursor().GetY());
+			return ::context::editor::Rooms::GetRoom()->GetCell(::context::editor::RoomView::GetCursor().GetX(), ::context::editor::RoomView::GetCursor().GetY());
 		}
 		return nullptr;
 	}

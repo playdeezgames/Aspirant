@@ -5,9 +5,9 @@
 #include "MenuItem.h"
 #include <sstream>
 #include "Data.Strings.h"
-#include "Aspirant.Context.Editor.Scenario.h"
-#include "Aspirant.Context.Editor.NewRoom.h"
-#include "Aspirant.Context.Editor.Rooms.h"
+#include "Context.Editor.Scenario.h"
+#include "Context.Editor.NewRoom.h"
+#include "Context.Editor.Rooms.h"
 namespace aspirant::state::editor::NewRoom
 {
 	const std::string LAYOUT_NAME = "EditNewRoom";
@@ -38,14 +38,14 @@ namespace aspirant::state::editor::NewRoom
 
 	static void CreateRoom()
 	{
-		aspirant::context::editor::Scenario::Get().AddRoom
+		::context::editor::Scenario::Get().AddRoom
 		(
-			aspirant::context::editor::NewRoom::GetName(),
-			aspirant::context::editor::NewRoom::GetColumns(),
-			aspirant::context::editor::NewRoom::GetRows(),
-			aspirant::context::editor::NewRoom::GetTerrain()
+			::context::editor::NewRoom::GetName(),
+			::context::editor::NewRoom::GetColumns(),
+			::context::editor::NewRoom::GetRows(),
+			::context::editor::NewRoom::GetTerrain()
 		);
-		aspirant::context::editor::Scenario::Save();
+		::context::editor::Scenario::Save();
 	}
 
 
@@ -55,7 +55,7 @@ namespace aspirant::state::editor::NewRoom
 		{
 		case NewRoomItem::CREATE:
 			CreateRoom();
-			aspirant::context::editor::Rooms::UpdateRoomList();
+			::context::editor::Rooms::UpdateRoomList();
 			::Application::SetUIState(::UIState::EDIT_PICK_ROOM);
 			break;
 		case NewRoomItem::CANCEL:
@@ -69,13 +69,13 @@ namespace aspirant::state::editor::NewRoom
 		switch (current)
 		{
 		case NewRoomItem::TERRAIN:
-			aspirant::context::editor::NewRoom::NextTerrain();
+			::context::editor::NewRoom::NextTerrain();
 			break;
 		case NewRoomItem::COLUMNS:
-			aspirant::context::editor::NewRoom::IncrementColumns();
+			::context::editor::NewRoom::IncrementColumns();
 			break;
 		case NewRoomItem::ROWS:
-			aspirant::context::editor::NewRoom::IncrementRows();
+			::context::editor::NewRoom::IncrementRows();
 			break;
 		}
 	}
@@ -85,15 +85,15 @@ namespace aspirant::state::editor::NewRoom
 		switch (current)
 		{
 		case NewRoomItem::TERRAIN:
-			aspirant::context::editor::NewRoom::PreviousTerrain();
+			::context::editor::NewRoom::PreviousTerrain();
 			break;
 
 		case NewRoomItem::COLUMNS:
-			aspirant::context::editor::NewRoom::DecrementColumns();
+			::context::editor::NewRoom::DecrementColumns();
 			break;
 
 		case NewRoomItem::ROWS:
-			aspirant::context::editor::NewRoom::DecrementRows();
+			::context::editor::NewRoom::DecrementRows();
 			break;
 		}
 	}
@@ -105,7 +105,7 @@ namespace aspirant::state::editor::NewRoom
 		case ::Command::BACK:
 			if (current == NewRoomItem::NAME)
 			{
-				aspirant::context::editor::NewRoom::AppendName("\b");
+				::context::editor::NewRoom::AppendName("\b");
 			}
 			else
 			{
@@ -115,7 +115,7 @@ namespace aspirant::state::editor::NewRoom
 		case ::Command::RED:
 			if (current == NewRoomItem::NAME)
 			{
-				aspirant::context::editor::NewRoom::ClearName();
+				::context::editor::NewRoom::ClearName();
 			}
 			break;
 		case ::Command::UP:
@@ -149,24 +149,24 @@ namespace aspirant::state::editor::NewRoom
 			::data::Strings::Set(item.second.GetItemColorName(), (item.first == current) ? ("Cyan") : ("Gray"));
 		}
 
-		::data::Strings::Set(TEXT_NAME_ROOM_NAME, aspirant::context::editor::NewRoom::GetName());
+		::data::Strings::Set(TEXT_NAME_ROOM_NAME, ::context::editor::NewRoom::GetName());
 
 		std::stringstream ss;
-		ss << aspirant::context::editor::NewRoom::GetColumns();
+		ss << ::context::editor::NewRoom::GetColumns();
 		::data::Strings::Set(TEXT_NAME_COLUMNS, ss.str());
 
 		ss.str("");
-		ss << aspirant::context::editor::NewRoom::GetRows();
+		ss << ::context::editor::NewRoom::GetRows();
 		::data::Strings::Set(TEXT_NAME_ROWS, ss.str());
 
-		data::Strings::Set(TEXT_NAME_TERRAIN, aspirant::context::editor::NewRoom::GetTerrain());
+		data::Strings::Set(TEXT_NAME_TERRAIN, ::context::editor::NewRoom::GetTerrain());
 	}
 
 	static void OnTextInput(const std::string& text)
 	{
 		if (current == NewRoomItem::NAME)
 		{
-			aspirant::context::editor::NewRoom::AppendName(text);
+			::context::editor::NewRoom::AppendName(text);
 		}
 	}
 

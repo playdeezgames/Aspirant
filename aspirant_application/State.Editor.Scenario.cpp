@@ -3,12 +3,12 @@
 #include "UIState.h"
 #include "Graphics.Layouts.h"
 #include "Game.ScenarioDescriptors.h"
-#include "Aspirant.Context.Editor.Scenarios.h"
+#include "Context.Editor.Scenarios.h"
 #include "Data.Strings.h"
 #include <sstream>
 #include "MenuItem.h"
-#include "Aspirant.Context.Editor.Rooms.h"
-#include "Aspirant.Context.Editor.NewRoom.h"
+#include "Context.Editor.Rooms.h"
+#include "Context.Editor.NewRoom.h"
 namespace aspirant::state::editor::Scenario
 {
 	const std::string LAYOUT_NAME = "EditScenario";
@@ -39,11 +39,11 @@ namespace aspirant::state::editor::Scenario
 			::Application::SetUIState(::UIState::EDIT_SCENARIO_DESCRIPTOR);
 			break;
 		case EditScenarioItem::OPEN_ROOM:
-			aspirant::context::editor::Rooms::UpdateRoomList();
+			::context::editor::Rooms::UpdateRoomList();
 			::Application::SetUIState(::UIState::EDIT_PICK_ROOM);
 			break;
 		case EditScenarioItem::NEW_ROOM:
-			aspirant::context::editor::NewRoom::Reset();
+			::context::editor::NewRoom::Reset();
 			::Application::SetUIState(::UIState::EDIT_NEW_ROOM);
 			break;
 		}
@@ -76,7 +76,7 @@ namespace aspirant::state::editor::Scenario
 	static void UpdateHeader()
 	{
 		std::stringstream ss;
-		auto scenario = ::game::ScenarioDescriptors::Get(aspirant::context::editor::Scenarios::GetIndex());
+		auto scenario = ::game::ScenarioDescriptors::Get(::context::editor::Scenarios::GetIndex());
 		ss << scenario->GetName() << "(id=" << scenario->GetId() << ")";//TODO: magic strings
 		::data::Strings::Set(HEADER_TEXT_NAME, ss.str());
 	}

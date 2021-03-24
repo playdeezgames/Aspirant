@@ -1,8 +1,8 @@
-#include "Aspirant.Context.Editor.Scenario.h"
+#include "Context.Editor.Scenario.h"
 #include "Data.JSON.h"
-#include "Aspirant.Context.Editor.Scenarios.h"
+#include "Context.Editor.Scenarios.h"
 #include "Game.ScenarioDescriptors.h"
-namespace aspirant::context::editor::Scenario
+namespace context::editor::Scenario
 {
 	static ::game::Scenario scenario;
 
@@ -15,18 +15,18 @@ namespace aspirant::context::editor::Scenario
 	{
 		data::JSON::Save(
 			::game::ScenarioDescriptors::Get(
-				::aspirant::context::editor::Scenarios::GetIndex())
+				::context::editor::Scenarios::GetIndex())
 			->GetFileName(), 
 			Get().ToJSON());
 	}
 
 	void Load()
 	{
-		aspirant::context::editor::Scenario::Get()
+		::context::editor::Scenario::Get()
 			.FromJSON(
 				data::JSON::Load(
 					::game::ScenarioDescriptors::Get(
-						aspirant::context::editor::Scenarios::GetIndex())
+						::context::editor::Scenarios::GetIndex())
 					->GetFileName()));
 	}
 
