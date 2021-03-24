@@ -154,6 +154,8 @@
     <ClCompile Include="Aspirant.Application.cpp" />
     <ClCompile Include="Data.Bool.cpp" />
     <ClCompile Include="Game.Avatar.cpp" />
+    <ClCompile Include="Game.Descriptor.Player.cpp" />
+    <ClCompile Include="Game.Object.Player.cpp" />
     <ClCompile Include="Graphics.Colors.cpp" />
     <ClCompile Include="Aspirant.State.ConfirmQuit.cpp" />
     <ClCompile Include="Game.Descriptor.Creature.cpp" />
@@ -216,6 +218,7 @@
     <ClInclude Include="Common.Application.h" />
     <ClInclude Include="Aspirant.Application.h" />
     <ClInclude Include="Data.Bool.h" />
+    <ClInclude Include="Game.Object.Player.h" />
     <ClInclude Include="Graphics.Colors.h" />
     <ClInclude Include="Aspirant.Command.h" />
     <ClInclude Include="Game.Descriptor.Common.h" />
@@ -282,6 +285,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Game.Avatar.h" />
+    <None Include="Game.Descriptor.Player.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -17,16 +17,7 @@ namespace renderer::editor::Common
 		const ::game::descriptor::Common& descriptor
 	)
 	{
-		if (descriptor.GetType() == TYPE_TERRAIN)
-		{
-			const ::game::descriptor::Terrain& terrainDescriptor = dynamic_cast<const ::game::descriptor::Terrain&>(descriptor);
-			graphics::Sprites::Get(terrainDescriptor.GetSprite()).Draw(renderer, position);
-		}
-		else if (descriptor.GetType() == TYPE_CREATURE)
-		{
-			const ::game::descriptor::Creature& creatureDescriptor = dynamic_cast<const ::game::descriptor::Creature&>(descriptor);
-			graphics::Sprites::Get(creatureDescriptor.GetSprite()).Draw(renderer, position);
-		}
+		graphics::Sprites::Get(descriptor.GetSprite()).Draw(renderer, position);
 	}
 	void DrawObject
 	(

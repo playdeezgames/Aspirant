@@ -13,4 +13,8 @@ namespace game::descriptor
 		return new game::object::Creature(*this);
 	}
 
+	Common* Creature::FromNameAndProperties(const std::string& name, const nlohmann::json& properties)
+	{
+		return new Creature(name, properties);
+	}
 }

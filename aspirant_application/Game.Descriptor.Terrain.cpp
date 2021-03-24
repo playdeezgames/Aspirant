@@ -12,4 +12,9 @@ namespace game::descriptor
 	{
 		return new ::game::object::Terrain(*this);
 	}
+
+	Common* Terrain::FromNameAndProperties(const std::string& name, const nlohmann::json& properties)
+	{
+		return new Terrain(name, properties);
+	}
 }
