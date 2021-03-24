@@ -1,13 +1,17 @@
 #include "Renderer.Editor.Cell.h"
 #include "Common.XY.h"
-#include "Renderer.Editor.Common.h"
 #include "Aspirant.Context.Editor.Cell.h"
 #include "Graphics.Sprites.h"
 namespace renderer::editor::RoomCellObjects
 {
+	const std::string SPRITE_CURSOR = "MapCursor";
+	const int OFFSET_X = 360;
+	const int OFFSET_Y = 0;
+	const int TILE_WIDTH = 36;
+
 	common::XY<int> Plot(const common::XY<size_t>& position)
 	{
-		return { 360 + (int)position.GetX() * 36, 0 };//TODO: magic numbers
+		return { OFFSET_X + (int)position.GetX() * TILE_WIDTH, OFFSET_Y };
 	}
 
 	void Draw(SDL_Renderer* renderer)
@@ -16,8 +20,8 @@ namespace renderer::editor::RoomCellObjects
 		size_t column = 0;
 		for (auto& obj : objs)
 		{
-			renderer::editor::Common::DrawObject(renderer, Plot({ column++, 0 }), obj);
+			obj->Draw(renderer, Plot({ column++, 0 }));
 		}
-		graphics::Sprites::Get("MapCursor").Draw(renderer, Plot({ aspirant::context::editor::Cell::GetIndex(), 0 }));
+		graphics::Sprites::Get(SPRITE_CURSOR).Draw(renderer, Plot({ aspirant::context::editor::Cell::GetIndex(), 0 }));
 	}
 }

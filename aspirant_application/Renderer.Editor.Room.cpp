@@ -3,53 +3,42 @@
 #include "Aspirant.Context.Editor.RoomView.h"
 #include "Graphics.Sprites.h"
 #include "Aspirant.Context.Editor.Rooms.h"
-#include "Renderer.Editor.Common.h"
 namespace renderer::editor::Room
 {
+	const std::string SPRITE_CURSOR = "MapCursor";
+	const int OFFSET_X = 0;
+	const int OFFSET_Y = 0;
+	const int TILE_WIDTH = 36;
+	const int TILE_HEIGHT = 36;
+
 	static common::XY<int> Plot(const common::XY<size_t>& position)
 	{
-		return common::XY<int>((int)position.GetX() * 36, (int)position.GetY() * 36);
+		return common::XY<int>(OFFSET_X + (int)position.GetX() * TILE_WIDTH, OFFSET_Y + (int)position.GetY() * TILE_HEIGHT);
 	}
 
 	static void DrawCell(SDL_Renderer* renderer, const common::XY<size_t>& viewPosition, const ::game::Cell* cell)
 	{
-		if (cell)
+		auto& objs = cell->GetObjects();
+		for (auto& obj : objs)
 		{
-			auto& objs = cell->GetObjects();
-			for (auto& obj : objs)
-			{
-				auto plotPosition = Plot(viewPosition);
-				renderer::editor::Common::DrawObject(renderer, plotPosition, obj);
-			}
+			obj->Draw(renderer, Plot(viewPosition));
 		}
 	}
 
 	static void DrawRoom(SDL_Renderer* renderer, const ::game::Room* room)
 	{
-		if (room)
+		for (size_t viewRow = 0; viewRow < aspirant::context::editor::RoomView::GetSize().GetY(); ++viewRow)
 		{
-			for (size_t viewRow = 0; viewRow < aspirant::context::editor::RoomView::GetSize().GetY(); ++viewRow)
+			for (size_t viewColumn = 0; viewColumn < aspirant::context::editor::RoomView::GetSize().GetX(); ++viewColumn)
 			{
-				for (size_t viewColumn = 0; viewColumn < aspirant::context::editor::RoomView::GetSize().GetX(); ++viewColumn)
+				common::XY<size_t> viewPosition =
+					common::XY<size_t>(viewColumn, viewRow);
+				common::XY<size_t> cellPosition =
+					viewPosition + aspirant::context::editor::RoomView::GetAnchor();
+				auto cell = room->GetCell(cellPosition.GetX(), cellPosition.GetY());
+				if (cell)
 				{
-					common::XY<size_t> viewPosition =
-						common::XY<size_t>
-						(
-							viewColumn,
-							viewRow
-							);
-					common::XY<size_t> cellPosition =
-						viewPosition + aspirant::context::editor::RoomView::GetAnchor();
-					auto cell = room->GetCell(cellPosition.GetX(), cellPosition.GetY());
-					if (cell)
-					{
-						auto& objs = cell->GetObjects();
-						for (auto& obj : objs)
-						{
-							auto plotPosition = Plot(viewPosition);
-							renderer::editor::Common::DrawObject(renderer, plotPosition, obj);
-						}
-					}
+					DrawCell(renderer, viewPosition, cell);
 				}
 			}
 		}
@@ -57,13 +46,10 @@ namespace renderer::editor::Room
 
 	static void DrawMapCursor(SDL_Renderer* renderer)
 	{
-		//MapCursor
-		//vp = cp - an
 		auto& cursorPosition = aspirant::context::editor::RoomView::GetCursor();
 		auto& anchorPosition = aspirant::context::editor::RoomView::GetAnchor();
 		common::XY<size_t> viewPosition = { cursorPosition.GetX() - anchorPosition.GetX(), cursorPosition.GetY() - anchorPosition.GetY() };
-		//TODO: magic string vv
-		graphics::Sprites::Get("MapCursor").Draw(renderer, Plot(viewPosition));
+		graphics::Sprites::Get(SPRITE_CURSOR).Draw(renderer, Plot(viewPosition));
 	}
 
 	void Draw(SDL_Renderer* renderer)

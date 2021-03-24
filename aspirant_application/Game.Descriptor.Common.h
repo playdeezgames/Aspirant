@@ -1,6 +1,8 @@
 #pragma once
 #include <string>
 #include "json.hpp"
+#include <SDL.h>
+#include "Common.XY.h"
 namespace game::object
 {
 	class Common;
@@ -41,5 +43,6 @@ namespace game::descriptor
 		{
 			return sprite;
 		}
+		virtual void Draw(SDL_Renderer*, common::XY<int>) const;
 	};
 }

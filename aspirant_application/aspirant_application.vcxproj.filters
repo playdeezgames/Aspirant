@@ -185,9 +185,6 @@
     <ClCompile Include="Aspirant.Context.Editor.PickDescriptor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Renderer.Editor.Common.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Aspirant.State.Editor.PickDescriptor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -198,6 +195,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Game.Object.Player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.Object.Common.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.Descriptor.Common.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -395,9 +398,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Aspirant.Context.Editor.Cell.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Renderer.Editor.Common.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Aspirant.State.Editor.PickDescriptor.h">

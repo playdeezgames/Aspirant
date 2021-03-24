@@ -154,7 +154,9 @@
     <ClCompile Include="Aspirant.Application.cpp" />
     <ClCompile Include="Data.Bool.cpp" />
     <ClCompile Include="Game.Avatar.cpp" />
+    <ClCompile Include="Game.Descriptor.Common.cpp" />
     <ClCompile Include="Game.Descriptor.Player.cpp" />
+    <ClCompile Include="Game.Object.Common.cpp" />
     <ClCompile Include="Game.Object.Player.cpp" />
     <ClCompile Include="Graphics.Colors.cpp" />
     <ClCompile Include="Aspirant.State.ConfirmQuit.cpp" />
@@ -165,7 +167,6 @@
     <ClCompile Include="Aspirant.State.Editor.PickDescriptor.cpp" />
     <ClCompile Include="Aspirant.State.Editor.RoomCells.cpp" />
     <ClCompile Include="Aspirant.State.Editor.NewRoom.cpp" />
-    <ClCompile Include="Renderer.Editor.Common.cpp" />
     <ClCompile Include="Aspirant.Context.Editor.Scenario.cpp" />
     <ClCompile Include="Aspirant.Context.Editor.PickDescriptor.cpp" />
     <ClCompile Include="Aspirant.Context.Editor.NewRoom.cpp" />
@@ -231,7 +232,6 @@
     <ClInclude Include="Aspirant.State.Editor.PickDescriptor.h" />
     <ClInclude Include="Aspirant.State.Editor.RoomCells.h" />
     <ClInclude Include="Aspirant.State.Editor.NewRoom.h" />
-    <ClInclude Include="Renderer.Editor.Common.h" />
     <ClInclude Include="Aspirant.Context.Editor.Scenario.h" />
     <ClInclude Include="Aspirant.Context.Editor.PickDescriptor.h" />
     <ClInclude Include="Aspirant.Context.Editor.Cell.h" />
