@@ -6,7 +6,7 @@
 #include "Aspirant.Context.Editor.Scenarios.h"
 #include "Data.Strings.h"
 #include <sstream>
-#include "MenuItemDescriptor.h"
+#include "Aspirant.MenuItem.h"
 #include "Aspirant.Context.Editor.Rooms.h"
 #include "Aspirant.Context.Editor.NewRoom.h"
 namespace aspirant::state::editor::Scenario
@@ -26,7 +26,7 @@ namespace aspirant::state::editor::Scenario
 		BACK
 	};
 	static EditScenarioItem current = EditScenarioItem::BACK;
-	static std::map<EditScenarioItem, aspirant::commonui::MenuItemDescriptor<EditScenarioItem>> items;
+	static std::map<EditScenarioItem, aspirant::MenuItem<EditScenarioItem>> items;
 
 	static void ActivateItem()
 	{
@@ -95,9 +95,9 @@ namespace aspirant::state::editor::Scenario
 		aspirant::Application::SetCommandHandler(aspirant::UIState::EDIT_SCENARIO, OnCommand);
 		aspirant::Application::SetRenderHandler(aspirant::UIState::EDIT_SCENARIO, OnDraw);
 		aspirant::Application::SetUpdateHandler(aspirant::UIState::EDIT_SCENARIO, OnUpdate);
-		items[EditScenarioItem::DESCRIPTOR]= aspirant::commonui::MenuItemDescriptor<EditScenarioItem>(ITEM_DESCRIPTOR_COLOR_NAME, EditScenarioItem::BACK, EditScenarioItem::OPEN_ROOM);
-		items[EditScenarioItem::OPEN_ROOM]= aspirant::commonui::MenuItemDescriptor<EditScenarioItem>(ITEM_OPEN_ROOM_COLOR_NAME, EditScenarioItem::DESCRIPTOR, EditScenarioItem::NEW_ROOM);
-		items[EditScenarioItem::NEW_ROOM]= aspirant::commonui::MenuItemDescriptor<EditScenarioItem>(ITEM_NEW_ROOM_COLOR_NAME, EditScenarioItem::OPEN_ROOM, EditScenarioItem::BACK);
-		items[EditScenarioItem::BACK]= aspirant::commonui::MenuItemDescriptor<EditScenarioItem>(ITEM_BACK_COLOR_NAME, EditScenarioItem::NEW_ROOM, EditScenarioItem::DESCRIPTOR);
+		items[EditScenarioItem::DESCRIPTOR]= aspirant::MenuItem<EditScenarioItem>(ITEM_DESCRIPTOR_COLOR_NAME, EditScenarioItem::BACK, EditScenarioItem::OPEN_ROOM);
+		items[EditScenarioItem::OPEN_ROOM]= aspirant::MenuItem<EditScenarioItem>(ITEM_OPEN_ROOM_COLOR_NAME, EditScenarioItem::DESCRIPTOR, EditScenarioItem::NEW_ROOM);
+		items[EditScenarioItem::NEW_ROOM]= aspirant::MenuItem<EditScenarioItem>(ITEM_NEW_ROOM_COLOR_NAME, EditScenarioItem::OPEN_ROOM, EditScenarioItem::BACK);
+		items[EditScenarioItem::BACK]= aspirant::MenuItem<EditScenarioItem>(ITEM_BACK_COLOR_NAME, EditScenarioItem::NEW_ROOM, EditScenarioItem::DESCRIPTOR);
 	}
 }

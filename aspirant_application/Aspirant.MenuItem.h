@@ -1,21 +1,21 @@
 #pragma once
 #include <string>
-namespace aspirant::commonui
+namespace aspirant
 {
 	template<typename TMenuItem>
-	class MenuItemDescriptor
+	class MenuItem
 	{
 	private:
 		TMenuItem nextMenuItem;
 		TMenuItem previousMenuItem;
 		std::string itemColorName;
 	public:
-		MenuItemDescriptor() = default;
-		MenuItemDescriptor(const MenuItemDescriptor&) = default;
-		MenuItemDescriptor& operator=(const MenuItemDescriptor&) = default;
-		MenuItemDescriptor(MenuItemDescriptor&&) = default;
-		MenuItemDescriptor& operator=(MenuItemDescriptor&&) = default;
-		MenuItemDescriptor
+		MenuItem() = default;
+		MenuItem(const MenuItem&) = default;
+		MenuItem& operator=(const MenuItem&) = default;
+		MenuItem(MenuItem&&) = default;
+		MenuItem& operator=(MenuItem&&) = default;
+		MenuItem
 		(
 			const std::string& itemColorName,
 			const TMenuItem& previousMenuItem,

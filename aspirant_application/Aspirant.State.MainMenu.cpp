@@ -2,7 +2,7 @@
 #include "Aspirant.Application.h"
 #include "Aspirant.UIState.h"
 #include "Graphics.Layouts.h"
-#include "MenuItemDescriptor.h"
+#include "Aspirant.MenuItem.h"
 #include <map>
 #include "Data.Strings.h"
 namespace aspirant::state::MainMenu
@@ -23,7 +23,7 @@ namespace aspirant::state::MainMenu
 	};
 
 	static MainMenuItem current = MainMenuItem::START;
-	static std::map<MainMenuItem, aspirant::commonui::MenuItemDescriptor<MainMenuItem>> items;
+	static std::map<MainMenuItem, aspirant::MenuItem<MainMenuItem>> items;
 
 	static void ActivateItem()
 	{
@@ -82,25 +82,25 @@ namespace aspirant::state::MainMenu
 		aspirant::Application::SetCommandHandler(aspirant::UIState::MAIN_MENU, OnCommand);
 		aspirant::Application::SetRenderHandler(aspirant::UIState::MAIN_MENU, OnDraw);
 		aspirant::Application::SetUpdateHandler(aspirant::UIState::MAIN_MENU, OnUpdate);
-		items[MainMenuItem::START] = aspirant::commonui::MenuItemDescriptor<MainMenuItem>
+		items[MainMenuItem::START] = aspirant::MenuItem<MainMenuItem>
 		(
 			MENU_ITEM_START_COLOR_NAME,
 			MainMenuItem::QUIT,
 			MainMenuItem::ABOUT
 		);
-		items[MainMenuItem::ABOUT] = aspirant::commonui::MenuItemDescriptor<MainMenuItem>
+		items[MainMenuItem::ABOUT] = aspirant::MenuItem<MainMenuItem>
 			(
 				MENU_ITEM_ABOUT_COLOR_NAME,
 				MainMenuItem::START,
 				MainMenuItem::OPTIONS
 		);
-		items[MainMenuItem::OPTIONS] = aspirant::commonui::MenuItemDescriptor<MainMenuItem>
+		items[MainMenuItem::OPTIONS] = aspirant::MenuItem<MainMenuItem>
 			(
 				MENU_ITEM_OPTIONS_COLOR_NAME,
 				MainMenuItem::ABOUT,
 				MainMenuItem::QUIT
 		);
-		items[MainMenuItem::QUIT] = aspirant::commonui::MenuItemDescriptor<MainMenuItem>
+		items[MainMenuItem::QUIT] = aspirant::MenuItem<MainMenuItem>
 			(
 				MENU_ITEM_QUIT_COLOR_NAME,
 				MainMenuItem::OPTIONS,

@@ -1,7 +1,7 @@
 #include "Aspirant.State.Start.h"
 #include "Aspirant.Application.h"
 #include "Aspirant.UIState.h"
-#include "MenuItemDescriptor.h"
+#include "Aspirant.MenuItem.h"
 #include <map>
 #include "Graphics.Layouts.h"
 #include "Data.Strings.h"
@@ -18,7 +18,7 @@ namespace aspirant::state::Start
 	};
 
 	static StartGameItem current = StartGameItem::BACK;
-	static std::map<StartGameItem, aspirant::commonui::MenuItemDescriptor<StartGameItem>> items;
+	static std::map<StartGameItem, aspirant::MenuItem<StartGameItem>> items;
 
 	static void ActivateItem()
 	{
@@ -71,9 +71,9 @@ namespace aspirant::state::Start
 		aspirant::Application::SetRenderHandler(aspirant::UIState::START_GAME, OnDraw);
 		aspirant::Application::SetUpdateHandler(aspirant::UIState::START_GAME, OnUpdate);
 		items[StartGameItem::EDITOR] =
-			aspirant::commonui::MenuItemDescriptor<StartGameItem>(START_GAME_EDITOR_COLOR_NAME, StartGameItem::BACK, StartGameItem::BACK);
+			aspirant::MenuItem<StartGameItem>(START_GAME_EDITOR_COLOR_NAME, StartGameItem::BACK, StartGameItem::BACK);
 		items[StartGameItem::BACK]=
-			aspirant::commonui::MenuItemDescriptor<StartGameItem>(START_GAME_BACK_COLOR_NAME, StartGameItem::EDITOR, StartGameItem::EDITOR);
+			aspirant::MenuItem<StartGameItem>(START_GAME_BACK_COLOR_NAME, StartGameItem::EDITOR, StartGameItem::EDITOR);
 
 	}
 }

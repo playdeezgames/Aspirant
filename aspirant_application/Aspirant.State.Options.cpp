@@ -2,7 +2,7 @@
 #include "Aspirant.Application.h"
 #include "Aspirant.UIState.h"
 #include <map>
-#include "MenuItemDescriptor.h"
+#include "Aspirant.MenuItem.h"
 #include "Graphics.Layouts.h"
 #include "Data.Strings.h"
 #include "Common.Sounds.h"
@@ -91,7 +91,7 @@ namespace aspirant::state::Options
 		}
 	}
 
-	static std::map<OptionsItem, aspirant::commonui::MenuItemDescriptor<OptionsItem>> items;
+	static std::map<OptionsItem, aspirant::MenuItem<OptionsItem>> items;
 
 	static void OnCommand(const aspirant::Command& command)
 	{
@@ -156,28 +156,28 @@ namespace aspirant::state::Options
 		aspirant::Application::SetRenderHandler(aspirant::UIState::OPTIONS, OnDraw);
 		aspirant::Application::SetUpdateHandler(aspirant::UIState::OPTIONS, OnUpdate);
 		items[OptionsItem::TOGGLE_MUTE]=
-			aspirant::commonui::MenuItemDescriptor<OptionsItem>
+			aspirant::MenuItem<OptionsItem>
 			(
 				OPTION_ITEM_TOGGLE_MUTE_COLOR_NAME,
 				OptionsItem::BACK,
 				OptionsItem::SFX_VOLUME
 		);
 		items[OptionsItem::SFX_VOLUME]=
-			aspirant::commonui::MenuItemDescriptor<OptionsItem>
+			aspirant::MenuItem<OptionsItem>
 			(
 				OPTION_ITEM_SFX_VOLUME_COLOR_NAME,
 				OptionsItem::TOGGLE_MUTE,
 				OptionsItem::MUX_VOLUME
 		);
 		items[OptionsItem::MUX_VOLUME]=
-			aspirant::commonui::MenuItemDescriptor<OptionsItem>
+			aspirant::MenuItem<OptionsItem>
 			(
 				OPTION_ITEM_MUX_VOLUME_COLOR_NAME,
 				OptionsItem::SFX_VOLUME,
 				OptionsItem::BACK
 		);
 		items[OptionsItem::BACK]=
-			aspirant::commonui::MenuItemDescriptor<OptionsItem>
+			aspirant::MenuItem<OptionsItem>
 			(
 				OPTION_ITEM_BACK_COLOR_NAME,
 				OptionsItem::MUX_VOLUME,

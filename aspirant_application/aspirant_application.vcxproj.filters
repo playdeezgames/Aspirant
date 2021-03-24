@@ -340,7 +340,7 @@
     <ClInclude Include="Aspirant.State.Start.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MenuItemDescriptor.h">
+    <ClInclude Include="Aspirant.MenuItem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Aspirant.State.Editor.Start.h">
