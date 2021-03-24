@@ -47,7 +47,7 @@ namespace graphics
 	{
 		for (auto& item : drawnItems)
 		{
-			common::Finisher::SafeDelete(item);
+			common::Finisher::Finish(item);
 		}
 		drawnItems.clear();
 	}

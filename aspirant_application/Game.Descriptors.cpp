@@ -40,7 +40,7 @@ namespace game::Descriptors
 
 	static void Finish()
 	{
-		common::Finisher::SafeDeleteMap(descriptors);
+		common::Finisher::Finish(descriptors);
 	}
 
 	void Start(const std::string& filename)

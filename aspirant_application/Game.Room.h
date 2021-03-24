@@ -14,7 +14,7 @@ namespace game
 			{
 				if (item)
 				{
-					common::Finisher::SafeDelete(item);
+					common::Finisher::Finish(item);
 				}
 			}
 			cells.clear();

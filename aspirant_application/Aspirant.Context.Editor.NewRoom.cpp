@@ -93,7 +93,7 @@ namespace aspirant::context::editor::NewRoom
 			{
 				terrains.push_back(identifier);
 			}
-			common::Finisher::SafeDelete(obj);
+			common::Finisher::Finish(obj);
 		}
 	}
 

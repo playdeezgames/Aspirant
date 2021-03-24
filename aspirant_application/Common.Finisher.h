@@ -5,7 +5,7 @@
 namespace common::Finisher
 {
 	template<typename TDelete>
-	void SafeDelete(TDelete*& ptr)
+	void Finish(TDelete*& ptr)
 	{
 		if (ptr)
 		{
@@ -14,13 +14,13 @@ namespace common::Finisher
 		}
 	}
 	template<typename TIdentifier, typename TDelete>
-	void SafeDeleteMap(std::map<TIdentifier, TDelete*>& table)
+	void Finish(std::map<TIdentifier, TDelete*>& table)
 	{
 		for (auto& entry : table)
 		{
 			if (entry.second)
 			{
-				SafeDelete(entry.second);
+				Finish(entry.second);
 			}
 		}
 		table.clear();

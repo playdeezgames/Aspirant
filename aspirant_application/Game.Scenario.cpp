@@ -11,7 +11,7 @@ namespace game
 
 	void Scenario::Clear()
 	{
-		common::Finisher::SafeDeleteMap(rooms);
+		common::Finisher::Finish(rooms);
 	}
 
 	const std::string PROPERTY_ROOMS = "rooms";
@@ -64,7 +64,7 @@ namespace game
 	{
 		if (rooms.contains(name))
 		{
-			common::Finisher::SafeDelete(rooms[name]);
+			common::Finisher::Finish(rooms[name]);
 		}
 		rooms[name] = new Room();
 		rooms[name]->SetSize(columns, rows);

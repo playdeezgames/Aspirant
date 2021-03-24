@@ -11,7 +11,7 @@ namespace game::ScenarioDescriptors
 	{
 		for (auto& descriptor : descriptors)
 		{
-			common::Finisher::SafeDelete(descriptor);
+			common::Finisher::Finish(descriptor);
 		}
 		descriptors.clear();
 	}

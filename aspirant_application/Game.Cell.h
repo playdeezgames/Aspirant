@@ -16,7 +16,7 @@ namespace game
 			while (HasObjects())
 			{
 				auto object = RemoveObject();
-				common::Finisher::SafeDelete(object);
+				common::Finisher::Finish(object);
 			}
 		}
 	protected:
