@@ -1,7 +1,7 @@
 #include <SDL.h>
 #include <string>
 #include <optional>
-#include "Aspirant.UIState.h"
+#include "UIState.h"
 #include "Command.h"
 #include "Data.Strings.h"
 #include "Data.Ints.h"
@@ -35,19 +35,19 @@
 #include "Aspirant.Context.Editor.NewRoom.h"
 namespace Application
 {
-	static aspirant::UIState uiState = aspirant::UIState::SPLASH;
+	static ::UIState uiState = ::UIState::SPLASH;
 
-	void SetUIState(const aspirant::UIState& state)
+	void SetUIState(const ::UIState& state)
 	{
 		uiState = state;
 	}
 
-	const aspirant::UIState& GetUIState()
+	const ::UIState& GetUIState()
 	{
 		return uiState;
 	}
 
-	static std::map<aspirant::UIState, Application::CommandHandler> commandHandlers;
+	static std::map<::UIState, Application::CommandHandler> commandHandlers;
 
 	static void HandleCommand(const ::Command& command)
 	{
@@ -100,7 +100,7 @@ namespace Application
 		}
 	}
 
-	static std::map<aspirant::UIState, TextInputHandler> textInputHandlers;
+	static std::map<::UIState, TextInputHandler> textInputHandlers;
 
 	static void HandleTextInput(const SDL_TextInputEvent& evt)
 	{
@@ -111,26 +111,26 @@ namespace Application
 		}
 	}
 
-	void SetCommandHandler(const aspirant::UIState& state, Application::CommandHandler handler)
+	void SetCommandHandler(const ::UIState& state, Application::CommandHandler handler)
 	{
 		commandHandlers[state] = handler;
 	}
 
-	void SetTextInputHandler(const aspirant::UIState& state, TextInputHandler handler)
+	void SetTextInputHandler(const ::UIState& state, TextInputHandler handler)
 	{
 		textInputHandlers[state] = handler;
 	}
 
-	static std::map<aspirant::UIState, UpdateHandler> updateHandlers;
+	static std::map<::UIState, UpdateHandler> updateHandlers;
 
-	void SetUpdateHandler(const aspirant::UIState& state, UpdateHandler handler)
+	void SetUpdateHandler(const ::UIState& state, UpdateHandler handler)
 	{
 		updateHandlers[state] = handler;
 	}
 
-	static std::map<aspirant::UIState, RenderHandler> renderHandlers;
+	static std::map<::UIState, RenderHandler> renderHandlers;
 
-	void SetRenderHandler(const aspirant::UIState& state, RenderHandler handler)
+	void SetRenderHandler(const ::UIState& state, RenderHandler handler)
 	{
 		renderHandlers[state] = handler;
 	}
@@ -193,7 +193,7 @@ namespace common::Application
 
 	bool IsRunning()
 	{
-		return ::Application::GetUIState() != aspirant::UIState::QUIT;
+		return ::Application::GetUIState() != ::UIState::QUIT;
 	}
 
 	void Update(Uint32 ticks)
@@ -218,7 +218,7 @@ namespace common::Application
 	{
 		if (evt.type == SDL_QUIT)
 		{
-			::Application::SetUIState(aspirant::UIState::QUIT);
+			::Application::SetUIState(::UIState::QUIT);
 		}
 		else if (evt.type == SDL_KEYDOWN)
 		{

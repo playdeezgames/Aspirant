@@ -1,6 +1,6 @@
 #include "Aspirant.State.Editor.PickRoom.h"
 #include "Application.h"
-#include "Aspirant.UIState.h"
+#include "UIState.h"
 #include "Graphics.Layouts.h"
 #include "Aspirant.Context.Editor.Rooms.h"
 #include "Data.Strings.h"
@@ -15,7 +15,7 @@ namespace aspirant::state::editor::PickRoom
 		switch (command)
 		{
 		case ::Command::BACK:
-			::Application::SetUIState(aspirant::UIState::EDIT_SCENARIO);
+			::Application::SetUIState(::UIState::EDIT_SCENARIO);
 			break;
 		case ::Command::RIGHT:
 		case ::Command::NEXT:
@@ -27,7 +27,7 @@ namespace aspirant::state::editor::PickRoom
 			break;
 		case ::Command::GREEN:
 			aspirant::context::editor::RoomView::SetCursor({ 0,0 });
-			::Application::SetUIState(aspirant::UIState::EDIT_NAVIGATE_ROOM);
+			::Application::SetUIState(::UIState::EDIT_NAVIGATE_ROOM);
 			break;
 		}
 	}
@@ -52,8 +52,8 @@ namespace aspirant::state::editor::PickRoom
 
 	void Start()
 	{
-		::Application::SetCommandHandler(aspirant::UIState::EDIT_PICK_ROOM, OnCommand);
-		::Application::SetRenderHandler(aspirant::UIState::EDIT_PICK_ROOM, OnDraw);
-		::Application::SetUpdateHandler(aspirant::UIState::EDIT_PICK_ROOM, OnUpdate);
+		::Application::SetCommandHandler(::UIState::EDIT_PICK_ROOM, OnCommand);
+		::Application::SetRenderHandler(::UIState::EDIT_PICK_ROOM, OnDraw);
+		::Application::SetUpdateHandler(::UIState::EDIT_PICK_ROOM, OnUpdate);
 	}
 }

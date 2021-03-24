@@ -1,6 +1,6 @@
 #include "Aspirant.State.Options.h"
 #include "Application.h"
-#include "Aspirant.UIState.h"
+#include "UIState.h"
 #include <map>
 #include "MenuItem.h"
 #include "Graphics.Layouts.h"
@@ -86,7 +86,7 @@ namespace aspirant::state::Options
 			aspirant::Options::Save();
 			break;
 		case OptionsItem::BACK:
-			::Application::SetUIState(aspirant::UIState::MAIN_MENU);
+			::Application::SetUIState(::UIState::MAIN_MENU);
 			break;
 		}
 	}
@@ -110,7 +110,7 @@ namespace aspirant::state::Options
 			IncreaseItem();
 			break;
 		case ::Command::BACK:
-			::Application::SetUIState(aspirant::UIState::MAIN_MENU);
+			::Application::SetUIState(::UIState::MAIN_MENU);
 			break;
 		case ::Command::GREEN:
 			ActivateItem();
@@ -152,9 +152,9 @@ namespace aspirant::state::Options
 
 	void Start()
 	{
-		::Application::SetCommandHandler(aspirant::UIState::OPTIONS, OnCommand);
-		::Application::SetRenderHandler(aspirant::UIState::OPTIONS, OnDraw);
-		::Application::SetUpdateHandler(aspirant::UIState::OPTIONS, OnUpdate);
+		::Application::SetCommandHandler(::UIState::OPTIONS, OnCommand);
+		::Application::SetRenderHandler(::UIState::OPTIONS, OnDraw);
+		::Application::SetUpdateHandler(::UIState::OPTIONS, OnUpdate);
 		items[OptionsItem::TOGGLE_MUTE]=
 			::MenuItem<OptionsItem>
 			(

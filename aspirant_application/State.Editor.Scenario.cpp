@@ -1,6 +1,6 @@
 #include "Aspirant.State.Editor.Scenario.h"
 #include "Application.h"
-#include "Aspirant.UIState.h"
+#include "UIState.h"
 #include "Graphics.Layouts.h"
 #include "Game.ScenarioDescriptors.h"
 #include "Aspirant.Context.Editor.Scenarios.h"
@@ -33,18 +33,18 @@ namespace aspirant::state::editor::Scenario
 		switch (current)
 		{
 		case EditScenarioItem::BACK:
-			::Application::SetUIState(aspirant::UIState::EDIT_SCENARIO_SELECTOR);
+			::Application::SetUIState(::UIState::EDIT_SCENARIO_SELECTOR);
 			break;
 		case EditScenarioItem::DESCRIPTOR:
-			::Application::SetUIState(aspirant::UIState::EDIT_SCENARIO_DESCRIPTOR);
+			::Application::SetUIState(::UIState::EDIT_SCENARIO_DESCRIPTOR);
 			break;
 		case EditScenarioItem::OPEN_ROOM:
 			aspirant::context::editor::Rooms::UpdateRoomList();
-			::Application::SetUIState(aspirant::UIState::EDIT_PICK_ROOM);
+			::Application::SetUIState(::UIState::EDIT_PICK_ROOM);
 			break;
 		case EditScenarioItem::NEW_ROOM:
 			aspirant::context::editor::NewRoom::Reset();
-			::Application::SetUIState(aspirant::UIState::EDIT_NEW_ROOM);
+			::Application::SetUIState(::UIState::EDIT_NEW_ROOM);
 			break;
 		}
 	}
@@ -63,7 +63,7 @@ namespace aspirant::state::editor::Scenario
 			ActivateItem();
 			break;
 		case ::Command::BACK:
-			::Application::SetUIState(aspirant::UIState::EDIT_SCENARIO_SELECTOR);
+			::Application::SetUIState(::UIState::EDIT_SCENARIO_SELECTOR);
 			break;
 		}
 	}
@@ -92,9 +92,9 @@ namespace aspirant::state::editor::Scenario
 
 	void Start()
 	{
-		::Application::SetCommandHandler(aspirant::UIState::EDIT_SCENARIO, OnCommand);
-		::Application::SetRenderHandler(aspirant::UIState::EDIT_SCENARIO, OnDraw);
-		::Application::SetUpdateHandler(aspirant::UIState::EDIT_SCENARIO, OnUpdate);
+		::Application::SetCommandHandler(::UIState::EDIT_SCENARIO, OnCommand);
+		::Application::SetRenderHandler(::UIState::EDIT_SCENARIO, OnDraw);
+		::Application::SetUpdateHandler(::UIState::EDIT_SCENARIO, OnUpdate);
 		items[EditScenarioItem::DESCRIPTOR]= ::MenuItem<EditScenarioItem>(ITEM_DESCRIPTOR_COLOR_NAME, EditScenarioItem::BACK, EditScenarioItem::OPEN_ROOM);
 		items[EditScenarioItem::OPEN_ROOM]= ::MenuItem<EditScenarioItem>(ITEM_OPEN_ROOM_COLOR_NAME, EditScenarioItem::DESCRIPTOR, EditScenarioItem::NEW_ROOM);
 		items[EditScenarioItem::NEW_ROOM]= ::MenuItem<EditScenarioItem>(ITEM_NEW_ROOM_COLOR_NAME, EditScenarioItem::OPEN_ROOM, EditScenarioItem::BACK);

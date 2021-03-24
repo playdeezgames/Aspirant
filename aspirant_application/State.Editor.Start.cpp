@@ -1,6 +1,6 @@
 #include "Aspirant.State.Editor.Start.h"
 #include "Application.h"
-#include "Aspirant.UIState.h"
+#include "UIState.h"
 #include "Graphics.Layouts.h"
 #include "MenuItem.h"
 #include <map>
@@ -48,7 +48,7 @@ namespace aspirant::state::editor::Start
 		);
 		CreateScenarioFile(ss.str());
 		aspirant::context::editor::Scenarios::SetIndex(::game::ScenarioDescriptors::Add(descriptor));
-		::Application::SetUIState(aspirant::UIState::EDIT_SCENARIO);
+		::Application::SetUIState(::UIState::EDIT_SCENARIO);
 	}
 
 	static void ActivateItem()
@@ -56,13 +56,13 @@ namespace aspirant::state::editor::Start
 		switch (current)
 		{
 		case StartEditorItem::BACK:
-			::Application::SetUIState(aspirant::UIState::START_GAME);
+			::Application::SetUIState(::UIState::START_GAME);
 			break;
 		case StartEditorItem::NEW:
 			CreateNewScenario();
 			break;
 		case StartEditorItem::OPEN:
-			::Application::SetUIState(aspirant::UIState::EDIT_SCENARIO_SELECTOR);
+			::Application::SetUIState(::UIState::EDIT_SCENARIO_SELECTOR);
 			break;
 		}
 	}
@@ -78,7 +78,7 @@ namespace aspirant::state::editor::Start
 			current = items[current].GetNextMenuItem();
 			break;
 		case ::Command::BACK:
-			::Application::SetUIState(aspirant::UIState::START_GAME);
+			::Application::SetUIState(::UIState::START_GAME);
 			break;
 		case ::Command::GREEN:
 			ActivateItem();
@@ -102,13 +102,13 @@ namespace aspirant::state::editor::Start
 	void Start()
 	{
 		::Application::SetCommandHandler(
-			aspirant::UIState::START_EDITOR,
+			::UIState::START_EDITOR,
 			OnCommand);
 		::Application::SetRenderHandler(
-			aspirant::UIState::START_EDITOR,
+			::UIState::START_EDITOR,
 			OnDraw);
 		::Application::SetUpdateHandler(
-			aspirant::UIState::START_EDITOR,
+			::UIState::START_EDITOR,
 			OnUpdate);
 
 		items[StartEditorItem::NEW] =

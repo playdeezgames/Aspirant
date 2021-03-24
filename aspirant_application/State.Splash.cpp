@@ -1,6 +1,6 @@
 #include "Aspirant.State.Splash.h"
 #include "Application.h"
-#include "Aspirant.UIState.h"
+#include "UIState.h"
 #include "Graphics.Layouts.h"
 namespace aspirant::state::Splash
 {
@@ -23,15 +23,15 @@ namespace aspirant::state::Splash
 		ticksLeft = (ticksLeft > ticks) ? (ticksLeft - ticks) : (0);
 		if (ticksLeft == 0)
 		{
-			::Application::SetUIState(aspirant::UIState::MAIN_MENU);
+			::Application::SetUIState(::UIState::MAIN_MENU);
 			ticksLeft = TICKS_TOTAL;
 		}
 	}
 
 	void Start()
 	{
-		::Application::SetCommandHandler(aspirant::UIState::SPLASH, OnCommand);
-		::Application::SetRenderHandler(aspirant::UIState::SPLASH, OnDraw);
-		::Application::SetUpdateHandler(aspirant::UIState::SPLASH, OnUpdate);
+		::Application::SetCommandHandler(::UIState::SPLASH, OnCommand);
+		::Application::SetRenderHandler(::UIState::SPLASH, OnDraw);
+		::Application::SetUpdateHandler(::UIState::SPLASH, OnUpdate);
 	}
 }

@@ -1,6 +1,6 @@
 #include "Aspirant.State.MainMenu.h"
 #include "Application.h"
-#include "Aspirant.UIState.h"
+#include "UIState.h"
 #include "Graphics.Layouts.h"
 #include "MenuItem.h"
 #include <map>
@@ -30,17 +30,17 @@ namespace aspirant::state::MainMenu
 		switch (current)
 		{
 		case MainMenuItem::START:
-			::Application::SetUIState(aspirant::UIState::START_GAME);
+			::Application::SetUIState(::UIState::START_GAME);
 			return;
 		case MainMenuItem::OPTIONS:
-			::Application::SetUIState(aspirant::UIState::OPTIONS);
+			::Application::SetUIState(::UIState::OPTIONS);
 			return;
 		case MainMenuItem::ABOUT:
 			SDL_SetClipboardText(::data::Strings::Get(ITCH_URL_STRING).c_str());
-			::Application::SetUIState(aspirant::UIState::ABOUT);
+			::Application::SetUIState(::UIState::ABOUT);
 			return;
 		case MainMenuItem::QUIT:
-			::Application::SetUIState(aspirant::UIState::CONFIRM_QUIT);
+			::Application::SetUIState(::UIState::CONFIRM_QUIT);
 			return;
 		}
 	}
@@ -59,7 +59,7 @@ namespace aspirant::state::MainMenu
 			ActivateItem();
 			break;
 		case ::Command::BACK:
-			::Application::SetUIState(aspirant::UIState::CONFIRM_QUIT);
+			::Application::SetUIState(::UIState::CONFIRM_QUIT);
 			break;
 		}
 	}
@@ -79,9 +79,9 @@ namespace aspirant::state::MainMenu
 
 	void Start()
 	{
-		::Application::SetCommandHandler(aspirant::UIState::MAIN_MENU, OnCommand);
-		::Application::SetRenderHandler(aspirant::UIState::MAIN_MENU, OnDraw);
-		::Application::SetUpdateHandler(aspirant::UIState::MAIN_MENU, OnUpdate);
+		::Application::SetCommandHandler(::UIState::MAIN_MENU, OnCommand);
+		::Application::SetRenderHandler(::UIState::MAIN_MENU, OnDraw);
+		::Application::SetUpdateHandler(::UIState::MAIN_MENU, OnUpdate);
 		items[MainMenuItem::START] = ::MenuItem<MainMenuItem>
 		(
 			MENU_ITEM_START_COLOR_NAME,

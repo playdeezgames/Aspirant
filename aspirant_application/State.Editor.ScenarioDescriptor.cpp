@@ -1,6 +1,6 @@
 #include "Aspirant.State.Editor.ScenarioDescriptor.h"
 #include "Application.h"
-#include "Aspirant.UIState.h"
+#include "UIState.h"
 #include "Graphics.Layouts.h"
 #include "MenuItem.h"
 #include "Aspirant.Context.Editor.Scenarios.h"
@@ -30,7 +30,7 @@ namespace aspirant::state::editor::ScenarioDescriptor
 		switch (current)
 		{
 		case EditScenarioDescriptorItem::BACK:
-			::Application::SetUIState(aspirant::UIState::EDIT_SCENARIO);
+			::Application::SetUIState(::UIState::EDIT_SCENARIO);
 			break;
 		}
 	}
@@ -50,7 +50,7 @@ namespace aspirant::state::editor::ScenarioDescriptor
 				descriptor->SetBrief("");
 				break;
 			default:
-				::Application::SetUIState(aspirant::UIState::EDIT_SCENARIO);;
+				::Application::SetUIState(::UIState::EDIT_SCENARIO);;
 				break;
 			}
 			break;
@@ -99,10 +99,10 @@ namespace aspirant::state::editor::ScenarioDescriptor
 
 	void Start()
 	{
-		::Application::SetCommandHandler(aspirant::UIState::EDIT_SCENARIO_DESCRIPTOR, OnCommand);
-		::Application::SetRenderHandler(aspirant::UIState::EDIT_SCENARIO_DESCRIPTOR, OnDraw);
-		::Application::SetUpdateHandler(aspirant::UIState::EDIT_SCENARIO_DESCRIPTOR, OnUpdate);
-		::Application::SetTextInputHandler(aspirant::UIState::EDIT_SCENARIO_DESCRIPTOR, OnTextInput);
+		::Application::SetCommandHandler(::UIState::EDIT_SCENARIO_DESCRIPTOR, OnCommand);
+		::Application::SetRenderHandler(::UIState::EDIT_SCENARIO_DESCRIPTOR, OnDraw);
+		::Application::SetUpdateHandler(::UIState::EDIT_SCENARIO_DESCRIPTOR, OnUpdate);
+		::Application::SetTextInputHandler(::UIState::EDIT_SCENARIO_DESCRIPTOR, OnTextInput);
 		items[EditScenarioDescriptorItem::SCENARIO_NAME]= ::MenuItem<EditScenarioDescriptorItem>(COLOR_NAME_SCENARIO_NAME, EditScenarioDescriptorItem::BACK, EditScenarioDescriptorItem::BRIEF);
 		items[EditScenarioDescriptorItem::BRIEF]= ::MenuItem<EditScenarioDescriptorItem>(COLOR_NAME_BRIEF, EditScenarioDescriptorItem::SCENARIO_NAME, EditScenarioDescriptorItem::BACK);
 		items[EditScenarioDescriptorItem::BACK]= ::MenuItem<EditScenarioDescriptorItem>(COLOR_NAME_BACK, EditScenarioDescriptorItem::BRIEF, EditScenarioDescriptorItem::SCENARIO_NAME);

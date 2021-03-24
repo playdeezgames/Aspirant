@@ -1,6 +1,6 @@
 #include "Aspirant.State.Editor.PickDescriptor.h"
 #include "Application.h"
-#include "Aspirant.UIState.h"
+#include "UIState.h"
 #include "Graphics.Layouts.h"
 #include "Renderer.Editor.Room.h"
 #include "Renderer.Editor.Cell.h"
@@ -26,7 +26,7 @@ namespace aspirant::state::editor::PickDescriptor
 		switch (command)
 		{
 		case ::Command::BACK:
-			::Application::SetUIState(aspirant::UIState::EDIT_PICK_ROOM);
+			::Application::SetUIState(::UIState::EDIT_PICK_ROOM);
 			break;
 		case ::Command::UP:
 			ChangeIndex(-ROW_DELTA);
@@ -41,7 +41,7 @@ namespace aspirant::state::editor::PickDescriptor
 			ChangeIndex(COLUMN_DELTA);
 			break;
 		case ::Command::NEXT:
-			::Application::SetUIState(aspirant::UIState::EDIT_NAVIGATE_ROOM);
+			::Application::SetUIState(::UIState::EDIT_NAVIGATE_ROOM);
 			break;
 		}
 	}
@@ -60,8 +60,8 @@ namespace aspirant::state::editor::PickDescriptor
 
 	void Start()
 	{
-		::Application::SetCommandHandler(aspirant::UIState::EDIT_DESCRIPTOR_SELECTOR, OnCommand);
-		::Application::SetRenderHandler(aspirant::UIState::EDIT_DESCRIPTOR_SELECTOR, OnDraw);
-		::Application::SetUpdateHandler(aspirant::UIState::EDIT_DESCRIPTOR_SELECTOR, OnUpdate);
+		::Application::SetCommandHandler(::UIState::EDIT_DESCRIPTOR_SELECTOR, OnCommand);
+		::Application::SetRenderHandler(::UIState::EDIT_DESCRIPTOR_SELECTOR, OnDraw);
+		::Application::SetUpdateHandler(::UIState::EDIT_DESCRIPTOR_SELECTOR, OnUpdate);
 	}
 }
