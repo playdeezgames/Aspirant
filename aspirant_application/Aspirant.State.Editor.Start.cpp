@@ -62,7 +62,6 @@ namespace aspirant::state::editor::Start
 			CreateNewScenario();
 			break;
 		case StartEditorItem::OPEN:
-			//TODO: what to do when there are no scenarios to open?
 			aspirant::Application::SetUIState(aspirant::UIState::EDIT_SCENARIO_SELECTOR);
 			break;
 		}
@@ -102,15 +101,30 @@ namespace aspirant::state::editor::Start
 
 	void Start()
 	{
-		aspirant::Application::SetCommandHandler(aspirant::UIState::START_EDITOR, OnCommand);
-		aspirant::Application::SetRenderHandler(aspirant::UIState::START_EDITOR, OnDraw);
-		aspirant::Application::SetUpdateHandler(aspirant::UIState::START_EDITOR, OnUpdate);
-		items[StartEditorItem::NEW] = 
-			aspirant::MenuItem<StartEditorItem>(START_EDITOR_NEW_COLOR_NAME, StartEditorItem::BACK, StartEditorItem::OPEN);
-		items[StartEditorItem::OPEN]=
-			aspirant::MenuItem<StartEditorItem>(START_EDITOR_OPEN_COLOR_NAME, StartEditorItem::NEW, StartEditorItem::BACK);
-		items[StartEditorItem::BACK]=
-			aspirant::MenuItem<StartEditorItem>(START_EDITOR_BACK_COLOR_NAME, StartEditorItem::OPEN, StartEditorItem::NEW);
+		aspirant::Application::SetCommandHandler(
+			aspirant::UIState::START_EDITOR,
+			OnCommand);
+		aspirant::Application::SetRenderHandler(
+			aspirant::UIState::START_EDITOR,
+			OnDraw);
+		aspirant::Application::SetUpdateHandler(
+			aspirant::UIState::START_EDITOR,
+			OnUpdate);
 
+		items[StartEditorItem::NEW] =
+			aspirant::MenuItem<StartEditorItem>(
+				START_EDITOR_NEW_COLOR_NAME,
+				StartEditorItem::BACK,
+				StartEditorItem::OPEN);
+		items[StartEditorItem::OPEN] =
+			aspirant::MenuItem<StartEditorItem>(
+				START_EDITOR_OPEN_COLOR_NAME,
+				StartEditorItem::NEW,
+				StartEditorItem::BACK);
+		items[StartEditorItem::BACK] =
+			aspirant::MenuItem<StartEditorItem>(
+				START_EDITOR_BACK_COLOR_NAME,
+				StartEditorItem::OPEN,
+				StartEditorItem::NEW);
 	}
 }
