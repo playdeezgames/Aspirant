@@ -1,1 +1,134 @@
-{"rooms":{"<replace me>":[[{"objects":[{"type":"brick-wall-1"}]},{"objects":[{"type":"brick-wall-1"}]},{"objects":[{"type":"brick-wall-1"}]},{"objects":[{"type":"brick-wall-1"}]},{"objects":[{"type":"brick-wall-1"}]},{"objects":[{"type":"brick-wall-1"}]},{"objects":[{"type":"brick-wall-1"}]},{"objects":[{"type":"brick-wall-1"}]},{"objects":[{"type":"brick-wall-1"}]},{"objects":[{"type":"brick-wall-1"}]}],[{"objects":[{"type":"brick-wall-1"}]},{"objects":[{"type":"floor"},{"type":"avatar"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"brick-wall-1"}]}],[{"objects":[{"type":"brick-wall-1"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"brick-wall-1"}]}],[{"objects":[{"type":"brick-wall-1"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"brick-wall-1"}]}],[{"objects":[{"type":"brick-wall-1"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"brick-wall-1"}]}],[{"objects":[{"type":"brick-wall-1"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"brick-wall-1"}]}],[{"objects":[{"type":"brick-wall-1"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"brick-wall-1"}]}],[{"objects":[{"type":"brick-wall-1"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"brick-wall-1"}]}],[{"objects":[{"type":"brick-wall-1"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"brick-wall-1"}]}],[{"objects":[{"type":"brick-wall-1"}]},{"objects":[{"type":"brick-wall-1"}]},{"objects":[{"type":"brick-wall-1"}]},{"objects":[{"type":"brick-wall-1"}]},{"objects":[{"type":"brick-wall-1"}]},{"objects":[{"type":"brick-wall-1"}]},{"objects":[{"type":"brick-wall-1"}]},{"objects":[{"type":"brick-wall-1"}]},{"objects":[{"type":"brick-wall-1"}]},{"objects":[{"type":"brick-wall-1"}]}]],"test":[[{"objects":[{"type":"brick-wall-1"}]},{"objects":[{"type":"brick-wall-1"}]},{"objects":[{"type":"brick-wall-1"}]},{"objects":[{"type":"brick-wall-1"}]}],[{"objects":[{"type":"brick-wall-1"}]},{"objects":[{"type":"floor"},{"type":"avatar"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"brick-wall-1"}]}],[{"objects":[{"type":"brick-wall-1"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"floor"}]},{"objects":[{"type":"brick-wall-1"}]}],[{"objects":[{"type":"brick-wall-1"}]},{"objects":[{"type":"brick-wall-1"}]},{"objects":[{"type":"brick-wall-1"}]},{"objects":[{"type":"brick-wall-1"}]}]],"test2":[[{"objects":[{"type":"brick-wall-1"}]}]]}}
+{
+    "avatar": {
+        "room": "start",
+        "x": 1,
+        "y": 1
+    },
+    "rooms": {
+        "start": [
+            [
+                {
+                    "objects": [
+                        {
+                            "type": "brick-wall-1"
+                        }
+                    ]
+                },
+                {
+                    "objects": [
+                        {
+                            "type": "brick-wall-1"
+                        }
+                    ]
+                },
+                {
+                    "objects": [
+                        {
+                            "type": "brick-wall-1"
+                        }
+                    ]
+                },
+                {
+                    "objects": [
+                        {
+                            "type": "brick-wall-1"
+                        }
+                    ]
+                }
+            ],
+            [
+                {
+                    "objects": [
+                        {
+                            "type": "brick-wall-1"
+                        }
+                    ]
+                },
+                {
+                    "objects": [
+                        {
+                            "type": "floor"
+                        },
+                        {
+                            "type": "avatar"
+                        }
+                    ]
+                },
+                {
+                    "objects": [
+                        {
+                            "type": "floor"
+                        }
+                    ]
+                },
+                {
+                    "objects": [
+                        {
+                            "type": "brick-wall-1"
+                        }
+                    ]
+                }
+            ],
+            [
+                {
+                    "objects": [
+                        {
+                            "type": "brick-wall-1"
+                        }
+                    ]
+                },
+                {
+                    "objects": [
+                        {
+                            "type": "floor"
+                        }
+                    ]
+                },
+                {
+                    "objects": [
+                        {
+                            "type": "floor"
+                        }
+                    ]
+                },
+                {
+                    "objects": [
+                        {
+                            "type": "brick-wall-1"
+                        }
+                    ]
+                }
+            ],
+            [
+                {
+                    "objects": [
+                        {
+                            "type": "brick-wall-1"
+                        }
+                    ]
+                },
+                {
+                    "objects": [
+                        {
+                            "type": "brick-wall-1"
+                        }
+                    ]
+                },
+                {
+                    "objects": [
+                        {
+                            "type": "brick-wall-1"
+                        }
+                    ]
+                },
+                {
+                    "objects": [
+                        {
+                            "type": "brick-wall-1"
+                        }
+                    ]
+                }
+            ]
+        ]
+    }
+}

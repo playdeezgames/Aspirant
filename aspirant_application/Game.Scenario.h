@@ -5,12 +5,14 @@
 #include "Game.Cell.h"
 #include "Game.Descriptors.h"
 #include "Game.Room.h"
+#include "Game.Avatar.h"
 #include <vector>
 namespace game
 {
 	class Scenario
 	{
 	private:
+		Avatar avatar;
 		std::map<std::string, Room*> rooms;
 		void Clear();
 	public:
@@ -22,5 +24,7 @@ namespace game
 		void AddRoom(const std::string&, size_t, size_t);
 		const Room* GetRoom(const std::string&) const;
 		Room* GetRoom(const std::string&);
+		const Avatar& GetAvatar() const;
+		Avatar& GetAvatar();
 	};
 }

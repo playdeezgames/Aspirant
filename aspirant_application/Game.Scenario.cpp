@@ -14,10 +14,12 @@ namespace game
 	}
 
 	const std::string PROPERTY_ROOMS = "rooms";
+	const std::string PROPERTY_AVATAR = "avatar";
 
 	void Scenario::FromJSON(const nlohmann::json& properties)
 	{
 		Clear();
+		avatar.FromJSON(properties[PROPERTY_AVATAR]);
 		auto& items = properties[PROPERTY_ROOMS];
 		for (auto& item : items.items())
 		{
@@ -34,6 +36,7 @@ namespace game
 	nlohmann::json Scenario::ToJSON() const
 	{
 		nlohmann::json properties;
+		properties[PROPERTY_AVATAR] = avatar.ToJSON();
 		for (auto& room : rooms)
 		{
 			properties[PROPERTY_ROOMS][room.first] = room.second->ToJSON();
@@ -77,4 +80,15 @@ namespace game
 		auto iter = rooms.find(key);
 		return iter->second;
 	}
+
+	const Avatar& Scenario::GetAvatar() const
+	{
+		return avatar;
+	}
+
+	Avatar& Scenario::GetAvatar()
+	{
+		return avatar;
+	}
+
 }
