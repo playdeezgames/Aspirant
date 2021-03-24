@@ -1,5 +1,6 @@
 #include "Game.Scenario.h"
 #include "Common.Utility.h"
+#include "Game.Descriptors.h"
 namespace game
 {
 	Scenario::Scenario()
@@ -59,7 +60,7 @@ namespace game
 		return result;
 	}
 
-	void Scenario::AddRoom(const std::string& name, size_t columns, size_t rows)
+	void Scenario::AddRoom(const std::string& name, size_t columns, size_t rows, const std::string& terrain)
 	{
 		if (rooms.contains(name))
 		{
@@ -67,6 +68,13 @@ namespace game
 		}
 		rooms[name] = new Room();
 		rooms[name]->SetSize(columns, rows);
+		for (size_t column = 0; column < columns; ++column)
+		{
+			for (size_t row = 0; row < rows; ++row)
+			{
+				rooms[name]->GetCell(column, row)->AddObject(game::Descriptors::Get(terrain)->CreateObject());
+			}
+		}
 	}
 
 	const Room* Scenario::GetRoom(const std::string& key) const

@@ -21,7 +21,7 @@ namespace game
 		void FromJSON(const nlohmann::json&);
 		nlohmann::json ToJSON() const;
 		std::vector<std::string> GetRoomKeys() const;
-		void AddRoom(const std::string&, size_t, size_t);
+		void AddRoom(const std::string&, size_t, size_t, const std::string&);
 		const Room* GetRoom(const std::string&) const;
 		Room* GetRoom(const std::string&);
 		const Avatar& GetAvatar() const;

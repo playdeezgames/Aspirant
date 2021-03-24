@@ -32,6 +32,7 @@
 #include "Aspirant.State.Editor.ScenarioDescriptor.h"
 #include "Aspirant.State.Editor.RoomCells.h"
 #include "Aspirant.State.Editor.PickDescriptor.h"
+#include "Aspirant.Context.Editor.NewRoom.h"
 namespace aspirant::Application
 {
 	static aspirant::UIState uiState = aspirant::UIState::SPLASH;
@@ -165,7 +166,8 @@ namespace common::Application
 		aspirant::state::editor::NewRoom::Start,
 		aspirant::state::editor::ScenarioDescriptor::Start,
 		aspirant::state::editor::RoomCells::Start,
-		aspirant::state::editor::PickDescriptor::Start
+		aspirant::state::editor::PickDescriptor::Start,
+		aspirant::context::editor::NewRoom::Start
 	};
 
 	void Start(SDL_Renderer* renderer)

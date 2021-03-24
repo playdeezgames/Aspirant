@@ -1,4 +1,8 @@
 #include "Aspirant.Context.Editor.NewRoom.h"
+#include "Game.Descriptors.h"
+#include <vector>
+#include "FinishUtility.h"
+#include "Game.Object.Common.h"
 namespace aspirant::context::editor::NewRoom
 {
 	const std::string DEFAULT_ROOM_NAME = "<replace me>";
@@ -12,6 +16,8 @@ namespace aspirant::context::editor::NewRoom
 	static std::string newRoomName = "";
 	static size_t newRoomColumns = 0;
 	static size_t newRoomRows = 0;
+	static std::vector<std::string> terrains;
+	static size_t terrainIndex;
 
 	void Reset()
 	{
@@ -73,5 +79,36 @@ namespace aspirant::context::editor::NewRoom
 	void DecrementRows()
 	{
 		newRoomRows = (newRoomRows <= MINIMUM_ROWS) ? (MINIMUM_ROWS) : (newRoomRows - DELTA_ROWS);
+	}
+
+	void Start()
+	{
+		terrains.clear();
+		auto identifiers = game::Descriptors::GetIdentifiers();
+		for (auto& identifier : identifiers)
+		{
+			auto descriptor = game::Descriptors::Get(identifier);
+			auto obj = descriptor->CreateObject();
+			if (obj->CanCover(nullptr))
+			{
+				terrains.push_back(identifier);
+			}
+			tggd::common::FinishUtility::SafeDelete(obj);
+		}
+	}
+
+	const std::string GetTerrain()
+	{
+		return terrains[terrainIndex];
+	}
+
+	void NextTerrain()
+	{
+		terrainIndex = (terrainIndex + 1) % terrains.size();
+	}
+
+	void PreviousTerrain()
+	{
+		terrainIndex = (terrainIndex + terrains.size() - 1) % terrains.size();
 	}
 }

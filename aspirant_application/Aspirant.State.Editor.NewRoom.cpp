@@ -38,7 +38,13 @@ namespace aspirant::state::editor::NewRoom
 
 	static void CreateRoom()
 	{
-		aspirant::context::editor::Scenario::Get().AddRoom(aspirant::context::editor::NewRoom::GetName(), aspirant::context::editor::NewRoom::GetColumns(), aspirant::context::editor::NewRoom::GetRows());
+		aspirant::context::editor::Scenario::Get().AddRoom
+		(
+			aspirant::context::editor::NewRoom::GetName(),
+			aspirant::context::editor::NewRoom::GetColumns(),
+			aspirant::context::editor::NewRoom::GetRows(),
+			aspirant::context::editor::NewRoom::GetTerrain()
+		);
 		aspirant::context::editor::Scenario::Save();
 	}
 
@@ -62,6 +68,9 @@ namespace aspirant::state::editor::NewRoom
 	{
 		switch (current)
 		{
+		case NewRoomItem::TERRAIN:
+			aspirant::context::editor::NewRoom::NextTerrain();
+			break;
 		case NewRoomItem::COLUMNS:
 			aspirant::context::editor::NewRoom::IncrementColumns();
 			break;
@@ -75,6 +84,10 @@ namespace aspirant::state::editor::NewRoom
 	{
 		switch (current)
 		{
+		case NewRoomItem::TERRAIN:
+			aspirant::context::editor::NewRoom::PreviousTerrain();
+			break;
+
 		case NewRoomItem::COLUMNS:
 			aspirant::context::editor::NewRoom::DecrementColumns();
 			break;
@@ -146,7 +159,7 @@ namespace aspirant::state::editor::NewRoom
 		ss << aspirant::context::editor::NewRoom::GetRows();
 		::data::Strings::Set(TEXT_NAME_ROWS, ss.str());
 
-		//TODO: TEXT_NAME_TERRAIN
+		data::Strings::Set(TEXT_NAME_TERRAIN, aspirant::context::editor::NewRoom::GetTerrain());
 	}
 
 	static void OnTextInput(const std::string& text)
@@ -168,6 +181,6 @@ namespace aspirant::state::editor::NewRoom
 		items[NewRoomItem::ROWS] = aspirant::commonui::MenuItemDescriptor<NewRoomItem>(COLOR_NAME_ROWS, NewRoomItem::COLUMNS, NewRoomItem::TERRAIN);
 		items[NewRoomItem::TERRAIN] = aspirant::commonui::MenuItemDescriptor<NewRoomItem>(COLOR_NAME_TERRAIN, NewRoomItem::ROWS, NewRoomItem::CREATE);
 		items[NewRoomItem::CREATE] = aspirant::commonui::MenuItemDescriptor<NewRoomItem>(COLOR_NAME_CREATE, NewRoomItem::TERRAIN, NewRoomItem::CANCEL);
-		items[NewRoomItem::CANCEL]= aspirant::commonui::MenuItemDescriptor<NewRoomItem>(COLOR_NAME_CANCEL, NewRoomItem::CREATE, NewRoomItem::NAME);
+		items[NewRoomItem::CANCEL] = aspirant::commonui::MenuItemDescriptor<NewRoomItem>(COLOR_NAME_CANCEL, NewRoomItem::CREATE, NewRoomItem::NAME);
 	}
 }
