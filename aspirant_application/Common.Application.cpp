@@ -24,17 +24,12 @@ namespace common::Application
 	extern void Render(SDL_Renderer*);
 	extern void HandleEvent(const SDL_Event&);
 	extern void Finish();
-	namespace ConfigurationConstants
-	{
-		extern std::string APPLICATION;
-	}
 
-
-	static void DoStart()
+	static void DoStart(const std::string& configFile)
 	{
 		SDL_Init(SDL_INIT_EVERYTHING);
 		Mix_Init(MIX_INIT_OGG);
-		auto properties = data::JSON::Load(ConfigurationConstants::APPLICATION);
+		auto properties = data::JSON::Load(configFile);
 		int windowWidth = properties[PROPERTY_WIDTH];
 		int windowHeight = properties[PROPERTY_HEIGHT];
 		int logicalWidth = properties[PROPERTY_LOGICAL_WIDTH];
@@ -104,9 +99,9 @@ namespace common::Application
 		SDL_Quit();
 	}
 
-	int Run(const std::vector<std::string>& arguments)
+	int Run(const std::string& configFile, const std::vector<std::string>& arguments)
 	{
-		DoStart();
+		DoStart(configFile);
 		DoPump();
 		DoFinish();
 		return 0;

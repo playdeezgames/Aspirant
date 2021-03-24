@@ -4,8 +4,9 @@
 #include <SDL.h>
 int main(int argc, char** argv)
 {
+	const std::string APPLICATION = "config/ui/application.json";
 	common::RNG::Seed();
 	auto arguments = common::Utility::CommandLineToStringVector(argc, argv);
-	return common::Application::Run(arguments);
+	return common::Application::Run(APPLICATION, arguments);
 }
 

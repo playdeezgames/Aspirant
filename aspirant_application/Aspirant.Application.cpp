@@ -47,6 +47,7 @@ namespace aspirant::ConfigurationConstants
 	const std::string MUX = "config/audio/mux.json";
 	const std::string DESCRIPTORS = "config/game/descriptors.json";
 	const std::string SCENARIOS = "scenarios/scenarios.json";
+	
 }
 namespace aspirant::Application
 {
@@ -152,11 +153,23 @@ namespace aspirant::Application
 }
 namespace common::Application
 {
-
-	namespace ConfigurationConstants
+	static std::vector<void(*)()> starters = 
 	{
-		std::string APPLICATION = "config/ui/application.json";
-	}
+		aspirant::state::Splash::Start,
+		aspirant::state::MainMenu::Start,
+		aspirant::state::About::Start,
+		aspirant::state::ConfirmQuit::Start,
+		aspirant::state::Options::Start,
+		aspirant::state::Start::Start,
+		aspirant::state::editor::Start::Start,
+		aspirant::state::editor::Scenarios::Start,
+		aspirant::state::editor::Scenario::Start,
+		aspirant::state::editor::PickRoom::Start,
+		aspirant::state::editor::NewRoom::Start,
+		aspirant::state::editor::ScenarioDescriptor::Start,
+		aspirant::state::editor::RoomCells::Start,
+		aspirant::state::editor::PickDescriptor::Start
+	};
 
 	void Start(SDL_Renderer* renderer)
 	{
@@ -173,20 +186,12 @@ namespace common::Application
 		::game::Descriptors::Start(aspirant::ConfigurationConstants::DESCRIPTORS);
 		::game::ScenarioDescriptors::Load(aspirant::ConfigurationConstants::SCENARIOS);
 
-		aspirant::state::Splash::Start();
-		aspirant::state::MainMenu::Start();
-		aspirant::state::About::Start();
-		aspirant::state::ConfirmQuit::Start();
-		aspirant::state::Options::Start();
-		aspirant::state::Start::Start();
-		aspirant::state::editor::Start::Start();
-		aspirant::state::editor::Scenarios::Start();
-		aspirant::state::editor::Scenario::Start();
-		aspirant::state::editor::PickRoom::Start();
-		aspirant::state::editor::NewRoom::Start();
-		aspirant::state::editor::ScenarioDescriptor::Start();
-		aspirant::state::editor::RoomCells::Start();
-		aspirant::state::editor::PickDescriptor::Start();
+
+
+		for (auto starter : starters)
+		{
+			starter();
+		}
 	}
 
 	bool IsRunning()

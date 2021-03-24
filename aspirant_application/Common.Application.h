@@ -3,7 +3,7 @@
 #include <vector>
 namespace common::Application
 {
-	int Run(const std::vector<std::string>&);
+	int Run(const std::string&, const std::vector<std::string>&);
 }
 
 
