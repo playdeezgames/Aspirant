@@ -2,5 +2,5 @@
 namespace common::RNG
 {
 	void Seed();
-	int GenerateFromRange(int, int);
+	int FromRange(int, int);
 }

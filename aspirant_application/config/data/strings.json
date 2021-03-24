@@ -15,6 +15,7 @@
     "Options.Color.Back": "Gray",
     "StartGame.Color.Editor": "Gray",
     "StartGame.Color.Back": "Gray",
+    "StartGame.Color.Play": "Gray",
     "StartEditor.Color.New": "Gray",
     "StartEditor.Color.Open": "Gray",
     "StartEditor.Color.Back": "Gray",

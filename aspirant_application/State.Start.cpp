@@ -9,19 +9,22 @@ namespace state::Start
 {
 	const std::string START_GAME_EDITOR_COLOR_NAME = "StartGame.Color.Editor";
 	const std::string START_GAME_BACK_COLOR_NAME = "StartGame.Color.Back";
+	const std::string START_GAME_PLAY_COLOR_NAME = "StartGame.Color.Play";
 	const std::string LAYOUT_NAME = "StartGame";
 
 	enum class StartGameItem
 	{
 		EDITOR,
+		PLAY,
 		BACK
 	};
 
 	static StartGameItem current = StartGameItem::BACK;
 	static std::map<StartGameItem, ::MenuItem<StartGameItem>> items =
 	{
-		{StartGameItem::EDITOR, ::MenuItem<StartGameItem>(START_GAME_EDITOR_COLOR_NAME, StartGameItem::BACK, StartGameItem::BACK)},
-		{StartGameItem::BACK, ::MenuItem<StartGameItem>(START_GAME_BACK_COLOR_NAME, StartGameItem::EDITOR, StartGameItem::EDITOR)}
+		{StartGameItem::EDITOR, ::MenuItem<StartGameItem>(START_GAME_EDITOR_COLOR_NAME, StartGameItem::BACK, StartGameItem::PLAY)},
+		{StartGameItem::PLAY, ::MenuItem<StartGameItem>(START_GAME_PLAY_COLOR_NAME, StartGameItem::EDITOR, StartGameItem::BACK)},
+		{StartGameItem::BACK, ::MenuItem<StartGameItem>(START_GAME_BACK_COLOR_NAME, StartGameItem::PLAY, StartGameItem::EDITOR)}
 	};
 
 

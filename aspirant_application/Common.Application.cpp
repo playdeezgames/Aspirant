@@ -5,27 +5,27 @@
 #include "Data.JSON.h"
 namespace common::Application
 {
-#define PROPERTY_WIDTH "width"
-#define PROPERTY_HEIGHT "height"
-#define PROPERTY_LOGICAL_WIDTH "logicalWidth"
-#define PROPERTY_LOGICAL_HEIGHT "logicalHeight"
-#define PROPERTY_TITLE "title"
-#define PROPERTY_ICON "icon"
-#define PROPERTY_MIXER_FREQUENCY "mixerFrequency"
-#define PROPERTY_CHANNEL_COUNT "channelCount"
-#define PROPERTY_CHUNK_SIZE "chunkSize"
+	const std::string PROPERTY_WIDTH = "width";
+	const std::string PROPERTY_HEIGHT = "height";
+	const std::string PROPERTY_LOGICAL_WIDTH = "logicalWidth";
+	const std::string PROPERTY_LOGICAL_HEIGHT = "logicalHeight";
+	const std::string PROPERTY_TITLE = "title";
+	const std::string PROPERTY_ICON = "icon";
+	const std::string PROPERTY_MIXER_FREQUENCY = "mixerFrequency";
+	const std::string PROPERTY_CHANNEL_COUNT = "channelCount";
+	const std::string PROPERTY_CHUNK_SIZE = "chunkSize";
 
-	static SDL_Window* window;
-	static SDL_Renderer* renderer;
+	static SDL_Window* window = nullptr;
+	static SDL_Renderer* renderer = nullptr;
 
-	extern void Start(SDL_Renderer*);
+	extern void Start(SDL_Renderer*, const std::vector<std::string>&);
 	extern bool IsRunning();
 	extern void Update(Uint32);
 	extern void Render(SDL_Renderer*);
 	extern void HandleEvent(const SDL_Event&);
 	extern void Finish();
 
-	static void DoStart(const std::string& configFile)
+	static void DoStart(const std::string& configFile, const std::vector<std::string>& arguments)
 	{
 		SDL_Init(SDL_INIT_EVERYTHING);
 		Mix_Init(MIX_INIT_OGG);
@@ -58,9 +58,8 @@ namespace common::Application
 		auto iconSurface = IMG_Load(iconFileName.c_str());
 		SDL_SetWindowIcon(window, iconSurface);
 		SDL_FreeSurface(iconSurface);
-		Start(renderer);
+		Start(renderer, arguments);
 	}
-
 
 	static void DoPump()
 	{
@@ -78,22 +77,31 @@ namespace common::Application
 				HandleEvent(evt);
 			}
 		}
-
 	}
 
-	static void DoFinish()
+	static void DestroyRenderer()
 	{
-		Finish();
 		if (renderer)
 		{
 			SDL_DestroyRenderer(renderer);
 			renderer = nullptr;
 		}
+	}
+
+	static void DestroyWindow()
+	{
 		if (window)
 		{
 			SDL_DestroyWindow(window);
 			window = nullptr;
 		}
+	}
+
+	static void DoFinish()
+	{
+		Finish();
+		DestroyRenderer();
+		DestroyWindow();
 		Mix_CloseAudio();
 		Mix_Quit();
 		SDL_Quit();
@@ -101,7 +109,7 @@ namespace common::Application
 
 	int Run(const std::string& configFile, const std::vector<std::string>& arguments)
 	{
-		DoStart(configFile);
+		DoStart(configFile, arguments);
 		DoPump();
 		DoFinish();
 		return 0;

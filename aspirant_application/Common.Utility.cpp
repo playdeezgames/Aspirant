@@ -2,7 +2,7 @@
 #include <sstream>
 namespace common::Utility
 {
-	std::vector<std::string> CommandLineToStringVector(int argc, char** argv)
+	std::vector<std::string> ParseCommandLine(int argc, char** argv)
 	{
 		std::vector<std::string> arguments;
 		arguments.reserve(argc);

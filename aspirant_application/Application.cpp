@@ -42,7 +42,7 @@ namespace Application
 		uiState = state;
 	}
 
-	const ::UIState& GetUIState()
+	static const ::UIState& GetUIState()
 	{
 		return uiState;
 	}
@@ -170,7 +170,7 @@ namespace common::Application
 		::context::editor::NewRoom::Start
 	};
 
-	void Start(SDL_Renderer* renderer)
+	void Start(SDL_Renderer* renderer, const std::vector<std::string>& arguments)
 	{
 		data::Strings::Start(STRINGS);
 		data::Ints::Start(INTS);

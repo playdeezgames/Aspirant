@@ -8,7 +8,7 @@ namespace common::RNG
 		srand((unsigned int)time(nullptr));
 	}
 
-	int GenerateFromRange(int minimum, int maximum)
+	int FromRange(int minimum, int maximum)
 	{
 		return rand() % (maximum - minimum) + minimum;
 	}
