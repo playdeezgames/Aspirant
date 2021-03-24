@@ -1,7 +1,7 @@
 #include "Game.ScenarioDescriptors.h"
 #include "Common.Utility.h"
 #include "Data.JSON.h"
-#include "FinishUtility.h"
+#include "Common.Finisher.h"
 namespace game::ScenarioDescriptors
 {
 	static std::vector<::game::ScenarioDescriptor*> descriptors;
@@ -11,7 +11,7 @@ namespace game::ScenarioDescriptors
 	{
 		for (auto& descriptor : descriptors)
 		{
-			tggd::common::FinishUtility::SafeDelete(descriptor);
+			common::Finisher::SafeDelete(descriptor);
 		}
 		descriptors.clear();
 	}

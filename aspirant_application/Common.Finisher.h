@@ -2,7 +2,7 @@
 #include <vector>
 #include <string>
 #include <map>
-namespace tggd::common::FinishUtility
+namespace common::Finisher
 {
 	template<typename TDelete>
 	void SafeDelete(TDelete*& ptr)

@@ -14,7 +14,7 @@ namespace game
 			{
 				if (item)
 				{
-					tggd::common::FinishUtility::SafeDelete(item);
+					common::Finisher::SafeDelete(item);
 				}
 			}
 			cells.clear();

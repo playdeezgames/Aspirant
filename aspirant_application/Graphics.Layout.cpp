@@ -2,7 +2,7 @@
 #include "Common.Utility.h"
 #include "Graphics.Image.h"
 #include "Graphics.Text.h"
-#include "FinishUtility.h"
+#include "Common.Finisher.h"
 namespace graphics
 {
 	const std::string PROPERTY_TYPE = "type";
@@ -47,7 +47,7 @@ namespace graphics
 	{
 		for (auto& item : drawnItems)
 		{
-			tggd::common::FinishUtility::SafeDelete(item);
+			common::Finisher::SafeDelete(item);
 		}
 		drawnItems.clear();
 	}

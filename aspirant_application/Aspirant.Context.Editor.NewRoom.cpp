@@ -1,7 +1,7 @@
 #include "Aspirant.Context.Editor.NewRoom.h"
 #include "Game.Descriptors.h"
 #include <vector>
-#include "FinishUtility.h"
+#include "Common.Finisher.h"
 #include "Game.Object.Common.h"
 namespace aspirant::context::editor::NewRoom
 {
@@ -93,7 +93,7 @@ namespace aspirant::context::editor::NewRoom
 			{
 				terrains.push_back(identifier);
 			}
-			tggd::common::FinishUtility::SafeDelete(obj);
+			common::Finisher::SafeDelete(obj);
 		}
 	}
 

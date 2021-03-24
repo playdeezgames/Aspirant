@@ -1,6 +1,6 @@
 #include "Graphics.Fonts.h"
 #include "Data.JSON.h"
-#include "FinishUtility.h"
+#include "Common.Finisher.h"
 #include "Common.Finishers.h"
 namespace graphics::Fonts
 {
@@ -29,7 +29,7 @@ namespace graphics::Fonts
 
 	static void Finish()
 	{
-		tggd::common::FinishUtility::SafeDeleteMap(descriptors);
+		common::Finisher::SafeDeleteMap(descriptors);
 	}
 
 	void Start(const std::string& fileName)

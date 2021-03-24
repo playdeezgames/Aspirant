@@ -1,7 +1,7 @@
 #include "Game.Descriptors.h"
 #include "Common.Finishers.h"
 #include <map>
-#include "FinishUtility.h"
+#include "Common.Finisher.h"
 #include "Data.JSON.h"
 #include "Game.Descriptor.Terrain.h"
 #include "Game.Descriptor.Creature.h"
@@ -40,7 +40,7 @@ namespace game::Descriptors
 
 	static void Finish()
 	{
-		tggd::common::FinishUtility::SafeDeleteMap(descriptors);
+		common::Finisher::SafeDeleteMap(descriptors);
 	}
 
 	void Start(const std::string& filename)

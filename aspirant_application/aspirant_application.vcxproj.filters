@@ -262,7 +262,7 @@
     <ClInclude Include="Graphics.Fonts.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FinishUtility.h">
+    <ClInclude Include="Common.Finisher.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Graphics.Drawn.h">

@@ -1,7 +1,7 @@
 #include "Graphics.Layouts.h"
 #include "Data.JSON.h"
 #include "Common.Finishers.h"
-#include "FinishUtility.h"
+#include "Common.Finisher.h"
 namespace graphics::Layouts
 {
 	graphics::Layout* ParseDescriptor(const std::string&, const nlohmann::json& properties)
@@ -24,7 +24,7 @@ namespace graphics::Layouts
 
 	static void Finish()
 	{
-		tggd::common::FinishUtility::SafeDeleteMap(descriptors);
+		common::Finisher::SafeDeleteMap(descriptors);
 	}
 
 	void Start(const std::string& fileName)

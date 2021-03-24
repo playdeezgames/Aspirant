@@ -1,7 +1,7 @@
 #pragma once
 #include "Game.Object.Common.h"
 #include "Game.Descriptors.h"
-#include "FinishUtility.h"
+#include "Common.Finisher.h"
 namespace game
 {
 	class Cell
@@ -16,7 +16,7 @@ namespace game
 			while (HasObjects())
 			{
 				auto object = RemoveObject();
-				tggd::common::FinishUtility::SafeDelete(object);
+				common::Finisher::SafeDelete(object);
 			}
 		}
 	protected:

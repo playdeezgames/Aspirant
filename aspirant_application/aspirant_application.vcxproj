@@ -243,7 +243,7 @@
     <ClInclude Include="Aspirant.State.Editor.Scenarios.h" />
     <ClInclude Include="Aspirant.State.Editor.Scenario.h" />
     <ClInclude Include="Common.Finishers.h" />
-    <ClInclude Include="FinishUtility.h" />
+    <ClInclude Include="Common.Finisher.h" />
     <ClInclude Include="Data.Bools.h" />
     <ClInclude Include="Graphics.Fonts.h" />
     <ClInclude Include="Data.Ints.h" />

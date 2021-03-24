@@ -11,7 +11,7 @@ namespace game
 
 	void Scenario::Clear()
 	{
-		tggd::common::FinishUtility::SafeDeleteMap(rooms);
+		common::Finisher::SafeDeleteMap(rooms);
 	}
 
 	const std::string PROPERTY_ROOMS = "rooms";
@@ -64,7 +64,7 @@ namespace game
 	{
 		if (rooms.contains(name))
 		{
-			tggd::common::FinishUtility::SafeDelete(rooms[name]);
+			common::Finisher::SafeDelete(rooms[name]);
 		}
 		rooms[name] = new Room();
 		rooms[name]->SetSize(columns, rows);
