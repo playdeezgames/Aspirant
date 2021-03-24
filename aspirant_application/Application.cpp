@@ -2,11 +2,11 @@
 #include <string>
 #include <optional>
 #include "Aspirant.UIState.h"
-#include "Aspirant.Command.h"
+#include "Command.h"
 #include "Data.Strings.h"
 #include "Data.Ints.h"
 #include "Data.Bools.h"
-#include "Aspirant.Application.h"
+#include "Application.h"
 #include "Common.Finishers.h"
 #include "Graphics.Colors.h"
 #include "Graphics.Textures.h"
@@ -33,7 +33,7 @@
 #include "Aspirant.State.Editor.RoomCells.h"
 #include "Aspirant.State.Editor.PickDescriptor.h"
 #include "Aspirant.Context.Editor.NewRoom.h"
-namespace aspirant::Application
+namespace Application
 {
 	static aspirant::UIState uiState = aspirant::UIState::SPLASH;
 
@@ -47,9 +47,9 @@ namespace aspirant::Application
 		return uiState;
 	}
 
-	static std::map<aspirant::UIState, aspirant::Application::CommandHandler> commandHandlers;
+	static std::map<aspirant::UIState, Application::CommandHandler> commandHandlers;
 
-	static void HandleCommand(const aspirant::Command& command)
+	static void HandleCommand(const ::Command& command)
 	{
 		auto handler = commandHandlers.find(GetUIState());
 		if (handler != commandHandlers.end())
@@ -58,36 +58,36 @@ namespace aspirant::Application
 		}
 	}
 
-	static std::optional<aspirant::Command> KeyCodeToCommand(const SDL_Keycode& code)
+	static std::optional<::Command> KeyCodeToCommand(const SDL_Keycode& code)
 	{
 		switch (code)
 		{
 		case SDLK_UP:
-			return std::optional<aspirant::Command>(aspirant::Command::UP);
+			return std::optional<::Command>(::Command::UP);
 		case SDLK_DOWN:
-			return std::optional<aspirant::Command>(aspirant::Command::DOWN);
+			return std::optional<::Command>(::Command::DOWN);
 		case SDLK_LEFT:
-			return std::optional<aspirant::Command>(aspirant::Command::LEFT);
+			return std::optional<::Command>(::Command::LEFT);
 		case SDLK_RIGHT:
-			return std::optional<aspirant::Command>(aspirant::Command::RIGHT);
+			return std::optional<::Command>(::Command::RIGHT);
 		case SDLK_SPACE:
-			return std::optional<aspirant::Command>(aspirant::Command::GREEN);
+			return std::optional<::Command>(::Command::GREEN);
 		case SDLK_RETURN:
-			return std::optional<aspirant::Command>(aspirant::Command::START);
+			return std::optional<::Command>(::Command::START);
 		case SDLK_ESCAPE:
-			return std::optional<aspirant::Command>(aspirant::Command::RED);
+			return std::optional<::Command>(::Command::RED);
 		case SDLK_COMMA:
-			return std::optional<aspirant::Command>(aspirant::Command::PREVIOUS);
+			return std::optional<::Command>(::Command::PREVIOUS);
 		case SDLK_PERIOD:
-			return std::optional<aspirant::Command>(aspirant::Command::NEXT);
+			return std::optional<::Command>(::Command::NEXT);
 		case SDLK_BACKSPACE:
-			return std::optional<aspirant::Command>(aspirant::Command::BACK);
+			return std::optional<::Command>(::Command::BACK);
 		case SDLK_TAB:
-			return std::optional<aspirant::Command>(aspirant::Command::YELLOW);
+			return std::optional<::Command>(::Command::YELLOW);
 		case SDLK_z:
-			return std::optional<aspirant::Command>(aspirant::Command::BLUE);
+			return std::optional<::Command>(::Command::BLUE);
 		default:
-			return std::optional<aspirant::Command>();
+			return std::optional<::Command>();
 		}
 	}
 
@@ -111,7 +111,7 @@ namespace aspirant::Application
 		}
 	}
 
-	void SetCommandHandler(const aspirant::UIState& state, aspirant::Application::CommandHandler handler)
+	void SetCommandHandler(const aspirant::UIState& state, Application::CommandHandler handler)
 	{
 		commandHandlers[state] = handler;
 	}
@@ -193,13 +193,13 @@ namespace common::Application
 
 	bool IsRunning()
 	{
-		return aspirant::Application::GetUIState() != aspirant::UIState::QUIT;
+		return ::Application::GetUIState() != aspirant::UIState::QUIT;
 	}
 
 	void Update(Uint32 ticks)
 	{
-		auto handler = aspirant::Application::updateHandlers.find(aspirant::Application::GetUIState());
-		if (handler != aspirant::Application::updateHandlers.end())
+		auto handler = ::Application::updateHandlers.find(::Application::GetUIState());
+		if (handler != ::Application::updateHandlers.end())
 		{
 			handler->second(ticks);
 		}
@@ -207,8 +207,8 @@ namespace common::Application
 
 	void Render(SDL_Renderer* renderer)
 	{
-		auto handler = aspirant::Application::renderHandlers.find(aspirant::Application::GetUIState());
-		if (handler != aspirant::Application::renderHandlers.end())
+		auto handler = ::Application::renderHandlers.find(::Application::GetUIState());
+		if (handler != ::Application::renderHandlers.end())
 		{
 			handler->second(renderer);
 		}
@@ -218,15 +218,15 @@ namespace common::Application
 	{
 		if (evt.type == SDL_QUIT)
 		{
-			aspirant::Application::SetUIState(aspirant::UIState::QUIT);
+			::Application::SetUIState(aspirant::UIState::QUIT);
 		}
 		else if (evt.type == SDL_KEYDOWN)
 		{
-			aspirant::Application::HandleKeyDown(evt.key);
+			::Application::HandleKeyDown(evt.key);
 		}
 		else if (evt.type == SDL_TEXTINPUT)
 		{
-			aspirant::Application::HandleTextInput(evt.text);
+			::Application::HandleTextInput(evt.text);
 		}
 	}
 

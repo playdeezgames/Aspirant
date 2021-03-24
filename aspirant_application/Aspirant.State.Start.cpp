@@ -1,5 +1,5 @@
 #include "Aspirant.State.Start.h"
-#include "Aspirant.Application.h"
+#include "Application.h"
 #include "Aspirant.UIState.h"
 #include "Aspirant.MenuItem.h"
 #include <map>
@@ -25,28 +25,28 @@ namespace aspirant::state::Start
 		switch (current)
 		{
 		case StartGameItem::BACK:
-			aspirant::Application::SetUIState(aspirant::UIState::MAIN_MENU);
+			::Application::SetUIState(aspirant::UIState::MAIN_MENU);
 			break;
 		case StartGameItem::EDITOR:
-			aspirant::Application::SetUIState(aspirant::UIState::START_EDITOR);
+			::Application::SetUIState(aspirant::UIState::START_EDITOR);
 			break;
 		}
 	}
 
-	static void OnCommand(const aspirant::Command& command)
+	static void OnCommand(const ::Command& command)
 	{
 		switch (command)
 		{
-		case aspirant::Command::UP:
+		case ::Command::UP:
 			current = items[current].GetPreviousMenuItem();
 			break;
-		case aspirant::Command::DOWN:
+		case ::Command::DOWN:
 			current = items[current].GetNextMenuItem();
 			break;
-		case aspirant::Command::BACK:
-			aspirant::Application::SetUIState(aspirant::UIState::MAIN_MENU);
+		case ::Command::BACK:
+			::Application::SetUIState(aspirant::UIState::MAIN_MENU);
 			break;
-		case aspirant::Command::GREEN:
+		case ::Command::GREEN:
 			ActivateItem();
 			break;
 		}
@@ -67,9 +67,9 @@ namespace aspirant::state::Start
 
 	void Start()
 	{
-		aspirant::Application::SetCommandHandler(aspirant::UIState::START_GAME, OnCommand);
-		aspirant::Application::SetRenderHandler(aspirant::UIState::START_GAME, OnDraw);
-		aspirant::Application::SetUpdateHandler(aspirant::UIState::START_GAME, OnUpdate);
+		::Application::SetCommandHandler(aspirant::UIState::START_GAME, OnCommand);
+		::Application::SetRenderHandler(aspirant::UIState::START_GAME, OnDraw);
+		::Application::SetUpdateHandler(aspirant::UIState::START_GAME, OnUpdate);
 		items[StartGameItem::EDITOR] =
 			aspirant::MenuItem<StartGameItem>(START_GAME_EDITOR_COLOR_NAME, StartGameItem::BACK, StartGameItem::BACK);
 		items[StartGameItem::BACK]=

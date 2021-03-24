@@ -1,5 +1,5 @@
 #include "Aspirant.State.Splash.h"
-#include "Aspirant.Application.h"
+#include "Application.h"
 #include "Aspirant.UIState.h"
 #include "Graphics.Layouts.h"
 namespace aspirant::state::Splash
@@ -8,7 +8,7 @@ namespace aspirant::state::Splash
 	const std::string LAYOUT_NAME = "Splash";
 	static size_t ticksLeft = TICKS_TOTAL;
 
-	static void OnCommand(const aspirant::Command& command)
+	static void OnCommand(const ::Command& command)
 	{
 		ticksLeft = 0;
 	}
@@ -23,15 +23,15 @@ namespace aspirant::state::Splash
 		ticksLeft = (ticksLeft > ticks) ? (ticksLeft - ticks) : (0);
 		if (ticksLeft == 0)
 		{
-			aspirant::Application::SetUIState(aspirant::UIState::MAIN_MENU);
+			::Application::SetUIState(aspirant::UIState::MAIN_MENU);
 			ticksLeft = TICKS_TOTAL;
 		}
 	}
 
 	void Start()
 	{
-		aspirant::Application::SetCommandHandler(aspirant::UIState::SPLASH, OnCommand);
-		aspirant::Application::SetRenderHandler(aspirant::UIState::SPLASH, OnDraw);
-		aspirant::Application::SetUpdateHandler(aspirant::UIState::SPLASH, OnUpdate);
+		::Application::SetCommandHandler(aspirant::UIState::SPLASH, OnCommand);
+		::Application::SetRenderHandler(aspirant::UIState::SPLASH, OnDraw);
+		::Application::SetUpdateHandler(aspirant::UIState::SPLASH, OnUpdate);
 	}
 }

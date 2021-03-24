@@ -1,5 +1,5 @@
 #include "Aspirant.State.Editor.RoomCells.h"
-#include "Aspirant.Application.h"
+#include "Application.h"
 #include "Aspirant.UIState.h"
 #include "Graphics.Layouts.h"
 #include "Renderer.Editor.Room.h"
@@ -53,34 +53,34 @@ namespace aspirant::state::editor::RoomCells
 		}
 	}
 
-	static void OnCommand(const aspirant::Command& command)
+	static void OnCommand(const ::Command& command)
 	{
 		switch (command)
 		{
-		case aspirant::Command::BACK:
+		case ::Command::BACK:
 			aspirant::context::editor::Scenario::Save();
-			aspirant::Application::SetUIState(aspirant::UIState::EDIT_PICK_ROOM);
+			::Application::SetUIState(aspirant::UIState::EDIT_PICK_ROOM);
 			break;
-		case aspirant::Command::UP:
+		case ::Command::UP:
 			MoveCursor({ 0,-1 });
 			break;
-		case aspirant::Command::DOWN:
+		case ::Command::DOWN:
 			MoveCursor({ 0,1 });
 			break;
-		case aspirant::Command::LEFT:
+		case ::Command::LEFT:
 			MoveCursor({ -1, 0 });
 			break;
-		case aspirant::Command::RIGHT:
+		case ::Command::RIGHT:
 			MoveCursor({ 1, 0 });
 			break;
-		case aspirant::Command::GREEN:
+		case ::Command::GREEN:
 			PlaceObject();
 			break;
-		case aspirant::Command::RED:
+		case ::Command::RED:
 			RemoveObject();
 			break;
-		case aspirant::Command::NEXT:
-			aspirant::Application::SetUIState(aspirant::UIState::EDIT_DESCRIPTOR_SELECTOR);
+		case ::Command::NEXT:
+			::Application::SetUIState(aspirant::UIState::EDIT_DESCRIPTOR_SELECTOR);
 			break;
 		}
 	}
@@ -104,8 +104,8 @@ namespace aspirant::state::editor::RoomCells
 
 	void Start()
 	{
-		aspirant::Application::SetCommandHandler(aspirant::UIState::EDIT_NAVIGATE_ROOM, OnCommand);
-		aspirant::Application::SetRenderHandler(aspirant::UIState::EDIT_NAVIGATE_ROOM, OnDraw);
-		aspirant::Application::SetUpdateHandler(aspirant::UIState::EDIT_NAVIGATE_ROOM, OnUpdate);
+		::Application::SetCommandHandler(aspirant::UIState::EDIT_NAVIGATE_ROOM, OnCommand);
+		::Application::SetRenderHandler(aspirant::UIState::EDIT_NAVIGATE_ROOM, OnDraw);
+		::Application::SetUpdateHandler(aspirant::UIState::EDIT_NAVIGATE_ROOM, OnUpdate);
 	}
 }

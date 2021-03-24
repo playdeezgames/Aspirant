@@ -1,5 +1,5 @@
 #include "Aspirant.State.Editor.Scenarios.h"
-#include "Aspirant.Application.h"
+#include "Application.h"
 #include "Aspirant.UIState.h"
 #include "Graphics.Layouts.h"
 #include "Game.ScenarioDescriptors.h"
@@ -16,24 +16,24 @@ namespace aspirant::state::editor::Scenarios
 	const std::string TEXT_NAME_STRING_NAME = "EditScenarioSelector.Text.Name";
 	const std::string TEXT_BRIEF_STRING_NAME = "EditScenarioSelector.Text.Brief";
 
-	static void OnCommand(const aspirant::Command& command)
+	static void OnCommand(const ::Command& command)
 	{
 		switch (command)
 		{
-		case aspirant::Command::BACK:
-			aspirant::Application::SetUIState(aspirant::UIState::START_EDITOR);
+		case ::Command::BACK:
+			::Application::SetUIState(aspirant::UIState::START_EDITOR);
 			break;
-		case aspirant::Command::NEXT:
-		case aspirant::Command::RIGHT:
+		case ::Command::NEXT:
+		case ::Command::RIGHT:
 			aspirant::context::editor::Scenarios::Next();
 			break;
-		case aspirant::Command::PREVIOUS:
-		case aspirant::Command::LEFT:
+		case ::Command::PREVIOUS:
+		case ::Command::LEFT:
 			aspirant::context::editor::Scenarios::Previous();
 			break;
-		case aspirant::Command::GREEN:
+		case ::Command::GREEN:
 			aspirant::context::editor::Scenario::Load();
-			aspirant::Application::SetUIState(aspirant::UIState::EDIT_SCENARIO);
+			::Application::SetUIState(aspirant::UIState::EDIT_SCENARIO);
 			break;
 		}
 	}
@@ -108,8 +108,8 @@ namespace aspirant::state::editor::Scenarios
 
 	void Start()
 	{
-		aspirant::Application::SetCommandHandler(aspirant::UIState::EDIT_SCENARIO_SELECTOR, OnCommand);
-		aspirant::Application::SetRenderHandler(aspirant::UIState::EDIT_SCENARIO_SELECTOR, OnDraw);
-		aspirant::Application::SetUpdateHandler(aspirant::UIState::EDIT_SCENARIO_SELECTOR, OnUpdate);
+		::Application::SetCommandHandler(aspirant::UIState::EDIT_SCENARIO_SELECTOR, OnCommand);
+		::Application::SetRenderHandler(aspirant::UIState::EDIT_SCENARIO_SELECTOR, OnDraw);
+		::Application::SetUpdateHandler(aspirant::UIState::EDIT_SCENARIO_SELECTOR, OnUpdate);
 	}
 }

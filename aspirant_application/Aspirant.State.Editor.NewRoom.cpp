@@ -1,5 +1,5 @@
 #include "Aspirant.State.Editor.NewRoom.h"
-#include "Aspirant.Application.h"
+#include "Application.h"
 #include "Aspirant.UIState.h"
 #include "Graphics.Layouts.h"
 #include "Aspirant.MenuItem.h"
@@ -56,10 +56,10 @@ namespace aspirant::state::editor::NewRoom
 		case NewRoomItem::CREATE:
 			CreateRoom();
 			aspirant::context::editor::Rooms::UpdateRoomList();
-			aspirant::Application::SetUIState(aspirant::UIState::EDIT_PICK_ROOM);
+			::Application::SetUIState(aspirant::UIState::EDIT_PICK_ROOM);
 			break;
 		case NewRoomItem::CANCEL:
-			aspirant::Application::SetUIState(aspirant::UIState::EDIT_SCENARIO);
+			::Application::SetUIState(aspirant::UIState::EDIT_SCENARIO);
 			break;
 		}
 	}
@@ -98,39 +98,39 @@ namespace aspirant::state::editor::NewRoom
 		}
 	}
 
-	static void OnCommand(const aspirant::Command& command)
+	static void OnCommand(const ::Command& command)
 	{
 		switch (command)
 		{
-		case aspirant::Command::BACK:
+		case ::Command::BACK:
 			if (current == NewRoomItem::NAME)
 			{
 				aspirant::context::editor::NewRoom::AppendName("\b");
 			}
 			else
 			{
-				aspirant::Application::SetUIState(aspirant::UIState::EDIT_SCENARIO);
+				::Application::SetUIState(aspirant::UIState::EDIT_SCENARIO);
 			}
 			break;
-		case aspirant::Command::RED:
+		case ::Command::RED:
 			if (current == NewRoomItem::NAME)
 			{
 				aspirant::context::editor::NewRoom::ClearName();
 			}
 			break;
-		case aspirant::Command::UP:
+		case ::Command::UP:
 			current = items[current].GetPreviousMenuItem();
 			break;
-		case aspirant::Command::DOWN:
+		case ::Command::DOWN:
 			current = items[current].GetNextMenuItem();
 			break;
-		case aspirant::Command::LEFT:
+		case ::Command::LEFT:
 			DecreaseItem();
 			break;
-		case aspirant::Command::RIGHT:
+		case ::Command::RIGHT:
 			IncreaseItem();
 			break;
-		case aspirant::Command::GREEN:
+		case ::Command::GREEN:
 			ActivateItem();
 			break;
 		}
@@ -172,10 +172,10 @@ namespace aspirant::state::editor::NewRoom
 
 	void Start()
 	{
-		aspirant::Application::SetCommandHandler(aspirant::UIState::EDIT_NEW_ROOM, OnCommand);
-		aspirant::Application::SetRenderHandler(aspirant::UIState::EDIT_NEW_ROOM, OnDraw);
-		aspirant::Application::SetUpdateHandler(aspirant::UIState::EDIT_NEW_ROOM, OnUpdate);
-		aspirant::Application::SetTextInputHandler(aspirant::UIState::EDIT_NEW_ROOM, OnTextInput);
+		::Application::SetCommandHandler(aspirant::UIState::EDIT_NEW_ROOM, OnCommand);
+		::Application::SetRenderHandler(aspirant::UIState::EDIT_NEW_ROOM, OnDraw);
+		::Application::SetUpdateHandler(aspirant::UIState::EDIT_NEW_ROOM, OnUpdate);
+		::Application::SetTextInputHandler(aspirant::UIState::EDIT_NEW_ROOM, OnTextInput);
 		items[NewRoomItem::NAME] = aspirant::MenuItem<NewRoomItem>(COLOR_NAME_ROOM_NAME, NewRoomItem::CANCEL, NewRoomItem::COLUMNS);
 		items[NewRoomItem::COLUMNS] = aspirant::MenuItem<NewRoomItem>(COLOR_NAME_COLUMNS, NewRoomItem::NAME, NewRoomItem::ROWS);
 		items[NewRoomItem::ROWS] = aspirant::MenuItem<NewRoomItem>(COLOR_NAME_ROWS, NewRoomItem::COLUMNS, NewRoomItem::TERRAIN);

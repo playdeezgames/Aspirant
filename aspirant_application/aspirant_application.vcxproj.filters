@@ -26,7 +26,7 @@
     <ClCompile Include="Data.JSON.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Aspirant.Application.cpp">
+    <ClCompile Include="Application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Data.Strings.cpp">
@@ -223,10 +223,10 @@
     <ClInclude Include="Aspirant.UIState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Aspirant.Application.h">
+    <ClInclude Include="Application.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Aspirant.Command.h">
+    <ClInclude Include="Command.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Data.Strings.h">

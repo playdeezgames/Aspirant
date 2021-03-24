@@ -1,5 +1,5 @@
 #include "Aspirant.State.Editor.Start.h"
-#include "Aspirant.Application.h"
+#include "Application.h"
 #include "Aspirant.UIState.h"
 #include "Graphics.Layouts.h"
 #include "Aspirant.MenuItem.h"
@@ -48,7 +48,7 @@ namespace aspirant::state::editor::Start
 		);
 		CreateScenarioFile(ss.str());
 		aspirant::context::editor::Scenarios::SetIndex(::game::ScenarioDescriptors::Add(descriptor));
-		aspirant::Application::SetUIState(aspirant::UIState::EDIT_SCENARIO);
+		::Application::SetUIState(aspirant::UIState::EDIT_SCENARIO);
 	}
 
 	static void ActivateItem()
@@ -56,31 +56,31 @@ namespace aspirant::state::editor::Start
 		switch (current)
 		{
 		case StartEditorItem::BACK:
-			aspirant::Application::SetUIState(aspirant::UIState::START_GAME);
+			::Application::SetUIState(aspirant::UIState::START_GAME);
 			break;
 		case StartEditorItem::NEW:
 			CreateNewScenario();
 			break;
 		case StartEditorItem::OPEN:
-			aspirant::Application::SetUIState(aspirant::UIState::EDIT_SCENARIO_SELECTOR);
+			::Application::SetUIState(aspirant::UIState::EDIT_SCENARIO_SELECTOR);
 			break;
 		}
 	}
 
-	static void OnCommand(const aspirant::Command& command)
+	static void OnCommand(const ::Command& command)
 	{
 		switch (command)
 		{
-		case aspirant::Command::UP:
+		case ::Command::UP:
 			current = items[current].GetPreviousMenuItem();
 			break;
-		case aspirant::Command::DOWN:
+		case ::Command::DOWN:
 			current = items[current].GetNextMenuItem();
 			break;
-		case aspirant::Command::BACK:
-			aspirant::Application::SetUIState(aspirant::UIState::START_GAME);
+		case ::Command::BACK:
+			::Application::SetUIState(aspirant::UIState::START_GAME);
 			break;
-		case aspirant::Command::GREEN:
+		case ::Command::GREEN:
 			ActivateItem();
 			break;
 		}
@@ -101,13 +101,13 @@ namespace aspirant::state::editor::Start
 
 	void Start()
 	{
-		aspirant::Application::SetCommandHandler(
+		::Application::SetCommandHandler(
 			aspirant::UIState::START_EDITOR,
 			OnCommand);
-		aspirant::Application::SetRenderHandler(
+		::Application::SetRenderHandler(
 			aspirant::UIState::START_EDITOR,
 			OnDraw);
-		aspirant::Application::SetUpdateHandler(
+		::Application::SetUpdateHandler(
 			aspirant::UIState::START_EDITOR,
 			OnUpdate);
 

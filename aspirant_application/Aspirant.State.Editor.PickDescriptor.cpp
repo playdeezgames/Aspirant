@@ -1,5 +1,5 @@
 #include "Aspirant.State.Editor.PickDescriptor.h"
-#include "Aspirant.Application.h"
+#include "Application.h"
 #include "Aspirant.UIState.h"
 #include "Graphics.Layouts.h"
 #include "Renderer.Editor.Room.h"
@@ -19,29 +19,29 @@ namespace aspirant::state::editor::PickDescriptor
 				aspirant::context::editor::PickDescriptor::GetCount()));
 	}
 
-	static void OnCommand(const aspirant::Command& command)
+	static void OnCommand(const ::Command& command)
 	{
 		const int ROW_DELTA = 7;
 		const int COLUMN_DELTA = 1;
 		switch (command)
 		{
-		case aspirant::Command::BACK:
-			aspirant::Application::SetUIState(aspirant::UIState::EDIT_PICK_ROOM);
+		case ::Command::BACK:
+			::Application::SetUIState(aspirant::UIState::EDIT_PICK_ROOM);
 			break;
-		case aspirant::Command::UP:
+		case ::Command::UP:
 			ChangeIndex(-ROW_DELTA);
 			break;
-		case aspirant::Command::DOWN:
+		case ::Command::DOWN:
 			ChangeIndex(+ROW_DELTA);
 			break;
-		case aspirant::Command::LEFT:
+		case ::Command::LEFT:
 			ChangeIndex(-COLUMN_DELTA);
 			break;
-		case aspirant::Command::RIGHT:
+		case ::Command::RIGHT:
 			ChangeIndex(COLUMN_DELTA);
 			break;
-		case aspirant::Command::NEXT:
-			aspirant::Application::SetUIState(aspirant::UIState::EDIT_NAVIGATE_ROOM);
+		case ::Command::NEXT:
+			::Application::SetUIState(aspirant::UIState::EDIT_NAVIGATE_ROOM);
 			break;
 		}
 	}
@@ -60,8 +60,8 @@ namespace aspirant::state::editor::PickDescriptor
 
 	void Start()
 	{
-		aspirant::Application::SetCommandHandler(aspirant::UIState::EDIT_DESCRIPTOR_SELECTOR, OnCommand);
-		aspirant::Application::SetRenderHandler(aspirant::UIState::EDIT_DESCRIPTOR_SELECTOR, OnDraw);
-		aspirant::Application::SetUpdateHandler(aspirant::UIState::EDIT_DESCRIPTOR_SELECTOR, OnUpdate);
+		::Application::SetCommandHandler(aspirant::UIState::EDIT_DESCRIPTOR_SELECTOR, OnCommand);
+		::Application::SetRenderHandler(aspirant::UIState::EDIT_DESCRIPTOR_SELECTOR, OnDraw);
+		::Application::SetUpdateHandler(aspirant::UIState::EDIT_DESCRIPTOR_SELECTOR, OnUpdate);
 	}
 }

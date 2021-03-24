@@ -1,5 +1,5 @@
 #include "Aspirant.State.MainMenu.h"
-#include "Aspirant.Application.h"
+#include "Application.h"
 #include "Aspirant.UIState.h"
 #include "Graphics.Layouts.h"
 #include "Aspirant.MenuItem.h"
@@ -30,36 +30,36 @@ namespace aspirant::state::MainMenu
 		switch (current)
 		{
 		case MainMenuItem::START:
-			aspirant::Application::SetUIState(aspirant::UIState::START_GAME);
+			::Application::SetUIState(aspirant::UIState::START_GAME);
 			return;
 		case MainMenuItem::OPTIONS:
-			aspirant::Application::SetUIState(aspirant::UIState::OPTIONS);
+			::Application::SetUIState(aspirant::UIState::OPTIONS);
 			return;
 		case MainMenuItem::ABOUT:
 			SDL_SetClipboardText(::data::Strings::Get(ITCH_URL_STRING).c_str());
-			aspirant::Application::SetUIState(aspirant::UIState::ABOUT);
+			::Application::SetUIState(aspirant::UIState::ABOUT);
 			return;
 		case MainMenuItem::QUIT:
-			aspirant::Application::SetUIState(aspirant::UIState::CONFIRM_QUIT);
+			::Application::SetUIState(aspirant::UIState::CONFIRM_QUIT);
 			return;
 		}
 	}
 
-	static void OnCommand(const aspirant::Command& command)
+	static void OnCommand(const ::Command& command)
 	{
 		switch (command)
 		{
-		case aspirant::Command::UP:
+		case ::Command::UP:
 			current = items[current].GetPreviousMenuItem();
 			break;
-		case aspirant::Command::DOWN:
+		case ::Command::DOWN:
 			current = items[current].GetNextMenuItem();
 			break;
-		case aspirant::Command::GREEN:
+		case ::Command::GREEN:
 			ActivateItem();
 			break;
-		case aspirant::Command::BACK:
-			aspirant::Application::SetUIState(aspirant::UIState::CONFIRM_QUIT);
+		case ::Command::BACK:
+			::Application::SetUIState(aspirant::UIState::CONFIRM_QUIT);
 			break;
 		}
 	}
@@ -79,9 +79,9 @@ namespace aspirant::state::MainMenu
 
 	void Start()
 	{
-		aspirant::Application::SetCommandHandler(aspirant::UIState::MAIN_MENU, OnCommand);
-		aspirant::Application::SetRenderHandler(aspirant::UIState::MAIN_MENU, OnDraw);
-		aspirant::Application::SetUpdateHandler(aspirant::UIState::MAIN_MENU, OnUpdate);
+		::Application::SetCommandHandler(aspirant::UIState::MAIN_MENU, OnCommand);
+		::Application::SetRenderHandler(aspirant::UIState::MAIN_MENU, OnDraw);
+		::Application::SetUpdateHandler(aspirant::UIState::MAIN_MENU, OnUpdate);
 		items[MainMenuItem::START] = aspirant::MenuItem<MainMenuItem>
 		(
 			MENU_ITEM_START_COLOR_NAME,

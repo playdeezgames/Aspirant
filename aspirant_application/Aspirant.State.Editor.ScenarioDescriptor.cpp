@@ -1,5 +1,5 @@
 #include "Aspirant.State.Editor.ScenarioDescriptor.h"
-#include "Aspirant.Application.h"
+#include "Application.h"
 #include "Aspirant.UIState.h"
 #include "Graphics.Layouts.h"
 #include "Aspirant.MenuItem.h"
@@ -30,17 +30,17 @@ namespace aspirant::state::editor::ScenarioDescriptor
 		switch (current)
 		{
 		case EditScenarioDescriptorItem::BACK:
-			aspirant::Application::SetUIState(aspirant::UIState::EDIT_SCENARIO);
+			::Application::SetUIState(aspirant::UIState::EDIT_SCENARIO);
 			break;
 		}
 	}
 
-	static void OnCommand(const aspirant::Command& command)
+	static void OnCommand(const ::Command& command)
 	{
 		auto descriptor = ::game::ScenarioDescriptors::Get(aspirant::context::editor::Scenarios::GetIndex());
 		switch (command)
 		{
-		case aspirant::Command::BACK:
+		case ::Command::BACK:
 			switch (current)
 			{
 			case EditScenarioDescriptorItem::SCENARIO_NAME:
@@ -50,17 +50,17 @@ namespace aspirant::state::editor::ScenarioDescriptor
 				descriptor->SetBrief("");
 				break;
 			default:
-				aspirant::Application::SetUIState(aspirant::UIState::EDIT_SCENARIO);;
+				::Application::SetUIState(aspirant::UIState::EDIT_SCENARIO);;
 				break;
 			}
 			break;
-		case aspirant::Command::UP:
+		case ::Command::UP:
 			current = items[current].GetPreviousMenuItem();
 			break;
-		case aspirant::Command::DOWN:
+		case ::Command::DOWN:
 			current = items[current].GetNextMenuItem();
 			break;
-		case aspirant::Command::GREEN:
+		case ::Command::GREEN:
 			ActivateItem();
 			break;
 		}
@@ -99,10 +99,10 @@ namespace aspirant::state::editor::ScenarioDescriptor
 
 	void Start()
 	{
-		aspirant::Application::SetCommandHandler(aspirant::UIState::EDIT_SCENARIO_DESCRIPTOR, OnCommand);
-		aspirant::Application::SetRenderHandler(aspirant::UIState::EDIT_SCENARIO_DESCRIPTOR, OnDraw);
-		aspirant::Application::SetUpdateHandler(aspirant::UIState::EDIT_SCENARIO_DESCRIPTOR, OnUpdate);
-		aspirant::Application::SetTextInputHandler(aspirant::UIState::EDIT_SCENARIO_DESCRIPTOR, OnTextInput);
+		::Application::SetCommandHandler(aspirant::UIState::EDIT_SCENARIO_DESCRIPTOR, OnCommand);
+		::Application::SetRenderHandler(aspirant::UIState::EDIT_SCENARIO_DESCRIPTOR, OnDraw);
+		::Application::SetUpdateHandler(aspirant::UIState::EDIT_SCENARIO_DESCRIPTOR, OnUpdate);
+		::Application::SetTextInputHandler(aspirant::UIState::EDIT_SCENARIO_DESCRIPTOR, OnTextInput);
 		items[EditScenarioDescriptorItem::SCENARIO_NAME]= aspirant::MenuItem<EditScenarioDescriptorItem>(COLOR_NAME_SCENARIO_NAME, EditScenarioDescriptorItem::BACK, EditScenarioDescriptorItem::BRIEF);
 		items[EditScenarioDescriptorItem::BRIEF]= aspirant::MenuItem<EditScenarioDescriptorItem>(COLOR_NAME_BRIEF, EditScenarioDescriptorItem::SCENARIO_NAME, EditScenarioDescriptorItem::BACK);
 		items[EditScenarioDescriptorItem::BACK]= aspirant::MenuItem<EditScenarioDescriptorItem>(COLOR_NAME_BACK, EditScenarioDescriptorItem::BRIEF, EditScenarioDescriptorItem::SCENARIO_NAME);

@@ -1,5 +1,5 @@
 #include "Aspirant.State.ConfirmQuit.h"
-#include "Aspirant.Application.h"
+#include "Application.h"
 #include "Aspirant.UIState.h"
 #include "Graphics.Layouts.h"
 #include <map>
@@ -25,29 +25,29 @@ namespace aspirant::state::ConfirmQuit
 		switch (current)
 		{
 		case ConfirmQuitItem::NO:
-			aspirant::Application::SetUIState(aspirant::UIState::MAIN_MENU);
+			::Application::SetUIState(aspirant::UIState::MAIN_MENU);
 			return;
 		case ConfirmQuitItem::YES:
-			aspirant::Application::SetUIState(aspirant::UIState::QUIT);
+			::Application::SetUIState(aspirant::UIState::QUIT);
 			return;
 		}
 	}
 
-	static void OnCommand(const aspirant::Command& command)
+	static void OnCommand(const ::Command& command)
 	{
 		switch (command)
 		{
-		case aspirant::Command::UP:
+		case ::Command::UP:
 			current = items[current].GetPreviousMenuItem();
 			break;
-		case aspirant::Command::DOWN:
+		case ::Command::DOWN:
 			current = items[current].GetNextMenuItem();
 			break;
-		case aspirant::Command::GREEN:
+		case ::Command::GREEN:
 			ActivateItem();
 			break;
-		case aspirant::Command::BACK:
-			aspirant::Application::SetUIState(aspirant::UIState::MAIN_MENU);
+		case ::Command::BACK:
+			::Application::SetUIState(aspirant::UIState::MAIN_MENU);
 			break;
 		}
 	}
@@ -67,9 +67,9 @@ namespace aspirant::state::ConfirmQuit
 
 	void Start()
 	{
-		aspirant::Application::SetCommandHandler(aspirant::UIState::CONFIRM_QUIT, OnCommand);
-		aspirant::Application::SetRenderHandler(aspirant::UIState::CONFIRM_QUIT, OnDraw);
-		aspirant::Application::SetUpdateHandler(aspirant::UIState::CONFIRM_QUIT, OnUpdate);
+		::Application::SetCommandHandler(aspirant::UIState::CONFIRM_QUIT, OnCommand);
+		::Application::SetRenderHandler(aspirant::UIState::CONFIRM_QUIT, OnDraw);
+		::Application::SetUpdateHandler(aspirant::UIState::CONFIRM_QUIT, OnUpdate);
 		items[ConfirmQuitItem::YES] =
 			aspirant::MenuItem<ConfirmQuitItem>(CONFIRM_ITEM_YES_COLOR_NAME, ConfirmQuitItem::NO, ConfirmQuitItem::NO);
 		items[ConfirmQuitItem::NO] =

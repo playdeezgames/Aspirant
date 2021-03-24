@@ -1,5 +1,5 @@
 #include "Aspirant.State.Editor.Scenario.h"
-#include "Aspirant.Application.h"
+#include "Application.h"
 #include "Aspirant.UIState.h"
 #include "Graphics.Layouts.h"
 #include "Game.ScenarioDescriptors.h"
@@ -33,37 +33,37 @@ namespace aspirant::state::editor::Scenario
 		switch (current)
 		{
 		case EditScenarioItem::BACK:
-			aspirant::Application::SetUIState(aspirant::UIState::EDIT_SCENARIO_SELECTOR);
+			::Application::SetUIState(aspirant::UIState::EDIT_SCENARIO_SELECTOR);
 			break;
 		case EditScenarioItem::DESCRIPTOR:
-			aspirant::Application::SetUIState(aspirant::UIState::EDIT_SCENARIO_DESCRIPTOR);
+			::Application::SetUIState(aspirant::UIState::EDIT_SCENARIO_DESCRIPTOR);
 			break;
 		case EditScenarioItem::OPEN_ROOM:
 			aspirant::context::editor::Rooms::UpdateRoomList();
-			aspirant::Application::SetUIState(aspirant::UIState::EDIT_PICK_ROOM);
+			::Application::SetUIState(aspirant::UIState::EDIT_PICK_ROOM);
 			break;
 		case EditScenarioItem::NEW_ROOM:
 			aspirant::context::editor::NewRoom::Reset();
-			aspirant::Application::SetUIState(aspirant::UIState::EDIT_NEW_ROOM);
+			::Application::SetUIState(aspirant::UIState::EDIT_NEW_ROOM);
 			break;
 		}
 	}
 
-	static void OnCommand(const aspirant::Command& command)
+	static void OnCommand(const ::Command& command)
 	{
 		switch (command)
 		{
-		case aspirant::Command::UP:
+		case ::Command::UP:
 			current = items[current].GetPreviousMenuItem();
 			break;
-		case aspirant::Command::DOWN:
+		case ::Command::DOWN:
 			current = items[current].GetNextMenuItem();
 			break;
-		case aspirant::Command::GREEN:
+		case ::Command::GREEN:
 			ActivateItem();
 			break;
-		case aspirant::Command::BACK:
-			aspirant::Application::SetUIState(aspirant::UIState::EDIT_SCENARIO_SELECTOR);
+		case ::Command::BACK:
+			::Application::SetUIState(aspirant::UIState::EDIT_SCENARIO_SELECTOR);
 			break;
 		}
 	}
@@ -92,9 +92,9 @@ namespace aspirant::state::editor::Scenario
 
 	void Start()
 	{
-		aspirant::Application::SetCommandHandler(aspirant::UIState::EDIT_SCENARIO, OnCommand);
-		aspirant::Application::SetRenderHandler(aspirant::UIState::EDIT_SCENARIO, OnDraw);
-		aspirant::Application::SetUpdateHandler(aspirant::UIState::EDIT_SCENARIO, OnUpdate);
+		::Application::SetCommandHandler(aspirant::UIState::EDIT_SCENARIO, OnCommand);
+		::Application::SetRenderHandler(aspirant::UIState::EDIT_SCENARIO, OnDraw);
+		::Application::SetUpdateHandler(aspirant::UIState::EDIT_SCENARIO, OnUpdate);
 		items[EditScenarioItem::DESCRIPTOR]= aspirant::MenuItem<EditScenarioItem>(ITEM_DESCRIPTOR_COLOR_NAME, EditScenarioItem::BACK, EditScenarioItem::OPEN_ROOM);
 		items[EditScenarioItem::OPEN_ROOM]= aspirant::MenuItem<EditScenarioItem>(ITEM_OPEN_ROOM_COLOR_NAME, EditScenarioItem::DESCRIPTOR, EditScenarioItem::NEW_ROOM);
 		items[EditScenarioItem::NEW_ROOM]= aspirant::MenuItem<EditScenarioItem>(ITEM_NEW_ROOM_COLOR_NAME, EditScenarioItem::OPEN_ROOM, EditScenarioItem::BACK);

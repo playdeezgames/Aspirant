@@ -1,5 +1,5 @@
 #include "Aspirant.State.Options.h"
-#include "Aspirant.Application.h"
+#include "Application.h"
 #include "Aspirant.UIState.h"
 #include <map>
 #include "Aspirant.MenuItem.h"
@@ -86,33 +86,33 @@ namespace aspirant::state::Options
 			aspirant::Options::Save();
 			break;
 		case OptionsItem::BACK:
-			aspirant::Application::SetUIState(aspirant::UIState::MAIN_MENU);
+			::Application::SetUIState(aspirant::UIState::MAIN_MENU);
 			break;
 		}
 	}
 
 	static std::map<OptionsItem, aspirant::MenuItem<OptionsItem>> items;
 
-	static void OnCommand(const aspirant::Command& command)
+	static void OnCommand(const ::Command& command)
 	{
 		switch (command)
 		{
-		case aspirant::Command::UP:
+		case ::Command::UP:
 			current = items[current].GetPreviousMenuItem();
 			break;
-		case aspirant::Command::DOWN:
+		case ::Command::DOWN:
 			current = items[current].GetNextMenuItem();
 			break;
-		case aspirant::Command::LEFT:
+		case ::Command::LEFT:
 			DecreaseItem();
 			break;
-		case aspirant::Command::RIGHT:
+		case ::Command::RIGHT:
 			IncreaseItem();
 			break;
-		case aspirant::Command::BACK:
-			aspirant::Application::SetUIState(aspirant::UIState::MAIN_MENU);
+		case ::Command::BACK:
+			::Application::SetUIState(aspirant::UIState::MAIN_MENU);
 			break;
-		case aspirant::Command::GREEN:
+		case ::Command::GREEN:
 			ActivateItem();
 			break;
 		}
@@ -152,9 +152,9 @@ namespace aspirant::state::Options
 
 	void Start()
 	{
-		aspirant::Application::SetCommandHandler(aspirant::UIState::OPTIONS, OnCommand);
-		aspirant::Application::SetRenderHandler(aspirant::UIState::OPTIONS, OnDraw);
-		aspirant::Application::SetUpdateHandler(aspirant::UIState::OPTIONS, OnUpdate);
+		::Application::SetCommandHandler(aspirant::UIState::OPTIONS, OnCommand);
+		::Application::SetRenderHandler(aspirant::UIState::OPTIONS, OnDraw);
+		::Application::SetUpdateHandler(aspirant::UIState::OPTIONS, OnUpdate);
 		items[OptionsItem::TOGGLE_MUTE]=
 			aspirant::MenuItem<OptionsItem>
 			(
