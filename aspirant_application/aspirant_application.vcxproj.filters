@@ -83,7 +83,7 @@
     <ClCompile Include="Common.Sounds.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Aspirant.Options.cpp">
+    <ClCompile Include="Options.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Game.Descriptors.cpp">
@@ -104,31 +104,31 @@
     <ClCompile Include="Game.ScenarioDescriptors.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Aspirant.State.Splash.cpp">
+    <ClCompile Include="State.Splash.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Aspirant.State.Start.cpp">
+    <ClCompile Include="State.Start.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Aspirant.State.Options.cpp">
+    <ClCompile Include="State.Options.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Aspirant.State.MainMenu.cpp">
+    <ClCompile Include="State.MainMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Aspirant.State.About.cpp">
+    <ClCompile Include="State.About.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Aspirant.State.ConfirmQuit.cpp">
+    <ClCompile Include="State.ConfirmQuit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Aspirant.State.Editor.Start.cpp">
+    <ClCompile Include="State.Editor.Start.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Aspirant.Context.Editor.Scenarios.cpp">
+    <ClCompile Include="Context.Editor.Scenarios.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Aspirant.State.Editor.Scenarios.cpp">
+    <ClCompile Include="State.Editor.Scenarios.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Game.Cell.cpp">
@@ -140,31 +140,31 @@
     <ClCompile Include="Game.Scenario.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Aspirant.State.Editor.Scenario.cpp">
+    <ClCompile Include="State.Editor.Scenario.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Aspirant.Context.Editor.Rooms.cpp">
+    <ClCompile Include="Context.Editor.Rooms.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Aspirant.Context.Editor.Scenario.cpp">
+    <ClCompile Include="Context.Editor.Scenario.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Aspirant.Context.Editor.NewRoom.h">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="Aspirant.Context.Editor.NewRoom.cpp">
+    <ClCompile Include="Context.Editor.NewRoom.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Aspirant.State.Editor.PickRoom.cpp">
+    <ClCompile Include="State.Editor.PickRoom.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Aspirant.Context.Editor.RoomView.cpp">
+    <ClCompile Include="Context.Editor.RoomView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Aspirant.State.Editor.NewRoom.cpp">
+    <ClCompile Include="State.Editor.NewRoom.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Aspirant.State.Editor.ScenarioDescriptor.cpp">
+    <ClCompile Include="State.Editor.ScenarioDescriptor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Renderer.Editor.Room.cpp">
@@ -176,16 +176,16 @@
     <ClCompile Include="Renderer.Editor.PickDescriptor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Aspirant.State.Editor.RoomCells.cpp">
+    <ClCompile Include="State.Editor.RoomCells.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Aspirant.Context.Editor.Cell.cpp">
+    <ClCompile Include="Context.Editor.Cell.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Aspirant.Context.Editor.PickDescriptor.cpp">
+    <ClCompile Include="Context.Editor.PickDescriptor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Aspirant.State.Editor.PickDescriptor.cpp">
+    <ClCompile Include="State.Editor.PickDescriptor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Game.Avatar.cpp">
@@ -340,7 +340,7 @@
     <ClInclude Include="Aspirant.State.Start.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Aspirant.MenuItem.h">
+    <ClInclude Include="MenuItem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Aspirant.State.Editor.Start.h">

@@ -2,7 +2,7 @@
 #include "Application.h"
 #include "Aspirant.UIState.h"
 #include "Graphics.Layouts.h"
-#include "Aspirant.MenuItem.h"
+#include "MenuItem.h"
 #include "Aspirant.Context.Editor.Scenarios.h"
 #include "Data.Strings.h"
 #include "Game.ScenarioDescriptors.h"
@@ -23,7 +23,7 @@ namespace aspirant::state::editor::ScenarioDescriptor
 	};
 
 	static EditScenarioDescriptorItem current = EditScenarioDescriptorItem::BACK;
-	static std::map<EditScenarioDescriptorItem, aspirant::MenuItem<EditScenarioDescriptorItem>> items;
+	static std::map<EditScenarioDescriptorItem, ::MenuItem<EditScenarioDescriptorItem>> items;
 
 	void ActivateItem()
 	{
@@ -103,8 +103,8 @@ namespace aspirant::state::editor::ScenarioDescriptor
 		::Application::SetRenderHandler(aspirant::UIState::EDIT_SCENARIO_DESCRIPTOR, OnDraw);
 		::Application::SetUpdateHandler(aspirant::UIState::EDIT_SCENARIO_DESCRIPTOR, OnUpdate);
 		::Application::SetTextInputHandler(aspirant::UIState::EDIT_SCENARIO_DESCRIPTOR, OnTextInput);
-		items[EditScenarioDescriptorItem::SCENARIO_NAME]= aspirant::MenuItem<EditScenarioDescriptorItem>(COLOR_NAME_SCENARIO_NAME, EditScenarioDescriptorItem::BACK, EditScenarioDescriptorItem::BRIEF);
-		items[EditScenarioDescriptorItem::BRIEF]= aspirant::MenuItem<EditScenarioDescriptorItem>(COLOR_NAME_BRIEF, EditScenarioDescriptorItem::SCENARIO_NAME, EditScenarioDescriptorItem::BACK);
-		items[EditScenarioDescriptorItem::BACK]= aspirant::MenuItem<EditScenarioDescriptorItem>(COLOR_NAME_BACK, EditScenarioDescriptorItem::BRIEF, EditScenarioDescriptorItem::SCENARIO_NAME);
+		items[EditScenarioDescriptorItem::SCENARIO_NAME]= ::MenuItem<EditScenarioDescriptorItem>(COLOR_NAME_SCENARIO_NAME, EditScenarioDescriptorItem::BACK, EditScenarioDescriptorItem::BRIEF);
+		items[EditScenarioDescriptorItem::BRIEF]= ::MenuItem<EditScenarioDescriptorItem>(COLOR_NAME_BRIEF, EditScenarioDescriptorItem::SCENARIO_NAME, EditScenarioDescriptorItem::BACK);
+		items[EditScenarioDescriptorItem::BACK]= ::MenuItem<EditScenarioDescriptorItem>(COLOR_NAME_BACK, EditScenarioDescriptorItem::BRIEF, EditScenarioDescriptorItem::SCENARIO_NAME);
 	}
 }

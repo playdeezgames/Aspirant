@@ -3,7 +3,7 @@
 #include "Aspirant.UIState.h"
 #include "Graphics.Layouts.h"
 #include <map>
-#include "Aspirant.MenuItem.h"
+#include "MenuItem.h"
 #include "Data.Strings.h"
 namespace aspirant::state::ConfirmQuit
 {
@@ -18,7 +18,7 @@ namespace aspirant::state::ConfirmQuit
 	};
 
 	static ConfirmQuitItem current = ConfirmQuitItem::NO;
-	static std::map<ConfirmQuitItem, aspirant::MenuItem<ConfirmQuitItem>> items;
+	static std::map<ConfirmQuitItem, ::MenuItem<ConfirmQuitItem>> items;
 
 	static void ActivateItem()
 	{
@@ -71,8 +71,8 @@ namespace aspirant::state::ConfirmQuit
 		::Application::SetRenderHandler(aspirant::UIState::CONFIRM_QUIT, OnDraw);
 		::Application::SetUpdateHandler(aspirant::UIState::CONFIRM_QUIT, OnUpdate);
 		items[ConfirmQuitItem::YES] =
-			aspirant::MenuItem<ConfirmQuitItem>(CONFIRM_ITEM_YES_COLOR_NAME, ConfirmQuitItem::NO, ConfirmQuitItem::NO);
+			::MenuItem<ConfirmQuitItem>(CONFIRM_ITEM_YES_COLOR_NAME, ConfirmQuitItem::NO, ConfirmQuitItem::NO);
 		items[ConfirmQuitItem::NO] =
-			aspirant::MenuItem<ConfirmQuitItem>(CONFIRM_ITEM_NO_COLOR_NAME, ConfirmQuitItem::YES, ConfirmQuitItem::YES);
+			::MenuItem<ConfirmQuitItem>(CONFIRM_ITEM_NO_COLOR_NAME, ConfirmQuitItem::YES, ConfirmQuitItem::YES);
 	}
 }

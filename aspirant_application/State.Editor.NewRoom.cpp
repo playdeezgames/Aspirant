@@ -2,7 +2,7 @@
 #include "Application.h"
 #include "Aspirant.UIState.h"
 #include "Graphics.Layouts.h"
-#include "Aspirant.MenuItem.h"
+#include "MenuItem.h"
 #include <sstream>
 #include "Data.Strings.h"
 #include "Aspirant.Context.Editor.Scenario.h"
@@ -34,7 +34,7 @@ namespace aspirant::state::editor::NewRoom
 		CANCEL
 	};
 	static NewRoomItem current = NewRoomItem::CANCEL;
-	static std::map<NewRoomItem, aspirant::MenuItem<NewRoomItem>> items;
+	static std::map<NewRoomItem, ::MenuItem<NewRoomItem>> items;
 
 	static void CreateRoom()
 	{
@@ -176,11 +176,11 @@ namespace aspirant::state::editor::NewRoom
 		::Application::SetRenderHandler(aspirant::UIState::EDIT_NEW_ROOM, OnDraw);
 		::Application::SetUpdateHandler(aspirant::UIState::EDIT_NEW_ROOM, OnUpdate);
 		::Application::SetTextInputHandler(aspirant::UIState::EDIT_NEW_ROOM, OnTextInput);
-		items[NewRoomItem::NAME] = aspirant::MenuItem<NewRoomItem>(COLOR_NAME_ROOM_NAME, NewRoomItem::CANCEL, NewRoomItem::COLUMNS);
-		items[NewRoomItem::COLUMNS] = aspirant::MenuItem<NewRoomItem>(COLOR_NAME_COLUMNS, NewRoomItem::NAME, NewRoomItem::ROWS);
-		items[NewRoomItem::ROWS] = aspirant::MenuItem<NewRoomItem>(COLOR_NAME_ROWS, NewRoomItem::COLUMNS, NewRoomItem::TERRAIN);
-		items[NewRoomItem::TERRAIN] = aspirant::MenuItem<NewRoomItem>(COLOR_NAME_TERRAIN, NewRoomItem::ROWS, NewRoomItem::CREATE);
-		items[NewRoomItem::CREATE] = aspirant::MenuItem<NewRoomItem>(COLOR_NAME_CREATE, NewRoomItem::TERRAIN, NewRoomItem::CANCEL);
-		items[NewRoomItem::CANCEL] = aspirant::MenuItem<NewRoomItem>(COLOR_NAME_CANCEL, NewRoomItem::CREATE, NewRoomItem::NAME);
+		items[NewRoomItem::NAME] = ::MenuItem<NewRoomItem>(COLOR_NAME_ROOM_NAME, NewRoomItem::CANCEL, NewRoomItem::COLUMNS);
+		items[NewRoomItem::COLUMNS] = ::MenuItem<NewRoomItem>(COLOR_NAME_COLUMNS, NewRoomItem::NAME, NewRoomItem::ROWS);
+		items[NewRoomItem::ROWS] = ::MenuItem<NewRoomItem>(COLOR_NAME_ROWS, NewRoomItem::COLUMNS, NewRoomItem::TERRAIN);
+		items[NewRoomItem::TERRAIN] = ::MenuItem<NewRoomItem>(COLOR_NAME_TERRAIN, NewRoomItem::ROWS, NewRoomItem::CREATE);
+		items[NewRoomItem::CREATE] = ::MenuItem<NewRoomItem>(COLOR_NAME_CREATE, NewRoomItem::TERRAIN, NewRoomItem::CANCEL);
+		items[NewRoomItem::CANCEL] = ::MenuItem<NewRoomItem>(COLOR_NAME_CANCEL, NewRoomItem::CREATE, NewRoomItem::NAME);
 	}
 }

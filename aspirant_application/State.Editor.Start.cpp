@@ -2,7 +2,7 @@
 #include "Application.h"
 #include "Aspirant.UIState.h"
 #include "Graphics.Layouts.h"
-#include "Aspirant.MenuItem.h"
+#include "MenuItem.h"
 #include <map>
 #include "Data.Strings.h"
 #include "Game.ScenarioDescriptors.h"
@@ -24,7 +24,7 @@ namespace aspirant::state::editor::Start
 	};
 
 	static StartEditorItem current = StartEditorItem::BACK;
-	static std::map<StartEditorItem, aspirant::MenuItem<StartEditorItem>> items;
+	static std::map<StartEditorItem, ::MenuItem<StartEditorItem>> items;
 
 	static void CreateScenarioFile(const std::string& fileName)
 	{
@@ -112,17 +112,17 @@ namespace aspirant::state::editor::Start
 			OnUpdate);
 
 		items[StartEditorItem::NEW] =
-			aspirant::MenuItem<StartEditorItem>(
+			::MenuItem<StartEditorItem>(
 				START_EDITOR_NEW_COLOR_NAME,
 				StartEditorItem::BACK,
 				StartEditorItem::OPEN);
 		items[StartEditorItem::OPEN] =
-			aspirant::MenuItem<StartEditorItem>(
+			::MenuItem<StartEditorItem>(
 				START_EDITOR_OPEN_COLOR_NAME,
 				StartEditorItem::NEW,
 				StartEditorItem::BACK);
 		items[StartEditorItem::BACK] =
-			aspirant::MenuItem<StartEditorItem>(
+			::MenuItem<StartEditorItem>(
 				START_EDITOR_BACK_COLOR_NAME,
 				StartEditorItem::OPEN,
 				StartEditorItem::NEW);
