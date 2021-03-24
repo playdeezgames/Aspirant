@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include "Common.Sounds.h"
-namespace aspirant::Options
+namespace Options
 {
 	void Start(const std::string&);
 	void Save();

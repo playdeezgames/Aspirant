@@ -1,7 +1,7 @@
-#include "Aspirant.Options.h"
+#include "Options.h"
 #include "Data.JSON.h"
 #include "Common.Sounds.h"
-namespace aspirant::Options
+namespace Options
 {
 	const std::string PROPERTY_MUTED = "muted";
 	const std::string PROPERTY_SFX_VOLUME = "sfxVolume";

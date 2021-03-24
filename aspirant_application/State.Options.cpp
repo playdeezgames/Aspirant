@@ -6,7 +6,7 @@
 #include "Graphics.Layouts.h"
 #include "Data.Strings.h"
 #include "Common.Sounds.h"
-#include "Aspirant.Options.h"
+#include "Options.h"
 #include <sstream>
 #include "Common.Utility.h"
 namespace aspirant::state::Options
@@ -41,13 +41,13 @@ namespace aspirant::state::Options
 		common::Sounds::SetSfxVolume(common::Sounds::GetSfxVolume() + delta);
 		common::Sounds::PlaySound(SFX_SAMPLE_NAME);
 		
-		aspirant::Options::Save();
+		::Options::Save();
 	}
 
 	static void AdjustMuxVolume(int delta)
 	{
 		common::Sounds::SetMuxVolume(common::Sounds::GetMuxVolume() + delta);//TODO: magic number
-		aspirant::Options::Save();
+		::Options::Save();
 	}
 
 
@@ -83,7 +83,7 @@ namespace aspirant::state::Options
 		{
 		case OptionsItem::TOGGLE_MUTE:
 			common::Sounds::SetMuted(!common::Sounds::IsMuted());
-			aspirant::Options::Save();
+			::Options::Save();
 			break;
 		case OptionsItem::BACK:
 			::Application::SetUIState(::UIState::MAIN_MENU);

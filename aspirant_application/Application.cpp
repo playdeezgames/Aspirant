@@ -14,7 +14,7 @@
 #include "Graphics.Fonts.h"
 #include "Graphics.Layouts.h"
 #include "Common.Sounds.h"
-#include "Aspirant.Options.h"
+#include "Options.h"
 #include "Game.Descriptors.h"
 #include "Game.ScenarioDescriptors.h"
 #include "Aspirant.State.Splash.h"
@@ -181,7 +181,7 @@ namespace common::Application
 		graphics::Fonts::Start(FONTS);
 		graphics::Layouts::Start(LAYOUTS);
 		common::Sounds::Start(SFX, MUX);
-		aspirant::Options::Start(OPTIONS);
+		::Options::Start(OPTIONS);
 		game::Descriptors::Start(DESCRIPTORS);
 		game::ScenarioDescriptors::Load(SCENARIOS);
 

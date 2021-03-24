@@ -292,7 +292,7 @@
     <ClInclude Include="Common.Sounds.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Aspirant.Options.h">
+    <ClInclude Include="Options.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Game.Descriptors.h">

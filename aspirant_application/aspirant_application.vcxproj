@@ -254,7 +254,7 @@
     <ClInclude Include="Graphics.Layouts.h" />
     <ClInclude Include="Aspirant.State.MainMenu.h" />
     <ClInclude Include="MenuItem.h" />
-    <ClInclude Include="Aspirant.Options.h" />
+    <ClInclude Include="Options.h" />
     <ClInclude Include="Aspirant.State.Options.h" />
     <ClInclude Include="Common.RNG.h" />
     <ClInclude Include="Renderer.Editor.Cell.h" />
