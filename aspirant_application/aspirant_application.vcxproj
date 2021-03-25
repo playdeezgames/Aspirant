@@ -199,6 +199,8 @@
     <ClCompile Include="Game.Room.cpp" />
     <ClCompile Include="Game.Cell.cpp" />
     <ClCompile Include="Common.Sounds.cpp" />
+    <ClCompile Include="State.Player.NewGame.cpp" />
+    <ClCompile Include="State.Player.Start.cpp" />
     <ClCompile Include="State.Splash.cpp" />
     <ClCompile Include="Graphics.Sprite.cpp" />
     <ClCompile Include="Graphics.Font.cpp" />
@@ -266,6 +268,8 @@
     <ClInclude Include="Game.Room.h" />
     <ClInclude Include="Game.Cell.h" />
     <ClInclude Include="Common.Sounds.h" />
+    <ClInclude Include="State.Player.NewGame.h" />
+    <ClInclude Include="State.Player.Start.h" />
     <ClInclude Include="State.Splash.h" />
     <ClInclude Include="Graphics.Sprite.h" />
     <ClInclude Include="Graphics.Font.h" />

@@ -38,6 +38,9 @@ namespace state::Start
 		case StartGameItem::EDITOR:
 			::Application::SetUIState(::UIState::START_EDITOR);
 			break;
+		case StartGameItem::PLAY:
+			::Application::SetUIState(::UIState::START_PLAYER);
+			break;
 		}
 	}
 

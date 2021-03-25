@@ -14,5 +14,9 @@
     "rat": {
         "type": "creature",
         "sprite": "RatTile"
+    },
+    "grass": {
+        "type": "terrain",
+        "sprite": "GrassTile"
     }
 }

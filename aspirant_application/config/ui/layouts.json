@@ -13,5 +13,8 @@
     "EditScenarioDescriptor":"config/ui/layouts/editScenarioDescriptorPage.json",
     "EditNavigateRoom":"config/ui/layouts/editNavigateRoomPage.json",
     "RoomViewPosition":"config/ui/layouts/roomViewPositionPartial.json",
-    "EditDescriptorSelector":"config/ui/layouts/editDescriptorSelectorPage.json"
+    "EditDescriptorSelector":"config/ui/layouts/editDescriptorSelectorPage.json",
+    "StartPlayer":"config/ui/layouts/startPlayerPage.json",
+    "PlayerNewGame":"config/ui/layouts/playerNewGamePage.json",
+    "PlayerLoadGame":"config/ui/layouts/playerLoadGamePage.json"
 }
