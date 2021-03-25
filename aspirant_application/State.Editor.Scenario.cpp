@@ -13,6 +13,7 @@ namespace state::editor::Scenario
 {
 	const std::string LAYOUT_NAME = "EditScenario";
 	const std::string ITEM_DESCRIPTOR_COLOR_NAME = "EditScenario.Color.Descriptor";
+	const std::string ITEM_AVATAR_COLOR_NAME = "EditScenario.Color.Avatar";
 	const std::string ITEM_OPEN_ROOM_COLOR_NAME = "EditScenario.Color.OpenRoom";
 	const std::string ITEM_NEW_ROOM_COLOR_NAME = "EditScenario.Color.NewRoom";
 	const std::string ITEM_BACK_COLOR_NAME = "EditScenario.Color.Back";
@@ -21,6 +22,7 @@ namespace state::editor::Scenario
 	enum class EditScenarioItem
 	{
 		DESCRIPTOR,
+		AVATAR,
 		OPEN_ROOM,
 		NEW_ROOM,
 		BACK
@@ -28,8 +30,9 @@ namespace state::editor::Scenario
 	static EditScenarioItem current = EditScenarioItem::BACK;
 	static std::map<EditScenarioItem, ::MenuItem<EditScenarioItem>> items =
 	{
-		{EditScenarioItem::DESCRIPTOR, ::MenuItem<EditScenarioItem>(ITEM_DESCRIPTOR_COLOR_NAME, EditScenarioItem::BACK, EditScenarioItem::OPEN_ROOM)},
-		{EditScenarioItem::OPEN_ROOM, ::MenuItem<EditScenarioItem>(ITEM_OPEN_ROOM_COLOR_NAME, EditScenarioItem::DESCRIPTOR, EditScenarioItem::NEW_ROOM)},
+		{EditScenarioItem::DESCRIPTOR, ::MenuItem<EditScenarioItem>(ITEM_DESCRIPTOR_COLOR_NAME, EditScenarioItem::BACK, EditScenarioItem::AVATAR)},
+		{EditScenarioItem::AVATAR, ::MenuItem<EditScenarioItem>(ITEM_AVATAR_COLOR_NAME, EditScenarioItem::DESCRIPTOR, EditScenarioItem::OPEN_ROOM)},
+		{EditScenarioItem::OPEN_ROOM, ::MenuItem<EditScenarioItem>(ITEM_OPEN_ROOM_COLOR_NAME, EditScenarioItem::AVATAR, EditScenarioItem::NEW_ROOM)},
 		{EditScenarioItem::NEW_ROOM, ::MenuItem<EditScenarioItem>(ITEM_NEW_ROOM_COLOR_NAME, EditScenarioItem::OPEN_ROOM, EditScenarioItem::BACK)},
 		{EditScenarioItem::BACK, ::MenuItem<EditScenarioItem>(ITEM_BACK_COLOR_NAME, EditScenarioItem::NEW_ROOM, EditScenarioItem::DESCRIPTOR)}
 	};
@@ -43,6 +46,9 @@ namespace state::editor::Scenario
 			break;
 		case EditScenarioItem::DESCRIPTOR:
 			::Application::SetUIState(::UIState::EDIT_SCENARIO_DESCRIPTOR);
+			break;
+		case EditScenarioItem::AVATAR:
+			::Application::SetUIState(::UIState::EDIT_AVATAR);
 			break;
 		case EditScenarioItem::OPEN_ROOM:
 			::context::editor::Rooms::UpdateRoomList();

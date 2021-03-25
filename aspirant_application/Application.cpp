@@ -35,6 +35,7 @@
 #include "Context.Editor.NewRoom.h"
 #include "State.Player.Start.h"
 #include "State.Player.NewGame.h"
+#include "State.Editor.Avatar.h"
 namespace Application
 {
 	static ::UIState uiState = ::UIState::SPLASH;
@@ -171,7 +172,8 @@ namespace common::Application
 		state::editor::PickDescriptor::Start,
 		::context::editor::NewRoom::Start,
 		state::player::Start::Start,
-		state::player::NewGame::Start
+		state::player::NewGame::Start,
+		state::editor::Avatar::Start
 	};
 
 	void Start(SDL_Renderer* renderer, const std::vector<std::string>& arguments)

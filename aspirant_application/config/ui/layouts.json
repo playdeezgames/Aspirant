@@ -16,5 +16,6 @@
     "EditDescriptorSelector":"config/ui/layouts/editDescriptorSelectorPage.json",
     "StartPlayer":"config/ui/layouts/startPlayerPage.json",
     "PlayerNewGame":"config/ui/layouts/playerNewGamePage.json",
-    "PlayerLoadGame":"config/ui/layouts/playerLoadGamePage.json"
+    "PlayerLoadGame":"config/ui/layouts/playerLoadGamePage.json",
+    "EditAvatar": "config/ui/layouts/editAvatarPage.json"
 }

@@ -209,6 +209,9 @@
     <ClCompile Include="State.Player.Start.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="State.Editor.Avatar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common.Application.h">
@@ -416,6 +419,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="State.Player.Start.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="State.Editor.Avatar.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -164,6 +164,7 @@
     <ClCompile Include="Game.Object.Creature.cpp" />
     <ClCompile Include="Game.Descriptors.cpp" />
     <ClCompile Include="Renderer.Editor.PickDescriptor.cpp" />
+    <ClCompile Include="State.Editor.Avatar.cpp" />
     <ClCompile Include="State.Editor.PickDescriptor.cpp" />
     <ClCompile Include="State.Editor.RoomCells.cpp" />
     <ClCompile Include="State.Editor.NewRoom.cpp" />
@@ -231,6 +232,7 @@
     <ClInclude Include="Game.Descriptors.h" />
     <ClInclude Include="Renderer.Editor.PickDescriptor.h" />
     <ClInclude Include="Graphics.Drawn.h" />
+    <ClInclude Include="State.Editor.Avatar.h" />
     <ClInclude Include="State.Editor.PickDescriptor.h" />
     <ClInclude Include="State.Editor.RoomCells.h" />
     <ClInclude Include="State.Editor.NewRoom.h" />
