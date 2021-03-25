@@ -127,10 +127,10 @@ namespace state::editor::NewRoom
 			}
 			break;
 		case ::Command::UP:
-			current = items[current].GetPreviousMenuItem();
+			MenuItem<NewRoomItem>::Previous(current, items);
 			break;
 		case ::Command::DOWN:
-			current = items[current].GetNextMenuItem();
+			MenuItem<NewRoomItem>::Next(current, items);
 			break;
 		case ::Command::LEFT:
 			DecreaseItem();
@@ -152,7 +152,7 @@ namespace state::editor::NewRoom
 
 	static void OnUpdate(const Uint32& ticks)
 	{
-		UpdateMenuItems(items, current);
+		MenuItem<NewRoomItem>::Update(items, current);
 
 		::data::Strings::Set(TEXT_NAME_ROOM_NAME, ::context::editor::NewRoom::GetName());
 

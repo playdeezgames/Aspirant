@@ -94,10 +94,10 @@ namespace state::editor::Start
 		switch (command)
 		{
 		case ::Command::UP:
-			current = items[current].GetPreviousMenuItem();
+			MenuItem<StartEditorItem>::Previous(current, items);
 			break;
 		case ::Command::DOWN:
-			current = items[current].GetNextMenuItem();
+			MenuItem<StartEditorItem>::Next(current, items);
 			break;
 		case ::Command::BACK:
 			::Application::SetUIState(::UIState::START_GAME);
@@ -115,7 +115,7 @@ namespace state::editor::Start
 
 	static void OnUpdate(const Uint32& ticks)
 	{
-		UpdateMenuItems(items, current);
+		MenuItem<StartEditorItem>::Update(items, current);
 	}
 
 	void Start()

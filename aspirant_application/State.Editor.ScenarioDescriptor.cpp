@@ -82,10 +82,10 @@ namespace state::editor::ScenarioDescriptor
 			}
 			break;
 		case ::Command::UP:
-			current = items[current].GetPreviousMenuItem();
+			MenuItem<EditScenarioDescriptorItem>::Previous(current, items);
 			break;
 		case ::Command::DOWN:
-			current = items[current].GetNextMenuItem();
+			MenuItem<EditScenarioDescriptorItem>::Next(current, items);
 			break;
 		case ::Command::GREEN:
 			ActivateItem();
@@ -103,7 +103,7 @@ namespace state::editor::ScenarioDescriptor
 		auto descriptor = ::game::ScenarioDescriptors::Get(::context::editor::Scenarios::GetIndex());
 		::data::Strings::Set(TEXT_NAME_SCENARIO_NAME, descriptor->GetName());
 		::data::Strings::Set(TEXT_NAME_BRIEF, descriptor->GetBrief());
-		UpdateMenuItems(items, current);
+		MenuItem<EditScenarioDescriptorItem>::Update(items, current);
 	}
 
 	static void OnTextInput(const std::string& text)

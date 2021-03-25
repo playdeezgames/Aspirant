@@ -44,10 +44,10 @@ namespace state::ConfirmQuit
 		switch (command)
 		{
 		case ::Command::UP:
-			current = items[current].GetPreviousMenuItem();
+			MenuItem<ConfirmQuitItem>::Previous(current, items);
 			break;
 		case ::Command::DOWN:
-			current = items[current].GetNextMenuItem();
+			MenuItem<ConfirmQuitItem>::Next(current, items);
 			break;
 		case ::Command::GREEN:
 			ActivateItem();
@@ -65,7 +65,7 @@ namespace state::ConfirmQuit
 
 	static void OnUpdate(const Uint32& ticks)
 	{
-		UpdateMenuItems(items, current);
+		MenuItem<ConfirmQuitItem>::Update(items, current);
 	}
 
 	void Start()

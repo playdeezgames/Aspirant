@@ -49,10 +49,10 @@ namespace state::Start
 		switch (command)
 		{
 		case ::Command::UP:
-			current = items[current].GetPreviousMenuItem();
+			MenuItem<StartGameItem>::Previous(current, items);
 			break;
 		case ::Command::DOWN:
-			current = items[current].GetNextMenuItem();
+			MenuItem<StartGameItem>::Next(current, items);
 			break;
 		case ::Command::BACK:
 			::Application::SetUIState(::UIState::MAIN_MENU);
@@ -70,7 +70,7 @@ namespace state::Start
 
 	static void OnUpdate(const Uint32& ticks)
 	{
-		UpdateMenuItems(items, current);
+		MenuItem<StartGameItem>::Update(items, current);
 	}
 
 	void Start()

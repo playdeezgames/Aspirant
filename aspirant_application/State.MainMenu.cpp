@@ -76,10 +76,10 @@ namespace state::MainMenu
 		switch (command)
 		{
 		case ::Command::UP:
-			current = items[current].GetPreviousMenuItem();
+			MenuItem<MainMenuItem>::Previous(current, items);
 			break;
 		case ::Command::DOWN:
-			current = items[current].GetNextMenuItem();
+			MenuItem<MainMenuItem>::Next(current, items);
 			break;
 		case ::Command::GREEN:
 			ActivateItem();
@@ -97,7 +97,7 @@ namespace state::MainMenu
 
 	static void OnUpdate(const Uint32& ticks)
 	{
-		UpdateMenuItems(items, current);
+		MenuItem<MainMenuItem>::Update(items, current);
 	}
 
 	void Start()

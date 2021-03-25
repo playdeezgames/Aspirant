@@ -60,10 +60,10 @@ namespace state::editor::Scenario
 		switch (command)
 		{
 		case ::Command::UP:
-			current = items[current].GetPreviousMenuItem();
+			MenuItem<EditScenarioItem>::Previous(current, items);
 			break;
 		case ::Command::DOWN:
-			current = items[current].GetNextMenuItem();
+			MenuItem<EditScenarioItem>::Next(current, items);
 			break;
 		case ::Command::GREEN:
 			ActivateItem();
@@ -90,7 +90,7 @@ namespace state::editor::Scenario
 	static void OnUpdate(const Uint32& ticks)
 	{
 		UpdateHeader();
-		UpdateMenuItems(items, current);
+		MenuItem<EditScenarioItem>::Update(items, current);
 	}
 
 	void Start()

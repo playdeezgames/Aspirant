@@ -128,10 +128,10 @@ namespace state::Options
 		switch (command)
 		{
 		case ::Command::UP:
-			current = items[current].GetPreviousMenuItem();
+			MenuItem<OptionsItem>::Previous(current, items);
 			break;
 		case ::Command::DOWN:
-			current = items[current].GetNextMenuItem();
+			MenuItem<OptionsItem>::Next(current, items);
 			break;
 		case ::Command::LEFT:
 			DecreaseItem();
@@ -155,7 +155,7 @@ namespace state::Options
 
 	static void OnUpdate(const Uint32& ticks)
 	{
-		UpdateMenuItems(items, current);
+		MenuItem<OptionsItem>::Update(items, current);
 
 		if (common::Sounds::IsMuted())
 		{
