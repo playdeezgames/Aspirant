@@ -23,6 +23,8 @@ namespace state::Options
 	const std::string MUTE = "Mute";
 	const std::string UNMUTE = "Unmute";
 
+	const std::string SFX_SAMPLE_NAME = "woohoo";
+
 	enum class OptionsItem
 	{
 		TOGGLE_MUTE,
@@ -33,8 +35,38 @@ namespace state::Options
 
 	const int VOLUME_DELTA = 8;
 	static OptionsItem current = OptionsItem::BACK;
+	static std::map<OptionsItem, ::MenuItem<OptionsItem>> items =
+	{
+		{OptionsItem::TOGGLE_MUTE,
+			::MenuItem<OptionsItem>
+			(
+				OPTION_ITEM_TOGGLE_MUTE_COLOR_NAME,
+				OptionsItem::BACK,
+				OptionsItem::SFX_VOLUME
+		)},
+		{OptionsItem::SFX_VOLUME,
+			::MenuItem<OptionsItem>
+			(
+				OPTION_ITEM_SFX_VOLUME_COLOR_NAME,
+				OptionsItem::TOGGLE_MUTE,
+				OptionsItem::MUX_VOLUME
+		)},
+		{OptionsItem::MUX_VOLUME,
+			::MenuItem<OptionsItem>
+			(
+				OPTION_ITEM_MUX_VOLUME_COLOR_NAME,
+				OptionsItem::SFX_VOLUME,
+				OptionsItem::BACK
+		)},
+		{OptionsItem::BACK,
+			::MenuItem<OptionsItem>
+			(
+				OPTION_ITEM_BACK_COLOR_NAME,
+				OptionsItem::MUX_VOLUME,
+				OptionsItem::TOGGLE_MUTE
+		)}
+	};
 
-	const std::string SFX_SAMPLE_NAME = "woohoo";
 
 	static void AdjustSfxVolume(int delta)
 	{
@@ -91,8 +123,6 @@ namespace state::Options
 		}
 	}
 
-	static std::map<OptionsItem, ::MenuItem<OptionsItem>> items;
-
 	static void OnCommand(const ::Command& command)
 	{
 		switch (command)
@@ -125,10 +155,7 @@ namespace state::Options
 
 	static void OnUpdate(const Uint32& ticks)
 	{
-		for (auto& item : items)
-		{
-			::data::Strings::Set(item.second.GetItemColorName(), (item.first == current) ? ("Cyan") : ("Gray"));
-		}
+		UpdateMenuItems(items, current);
 
 		if (common::Sounds::IsMuted())
 		{
@@ -155,33 +182,5 @@ namespace state::Options
 		::Application::SetCommandHandler(::UIState::OPTIONS, OnCommand);
 		::Application::SetRenderHandler(::UIState::OPTIONS, OnDraw);
 		::Application::SetUpdateHandler(::UIState::OPTIONS, OnUpdate);
-		items[OptionsItem::TOGGLE_MUTE]=
-			::MenuItem<OptionsItem>
-			(
-				OPTION_ITEM_TOGGLE_MUTE_COLOR_NAME,
-				OptionsItem::BACK,
-				OptionsItem::SFX_VOLUME
-		);
-		items[OptionsItem::SFX_VOLUME]=
-			::MenuItem<OptionsItem>
-			(
-				OPTION_ITEM_SFX_VOLUME_COLOR_NAME,
-				OptionsItem::TOGGLE_MUTE,
-				OptionsItem::MUX_VOLUME
-		);
-		items[OptionsItem::MUX_VOLUME]=
-			::MenuItem<OptionsItem>
-			(
-				OPTION_ITEM_MUX_VOLUME_COLOR_NAME,
-				OptionsItem::SFX_VOLUME,
-				OptionsItem::BACK
-		);
-		items[OptionsItem::BACK]=
-			::MenuItem<OptionsItem>
-			(
-				OPTION_ITEM_BACK_COLOR_NAME,
-				OptionsItem::MUX_VOLUME,
-				OptionsItem::TOGGLE_MUTE
-		);
 	}
 }

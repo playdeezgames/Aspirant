@@ -23,7 +23,33 @@ namespace state::MainMenu
 	};
 
 	static MainMenuItem current = MainMenuItem::START;
-	static std::map<MainMenuItem, ::MenuItem<MainMenuItem>> items;
+	static std::map<MainMenuItem, ::MenuItem<MainMenuItem>> items = 
+	{
+		{MainMenuItem::START, ::MenuItem<MainMenuItem>
+		(
+			MENU_ITEM_START_COLOR_NAME,
+			MainMenuItem::QUIT,
+			MainMenuItem::ABOUT
+		)},
+		{MainMenuItem::ABOUT, ::MenuItem<MainMenuItem>
+			(
+				MENU_ITEM_ABOUT_COLOR_NAME,
+				MainMenuItem::START,
+				MainMenuItem::OPTIONS
+		)},
+		{MainMenuItem::OPTIONS, ::MenuItem<MainMenuItem>
+			(
+				MENU_ITEM_OPTIONS_COLOR_NAME,
+				MainMenuItem::ABOUT,
+				MainMenuItem::QUIT
+		)},
+		{MainMenuItem::QUIT, ::MenuItem<MainMenuItem>
+			(
+				MENU_ITEM_QUIT_COLOR_NAME,
+				MainMenuItem::OPTIONS,
+				MainMenuItem::START
+		)}
+	};
 
 	static void ActivateItem()
 	{
@@ -71,10 +97,7 @@ namespace state::MainMenu
 
 	static void OnUpdate(const Uint32& ticks)
 	{
-		for (auto& item : items)
-		{
-			::data::Strings::Set(item.second.GetItemColorName(), (item.first == current) ? ("Cyan") : ("Gray"));
-		}
+		UpdateMenuItems(items, current);
 	}
 
 	void Start()
@@ -82,29 +105,5 @@ namespace state::MainMenu
 		::Application::SetCommandHandler(::UIState::MAIN_MENU, OnCommand);
 		::Application::SetRenderHandler(::UIState::MAIN_MENU, OnDraw);
 		::Application::SetUpdateHandler(::UIState::MAIN_MENU, OnUpdate);
-		items[MainMenuItem::START] = ::MenuItem<MainMenuItem>
-		(
-			MENU_ITEM_START_COLOR_NAME,
-			MainMenuItem::QUIT,
-			MainMenuItem::ABOUT
-		);
-		items[MainMenuItem::ABOUT] = ::MenuItem<MainMenuItem>
-			(
-				MENU_ITEM_ABOUT_COLOR_NAME,
-				MainMenuItem::START,
-				MainMenuItem::OPTIONS
-		);
-		items[MainMenuItem::OPTIONS] = ::MenuItem<MainMenuItem>
-			(
-				MENU_ITEM_OPTIONS_COLOR_NAME,
-				MainMenuItem::ABOUT,
-				MainMenuItem::QUIT
-		);
-		items[MainMenuItem::QUIT] = ::MenuItem<MainMenuItem>
-			(
-				MENU_ITEM_QUIT_COLOR_NAME,
-				MainMenuItem::OPTIONS,
-				MainMenuItem::START
-		);
 	}
 }

@@ -18,7 +18,13 @@ namespace state::ConfirmQuit
 	};
 
 	static ConfirmQuitItem current = ConfirmQuitItem::NO;
-	static std::map<ConfirmQuitItem, ::MenuItem<ConfirmQuitItem>> items;
+	static std::map<ConfirmQuitItem, ::MenuItem<ConfirmQuitItem>> items = 
+	{
+		{ConfirmQuitItem::YES,
+			::MenuItem<ConfirmQuitItem>(CONFIRM_ITEM_YES_COLOR_NAME, ConfirmQuitItem::NO, ConfirmQuitItem::NO)},
+		{ConfirmQuitItem::NO,
+			::MenuItem<ConfirmQuitItem>(CONFIRM_ITEM_NO_COLOR_NAME, ConfirmQuitItem::YES, ConfirmQuitItem::YES)}
+	};
 
 	static void ActivateItem()
 	{
@@ -59,10 +65,7 @@ namespace state::ConfirmQuit
 
 	static void OnUpdate(const Uint32& ticks)
 	{
-		for (auto& item : items)
-		{
-			::data::Strings::Set(item.second.GetItemColorName(), (item.first == current) ? ("Cyan") : ("Gray"));
-		}
+		UpdateMenuItems(items, current);
 	}
 
 	void Start()
@@ -70,9 +73,5 @@ namespace state::ConfirmQuit
 		::Application::SetCommandHandler(::UIState::CONFIRM_QUIT, OnCommand);
 		::Application::SetRenderHandler(::UIState::CONFIRM_QUIT, OnDraw);
 		::Application::SetUpdateHandler(::UIState::CONFIRM_QUIT, OnUpdate);
-		items[ConfirmQuitItem::YES] =
-			::MenuItem<ConfirmQuitItem>(CONFIRM_ITEM_YES_COLOR_NAME, ConfirmQuitItem::NO, ConfirmQuitItem::NO);
-		items[ConfirmQuitItem::NO] =
-			::MenuItem<ConfirmQuitItem>(CONFIRM_ITEM_NO_COLOR_NAME, ConfirmQuitItem::YES, ConfirmQuitItem::YES);
 	}
 }

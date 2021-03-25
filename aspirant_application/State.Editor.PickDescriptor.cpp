@@ -54,14 +54,9 @@ namespace state::editor::PickDescriptor
 		renderer::editor::PickDescriptor::Draw(renderer);
 	}
 
-	static void OnUpdate(const Uint32& ticks)
-	{
-	}
-
 	void Start()
 	{
 		::Application::SetCommandHandler(::UIState::EDIT_DESCRIPTOR_SELECTOR, OnCommand);
 		::Application::SetRenderHandler(::UIState::EDIT_DESCRIPTOR_SELECTOR, OnDraw);
-		::Application::SetUpdateHandler(::UIState::EDIT_DESCRIPTOR_SELECTOR, OnUpdate);
 	}
 }

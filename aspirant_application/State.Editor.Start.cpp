@@ -15,6 +15,7 @@ namespace state::editor::Start
 	const std::string START_EDITOR_BACK_COLOR_NAME = "StartEditor.Color.Back";
 	const std::string START_EDITOR_OPEN_COLOR_NAME = "StartEditor.Color.Open";
 	const std::string LAYOUT_NAME = "StartEditor";
+	const std::string PROPERTY_ROOMS = "rooms";
 
 	enum class StartEditorItem
 	{
@@ -24,26 +25,47 @@ namespace state::editor::Start
 	};
 
 	static StartEditorItem current = StartEditorItem::BACK;
-	static std::map<StartEditorItem, ::MenuItem<StartEditorItem>> items;
+	static std::map<StartEditorItem, ::MenuItem<StartEditorItem>> items =
+	{
+		{StartEditorItem::NEW,
+			::MenuItem<StartEditorItem>(
+				START_EDITOR_NEW_COLOR_NAME,
+				StartEditorItem::BACK,
+				StartEditorItem::OPEN)},
+		{StartEditorItem::OPEN,
+			::MenuItem<StartEditorItem>(
+				START_EDITOR_OPEN_COLOR_NAME,
+				StartEditorItem::NEW,
+				StartEditorItem::BACK)},
+		{StartEditorItem::BACK,
+			::MenuItem<StartEditorItem>(
+				START_EDITOR_BACK_COLOR_NAME,
+				StartEditorItem::OPEN,
+				StartEditorItem::NEW)}
+	};
 
 	static void CreateScenarioFile(const std::string& fileName)
 	{
 		nlohmann::json properties;
-		properties["rooms"] = nlohmann::json({});//TODO: magic string
+		properties[PROPERTY_ROOMS] = nlohmann::json({});
 		data::JSON::Save(fileName, properties);
 	}
 
+	const std::string SCENARIO_FILE_PREFIX = "scenarios/scenario_";
+	const std::string SCENARIO_FILE_SUFFIX = ".json";
+	const std::string DEFAULT_SCENARIO_NAME = "New Scenario";
+	const std::string DEFAULT_SCENARIO_BRIEF = "The best scenario ever!";
 
 	static void CreateNewScenario()
 	{
 		int scenarioId = ::game::ScenarioDescriptors::GetNextId();
 		std::stringstream ss;
-		ss << "scenarios/scenario_" << scenarioId << ".json";//TODO: magic string
+		ss << SCENARIO_FILE_PREFIX << scenarioId << SCENARIO_FILE_SUFFIX;
 		::game::ScenarioDescriptor* descriptor = new ::game::ScenarioDescriptor
 		(
 			scenarioId,
-			"New Scenario",//TODO: magic string
-			"The best scenario ever!",//TODO: magic string
+			DEFAULT_SCENARIO_NAME,
+			DEFAULT_SCENARIO_BRIEF,
 			ss.str()
 		);
 		CreateScenarioFile(ss.str());
@@ -93,10 +115,7 @@ namespace state::editor::Start
 
 	static void OnUpdate(const Uint32& ticks)
 	{
-		for (auto& item : items)
-		{
-			::data::Strings::Set(item.second.GetItemColorName(), (item.first == current) ? ("Cyan") : ("Gray"));
-		}
+		UpdateMenuItems(items, current);
 	}
 
 	void Start()
@@ -110,21 +129,5 @@ namespace state::editor::Start
 		::Application::SetUpdateHandler(
 			::UIState::START_EDITOR,
 			OnUpdate);
-
-		items[StartEditorItem::NEW] =
-			::MenuItem<StartEditorItem>(
-				START_EDITOR_NEW_COLOR_NAME,
-				StartEditorItem::BACK,
-				StartEditorItem::OPEN);
-		items[StartEditorItem::OPEN] =
-			::MenuItem<StartEditorItem>(
-				START_EDITOR_OPEN_COLOR_NAME,
-				StartEditorItem::NEW,
-				StartEditorItem::BACK);
-		items[StartEditorItem::BACK] =
-			::MenuItem<StartEditorItem>(
-				START_EDITOR_BACK_COLOR_NAME,
-				StartEditorItem::OPEN,
-				StartEditorItem::NEW);
 	}
 }

@@ -34,7 +34,15 @@ namespace state::editor::NewRoom
 		CANCEL
 	};
 	static NewRoomItem current = NewRoomItem::CANCEL;
-	static std::map<NewRoomItem, ::MenuItem<NewRoomItem>> items;
+	static std::map<NewRoomItem, ::MenuItem<NewRoomItem>> items = 
+	{
+		{NewRoomItem::NAME, ::MenuItem<NewRoomItem>(COLOR_NAME_ROOM_NAME, NewRoomItem::CANCEL, NewRoomItem::COLUMNS)},
+		{NewRoomItem::COLUMNS, ::MenuItem<NewRoomItem>(COLOR_NAME_COLUMNS, NewRoomItem::NAME, NewRoomItem::ROWS)},
+		{NewRoomItem::ROWS, ::MenuItem<NewRoomItem>(COLOR_NAME_ROWS, NewRoomItem::COLUMNS, NewRoomItem::TERRAIN)},
+		{NewRoomItem::TERRAIN, ::MenuItem<NewRoomItem>(COLOR_NAME_TERRAIN, NewRoomItem::ROWS, NewRoomItem::CREATE)},
+		{NewRoomItem::CREATE, ::MenuItem<NewRoomItem>(COLOR_NAME_CREATE, NewRoomItem::TERRAIN, NewRoomItem::CANCEL)},
+		{NewRoomItem::CANCEL, ::MenuItem<NewRoomItem>(COLOR_NAME_CANCEL, NewRoomItem::CREATE, NewRoomItem::NAME)}
+	};
 
 	static void CreateRoom()
 	{
@@ -144,10 +152,7 @@ namespace state::editor::NewRoom
 
 	static void OnUpdate(const Uint32& ticks)
 	{
-		for (auto& item : items)
-		{
-			::data::Strings::Set(item.second.GetItemColorName(), (item.first == current) ? ("Cyan") : ("Gray"));
-		}
+		UpdateMenuItems(items, current);
 
 		::data::Strings::Set(TEXT_NAME_ROOM_NAME, ::context::editor::NewRoom::GetName());
 
@@ -176,11 +181,5 @@ namespace state::editor::NewRoom
 		::Application::SetRenderHandler(::UIState::EDIT_NEW_ROOM, OnDraw);
 		::Application::SetUpdateHandler(::UIState::EDIT_NEW_ROOM, OnUpdate);
 		::Application::SetTextInputHandler(::UIState::EDIT_NEW_ROOM, OnTextInput);
-		items[NewRoomItem::NAME] = ::MenuItem<NewRoomItem>(COLOR_NAME_ROOM_NAME, NewRoomItem::CANCEL, NewRoomItem::COLUMNS);
-		items[NewRoomItem::COLUMNS] = ::MenuItem<NewRoomItem>(COLOR_NAME_COLUMNS, NewRoomItem::NAME, NewRoomItem::ROWS);
-		items[NewRoomItem::ROWS] = ::MenuItem<NewRoomItem>(COLOR_NAME_ROWS, NewRoomItem::COLUMNS, NewRoomItem::TERRAIN);
-		items[NewRoomItem::TERRAIN] = ::MenuItem<NewRoomItem>(COLOR_NAME_TERRAIN, NewRoomItem::ROWS, NewRoomItem::CREATE);
-		items[NewRoomItem::CREATE] = ::MenuItem<NewRoomItem>(COLOR_NAME_CREATE, NewRoomItem::TERRAIN, NewRoomItem::CANCEL);
-		items[NewRoomItem::CANCEL] = ::MenuItem<NewRoomItem>(COLOR_NAME_CANCEL, NewRoomItem::CREATE, NewRoomItem::NAME);
 	}
 }

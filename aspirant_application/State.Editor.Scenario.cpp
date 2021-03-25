@@ -26,7 +26,13 @@ namespace state::editor::Scenario
 		BACK
 	};
 	static EditScenarioItem current = EditScenarioItem::BACK;
-	static std::map<EditScenarioItem, ::MenuItem<EditScenarioItem>> items;
+	static std::map<EditScenarioItem, ::MenuItem<EditScenarioItem>> items =
+	{
+		{EditScenarioItem::DESCRIPTOR, ::MenuItem<EditScenarioItem>(ITEM_DESCRIPTOR_COLOR_NAME, EditScenarioItem::BACK, EditScenarioItem::OPEN_ROOM)},
+		{EditScenarioItem::OPEN_ROOM, ::MenuItem<EditScenarioItem>(ITEM_OPEN_ROOM_COLOR_NAME, EditScenarioItem::DESCRIPTOR, EditScenarioItem::NEW_ROOM)},
+		{EditScenarioItem::NEW_ROOM, ::MenuItem<EditScenarioItem>(ITEM_NEW_ROOM_COLOR_NAME, EditScenarioItem::OPEN_ROOM, EditScenarioItem::BACK)},
+		{EditScenarioItem::BACK, ::MenuItem<EditScenarioItem>(ITEM_BACK_COLOR_NAME, EditScenarioItem::NEW_ROOM, EditScenarioItem::DESCRIPTOR)}
+	};
 
 	static void ActivateItem()
 	{
@@ -84,10 +90,7 @@ namespace state::editor::Scenario
 	static void OnUpdate(const Uint32& ticks)
 	{
 		UpdateHeader();
-		for (auto& item : items)
-		{
-			::data::Strings::Set(item.second.GetItemColorName(), (item.first == current) ? ("Cyan") : ("Gray"));
-		}
+		UpdateMenuItems(items, current);
 	}
 
 	void Start()
@@ -95,9 +98,5 @@ namespace state::editor::Scenario
 		::Application::SetCommandHandler(::UIState::EDIT_SCENARIO, OnCommand);
 		::Application::SetRenderHandler(::UIState::EDIT_SCENARIO, OnDraw);
 		::Application::SetUpdateHandler(::UIState::EDIT_SCENARIO, OnUpdate);
-		items[EditScenarioItem::DESCRIPTOR]= ::MenuItem<EditScenarioItem>(ITEM_DESCRIPTOR_COLOR_NAME, EditScenarioItem::BACK, EditScenarioItem::OPEN_ROOM);
-		items[EditScenarioItem::OPEN_ROOM]= ::MenuItem<EditScenarioItem>(ITEM_OPEN_ROOM_COLOR_NAME, EditScenarioItem::DESCRIPTOR, EditScenarioItem::NEW_ROOM);
-		items[EditScenarioItem::NEW_ROOM]= ::MenuItem<EditScenarioItem>(ITEM_NEW_ROOM_COLOR_NAME, EditScenarioItem::OPEN_ROOM, EditScenarioItem::BACK);
-		items[EditScenarioItem::BACK]= ::MenuItem<EditScenarioItem>(ITEM_BACK_COLOR_NAME, EditScenarioItem::NEW_ROOM, EditScenarioItem::DESCRIPTOR);
 	}
 }

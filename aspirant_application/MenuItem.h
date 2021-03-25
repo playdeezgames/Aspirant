@@ -1,5 +1,7 @@
 #pragma once
 #include <string>
+#include <map>
+#include "Data.Strings.h"
 template<typename TMenuItem>
 class MenuItem
 {
@@ -8,7 +10,7 @@ private:
 	TMenuItem previousMenuItem;
 	std::string itemColorName;
 public:
-	MenuItem() = default;
+	MenuItem() :nextMenuItem(), previousMenuItem(), itemColorName() {}
 	MenuItem(const MenuItem&) = default;
 	MenuItem& operator=(const MenuItem&) = default;
 	MenuItem(MenuItem&&) = default;
@@ -38,4 +40,12 @@ public:
 		return itemColorName;
 	}
 };
+template<typename TMenuItem>
+void UpdateMenuItems(const std::map<TMenuItem, MenuItem<TMenuItem>>& items, const TMenuItem& current)
+{
+	for (auto& item : items)
+	{
+		::data::Strings::Set(item.second.GetItemColorName(), (item.first == current) ? ("Cyan") : ("Gray"));
+	}
+}
 
