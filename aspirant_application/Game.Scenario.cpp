@@ -21,16 +21,19 @@ namespace game
 	{
 		Clear();
 		avatar.FromJSON(properties[PROPERTY_AVATAR]);
-		auto& items = properties[PROPERTY_ROOMS];
-		for (auto& item : items.items())
+		if (properties.count(PROPERTY_ROOMS) > 0)
 		{
-			auto& room = item.value();
-			auto rows = room.size();
-			auto columns = room[0].size();
-			auto& key = item.key();
-			rooms[key] = new Room();
-			rooms[key]->SetSize(columns, rows);
-			rooms[key]->FromJSON(room);
+			auto& items = properties[PROPERTY_ROOMS];
+			for (auto& item : items.items())
+			{
+				auto& room = item.value();
+				auto rows = room.size();
+				auto columns = room[0].size();
+				auto& key = item.key();
+				rooms[key] = new Room();
+				rooms[key]->SetSize(columns, rows);
+				rooms[key]->FromJSON(room);
+			}
 		}
 	}
 
