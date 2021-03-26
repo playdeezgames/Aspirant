@@ -6,25 +6,13 @@ namespace data
 
 	Int::operator int() const
 	{
-		if (indirect)
+		if (model.is_number_integer())
 		{
-			return ::data::Ints::Read(key);
+			return (int)model;
 		}
-		else
+		else if (model.is_object())
 		{
-			return value;
-		}
-	}
-
-	Int Int::FromJSON(const nlohmann::json& value)
-	{
-		if (value.is_number_integer())
-		{
-			return Int((int)value);
-		}
-		else if (value.is_object())
-		{
-			return Int((const std::string&)value[PROPERTY_KEY]);
+			return ::data::Ints::Read(model[PROPERTY_KEY]);
 		}
 		else
 		{

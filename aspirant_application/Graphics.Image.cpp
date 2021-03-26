@@ -12,10 +12,10 @@ namespace graphics
 
 	Image::Image(const nlohmann::json& model)
 		: model(model)
-		, spriteName(::data::String::FromJSON(model[PROPERTY_SPRITE]))
-		, colorName(::data::String::FromJSON(model[PROPERTY_COLOR]))
-		, x(::data::Int::FromJSON(model[PROPERTY_X]))
-		, y(::data::Int::FromJSON(model[PROPERTY_Y]))
+		, spriteName(model[PROPERTY_SPRITE])
+		, colorName(model[PROPERTY_COLOR])
+		, x(model[PROPERTY_X])
+		, y(model[PROPERTY_Y])
 	{
 	}
 

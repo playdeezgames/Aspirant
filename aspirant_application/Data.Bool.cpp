@@ -6,25 +6,13 @@ namespace data
 
 	Bool::operator bool() const
 	{
-		if (indirect)
+		if (model.is_boolean())
 		{
-			return ::data::Bools::Read(key);
+			return (bool)model;
 		}
-		else
+		else if (model.is_object())
 		{
-			return value;
-		}
-	}
-
-	Bool Bool::FromJSON(const nlohmann::json& value)
-	{
-		if (value.is_boolean())
-		{
-			return Bool((bool)value);
-		}
-		else if (value.is_object())
-		{
-			return Bool((const std::string&)value[PROPERTY_KEY]);
+			return ::data::Bools::Read(model[PROPERTY_KEY]);
 		}
 		else
 		{

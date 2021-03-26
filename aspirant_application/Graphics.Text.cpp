@@ -16,16 +16,16 @@ namespace graphics
 
 	Text::Text(const nlohmann::json& model)
 		: model(model)
-		, text(data::String::FromJSON(model[PROPERTY_TEXT]))
-		, fontName(data::String::FromJSON(model[PROPERTY_FONT]))
-		, color(data::String::FromJSON(model[PROPERTY_COLOR]))
-		, x(data::Int::FromJSON(model[PROPERTY_X]))
-		, y(data::Int::FromJSON(model[PROPERTY_Y]))
-		, hasDropShadow(data::Bool::FromJSON(model[PROPERTY_DROP_SHADOW]))
-		, dropShadowColor(data::String::FromJSON(model[PROPERTY_DROP_SHADOW_COLOR]))
-		, dropShadowX(data::Int::FromJSON(model[PROPERTY_DROP_SHADOW_X]))
-		, dropShadowY(data::Int::FromJSON(model[PROPERTY_DROP_SHADOW_Y]))
-		, alignment(data::Int::FromJSON(model[PROPERTY_HORIZONTAL_ALIGNMENT]))
+		, text(model[PROPERTY_TEXT])
+		, fontName(model[PROPERTY_FONT])
+		, color(model[PROPERTY_COLOR])
+		, x(model[PROPERTY_X])
+		, y(model[PROPERTY_Y])
+		, hasDropShadow(model[PROPERTY_DROP_SHADOW])
+		, dropShadowColor(model[PROPERTY_DROP_SHADOW_COLOR])
+		, dropShadowX(model[PROPERTY_DROP_SHADOW_X])
+		, dropShadowY(model[PROPERTY_DROP_SHADOW_Y])
+		, alignment(model[PROPERTY_HORIZONTAL_ALIGNMENT])
 	{
 	}
 
