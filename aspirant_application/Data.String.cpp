@@ -2,9 +2,9 @@
 #include "Data.Strings.h"
 namespace data
 {
-#define PROPERTY_KEY "key"
+	const std::string PROPERTY_KEY = "key";
 
-	String::operator const std::string& () const
+	String::operator std::string () const
 	{
 		if (indirect)
 		{

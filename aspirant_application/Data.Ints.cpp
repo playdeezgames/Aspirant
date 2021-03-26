@@ -3,23 +3,22 @@
 #include <map>
 namespace data::Ints
 {
-	static std::map<std::string, int> table;
+	static nlohmann::json table;
+	const int defaultInt = 0;
 
-	void Start
-	(
-		const std::string& fileName
-	)
+	void Start(const std::string& fileName)
 	{
-		auto properties = data::JSON::Load(fileName);
-		for (auto& item : properties.items())
-		{
-			Set(item.key(), item.value());
-		}
+		table = data::JSON::Load(fileName);
 	}
 
-	const int& Get(const std::string& key)
+	int Get(const std::string& key)
 	{
-		return table.find(key)->second;
+		auto iter = table.find(key);
+		if (iter != table.end())
+		{
+			return *iter;
+		}
+		return defaultInt;
 	}
 
 	void Set(const std::string& key, const int& value)

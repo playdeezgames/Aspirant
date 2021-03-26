@@ -16,7 +16,7 @@ namespace data
 		String& operator=(const String&) = default;
 		String& operator=(String&&) = default;
 		String(const std::string&, bool);
-		operator const std::string& () const;
+		operator std::string () const;
 		static String FromJSON(const nlohmann::json&);
 	};
 }

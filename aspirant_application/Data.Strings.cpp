@@ -3,25 +3,26 @@
 #include <map>
 namespace data::Strings
 {
-	static std::map<std::string, std::string> table;
+	static nlohmann::json table;
+	const std::string defaultString = "";
 
 	void Start(const std::string& filename)
 	{
-		auto properties = data::JSON::Load(filename);
-		for (auto& item : properties.items())
-		{
-			Set(item.key(), item.value());
-		}
+		table = data::JSON::Load(filename);
 	}
 
-	const std::string& Get(const std::string& identifier)
+	std::string Get(const std::string& key)
 	{
-		return table.find(identifier)->second;
+		auto iter = table.find(key);
+		if (iter != table.end())
+		{
+			return *iter;
+		}
+		return defaultString;
 	}
 
 	void Set(const std::string& identifier, const std::string& value)
 	{
 		table[identifier] = value;
-
 	}
 }

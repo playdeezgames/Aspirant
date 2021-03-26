@@ -3,31 +3,22 @@
 #include <set>
 namespace data::Bools
 {
-	void Start
-	(
-		const std::string& fileName
-	)
+	static nlohmann::json table;
+	const bool defaultBool = false;
+
+	void Start(const std::string& fileName)
 	{
-		auto properties = data::JSON::Load(fileName);
-		for (auto& item : properties)
-		{
-			Set(item);
-		}
+		table = data::JSON::Load(fileName);
 	}
-
-	const bool FLAG_PRESENT = true;
-	const bool FLAG_ABSENT = false;
-
-	static std::set<std::string> flags;
 
 	void Set(const std::string& key)
 	{
-		flags.insert(key);
+		table[key] = true;
 	}
 
 	void Clear(const std::string& key)
 	{
-		flags.erase(key);
+		table[key] = false;
 	}
 
 	void Toggle(const std::string& key)
@@ -42,8 +33,13 @@ namespace data::Bools
 		}
 	}
 
-	const bool& Get(const std::string& key)
+	bool Get(const std::string& key)
 	{
-		return (flags.contains(key)) ? (FLAG_PRESENT) : (FLAG_ABSENT);
+		auto iter = table.find(key);
+		if (iter != table.end())
+		{
+			return *iter;
+		}
+		return defaultBool;
 	}
 }
