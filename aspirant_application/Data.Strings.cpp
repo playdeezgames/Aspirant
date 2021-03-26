@@ -6,7 +6,7 @@ namespace data::Strings
 	static nlohmann::json table;
 	const std::string defaultString = "";
 
-	void Start(const std::string& filename)
+	void InitializeFromFile(const std::string& filename)
 	{
 		table = data::JSON::Load(filename);
 	}

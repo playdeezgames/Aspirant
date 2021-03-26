@@ -8,7 +8,7 @@ namespace data
 	{
 		if (indirect)
 		{
-			return ::data::Bools::Get(key);
+			return ::data::Bools::Read(key);
 		}
 		else
 		{

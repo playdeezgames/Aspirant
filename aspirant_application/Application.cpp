@@ -178,9 +178,9 @@ namespace common::Application
 
 	void Start(SDL_Renderer* renderer, const std::vector<std::string>& arguments)
 	{
-		data::Strings::Start(STRINGS);
-		data::Ints::Start(INTS);
-		data::Bools::Start(FLAGS);
+		data::Strings::InitializeFromFile(STRINGS);
+		data::Ints::InitializeFromFile(INTS);
+		data::Bools::InitializeFromFile(FLAGS);
 		graphics::Colors::Start(COLOR);
 		graphics::Textures::Start(renderer, TEXTURE);
 		graphics::Sprites::Start(SPRITE);

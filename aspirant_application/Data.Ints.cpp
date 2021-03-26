@@ -6,12 +6,12 @@ namespace data::Ints
 	static nlohmann::json table;
 	const int defaultInt = 0;
 
-	void Start(const std::string& fileName)
+	void InitializeFromFile(const std::string& fileName)
 	{
 		table = data::JSON::Load(fileName);
 	}
 
-	int Get(const std::string& key)
+	int Read(const std::string& key)
 	{
 		auto iter = table.find(key);
 		if (iter != table.end())
@@ -21,7 +21,7 @@ namespace data::Ints
 		return defaultInt;
 	}
 
-	void Set(const std::string& key, const int& value)
+	void Write(const std::string& key, const int& value)
 	{
 		table[key] = value;
 	}

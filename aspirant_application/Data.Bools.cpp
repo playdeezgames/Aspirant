@@ -6,7 +6,7 @@ namespace data::Bools
 	static nlohmann::json table;
 	const bool defaultBool = false;
 
-	void Start(const std::string& fileName)
+	void InitializeFromFile(const std::string& fileName)
 	{
 		table = data::JSON::Load(fileName);
 	}
@@ -23,7 +23,7 @@ namespace data::Bools
 
 	void Toggle(const std::string& key)
 	{
-		if (Get(key))
+		if (Read(key))
 		{
 			Clear(key);
 		}
@@ -33,7 +33,7 @@ namespace data::Bools
 		}
 	}
 
-	bool Get(const std::string& key)
+	bool Read(const std::string& key)
 	{
 		auto iter = table.find(key);
 		if (iter != table.end())
