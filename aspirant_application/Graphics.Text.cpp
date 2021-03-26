@@ -3,31 +3,6 @@
 #include "Graphics.Fonts.h"
 namespace graphics
 {
-	Text::Text
-	(
-		const common::XY<int>& xy,
-		const std::string& text,
-		const std::string& fontName,
-		const std::string& color,
-		bool hasDropShadow,
-		const common::XY<int>& dropShadowOffset,
-		const std::string& dropShadowColor,
-		const HorizontalAlignment& alignment
-	)
-		: x(xy.GetX())
-		, y(xy.GetY())
-		, text(text, false)
-		, fontName(fontName, false)
-		, color(color, false)
-		, hasDropShadow(hasDropShadow)
-		, dropShadowX(dropShadowOffset.GetX())
-		, dropShadowY(dropShadowOffset.GetY())
-		, dropShadowColor(dropShadowColor, false)
-		, alignment((int)alignment)
-	{
-
-	}
-
 	const std::string PROPERTY_X = "x";
 	const std::string PROPERTY_Y = "y";
 	const std::string PROPERTY_TEXT = "text";
@@ -39,41 +14,19 @@ namespace graphics
 	const std::string PROPERTY_DROP_SHADOW_Y = "dropShadowY";
 	const std::string PROPERTY_HORIZONTAL_ALIGNMENT = "horizontalAlignment";
 
-	Text::Text
-	(
-		const nlohmann::json& properties
-	)
-		: text(::data::String::FromJSON(properties[PROPERTY_TEXT]))
-		, fontName(::data::String::FromJSON(properties[PROPERTY_FONT]))
-		, color(::data::String::FromJSON(properties[PROPERTY_COLOR]))
-		, x(::data::Int::FromJSON(properties[PROPERTY_X]))
-		, y(::data::Int::FromJSON(properties[PROPERTY_Y]))
-		, hasDropShadow(false)
-		, dropShadowColor("", false)
-		, dropShadowX(0)
-		, dropShadowY(0)
-		, alignment((int)HorizontalAlignment::LEFT)
+	Text::Text(const nlohmann::json& model)
+		: model(model)
+		, text(data::String::FromJSON(model[PROPERTY_TEXT]))
+		, fontName(data::String::FromJSON(model[PROPERTY_FONT]))
+		, color(data::String::FromJSON(model[PROPERTY_COLOR]))
+		, x(data::Int::FromJSON(model[PROPERTY_X]))
+		, y(data::Int::FromJSON(model[PROPERTY_Y]))
+		, hasDropShadow(data::Bool::FromJSON(model[PROPERTY_DROP_SHADOW]))
+		, dropShadowColor(data::String::FromJSON(model[PROPERTY_DROP_SHADOW_COLOR]))
+		, dropShadowX(data::Int::FromJSON(model[PROPERTY_DROP_SHADOW_X]))
+		, dropShadowY(data::Int::FromJSON(model[PROPERTY_DROP_SHADOW_Y]))
+		, alignment(data::Int::FromJSON(model[PROPERTY_HORIZONTAL_ALIGNMENT]))
 	{
-		if (properties.count(PROPERTY_DROP_SHADOW) > 0)
-		{
-			hasDropShadow = ::data::Bool::FromJSON(properties[PROPERTY_DROP_SHADOW]);
-		}
-		if (properties.count(PROPERTY_HORIZONTAL_ALIGNMENT) > 0)
-		{
-			alignment = ::data::Int::FromJSON(properties[PROPERTY_HORIZONTAL_ALIGNMENT]);
-		}
-		if (properties.count(PROPERTY_DROP_SHADOW) > 0)
-		{
-			dropShadowColor = ::data::String::FromJSON(properties[PROPERTY_DROP_SHADOW_COLOR]);
-		}
-		if (properties.count(PROPERTY_DROP_SHADOW_X) > 0)
-		{
-			dropShadowX = ::data::Int::FromJSON(properties[PROPERTY_DROP_SHADOW_X]);
-		}
-		if (properties.count(PROPERTY_DROP_SHADOW_Y) > 0)
-		{
-			dropShadowY = ::data::Int::FromJSON(properties[PROPERTY_DROP_SHADOW_Y]);
-		}
 	}
 
 	void Text::Draw(SDL_Renderer* renderer) const

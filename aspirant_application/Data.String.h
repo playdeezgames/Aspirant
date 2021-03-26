@@ -9,13 +9,9 @@ namespace data
 		std::string value;
 		bool indirect;
 		std::string key;
+		const nlohmann::json& model;
 	public:
-		String() = default;
-		String(const String&) = default;
-		String(String&&) = default;
-		String& operator=(const String&) = default;
-		String& operator=(String&&) = default;
-		String(const std::string&, bool);
+		String(const nlohmann::json&);
 		operator std::string () const;
 		static String FromJSON(const nlohmann::json&);
 	};

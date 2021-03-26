@@ -11,11 +11,12 @@ namespace graphics
 
 	Layout::Layout
 	(
-		const nlohmann::json& itemDescriptors
+		nlohmann::json& model
 	)
 		: drawnItems()
+		, model(model)
 	{
-		for (auto& itemDescriptor : itemDescriptors)
+		for (auto& itemDescriptor : model)
 		{
 			std::string itemType = itemDescriptor[PROPERTY_TYPE];
 			if (itemType == TYPE_STATIC_IMAGE)

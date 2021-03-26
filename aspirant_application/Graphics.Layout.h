@@ -17,11 +17,12 @@ namespace graphics
 		Layout& operator=(const Layout&) = delete;
 		Layout& operator=(Layout&&) = delete;
 	private:
+		nlohmann::json& model;
 		std::list<::graphics::Drawn*> drawnItems;
 	public:
 		Layout
 		(
-			const nlohmann::json&
+			nlohmann::json&
 		);
 		void Draw(SDL_Renderer*) const;
 		void Finish();

@@ -4,23 +4,16 @@
 #include "Common.Finisher.h"
 namespace graphics::Layouts
 {
-	graphics::Layout* ParseDescriptor(const std::string&, const nlohmann::json& properties)
-	{
-		return new graphics::Layout(data::JSON::Load(properties));
-	}
-
-	static std::string ParseKey(const nlohmann::json& key)
-	{
-		return key;
-	}
-
+	static std::map<std::string, nlohmann::json> layouts;
+	static nlohmann::json table;
 	static std::map<std::string, graphics::Layout*> descriptors;
-	static std::vector<std::string> identifiers;
 
-	const std::vector<std::string>& GetIdentifiers()
+	graphics::Layout* ParseDescriptor(const std::string& key, const std::string& fileName)
 	{
-		return identifiers;
+		layouts[key]=data::JSON::Load(fileName);
+		return new graphics::Layout(layouts[key]);
 	}
+
 
 	static void Finish()
 	{
@@ -30,13 +23,10 @@ namespace graphics::Layouts
 	void Start(const std::string& fileName)
 	{
 		::common::Finishers::Add(Finish);
-		nlohmann::json properties = data::JSON::Load(fileName);
-		for (auto& item : properties.items())
+		table = data::JSON::Load(fileName);
+		for (auto& item : table.items())
 		{
-			auto identifier = ParseKey(item.key());
-			identifiers.push_back(identifier);
-			descriptors[identifier] =
-				ParseDescriptor(identifier, item.value());
+			descriptors[item.key()] = ParseDescriptor(item.key(), item.value());
 		}
 	}
 

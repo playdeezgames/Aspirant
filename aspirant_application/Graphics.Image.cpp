@@ -10,27 +10,12 @@ namespace graphics
 	const std::string PROPERTY_X = "x";
 	const std::string PROPERTY_Y = "y";
 
-	Image::Image
-	(
-		const nlohmann::json& properties
-	)
-		: spriteName(::data::String::FromJSON(properties[PROPERTY_SPRITE]))
-		, colorName(::data::String::FromJSON(properties[PROPERTY_COLOR]))
-		, x(::data::Int::FromJSON(properties[PROPERTY_X]))
-		, y(::data::Int::FromJSON(properties[PROPERTY_Y]))
-	{
-	}
-
-	Image::Image
-	(
-		const std::string spriteName,
-		const std::string colorName,
-		common::XY<int> xy
-	)
-		: spriteName(::data::String(spriteName, false))
-		, colorName(::data::String(colorName, false))
-		, x(::data::Int(xy.GetX()))
-		, y(::data::Int(xy.GetX()))
+	Image::Image(const nlohmann::json& model)
+		: model(model)
+		, spriteName(::data::String::FromJSON(model[PROPERTY_SPRITE]))
+		, colorName(::data::String::FromJSON(model[PROPERTY_COLOR]))
+		, x(::data::Int::FromJSON(model[PROPERTY_X]))
+		, y(::data::Int::FromJSON(model[PROPERTY_Y]))
 	{
 	}
 

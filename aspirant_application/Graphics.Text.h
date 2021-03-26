@@ -27,18 +27,8 @@ namespace graphics
 		data::Int y;
 		data::Int dropShadowX;
 		data::Int dropShadowY;
+		const nlohmann::json& model;
 	public:
-		Text
-		(
-			const common::XY<int>&,
-			const std::string&,
-			const std::string&,
-			const std::string&,
-			bool,
-			const common::XY<int>&,
-			const std::string&,
-			const HorizontalAlignment&
-		);
 		Text
 		(
 			const nlohmann::json&

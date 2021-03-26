@@ -16,28 +16,33 @@ namespace data
 		}
 	}
 
-	String::String(const std::string& value, bool indirect)
-		: value((indirect)?(""):(value))
-		, key((indirect)?(value):(""))
-		, indirect(indirect)
+	String::String(const nlohmann::json& model)
+		: model(model)
+		, value()
+		, key()
+		, indirect()
 	{
-
-	}
-
-	String String::FromJSON(const nlohmann::json& value)
-	{
-		if (value.is_string())
+		if (model.is_string())
 		{
-			return String(value, false);
+			value = model;
+			indirect = false;
+			key = "";
 		}
-		else if (value.is_object())
+		else if (model.is_object())
 		{
-			return String(value[PROPERTY_KEY], true);
+			value = "";
+			indirect = true;
+			key = model[PROPERTY_KEY];
 		}
 		else
 		{
 			throw "BAD VALUE!";
 		}
+	}
+
+	String String::FromJSON(const nlohmann::json& value)
+	{
+		return String(value);
 	}
 
 }
