@@ -7,20 +7,17 @@ namespace game
 	class Avatar
 	{
 	private:
+		Avatar() = delete;
 		Avatar(const Avatar&) = delete;
 		Avatar(Avatar&&) = delete;
 		Avatar& operator=(const Avatar&) = delete;
 		Avatar& operator=(Avatar&&) = delete;
-
-		std::string roomId;
-		common::XY<size_t> position;
+		nlohmann::json& model;
 	public:
-		Avatar() = default;
+		Avatar(nlohmann::json& model) :model(model) {}
 		void SetRoomId(const std::string&);
-		const std::string& GetRoomId() const;
+		std::string GetRoomId() const;
 		void SetPosition(const common::XY<size_t>);
-		const common::XY<size_t> GetPosition() const;
-		void FromJSON(const nlohmann::json&);
-		nlohmann::json ToJSON() const;
+		common::XY<size_t> GetPosition() const;
 	};
 }

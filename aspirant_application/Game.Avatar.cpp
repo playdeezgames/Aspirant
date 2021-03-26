@@ -1,43 +1,28 @@
 #include "Game.Avatar.h"
 namespace game
 {
-	void Avatar::SetRoomId(const std::string& id)
-	{
-		roomId = id;
-	}
-
-	const std::string& Avatar::GetRoomId() const
-	{
-		return roomId;
-	}
-
-	void Avatar::SetPosition(const common::XY<size_t> xy)
-	{
-		position = xy;
-	}
-
-	const common::XY<size_t> Avatar::GetPosition() const
-	{
-		return position;
-	}
-
 	const std::string PROPERTY_ROOM = "room";
 	const std::string PROPERTY_X = "x";
 	const std::string PROPERTY_Y = "y";
 
-	void Avatar::FromJSON(const nlohmann::json& properties)
+	void Avatar::SetRoomId(const std::string& id)
 	{
-		SetRoomId(properties[PROPERTY_ROOM]);
-		SetPosition(common::XY<size_t>(properties[PROPERTY_X], properties[PROPERTY_Y]));
+		model[PROPERTY_ROOM] = id;
 	}
 
-	nlohmann::json Avatar::ToJSON() const
+	std::string Avatar::GetRoomId() const
 	{
-		nlohmann::json properties;
-		properties[PROPERTY_ROOM] = GetRoomId();
-		properties[PROPERTY_X] = GetPosition().GetX();
-		properties[PROPERTY_Y] = GetPosition().GetY();
-		return properties;
+		return model[PROPERTY_ROOM];
 	}
 
+	void Avatar::SetPosition(const common::XY<size_t> xy)
+	{
+		model[PROPERTY_X] = xy.GetX();
+		model[PROPERTY_Y] = xy.GetY();
+	}
+
+	common::XY<size_t> Avatar::GetPosition() const
+	{
+		return common::XY<size_t>(model[PROPERTY_X], model[PROPERTY_Y]);
+	}
 }

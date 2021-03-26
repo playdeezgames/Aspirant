@@ -12,6 +12,7 @@ namespace game
 	class Scenario
 	{
 	private:
+		nlohmann::json avatarModel;
 		Avatar avatar;
 		std::map<std::string, Room*> rooms;
 		void Clear();

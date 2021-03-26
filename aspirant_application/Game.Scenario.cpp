@@ -5,6 +5,8 @@ namespace game
 {
 	Scenario::Scenario()
 		: rooms()
+		, avatarModel()
+		, avatar(avatarModel)
 	{
 
 	}
@@ -20,7 +22,7 @@ namespace game
 	void Scenario::FromJSON(const nlohmann::json& properties)
 	{
 		Clear();
-		avatar.FromJSON(properties[PROPERTY_AVATAR]);
+		avatarModel = properties[PROPERTY_AVATAR];
 		if (properties.count(PROPERTY_ROOMS) > 0)
 		{
 			auto& items = properties[PROPERTY_ROOMS];
@@ -40,7 +42,7 @@ namespace game
 	nlohmann::json Scenario::ToJSON() const
 	{
 		nlohmann::json properties;
-		properties[PROPERTY_AVATAR] = avatar.ToJSON();
+		properties[PROPERTY_AVATAR] = avatarModel;
 		for (auto& room : rooms)
 		{
 			properties[PROPERTY_ROOMS][room.first] = room.second->ToJSON();
