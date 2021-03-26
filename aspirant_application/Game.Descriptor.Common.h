@@ -19,28 +19,26 @@ namespace game::descriptor
 	private:
 		const std::string PROPERTY_TYPE = "type";
 		const std::string PROPERTY_SPRITE = "sprite";
-		std::string descriptorType;
+		const nlohmann::json& model;
 		std::string name;
-		std::string sprite;
 	public:
-		Common(const std::string& name, const nlohmann::json& properties)
-			: descriptorType(properties[PROPERTY_TYPE])
+		Common(const std::string& name, const nlohmann::json& model)
+			: model(model)
 			, name(name)
-			, sprite(properties[PROPERTY_SPRITE])
 		{
 		}
-		const std::string& GetType() const
+		std::string GetType() const
 		{
-			return descriptorType;
+			return model[PROPERTY_TYPE];
 		}
 		const std::string& GetName() const
 		{
 			return name;
 		}
 		game::object::Common* CreateObject() const;
-		const std::string& GetSprite() const
+		std::string GetSprite() const
 		{
-			return sprite;
+			return model[PROPERTY_SPRITE];
 		}
 		void Draw(SDL_Renderer*, common::XY<int>) const;
 	};

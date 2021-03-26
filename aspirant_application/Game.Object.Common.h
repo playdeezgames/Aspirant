@@ -12,8 +12,8 @@ namespace game::object
 		std::string descriptorName;
 	public:
 		Common(const std::string& descriptorName) : descriptorName(descriptorName) {}
-		const ::game::descriptor::Common& GetDescriptor() const;
-		const std::string& GetType() const;
+		game::descriptor::Common GetDescriptor() const;
+		std::string GetType() const;
 		bool CanCover(const Common*) const;
 		bool IsTerrain() const;
 		bool IsCreature() const;

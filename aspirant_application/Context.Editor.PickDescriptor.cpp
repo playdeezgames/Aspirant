@@ -16,7 +16,7 @@ namespace context::editor::PickDescriptor
 	{
 		return ::game::Descriptors::GetIdentifiers().size();
 	}
-	const ::game::descriptor::Common* GetDescriptor(size_t idx)
+	::game::descriptor::Common GetDescriptor(size_t idx)
 	{
 		return ::game::Descriptors::Get(::game::Descriptors::GetIdentifiers()[idx]);
 	}

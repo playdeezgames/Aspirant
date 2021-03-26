@@ -75,7 +75,7 @@ namespace game
 		{
 			for (size_t row = 0; row < rows; ++row)
 			{
-				rooms[name]->GetCell(column, row)->AddObject(game::Descriptors::Get(terrain)->CreateObject());
+				rooms[name]->GetCell(column, row)->AddObject(game::Descriptors::Get(terrain).CreateObject());
 			}
 		}
 	}

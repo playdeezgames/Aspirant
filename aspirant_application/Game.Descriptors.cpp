@@ -9,46 +9,27 @@ namespace game::Descriptors
 	const std::string TYPE_TERRAIN = "terrain";
 	const std::string TYPE_CREATURE = "creature";
 	const std::string TYPE_PLAYER = "player";
-	static std::map<std::string, ::game::descriptor::Common*> descriptors;
+	static nlohmann::json table;
 	static std::vector<std::string> identifiers;
-	typedef game::descriptor::Common* (*DescriptorFactory)(const std::string&, const nlohmann::json&);
-
-	static std::string ParseKey(const nlohmann::json& key)
-	{
-		return key;
-	}
 
 	const std::vector<std::string>& GetIdentifiers()
 	{
 		return identifiers;
 	}
 
-	::game::descriptor::Common* ParseDescriptor(const std::string& name, const nlohmann::json& properties)
-	{
-		return new game::descriptor::Common(name, properties);
-	}
-
-	static void Finish()
-	{
-		common::Finisher::Finish(descriptors);
-	}
-
 	void Start(const std::string& filename)
 	{
-		common::Finishers::Add(Finish);
-		nlohmann::json properties = data::JSON::Load(filename);
-		for (auto& item : properties.items())
+		table = data::JSON::Load(filename);
+		for (auto& item : table.items())
 		{
-			auto identifier = ParseKey(item.key());
-			identifiers.push_back(identifier);
-			descriptors[identifier] =
-				ParseDescriptor(identifier, item.value());
+			auto identifier = item.key();
+			identifiers.push_back(item.key());
 		}
 	}
 
-	const ::game::descriptor::Common* Get(const std::string& key)
+	game::descriptor::Common Get(const std::string& key)
 	{
-		return descriptors[key];
+		return game::descriptor::Common(key, table[key]);
 	}
 
 

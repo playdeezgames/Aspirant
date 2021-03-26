@@ -2,9 +2,9 @@
 #include "Game.Descriptors.h"
 namespace game::object
 {
-	const game::descriptor::Common& Common::GetDescriptor() const
+	game::descriptor::Common Common::GetDescriptor() const
 	{
-		return *game::Descriptors::Get(descriptorName);
+		return game::Descriptors::Get(descriptorName);
 	}
 
 	void Common::Draw(SDL_Renderer* renderer, common::XY<int> position) const
@@ -17,7 +17,7 @@ namespace game::object
 	const std::string TYPE_PLAYER = "player";
 	const std::string PROPERTY_TYPE = "type";
 
-	const std::string& Common::GetType() const
+	std::string Common::GetType() const
 	{
 		return GetDescriptor().GetType();
 	}
@@ -56,7 +56,7 @@ namespace game::object
 	nlohmann::json Common::ToJSON() const
 	{
 		nlohmann::json properties;
-		properties[PROPERTY_TYPE] = GetType();
+		properties[PROPERTY_TYPE] = GetDescriptor().GetName();
 		return properties;
 	}
 }

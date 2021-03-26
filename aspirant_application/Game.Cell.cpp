@@ -6,7 +6,7 @@ namespace game
 
 	::game::object::Common* Cell::ObjectFromJSON(const nlohmann::json& properties)
 	{
-		auto obj = ::game::Descriptors::Get(properties[PROPERTY_TYPE])->CreateObject();
+		auto obj = ::game::Descriptors::Get(properties[PROPERTY_TYPE]).CreateObject();
 		obj->FromJSON(properties);
 		return obj;
 	}

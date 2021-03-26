@@ -88,7 +88,7 @@ namespace context::editor::NewRoom
 		for (auto& identifier : identifiers)
 		{
 			auto descriptor = game::Descriptors::Get(identifier);
-			auto obj = descriptor->CreateObject();
+			auto obj = descriptor.CreateObject();
 			if (obj->CanCover(nullptr))
 			{
 				terrains.push_back(identifier);

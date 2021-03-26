@@ -22,7 +22,7 @@ namespace renderer::editor::PickDescriptor
 		{
 			common::XY<int> position = Plot({ idx % TILE_COLUMNS, idx / TILE_COLUMNS });
 
-			::context::editor::PickDescriptor::GetDescriptor(idx)->Draw(renderer, position);
+			context::editor::PickDescriptor::GetDescriptor(idx).Draw(renderer, position);
 
 			if (idx == ::context::editor::PickDescriptor::GetIndex())
 			{

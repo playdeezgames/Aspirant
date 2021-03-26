@@ -6,5 +6,5 @@ namespace context::editor::PickDescriptor
 	size_t GetIndex();
 	void SetIndex(size_t idx);
 	size_t GetCount();
-	const ::game::descriptor::Common* GetDescriptor(size_t);
+	::game::descriptor::Common GetDescriptor(size_t);
 }

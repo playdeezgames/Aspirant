@@ -5,6 +5,6 @@
 namespace game::Descriptors
 {
 	void Start(const std::string&);
-	const ::game::descriptor::Common* Get(const std::string&);
+	game::descriptor::Common Get(const std::string&);
 	const std::vector<std::string>& GetIdentifiers();
 }
