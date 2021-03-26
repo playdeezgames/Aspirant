@@ -5,6 +5,5 @@
 namespace graphics::Colors
 {
 	void Start(const std::string&);
-	const SDL_Color& Get(const std::string&);
-	const std::vector<std::string>& GetIdentifiers();
+	SDL_Color Get(const std::string&);
 }

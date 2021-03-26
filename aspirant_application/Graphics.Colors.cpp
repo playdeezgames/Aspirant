@@ -8,8 +8,10 @@ namespace graphics::Colors
 	const std::string PROPERTY_GREEN = "g";
 	const std::string PROPERTY_BLUE = "b";
 	const std::string PROPERTY_ALPHA = "a";
+
+	static nlohmann::json table;
 	
-	static SDL_Color ParseDescriptor(const std::string&, const nlohmann::json& properties)
+	static SDL_Color ParseDescriptor(const nlohmann::json& properties)
 	{
 		SDL_Color result;
 		result.r = (Uint8)properties[PROPERTY_RED];
@@ -19,33 +21,13 @@ namespace graphics::Colors
 		return result;
 	}
 
-	static std::string ParseKey(const nlohmann::json& key)
-	{
-		return key;
-	}
-
-	static std::map<std::string, SDL_Color> descriptors;
-	static std::vector<std::string> identifiers;
-
-	const std::vector<std::string>& GetIdentifiers()
-	{
-		return identifiers;
-	}
-
 	void Start(const std::string& fileName)
 	{
-		nlohmann::json properties = data::JSON::Load(fileName);
-		for (auto& item : properties.items())
-		{
-			auto identifier = ParseKey(item.key());
-			identifiers.push_back(identifier);
-			descriptors[identifier] =
-				ParseDescriptor(identifier, item.value());
-		}
+		table = data::JSON::Load(fileName);
 	}
 
-	const SDL_Color& Get(const std::string& key)
+	SDL_Color Get(const std::string& key)
 	{
-		return descriptors[key];
+		return ParseDescriptor(table[key]);
 	}
 }

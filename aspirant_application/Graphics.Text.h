@@ -22,7 +22,7 @@ namespace graphics
 		data::String fontName;
 		data::String color;
 		data::String dropShadowColor;
-		::data::Bool hasDropShadow;
+		data::Bool hasDropShadow;
 		data::Int x;
 		data::Int y;
 		data::Int dropShadowX;
