@@ -8,11 +8,6 @@ namespace game::descriptor
 
 	}
 
-	game::object::Common* Terrain::CreateObject() const
-	{
-		return new game::object::Common(GetName());
-	}
-
 	Common* Terrain::FromNameAndProperties(const std::string& name, const nlohmann::json& properties)
 	{
 		return new Terrain(name, properties);

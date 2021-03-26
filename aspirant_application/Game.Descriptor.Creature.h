@@ -7,7 +7,6 @@ namespace game::descriptor
 	protected:
 		Creature(const std::string&, const nlohmann::json&);
 	public:
-		game::object::Common* CreateObject() const;
 		static Common* FromNameAndProperties(const std::string&, const nlohmann::json&);
 	};
 }

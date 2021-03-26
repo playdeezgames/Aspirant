@@ -38,11 +38,11 @@ namespace game::descriptor
 		{
 			return name;
 		}
-		virtual game::object::Common* CreateObject() const = 0;
+		game::object::Common* CreateObject() const;
 		const std::string& GetSprite() const
 		{
 			return sprite;
 		}
-		virtual void Draw(SDL_Renderer*, common::XY<int>) const;
+		void Draw(SDL_Renderer*, common::XY<int>) const;
 	};
 }

@@ -8,11 +8,6 @@ namespace game::descriptor
 
 	}
 
-	game::object::Common* Player::CreateObject() const
-	{
-		return new game::object::Common(GetName());
-	}
-	
 	Common* Player::FromNameAndProperties(const std::string& name, const nlohmann::json& properties)
 	{
 		return new Player(name, properties);
