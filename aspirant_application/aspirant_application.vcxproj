@@ -155,11 +155,9 @@
     <ClCompile Include="Data.Bool.cpp" />
     <ClCompile Include="Game.Avatar.cpp" />
     <ClCompile Include="Game.Descriptor.Common.cpp" />
-    <ClCompile Include="Game.Descriptor.Player.cpp" />
     <ClCompile Include="Game.Object.Common.cpp" />
     <ClCompile Include="Graphics.Colors.cpp" />
     <ClCompile Include="State.ConfirmQuit.cpp" />
-    <ClCompile Include="Game.Descriptor.Creature.cpp" />
     <ClCompile Include="Game.Descriptors.cpp" />
     <ClCompile Include="Renderer.Editor.PickDescriptor.cpp" />
     <ClCompile Include="State.Editor.Avatar.cpp" />
@@ -210,7 +208,6 @@
     <ClCompile Include="Graphics.Text.cpp" />
     <ClCompile Include="Data.Strings.cpp" />
     <ClCompile Include="Data.String.cpp" />
-    <ClCompile Include="Game.Descriptor.Terrain.cpp" />
     <ClCompile Include="Graphics.Textures.cpp" />
     <ClCompile Include="Common.Utility.cpp" />
   </ItemGroup>
@@ -223,7 +220,6 @@
     <ClInclude Include="Command.h" />
     <ClInclude Include="Game.Descriptor.Common.h" />
     <ClInclude Include="State.ConfirmQuit.h" />
-    <ClInclude Include="Game.Descriptor.Creature.h" />
     <ClInclude Include="Game.Descriptors.h" />
     <ClInclude Include="Renderer.Editor.PickDescriptor.h" />
     <ClInclude Include="Graphics.Drawn.h" />
@@ -277,7 +273,6 @@
     <ClInclude Include="Graphics.Text.h" />
     <ClInclude Include="Data.Strings.h" />
     <ClInclude Include="Data.String.h" />
-    <ClInclude Include="Game.Descriptor.Terrain.h" />
     <ClInclude Include="Graphics.Textures.h" />
     <ClInclude Include="UIState.h" />
     <ClInclude Include="Common.Utility.h" />
@@ -285,7 +280,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Game.Avatar.h" />
-    <None Include="Game.Descriptor.Player.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

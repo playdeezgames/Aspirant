@@ -89,12 +89,6 @@
     <ClCompile Include="Game.Descriptors.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Game.Descriptor.Terrain.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Game.Descriptor.Creature.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Game.ScenarioDescriptors.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -183,9 +177,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Game.Avatar.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Game.Descriptor.Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Game.Object.Common.cpp">
@@ -301,12 +292,6 @@
     <ClInclude Include="Game.Object.Common.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Game.Descriptor.Terrain.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Game.Descriptor.Creature.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Game.Descriptor.Common.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -409,9 +394,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Game.Avatar.h">
-      <Filter>Header Files</Filter>
-    </None>
-    <None Include="Game.Descriptor.Player.h">
       <Filter>Header Files</Filter>
     </None>
   </ItemGroup>

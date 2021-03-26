@@ -22,14 +22,13 @@ namespace game::descriptor
 		std::string descriptorType;
 		std::string name;
 		std::string sprite;
-	protected:
+	public:
 		Common(const std::string& name, const nlohmann::json& properties)
 			: descriptorType(properties[PROPERTY_TYPE])
 			, name(name)
 			, sprite(properties[PROPERTY_SPRITE])
 		{
 		}
-	public:
 		const std::string& GetType() const
 		{
 			return descriptorType;
