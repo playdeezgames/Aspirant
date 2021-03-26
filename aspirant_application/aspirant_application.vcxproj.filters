@@ -95,12 +95,6 @@
     <ClCompile Include="Game.Descriptor.Creature.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Game.Object.Terrain.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Game.Object.Creature.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Game.ScenarioDescriptors.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -192,9 +186,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Game.Descriptor.Player.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Game.Object.Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Game.Object.Common.cpp">
@@ -319,12 +310,6 @@
     <ClInclude Include="Game.Descriptor.Common.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Game.Object.Creature.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Game.Object.Terrain.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Game.ScenarioDescriptor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -410,9 +395,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="State.Editor.PickDescriptor.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Game.Object.Player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="State.Player.NewGame.h">

@@ -1,5 +1,5 @@
 #include "Game.Descriptor.Creature.h"
-#include "Game.Object.Creature.h"
+#include "Game.Object.Common.h"
 namespace game::descriptor
 {
 	Creature::Creature(const std::string& name, const nlohmann::json& properties)
@@ -10,7 +10,7 @@ namespace game::descriptor
 
 	game::object::Common* Creature::CreateObject() const
 	{
-		return new game::object::Creature(*this);
+		return new game::object::Common(GetName());
 	}
 
 	Common* Creature::FromNameAndProperties(const std::string& name, const nlohmann::json& properties)

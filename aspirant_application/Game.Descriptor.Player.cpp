@@ -1,5 +1,5 @@
 #include "Game.Descriptor.Player.h"
-#include "Game.Object.Player.h"
+#include "Game.Object.Common.h"
 namespace game::descriptor
 {
 	Player::Player(const std::string& name, const nlohmann::json& properties)
@@ -10,7 +10,7 @@ namespace game::descriptor
 
 	game::object::Common* Player::CreateObject() const
 	{
-		return new game::object::Player(*this);
+		return new game::object::Common(GetName());
 	}
 	
 	Common* Player::FromNameAndProperties(const std::string& name, const nlohmann::json& properties)

@@ -157,11 +157,9 @@
     <ClCompile Include="Game.Descriptor.Common.cpp" />
     <ClCompile Include="Game.Descriptor.Player.cpp" />
     <ClCompile Include="Game.Object.Common.cpp" />
-    <ClCompile Include="Game.Object.Player.cpp" />
     <ClCompile Include="Graphics.Colors.cpp" />
     <ClCompile Include="State.ConfirmQuit.cpp" />
     <ClCompile Include="Game.Descriptor.Creature.cpp" />
-    <ClCompile Include="Game.Object.Creature.cpp" />
     <ClCompile Include="Game.Descriptors.cpp" />
     <ClCompile Include="Renderer.Editor.PickDescriptor.cpp" />
     <ClCompile Include="State.Editor.Avatar.cpp" />
@@ -213,7 +211,6 @@
     <ClCompile Include="Data.Strings.cpp" />
     <ClCompile Include="Data.String.cpp" />
     <ClCompile Include="Game.Descriptor.Terrain.cpp" />
-    <ClCompile Include="Game.Object.Terrain.cpp" />
     <ClCompile Include="Graphics.Textures.cpp" />
     <ClCompile Include="Common.Utility.cpp" />
   </ItemGroup>
@@ -222,13 +219,11 @@
     <ClInclude Include="Common.Application.h" />
     <ClInclude Include="Application.h" />
     <ClInclude Include="Data.Bool.h" />
-    <ClInclude Include="Game.Object.Player.h" />
     <ClInclude Include="Graphics.Colors.h" />
     <ClInclude Include="Command.h" />
     <ClInclude Include="Game.Descriptor.Common.h" />
     <ClInclude Include="State.ConfirmQuit.h" />
     <ClInclude Include="Game.Descriptor.Creature.h" />
-    <ClInclude Include="Game.Object.Creature.h" />
     <ClInclude Include="Game.Descriptors.h" />
     <ClInclude Include="Renderer.Editor.PickDescriptor.h" />
     <ClInclude Include="Graphics.Drawn.h" />
@@ -283,7 +278,6 @@
     <ClInclude Include="Data.Strings.h" />
     <ClInclude Include="Data.String.h" />
     <ClInclude Include="Game.Descriptor.Terrain.h" />
-    <ClInclude Include="Game.Object.Terrain.h" />
     <ClInclude Include="Graphics.Textures.h" />
     <ClInclude Include="UIState.h" />
     <ClInclude Include="Common.Utility.h" />
