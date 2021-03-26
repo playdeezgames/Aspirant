@@ -50,20 +50,20 @@ namespace state::editor::ScenarioDescriptor
 			switch (current)
 			{
 			case EditScenarioDescriptorItem::SCENARIO_NAME:
-				temp = descriptor->GetName();
+				temp = descriptor.GetName();
 				if (!temp.empty())
 				{
 					temp.pop_back();
 				}
-				descriptor->SetName(temp);
+				descriptor.SetName(temp);
 				break;
 			case EditScenarioDescriptorItem::BRIEF:
-				temp = descriptor->GetBrief();
+				temp = descriptor.GetBrief();
 				if (!temp.empty())
 				{
 					temp.pop_back();
 				}
-				descriptor->SetBrief(temp);
+				descriptor.SetBrief(temp);
 				break;
 			}
 			break;
@@ -71,10 +71,10 @@ namespace state::editor::ScenarioDescriptor
 			switch (current)
 			{
 			case EditScenarioDescriptorItem::SCENARIO_NAME:
-				descriptor->SetName("");
+				descriptor.SetName("");
 				break;
 			case EditScenarioDescriptorItem::BRIEF:
-				descriptor->SetBrief("");
+				descriptor.SetBrief("");
 				break;
 			default:
 				::Application::SetUIState(::UIState::EDIT_SCENARIO);;
@@ -101,8 +101,8 @@ namespace state::editor::ScenarioDescriptor
 	static void OnUpdate(const Uint32& ticks)
 	{
 		auto descriptor = ::game::ScenarioDescriptors::Get(::context::editor::Scenarios::GetIndex());
-		::data::Strings::Set(TEXT_NAME_SCENARIO_NAME, descriptor->GetName());
-		::data::Strings::Set(TEXT_NAME_BRIEF, descriptor->GetBrief());
+		::data::Strings::Set(TEXT_NAME_SCENARIO_NAME, descriptor.GetName());
+		::data::Strings::Set(TEXT_NAME_BRIEF, descriptor.GetBrief());
 		MenuItem<EditScenarioDescriptorItem>::Update(items, current);
 	}
 
@@ -112,10 +112,10 @@ namespace state::editor::ScenarioDescriptor
 		switch (current)
 		{
 		case EditScenarioDescriptorItem::SCENARIO_NAME:
-			descriptor->SetName(descriptor->GetName() + text);
+			descriptor.SetName(descriptor.GetName() + text);
 			break;
 		case EditScenarioDescriptorItem::BRIEF:
-			descriptor->SetBrief(descriptor->GetBrief() + text);
+			descriptor.SetBrief(descriptor.GetBrief() + text);
 			break;
 		}
 

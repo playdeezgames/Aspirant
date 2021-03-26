@@ -51,25 +51,11 @@ namespace state::editor::Start
 		data::JSON::Save(fileName, properties);
 	}
 
-	const std::string SCENARIO_FILE_PREFIX = "scenarios/scenario_";
-	const std::string SCENARIO_FILE_SUFFIX = ".json";
-	const std::string DEFAULT_SCENARIO_NAME = "New Scenario";
-	const std::string DEFAULT_SCENARIO_BRIEF = "The best scenario ever!";
-
 	static void CreateNewScenario()
 	{
 		int scenarioId = ::game::ScenarioDescriptors::GetNextId();
-		std::stringstream ss;
-		ss << SCENARIO_FILE_PREFIX << scenarioId << SCENARIO_FILE_SUFFIX;
-		::game::ScenarioDescriptor* descriptor = new ::game::ScenarioDescriptor
-		(
-			scenarioId,
-			DEFAULT_SCENARIO_NAME,
-			DEFAULT_SCENARIO_BRIEF,
-			ss.str()
-		);
-		CreateScenarioFile(ss.str());
-		::context::editor::Scenarios::SetIndex(::game::ScenarioDescriptors::Add(descriptor));
+		::context::editor::Scenarios::SetIndex(::game::ScenarioDescriptors::Add());
+		CreateScenarioFile(game::ScenarioDescriptors::Get(context::editor::Scenarios::GetIndex()).GetFileName());
 		::Application::SetUIState(::UIState::EDIT_SCENARIO);
 	}
 

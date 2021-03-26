@@ -2,73 +2,68 @@
 #include "Common.Utility.h"
 #include "Data.JSON.h"
 #include "Common.Finisher.h"
+#include <sstream>
 namespace game::ScenarioDescriptors
 {
-	static std::vector<::game::ScenarioDescriptor*> descriptors;
+	static nlohmann::json table;
 	static std::string fileName;
-
-	static void Finish()
-	{
-		for (auto& descriptor : descriptors)
-		{
-			common::Finisher::Finish(descriptor);
-		}
-		descriptors.clear();
-	}
 
 	void Load(const std::string& filename)
 	{
-		common::Finishers::Add(Finish);
 		fileName = filename;
-		auto descriptorList = data::JSON::Load(fileName);
-		for (auto& properties : descriptorList)
-		{
-			descriptors.push_back(new ::game::ScenarioDescriptor(properties));
-		}
+		auto table = data::JSON::Load(fileName);
 	}
 
 	void Save()
 	{
-		nlohmann::json descriptorList;
-		for (auto& descriptor : descriptors)
-		{
-			descriptorList.push_back(descriptor->ToJSON());
-		}
-		data::JSON::Save(fileName, descriptorList);
+		data::JSON::Save(fileName, table);
 	}
 
 	int GetNextId()
 	{
 		int maximum = 0;
-		for (auto& descriptor : descriptors)
+		for (auto& item : table)
 		{
-			maximum = (descriptor->GetId() > maximum) ? (descriptor->GetId()) : (maximum);
+			auto descriptor = game::ScenarioDescriptor(item);
+			maximum = (descriptor.GetId() > maximum) ? (descriptor.GetId()) : (maximum);
 		}
 		return maximum + 1;
 	}
 
-	size_t Add(::game::ScenarioDescriptor* descriptor)
+	const std::string PROPERTY_NAME = "name";
+	const std::string PROPERTY_BRIEF = "brief";
+	const std::string PROPERTY_FILE_NAME = "fileName";
+	const std::string PROPERTY_ID = "id";
+
+	const std::string SCENARIO_FILE_PREFIX = "scenarios/scenario_";
+	const std::string SCENARIO_FILE_SUFFIX = ".json";
+	const std::string DEFAULT_SCENARIO_NAME = "New Scenario";
+	const std::string DEFAULT_SCENARIO_BRIEF = "The best scenario ever!";
+
+
+	size_t Add()
 	{
-		size_t index = descriptors.size();
-		descriptors.push_back(descriptor);
+		auto scenarioId = GetNextId();
+		std::stringstream ss;
+		ss << SCENARIO_FILE_PREFIX << scenarioId << SCENARIO_FILE_SUFFIX;
+		size_t index = table.size();
+		auto item = nlohmann::json();
+		item[PROPERTY_ID] = scenarioId;
+		item[PROPERTY_NAME] = DEFAULT_SCENARIO_NAME;
+		item[PROPERTY_BRIEF] = DEFAULT_SCENARIO_BRIEF;
+		item[PROPERTY_FILE_NAME] = ss.str();
+		table.push_back(item);
 		Save();
 		return index;
 	}
 
 	size_t GetCount()
 	{
-		return descriptors.size();
+		return table.size();
 	}
 
-	::game::ScenarioDescriptor* Get(size_t index)
+	game::ScenarioDescriptor Get(size_t index)
 	{
-		if (index < descriptors.size())
-		{
-			return descriptors[index];
-		}
-		else
-		{
-			return nullptr;
-		}
+		return game::ScenarioDescriptor(table[index]);
 	}
 }

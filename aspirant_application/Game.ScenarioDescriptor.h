@@ -10,65 +10,36 @@ namespace game
 		const std::string PROPERTY_BRIEF = "brief";
 		const std::string PROPERTY_FILE_NAME = "fileName";
 		const std::string PROPERTY_ID = "id";
-		int id;
-		std::string name;
-		std::string brief;
-		std::string fileName;
+		nlohmann::json& model;
 	public:
-		ScenarioDescriptor(const nlohmann::json& properties)
-			: name(properties[PROPERTY_NAME])
-			, brief(properties[PROPERTY_BRIEF])
-			, fileName(properties[PROPERTY_FILE_NAME])
-			, id(properties[PROPERTY_ID])
-		{
-
-		}
-		ScenarioDescriptor
-		(
-			int id,
-			const std::string& name,
-			const std::string& brief,
-			const std::string& fileName
-		)
-			: id(id)
-			, name(name)
-			, brief(brief)
-			, fileName(fileName)
+		ScenarioDescriptor(nlohmann::json& model)
+			: model(model)
 		{
 
 		}
 		int GetId() const
 		{
-			return id;
+			return model[PROPERTY_ID];
 		}
 		void SetName(const std::string& newName)
 		{
-			name = newName;
+			model[PROPERTY_NAME] = newName;
 		}
-		const std::string& GetName() const
+		std::string GetName() const
 		{
-			return name;
+			return model[PROPERTY_NAME];
 		}
 		void SetBrief(const std::string newBrief)
 		{
-			brief = newBrief;
+			model[PROPERTY_BRIEF] = newBrief;
 		}
-		const std::string& GetBrief() const
+		std::string GetBrief() const
 		{
-			return brief;
+			return model[PROPERTY_BRIEF];
 		}
-		const std::string& GetFileName() const
+		std::string GetFileName() const
 		{
-			return fileName;
-		}
-		nlohmann::json ToJSON() const
-		{
-			nlohmann::json properties;
-			properties[PROPERTY_ID] = GetId();
-			properties[PROPERTY_BRIEF] = GetBrief();
-			properties[PROPERTY_NAME] = GetName();
-			properties[PROPERTY_FILE_NAME] = GetFileName();
-			return properties;
+			return model[PROPERTY_FILE_NAME];
 		}
 	};
 }

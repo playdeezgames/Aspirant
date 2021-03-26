@@ -100,10 +100,10 @@ namespace state::editor::Scenarios
 	static void OnUpdate(const Uint32& ticks)
 	{
 		auto scenario = ::game::ScenarioDescriptors::Get(::context::editor::Scenarios::GetIndex());
-		UpdateBriefText(scenario);
-		UpdateIdText(scenario);
-		UpdateIndexText(scenario);
-		UpdateNameText(scenario);
+		UpdateBriefText(&scenario);
+		UpdateIdText(&scenario);
+		UpdateIndexText(&scenario);
+		UpdateNameText(&scenario);
 	}
 
 	void Start()

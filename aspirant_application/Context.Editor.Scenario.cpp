@@ -23,7 +23,7 @@ namespace context::editor::Scenario
 		data::JSON::Save(
 			::game::ScenarioDescriptors::Get(
 				::context::editor::Scenarios::GetIndex())
-			->GetFileName(),
+			.GetFileName(),
 			properties
 			);
 		elapsed = SDL_GetTicks() - start;
@@ -37,7 +37,7 @@ namespace context::editor::Scenario
 				data::JSON::Load(
 					::game::ScenarioDescriptors::Get(
 						::context::editor::Scenarios::GetIndex())
-					->GetFileName()));
+					.GetFileName()));
 	}
 
 }
