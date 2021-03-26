@@ -17,16 +17,6 @@ namespace graphics
 		Text& operator=(const Text&) = delete;
 		Text& operator=(Text&&) = delete;
 	private:
-		data::Int alignment;
-		data::String text;
-		data::String fontName;
-		data::String color;
-		data::String dropShadowColor;
-		data::Bool hasDropShadow;
-		data::Int x;
-		data::Int y;
-		data::Int dropShadowX;
-		data::Int dropShadowY;
 		const nlohmann::json& model;
 	public:
 		Text

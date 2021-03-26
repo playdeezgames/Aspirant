@@ -16,10 +16,6 @@ namespace graphics
 		Image& operator=(Image&&) = delete;
 	private:
 		const nlohmann::json& model;
-		::data::String spriteName;
-		::data::String colorName;
-		::data::Int x;
-		::data::Int y;
 	public:
 		Image
 		(

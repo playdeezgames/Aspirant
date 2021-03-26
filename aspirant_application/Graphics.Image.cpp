@@ -12,21 +12,17 @@ namespace graphics
 
 	Image::Image(const nlohmann::json& model)
 		: model(model)
-		, spriteName(model[PROPERTY_SPRITE])
-		, colorName(model[PROPERTY_COLOR])
-		, x(model[PROPERTY_X])
-		, y(model[PROPERTY_Y])
 	{
 	}
 
 	void Image::Draw(SDL_Renderer* renderer) const
 	{
-		Sprites::Get(spriteName)
+		Sprites::Get(data::String(model[PROPERTY_SPRITE]))
 			.Draw
 			(
 				renderer,
-				common::XY<int>(x,y),
-				::graphics::Colors::Get(colorName)
+				common::XY<int>(data::Int(model[PROPERTY_X]), data::Int(model[PROPERTY_X])),
+				::graphics::Colors::Get(data::String(model[PROPERTY_COLOR]))
 			);
 	}
 }

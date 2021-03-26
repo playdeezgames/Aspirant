@@ -16,25 +16,29 @@ namespace graphics
 
 	Text::Text(const nlohmann::json& model)
 		: model(model)
-		, text(model[PROPERTY_TEXT])
-		, fontName(model[PROPERTY_FONT])
-		, color(model[PROPERTY_COLOR])
-		, x(model[PROPERTY_X])
-		, y(model[PROPERTY_Y])
-		, hasDropShadow(model[PROPERTY_DROP_SHADOW])
-		, dropShadowColor(model[PROPERTY_DROP_SHADOW_COLOR])
-		, dropShadowX(model[PROPERTY_DROP_SHADOW_X])
-		, dropShadowY(model[PROPERTY_DROP_SHADOW_Y])
-		, alignment(model[PROPERTY_HORIZONTAL_ALIGNMENT])
 	{
 	}
 
 	void Text::Draw(SDL_Renderer* renderer) const
 	{
-		if (hasDropShadow)
+		if (data::Bool(model[PROPERTY_DROP_SHADOW]))
 		{
-			::graphics::Fonts::Get(fontName).WriteText(renderer, common::XY<int>(x + dropShadowX, y + dropShadowY), text, dropShadowColor, (HorizontalAlignment)(int)alignment);
+			graphics::Fonts::Get(
+				data::String(model[PROPERTY_FONT]))
+				.WriteText(
+					renderer, 
+					common::XY<int>(data::Int(model[PROPERTY_X]) + data::Int(model[PROPERTY_DROP_SHADOW_X]), data::Int(model[PROPERTY_Y]) + data::Int(model[PROPERTY_DROP_SHADOW_Y])),
+					data::String(model[PROPERTY_TEXT]),
+					data::String(model[PROPERTY_DROP_SHADOW_COLOR]),
+					(HorizontalAlignment)(int)data::Int(model[PROPERTY_HORIZONTAL_ALIGNMENT]));
 		}
-		::graphics::Fonts::Get(fontName).WriteText(renderer, common::XY<int>(x, y), text, color, (HorizontalAlignment)(int)alignment);
+		graphics::Fonts::Get(
+			data::String(model[PROPERTY_FONT]))
+			.WriteText(
+				renderer, 
+				common::XY<int>(data::Int(model[PROPERTY_X]), data::Int(model[PROPERTY_Y])),
+				data::String(model[PROPERTY_TEXT]),
+				data::String(model[PROPERTY_COLOR]),
+				(HorizontalAlignment)(int)data::Int(model[PROPERTY_HORIZONTAL_ALIGNMENT]));
 	}
 }
