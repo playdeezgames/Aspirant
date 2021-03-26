@@ -2,7 +2,7 @@
 #include "Data.Ints.h"
 namespace data
 {
-#define PROPERTY_KEY "key"
+	const std::string PROPERTY_KEY = "key";
 
 	Int::operator int() const
 	{

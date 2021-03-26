@@ -32,7 +32,7 @@ namespace graphics::Sprites
 		for (auto& item : j.items())
 		{
 			auto& properties = item.value();
-			SDL_Texture* texture = ::graphics::Textures::Get(properties[PROPERTY_TEXTURE]);
+			SDL_Texture* texture = ::graphics::Textures::Read(properties[PROPERTY_TEXTURE]);
 			SDL_Rect source;
 			source.x = properties[PROPERTY_X];
 			source.y = properties[PROPERTY_Y];

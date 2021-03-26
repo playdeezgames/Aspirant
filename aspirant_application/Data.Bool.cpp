@@ -2,7 +2,7 @@
 #include "Data.Bools.h"
 namespace data
 {
-#define PROPERTY_KEY "key"
+	const std::string PROPERTY_KEY = "key";
 
 	Bool::operator bool() const
 	{

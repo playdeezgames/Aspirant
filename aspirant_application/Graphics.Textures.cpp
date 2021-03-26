@@ -26,7 +26,7 @@ namespace graphics::Textures
 		textures[name] = texture;
 	}
 
-	void Start(SDL_Renderer* renderer, const std::string& fileName)
+	void InitializeFromFile(SDL_Renderer* renderer, const std::string& fileName)
 	{
 		common::Finishers::Add(Finish);
 		auto properties = data::JSON::Load(fileName);
@@ -37,7 +37,7 @@ namespace graphics::Textures
 		}
 	}
 
-	SDL_Texture* Get(const std::string& name)
+	SDL_Texture* Read(const std::string& name)
 	{
 		auto iter = textures.find(name);
 		if (iter != textures.end())

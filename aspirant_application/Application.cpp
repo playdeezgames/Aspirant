@@ -182,7 +182,7 @@ namespace common::Application
 		data::Ints::InitializeFromFile(INTS);
 		data::Bools::InitializeFromFile(FLAGS);
 		graphics::Colors::Start(COLOR);
-		graphics::Textures::Start(renderer, TEXTURE);
+		graphics::Textures::InitializeFromFile(renderer, TEXTURE);
 		graphics::Sprites::Start(SPRITE);
 		graphics::Fonts::Start(FONTS);
 		graphics::Layouts::Start(LAYOUTS);

@@ -5,7 +5,7 @@
 #include "Common.Finishers.h"
 namespace graphics::Textures
 {
-	void Start(SDL_Renderer*, const std::string&);
-	SDL_Texture* Get(const std::string&);
+	void InitializeFromFile(SDL_Renderer*, const std::string&);
+	SDL_Texture* Read(const std::string&);
 }
 
