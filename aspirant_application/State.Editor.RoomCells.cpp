@@ -99,8 +99,8 @@ namespace state::editor::RoomCells
 
 	void Start()
 	{
-		::Application::SetCommandHandler(::UIState::EDIT_NAVIGATE_ROOM, OnCommand);
-		::Application::SetRenderHandler(::UIState::EDIT_NAVIGATE_ROOM, OnDraw);
-		::Application::SetUpdateHandler(::UIState::EDIT_NAVIGATE_ROOM, OnUpdate);
+		Application::SetCommandHandler(::UIState::EDIT_NAVIGATE_ROOM, OnCommand);
+		Application::SetRenderHandler(::UIState::EDIT_NAVIGATE_ROOM, OnDraw);
+		Application::SetUpdateHandler(::UIState::EDIT_NAVIGATE_ROOM, OnUpdate);
 	}
 }
