@@ -11,5 +11,5 @@ namespace context::editor::Rooms
 	size_t GetRoomCount();
 	void NextRoom();
 	void PreviousRoom();
-	::game::Room* GetRoom();
+	game::Room GetRoom();
 }

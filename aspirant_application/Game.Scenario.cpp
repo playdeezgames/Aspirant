@@ -5,97 +5,50 @@ namespace game
 {
 	Scenario::Scenario(nlohmann::json& model)
 		: model(model)
-		, rooms()
-		, avatarModel()
 	{
 
-	}
-
-	void Scenario::Clear()
-	{
-		common::Finisher::Finish(rooms);
 	}
 
 	const std::string PROPERTY_ROOMS = "rooms";
 	const std::string PROPERTY_AVATAR = "avatar";
-
-	void Scenario::FromJSON(const nlohmann::json& properties)
-	{
-		Clear();
-		avatarModel = properties[PROPERTY_AVATAR];
-		if (properties.count(PROPERTY_ROOMS) > 0)
-		{
-			auto& items = properties[PROPERTY_ROOMS];
-			for (auto& item : items.items())
-			{
-				auto& room = item.value();
-				auto rows = room.size();
-				auto columns = room[0].size();
-				auto& key = item.key();
-				rooms[key] = new Room();
-				rooms[key]->SetSize(columns, rows);
-				rooms[key]->FromJSON(room);
-			}
-		}
-	}
-
-	nlohmann::json Scenario::ToJSON() const
-	{
-		nlohmann::json properties;
-		properties[PROPERTY_AVATAR] = avatarModel;
-		for (auto& room : rooms)
-		{
-			properties[PROPERTY_ROOMS][room.first] = room.second->ToJSON();
-		}
-		return properties;
-	}
-
-	Scenario::~Scenario()
-	{
-		Clear();
-	}
+	const std::string PROPERTY_TYPE = "type";
 
 	std::vector<std::string> Scenario::GetRoomKeys() const
 	{
 		std::vector<std::string> result;
-		for (auto& room : rooms)
+		for (auto& room : model[PROPERTY_ROOMS].items())
 		{
-			result.push_back(room.first);
+			result.push_back(room.key());
 		}
 		return result;
 	}
 
 	void Scenario::AddRoom(const std::string& name, size_t columns, size_t rows, const std::string& terrain)
 	{
-		if (rooms.contains(name))
+		model[PROPERTY_ROOMS][name] = nlohmann::json();
+		auto& room = model[PROPERTY_ROOMS][name];
+		while (room.size() < rows)
 		{
-			common::Finisher::Finish(rooms[name]);
-		}
-		rooms[name] = new Room();
-		rooms[name]->SetSize(columns, rows);
-		for (size_t column = 0; column < columns; ++column)
-		{
-			for (size_t row = 0; row < rows; ++row)
+			room.push_back(nlohmann::json());
+			auto& row = room.back();
+			while (row.size() < columns)
 			{
-				rooms[name]->GetCell(column, row)->AddObject(game::Descriptors::Get(terrain).CreateObject());
+				row.push_back(nlohmann::json());
+				auto& cell = row.back();
+				cell.push_back(nlohmann::json());
+				auto& obj = cell.back();
+				obj[PROPERTY_TYPE] = terrain;
 			}
 		}
 	}
 
-	const Room* Scenario::GetRoom(const std::string& key) const
+	Room Scenario::GetRoom(const std::string& key)
 	{
-		auto iter = rooms.find(key);
-		return iter->second;
-	}
-
-	Room* Scenario::GetRoom(const std::string& key)
-	{
-		auto iter = rooms.find(key);
-		return iter->second;
+		return Room(model[PROPERTY_ROOMS][key]);
 	}
 
 	Avatar Scenario::GetAvatar()
 	{
-		return game::Avatar(avatarModel);
+		return game::Avatar(model[PROPERTY_AVATAR]);
 	}
 }

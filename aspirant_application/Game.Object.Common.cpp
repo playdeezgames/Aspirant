@@ -2,9 +2,20 @@
 #include "Game.Descriptors.h"
 namespace game::object
 {
+	const std::string TYPE_TERRAIN = "terrain";
+	const std::string TYPE_CREATURE = "creature";
+	const std::string TYPE_PLAYER = "player";
+	const std::string PROPERTY_TYPE = "type";
+
+	Common::Common(nlohmann::json& model)
+		: model(model)
+	{
+
+	}
+
 	game::descriptor::Common Common::GetDescriptor() const
 	{
-		return game::Descriptors::Get(descriptorName);
+		return game::Descriptors::Get(model[PROPERTY_TYPE]);
 	}
 
 	void Common::Draw(SDL_Renderer* renderer, common::XY<int> position) const
@@ -12,19 +23,15 @@ namespace game::object
 		GetDescriptor().Draw(renderer, position);
 	}
 
-	const std::string TYPE_TERRAIN = "terrain";
-	const std::string TYPE_CREATURE = "creature";
-	const std::string TYPE_PLAYER = "player";
-	const std::string PROPERTY_TYPE = "type";
 
 	std::string Common::GetType() const
 	{
 		return GetDescriptor().GetType();
 	}
 
-	bool Common::CanCover(const Common* previous) const
+	bool Common::CanCover(std::optional<Common> previous) const
 	{
-		if (!previous)
+		if (!previous.has_value())
 		{
 			return GetType() == TYPE_TERRAIN;
 		}
@@ -46,17 +53,5 @@ namespace game::object
 	bool Common::IsCreature() const
 	{
 		return GetType() == TYPE_CREATURE || GetType() == TYPE_PLAYER;
-	}
-
-	void Common::FromJSON(const nlohmann::json& properties)
-	{
-		descriptorName = properties[PROPERTY_TYPE];
-	}
-
-	nlohmann::json Common::ToJSON() const
-	{
-		nlohmann::json properties;
-		properties[PROPERTY_TYPE] = GetDescriptor().GetName();
-		return properties;
 	}
 }

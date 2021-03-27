@@ -35,7 +35,7 @@ namespace game::descriptor
 		{
 			return name;
 		}
-		game::object::Common* CreateObject() const;
+		game::object::Common CreateObject(nlohmann::json&) const;
 		std::string GetSprite() const
 		{
 			return model[PROPERTY_SPRITE];

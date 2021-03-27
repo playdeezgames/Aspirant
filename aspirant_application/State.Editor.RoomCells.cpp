@@ -24,8 +24,8 @@ namespace state::editor::RoomCells
 		int newCursorX = (int)::context::editor::RoomView::GetCursor().GetX() + delta.GetX();
 		int newCursorY = (int)::context::editor::RoomView::GetCursor().GetY() + delta.GetY();
 		auto room = ::context::editor::Rooms::GetRoom();
-		newCursorX = common::Utility::PositiveModulo(newCursorX, room->GetColumns());
-		newCursorY = common::Utility::PositiveModulo(newCursorY, room->GetRows());
+		newCursorX = common::Utility::PositiveModulo(newCursorX, room.GetColumns());
+		newCursorY = common::Utility::PositiveModulo(newCursorY, room.GetRows());
 		::context::editor::RoomView::SetCursor({ (size_t)newCursorX, (size_t)newCursorY });
 		::context::editor::Cell::Reset();
 	}
@@ -34,23 +34,14 @@ namespace state::editor::RoomCells
 	{
 		auto& cursorPosition = ::context::editor::RoomView::GetCursor();
 		auto descriptor = ::context::editor::PickDescriptor::GetDescriptor(::context::editor::PickDescriptor::GetIndex());
-		auto roomCell = ::context::editor::Rooms::GetRoom()->GetCell(cursorPosition.GetX(), cursorPosition.GetY());
-		auto obj = descriptor.CreateObject();
-		if (!roomCell->AddObject(obj))
-		{
-			delete obj;
-		}
+		auto roomCell = ::context::editor::Rooms::GetRoom().GetCell(cursorPosition.GetX(), cursorPosition.GetY());
 	}
 
 	static void RemoveObject()
 	{
 		auto& cursorPosition = ::context::editor::RoomView::GetCursor();
-		auto roomCell = ::context::editor::Rooms::GetRoom()->GetCell(cursorPosition.GetX(), cursorPosition.GetY());
-		auto obj = roomCell->RemoveObject();
-		if (obj)
-		{
-			delete obj;
-		}
+		auto roomCell = ::context::editor::Rooms::GetRoom().GetCell(cursorPosition.GetX(), cursorPosition.GetY());
+		roomCell.RemoveObject();
 	}
 
 	static void OnCommand(const ::Command& command)

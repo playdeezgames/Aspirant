@@ -4,21 +4,20 @@
 #include "json.hpp"
 #include <SDL.h>
 #include "Common.XY.h"
+#include <optional>
 namespace game::object
 {
 	class Common
 	{
 	private:
-		std::string descriptorName;
+		nlohmann::json& model;
 	public:
-		Common(const std::string& descriptorName) : descriptorName(descriptorName) {}
+		Common(nlohmann::json&);
 		game::descriptor::Common GetDescriptor() const;
 		std::string GetType() const;
-		bool CanCover(const Common*) const;
+		bool CanCover(std::optional<Common>) const;
 		bool IsTerrain() const;
 		bool IsCreature() const;
-		void FromJSON(const nlohmann::json&);
-		nlohmann::json ToJSON() const;
 		void Draw(SDL_Renderer*, common::XY<int>) const;
 	};
 }

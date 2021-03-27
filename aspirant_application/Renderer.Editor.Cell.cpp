@@ -16,11 +16,11 @@ namespace renderer::editor::RoomCellObjects
 
 	void Draw(SDL_Renderer* renderer)
 	{
-		auto& objs = ::context::editor::Cell::GetCell()->GetObjects();
+		auto objs = context::editor::Cell::GetCell().GetObjects();
 		size_t column = 0;
 		for (auto& obj : objs)
 		{
-			obj->Draw(renderer, Plot({ column++, 0 }));
+			obj.Draw(renderer, Plot({ column++, 0 }));
 		}
 		graphics::Sprites::Get(SPRITE_CURSOR).Draw(renderer, Plot({ ::context::editor::Cell::GetIndex(), 0 }));
 	}

@@ -11,18 +11,14 @@ namespace context::editor::Cell
 		return index;
 	}
 
-	::game::Cell* GetCell()
+	::game::Cell GetCell()
 	{
-		if (::context::editor::Rooms::GetRoom())
-		{
-			return ::context::editor::Rooms::GetRoom()->GetCell(::context::editor::RoomView::GetCursor().GetX(), ::context::editor::RoomView::GetCursor().GetY());
-		}
-		return nullptr;
+		return ::context::editor::Rooms::GetRoom().GetCell(::context::editor::RoomView::GetCursor().GetX(), ::context::editor::RoomView::GetCursor().GetY());
 	}
 
 	void Reset()
 	{
 		auto cell = GetCell();
-		index = (cell) ? (cell->GetObjects().size()) : (0);
+		index = cell.GetObjects().size();
 	}
 }

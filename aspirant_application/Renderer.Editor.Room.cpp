@@ -16,16 +16,16 @@ namespace renderer::editor::Room
 		return common::XY<int>(OFFSET_X + (int)position.GetX() * TILE_WIDTH, OFFSET_Y + (int)position.GetY() * TILE_HEIGHT);
 	}
 
-	static void DrawCell(SDL_Renderer* renderer, const common::XY<size_t>& viewPosition, const ::game::Cell* cell)
+	static void DrawCell(SDL_Renderer* renderer, const common::XY<size_t>& viewPosition, const ::game::Cell& cell)
 	{
-		auto& objs = cell->GetObjects();
+		auto objs = cell.GetObjects();
 		for (auto& obj : objs)
 		{
-			obj->Draw(renderer, Plot(viewPosition));
+			obj.Draw(renderer, Plot(viewPosition));
 		}
 	}
 
-	static void DrawRoom(SDL_Renderer* renderer, const ::game::Room* room)
+	static void DrawRoom(SDL_Renderer* renderer, game::Room& room)
 	{
 		for (size_t viewRow = 0; viewRow < ::context::editor::RoomView::GetSize().GetY(); ++viewRow)
 		{
@@ -35,11 +35,8 @@ namespace renderer::editor::Room
 					common::XY<size_t>(viewColumn, viewRow);
 				common::XY<size_t> cellPosition =
 					viewPosition + ::context::editor::RoomView::GetAnchor();
-				auto cell = room->GetCell(cellPosition.GetX(), cellPosition.GetY());
-				if (cell)
-				{
-					DrawCell(renderer, viewPosition, cell);
-				}
+				auto cell = room.GetCell(cellPosition.GetX(), cellPosition.GetY());
+				DrawCell(renderer, viewPosition, cell);
 			}
 		}
 	}
@@ -54,7 +51,8 @@ namespace renderer::editor::Room
 
 	void Draw(SDL_Renderer* renderer)
 	{
-		DrawRoom(renderer, ::context::editor::Rooms::GetRoom());
+		auto room = context::editor::Rooms::GetRoom();
+		DrawRoom(renderer, room);
 		DrawMapCursor(renderer);
 	}
 }

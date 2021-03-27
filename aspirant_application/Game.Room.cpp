@@ -1,33 +1,56 @@
 #include "Game.Room.h"
 namespace game
 {
-	void Room::FromJSON(const nlohmann::json& properties)
+	void Room::SetSize(size_t columns, size_t rows)
 	{
-		size_t row = 0;
-		for (auto& rowProperties : properties)
+		while (model.size() > rows)
 		{
-			size_t column = 0;
-			for (auto& cellProperties : rowProperties)
+			model.erase(model.size()-1);
+		}
+		while (model.size() < rows)
+		{
+			model.push_back(nlohmann::json());
+		}
+
+		for (auto& row : model)
+		{
+			while (row.size() > columns)
 			{
-				GetCell(column, row)->FromJSON(cellProperties);
-				column++;
+				row.erase(row.size() - 1);
 			}
-			row++;
+			while (row.size() < columns)
+			{
+				row.push_back(nlohmann::json());
+			}
 		}
 	}
 
-	nlohmann::json Room::ToJSON() const
+	Room::Room(nlohmann::json& model)
+		: model(model)
 	{
-		nlohmann::json properties = nlohmann::json(nlohmann::detail::value_t::array);
-		for (size_t row = 0; row < GetRows(); ++row)
-		{
-			nlohmann::json rowProperties = nlohmann::json(nlohmann::detail::value_t::array);
-			for (size_t column = 0; column < GetColumns(); ++column)
-			{
-				rowProperties.push_back(GetCell(column, row)->ToJSON());
-			}
-			properties.push_back(rowProperties);
-		}
-		return properties;
+
 	}
+
+	Cell Room::GetCell(size_t column, size_t row)
+	{
+		return Cell(model[row][column], column, row);
+	}
+
+	size_t Room::GetColumns() const
+	{
+		if (model.empty())
+		{
+			return 0;
+		}
+		else
+		{
+			return model.front().size();
+		}
+	}
+
+	size_t Room::GetRows() const
+	{
+		return model.size();
+	}
+
 }

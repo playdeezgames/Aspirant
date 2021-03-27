@@ -3,6 +3,6 @@
 namespace context::editor::Cell
 {
 	size_t GetIndex();
-	game::Cell* GetCell();
+	game::Cell GetCell();
 	void Reset();
 }

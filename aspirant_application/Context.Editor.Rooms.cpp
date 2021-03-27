@@ -47,15 +47,8 @@ namespace context::editor::Rooms
 		SetRoomIndex(common::Utility::PreviousIndex(GetRoomIndex(), GetRoomCount()));
 	}
 
-	::game::Room* GetRoom()
+	game::Room GetRoom()
 	{
-		if (GetRoomCount() > GetRoomIndex())
-		{
-			return ::context::editor::Scenario::Get().GetRoom(GetRoomList()[GetRoomIndex()]);
-		}
-		else
-		{
-			return nullptr;
-		}
+		return ::context::editor::Scenario::Get().GetRoom(GetRoomList()[GetRoomIndex()]);
 	}
 }

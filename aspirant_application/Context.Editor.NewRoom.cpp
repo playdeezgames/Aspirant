@@ -88,12 +88,12 @@ namespace context::editor::NewRoom
 		for (auto& identifier : identifiers)
 		{
 			auto descriptor = game::Descriptors::Get(identifier);
-			auto obj = descriptor.CreateObject();
-			if (obj->CanCover(nullptr))
+			nlohmann::json model;
+			auto obj = descriptor.CreateObject(model);
+			if (obj.CanCover(std::optional<game::object::Common>()))
 			{
 				terrains.push_back(identifier);
 			}
-			common::Finisher::Finish(obj);
 		}
 	}
 
