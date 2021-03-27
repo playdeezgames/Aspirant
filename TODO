@@ -1,4 +1,25 @@
-Bugs:
+Sort Out:
+    ☐ layout names do not really reflect the corresponding namespaces in the code
+        ☐ Splash
+        ☐ MainMenu
+        ☐ About
+        ☐ ConfirmQuit
+        ☐ Options
+        ☐ StartGame
+        ☐ StartEditor
+        ☐ EditScenarioSelector
+        ☐ EditScenario
+        ☐ EditPickRoom
+        ☐ EditNewRoom
+        ☐ EditScenarioDescriptor
+        ☐ EditNavigateRoom
+        ☐ RoomViewPosition
+        ☐ EditDescriptorSelector
+        ☐ StartPlayer
+        ☐ PlayerNewGame
+        ☐ PlayerLoadGame
+        ☐ EditAvatar
+☐ Bugs:
     ✔ I cannot attempt to "open" a scenario when there are no scenarios @done(21-03-27 16:31)
     ✔ In a freshly created scenario, attempting to edit the avatar crashes the game @done(21-03-27 16:23)
     ✔ When I edit a scenario descriptor, it does not save. @done(21-03-27 16:28)
@@ -6,3 +27,8 @@ Bugs:
         do i want to?
         do i have to have a confirm delete dialog?
     ☐ I do not have the ability to delete a room in a scenario
+        this is important to be able to do
+        need a confirm dialog
+Clunk:
+    
+

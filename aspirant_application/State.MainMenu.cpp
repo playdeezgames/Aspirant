@@ -7,7 +7,7 @@
 #include "Data.Strings.h"
 namespace state::MainMenu
 {
-	const std::string LAYOUT_NAME = "MainMenu";
+	const std::string LAYOUT_NAME = "State.MainMenu";
 	const std::string ITCH_URL_STRING = "ItchURL";
 	const std::string MENU_ITEM_START_COLOR_NAME = "MainMenu.Color.Start";
 	const std::string MENU_ITEM_ABOUT_COLOR_NAME = "MainMenu.Color.About";
