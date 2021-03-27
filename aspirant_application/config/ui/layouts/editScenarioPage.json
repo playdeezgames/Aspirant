@@ -1,13 +1,13 @@
 [
     {
-        "type": "StaticImage",
+        "type": "Image",
         "sprite": "Background",
         "color": "DarkGray",
         "x": 0,
         "y": 0
     },
     {
-        "type": "StaticText",
+        "type": "Text",
         "font": "default",
         "color": "LightGreen",
         "text": "==EDIT SCENARIO==",
@@ -20,7 +20,7 @@
         "dropShadowY": 2
     },
     {
-        "type": "StaticText",
+        "type": "Text",
         "font": "default",
         "color": "Brown",
         "text":  { "key": "EditScenario.Text.Header" },
@@ -33,7 +33,7 @@
         "dropShadowY": 2
     },
     {
-        "type": "StaticText",
+        "type": "Text",
         "font": "default",
         "color": { "key": "EditScenario.Color.Descriptor" },
         "text": "Edit Descriptor",
@@ -46,7 +46,7 @@
         "dropShadowY": 2
     },
     {
-        "type": "StaticText",
+        "type": "Text",
         "font": "default",
         "color": { "key": "EditScenario.Color.Avatar" },
         "text": "Edit Avatar",
@@ -59,7 +59,7 @@
         "dropShadowY": 2
     },
     {
-        "type": "StaticText",
+        "type": "Text",
         "font": "default",
         "color": { "key": "EditScenario.Color.OpenRoom" },
         "text": "Open Room",
@@ -72,7 +72,7 @@
         "dropShadowY": 2
     },
     {
-        "type": "StaticText",
+        "type": "Text",
         "font": "default",
         "color": { "key": "EditScenario.Color.NewRoom" },
         "text": "New Room",
@@ -85,7 +85,7 @@
         "dropShadowY": 2
     },
     {
-        "type": "StaticText",
+        "type": "Text",
         "font": "default",
         "color": { "key": "EditScenario.Color.Back" },
         "text": "Back",

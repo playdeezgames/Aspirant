@@ -1,13 +1,13 @@
 [
     {
-        "type": "StaticImage",
+        "type": "Image",
         "sprite": "Background",
         "color": "DarkGray",
         "x": 0,
         "y": 0
     },
     {
-        "type": "StaticText",
+        "type": "Text",
         "font": "default",
         "color": "LightRed",
         "text": "Are You Sure You Want To Quit?",
@@ -20,7 +20,7 @@
         "dropShadowY": 2
     },
     {
-        "type": "StaticText",
+        "type": "Text",
         "font": "default",
         "color": { "key": "ConfirmQuit.Color.No" },
         "text": "No",
@@ -33,7 +33,7 @@
         "dropShadowY": 2
     },
     {
-        "type": "StaticText",
+        "type": "Text",
         "font": "default",
         "color": { "key": "ConfirmQuit.Color.Yes" },
         "text": "Yes",

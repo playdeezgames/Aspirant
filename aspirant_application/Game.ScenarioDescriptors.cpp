@@ -3,6 +3,8 @@
 #include "Data.JSON.h"
 #include "Common.Finisher.h"
 #include <sstream>
+#include "Common.Properties.h"
+#include "Game.Properties.h"
 namespace game::ScenarioDescriptors
 {
 	static nlohmann::json table;
@@ -30,16 +32,10 @@ namespace game::ScenarioDescriptors
 		return maximum + 1;
 	}
 
-	const std::string PROPERTY_NAME = "name";
-	const std::string PROPERTY_BRIEF = "brief";
-	const std::string PROPERTY_FILE_NAME = "fileName";
-	const std::string PROPERTY_ID = "id";
-
 	const std::string SCENARIO_FILE_PREFIX = "scenarios/scenario_";
 	const std::string SCENARIO_FILE_SUFFIX = ".json";
 	const std::string DEFAULT_SCENARIO_NAME = "New Scenario";
 	const std::string DEFAULT_SCENARIO_BRIEF = "The best scenario ever!";
-
 
 	size_t Add()
 	{
@@ -48,10 +44,10 @@ namespace game::ScenarioDescriptors
 		ss << SCENARIO_FILE_PREFIX << scenarioId << SCENARIO_FILE_SUFFIX;
 		size_t index = table.size();
 		auto item = nlohmann::json();
-		item[PROPERTY_ID] = scenarioId;
-		item[PROPERTY_NAME] = DEFAULT_SCENARIO_NAME;
-		item[PROPERTY_BRIEF] = DEFAULT_SCENARIO_BRIEF;
-		item[PROPERTY_FILE_NAME] = ss.str();
+		item[game::Properties::ID] = scenarioId;
+		item[common::Properties::NAME] = DEFAULT_SCENARIO_NAME;
+		item[game::Properties::BRIEF] = DEFAULT_SCENARIO_BRIEF;
+		item[game::Properties::FILE_NAME] = ss.str();
 		table.push_back(item);
 		Save();
 		return index;

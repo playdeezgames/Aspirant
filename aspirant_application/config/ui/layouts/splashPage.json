@@ -1,13 +1,13 @@
 [
     {
-        "type": "StaticImage",
+        "type": "Image",
         "sprite": "Splash",
         "color": "White",
         "x": 0,
         "y": 0
     },
     {
-        "type": "StaticText",
+        "type": "Text",
         "font": "default",
         "color": "Cyan",
         "text": "Aspirant of SPLORR!!",
@@ -20,7 +20,7 @@
         "dropShadowY": 2
     },
     {
-        "type": "StaticText",
+        "type": "Text",
         "font": "font5x7",
         "color": "Gray",
         "text": "A Production of TheGrumpyGameDev",

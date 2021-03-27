@@ -1,9 +1,8 @@
 #include "Game.Cell.h"
 #include "Game.Descriptors.h"
+#include "Game.Properties.h"
 namespace game
 {
-	const std::string PROPERTY_OBJECTS = "objects";
-
 	Cell::Cell(nlohmann::json& model, size_t column, size_t row)
 		: model(model)
 		, column(column)
@@ -21,7 +20,7 @@ namespace game
 	std::vector<game::object::Common> Cell::GetObjects() const
 	{
 		std::vector<game::object::Common> result;
-		for (auto& obj : model[PROPERTY_OBJECTS])
+		for (auto& obj : model[game::Properties::OBJECTS])
 		{
 			result.push_back(game::object::Common(obj));
 		}

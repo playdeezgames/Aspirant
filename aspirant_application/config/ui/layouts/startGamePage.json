@@ -1,13 +1,13 @@
 [
     {
-        "type": "StaticImage",
+        "type": "Image",
         "sprite": "Background",
         "color": "DarkGray",
         "x": 0,
         "y": 0
     },
     {
-        "type": "StaticText",
+        "type": "Text",
         "font": "default",
         "color": "LightGreen",
         "text": "==START GAME==",
@@ -20,7 +20,7 @@
         "dropShadowY": 2
     },
     {
-        "type": "StaticText",
+        "type": "Text",
         "font": "default",
         "color": { "key": "StartGame.Color.Editor" },
         "text": "Editor",
@@ -33,7 +33,7 @@
         "dropShadowY": 2
     },
     {
-        "type": "StaticText",
+        "type": "Text",
         "font": "default",
         "color": { "key": "StartGame.Color.Play" },
         "text": "Play",
@@ -46,7 +46,7 @@
         "dropShadowY": 2
     },
     {
-        "type": "StaticText",
+        "type": "Text",
         "font": "default",
         "color": { "key": "StartGame.Color.Back" },
         "text": "Back",

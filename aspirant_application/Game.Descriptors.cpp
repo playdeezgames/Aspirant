@@ -3,12 +3,10 @@
 #include <map>
 #include "Common.Finisher.h"
 #include "Data.JSON.h"
+#include "Game.Properties.h"
+#include "Game.Types.h"
 namespace game::Descriptors
 {
-	const std::string PROPERTY_TYPE = "type";
-	const std::string TYPE_TERRAIN = "terrain";
-	const std::string TYPE_CREATURE = "creature";
-	const std::string TYPE_PLAYER = "player";
 	static nlohmann::json table;
 	static std::vector<std::string> identifiers;
 

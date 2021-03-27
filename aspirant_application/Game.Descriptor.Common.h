@@ -3,6 +3,9 @@
 #include "json.hpp"
 #include <SDL.h>
 #include "Common.XY.h"
+#include "Game.Properties.h"
+#include "Common.Properties.h"
+#include "Graphics.Properties.h"
 namespace game::object
 {
 	class Common;
@@ -17,8 +20,6 @@ namespace game::descriptor
 		Common& operator=(const Common&) = delete;
 		Common& operator=(Common&&) = delete;
 	private:
-		const std::string PROPERTY_TYPE = "type";
-		const std::string PROPERTY_SPRITE = "sprite";
 		const nlohmann::json& model;
 		std::string name;
 	public:
@@ -29,7 +30,7 @@ namespace game::descriptor
 		}
 		std::string GetType() const
 		{
-			return model[PROPERTY_TYPE];
+			return model[common::Properties::TYPE];
 		}
 		const std::string& GetName() const
 		{
@@ -38,7 +39,7 @@ namespace game::descriptor
 		game::object::Common CreateObject(nlohmann::json&) const;
 		std::string GetSprite() const
 		{
-			return model[PROPERTY_SPRITE];
+			return model[graphics::Properties::SPRITE];
 		}
 		void Draw(SDL_Renderer*, common::XY<int>) const;
 	};

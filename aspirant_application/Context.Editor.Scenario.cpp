@@ -5,6 +5,7 @@
 #include <SDL.h>
 #include "json.hpp"
 #include "Common.Properties.h"
+#include "Game.Properties.h"
 namespace context::editor::Scenario
 {
 	static nlohmann::json scenarioModel = nlohmann::json();
@@ -14,19 +15,15 @@ namespace context::editor::Scenario
 		return game::Scenario(scenarioModel);
 	}
 
-	const std::string PROPERTY_AVATAR = "avatar";
-	const std::string PROPERTY_ROOMS = "rooms";
-	const std::string PROPERTY_ROOM = "room";
-
 	void Start()
 	{
 		scenarioModel = nlohmann::json();
-		scenarioModel[PROPERTY_AVATAR] = nlohmann::json();
-		auto& avatar = scenarioModel[PROPERTY_AVATAR];
-		avatar[PROPERTY_ROOM] = "";
+		scenarioModel[game::Properties::AVATAR] = nlohmann::json();
+		auto& avatar = scenarioModel[game::Properties::AVATAR];
+		avatar[game::Properties::ROOM] = "";
 		avatar[common::Properties::X] = 0;
 		avatar[common::Properties::Y] = 0;
-		scenarioModel[PROPERTY_ROOMS] = nlohmann::json();
+		scenarioModel[game::Properties::ROOMS] = nlohmann::json();
 	}
 
 	void Save()

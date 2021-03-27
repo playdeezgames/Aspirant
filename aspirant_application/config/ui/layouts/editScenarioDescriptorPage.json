@@ -1,13 +1,13 @@
 [
     {
-        "type": "StaticImage",
+        "type": "Image",
         "sprite": "Background",
         "color": "DarkGray",
         "x": 0,
         "y": 0
     },
     {
-        "type": "StaticText",
+        "type": "Text",
         "font": "default",
         "color": "LightGreen",
         "text": "==DESCRIPTOR==",
@@ -20,7 +20,7 @@
         "dropShadowY": 2
     },
     {
-        "type": "StaticText",
+        "type": "Text",
         "font": "default",
         "color": { "key": "EditScenarioDescriptor.Color.ScenarioName" },
         "text": "Scenario Name",
@@ -33,7 +33,7 @@
         "dropShadowY": 2
     },
     {
-        "type": "StaticText",
+        "type": "Text",
         "font": "default",
         "color": "Brown",
         "text": { "key": "EditScenarioDescriptor.Text.ScenarioName" },
@@ -46,7 +46,7 @@
         "dropShadowY": 2
     },
     {
-        "type": "StaticText",
+        "type": "Text",
         "font": "default",
         "color": { "key": "EditScenarioDescriptor.Color.Brief" },
         "text": "Scenario Brief",
@@ -59,7 +59,7 @@
         "dropShadowY": 2
     },
     {
-        "type": "StaticText",
+        "type": "Text",
         "font": "default",
         "color": "Brown",
         "text": { "key": "EditScenarioDescriptor.Text.Brief" },
@@ -72,7 +72,7 @@
         "dropShadowY": 2
     },
     {
-        "type": "StaticText",
+        "type": "Text",
         "font": "default",
         "color": { "key": "EditScenarioDescriptor.Color.Back" },
         "text": "Back",

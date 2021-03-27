@@ -1,6 +1,6 @@
 [
     {
-        "type": "StaticText",
+        "type": "Text",
         "font": "default",
         "color": "Gray",
         "text": {

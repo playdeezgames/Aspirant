@@ -1,6 +1,6 @@
 [
     {
-        "type": "StaticImage",
+        "type": "Image",
         "sprite": "Background",
         "color": "DarkGray",
         "x": 0,

@@ -1,17 +1,16 @@
 #include "Game.Avatar.h"
 #include "Common.Properties.h"
+#include "Game.Properties.h"
 namespace game
 {
-	const std::string PROPERTY_ROOM = "room";
-
 	void Avatar::SetRoomId(const std::string& id)
 	{
-		model[PROPERTY_ROOM] = id;
+		model[game::Properties::ROOM] = id;
 	}
 
 	std::string Avatar::GetRoomId() const
 	{
-		return model[PROPERTY_ROOM];
+		return model[game::Properties::ROOM];
 	}
 
 	void Avatar::SetPosition(const common::XY<size_t> xy)

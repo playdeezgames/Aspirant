@@ -1,13 +1,13 @@
 [
     {
-        "type": "StaticImage",
+        "type": "Image",
         "sprite": "Background",
         "color": "DarkGray",
         "x": 0,
         "y": 0
     },
     {
-        "type": "StaticText",
+        "type": "Text",
         "font": "default",
         "color": "LightGreen",
         "text": "==NEW ROOM==",
@@ -20,7 +20,7 @@
         "dropShadowY": 2
     },
     {
-        "type": "StaticText",
+        "type": "Text",
         "font": "default",
         "color": { "key": "EditNewRoom.Color.RoomName" },
         "text": "Room Name",
@@ -33,7 +33,7 @@
         "dropShadowY": 2
     },
     {
-        "type": "StaticText",
+        "type": "Text",
         "font": "default",
         "color": "Brown",
         "text": { "key": "EditNewRoom.Text.RoomName" },
@@ -46,7 +46,7 @@
         "dropShadowY": 2
     },
     {
-        "type": "StaticText",
+        "type": "Text",
         "font": "default",
         "color": { "key": "EditNewRoom.Color.Columns" },
         "text": "Columns",
@@ -59,7 +59,7 @@
         "dropShadowY": 2
     },
     {
-        "type": "StaticText",
+        "type": "Text",
         "font": "default",
         "color": "Brown",
         "text": { "key": "EditNewRoom.Text.Columns" },
@@ -72,7 +72,7 @@
         "dropShadowY": 2
     },
     {
-        "type": "StaticText",
+        "type": "Text",
         "font": "default",
         "color": { "key": "EditNewRoom.Color.Rows" },
         "text": "Rows",
@@ -85,7 +85,7 @@
         "dropShadowY": 2
     },
     {
-        "type": "StaticText",
+        "type": "Text",
         "font": "default",
         "color": "Brown",
         "text": { "key": "EditNewRoom.Text.Rows" },
@@ -98,7 +98,7 @@
         "dropShadowY": 2
     },
     {
-        "type": "StaticText",
+        "type": "Text",
         "font": "default",
         "color": { "key": "EditNewRoom.Color.Terrain" },
         "text": "Terrain",
@@ -111,7 +111,7 @@
         "dropShadowY": 2
     },
     {
-        "type": "StaticText",
+        "type": "Text",
         "font": "default",
         "color": "Brown",
         "text": { "key": "EditNewRoom.Text.Terrain" },
@@ -124,7 +124,7 @@
         "dropShadowY": 2
     },
     {
-        "type": "StaticText",
+        "type": "Text",
         "font": "default",
         "color": { "key": "EditNewRoom.Color.Create" },
         "text": "Create",
@@ -137,7 +137,7 @@
         "dropShadowY": 2
     },
     {
-        "type": "StaticText",
+        "type": "Text",
         "font": "default",
         "color": { "key": "EditNewRoom.Color.Cancel" },
         "text": "Cancel",

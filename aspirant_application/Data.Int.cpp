@@ -1,9 +1,8 @@
 #include "Data.Int.h"
 #include "Data.Ints.h"
+#include "Data.Properties.h"
 namespace data
 {
-	const std::string PROPERTY_KEY = "key";
-
 	Int::operator int() const
 	{
 		if (model.is_number_integer())
@@ -12,7 +11,7 @@ namespace data
 		}
 		else if (model.is_object())
 		{
-			return ::data::Ints::Read(model[PROPERTY_KEY]);
+			return ::data::Ints::Read(model[Properties::KEY]);
 		}
 		else
 		{

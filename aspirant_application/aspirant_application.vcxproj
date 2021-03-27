@@ -149,6 +149,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Game.ScenarioDescriptor.cpp" />
     <ClCompile Include="State.About.cpp" />
     <ClCompile Include="Common.Application.cpp" />
     <ClCompile Include="Application.cpp" />
@@ -213,6 +214,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common.Properties.h" />
+    <ClInclude Include="Data.Properties.h" />
+    <ClInclude Include="Game.Properties.h" />
+    <ClInclude Include="Game.Types.h" />
+    <ClInclude Include="Graphics.Properties.h" />
+    <ClInclude Include="Graphics.Types.h" />
     <ClInclude Include="State.About.h" />
     <ClInclude Include="Common.Application.h" />
     <ClInclude Include="Application.h" />

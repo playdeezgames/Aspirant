@@ -1,13 +1,13 @@
 [
     {
-        "type": "StaticImage",
+        "type": "Image",
         "sprite": "Background",
         "color": "DarkGray",
         "x": 0,
         "y": 0
     },
     {
-        "type": "StaticText",
+        "type": "Text",
         "font": "default",
         "color": "LightGreen",
         "text": "==AVATAR==",
@@ -20,7 +20,7 @@
         "dropShadowY": 2
     },
     {
-        "type": "StaticText",
+        "type": "Text",
         "font": "default",
         "color": { "key": "EditAvatar.Color.RoomName" },
         "text": "Room Name",
@@ -33,7 +33,7 @@
         "dropShadowY": 2
     },
     {
-        "type": "StaticText",
+        "type": "Text",
         "font": "default",
         "color": "Brown",
         "text": { "key": "EditAvatar.Text.RoomName" },
@@ -46,7 +46,7 @@
         "dropShadowY": 2
     },
     {
-        "type": "StaticText",
+        "type": "Text",
         "font": "default",
         "color": { "key": "EditAvatar.Color.Column" },
         "text": "Columns",
@@ -59,7 +59,7 @@
         "dropShadowY": 2
     },
     {
-        "type": "StaticText",
+        "type": "Text",
         "font": "default",
         "color": "Brown",
         "text": { "key": "EditAvatar.Text.Column" },
@@ -72,7 +72,7 @@
         "dropShadowY": 2
     },
     {
-        "type": "StaticText",
+        "type": "Text",
         "font": "default",
         "color": { "key": "EditAvatar.Color.Row" },
         "text": "Rows",
@@ -85,7 +85,7 @@
         "dropShadowY": 2
     },
     {
-        "type": "StaticText",
+        "type": "Text",
         "font": "default",
         "color": "Brown",
         "text": { "key": "EditAvatar.Text.Row" },
@@ -98,7 +98,7 @@
         "dropShadowY": 2
     },
     {
-        "type": "StaticText",
+        "type": "Text",
         "font": "default",
         "color": { "key": "EditAvatar.Color.Back" },
         "text": "Back",

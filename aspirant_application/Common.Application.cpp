@@ -3,17 +3,16 @@
 #include <SDL_mixer.h>
 #include <SDL_image.h>
 #include "Data.JSON.h"
+#include "Common.Properties.h"
 namespace common::Application
 {
-	const std::string PROPERTY_WIDTH = "width";
-	const std::string PROPERTY_HEIGHT = "height";
-	const std::string PROPERTY_LOGICAL_WIDTH = "logicalWidth";
-	const std::string PROPERTY_LOGICAL_HEIGHT = "logicalHeight";
-	const std::string PROPERTY_TITLE = "title";
-	const std::string PROPERTY_ICON = "icon";
-	const std::string PROPERTY_MIXER_FREQUENCY = "mixerFrequency";
-	const std::string PROPERTY_CHANNEL_COUNT = "channelCount";
-	const std::string PROPERTY_CHUNK_SIZE = "chunkSize";
+	const std::string LOGICAL_WIDTH = "logicalWidth";
+	const std::string LOGICAL_HEIGHT = "logicalHeight";
+	const std::string TITLE = "title";
+	const std::string ICON = "icon";
+	const std::string MIXER_FREQUENCY = "mixerFrequency";
+	const std::string CHANNEL_COUNT = "channelCount";
+	const std::string CHUNK_SIZE = "chunkSize";
 
 	static SDL_Window* window = nullptr;
 	static SDL_Renderer* renderer = nullptr;
@@ -30,15 +29,15 @@ namespace common::Application
 		SDL_Init(SDL_INIT_EVERYTHING);
 		Mix_Init(MIX_INIT_OGG);
 		auto properties = data::JSON::Load(configFile);
-		int windowWidth = properties[PROPERTY_WIDTH];
-		int windowHeight = properties[PROPERTY_HEIGHT];
-		int logicalWidth = properties[PROPERTY_LOGICAL_WIDTH];
-		int logicalHeight = properties[PROPERTY_LOGICAL_HEIGHT];
-		std::string windowTitle = properties[PROPERTY_TITLE];
-		std::string iconFileName = properties[PROPERTY_ICON];
-		int mixerFrequency = properties[PROPERTY_MIXER_FREQUENCY];
-		int channelCount = properties[PROPERTY_CHANNEL_COUNT];
-		int chunkSize = properties[PROPERTY_CHUNK_SIZE];
+		int windowWidth = properties[common::Properties::WIDTH];
+		int windowHeight = properties[common::Properties::HEIGHT];
+		int logicalWidth = properties[LOGICAL_WIDTH];
+		int logicalHeight = properties[LOGICAL_HEIGHT];
+		std::string windowTitle = properties[TITLE];
+		std::string iconFileName = properties[ICON];
+		int mixerFrequency = properties[MIXER_FREQUENCY];
+		int channelCount = properties[CHANNEL_COUNT];
+		int chunkSize = properties[CHUNK_SIZE];
 		Mix_OpenAudio
 		(
 			mixerFrequency,

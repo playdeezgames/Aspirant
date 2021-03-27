@@ -3,12 +3,10 @@
 #include "Graphics.Image.h"
 #include "Graphics.Text.h"
 #include "Common.Finisher.h"
+#include "Common.Properties.h"
+#include "Graphics.Types.h"
 namespace graphics
 {
-	const std::string PROPERTY_TYPE = "type";
-	const std::string TYPE_STATIC_IMAGE = "StaticImage";
-	const std::string TYPE_STATIC_TEXT = "StaticText";
-
 	Layout::Layout
 	(
 		nlohmann::json& model
@@ -21,12 +19,12 @@ namespace graphics
 	{
 		for (auto& itemDescriptor : model)
 		{
-			std::string itemType = itemDescriptor[PROPERTY_TYPE];
-			if (itemType == TYPE_STATIC_IMAGE)
+			std::string itemType = itemDescriptor[common::Properties::TYPE];
+			if (itemType == graphics::Types::IMAGE)
 			{
 				graphics::Image(itemDescriptor).Draw(renderer);
 			}
-			else if (itemType == TYPE_STATIC_TEXT)
+			else if (itemType == graphics::Types::TEXT)
 			{
 				graphics::Text(itemDescriptor).Draw(renderer);
 			}

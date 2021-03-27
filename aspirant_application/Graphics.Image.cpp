@@ -4,11 +4,9 @@
 #include "Graphics.Colors.h"
 #include "Common.XY.h"
 #include "Common.Properties.h"
+#include "Graphics.Properties.h"
 namespace graphics
 {
-	const std::string PROPERTY_SPRITE = "sprite";
-	const std::string PROPERTY_COLOR = "color";
-
 	Image::Image(const nlohmann::json& model)
 		: model(model)
 	{
@@ -16,14 +14,14 @@ namespace graphics
 
 	void Image::Draw(SDL_Renderer* renderer) const
 	{
-		Sprites::Get(data::String(model[PROPERTY_SPRITE]))
+		Sprites::Get(data::String(model[Properties::SPRITE]))
 			.Draw
 			(
 				renderer,
 				common::XY<int>(
 					data::Int(model[common::Properties::X]), 
 					data::Int(model[common::Properties::X])),
-				::graphics::Colors::Get(data::String(model[PROPERTY_COLOR]))
+				::graphics::Colors::Get(data::String(model[Properties::COLOR]))
 			);
 	}
 }

@@ -2,22 +2,18 @@
 #include "Data.JSON.h"
 #include <map>
 #include <vector>
+#include "Graphics.Properties.h"
 namespace graphics::Colors
 {
-	const std::string PROPERTY_RED = "r";
-	const std::string PROPERTY_GREEN = "g";
-	const std::string PROPERTY_BLUE = "b";
-	const std::string PROPERTY_ALPHA = "a";
-
 	static nlohmann::json table;
 	
 	static SDL_Color ParseDescriptor(const nlohmann::json& properties)
 	{
 		SDL_Color result;
-		result.r = (Uint8)properties[PROPERTY_RED];
-		result.g = (Uint8)properties[PROPERTY_GREEN];
-		result.b = (Uint8)properties[PROPERTY_BLUE];
-		result.a = (Uint8)properties[PROPERTY_ALPHA];
+		result.r = (Uint8)properties[Properties::RED];
+		result.g = (Uint8)properties[Properties::GREEN];
+		result.b = (Uint8)properties[Properties::BLUE];
+		result.a = (Uint8)properties[Properties::ALPHA];
 		return result;
 	}
 

@@ -1,8 +1,8 @@
 #include "Data.String.h"
 #include "Data.Strings.h"
+#include "Data.Properties.h"
 namespace data
 {
-	const std::string PROPERTY_KEY = "key";
 
 	String::operator std::string () const
 	{
@@ -12,7 +12,7 @@ namespace data
 		}
 		else if (model.is_object())
 		{
-			return ::data::Strings::Get(model[PROPERTY_KEY]);
+			return ::data::Strings::Get(model[Properties::KEY]);
 		}
 		else
 		{

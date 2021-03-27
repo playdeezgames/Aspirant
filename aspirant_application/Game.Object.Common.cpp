@@ -1,11 +1,10 @@
 #include "Game.Object.Common.h"
 #include "Game.Descriptors.h"
+#include "Game.Properties.h"
+#include "Game.Types.h"
+#include "Common.Properties.h"
 namespace game::object
 {
-	const std::string TYPE_TERRAIN = "terrain";
-	const std::string TYPE_CREATURE = "creature";
-	const std::string TYPE_PLAYER = "player";
-	const std::string PROPERTY_TYPE = "type";
 
 	Common::Common(nlohmann::json& model)
 		: model(model)
@@ -15,7 +14,7 @@ namespace game::object
 
 	game::descriptor::Common Common::GetDescriptor() const
 	{
-		return game::Descriptors::Get(model[PROPERTY_TYPE]);
+		return game::Descriptors::Get(model[common::Properties::TYPE]);
 	}
 
 	void Common::Draw(SDL_Renderer* renderer, common::XY<int> position) const
@@ -33,11 +32,11 @@ namespace game::object
 	{
 		if (!previous.has_value())
 		{
-			return GetType() == TYPE_TERRAIN;
+			return GetType() == game::Types::TERRAIN;
 		}
-		else if(previous->GetType() == TYPE_TERRAIN)
+		else if(previous->GetType() == game::Types::TERRAIN)
 		{
-			return GetType() != TYPE_TERRAIN;
+			return GetType() != game::Types::TERRAIN;
 		}
 		else
 		{
@@ -47,11 +46,11 @@ namespace game::object
 
 	bool Common::IsTerrain() const
 	{
-		return GetType() == TYPE_TERRAIN;
+		return GetType() == game::Types::TERRAIN;
 	}
 
 	bool Common::IsCreature() const
 	{
-		return GetType() == TYPE_CREATURE || GetType() == TYPE_PLAYER;
+		return GetType() == game::Types::CREATURE || GetType() == game::Types::PLAYER;
 	}
 }

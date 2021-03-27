@@ -22,8 +22,6 @@ namespace graphics::Sprites
 	const std::string PROPERTY_TEXTURE = "texture";
 	const std::string PROPERTY_OFFSET_X = "offset-x";
 	const std::string PROPERTY_OFFSET_Y = "offset-y";
-	const std::string PROPERTY_W = "w";
-	const std::string PROPERTY_H = "h";
 
 	void Start(const std::string& fileName)
 	{
@@ -35,8 +33,8 @@ namespace graphics::Sprites
 			SDL_Rect source;
 			source.x = properties[common::Properties::X];
 			source.y = properties[common::Properties::Y];
-			source.w = properties[PROPERTY_W];
-			source.h = properties[PROPERTY_H];
+			source.w = properties[common::Properties::WIDTH];
+			source.h = properties[common::Properties::HEIGHT];
 			int offsetX = (properties.count(PROPERTY_OFFSET_X) > 0) ? ((int)properties[PROPERTY_OFFSET_X]) : (0);
 			int offsetY = (properties.count(PROPERTY_OFFSET_Y) > 0) ? ((int)properties[PROPERTY_OFFSET_Y]) : (0);
 			common::XY<int> offset(offsetX, offsetY);

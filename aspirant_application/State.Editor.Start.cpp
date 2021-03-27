@@ -10,15 +10,13 @@
 #include "Data.JSON.h"
 #include "Context.Editor.Scenarios.h"
 #include "Common.Properties.h"
+#include "Game.Properties.h"
 namespace state::editor::Start
 {
 	const std::string START_EDITOR_NEW_COLOR_NAME = "StartEditor.Color.New";
 	const std::string START_EDITOR_BACK_COLOR_NAME = "StartEditor.Color.Back";
 	const std::string START_EDITOR_OPEN_COLOR_NAME = "StartEditor.Color.Open";
 	const std::string LAYOUT_NAME = "StartEditor";
-	const std::string PROPERTY_ROOMS = "rooms";
-	const std::string PROPERTY_AVATAR = "avatar";
-	const std::string PROPERTY_ROOM = "room";
 
 	enum class StartEditorItem
 	{
@@ -50,12 +48,12 @@ namespace state::editor::Start
 	static void CreateScenarioFile(const std::string& fileName)
 	{
 		nlohmann::json model;
-		model[PROPERTY_AVATAR] = nlohmann::json({});
-		auto& avatarModel = model[PROPERTY_AVATAR];
-		avatarModel[PROPERTY_ROOM] = "";
+		model[game::Properties::AVATAR] = nlohmann::json({});
+		auto& avatarModel = model[game::Properties::AVATAR];
+		avatarModel[game::Properties::ROOM] = "";
 		avatarModel[common::Properties::X] = 0;
 		avatarModel[common::Properties::Y] = 0;
-		model[PROPERTY_ROOMS] = nlohmann::json({});
+		model[game::Properties::ROOMS] = nlohmann::json({});
 		data::JSON::Save(fileName, model);
 	}
 
