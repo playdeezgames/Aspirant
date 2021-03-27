@@ -2,6 +2,7 @@
 #include "Common.Utility.h"
 #include "Data.JSON.h"
 #include "Graphics.Textures.h"
+#include "Common.Properties.h"
 namespace graphics::Sprites
 {
 	static std::map<std::string, Sprite> sprites;
@@ -21,8 +22,6 @@ namespace graphics::Sprites
 	const std::string PROPERTY_TEXTURE = "texture";
 	const std::string PROPERTY_OFFSET_X = "offset-x";
 	const std::string PROPERTY_OFFSET_Y = "offset-y";
-	const std::string PROPERTY_X = "x";
-	const std::string PROPERTY_Y = "y";
 	const std::string PROPERTY_W = "w";
 	const std::string PROPERTY_H = "h";
 
@@ -34,8 +33,8 @@ namespace graphics::Sprites
 			auto& properties = item.value();
 			SDL_Texture* texture = ::graphics::Textures::Read(properties[PROPERTY_TEXTURE]);
 			SDL_Rect source;
-			source.x = properties[PROPERTY_X];
-			source.y = properties[PROPERTY_Y];
+			source.x = properties[common::Properties::X];
+			source.y = properties[common::Properties::Y];
 			source.w = properties[PROPERTY_W];
 			source.h = properties[PROPERTY_H];
 			int offsetX = (properties.count(PROPERTY_OFFSET_X) > 0) ? ((int)properties[PROPERTY_OFFSET_X]) : (0);

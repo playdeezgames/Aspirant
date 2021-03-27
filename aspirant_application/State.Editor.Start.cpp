@@ -9,6 +9,7 @@
 #include <sstream>
 #include "Data.JSON.h"
 #include "Context.Editor.Scenarios.h"
+#include "Common.Properties.h"
 namespace state::editor::Start
 {
 	const std::string START_EDITOR_NEW_COLOR_NAME = "StartEditor.Color.New";
@@ -18,8 +19,6 @@ namespace state::editor::Start
 	const std::string PROPERTY_ROOMS = "rooms";
 	const std::string PROPERTY_AVATAR = "avatar";
 	const std::string PROPERTY_ROOM = "room";
-	const std::string PROPERTY_X = "x";
-	const std::string PROPERTY_Y = "y";
 
 	enum class StartEditorItem
 	{
@@ -54,8 +53,8 @@ namespace state::editor::Start
 		model[PROPERTY_AVATAR] = nlohmann::json({});
 		auto& avatarModel = model[PROPERTY_AVATAR];
 		avatarModel[PROPERTY_ROOM] = "";
-		avatarModel[PROPERTY_X] = 0;
-		avatarModel[PROPERTY_Y] = 0;
+		avatarModel[common::Properties::X] = 0;
+		avatarModel[common::Properties::Y] = 0;
 		model[PROPERTY_ROOMS] = nlohmann::json({});
 		data::JSON::Save(fileName, model);
 	}

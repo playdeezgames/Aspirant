@@ -3,12 +3,11 @@
 #include "Graphics.Sprites.h"
 #include "Graphics.Colors.h"
 #include "Common.XY.h"
+#include "Common.Properties.h"
 namespace graphics
 {
 	const std::string PROPERTY_SPRITE = "sprite";
 	const std::string PROPERTY_COLOR = "color";
-	const std::string PROPERTY_X = "x";
-	const std::string PROPERTY_Y = "y";
 
 	Image::Image(const nlohmann::json& model)
 		: model(model)
@@ -21,7 +20,9 @@ namespace graphics
 			.Draw
 			(
 				renderer,
-				common::XY<int>(data::Int(model[PROPERTY_X]), data::Int(model[PROPERTY_X])),
+				common::XY<int>(
+					data::Int(model[common::Properties::X]), 
+					data::Int(model[common::Properties::X])),
 				::graphics::Colors::Get(data::String(model[PROPERTY_COLOR]))
 			);
 	}
