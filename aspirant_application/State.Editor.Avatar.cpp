@@ -119,11 +119,6 @@ namespace state::editor::Avatar
 		}
 	}
 
-	static void OnDraw(SDL_Renderer* renderer)
-	{
-		graphics::Layouts::Draw(renderer, LAYOUT_NAME);
-	}
-
 	static void OnUpdate(const Uint32& ticks)
 	{
 		auto avatar = context::editor::Scenario::Get().GetAvatar();
@@ -152,7 +147,7 @@ namespace state::editor::Avatar
 	void Start()
 	{
 		Application::SetCommandHandler(UIState::EDIT_AVATAR, OnCommand);
-		Application::SetRenderHandler(UIState::EDIT_AVATAR, OnDraw);
+		Application::SetRenderLayout(UIState::EDIT_AVATAR, LAYOUT_NAME);
 		Application::SetUpdateHandler(UIState::EDIT_AVATAR, OnUpdate);
 		Application::SetTextInputHandler(UIState::EDIT_AVATAR, OnTextInput);
 	}

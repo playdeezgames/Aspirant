@@ -90,11 +90,6 @@ namespace state::MainMenu
 		}
 	}
 
-	static void OnDraw(SDL_Renderer* renderer)
-	{
-		graphics::Layouts::Draw(renderer, LAYOUT_NAME);
-	}
-
 	static void OnUpdate(const Uint32& ticks)
 	{
 		MenuItem<MainMenuItem>::Update(items, current);
@@ -103,7 +98,7 @@ namespace state::MainMenu
 	void Start()
 	{
 		::Application::SetCommandHandler(::UIState::MAIN_MENU, OnCommand);
-		::Application::SetRenderHandler(::UIState::MAIN_MENU, OnDraw);
+		::Application::SetRenderLayout(::UIState::MAIN_MENU, LAYOUT_NAME);
 		::Application::SetUpdateHandler(::UIState::MAIN_MENU, OnUpdate);
 	}
 }

@@ -63,11 +63,6 @@ namespace state::Start
 		}
 	}
 
-	static void OnDraw(SDL_Renderer* renderer)
-	{
-		graphics::Layouts::Draw(renderer, LAYOUT_NAME);
-	}
-
 	static void OnUpdate(const Uint32& ticks)
 	{
 		MenuItem<StartGameItem>::Update(items, current);
@@ -76,7 +71,7 @@ namespace state::Start
 	void Start()
 	{
 		::Application::SetCommandHandler(::UIState::START_GAME, OnCommand);
-		::Application::SetRenderHandler(::UIState::START_GAME, OnDraw);
+		::Application::SetRenderLayout(::UIState::START_GAME, LAYOUT_NAME);
 		::Application::SetUpdateHandler(::UIState::START_GAME, OnUpdate);
 	}
 }

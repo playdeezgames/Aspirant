@@ -58,11 +58,6 @@ namespace state::ConfirmQuit
 		}
 	}
 
-	static void OnDraw(SDL_Renderer* renderer)
-	{
-		graphics::Layouts::Draw(renderer, LAYOUT_NAME);
-	}
-
 	static void OnUpdate(const Uint32& ticks)
 	{
 		MenuItem<ConfirmQuitItem>::Update(items, current);
@@ -71,7 +66,7 @@ namespace state::ConfirmQuit
 	void Start()
 	{
 		::Application::SetCommandHandler(::UIState::CONFIRM_QUIT, OnCommand);
-		::Application::SetRenderHandler(::UIState::CONFIRM_QUIT, OnDraw);
+		::Application::SetRenderLayout(::UIState::CONFIRM_QUIT, LAYOUT_NAME);
 		::Application::SetUpdateHandler(::UIState::CONFIRM_QUIT, OnUpdate);
 	}
 }

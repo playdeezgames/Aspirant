@@ -103,11 +103,6 @@ namespace state::editor::Start
 		}
 	}
 
-	static void OnDraw(SDL_Renderer* renderer)
-	{
-		graphics::Layouts::Draw(renderer, LAYOUT_NAME);
-	}
-
 	static void OnUpdate(const Uint32& ticks)
 	{
 		MenuItem<StartEditorItem>::Update(items, current);
@@ -118,9 +113,9 @@ namespace state::editor::Start
 		::Application::SetCommandHandler(
 			::UIState::START_EDITOR,
 			OnCommand);
-		::Application::SetRenderHandler(
+		::Application::SetRenderLayout(
 			::UIState::START_EDITOR,
-			OnDraw);
+			LAYOUT_NAME);
 		::Application::SetUpdateHandler(
 			::UIState::START_EDITOR,
 			OnUpdate);

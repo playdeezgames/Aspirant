@@ -145,11 +145,6 @@ namespace state::editor::NewRoom
 
 	}
 
-	static void OnDraw(SDL_Renderer* renderer)
-	{
-		graphics::Layouts::Draw(renderer, LAYOUT_NAME);
-	}
-
 	static void OnUpdate(const Uint32& ticks)
 	{
 		MenuItem<NewRoomItem>::Update(items, current);
@@ -178,7 +173,7 @@ namespace state::editor::NewRoom
 	void Start()
 	{
 		::Application::SetCommandHandler(::UIState::EDIT_NEW_ROOM, OnCommand);
-		::Application::SetRenderHandler(::UIState::EDIT_NEW_ROOM, OnDraw);
+		::Application::SetRenderLayout(::UIState::EDIT_NEW_ROOM, LAYOUT_NAME);
 		::Application::SetUpdateHandler(::UIState::EDIT_NEW_ROOM, OnUpdate);
 		::Application::SetTextInputHandler(::UIState::EDIT_NEW_ROOM, OnTextInput);
 	}

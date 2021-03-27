@@ -32,11 +32,6 @@ namespace state::editor::PickRoom
 		}
 	}
 
-	static void OnDraw(SDL_Renderer* renderer)
-	{
-		graphics::Layouts::Draw(renderer, LAYOUT_NAME);
-	}
-
 	static void OnUpdate(const Uint32& ticks)
 	{
 		if (::context::editor::Rooms::GetRoomCount() > 0)
@@ -53,7 +48,7 @@ namespace state::editor::PickRoom
 	void Start()
 	{
 		::Application::SetCommandHandler(::UIState::EDIT_PICK_ROOM, OnCommand);
-		::Application::SetRenderHandler(::UIState::EDIT_PICK_ROOM, OnDraw);
+		::Application::SetRenderLayout(::UIState::EDIT_PICK_ROOM, LAYOUT_NAME);
 		::Application::SetUpdateHandler(::UIState::EDIT_PICK_ROOM, OnUpdate);
 	}
 }

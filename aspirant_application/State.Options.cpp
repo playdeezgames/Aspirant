@@ -148,11 +148,6 @@ namespace state::Options
 		}
 	}
 
-	static void OnDraw(SDL_Renderer* renderer)
-	{
-		graphics::Layouts::Draw(renderer, LAYOUT_NAME);
-	}
-
 	static void OnUpdate(const Uint32& ticks)
 	{
 		MenuItem<OptionsItem>::Update(items, current);
@@ -180,7 +175,7 @@ namespace state::Options
 	void Start()
 	{
 		::Application::SetCommandHandler(::UIState::OPTIONS, OnCommand);
-		::Application::SetRenderHandler(::UIState::OPTIONS, OnDraw);
+		::Application::SetRenderLayout(::UIState::OPTIONS, LAYOUT_NAME);
 		::Application::SetUpdateHandler(::UIState::OPTIONS, OnUpdate);
 	}
 }

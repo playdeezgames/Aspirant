@@ -54,6 +54,6 @@ namespace state::editor::PickDescriptor
 	void Start()
 	{
 		::Application::SetCommandHandler(::UIState::EDIT_DESCRIPTOR_SELECTOR, OnCommand);
-		::Application::SetRenderHandler(::UIState::EDIT_DESCRIPTOR_SELECTOR, OnDraw);
+		::Application::SetRenderLayout(::UIState::EDIT_DESCRIPTOR_SELECTOR, LAYOUT_NAME);
 	}
 }

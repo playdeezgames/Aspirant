@@ -16,14 +16,9 @@ namespace state::About
 		}
 	}
 
-	static void OnDraw(SDL_Renderer* renderer)
-	{
-		graphics::Layouts::Draw(renderer, LAYOUT_NAME);
-	}
-
 	void Start()
 	{
 		::Application::SetCommandHandler(::UIState::ABOUT, OnCommand);
-		::Application::SetRenderHandler(::UIState::ABOUT, OnDraw);
+		::Application::SetRenderLayout(::UIState::ABOUT, LAYOUT_NAME);
 	}
 }

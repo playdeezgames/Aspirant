@@ -18,11 +18,6 @@ namespace state::player::Start
 		}
 	}
 
-	static void OnDraw(SDL_Renderer* renderer)
-	{
-		graphics::Layouts::Draw(renderer, LAYOUT_NAME);
-	}
-
 	static void OnUpdate(const Uint32& ticks)
 	{
 	}
@@ -30,7 +25,7 @@ namespace state::player::Start
 	void Start()
 	{
 		::Application::SetCommandHandler(::UIState::START_PLAYER, OnCommand);
-		::Application::SetRenderHandler(::UIState::START_PLAYER, OnDraw);
+		::Application::SetRenderLayout(::UIState::START_PLAYER, LAYOUT_NAME);
 		::Application::SetUpdateHandler(::UIState::START_PLAYER, OnUpdate);
 	}
 }

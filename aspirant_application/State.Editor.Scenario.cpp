@@ -80,11 +80,6 @@ namespace state::editor::Scenario
 		}
 	}
 
-	static void OnDraw(SDL_Renderer* renderer)
-	{
-		graphics::Layouts::Draw(renderer, LAYOUT_NAME);
-	}
-
 	static void UpdateHeader()
 	{
 		std::stringstream ss;
@@ -102,7 +97,7 @@ namespace state::editor::Scenario
 	void Start()
 	{
 		::Application::SetCommandHandler(::UIState::EDIT_SCENARIO, OnCommand);
-		::Application::SetRenderHandler(::UIState::EDIT_SCENARIO, OnDraw);
+		::Application::SetRenderLayout(::UIState::EDIT_SCENARIO, LAYOUT_NAME);
 		::Application::SetUpdateHandler(::UIState::EDIT_SCENARIO, OnUpdate);
 	}
 }

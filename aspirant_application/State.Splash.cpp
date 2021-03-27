@@ -13,11 +13,6 @@ namespace state::Splash
 		ticksLeft = 0;
 	}
 
-	static void OnDraw(SDL_Renderer* renderer)
-	{
-		graphics::Layouts::Draw(renderer, LAYOUT_NAME);
-	}
-
 	static void OnUpdate(const Uint32& ticks)
 	{
 		ticksLeft = (ticksLeft > ticks) ? (ticksLeft - ticks) : (0);
@@ -31,7 +26,7 @@ namespace state::Splash
 	void Start()
 	{
 		::Application::SetCommandHandler(::UIState::SPLASH, OnCommand);
-		::Application::SetRenderHandler(::UIState::SPLASH, OnDraw);
+		::Application::SetRenderLayout(::UIState::SPLASH, LAYOUT_NAME);
 		::Application::SetUpdateHandler(::UIState::SPLASH, OnUpdate);
 	}
 }
