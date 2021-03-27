@@ -62,7 +62,6 @@ namespace state::editor::Start
 		int scenarioId = ::game::ScenarioDescriptors::GetNextId();
 		::context::editor::Scenarios::SetIndex(::game::ScenarioDescriptors::Add());
 		CreateScenarioFile(game::ScenarioDescriptors::Get(context::editor::Scenarios::GetIndex()).GetFileName());
-		::Application::SetUIState(::UIState::EDIT_SCENARIO);
 	}
 
 	static void ActivateItem()
@@ -74,9 +73,13 @@ namespace state::editor::Start
 			break;
 		case StartEditorItem::NEW:
 			CreateNewScenario();
+			::Application::SetUIState(::UIState::EDIT_SCENARIO_SELECTOR);
 			break;
 		case StartEditorItem::OPEN:
-			::Application::SetUIState(::UIState::EDIT_SCENARIO_SELECTOR);
+			if (game::ScenarioDescriptors::GetCount() > 0)
+			{
+				::Application::SetUIState(::UIState::EDIT_SCENARIO_SELECTOR);
+			}
 			break;
 		}
 	}

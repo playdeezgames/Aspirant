@@ -35,6 +35,7 @@ namespace state::editor::ScenarioDescriptor
 		switch (current)
 		{
 		case EditScenarioDescriptorItem::BACK:
+			game::ScenarioDescriptors::Save();
 			::Application::SetUIState(::UIState::EDIT_SCENARIO);
 			break;
 		}
@@ -77,6 +78,7 @@ namespace state::editor::ScenarioDescriptor
 				descriptor.SetBrief("");
 				break;
 			default:
+				game::ScenarioDescriptors::Save();
 				::Application::SetUIState(::UIState::EDIT_SCENARIO);;
 				break;
 			}
