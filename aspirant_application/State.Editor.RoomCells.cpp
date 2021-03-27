@@ -79,11 +79,6 @@ namespace state::editor::RoomCells
 		}
 	}
 
-	static void OnDraw(SDL_Renderer* renderer)
-	{
-		graphics::Layouts::Draw(renderer, LAYOUT_NAME);
-	}
-
 	static void OnUpdate(const Uint32& ticks)
 	{
 		auto& cursorPosition = ::context::editor::RoomView::GetCursor();
