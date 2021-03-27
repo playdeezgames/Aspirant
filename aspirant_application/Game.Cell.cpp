@@ -11,10 +11,10 @@ namespace game
 
 	}
 
-	game::object::Common Cell::AddObject()
+	game::object::Common Cell::AddObject(const game::descriptor::Common& descriptor)
 	{
-		model.push_back(nlohmann::json());
-		return game::object::Common(model.back());
+		model[game::Properties::OBJECTS].push_back(nlohmann::json());
+		return descriptor.CreateObject(model[game::Properties::OBJECTS].back());
 	}
 
 	std::vector<game::object::Common> Cell::GetObjects() const
@@ -44,13 +44,13 @@ namespace game
 
 	bool Cell::RemoveObject()
 	{
-		if (model.empty())
+		if (model[game::Properties::OBJECTS].empty())
 		{
 			return false;
 		}
 		else
 		{
-			model.erase(model.size() - 1);
+			model[game::Properties::OBJECTS].erase(model[game::Properties::OBJECTS].size() - 1);
 			return true;
 		}
 	}

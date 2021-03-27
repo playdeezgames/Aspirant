@@ -1,7 +1,5 @@
 #pragma once
 #include "Game.Object.Common.h"
-#include "Game.Descriptors.h"
-#include "Common.Finisher.h"
 namespace game
 {
 	class Cell
@@ -12,7 +10,7 @@ namespace game
 		size_t row;
 	public:
 		Cell(nlohmann::json&, size_t, size_t);
-		game::object::Common AddObject();
+		game::object::Common AddObject(const game::descriptor::Common&);
 		std::vector<::game::object::Common> GetObjects() const;
 		bool HasObjects() const;
 		size_t GetColumn() const;

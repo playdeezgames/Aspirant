@@ -30,9 +30,14 @@ namespace game
 			while (row.size() < columns)
 			{
 				row.push_back(nlohmann::json());
+
 				auto& cell = row.back();
-				cell.push_back(nlohmann::json());
-				auto& obj = cell.back();
+				cell[game::Properties::OBJECTS] = nlohmann::json();
+
+				auto& objs = cell[game::Properties::OBJECTS];
+				objs.push_back(nlohmann::json());
+
+				auto& obj = objs.back();
 				obj[common::Properties::TYPE] = terrain;
 			}
 		}
