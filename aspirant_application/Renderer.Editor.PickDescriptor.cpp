@@ -16,7 +16,7 @@ namespace renderer::editor::PickDescriptor
 		return common::XY<int>(OFFSET_X + (int)position.GetX() * TILE_WIDTH, OFFSET_Y + (int)position.GetY() * TILE_HEIGHT);
 	}
 
-	void Draw(SDL_Renderer* renderer)
+	void Draw(SDL_Renderer* renderer, const nlohmann::json&)
 	{
 		for (size_t idx = 0; idx < ::context::editor::PickDescriptor::GetCount(); ++idx)
 		{

@@ -9,7 +9,7 @@
 #include "Context.Editor.PickDescriptor.h"
 namespace state::editor::PickDescriptor
 {
-	const std::string LAYOUT_NAME = "EditDescriptorSelector";
+	const std::string LAYOUT_NAME = "State.Editor.PickDescriptor";
 
 	static void ChangeIndex(int delta)
 	{
@@ -49,9 +49,6 @@ namespace state::editor::PickDescriptor
 	static void OnDraw(SDL_Renderer* renderer)
 	{
 		graphics::Layouts::Draw(renderer, LAYOUT_NAME);
-		renderer::editor::Room::Draw(renderer);
-		renderer::editor::RoomCellObjects::Draw(renderer);
-		renderer::editor::PickDescriptor::Draw(renderer);
 	}
 
 	void Start()

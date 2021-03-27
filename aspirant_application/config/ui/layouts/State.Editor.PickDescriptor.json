@@ -12,5 +12,14 @@
         "color": "White",
         "x": 360,
         "y": 36
+    },
+    {
+        "type": "Renderer.Editor.Room"
+    },
+    {
+        "type": "Renderer.Editor.PickDescriptor"
+    },
+    {
+        "type": "Renderer.Editor.Cell"
     }
 ]

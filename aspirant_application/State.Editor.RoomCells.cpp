@@ -15,8 +15,7 @@
 #include "Context.Editor.PickDescriptor.h"
 namespace state::editor::RoomCells
 {
-	const std::string LAYOUT_NAME = "EditNavigateRoom";
-	const std::string LAYOUT_ROOM_VIEW_POSITION = "RoomViewPosition";
+	const std::string LAYOUT_NAME = "State.Editor.RoomCells";
 	const std::string TEXT_ROOM_VIEW_POSITION_NAME = "RoomViewPosition.Text.Position";
 
 	static void MoveCursor(const common::XY<int>& delta)
@@ -83,10 +82,6 @@ namespace state::editor::RoomCells
 	static void OnDraw(SDL_Renderer* renderer)
 	{
 		graphics::Layouts::Draw(renderer, LAYOUT_NAME);
-		renderer::editor::Room::Draw(renderer);
-		renderer::editor::RoomCellObjects::Draw(renderer);
-		renderer::editor::PickDescriptor::Draw(renderer);
-		graphics::Layouts::Draw(renderer, LAYOUT_ROOM_VIEW_POSITION);
 	}
 
 	static void OnUpdate(const Uint32& ticks)

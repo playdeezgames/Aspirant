@@ -1,7 +1,7 @@
 Sort Out:
     ☐ layout names do not really reflect the corresponding namespaces in the code
         ☐ Splash
-        ☐ MainMenu
+        ✔ MainMenu @done(21-03-27 17:35)
         ☐ About
         ☐ ConfirmQuit
         ☐ Options
@@ -30,5 +30,5 @@ Sort Out:
         this is important to be able to do
         need a confirm dialog
 Clunk:
-    
+
 

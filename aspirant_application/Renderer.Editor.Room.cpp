@@ -52,7 +52,7 @@ namespace renderer::editor::Room
 		graphics::Sprites::Get(SPRITE_CURSOR).Draw(renderer, Plot(viewPosition));
 	}
 
-	void Draw(SDL_Renderer* renderer)
+	void Draw(SDL_Renderer* renderer, const nlohmann::json&)
 	{
 		auto room = context::editor::Rooms::GetRoom();
 		DrawRoom(renderer, room);

@@ -14,7 +14,7 @@ namespace renderer::editor::RoomCellObjects
 		return { OFFSET_X + (int)position.GetX() * TILE_WIDTH, OFFSET_Y };
 	}
 
-	void Draw(SDL_Renderer* renderer)
+	void Draw(SDL_Renderer* renderer, const nlohmann::json&)
 	{
 		auto objs = context::editor::Cell::GetCell()->GetObjects();
 		size_t column = 0;
