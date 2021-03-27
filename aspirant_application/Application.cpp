@@ -173,7 +173,8 @@ namespace common::Application
 		::context::editor::NewRoom::Start,
 		state::player::Start::Start,
 		state::player::NewGame::Start,
-		state::editor::Avatar::Start
+		state::editor::Avatar::Start,
+		state::editor::Scenario::Start
 	};
 
 	void Start(SDL_Renderer* renderer, const std::vector<std::string>& arguments)

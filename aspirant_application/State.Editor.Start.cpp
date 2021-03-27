@@ -16,6 +16,10 @@ namespace state::editor::Start
 	const std::string START_EDITOR_OPEN_COLOR_NAME = "StartEditor.Color.Open";
 	const std::string LAYOUT_NAME = "StartEditor";
 	const std::string PROPERTY_ROOMS = "rooms";
+	const std::string PROPERTY_AVATAR = "avatar";
+	const std::string PROPERTY_ROOM = "room";
+	const std::string PROPERTY_X = "x";
+	const std::string PROPERTY_Y = "y";
 
 	enum class StartEditorItem
 	{
@@ -46,9 +50,14 @@ namespace state::editor::Start
 
 	static void CreateScenarioFile(const std::string& fileName)
 	{
-		nlohmann::json properties;
-		properties[PROPERTY_ROOMS] = nlohmann::json({});
-		data::JSON::Save(fileName, properties);
+		nlohmann::json model;
+		model[PROPERTY_AVATAR] = nlohmann::json({});
+		auto& avatarModel = model[PROPERTY_AVATAR];
+		avatarModel[PROPERTY_ROOM] = "";
+		avatarModel[PROPERTY_X] = 0;
+		avatarModel[PROPERTY_Y] = 0;
+		model[PROPERTY_ROOMS] = nlohmann::json({});
+		data::JSON::Save(fileName, model);
 	}
 
 	static void CreateNewScenario()
