@@ -3,8 +3,8 @@
 #include "Game.Descriptors.h"
 namespace game
 {
-	Scenario::Scenario()
-		: model()
+	Scenario::Scenario(nlohmann::json& model)
+		: model(model)
 		, rooms()
 		, avatarModel()
 	{

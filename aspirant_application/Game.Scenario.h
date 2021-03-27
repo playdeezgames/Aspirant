@@ -12,12 +12,12 @@ namespace game
 	class Scenario
 	{
 	private:
-		nlohmann::json model;
+		nlohmann::json& model;
 		nlohmann::json avatarModel;
 		std::map<std::string, Room*> rooms;
 		void Clear();
 	public:
-		Scenario();
+		Scenario(nlohmann::json&);
 		virtual ~Scenario();
 		void FromJSON(const nlohmann::json&);
 		nlohmann::json ToJSON() const;

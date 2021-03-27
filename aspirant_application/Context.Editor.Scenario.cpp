@@ -6,39 +6,30 @@
 #include "json.hpp"
 namespace context::editor::Scenario
 {
-	static ::game::Scenario scenario;
+	static nlohmann::json scenarioModel;
 
-	::game::Scenario& Get()
+	game::Scenario Get()
 	{
-		return scenario;
+		return game::Scenario(scenarioModel);
 	}
 
 	void Save()
 	{
-		auto start = SDL_GetTicks();
-		auto properties = 
-			Get().ToJSON();
-		auto elapsed = SDL_GetTicks() - start;
-		SDL_Log("%d", elapsed);
-		start = SDL_GetTicks();
 		data::JSON::Save(
 			::game::ScenarioDescriptors::Get(
 				::context::editor::Scenarios::GetIndex())
 			.GetFileName(),
-			properties
+			scenarioModel
 			);
-		elapsed = SDL_GetTicks() - start;
-		SDL_Log("%d", elapsed);
 	}
 
 	void Load()
 	{
-		::context::editor::Scenario::Get()
-			.FromJSON(
+		scenarioModel = 
 				data::JSON::Load(
 					::game::ScenarioDescriptors::Get(
 						::context::editor::Scenarios::GetIndex())
-					.GetFileName()));
+					.GetFileName());
 	}
 
 }
