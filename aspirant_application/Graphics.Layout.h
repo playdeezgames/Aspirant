@@ -18,14 +18,11 @@ namespace graphics
 		Layout& operator=(Layout&&) = delete;
 	private:
 		nlohmann::json& model;
-		std::list<::graphics::Drawn*> drawnItems;
 	public:
 		Layout
 		(
 			nlohmann::json&
 		);
 		void Draw(SDL_Renderer*) const;
-		void Finish();
-		void Add(Drawn*);
 	};
 }

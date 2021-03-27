@@ -13,49 +13,23 @@ namespace graphics
 	(
 		nlohmann::json& model
 	)
-		: drawnItems()
-		, model(model)
+		: model(model)
+	{
+	}
+
+	void Layout::Draw(SDL_Renderer* renderer) const
 	{
 		for (auto& itemDescriptor : model)
 		{
 			std::string itemType = itemDescriptor[PROPERTY_TYPE];
 			if (itemType == TYPE_STATIC_IMAGE)
 			{
-				drawnItems.push_back
-				(
-					new graphics::Image(itemDescriptor)
-				);
+				graphics::Image(itemDescriptor).Draw(renderer);
 			}
 			else if (itemType == TYPE_STATIC_TEXT)
 			{
-				drawnItems.push_back
-				(
-					new graphics::Text(itemDescriptor)
-				);
+				graphics::Text(itemDescriptor).Draw(renderer);
 			}
 		}
-	}
-
-	void Layout::Draw(SDL_Renderer* renderer) const
-	{
-		for (auto& item : drawnItems)
-		{
-			item->Draw(renderer);
-		}
-	}
-
-	void Layout::Finish()
-	{
-		for (auto& item : drawnItems)
-		{
-			common::Finisher::Finish(item);
-		}
-		drawnItems.clear();
-	}
-
-	void Layout::Add(Drawn* drawn)
-	{
-		drawnItems.remove(drawn);
-		drawnItems.push_back(drawn);
 	}
 }
