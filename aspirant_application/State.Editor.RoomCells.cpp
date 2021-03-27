@@ -41,7 +41,7 @@ namespace state::editor::RoomCells
 	{
 		auto& cursorPosition = ::context::editor::RoomView::GetCursor();
 		auto roomCell = ::context::editor::Rooms::GetRoom().GetCell(cursorPosition.GetX(), cursorPosition.GetY());
-		roomCell.RemoveObject();
+		roomCell->RemoveObject();
 	}
 
 	static void OnCommand(const ::Command& command)

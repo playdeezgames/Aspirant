@@ -16,7 +16,7 @@ namespace renderer::editor::RoomCellObjects
 
 	void Draw(SDL_Renderer* renderer)
 	{
-		auto objs = context::editor::Cell::GetCell().GetObjects();
+		auto objs = context::editor::Cell::GetCell()->GetObjects();
 		size_t column = 0;
 		for (auto& obj : objs)
 		{

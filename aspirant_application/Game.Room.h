@@ -1,5 +1,6 @@
 #pragma once
 #include "Game.Cell.h"
+#include <optional>
 namespace game
 {
 	class Room
@@ -9,7 +10,7 @@ namespace game
 	public:
 		void SetSize(size_t, size_t);
 		Room(nlohmann::json&);
-		Cell GetCell(size_t, size_t);
+		std::optional<Cell> GetCell(size_t, size_t);
 		size_t GetColumns() const;
 		size_t GetRows() const;
 	};

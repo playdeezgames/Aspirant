@@ -16,12 +16,15 @@ namespace renderer::editor::Room
 		return common::XY<int>(OFFSET_X + (int)position.GetX() * TILE_WIDTH, OFFSET_Y + (int)position.GetY() * TILE_HEIGHT);
 	}
 
-	static void DrawCell(SDL_Renderer* renderer, const common::XY<size_t>& viewPosition, const ::game::Cell& cell)
+	static void DrawCell(SDL_Renderer* renderer, const common::XY<size_t>& viewPosition, const std::optional<game::Cell>& cell)
 	{
-		auto objs = cell.GetObjects();
-		for (auto& obj : objs)
+		if (cell.has_value())
 		{
-			obj.Draw(renderer, Plot(viewPosition));
+			auto objs = cell->GetObjects();
+			for (auto& obj : objs)
+			{
+				obj.Draw(renderer, Plot(viewPosition));
+			}
 		}
 	}
 

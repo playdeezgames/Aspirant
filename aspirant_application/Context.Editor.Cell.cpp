@@ -11,7 +11,7 @@ namespace context::editor::Cell
 		return index;
 	}
 
-	::game::Cell GetCell()
+	std::optional<game::Cell> GetCell()
 	{
 		return ::context::editor::Rooms::GetRoom().GetCell(::context::editor::RoomView::GetCursor().GetX(), ::context::editor::RoomView::GetCursor().GetY());
 	}
@@ -19,6 +19,6 @@ namespace context::editor::Cell
 	void Reset()
 	{
 		auto cell = GetCell();
-		index = cell.GetObjects().size();
+		index = cell->GetObjects().size();
 	}
 }

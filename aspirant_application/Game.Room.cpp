@@ -31,9 +31,16 @@ namespace game
 
 	}
 
-	Cell Room::GetCell(size_t column, size_t row)
+	std::optional<Cell> Room::GetCell(size_t column, size_t row)
 	{
-		return Cell(model[row][column], column, row);
+		if (column < GetColumns() && row < GetRows())
+		{
+			return Cell(model[row][column], column, row);
+		}
+		else
+		{
+			return std::optional<Cell>();
+		}
 	}
 
 	size_t Room::GetColumns() const
