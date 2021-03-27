@@ -48,7 +48,7 @@ namespace state::editor::PickDescriptor
 
 	static void OnDraw(SDL_Renderer* renderer)
 	{
-		graphics::Layouts::Get(LAYOUT_NAME).Draw(renderer);
+		graphics::Layouts::Draw(renderer, LAYOUT_NAME);
 		renderer::editor::Room::Draw(renderer);
 		renderer::editor::RoomCellObjects::Draw(renderer);
 		renderer::editor::PickDescriptor::Draw(renderer);

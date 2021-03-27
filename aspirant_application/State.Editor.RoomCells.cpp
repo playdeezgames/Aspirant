@@ -82,11 +82,11 @@ namespace state::editor::RoomCells
 
 	static void OnDraw(SDL_Renderer* renderer)
 	{
-		graphics::Layouts::Get(LAYOUT_NAME).Draw(renderer);
+		graphics::Layouts::Draw(renderer, LAYOUT_NAME);
 		renderer::editor::Room::Draw(renderer);
 		renderer::editor::RoomCellObjects::Draw(renderer);
 		renderer::editor::PickDescriptor::Draw(renderer);
-		graphics::Layouts::Get(LAYOUT_ROOM_VIEW_POSITION).Draw(renderer);
+		graphics::Layouts::Draw(renderer, LAYOUT_ROOM_VIEW_POSITION);
 	}
 
 	static void OnUpdate(const Uint32& ticks)

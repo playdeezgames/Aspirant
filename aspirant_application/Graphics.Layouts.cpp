@@ -1,7 +1,6 @@
 #include "Graphics.Layouts.h"
+#include "Graphics.Layout.h"
 #include "Data.JSON.h"
-#include "Common.Finishers.h"
-#include "Common.Finisher.h"
 namespace graphics::Layouts
 {
 	static std::map<std::string, nlohmann::json> layouts;
@@ -16,9 +15,9 @@ namespace graphics::Layouts
 		}
 	}
 
-	graphics::Layout Get(const std::string& key)
+	void Draw(SDL_Renderer* renderer, const std::string& key)
 	{
-		return graphics::Layout(layouts[key]);
+		graphics::Layout::Draw(renderer, layouts[key]);
 	}
 
 }

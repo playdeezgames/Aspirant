@@ -5,14 +5,11 @@
 #include "Common.XY.h"
 #include "Common.Properties.h"
 #include "Graphics.Properties.h"
-namespace graphics
+#include "Data.Int.h"
+#include "Data.String.h"
+namespace graphics::Image
 {
-	Image::Image(const nlohmann::json& model)
-		: model(model)
-	{
-	}
-
-	void Image::Draw(SDL_Renderer* renderer) const
+	void Draw(SDL_Renderer* renderer, const nlohmann::json& model)
 	{
 		Sprites::Get(data::String(model[Properties::SPRITE]))
 			.Draw

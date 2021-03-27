@@ -259,9 +259,6 @@
     <ClInclude Include="Common.Finisher.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Graphics.Drawn.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Graphics.Image.h">
       <Filter>Header Files</Filter>
     </ClInclude>

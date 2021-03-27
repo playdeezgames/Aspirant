@@ -3,14 +3,12 @@
 #include "Graphics.Fonts.h"
 #include "Common.Properties.h"
 #include "Graphics.Properties.h"
-namespace graphics
+#include "Data.Bool.h"
+#include "Data.String.h"
+#include "Data.Int.h"
+namespace graphics::Text
 {
-	Text::Text(const nlohmann::json& model)
-		: model(model)
-	{
-	}
-
-	void Text::Draw(SDL_Renderer* renderer) const
+	void Draw(SDL_Renderer* renderer, const nlohmann::json& model)
 	{
 		if (data::Bool(model[graphics::Properties::DROP_SHADOW]))
 		{

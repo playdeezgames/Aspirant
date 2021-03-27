@@ -1,8 +1,8 @@
 #pragma once
 #include <string>
-#include "Graphics.Layout.h"
+#include <SDL.h>
 namespace graphics::Layouts
 {
-	graphics::Layout Get(const std::string&);
+	void Draw(SDL_Renderer*, const std::string&);
 	void Start(const std::string&);
 }

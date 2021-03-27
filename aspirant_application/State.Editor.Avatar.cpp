@@ -121,7 +121,7 @@ namespace state::editor::Avatar
 
 	static void OnDraw(SDL_Renderer* renderer)
 	{
-		graphics::Layouts::Get(LAYOUT_NAME).Draw(renderer);
+		graphics::Layouts::Draw(renderer, LAYOUT_NAME);
 	}
 
 	static void OnUpdate(const Uint32& ticks)
