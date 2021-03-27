@@ -10,7 +10,7 @@
 #include "Context.Editor.Rooms.h"
 namespace state::editor::NewRoom
 {
-	const std::string LAYOUT_NAME = "EditNewRoom";
+	const std::string LAYOUT_NAME = "State.Editor.NewRoom";
 
 	const std::string COLOR_NAME_ROOM_NAME = "EditNewRoom.Color.RoomName";
 	const std::string COLOR_NAME_COLUMNS = "EditNewRoom.Color.Columns";

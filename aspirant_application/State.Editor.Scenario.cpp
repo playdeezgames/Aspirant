@@ -11,7 +11,7 @@
 #include "Context.Editor.NewRoom.h"
 namespace state::editor::Scenario
 {
-	const std::string LAYOUT_NAME = "EditScenario";
+	const std::string LAYOUT_NAME = "State.Editor.Scenario";
 	const std::string ITEM_DESCRIPTOR_COLOR_NAME = "EditScenario.Color.Descriptor";
 	const std::string ITEM_AVATAR_COLOR_NAME = "EditScenario.Color.Avatar";
 	const std::string ITEM_OPEN_ROOM_COLOR_NAME = "EditScenario.Color.OpenRoom";

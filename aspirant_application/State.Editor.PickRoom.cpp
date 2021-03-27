@@ -7,7 +7,7 @@
 #include "Context.Editor.RoomView.h"
 namespace state::editor::PickRoom
 {
-	const std::string LAYOUT_NAME = "EditPickRoom";
+	const std::string LAYOUT_NAME = "State.Editor.PickRoom";
 	const std::string TEXT_NAME_STRING_ROOM_NAME = "EditPickRoom.Text.RoomName";
 
 	static void OnCommand(const ::Command& command)

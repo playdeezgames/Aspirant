@@ -16,7 +16,7 @@ namespace state::editor::Start
 	const std::string START_EDITOR_NEW_COLOR_NAME = "StartEditor.Color.New";
 	const std::string START_EDITOR_BACK_COLOR_NAME = "StartEditor.Color.Back";
 	const std::string START_EDITOR_OPEN_COLOR_NAME = "StartEditor.Color.Open";
-	const std::string LAYOUT_NAME = "StartEditor";
+	const std::string LAYOUT_NAME = "State.Editor.Start";
 
 	enum class StartEditorItem
 	{

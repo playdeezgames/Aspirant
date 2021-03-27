@@ -9,7 +9,7 @@ namespace state::ConfirmQuit
 {
 	const std::string CONFIRM_ITEM_NO_COLOR_NAME = "ConfirmQuit.Color.No";
 	const std::string CONFIRM_ITEM_YES_COLOR_NAME = "ConfirmQuit.Color.Yes";
-	const std::string LAYOUT_NAME = "ConfirmQuit";
+	const std::string LAYOUT_NAME = "State.ConfirmQuit";
 
 	enum class ConfirmQuitItem
 	{

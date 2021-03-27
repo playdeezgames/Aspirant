@@ -5,7 +5,7 @@
 namespace state::Splash
 {
 	const size_t TICKS_TOTAL = 3000;
-	const std::string LAYOUT_NAME = "Splash";
+	const std::string LAYOUT_NAME = "State.Splash";
 	static size_t ticksLeft = TICKS_TOTAL;
 
 	static void OnCommand(const ::Command& command)

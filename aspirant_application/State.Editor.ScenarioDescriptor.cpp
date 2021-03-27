@@ -8,7 +8,7 @@
 #include "Game.ScenarioDescriptors.h"
 namespace state::editor::ScenarioDescriptor
 {
-	const std::string LAYOUT_NAME = "EditScenarioDescriptor";
+	const std::string LAYOUT_NAME = "State.Editor.ScenarioDescriptor";
 	const std::string COLOR_NAME_SCENARIO_NAME = "EditScenarioDescriptor.Color.ScenarioName";
 	const std::string COLOR_NAME_BRIEF = "EditScenarioDescriptor.Color.Brief";
 	const std::string COLOR_NAME_BACK = "EditScenarioDescriptor.Color.Back";

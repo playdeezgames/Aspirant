@@ -10,7 +10,7 @@ namespace state::Start
 	const std::string START_GAME_EDITOR_COLOR_NAME = "StartGame.Color.Editor";
 	const std::string START_GAME_BACK_COLOR_NAME = "StartGame.Color.Back";
 	const std::string START_GAME_PLAY_COLOR_NAME = "StartGame.Color.Play";
-	const std::string LAYOUT_NAME = "StartGame";
+	const std::string LAYOUT_NAME = "State.Start";
 
 	enum class StartGameItem
 	{

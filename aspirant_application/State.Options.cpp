@@ -11,7 +11,7 @@
 #include "Common.Utility.h"
 namespace state::Options
 {
-	const std::string LAYOUT_NAME = "Options";
+	const std::string LAYOUT_NAME = "State.Options";
 	const std::string OPTION_ITEM_TOGGLE_MUTE_COLOR_NAME = "Options.Color.ToggleMute";
 	const std::string OPTION_ITEM_SFX_VOLUME_COLOR_NAME = "Options.Color.SfxVolume";
 	const std::string OPTION_ITEM_MUX_VOLUME_COLOR_NAME = "Options.Color.MuxVolume";

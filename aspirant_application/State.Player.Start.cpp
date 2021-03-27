@@ -6,7 +6,7 @@
 #include "Application.h"
 namespace state::player::Start
 {
-	const std::string LAYOUT_NAME = "StartPlayer";
+	const std::string LAYOUT_NAME = "State.Player.Start";
 
 	static void OnCommand(const ::Command& command)
 	{

@@ -4,7 +4,7 @@
 #include "Graphics.Layouts.h"
 namespace state::About
 {
-	const std::string LAYOUT_NAME = "About";
+	const std::string LAYOUT_NAME = "State.About";
 
 	static void OnCommand(const ::Command& command)
 	{

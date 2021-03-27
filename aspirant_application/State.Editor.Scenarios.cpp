@@ -10,7 +10,7 @@
 #include "Data.JSON.h"
 namespace state::editor::Scenarios
 {
-	const std::string LAYOUT_NAME = "EditScenarioSelector";
+	const std::string LAYOUT_NAME = "State.Editor.Scenarios";
 	const std::string TEXT_INDEX_STRING_NAME = "EditScenarioSelector.Text.Index";
 	const std::string TEXT_ID_STRING_NAME = "EditScenarioSelector.Text.Id";
 	const std::string TEXT_NAME_STRING_NAME = "EditScenarioSelector.Text.Name";

@@ -1,21 +1,21 @@
 Sort Out:
     ☐ layout names do not really reflect the corresponding namespaces in the code
-        ☐ Splash
+        ✔ Splash @done(21-03-27 18:24)
         ✔ MainMenu @done(21-03-27 17:35)
         ☐ About
         ☐ ConfirmQuit
         ☐ Options
-        ☐ StartGame
+        ✔ StartGame @done(21-03-27 18:24)
         ☐ StartEditor
         ☐ EditScenarioSelector
         ☐ EditScenario
         ☐ EditPickRoom
         ☐ EditNewRoom
         ☐ EditScenarioDescriptor
-        ☐ EditNavigateRoom
+        ✔ EditNavigateRoom @done(21-03-27 18:22)
         ☐ RoomViewPosition
-        ☐ EditDescriptorSelector
-        ☐ StartPlayer
+        ✔ EditDescriptorSelector @done(21-03-27 18:22)
+        ✔ StartPlayer @done(21-03-27 18:25)
         ☐ PlayerNewGame
         ☐ PlayerLoadGame
         ☐ EditAvatar
