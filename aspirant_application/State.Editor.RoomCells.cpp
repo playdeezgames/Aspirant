@@ -35,7 +35,10 @@ namespace state::editor::RoomCells
 		auto& cursorPosition = ::context::editor::RoomView::GetCursor();
 		auto descriptor = ::context::editor::PickDescriptor::GetDescriptor(::context::editor::PickDescriptor::GetIndex());
 		auto roomCell = ::context::editor::Rooms::GetRoom().GetCell(cursorPosition.GetX(), cursorPosition.GetY());
-		roomCell->AddObject(descriptor);
+		if (descriptor.CanCover(roomCell->GetObject()))
+		{
+			roomCell->AddObject(descriptor);
+		}
 	}
 
 	static void RemoveObject()

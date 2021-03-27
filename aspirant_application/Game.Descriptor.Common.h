@@ -6,6 +6,7 @@
 #include "Game.Properties.h"
 #include "Common.Properties.h"
 #include "Graphics.Properties.h"
+#include <optional>
 namespace game::object
 {
 	class Common;
@@ -42,5 +43,6 @@ namespace game::descriptor
 			return model[graphics::Properties::SPRITE];
 		}
 		void Draw(SDL_Renderer*, common::XY<int>) const;
+		bool CanCover(std::optional<game::object::Common>) const;
 	};
 }

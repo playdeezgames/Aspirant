@@ -15,7 +15,6 @@ namespace game::object
 		Common(nlohmann::json&);
 		game::descriptor::Common GetDescriptor() const;
 		std::string GetType() const;
-		bool CanCover(std::optional<Common>) const;
 		bool IsTerrain() const;
 		bool IsCreature() const;
 		void Draw(SDL_Renderer*, common::XY<int>) const;

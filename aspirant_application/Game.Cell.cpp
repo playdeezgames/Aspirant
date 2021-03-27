@@ -55,4 +55,17 @@ namespace game
 		}
 	}
 
+	std::optional<game::object::Common> Cell::GetObject() const
+	{
+		if (model[game::Properties::OBJECTS].empty())
+		{
+			return std::optional<game::object::Common>();
+		}
+		else
+		{
+			return std::optional<game::object::Common>(model[game::Properties::OBJECTS].back());
+		}
+	}
+
+
 }

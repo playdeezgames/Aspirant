@@ -28,22 +28,6 @@ namespace game::object
 		return GetDescriptor().GetType();
 	}
 
-	bool Common::CanCover(std::optional<Common> previous) const
-	{
-		if (!previous.has_value())
-		{
-			return GetType() == game::Types::TERRAIN;
-		}
-		else if(previous->GetType() == game::Types::TERRAIN)
-		{
-			return GetType() != game::Types::TERRAIN;
-		}
-		else
-		{
-			return false;
-		}
-	}
-
 	bool Common::IsTerrain() const
 	{
 		return GetType() == game::Types::TERRAIN;
