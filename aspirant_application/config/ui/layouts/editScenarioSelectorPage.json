@@ -13,11 +13,11 @@
         "text": "==CHOOSE SCENARIO==",
         "x": 320,
         "y": 0,
-        "horizontalAlignment": 0,
-        "dropShadow": true,
-        "dropShadowColor": "Black",
-        "dropShadowX": 2,
-        "dropShadowY": 2
+        "horizontal-alignment": 0,
+        "drop-shadow": true,
+        "drop-shadow-color": "Black",
+        "drop-shadow-x": 2,
+        "drop-shadow-y": 2
     },
     {
         "type": "Text",
@@ -28,11 +28,11 @@
         },
         "x": 320,
         "y": 32,
-        "horizontalAlignment": 0,
-        "dropShadow": true,
-        "dropShadowColor": "Black",
-        "dropShadowX": 2,
-        "dropShadowY": 2
+        "horizontal-alignment": 0,
+        "drop-shadow": true,
+        "drop-shadow-color": "Black",
+        "drop-shadow-x": 2,
+        "drop-shadow-y": 2
     },
     {
         "type": "Text",
@@ -41,11 +41,11 @@
         "text": "Scenario Id",
         "x": 320,
         "y": 64,
-        "horizontalAlignment": 0,
-        "dropShadow": true,
-        "dropShadowColor": "Black",
-        "dropShadowX": 2,
-        "dropShadowY": 2
+        "horizontal-alignment": 0,
+        "drop-shadow": true,
+        "drop-shadow-color": "Black",
+        "drop-shadow-x": 2,
+        "drop-shadow-y": 2
     },
     {
         "type": "Text",
@@ -56,11 +56,11 @@
         },
         "x": 320,
         "y": 80,
-        "horizontalAlignment": 0,
-        "dropShadow": true,
-        "dropShadowColor": "Black",
-        "dropShadowX": 2,
-        "dropShadowY": 2
+        "horizontal-alignment": 0,
+        "drop-shadow": true,
+        "drop-shadow-color": "Black",
+        "drop-shadow-x": 2,
+        "drop-shadow-y": 2
     },
     {
         "type": "Text",
@@ -69,11 +69,11 @@
         "text": "Name",
         "x": 320,
         "y": 112,
-        "horizontalAlignment": 0,
-        "dropShadow": true,
-        "dropShadowColor": "Black",
-        "dropShadowX": 2,
-        "dropShadowY": 2
+        "horizontal-alignment": 0,
+        "drop-shadow": true,
+        "drop-shadow-color": "Black",
+        "drop-shadow-x": 2,
+        "drop-shadow-y": 2
     },
     {
         "type": "Text",
@@ -84,11 +84,11 @@
         },
         "x": 320,
         "y": 128,
-        "horizontalAlignment": 0,
-        "dropShadow": true,
-        "dropShadowColor": "Black",
-        "dropShadowX": 2,
-        "dropShadowY": 2
+        "horizontal-alignment": 0,
+        "drop-shadow": true,
+        "drop-shadow-color": "Black",
+        "drop-shadow-x": 2,
+        "drop-shadow-y": 2
     },
     {
         "type": "Text",
@@ -97,11 +97,11 @@
         "text": "Brief",
         "x": 320,
         "y": 160,
-        "horizontalAlignment": 0,
-        "dropShadow": true,
-        "dropShadowColor": "Black",
-        "dropShadowX": 2,
-        "dropShadowY": 2
+        "horizontal-alignment": 0,
+        "drop-shadow": true,
+        "drop-shadow-color": "Black",
+        "drop-shadow-x": 2,
+        "drop-shadow-y": 2
     },
     {
         "type": "Text",
@@ -112,10 +112,10 @@
         },
         "x": 320,
         "y": 176,
-        "horizontalAlignment": 0,
-        "dropShadow": true,
-        "dropShadowColor": "Black",
-        "dropShadowX": 2,
-        "dropShadowY": 2
+        "horizontal-alignment": 0,
+        "drop-shadow": true,
+        "drop-shadow-color": "Black",
+        "drop-shadow-x": 2,
+        "drop-shadow-y": 2
     }
 ]

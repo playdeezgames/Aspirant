@@ -13,11 +13,11 @@
         "text": "==NEW ROOM==",
         "x": 320,
         "y": 0,
-        "horizontalAlignment": 0,
-        "dropShadow": true,
-        "dropShadowColor": "Black",
-        "dropShadowX": 2,
-        "dropShadowY": 2
+        "horizontal-alignment": 0,
+        "drop-shadow": true,
+        "drop-shadow-color": "Black",
+        "drop-shadow-x": 2,
+        "drop-shadow-y": 2
     },
     {
         "type": "Text",
@@ -26,11 +26,11 @@
         "text": "Room Name",
         "x": 320,
         "y": 32,
-        "horizontalAlignment": 0,
-        "dropShadow": true,
-        "dropShadowColor": "Black",
-        "dropShadowX": 2,
-        "dropShadowY": 2
+        "horizontal-alignment": 0,
+        "drop-shadow": true,
+        "drop-shadow-color": "Black",
+        "drop-shadow-x": 2,
+        "drop-shadow-y": 2
     },
     {
         "type": "Text",
@@ -39,11 +39,11 @@
         "text": { "key": "EditNewRoom.Text.RoomName" },
         "x": 320,
         "y": 48,
-        "horizontalAlignment": 0,
-        "dropShadow": true,
-        "dropShadowColor": "Black",
-        "dropShadowX": 2,
-        "dropShadowY": 2
+        "horizontal-alignment": 0,
+        "drop-shadow": true,
+        "drop-shadow-color": "Black",
+        "drop-shadow-x": 2,
+        "drop-shadow-y": 2
     },
     {
         "type": "Text",
@@ -52,11 +52,11 @@
         "text": "Columns",
         "x": 320,
         "y": 80,
-        "horizontalAlignment": 0,
-        "dropShadow": true,
-        "dropShadowColor": "Black",
-        "dropShadowX": 2,
-        "dropShadowY": 2
+        "horizontal-alignment": 0,
+        "drop-shadow": true,
+        "drop-shadow-color": "Black",
+        "drop-shadow-x": 2,
+        "drop-shadow-y": 2
     },
     {
         "type": "Text",
@@ -65,11 +65,11 @@
         "text": { "key": "EditNewRoom.Text.Columns" },
         "x": 320,
         "y": 96,
-        "horizontalAlignment": 0,
-        "dropShadow": true,
-        "dropShadowColor": "Black",
-        "dropShadowX": 2,
-        "dropShadowY": 2
+        "horizontal-alignment": 0,
+        "drop-shadow": true,
+        "drop-shadow-color": "Black",
+        "drop-shadow-x": 2,
+        "drop-shadow-y": 2
     },
     {
         "type": "Text",
@@ -78,11 +78,11 @@
         "text": "Rows",
         "x": 320,
         "y": 128,
-        "horizontalAlignment": 0,
-        "dropShadow": true,
-        "dropShadowColor": "Black",
-        "dropShadowX": 2,
-        "dropShadowY": 2
+        "horizontal-alignment": 0,
+        "drop-shadow": true,
+        "drop-shadow-color": "Black",
+        "drop-shadow-x": 2,
+        "drop-shadow-y": 2
     },
     {
         "type": "Text",
@@ -91,11 +91,11 @@
         "text": { "key": "EditNewRoom.Text.Rows" },
         "x": 320,
         "y": 144,
-        "horizontalAlignment": 0,
-        "dropShadow": true,
-        "dropShadowColor": "Black",
-        "dropShadowX": 2,
-        "dropShadowY": 2
+        "horizontal-alignment": 0,
+        "drop-shadow": true,
+        "drop-shadow-color": "Black",
+        "drop-shadow-x": 2,
+        "drop-shadow-y": 2
     },
     {
         "type": "Text",
@@ -104,11 +104,11 @@
         "text": "Terrain",
         "x": 320,
         "y": 176,
-        "horizontalAlignment": 0,
-        "dropShadow": true,
-        "dropShadowColor": "Black",
-        "dropShadowX": 2,
-        "dropShadowY": 2
+        "horizontal-alignment": 0,
+        "drop-shadow": true,
+        "drop-shadow-color": "Black",
+        "drop-shadow-x": 2,
+        "drop-shadow-y": 2
     },
     {
         "type": "Text",
@@ -117,11 +117,11 @@
         "text": { "key": "EditNewRoom.Text.Terrain" },
         "x": 320,
         "y": 192,
-        "horizontalAlignment": 0,
-        "dropShadow": true,
-        "dropShadowColor": "Black",
-        "dropShadowX": 2,
-        "dropShadowY": 2
+        "horizontal-alignment": 0,
+        "drop-shadow": true,
+        "drop-shadow-color": "Black",
+        "drop-shadow-x": 2,
+        "drop-shadow-y": 2
     },
     {
         "type": "Text",
@@ -130,11 +130,11 @@
         "text": "Create",
         "x": 320,
         "y": 224,
-        "horizontalAlignment": 0,
-        "dropShadow": true,
-        "dropShadowColor": "Black",
-        "dropShadowX": 2,
-        "dropShadowY": 2
+        "horizontal-alignment": 0,
+        "drop-shadow": true,
+        "drop-shadow-color": "Black",
+        "drop-shadow-x": 2,
+        "drop-shadow-y": 2
     },
     {
         "type": "Text",
@@ -143,10 +143,10 @@
         "text": "Cancel",
         "x": 320,
         "y": 256,
-        "horizontalAlignment": 0,
-        "dropShadow": true,
-        "dropShadowColor": "Black",
-        "dropShadowX": 2,
-        "dropShadowY": 2
+        "horizontal-alignment": 0,
+        "drop-shadow": true,
+        "drop-shadow-color": "Black",
+        "drop-shadow-x": 2,
+        "drop-shadow-y": 2
     }
 ]

@@ -3,6 +3,7 @@
 #include "Data.JSON.h"
 #include "Graphics.Textures.h"
 #include "Common.Properties.h"
+#include "Graphics.Properties.h"
 namespace graphics::Sprites
 {
 	static std::map<std::string, Sprite> sprites;
@@ -19,24 +20,20 @@ namespace graphics::Sprites
 		return iter->second;
 	}
 
-	const std::string PROPERTY_TEXTURE = "texture";
-	const std::string PROPERTY_OFFSET_X = "offset-x";
-	const std::string PROPERTY_OFFSET_Y = "offset-y";
-
 	void Start(const std::string& fileName)
 	{
 		nlohmann::json j = data::JSON::Load(fileName);
 		for (auto& item : j.items())
 		{
 			auto& properties = item.value();
-			SDL_Texture* texture = ::graphics::Textures::Read(properties[PROPERTY_TEXTURE]);
+			SDL_Texture* texture = ::graphics::Textures::Read(properties[Properties::TEXTURE]);
 			SDL_Rect source;
 			source.x = properties[common::Properties::X];
 			source.y = properties[common::Properties::Y];
 			source.w = properties[common::Properties::WIDTH];
 			source.h = properties[common::Properties::HEIGHT];
-			int offsetX = (properties.count(PROPERTY_OFFSET_X) > 0) ? ((int)properties[PROPERTY_OFFSET_X]) : (0);
-			int offsetY = (properties.count(PROPERTY_OFFSET_Y) > 0) ? ((int)properties[PROPERTY_OFFSET_Y]) : (0);
+			int offsetX = (properties.count(Properties::OFFSET_X) > 0) ? ((int)properties[Properties::OFFSET_X]) : (0);
+			int offsetY = (properties.count(Properties::OFFSET_Y) > 0) ? ((int)properties[Properties::OFFSET_Y]) : (0);
 			common::XY<int> offset(offsetX, offsetY);
 			Sprite sprite(texture, source, offset);
 			Add(item.key(), sprite);

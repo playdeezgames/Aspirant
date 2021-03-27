@@ -13,11 +13,11 @@
         "text": "==EDIT SCENARIO==",
         "x": 320,
         "y": 0,
-        "horizontalAlignment": 0,
-        "dropShadow": true,
-        "dropShadowColor": "Black",
-        "dropShadowX": 2,
-        "dropShadowY": 2
+        "horizontal-alignment": 0,
+        "drop-shadow": true,
+        "drop-shadow-color": "Black",
+        "drop-shadow-x": 2,
+        "drop-shadow-y": 2
     },
     {
         "type": "Text",
@@ -26,11 +26,11 @@
         "text":  { "key": "EditScenario.Text.Header" },
         "x": 320,
         "y": 16,
-        "horizontalAlignment": 0,
-        "dropShadow": true,
-        "dropShadowColor": "Black",
-        "dropShadowX": 2,
-        "dropShadowY": 2
+        "horizontal-alignment": 0,
+        "drop-shadow": true,
+        "drop-shadow-color": "Black",
+        "drop-shadow-x": 2,
+        "drop-shadow-y": 2
     },
     {
         "type": "Text",
@@ -39,11 +39,11 @@
         "text": "Edit Descriptor",
         "x": 320,
         "y": 48,
-        "horizontalAlignment": 0,
-        "dropShadow": true,
-        "dropShadowColor": "Black",
-        "dropShadowX": 2,
-        "dropShadowY": 2
+        "horizontal-alignment": 0,
+        "drop-shadow": true,
+        "drop-shadow-color": "Black",
+        "drop-shadow-x": 2,
+        "drop-shadow-y": 2
     },
     {
         "type": "Text",
@@ -52,11 +52,11 @@
         "text": "Edit Avatar",
         "x": 320,
         "y": 64,
-        "horizontalAlignment": 0,
-        "dropShadow": true,
-        "dropShadowColor": "Black",
-        "dropShadowX": 2,
-        "dropShadowY": 2
+        "horizontal-alignment": 0,
+        "drop-shadow": true,
+        "drop-shadow-color": "Black",
+        "drop-shadow-x": 2,
+        "drop-shadow-y": 2
     },
     {
         "type": "Text",
@@ -65,11 +65,11 @@
         "text": "Open Room",
         "x": 320,
         "y": 80,
-        "horizontalAlignment": 0,
-        "dropShadow": true,
-        "dropShadowColor": "Black",
-        "dropShadowX": 2,
-        "dropShadowY": 2
+        "horizontal-alignment": 0,
+        "drop-shadow": true,
+        "drop-shadow-color": "Black",
+        "drop-shadow-x": 2,
+        "drop-shadow-y": 2
     },
     {
         "type": "Text",
@@ -78,11 +78,11 @@
         "text": "New Room",
         "x": 320,
         "y": 96,
-        "horizontalAlignment": 0,
-        "dropShadow": true,
-        "dropShadowColor": "Black",
-        "dropShadowX": 2,
-        "dropShadowY": 2
+        "horizontal-alignment": 0,
+        "drop-shadow": true,
+        "drop-shadow-color": "Black",
+        "drop-shadow-x": 2,
+        "drop-shadow-y": 2
     },
     {
         "type": "Text",
@@ -91,11 +91,11 @@
         "text": "Back",
         "x": 320,
         "y": 112,
-        "horizontalAlignment": 0,
-        "dropShadow": true,
-        "dropShadowColor": "Black",
-        "dropShadowX": 2,
-        "dropShadowY": 2
+        "horizontal-alignment": 0,
+        "drop-shadow": true,
+        "drop-shadow-color": "Black",
+        "drop-shadow-x": 2,
+        "drop-shadow-y": 2
     }
 
 ]

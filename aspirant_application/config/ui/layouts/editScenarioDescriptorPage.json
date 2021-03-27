@@ -13,11 +13,11 @@
         "text": "==DESCRIPTOR==",
         "x": 320,
         "y": 0,
-        "horizontalAlignment": 0,
-        "dropShadow": true,
-        "dropShadowColor": "Black",
-        "dropShadowX": 2,
-        "dropShadowY": 2
+        "horizontal-alignment": 0,
+        "drop-shadow": true,
+        "drop-shadow-color": "Black",
+        "drop-shadow-x": 2,
+        "drop-shadow-y": 2
     },
     {
         "type": "Text",
@@ -26,11 +26,11 @@
         "text": "Scenario Name",
         "x": 320,
         "y": 32,
-        "horizontalAlignment": 0,
-        "dropShadow": true,
-        "dropShadowColor": "Black",
-        "dropShadowX": 2,
-        "dropShadowY": 2
+        "horizontal-alignment": 0,
+        "drop-shadow": true,
+        "drop-shadow-color": "Black",
+        "drop-shadow-x": 2,
+        "drop-shadow-y": 2
     },
     {
         "type": "Text",
@@ -39,11 +39,11 @@
         "text": { "key": "EditScenarioDescriptor.Text.ScenarioName" },
         "x": 320,
         "y": 48,
-        "horizontalAlignment": 0,
-        "dropShadow": true,
-        "dropShadowColor": "Black",
-        "dropShadowX": 2,
-        "dropShadowY": 2
+        "horizontal-alignment": 0,
+        "drop-shadow": true,
+        "drop-shadow-color": "Black",
+        "drop-shadow-x": 2,
+        "drop-shadow-y": 2
     },
     {
         "type": "Text",
@@ -52,11 +52,11 @@
         "text": "Scenario Brief",
         "x": 320,
         "y": 80,
-        "horizontalAlignment": 0,
-        "dropShadow": true,
-        "dropShadowColor": "Black",
-        "dropShadowX": 2,
-        "dropShadowY": 2
+        "horizontal-alignment": 0,
+        "drop-shadow": true,
+        "drop-shadow-color": "Black",
+        "drop-shadow-x": 2,
+        "drop-shadow-y": 2
     },
     {
         "type": "Text",
@@ -65,11 +65,11 @@
         "text": { "key": "EditScenarioDescriptor.Text.Brief" },
         "x": 320,
         "y": 96,
-        "horizontalAlignment": 0,
-        "dropShadow": true,
-        "dropShadowColor": "Black",
-        "dropShadowX": 2,
-        "dropShadowY": 2
+        "horizontal-alignment": 0,
+        "drop-shadow": true,
+        "drop-shadow-color": "Black",
+        "drop-shadow-x": 2,
+        "drop-shadow-y": 2
     },
     {
         "type": "Text",
@@ -78,10 +78,10 @@
         "text": "Back",
         "x": 320,
         "y": 128,
-        "horizontalAlignment": 0,
-        "dropShadow": true,
-        "dropShadowColor": "Black",
-        "dropShadowX": 2,
-        "dropShadowY": 2
+        "horizontal-alignment": 0,
+        "drop-shadow": true,
+        "drop-shadow-color": "Black",
+        "drop-shadow-x": 2,
+        "drop-shadow-y": 2
     }
 ]

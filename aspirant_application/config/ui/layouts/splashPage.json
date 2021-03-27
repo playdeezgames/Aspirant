@@ -13,11 +13,11 @@
         "text": "Aspirant of SPLORR!!",
         "x": 320,
         "y": 172,
-        "horizontalAlignment": 0,
-        "dropShadow": true,
-        "dropShadowColor": "Black",
-        "dropShadowX": 2,
-        "dropShadowY": 2
+        "horizontal-alignment": 0,
+        "drop-shadow": true,
+        "drop-shadow-color": "Black",
+        "drop-shadow-x": 2,
+        "drop-shadow-y": 2
     },
     {
         "type": "Text",
@@ -26,10 +26,10 @@
         "text": "A Production of TheGrumpyGameDev",
         "x": 320,
         "y": 340,
-        "horizontalAlignment": 0,
-        "dropShadow": true,
-        "dropShadowColor": "Black",
-        "dropShadowX": 1,
-        "dropShadowY": 1
+        "horizontal-alignment": 0,
+        "drop-shadow": true,
+        "drop-shadow-color": "Black",
+        "drop-shadow-x": 1,
+        "drop-shadow-y": 1
     }
 ]
