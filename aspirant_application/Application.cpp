@@ -137,6 +137,13 @@ namespace Application
 	{
 		renderHandlers[state] = handler;
 	}
+
+	static std::map<UIState, std::string> renderLayouts;
+
+	void SetRenderLayout(const UIState& state, const std::string& layoutName)
+	{
+		renderLayouts[state] = layoutName;
+	}
 }
 namespace common::Application
 {
@@ -214,6 +221,11 @@ namespace common::Application
 
 	void Render(SDL_Renderer* renderer)
 	{
+		auto layoutName = ::Application::renderLayouts.find(::Application::GetUIState());
+		if (layoutName != ::Application::renderLayouts.end())
+		{
+			graphics::Layouts::Draw(renderer, layoutName->second);
+		}
 		auto handler = ::Application::renderHandlers.find(::Application::GetUIState());
 		if (handler != ::Application::renderHandlers.end())
 		{

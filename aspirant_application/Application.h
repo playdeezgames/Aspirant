@@ -12,8 +12,9 @@ namespace Application
 	typedef void (*UpdateHandler)(const Uint32&);
 	typedef void (*RenderHandler)(SDL_Renderer*);
 
-	void SetCommandHandler(const ::UIState&, CommandHandler);
-	void SetTextInputHandler(const ::UIState&, TextInputHandler);
-	void SetUpdateHandler(const ::UIState&, UpdateHandler);
-	void SetRenderHandler(const ::UIState&, RenderHandler);
+	void SetCommandHandler(const UIState&, CommandHandler);
+	void SetTextInputHandler(const UIState&, TextInputHandler);
+	void SetUpdateHandler(const UIState&, UpdateHandler);
+	void SetRenderHandler(const UIState&, RenderHandler);
+	void SetRenderLayout(const UIState&, const std::string);
 }
