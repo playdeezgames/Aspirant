@@ -20,7 +20,7 @@ namespace graphics
 				renderer,
 				common::XY<int>(
 					data::Int(model[common::Properties::X]), 
-					data::Int(model[common::Properties::X])),
+					data::Int(model[common::Properties::Y])),
 				::graphics::Colors::Get(data::String(model[Properties::COLOR]))
 			);
 	}

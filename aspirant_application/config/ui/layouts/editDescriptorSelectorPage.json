@@ -5,5 +5,12 @@
         "color": "DarkGray",
         "x": 0,
         "y": 0
+    },
+    {
+        "type": "Image",
+        "sprite": "DescriptorPaletteBacker",
+        "color": "White",
+        "x": 360,
+        "y": 36
     }
 ]
