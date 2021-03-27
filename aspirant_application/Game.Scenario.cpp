@@ -4,9 +4,9 @@
 namespace game
 {
 	Scenario::Scenario()
-		: rooms()
+		: model()
+		, rooms()
 		, avatarModel()
-		, avatar(avatarModel)
 	{
 
 	}
@@ -94,14 +94,8 @@ namespace game
 		return iter->second;
 	}
 
-	const Avatar& Scenario::GetAvatar() const
+	Avatar Scenario::GetAvatar()
 	{
-		return avatar;
+		return game::Avatar(avatarModel);
 	}
-
-	Avatar& Scenario::GetAvatar()
-	{
-		return avatar;
-	}
-
 }

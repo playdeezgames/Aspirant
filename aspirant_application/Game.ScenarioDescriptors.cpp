@@ -11,7 +11,7 @@ namespace game::ScenarioDescriptors
 	void Load(const std::string& filename)
 	{
 		fileName = filename;
-		auto table = data::JSON::Load(fileName);
+		table = data::JSON::Load(fileName);
 	}
 
 	void Save()

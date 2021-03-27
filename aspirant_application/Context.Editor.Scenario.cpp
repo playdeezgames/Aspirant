@@ -3,6 +3,7 @@
 #include "Context.Editor.Scenarios.h"
 #include "Game.ScenarioDescriptors.h"
 #include <SDL.h>
+#include "json.hpp"
 namespace context::editor::Scenario
 {
 	static ::game::Scenario scenario;

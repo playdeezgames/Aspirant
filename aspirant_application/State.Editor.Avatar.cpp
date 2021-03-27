@@ -87,7 +87,7 @@ namespace state::editor::Avatar
 		case Command::BACK:
 			if (current == AvatarMenuItem::ROOM_NAME)
 			{
-				auto& avatar = context::editor::Scenario::Get().GetAvatar();
+				auto avatar = context::editor::Scenario::Get().GetAvatar();
 				std::string value = avatar.GetRoomId();
 				if (!value.empty())
 				{
@@ -126,7 +126,7 @@ namespace state::editor::Avatar
 
 	static void OnUpdate(const Uint32& ticks)
 	{
-		auto& avatar = context::editor::Scenario::Get().GetAvatar();
+		auto avatar = context::editor::Scenario::Get().GetAvatar();
 
 		MenuItem<AvatarMenuItem>::Update(items, current);
 		data::Strings::Set(TEXT_ROOM_NAME, avatar.GetRoomId());
@@ -144,7 +144,7 @@ namespace state::editor::Avatar
 	{
 		if (current == AvatarMenuItem::ROOM_NAME)
 		{
-			auto& avatar = context::editor::Scenario::Get().GetAvatar();
+			auto avatar = context::editor::Scenario::Get().GetAvatar();
 			avatar.SetRoomId(avatar.GetRoomId() + text);
 		}
 	}

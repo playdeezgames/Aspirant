@@ -12,8 +12,8 @@ namespace game
 	class Scenario
 	{
 	private:
+		nlohmann::json model;
 		nlohmann::json avatarModel;
-		Avatar avatar;
 		std::map<std::string, Room*> rooms;
 		void Clear();
 	public:
@@ -25,7 +25,6 @@ namespace game
 		void AddRoom(const std::string&, size_t, size_t, const std::string&);
 		const Room* GetRoom(const std::string&) const;
 		Room* GetRoom(const std::string&);
-		const Avatar& GetAvatar() const;
-		Avatar& GetAvatar();
+		Avatar GetAvatar();
 	};
 }
