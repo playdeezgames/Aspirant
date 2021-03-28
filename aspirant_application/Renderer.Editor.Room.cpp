@@ -48,7 +48,7 @@ namespace renderer::editor::Room
 		auto& cursorPosition = ::context::editor::RoomView::GetCursor();
 		auto& anchorPosition = ::context::editor::RoomView::GetAnchor();
 		common::XY<size_t> viewPosition = { cursorPosition.GetX() - anchorPosition.GetX(), cursorPosition.GetY() - anchorPosition.GetY() };
-		graphics::Sprites::Get(SPRITE_CURSOR).Draw(renderer, Plot(viewPosition));
+		graphics::Sprites::Read(SPRITE_CURSOR).value().Draw(renderer, Plot(viewPosition));
 	}
 
 	void Draw(SDL_Renderer* renderer, const nlohmann::json&)

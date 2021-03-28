@@ -177,7 +177,7 @@ namespace common::Application
 	{
 		graphics::Colors::Start(COLOR);
 		graphics::Textures::InitializeFromFile(renderer, TEXTURE);
-		graphics::Sprites::Start(SPRITE);
+		graphics::Sprites::InitializeFromFile(SPRITE);
 		graphics::Fonts::Start(FONTS);
 		graphics::Layouts::Start(LAYOUTS);
 		common::Sounds::Start(SFX, MUX);

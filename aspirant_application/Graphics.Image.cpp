@@ -9,7 +9,8 @@ namespace graphics::Image
 {
 	void Draw(SDL_Renderer* renderer, const nlohmann::json& model)
 	{
-		Sprites::Get(model[Properties::SPRITE])
+		Sprites::Read(model[Properties::SPRITE])
+			.value()
 			.Draw
 			(
 				renderer,

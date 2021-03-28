@@ -21,6 +21,6 @@ namespace renderer::editor::RoomCellObjects
 		{
 			obj.Draw(renderer, Plot({ column++, 0 }));
 		}
-		graphics::Sprites::Get(SPRITE_CURSOR).Draw(renderer, Plot({ ::context::editor::Cell::GetIndex(), 0 }));
+		graphics::Sprites::Read(SPRITE_CURSOR).value().Draw(renderer, Plot({ ::context::editor::Cell::GetIndex(), 0 }));
 	}
 }

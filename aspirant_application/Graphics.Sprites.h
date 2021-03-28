@@ -1,8 +1,9 @@
 #pragma once
 #include <string>
 #include "Graphics.Sprite.h"
+#include <optional>
 namespace graphics::Sprites
 {
-	const Sprite& Get(const std::string&);
-	void Start(const std::string&);
+	std::optional<Sprite> Read(const std::string&);
+	void InitializeFromFile(const std::string&);
 }

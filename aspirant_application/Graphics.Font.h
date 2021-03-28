@@ -3,6 +3,7 @@
 #include <string>
 #include <map>
 #include "Common.XY.h"
+#include <optional>
 namespace graphics
 {
 	enum class HorizontalAlignment
@@ -20,7 +21,7 @@ namespace graphics
 		Font& operator=(Font&&) = delete;
 	private:
 		std::map<char, std::string> glyphs;
-		const graphics::Sprite& GetGlyphSprite(char) const;
+		std::optional<graphics::Sprite> GetGlyphSprite(char) const;
 		void WriteTextCentered(SDL_Renderer*, const common::XY<int>&, const std::string&, const std::string&) const;
 		common::XY<int> WriteTextLeft(SDL_Renderer*, const common::XY<int>&, const std::string&, const std::string&) const;
 		void WriteTextRight(SDL_Renderer*, const common::XY<int>&, const std::string&, const std::string&) const;

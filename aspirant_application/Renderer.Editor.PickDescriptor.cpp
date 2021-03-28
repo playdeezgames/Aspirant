@@ -25,7 +25,7 @@ namespace renderer::editor::PickDescriptor
 
 			if (idx == ::context::editor::PickDescriptor::GetIndex())
 			{
-				graphics::Sprites::Get(SPRITE_CURSOR).Draw(renderer, position);
+				graphics::Sprites::Read(SPRITE_CURSOR).value().Draw(renderer, position);
 			}
 		}
 	}

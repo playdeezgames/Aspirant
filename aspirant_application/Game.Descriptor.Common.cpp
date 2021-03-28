@@ -8,7 +8,7 @@ namespace game::descriptor
 {
 	void Common::Draw(SDL_Renderer* renderer, common::XY<int> position) const
 	{
-		graphics::Sprites::Get(GetSprite()).Draw(renderer, position);
+		graphics::Sprites::Read(GetSprite()).value().Draw(renderer, position);
 	}
 
 	game::object::Common Common::CreateObject(nlohmann::json& model) const
