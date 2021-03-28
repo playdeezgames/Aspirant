@@ -19,6 +19,17 @@ Sort Out:
         ✔ PlayerNewGame @done(21-03-27 18:34)
         ✔ PlayerLoadGame @done(21-03-27 18:34)
         ✔ EditAvatar @done(21-03-27 18:34)
+    ☐ remove spaghetti menu
+        ☐ confirm quit
+        ✔ main menu @done(21-03-28 04:20)
+        ☐ options
+        ☐ start game
+        ☐ start editor
+        ☐ start play
+        ☐ avatar editor
+        ☐ new room
+        ☐ edit scenario
+        ☐ edit scenario descriptor
 Bugs:
     ✔ I cannot attempt to "open" a scenario when there are no scenarios @done(21-03-27 16:31)
     ✔ In a freshly created scenario, attempting to edit the avatar crashes the game @done(21-03-27 16:23)

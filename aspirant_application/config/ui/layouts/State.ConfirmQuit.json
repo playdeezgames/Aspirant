@@ -21,7 +21,7 @@
     },
     {
         "type": "Menu",
-        "menu-id": "Main",
+        "menu-id": "ConfirmQuit",
         "index": 0,
         "font": "default",
         "colors": {
@@ -47,31 +47,5 @@
                 "value": 1
             }
         ]
-    },
-    {
-        "type": "Text",
-        "font": "default",
-        "color": { "key": "ConfirmQuit.Color.No" },
-        "text": "No",
-        "x": 320,
-        "y": 32,
-        "horizontal-alignment": 0,
-        "drop-shadow": true,
-        "drop-shadow-color": "Black",
-        "drop-shadow-x": 2,
-        "drop-shadow-y": 2
-    },
-    {
-        "type": "Text",
-        "font": "default",
-        "color": { "key": "ConfirmQuit.Color.Yes" },
-        "text": "Yes",
-        "x": 320,
-        "y": 48,
-        "horizontal-alignment": 0,
-        "drop-shadow": true,
-        "drop-shadow-color": "Black",
-        "drop-shadow-x": 2,
-        "drop-shadow-y": 2
     }
 ]
