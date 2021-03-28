@@ -108,9 +108,9 @@ namespace common::Application
 
 	int Run(const std::string& configFile, const std::vector<std::string>& arguments)
 	{
+		atexit(DoFinish);
 		DoStart(configFile, arguments);
 		DoPump();
-		DoFinish();
 		return 0;
 	}
 }

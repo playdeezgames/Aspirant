@@ -1,7 +1,6 @@
 #include "Graphics.Fonts.h"
 #include "Data.JSON.h"
 #include "Common.Finisher.h"
-#include "Common.Finishers.h"
 namespace graphics::Fonts
 {
 	static graphics::Font* ParseDescriptor(const std::string&, const nlohmann::json& properties)
@@ -34,7 +33,7 @@ namespace graphics::Fonts
 
 	void Start(const std::string& fileName)
 	{
-		::common::Finishers::Add(Finish);
+		atexit(Finish);
 		nlohmann::json properties = data::JSON::Load(fileName);
 		for (auto& item : properties.items())
 		{

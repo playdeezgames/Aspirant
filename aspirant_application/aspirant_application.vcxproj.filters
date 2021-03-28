@@ -32,9 +32,6 @@
     <ClCompile Include="Graphics.Colors.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Common.Finishers.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Graphics.Textures.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -184,9 +181,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Common.Application.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Common.RNG.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -209,9 +203,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Graphics.Colors.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Common.Finishers.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Graphics.Textures.h">

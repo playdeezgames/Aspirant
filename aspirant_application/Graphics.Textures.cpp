@@ -2,7 +2,6 @@
 #include "Common.Utility.h"
 #include <SDL_image.h>
 #include "Data.JSON.h"
-#include "Common.Finishers.h"
 #include <map>
 namespace graphics::Textures
 {
@@ -28,7 +27,7 @@ namespace graphics::Textures
 
 	void InitializeFromFile(SDL_Renderer* renderer, const std::string& fileName)
 	{
-		common::Finishers::Add(Finish);
+		atexit(Finish);
 		auto properties = data::JSON::Load(fileName);
 		for (auto& entry : properties.items())
 		{
@@ -46,5 +45,4 @@ namespace graphics::Textures
 		}
 		return nullptr;
 	}
-
 }

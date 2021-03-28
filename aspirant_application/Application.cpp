@@ -4,7 +4,6 @@
 #include "UIState.h"
 #include "Command.h"
 #include "Application.h"
-#include "Common.Finishers.h"
 #include "Graphics.Colors.h"
 #include "Graphics.Textures.h"
 #include "Graphics.Sprites.h"
@@ -233,6 +232,5 @@ namespace common::Application
 
 	void Finish()
 	{
-		common::Finishers::Finish();
 	}
 }

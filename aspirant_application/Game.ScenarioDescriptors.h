@@ -1,6 +1,5 @@
 #pragma once
 #include "Game.ScenarioDescriptor.h"
-#include "Common.Finishers.h"
 #include <string>
 #include <vector>
 namespace game::ScenarioDescriptors

@@ -177,7 +177,6 @@
     <ClCompile Include="State.Editor.ScenarioDescriptor.cpp" />
     <ClCompile Include="State.Editor.Scenarios.cpp" />
     <ClCompile Include="State.Editor.Scenario.cpp" />
-    <ClCompile Include="Common.Finishers.cpp" />
     <ClCompile Include="Graphics.Fonts.cpp" />
     <ClCompile Include="Data.JSON.cpp" />
     <ClCompile Include="Graphics.Layout.cpp" />
@@ -213,7 +212,6 @@
     <ClInclude Include="Game.Types.h" />
     <ClInclude Include="Graphics.Properties.h" />
     <ClInclude Include="Graphics.Types.h" />
-    <ClInclude Include="Common.Application.h" />
     <ClInclude Include="Application.h" />
     <ClInclude Include="Graphics.Colors.h" />
     <ClInclude Include="Command.h" />
@@ -225,7 +223,6 @@
     <ClInclude Include="Context.Editor.Rooms.h" />
     <ClInclude Include="Context.Editor.RoomView.h" />
     <ClInclude Include="Context.Editor.Scenarios.h" />
-    <ClInclude Include="Common.Finishers.h" />
     <ClInclude Include="Common.Finisher.h" />
     <ClInclude Include="Graphics.Fonts.h" />
     <ClInclude Include="json.hpp" />

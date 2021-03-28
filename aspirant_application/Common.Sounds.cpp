@@ -3,7 +3,6 @@
 #include "Common.Utility.h"
 #include <fstream>
 #include "Data.JSON.h"
-#include "Common.Finishers.h"
 namespace common::Sounds
 {
 	static std::map<std::string, Mix_Chunk*> sounds;
@@ -154,7 +153,7 @@ namespace common::Sounds
 
 	void Start(const std::string& sfxFileName, const std::string& muxFileName)
 	{
-		::common::Finishers::Add(Finish);
+		atexit(Finish);
 		StartSound(sfxFileName);
 		StartMusic(muxFileName);
 	}

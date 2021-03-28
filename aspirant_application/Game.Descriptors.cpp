@@ -1,5 +1,4 @@
 #include "Game.Descriptors.h"
-#include "Common.Finishers.h"
 #include <map>
 #include "Common.Finisher.h"
 #include "Data.JSON.h"
