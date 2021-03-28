@@ -8,11 +8,8 @@
 namespace state::MainMenu
 {
 	const std::string LAYOUT_NAME = "State.MainMenu";
+	const std::string MENU_ID = "Main";
 	const std::string ITCH_URL_STRING = "ItchURL";
-	const std::string MENU_ITEM_START_COLOR_NAME = "MainMenu.Color.Start";
-	const std::string MENU_ITEM_ABOUT_COLOR_NAME = "MainMenu.Color.About";
-	const std::string MENU_ITEM_OPTIONS_COLOR_NAME = "MainMenu.Color.Options";
-	const std::string MENU_ITEM_QUIT_COLOR_NAME = "MainMenu.Color.Quit";
 
 	enum class MainMenuItem
 	{
@@ -22,38 +19,9 @@ namespace state::MainMenu
 		QUIT
 	};
 
-	static MainMenuItem current = MainMenuItem::START;
-	static std::map<MainMenuItem, ::MenuItem<MainMenuItem>> items = 
-	{
-		{MainMenuItem::START, ::MenuItem<MainMenuItem>
-		(
-			MENU_ITEM_START_COLOR_NAME,
-			MainMenuItem::QUIT,
-			MainMenuItem::ABOUT
-		)},
-		{MainMenuItem::ABOUT, ::MenuItem<MainMenuItem>
-			(
-				MENU_ITEM_ABOUT_COLOR_NAME,
-				MainMenuItem::START,
-				MainMenuItem::OPTIONS
-		)},
-		{MainMenuItem::OPTIONS, ::MenuItem<MainMenuItem>
-			(
-				MENU_ITEM_OPTIONS_COLOR_NAME,
-				MainMenuItem::ABOUT,
-				MainMenuItem::QUIT
-		)},
-		{MainMenuItem::QUIT, ::MenuItem<MainMenuItem>
-			(
-				MENU_ITEM_QUIT_COLOR_NAME,
-				MainMenuItem::OPTIONS,
-				MainMenuItem::START
-		)}
-	};
-
 	static void ActivateItem()
 	{
-		switch (current)
+		switch ((MainMenuItem)graphics::Layouts::GetMenuIndex(LAYOUT_NAME, MENU_ID).value())
 		{
 		case MainMenuItem::START:
 			::Application::SetUIState(::UIState::START_GAME);
@@ -76,10 +44,10 @@ namespace state::MainMenu
 		switch (command)
 		{
 		case ::Command::UP:
-			MenuItem<MainMenuItem>::Previous(current, items);
+			graphics::Layouts::PreviousMenuIndex(LAYOUT_NAME, MENU_ID);
 			break;
 		case ::Command::DOWN:
-			MenuItem<MainMenuItem>::Next(current, items);
+			graphics::Layouts::NextMenuIndex(LAYOUT_NAME, MENU_ID);
 			break;
 		case ::Command::GREEN:
 			ActivateItem();
@@ -90,15 +58,9 @@ namespace state::MainMenu
 		}
 	}
 
-	static void OnUpdate(const Uint32& ticks)
-	{
-		MenuItem<MainMenuItem>::Update(items, current);
-	}
-
 	void Start()
 	{
 		::Application::SetCommandHandler(::UIState::MAIN_MENU, OnCommand);
 		::Application::SetRenderLayout(::UIState::MAIN_MENU, LAYOUT_NAME);
-		::Application::SetUpdateHandler(::UIState::MAIN_MENU, OnUpdate);
 	}
 }

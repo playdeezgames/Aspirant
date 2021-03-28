@@ -8,12 +8,14 @@
 #include "Renderer.Editor.Room.h"
 #include "Renderer.Editor.PickDescriptor.h"
 #include "Renderer.Editor.Cell.h"
+#include "Graphics.Menu.h"
 #include <map>
 namespace graphics::Layout
 {
 	static std::map<std::string, void(*)(SDL_Renderer*, const nlohmann::json&)> table =
 	{
 		{graphics::Types::IMAGE, graphics::Image::Draw},
+		{graphics::Types::MENU, graphics::Menu::Draw},
 		{graphics::Types::TEXT, graphics::Text::Draw},
 		{graphics::Types::ROOM_EDITOR, renderer::editor::Room::Draw},
 		{graphics::Types::DESCRIPTOR_PALETTE, renderer::editor::PickDescriptor::Draw},

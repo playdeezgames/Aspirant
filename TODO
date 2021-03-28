@@ -1,25 +1,25 @@
 Sort Out:
-    ☐ layout names do not really reflect the corresponding namespaces in the code
+    ✔ layout names do not really reflect the corresponding namespaces in the code @done(21-03-27 18:34)
         ✔ Splash @done(21-03-27 18:24)
         ✔ MainMenu @done(21-03-27 17:35)
-        ☐ About
-        ☐ ConfirmQuit
-        ☐ Options
+        ✔ About @done(21-03-27 18:34)
+        ✔ ConfirmQuit @done(21-03-27 18:34)
+        ✔ Options @done(21-03-27 18:34)
         ✔ StartGame @done(21-03-27 18:24)
-        ☐ StartEditor
-        ☐ EditScenarioSelector
-        ☐ EditScenario
-        ☐ EditPickRoom
-        ☐ EditNewRoom
-        ☐ EditScenarioDescriptor
+        ✔ StartEditor @done(21-03-27 18:34)
+        ✔ EditScenarioSelector @done(21-03-27 18:34)
+        ✔ EditScenario @done(21-03-27 18:34)
+        ✔ EditPickRoom @done(21-03-27 18:34)
+        ✔ EditNewRoom @done(21-03-27 18:34)
+        ✔ EditScenarioDescriptor @done(21-03-27 18:34)
         ✔ EditNavigateRoom @done(21-03-27 18:22)
-        ☐ RoomViewPosition
+        ✔ RoomViewPosition @done(21-03-27 18:34)
         ✔ EditDescriptorSelector @done(21-03-27 18:22)
         ✔ StartPlayer @done(21-03-27 18:25)
-        ☐ PlayerNewGame
-        ☐ PlayerLoadGame
-        ☐ EditAvatar
-☐ Bugs:
+        ✔ PlayerNewGame @done(21-03-27 18:34)
+        ✔ PlayerLoadGame @done(21-03-27 18:34)
+        ✔ EditAvatar @done(21-03-27 18:34)
+Bugs:
     ✔ I cannot attempt to "open" a scenario when there are no scenarios @done(21-03-27 16:31)
     ✔ In a freshly created scenario, attempting to edit the avatar crashes the game @done(21-03-27 16:23)
     ✔ When I edit a scenario descriptor, it does not save. @done(21-03-27 16:28)
