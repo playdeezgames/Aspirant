@@ -9,9 +9,7 @@
 namespace state::editor::ScenarioDescriptor
 {
 	const std::string LAYOUT_NAME = "State.Editor.ScenarioDescriptor";
-	const std::string COLOR_NAME_SCENARIO_NAME = "EditScenarioDescriptor.Color.ScenarioName";
-	const std::string COLOR_NAME_BRIEF = "EditScenarioDescriptor.Color.Brief";
-	const std::string COLOR_NAME_BACK = "EditScenarioDescriptor.Color.Back";
+	const std::string MENU_ID = "ScenarioDescriptor";
 	const std::string TEXT_NAME_SCENARIO_NAME = "EditScenarioDescriptor.Text.ScenarioName";
 	const std::string TEXT_NAME_BRIEF = "EditScenarioDescriptor.Text.Brief";
 
@@ -22,17 +20,14 @@ namespace state::editor::ScenarioDescriptor
 		BACK
 	};
 
-	static EditScenarioDescriptorItem current = EditScenarioDescriptorItem::BACK;
-	static std::map<EditScenarioDescriptorItem, ::MenuItem<EditScenarioDescriptorItem>> items =
+	static EditScenarioDescriptorItem GetCurrentItem()
 	{
-		{EditScenarioDescriptorItem::SCENARIO_NAME, ::MenuItem<EditScenarioDescriptorItem>(COLOR_NAME_SCENARIO_NAME, EditScenarioDescriptorItem::BACK, EditScenarioDescriptorItem::BRIEF)},
-		{EditScenarioDescriptorItem::BRIEF, ::MenuItem<EditScenarioDescriptorItem>(COLOR_NAME_BRIEF, EditScenarioDescriptorItem::SCENARIO_NAME, EditScenarioDescriptorItem::BACK)},
-		{EditScenarioDescriptorItem::BACK, ::MenuItem<EditScenarioDescriptorItem>(COLOR_NAME_BACK, EditScenarioDescriptorItem::BRIEF, EditScenarioDescriptorItem::SCENARIO_NAME)}
-	};
+		return (EditScenarioDescriptorItem)graphics::Layouts::GetMenuValue(LAYOUT_NAME, MENU_ID).value();
+	}
 
 	void ActivateItem()
 	{
-		switch (current)
+		switch (GetCurrentItem())
 		{
 		case EditScenarioDescriptorItem::BACK:
 			game::ScenarioDescriptors::Save();
@@ -48,7 +43,7 @@ namespace state::editor::ScenarioDescriptor
 		switch (command)
 		{
 		case ::Command::BACK:
-			switch (current)
+			switch (GetCurrentItem())
 			{
 			case EditScenarioDescriptorItem::SCENARIO_NAME:
 				temp = descriptor.GetName();
@@ -69,7 +64,7 @@ namespace state::editor::ScenarioDescriptor
 			}
 			break;
 		case ::Command::RED:
-			switch (current)
+			switch (GetCurrentItem())
 			{
 			case EditScenarioDescriptorItem::SCENARIO_NAME:
 				descriptor.SetName("");
@@ -84,10 +79,10 @@ namespace state::editor::ScenarioDescriptor
 			}
 			break;
 		case ::Command::UP:
-			MenuItem<EditScenarioDescriptorItem>::Previous(current, items);
+			graphics::Layouts::PreviousMenuIndex(LAYOUT_NAME, MENU_ID);
 			break;
 		case ::Command::DOWN:
-			MenuItem<EditScenarioDescriptorItem>::Next(current, items);
+			graphics::Layouts::NextMenuIndex(LAYOUT_NAME, MENU_ID);
 			break;
 		case ::Command::GREEN:
 			ActivateItem();
@@ -100,13 +95,12 @@ namespace state::editor::ScenarioDescriptor
 		auto descriptor = ::game::ScenarioDescriptors::Get(::context::editor::Scenarios::GetIndex());
 		::data::Strings::Set(TEXT_NAME_SCENARIO_NAME, descriptor.GetName());
 		::data::Strings::Set(TEXT_NAME_BRIEF, descriptor.GetBrief());
-		MenuItem<EditScenarioDescriptorItem>::Update(items, current);
 	}
 
 	static void OnTextInput(const std::string& text)
 	{
 		auto descriptor = ::game::ScenarioDescriptors::Get(::context::editor::Scenarios::GetIndex());
-		switch (current)
+		switch (GetCurrentItem())
 		{
 		case EditScenarioDescriptorItem::SCENARIO_NAME:
 			descriptor.SetName(descriptor.GetName() + text);
@@ -115,7 +109,6 @@ namespace state::editor::ScenarioDescriptor
 			descriptor.SetBrief(descriptor.GetBrief() + text);
 			break;
 		}
-
 	}
 
 	void Start()

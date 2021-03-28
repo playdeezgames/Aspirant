@@ -20,17 +20,39 @@
         "drop-shadow-y": 2
     },
     {
-        "type": "Text",
+        "type": "Menu",
+        "menu-id": "ScenarioDescriptor",
+        "index": 0,
         "font": "default",
-        "color": { "key": "EditScenarioDescriptor.Color.ScenarioName" },
-        "text": "Scenario Name",
-        "x": 320,
-        "y": 32,
+        "colors": {
+            "active": "Cyan",
+            "inactive": "Gray"
+        },
         "horizontal-alignment": 0,
         "drop-shadow": true,
         "drop-shadow-color": "Black",
         "drop-shadow-x": 2,
-        "drop-shadow-y": 2
+        "drop-shadow-y": 2,
+        "menu-items": [
+            {
+                "text": "Scenario Name",
+                "x": 320,
+                "y": 32,
+                "value": 0
+            },
+            {
+                "text": "Scenario Brief",
+                "x": 320,
+                "y": 80,
+                "value": 1
+            },
+            {
+                "text": "Back",
+                "x": 320,
+                "y": 128,
+                "value": 2
+            }
+        ]
     },
     {
         "type": "Text",
@@ -48,36 +70,10 @@
     {
         "type": "Text",
         "font": "default",
-        "color": { "key": "EditScenarioDescriptor.Color.Brief" },
-        "text": "Scenario Brief",
-        "x": 320,
-        "y": 80,
-        "horizontal-alignment": 0,
-        "drop-shadow": true,
-        "drop-shadow-color": "Black",
-        "drop-shadow-x": 2,
-        "drop-shadow-y": 2
-    },
-    {
-        "type": "Text",
-        "font": "default",
         "color": "Brown",
         "text": { "key": "EditScenarioDescriptor.Text.Brief" },
         "x": 320,
         "y": 96,
-        "horizontal-alignment": 0,
-        "drop-shadow": true,
-        "drop-shadow-color": "Black",
-        "drop-shadow-x": 2,
-        "drop-shadow-y": 2
-    },
-    {
-        "type": "Text",
-        "font": "default",
-        "color": { "key": "EditScenarioDescriptor.Color.Back" },
-        "text": "Back",
-        "x": 320,
-        "y": 128,
         "horizontal-alignment": 0,
         "drop-shadow": true,
         "drop-shadow-color": "Black",
