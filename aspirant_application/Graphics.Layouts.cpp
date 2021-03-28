@@ -4,7 +4,6 @@
 #include "Graphics.Types.h"
 #include "Common.Properties.h"
 #include "Graphics.Properties.h"
-#include "Data.Int.h"
 namespace graphics::Layout { void Draw(SDL_Renderer*, const nlohmann::json&); }
 namespace graphics::Layouts
 {
@@ -33,7 +32,7 @@ namespace graphics::Layouts
 				thingie[graphics::Properties::MENU_ID] == menuId)
 			{
 				int index = thingie[graphics::Properties::INDEX];//TODO: this cannot be proxied!
-				return (int)data::Int(thingie[graphics::Properties::MENU_ITEMS][index][graphics::Properties::VALUE]);
+				return (int)thingie[graphics::Properties::MENU_ITEMS][index][graphics::Properties::VALUE];
 			}
 		}
 		return std::optional<int>();

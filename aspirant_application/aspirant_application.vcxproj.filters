@@ -53,13 +53,7 @@
     <ClCompile Include="Graphics.Image.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Data.Int.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Data.String.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Data.Bool.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Graphics.Text.cpp">
@@ -244,13 +238,7 @@
     <ClInclude Include="Common.Finisher.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Data.Int.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Data.String.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Data.Bool.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Graphics.Layouts.h">
