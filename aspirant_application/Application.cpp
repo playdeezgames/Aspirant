@@ -3,9 +3,6 @@
 #include <optional>
 #include "UIState.h"
 #include "Command.h"
-#include "Data.Strings.h"
-#include "Data.Ints.h"
-#include "Data.Bools.h"
 #include "Application.h"
 #include "Common.Finishers.h"
 #include "Graphics.Colors.h"
@@ -179,9 +176,6 @@ namespace common::Application
 
 	void Start(SDL_Renderer* renderer, const std::vector<std::string>& arguments)
 	{
-		data::Strings::InitializeFromFile(STRINGS);
-		data::Ints::InitializeFromFile(INTS);
-		data::Bools::InitializeFromFile(FLAGS);
 		graphics::Colors::Start(COLOR);
 		graphics::Textures::InitializeFromFile(renderer, TEXTURE);
 		graphics::Sprites::Start(SPRITE);

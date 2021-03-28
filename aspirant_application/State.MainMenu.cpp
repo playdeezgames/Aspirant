@@ -2,12 +2,10 @@
 #include "UIState.h"
 #include "Graphics.Layouts.h"
 #include <map>
-#include "Data.Strings.h"
 namespace state::MainMenu
 {
 	const std::string LAYOUT_NAME = "State.MainMenu";
 	const std::string MENU_ID = "Main";
-	const std::string ITCH_URL_STRING = "ItchURL";
 
 	enum class MainMenuItem
 	{
@@ -22,17 +20,17 @@ namespace state::MainMenu
 		switch ((MainMenuItem)graphics::Layouts::GetMenuValue(LAYOUT_NAME, MENU_ID).value())
 		{
 		case MainMenuItem::START:
-			::Application::SetUIState(::UIState::START_GAME);
+			::Application::SetUIState(UIState::START_GAME);
 			return;
 		case MainMenuItem::OPTIONS:
-			::Application::SetUIState(::UIState::OPTIONS);
+			::Application::SetUIState(UIState::OPTIONS);
 			return;
 		case MainMenuItem::ABOUT:
-			SDL_SetClipboardText(::data::Strings::Get(ITCH_URL_STRING).c_str());
-			::Application::SetUIState(::UIState::ABOUT);
+			SDL_SetClipboardText("https://thegrumpygamedev.itch.io/");
+			::Application::SetUIState(UIState::ABOUT);
 			return;
 		case MainMenuItem::QUIT:
-			::Application::SetUIState(::UIState::CONFIRM_QUIT);
+			::Application::SetUIState(UIState::CONFIRM_QUIT);
 			return;
 		}
 	}

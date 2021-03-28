@@ -2,12 +2,11 @@
 #include "UIState.h"
 #include "Graphics.Layouts.h"
 #include "Context.Editor.Rooms.h"
-#include "Data.Strings.h"
 #include "Context.Editor.RoomView.h"
 namespace state::editor::PickRoom
 {
 	const std::string LAYOUT_NAME = "State.Editor.PickRoom";
-	const std::string TEXT_NAME_STRING_ROOM_NAME = "EditPickRoom.Text.RoomName";
+	const std::string ROOM_NAME_TEXT_ID = "RoomName";
 
 	static void OnCommand(const ::Command& command)
 	{
@@ -36,11 +35,11 @@ namespace state::editor::PickRoom
 		if (::context::editor::Rooms::GetRoomCount() > 0)
 		{
 			auto& roomName = ::context::editor::Rooms::GetRoomList()[::context::editor::Rooms::GetRoomIndex()];
-			::data::Strings::Set(TEXT_NAME_STRING_ROOM_NAME, roomName);
+			graphics::Layouts::SetTextText(LAYOUT_NAME, ROOM_NAME_TEXT_ID, roomName);
 		}
 		else
 		{
-			::data::Strings::Set(TEXT_NAME_STRING_ROOM_NAME, "-");
+			graphics::Layouts::SetTextText(LAYOUT_NAME, ROOM_NAME_TEXT_ID, "-");
 		}
 	}
 

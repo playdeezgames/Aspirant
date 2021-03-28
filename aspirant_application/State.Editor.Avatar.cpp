@@ -2,15 +2,14 @@
 #include "Graphics.Layouts.h"
 #include "Common.XY.h"
 #include "Context.Editor.Scenario.h"
-#include "Data.Strings.h"
 #include <sstream>
 namespace state::editor::Avatar
 {
 	const std::string LAYOUT_NAME = "State.Editor.Avatar";
 	const std::string MENU_ID = "Avatar";
-	const std::string TEXT_ROOM_NAME = "EditAvatar.Text.RoomName";
-	const std::string TEXT_COLUMN = "EditAvatar.Text.Column";
-	const std::string TEXT_ROW = "EditAvatar.Text.Row";
+	const std::string ROOM_NAME_TEXT_ID = "RoomName";
+	const std::string COLUMN_TEXT_ID = "Column";
+	const std::string ROW_TEXT_ID = "Row";
 
 	enum class AvatarMenuItem
 	{
@@ -111,15 +110,15 @@ namespace state::editor::Avatar
 	{
 		auto avatar = context::editor::Scenario::Get().GetAvatar();
 
-		data::Strings::Set(TEXT_ROOM_NAME, avatar.GetRoomId());
+		graphics::Layouts::SetTextText(LAYOUT_NAME, ROOM_NAME_TEXT_ID, avatar.GetRoomId());
 
 		std::stringstream ss;
 		ss << avatar.GetPosition().GetX();
-		data::Strings::Set(TEXT_COLUMN, ss.str());
+		graphics::Layouts::SetTextText(LAYOUT_NAME, COLUMN_TEXT_ID, ss.str());
 
 		ss.str("");
 		ss << avatar.GetPosition().GetY();
-		data::Strings::Set(TEXT_ROW, ss.str());
+		graphics::Layouts::SetTextText(LAYOUT_NAME, ROW_TEXT_ID, ss.str());
 	}
 
 	static void OnTextInput(const std::string& text)

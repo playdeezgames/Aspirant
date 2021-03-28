@@ -3,7 +3,6 @@
 #include "Graphics.Layouts.h"
 #include "Game.ScenarioDescriptors.h"
 #include "Context.Editor.Scenarios.h"
-#include "Data.Strings.h"
 #include <sstream>
 #include "Context.Editor.Rooms.h"
 #include "Context.Editor.NewRoom.h"
@@ -11,7 +10,7 @@ namespace state::editor::Scenario
 {
 	const std::string LAYOUT_NAME = "State.Editor.Scenario";
 	const std::string MENU_ID = "Scenario";
-	const std::string HEADER_TEXT_NAME = "EditScenario.Text.Header";
+	const std::string HEADER_TEXT_ID = "Header";
 
 	enum class EditScenarioItem
 	{
@@ -70,7 +69,7 @@ namespace state::editor::Scenario
 		std::stringstream ss;
 		auto scenario = ::game::ScenarioDescriptors::Get(::context::editor::Scenarios::GetIndex());
 		ss << scenario.GetName() << "(id=" << scenario.GetId() << ")";//TODO: magic strings
-		::data::Strings::Set(HEADER_TEXT_NAME, ss.str());
+		graphics::Layouts::SetTextText(LAYOUT_NAME, HEADER_TEXT_ID, ss.str());
 	}
 
 	void Start()

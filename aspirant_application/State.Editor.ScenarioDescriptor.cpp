@@ -2,14 +2,13 @@
 #include "UIState.h"
 #include "Graphics.Layouts.h"
 #include "Context.Editor.Scenarios.h"
-#include "Data.Strings.h"
 #include "Game.ScenarioDescriptors.h"
 namespace state::editor::ScenarioDescriptor
 {
 	const std::string LAYOUT_NAME = "State.Editor.ScenarioDescriptor";
 	const std::string MENU_ID = "ScenarioDescriptor";
-	const std::string TEXT_NAME_SCENARIO_NAME = "EditScenarioDescriptor.Text.ScenarioName";
-	const std::string TEXT_NAME_BRIEF = "EditScenarioDescriptor.Text.Brief";
+	const std::string SCENARIO_NAME_TEXT_ID = "ScenarioName";
+	const std::string BRIEF_TEXT_ID = "Brief";
 
 	enum class EditScenarioDescriptorItem
 	{
@@ -91,8 +90,8 @@ namespace state::editor::ScenarioDescriptor
 	static void OnUpdate(const Uint32& ticks)
 	{
 		auto descriptor = ::game::ScenarioDescriptors::Get(::context::editor::Scenarios::GetIndex());
-		::data::Strings::Set(TEXT_NAME_SCENARIO_NAME, descriptor.GetName());
-		::data::Strings::Set(TEXT_NAME_BRIEF, descriptor.GetBrief());
+		graphics::Layouts::SetTextText(LAYOUT_NAME, SCENARIO_NAME_TEXT_ID, descriptor.GetName());
+		graphics::Layouts::SetTextText(LAYOUT_NAME, BRIEF_TEXT_ID, descriptor.GetBrief());
 	}
 
 	static void OnTextInput(const std::string& text)

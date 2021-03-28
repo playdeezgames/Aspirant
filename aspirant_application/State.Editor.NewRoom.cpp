@@ -1,7 +1,6 @@
 #include "Application.h"
 #include "Graphics.Layouts.h"
 #include <sstream>
-#include "Data.Strings.h"
 #include "Context.Editor.NewRoom.h"
 #include "Context.Editor.Rooms.h"
 #include "Context.Editor.Scenario.h"
@@ -9,10 +8,10 @@ namespace state::editor::NewRoom
 {
 	const std::string LAYOUT_NAME = "State.Editor.NewRoom";
 	const std::string MENU_ID = "NewRoom";
-	const std::string TEXT_NAME_ROOM_NAME = "EditNewRoom.Text.RoomName";
-	const std::string TEXT_NAME_COLUMNS = "EditNewRoom.Text.Columns";
-	const std::string TEXT_NAME_ROWS = "EditNewRoom.Text.Rows";
-	const std::string TEXT_NAME_TERRAIN = "EditNewRoom.Text.Terrain";
+	const std::string ROOM_NAME_TEXT_ID = "RoomName";
+	const std::string COLUMNS_TEXT_ID = "Columns";
+	const std::string ROWS_TEXT_ID = "Rows";
+	const std::string TERRAIN_TEXT_ID = "Terrain";
 
 	enum class NewRoomItem
 	{
@@ -130,17 +129,17 @@ namespace state::editor::NewRoom
 
 	static void OnUpdate(const Uint32& ticks)
 	{
-		::data::Strings::Set(TEXT_NAME_ROOM_NAME, ::context::editor::NewRoom::GetName());
+		graphics::Layouts::SetTextText(LAYOUT_NAME, ROOM_NAME_TEXT_ID, ::context::editor::NewRoom::GetName());
 
 		std::stringstream ss;
 		ss << ::context::editor::NewRoom::GetColumns();
-		::data::Strings::Set(TEXT_NAME_COLUMNS, ss.str());
+		graphics::Layouts::SetTextText(LAYOUT_NAME, COLUMNS_TEXT_ID, ss.str());
 
 		ss.str("");
 		ss << ::context::editor::NewRoom::GetRows();
-		::data::Strings::Set(TEXT_NAME_ROWS, ss.str());
+		graphics::Layouts::SetTextText(LAYOUT_NAME, ROWS_TEXT_ID, ss.str());
 
-		data::Strings::Set(TEXT_NAME_TERRAIN, ::context::editor::NewRoom::GetTerrain());
+		graphics::Layouts::SetTextText(LAYOUT_NAME, TERRAIN_TEXT_ID, ::context::editor::NewRoom::GetTerrain());
 	}
 
 	static void OnTextInput(const std::string& text)

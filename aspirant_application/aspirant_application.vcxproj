@@ -179,9 +179,7 @@
     <ClCompile Include="State.Editor.Scenarios.cpp" />
     <ClCompile Include="State.Editor.Scenario.cpp" />
     <ClCompile Include="Common.Finishers.cpp" />
-    <ClCompile Include="Data.Bools.cpp" />
     <ClCompile Include="Graphics.Fonts.cpp" />
-    <ClCompile Include="Data.Ints.cpp" />
     <ClCompile Include="Data.Int.cpp" />
     <ClCompile Include="Data.JSON.cpp" />
     <ClCompile Include="Graphics.Layout.cpp" />
@@ -208,7 +206,6 @@
     <ClCompile Include="State.Start.cpp" />
     <ClCompile Include="Graphics.Image.cpp" />
     <ClCompile Include="Graphics.Text.cpp" />
-    <ClCompile Include="Data.Strings.cpp" />
     <ClCompile Include="Data.String.cpp" />
     <ClCompile Include="Graphics.Textures.cpp" />
     <ClCompile Include="Common.Utility.cpp" />
@@ -235,9 +232,7 @@
     <ClInclude Include="Context.Editor.Scenarios.h" />
     <ClInclude Include="Common.Finishers.h" />
     <ClInclude Include="Common.Finisher.h" />
-    <ClInclude Include="Data.Bools.h" />
     <ClInclude Include="Graphics.Fonts.h" />
-    <ClInclude Include="Data.Ints.h" />
     <ClInclude Include="Data.Int.h" />
     <ClInclude Include="json.hpp" />
     <ClInclude Include="Data.JSON.h" />
@@ -254,7 +249,6 @@
     <ClInclude Include="Graphics.Sprite.h" />
     <ClInclude Include="Graphics.Font.h" />
     <ClInclude Include="Graphics.Sprites.h" />
-    <ClInclude Include="Data.Strings.h" />
     <ClInclude Include="Data.String.h" />
     <ClInclude Include="Graphics.Textures.h" />
     <ClInclude Include="UIState.h" />

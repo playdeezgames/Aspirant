@@ -3,7 +3,6 @@
 #include "Graphics.Layouts.h"
 #include "Context.Editor.RoomView.h"
 #include <sstream>
-#include "Data.Strings.h"
 #include "Context.Editor.Scenario.h"
 #include "Common.Utility.h"
 #include "Context.Editor.Rooms.h"
@@ -12,7 +11,7 @@
 namespace state::editor::RoomCells
 {
 	const std::string LAYOUT_NAME = "State.Editor.RoomCells";
-	const std::string TEXT_ROOM_VIEW_POSITION_NAME = "RoomViewPosition.Text.Position";
+	const std::string POSITION_TEXT_ID = "Position";
 
 	static void MoveCursor(const common::XY<int>& delta)
 	{
@@ -80,7 +79,7 @@ namespace state::editor::RoomCells
 		auto& cursorPosition = ::context::editor::RoomView::GetCursor();
 		std::stringstream ss;
 		ss << "(" << cursorPosition.GetX() << "," << cursorPosition.GetY() << ")";//TODO: magic string
-		::data::Strings::Set(TEXT_ROOM_VIEW_POSITION_NAME, ss.str());
+		graphics::Layouts::SetTextText(LAYOUT_NAME, POSITION_TEXT_ID, ss.str());
 	}
 
 	void Start()
