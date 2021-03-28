@@ -1,22 +1,14 @@
 #include "State.Editor.Avatar.h"
-#include <string>
-#include <SDL.h>
-#include "UIState.h"
-#include "Graphics.Layouts.h"
-#include "Command.h"
 #include "Application.h"
-#include <map>
-#include "MenuItem.h"
+#include "Graphics.Layouts.h"
+#include "Common.XY.h"
 #include "Context.Editor.Scenario.h"
 #include "Data.Strings.h"
 #include <sstream>
 namespace state::editor::Avatar
 {
-	const std::string LAYOUT_NAME = "EditAvatar";
-	const std::string COLOR_ROOM_NAME = "EditAvatar.Color.RoomName";
-	const std::string COLOR_COLUMN = "EditAvatar.Color.Column";
-	const std::string COLOR_ROW = "EditAvatar.Color.Row";
-	const std::string COLOR_BACK = "EditAvatar.Color.Back";
+	const std::string LAYOUT_NAME = "State.Editor.Avatar";
+	const std::string MENU_ID = "Avatar";
 	const std::string TEXT_ROOM_NAME = "EditAvatar.Text.RoomName";
 	const std::string TEXT_COLUMN = "EditAvatar.Text.Column";
 	const std::string TEXT_ROW = "EditAvatar.Text.Row";
@@ -28,14 +20,6 @@ namespace state::editor::Avatar
 		ROW,
 		BACK
 	};
-	static AvatarMenuItem current = AvatarMenuItem::BACK;
-	static std::map<AvatarMenuItem, MenuItem<AvatarMenuItem>> items =
-	{
-		{AvatarMenuItem::ROOM_NAME, MenuItem<AvatarMenuItem>(COLOR_ROOM_NAME, AvatarMenuItem::BACK, AvatarMenuItem::COLUMN)},
-		{AvatarMenuItem::COLUMN, MenuItem<AvatarMenuItem>(COLOR_COLUMN, AvatarMenuItem::ROOM_NAME, AvatarMenuItem::ROW)},
-		{AvatarMenuItem::ROW, MenuItem<AvatarMenuItem>(COLOR_ROW, AvatarMenuItem::COLUMN, AvatarMenuItem::BACK)},
-		{AvatarMenuItem::BACK, MenuItem<AvatarMenuItem>(COLOR_BACK, AvatarMenuItem::ROW, AvatarMenuItem::ROOM_NAME)}
-	};
 
 	static void MovePositionBy(const common::XY<int>& delta)
 	{
@@ -44,9 +28,14 @@ namespace state::editor::Avatar
 		context::editor::Scenario::Get().GetAvatar().SetPosition(position);
 	}
 
+	static AvatarMenuItem GetCurrentItem()
+	{
+		return (AvatarMenuItem)graphics::Layouts::GetMenuValue(LAYOUT_NAME, MENU_ID).value();
+	}
+
 	static void DecreaseItem()
 	{
-		switch (current)
+		switch (GetCurrentItem())
 		{
 		case AvatarMenuItem::COLUMN:
 			MovePositionBy({ -1, 0 });
@@ -59,7 +48,7 @@ namespace state::editor::Avatar
 
 	static void IncreaseItem()
 	{
-		switch (current)
+		switch (GetCurrentItem())
 		{
 		case AvatarMenuItem::COLUMN:
 			MovePositionBy({ 1, 0 });
@@ -72,7 +61,7 @@ namespace state::editor::Avatar
 
 	static void ActivateItem()
 	{
-		if(current==AvatarMenuItem::BACK)
+		if(GetCurrentItem()==AvatarMenuItem::BACK)
 		{
 			context::editor::Scenario::Save();
 			Application::SetUIState(UIState::EDIT_SCENARIO);
@@ -85,7 +74,7 @@ namespace state::editor::Avatar
 		switch (command)
 		{
 		case Command::BACK:
-			if (current == AvatarMenuItem::ROOM_NAME)
+			if (GetCurrentItem() == AvatarMenuItem::ROOM_NAME)
 			{
 				auto avatar = context::editor::Scenario::Get().GetAvatar();
 				std::string value = avatar.GetRoomId();
@@ -102,10 +91,10 @@ namespace state::editor::Avatar
 			}
 			break;
 		case Command::UP:
-			MenuItem<AvatarMenuItem>::Previous(current, items);
+			graphics::Layouts::PreviousMenuIndex(LAYOUT_NAME, MENU_ID);
 			break;
 		case Command::DOWN:
-			MenuItem<AvatarMenuItem>::Next(current, items);
+			graphics::Layouts::NextMenuIndex(LAYOUT_NAME, MENU_ID);
 			break;
 		case Command::LEFT:
 			DecreaseItem();
@@ -123,7 +112,6 @@ namespace state::editor::Avatar
 	{
 		auto avatar = context::editor::Scenario::Get().GetAvatar();
 
-		MenuItem<AvatarMenuItem>::Update(items, current);
 		data::Strings::Set(TEXT_ROOM_NAME, avatar.GetRoomId());
 
 		std::stringstream ss;
@@ -137,7 +125,7 @@ namespace state::editor::Avatar
 
 	static void OnTextInput(const std::string& text)
 	{
-		if (current == AvatarMenuItem::ROOM_NAME)
+		if (GetCurrentItem() == AvatarMenuItem::ROOM_NAME)
 		{
 			auto avatar = context::editor::Scenario::Get().GetAvatar();
 			avatar.SetRoomId(avatar.GetRoomId() + text);

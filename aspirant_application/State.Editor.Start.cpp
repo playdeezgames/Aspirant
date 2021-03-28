@@ -1,22 +1,16 @@
 #include "State.Editor.Start.h"
 #include "Application.h"
-#include "UIState.h"
 #include "Graphics.Layouts.h"
-#include "MenuItem.h"
-#include <map>
-#include "Data.Strings.h"
-#include "Game.ScenarioDescriptors.h"
-#include <sstream>
-#include "Data.JSON.h"
-#include "Context.Editor.Scenarios.h"
-#include "Common.Properties.h"
+#include "json.hpp"
 #include "Game.Properties.h"
+#include "Common.Properties.h"
+#include "Data.JSON.h"
+#include "Game.ScenarioDescriptors.h"
+#include "Context.Editor.Scenarios.h"
 namespace state::editor::Start
 {
-	const std::string START_EDITOR_NEW_COLOR_NAME = "StartEditor.Color.New";
-	const std::string START_EDITOR_BACK_COLOR_NAME = "StartEditor.Color.Back";
-	const std::string START_EDITOR_OPEN_COLOR_NAME = "StartEditor.Color.Open";
 	const std::string LAYOUT_NAME = "State.Editor.Start";
+	const std::string MENU_ID = "Start";
 
 	enum class StartEditorItem
 	{
@@ -25,26 +19,7 @@ namespace state::editor::Start
 		BACK
 	};
 
-	static StartEditorItem current = StartEditorItem::BACK;
-	static std::map<StartEditorItem, ::MenuItem<StartEditorItem>> items =
-	{
-		{StartEditorItem::NEW,
-			::MenuItem<StartEditorItem>(
-				START_EDITOR_NEW_COLOR_NAME,
-				StartEditorItem::BACK,
-				StartEditorItem::OPEN)},
-		{StartEditorItem::OPEN,
-			::MenuItem<StartEditorItem>(
-				START_EDITOR_OPEN_COLOR_NAME,
-				StartEditorItem::NEW,
-				StartEditorItem::BACK)},
-		{StartEditorItem::BACK,
-			::MenuItem<StartEditorItem>(
-				START_EDITOR_BACK_COLOR_NAME,
-				StartEditorItem::OPEN,
-				StartEditorItem::NEW)}
-	};
-
+	//TODO: this belongs someplace else vvv
 	static void CreateScenarioFile(const std::string& fileName)
 	{
 		nlohmann::json model;
@@ -57,6 +32,7 @@ namespace state::editor::Start
 		data::JSON::Save(fileName, model);
 	}
 
+	//TODO: this belongs someplace else vvv
 	static void CreateNewScenario()
 	{
 		int scenarioId = ::game::ScenarioDescriptors::GetNextId();
@@ -66,7 +42,7 @@ namespace state::editor::Start
 
 	static void ActivateItem()
 	{
-		switch (current)
+		switch ((StartEditorItem)graphics::Layouts::GetMenuValue(LAYOUT_NAME, MENU_ID).value())
 		{
 		case StartEditorItem::BACK:
 			::Application::SetUIState(::UIState::START_GAME);
@@ -89,10 +65,10 @@ namespace state::editor::Start
 		switch (command)
 		{
 		case ::Command::UP:
-			MenuItem<StartEditorItem>::Previous(current, items);
+			graphics::Layouts::PreviousMenuIndex(LAYOUT_NAME, MENU_ID);
 			break;
 		case ::Command::DOWN:
-			MenuItem<StartEditorItem>::Next(current, items);
+			graphics::Layouts::NextMenuIndex(LAYOUT_NAME, MENU_ID);
 			break;
 		case ::Command::BACK:
 			::Application::SetUIState(::UIState::START_GAME);
@@ -103,11 +79,6 @@ namespace state::editor::Start
 		}
 	}
 
-	static void OnUpdate(const Uint32& ticks)
-	{
-		MenuItem<StartEditorItem>::Update(items, current);
-	}
-
 	void Start()
 	{
 		::Application::SetCommandHandler(
@@ -116,8 +87,5 @@ namespace state::editor::Start
 		::Application::SetRenderLayout(
 			::UIState::START_EDITOR,
 			LAYOUT_NAME);
-		::Application::SetUpdateHandler(
-			::UIState::START_EDITOR,
-			OnUpdate);
 	}
 }
