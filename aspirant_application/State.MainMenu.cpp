@@ -21,7 +21,7 @@ namespace state::MainMenu
 
 	static void ActivateItem()
 	{
-		switch ((MainMenuItem)graphics::Layouts::GetMenuIndex(LAYOUT_NAME, MENU_ID).value())
+		switch ((MainMenuItem)graphics::Layouts::GetMenuValue(LAYOUT_NAME, MENU_ID).value())
 		{
 		case MainMenuItem::START:
 			::Application::SetUIState(::UIState::START_GAME);

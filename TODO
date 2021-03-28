@@ -29,6 +29,7 @@ Bugs:
     ☐ I do not have the ability to delete a room in a scenario
         this is important to be able to do
         need a confirm dialog
+    ☐ i want the value of the menu item, not just the index
 Clunk:
 
 

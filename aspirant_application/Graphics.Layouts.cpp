@@ -24,14 +24,15 @@ namespace graphics::Layouts
 		graphics::Layout::Draw(renderer, layouts[key]);
 	}
 
-	std::optional<int> GetMenuIndex(const std::string& key, const std::string& menuId)
+	std::optional<int> GetMenuValue(const std::string& key, const std::string& menuId)
 	{
 		for (auto& thingie : layouts[key])
 		{
 			if (thingie[common::Properties::TYPE] == graphics::Types::MENU &&
 				thingie[graphics::Properties::MENU_ID] == menuId)
 			{
-				return (int)thingie[graphics::Properties::INDEX];
+				int index = thingie[graphics::Properties::INDEX];
+				return (int)thingie[graphics::Properties::MENU_ITEMS][index][graphics::Properties::VALUE];
 			}
 		}
 		return std::optional<int>();

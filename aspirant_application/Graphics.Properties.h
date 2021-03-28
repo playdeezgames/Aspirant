@@ -24,5 +24,5 @@ namespace graphics::Properties
 	const std::string MENU_ITEMS = "menu-items";
 	const std::string INDEX = "index";
 	const std::string MENU_ID = "menu-id";
-
+	const std::string VALUE = "value";
 }

@@ -10,6 +10,7 @@ namespace state::ConfirmQuit
 	const std::string CONFIRM_ITEM_NO_COLOR_NAME = "ConfirmQuit.Color.No";
 	const std::string CONFIRM_ITEM_YES_COLOR_NAME = "ConfirmQuit.Color.Yes";
 	const std::string LAYOUT_NAME = "State.ConfirmQuit";
+	const std::string MENU_ID = "ConfirmQuit";
 
 	enum class ConfirmQuitItem
 	{
@@ -69,4 +70,4 @@ namespace state::ConfirmQuit
 		::Application::SetRenderLayout(::UIState::CONFIRM_QUIT, LAYOUT_NAME);
 		::Application::SetUpdateHandler(::UIState::CONFIRM_QUIT, OnUpdate);
 	}
-}
+}//before = 73
