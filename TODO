@@ -28,7 +28,7 @@ Sort Out:
         ✔ start play @done(21-03-28 05:19)
         ✔ avatar editor @done(21-03-28 05:19)
         ✔ new room @done(21-03-28 05:29)
-        ☐ edit scenario
+        ✔ edit scenario @done(21-03-28 05:37)
         ☐ edit scenario descriptor
     ☐ store a list of updaters for a state in application intead of only having one!
 Bugs:

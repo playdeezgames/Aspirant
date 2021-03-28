@@ -6,17 +6,12 @@
 #include "Context.Editor.Scenarios.h"
 #include "Data.Strings.h"
 #include <sstream>
-#include "MenuItem.h"
 #include "Context.Editor.Rooms.h"
 #include "Context.Editor.NewRoom.h"
 namespace state::editor::Scenario
 {
 	const std::string LAYOUT_NAME = "State.Editor.Scenario";
-	const std::string ITEM_DESCRIPTOR_COLOR_NAME = "EditScenario.Color.Descriptor";
-	const std::string ITEM_AVATAR_COLOR_NAME = "EditScenario.Color.Avatar";
-	const std::string ITEM_OPEN_ROOM_COLOR_NAME = "EditScenario.Color.OpenRoom";
-	const std::string ITEM_NEW_ROOM_COLOR_NAME = "EditScenario.Color.NewRoom";
-	const std::string ITEM_BACK_COLOR_NAME = "EditScenario.Color.Back";
+	const std::string MENU_ID = "Scenario";
 	const std::string HEADER_TEXT_NAME = "EditScenario.Text.Header";
 
 	enum class EditScenarioItem
@@ -27,19 +22,10 @@ namespace state::editor::Scenario
 		NEW_ROOM,
 		BACK
 	};
-	static EditScenarioItem current = EditScenarioItem::BACK;
-	static std::map<EditScenarioItem, ::MenuItem<EditScenarioItem>> items =
-	{
-		{EditScenarioItem::DESCRIPTOR, ::MenuItem<EditScenarioItem>(ITEM_DESCRIPTOR_COLOR_NAME, EditScenarioItem::BACK, EditScenarioItem::AVATAR)},
-		{EditScenarioItem::AVATAR, ::MenuItem<EditScenarioItem>(ITEM_AVATAR_COLOR_NAME, EditScenarioItem::DESCRIPTOR, EditScenarioItem::OPEN_ROOM)},
-		{EditScenarioItem::OPEN_ROOM, ::MenuItem<EditScenarioItem>(ITEM_OPEN_ROOM_COLOR_NAME, EditScenarioItem::AVATAR, EditScenarioItem::NEW_ROOM)},
-		{EditScenarioItem::NEW_ROOM, ::MenuItem<EditScenarioItem>(ITEM_NEW_ROOM_COLOR_NAME, EditScenarioItem::OPEN_ROOM, EditScenarioItem::BACK)},
-		{EditScenarioItem::BACK, ::MenuItem<EditScenarioItem>(ITEM_BACK_COLOR_NAME, EditScenarioItem::NEW_ROOM, EditScenarioItem::DESCRIPTOR)}
-	};
 
 	static void ActivateItem()
 	{
-		switch (current)
+		switch ((EditScenarioItem)graphics::Layouts::GetMenuValue(LAYOUT_NAME, MENU_ID).value())
 		{
 		case EditScenarioItem::BACK:
 			::Application::SetUIState(::UIState::EDIT_SCENARIO_SELECTOR);
@@ -66,10 +52,10 @@ namespace state::editor::Scenario
 		switch (command)
 		{
 		case ::Command::UP:
-			MenuItem<EditScenarioItem>::Previous(current, items);
+			graphics::Layouts::PreviousMenuIndex(LAYOUT_NAME, MENU_ID);
 			break;
 		case ::Command::DOWN:
-			MenuItem<EditScenarioItem>::Next(current, items);
+			graphics::Layouts::NextMenuIndex(LAYOUT_NAME, MENU_ID);
 			break;
 		case ::Command::GREEN:
 			ActivateItem();
@@ -80,7 +66,7 @@ namespace state::editor::Scenario
 		}
 	}
 
-	static void UpdateHeader()
+	static void UpdateHeader(const Uint32&)
 	{
 		std::stringstream ss;
 		auto scenario = ::game::ScenarioDescriptors::Get(::context::editor::Scenarios::GetIndex());
@@ -88,16 +74,10 @@ namespace state::editor::Scenario
 		::data::Strings::Set(HEADER_TEXT_NAME, ss.str());
 	}
 
-	static void OnUpdate(const Uint32& ticks)
-	{
-		UpdateHeader();
-		MenuItem<EditScenarioItem>::Update(items, current);
-	}
-
 	void Start()
 	{
 		::Application::SetCommandHandler(::UIState::EDIT_SCENARIO, OnCommand);
 		::Application::SetRenderLayout(::UIState::EDIT_SCENARIO, LAYOUT_NAME);
-		::Application::SetUpdateHandler(::UIState::EDIT_SCENARIO, OnUpdate);
+		::Application::SetUpdateHandler(::UIState::EDIT_SCENARIO, UpdateHeader);
 	}
 }

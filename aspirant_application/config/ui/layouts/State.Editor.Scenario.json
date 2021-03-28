@@ -20,6 +20,53 @@
         "drop-shadow-y": 2
     },
     {
+        "type": "Menu",
+        "menu-id": "Scenario",
+        "index": 0,
+        "font": "default",
+        "colors": {
+            "active": "Cyan",
+            "inactive": "Gray"
+        },
+        "horizontal-alignment": 0,
+        "drop-shadow": true,
+        "drop-shadow-color": "Black",
+        "drop-shadow-x": 2,
+        "drop-shadow-y": 2,
+        "menu-items": [
+            {
+                "text": "Edit Descriptor",
+                "x": 320,
+                "y": 48,
+                "value": 0
+            },
+            {
+                "text": "Edit Avatar",
+                "x": 320,
+                "y": 64,
+                "value": 1
+            },
+            {
+                "text": "Open Room",
+                "x": 320,
+                "y": 80,
+                "value": 2
+            },
+            {
+                "text": "New Room",
+                "x": 320,
+                "y": 96,
+                "value": 3
+            },
+            {
+                "text": "Back",
+                "x": 320,
+                "y": 112,
+                "value": 4
+            }
+        ]
+    },
+    {
         "type": "Text",
         "font": "default",
         "color": "Brown",
@@ -31,71 +78,5 @@
         "drop-shadow-color": "Black",
         "drop-shadow-x": 2,
         "drop-shadow-y": 2
-    },
-    {
-        "type": "Text",
-        "font": "default",
-        "color": { "key": "EditScenario.Color.Descriptor" },
-        "text": "Edit Descriptor",
-        "x": 320,
-        "y": 48,
-        "horizontal-alignment": 0,
-        "drop-shadow": true,
-        "drop-shadow-color": "Black",
-        "drop-shadow-x": 2,
-        "drop-shadow-y": 2
-    },
-    {
-        "type": "Text",
-        "font": "default",
-        "color": { "key": "EditScenario.Color.Avatar" },
-        "text": "Edit Avatar",
-        "x": 320,
-        "y": 64,
-        "horizontal-alignment": 0,
-        "drop-shadow": true,
-        "drop-shadow-color": "Black",
-        "drop-shadow-x": 2,
-        "drop-shadow-y": 2
-    },
-    {
-        "type": "Text",
-        "font": "default",
-        "color": { "key": "EditScenario.Color.OpenRoom" },
-        "text": "Open Room",
-        "x": 320,
-        "y": 80,
-        "horizontal-alignment": 0,
-        "drop-shadow": true,
-        "drop-shadow-color": "Black",
-        "drop-shadow-x": 2,
-        "drop-shadow-y": 2
-    },
-    {
-        "type": "Text",
-        "font": "default",
-        "color": { "key": "EditScenario.Color.NewRoom" },
-        "text": "New Room",
-        "x": 320,
-        "y": 96,
-        "horizontal-alignment": 0,
-        "drop-shadow": true,
-        "drop-shadow-color": "Black",
-        "drop-shadow-x": 2,
-        "drop-shadow-y": 2
-    },
-    {
-        "type": "Text",
-        "font": "default",
-        "color": { "key": "EditScenario.Color.Back" },
-        "text": "Back",
-        "x": 320,
-        "y": 112,
-        "horizontal-alignment": 0,
-        "drop-shadow": true,
-        "drop-shadow-color": "Black",
-        "drop-shadow-x": 2,
-        "drop-shadow-y": 2
     }
-
 ]
