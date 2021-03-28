@@ -20,17 +20,57 @@
         "drop-shadow-y": 2
     },
     {
-        "type": "Text",
+        "type": "Menu",
+        "menu-id": "NewRoom",
+        "index": 0,
         "font": "default",
-        "color": { "key": "EditNewRoom.Color.RoomName" },
-        "text": "Room Name",
-        "x": 320,
-        "y": 32,
+        "colors": {
+            "active": "Cyan",
+            "inactive": "Gray"
+        },
         "horizontal-alignment": 0,
         "drop-shadow": true,
         "drop-shadow-color": "Black",
         "drop-shadow-x": 2,
-        "drop-shadow-y": 2
+        "drop-shadow-y": 2,
+        "menu-items": [
+            {
+                "text": "Room Name",
+                "x": 320,
+                "y": 32,
+                "value": 0
+            },
+            {
+                "text": "Columns",
+                "x": 320,
+                "y": 80,
+                "value": 1
+            },
+            {
+                "text": "Rows",
+                "x": 320,
+                "y": 128,
+                "value": 2
+            },
+            {
+                "text": "Terrain",
+                "x": 320,
+                "y": 176,
+                "value": 3
+            },
+            {
+                "text": "Create",
+                "x": 320,
+                "y": 224,
+                "value": 4
+            },
+            {
+                "text": "Cancel",
+                "x": 320,
+                "y": 256,
+                "value": 5
+            }
+        ]
     },
     {
         "type": "Text",
@@ -39,19 +79,6 @@
         "text": { "key": "EditNewRoom.Text.RoomName" },
         "x": 320,
         "y": 48,
-        "horizontal-alignment": 0,
-        "drop-shadow": true,
-        "drop-shadow-color": "Black",
-        "drop-shadow-x": 2,
-        "drop-shadow-y": 2
-    },
-    {
-        "type": "Text",
-        "font": "default",
-        "color": { "key": "EditNewRoom.Color.Columns" },
-        "text": "Columns",
-        "x": 320,
-        "y": 80,
         "horizontal-alignment": 0,
         "drop-shadow": true,
         "drop-shadow-color": "Black",
@@ -74,19 +101,6 @@
     {
         "type": "Text",
         "font": "default",
-        "color": { "key": "EditNewRoom.Color.Rows" },
-        "text": "Rows",
-        "x": 320,
-        "y": 128,
-        "horizontal-alignment": 0,
-        "drop-shadow": true,
-        "drop-shadow-color": "Black",
-        "drop-shadow-x": 2,
-        "drop-shadow-y": 2
-    },
-    {
-        "type": "Text",
-        "font": "default",
         "color": "Brown",
         "text": { "key": "EditNewRoom.Text.Rows" },
         "x": 320,
@@ -100,49 +114,10 @@
     {
         "type": "Text",
         "font": "default",
-        "color": { "key": "EditNewRoom.Color.Terrain" },
-        "text": "Terrain",
-        "x": 320,
-        "y": 176,
-        "horizontal-alignment": 0,
-        "drop-shadow": true,
-        "drop-shadow-color": "Black",
-        "drop-shadow-x": 2,
-        "drop-shadow-y": 2
-    },
-    {
-        "type": "Text",
-        "font": "default",
         "color": "Brown",
         "text": { "key": "EditNewRoom.Text.Terrain" },
         "x": 320,
         "y": 192,
-        "horizontal-alignment": 0,
-        "drop-shadow": true,
-        "drop-shadow-color": "Black",
-        "drop-shadow-x": 2,
-        "drop-shadow-y": 2
-    },
-    {
-        "type": "Text",
-        "font": "default",
-        "color": { "key": "EditNewRoom.Color.Create" },
-        "text": "Create",
-        "x": 320,
-        "y": 224,
-        "horizontal-alignment": 0,
-        "drop-shadow": true,
-        "drop-shadow-color": "Black",
-        "drop-shadow-x": 2,
-        "drop-shadow-y": 2
-    },
-    {
-        "type": "Text",
-        "font": "default",
-        "color": { "key": "EditNewRoom.Color.Cancel" },
-        "text": "Cancel",
-        "x": 320,
-        "y": 256,
         "horizontal-alignment": 0,
         "drop-shadow": true,
         "drop-shadow-color": "Black",

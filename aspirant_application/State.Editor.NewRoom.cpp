@@ -1,24 +1,15 @@
 #include "State.Editor.NewRoom.h"
 #include "Application.h"
-#include "UIState.h"
 #include "Graphics.Layouts.h"
-#include "MenuItem.h"
 #include <sstream>
 #include "Data.Strings.h"
-#include "Context.Editor.Scenario.h"
 #include "Context.Editor.NewRoom.h"
 #include "Context.Editor.Rooms.h"
+#include "Context.Editor.Scenario.h"
 namespace state::editor::NewRoom
 {
 	const std::string LAYOUT_NAME = "State.Editor.NewRoom";
-
-	const std::string COLOR_NAME_ROOM_NAME = "EditNewRoom.Color.RoomName";
-	const std::string COLOR_NAME_COLUMNS = "EditNewRoom.Color.Columns";
-	const std::string COLOR_NAME_ROWS = "EditNewRoom.Color.Rows";
-	const std::string COLOR_NAME_CREATE = "EditNewRoom.Color.Create";
-	const std::string COLOR_NAME_CANCEL = "EditNewRoom.Color.Cancel";
-	const std::string COLOR_NAME_TERRAIN = "EditNewRoom.Color.Terrain";
-
+	const std::string MENU_ID = "NewRoom";
 	const std::string TEXT_NAME_ROOM_NAME = "EditNewRoom.Text.RoomName";
 	const std::string TEXT_NAME_COLUMNS = "EditNewRoom.Text.Columns";
 	const std::string TEXT_NAME_ROWS = "EditNewRoom.Text.Rows";
@@ -33,16 +24,6 @@ namespace state::editor::NewRoom
 		CREATE,
 		CANCEL
 	};
-	static NewRoomItem current = NewRoomItem::CANCEL;
-	static std::map<NewRoomItem, ::MenuItem<NewRoomItem>> items = 
-	{
-		{NewRoomItem::NAME, ::MenuItem<NewRoomItem>(COLOR_NAME_ROOM_NAME, NewRoomItem::CANCEL, NewRoomItem::COLUMNS)},
-		{NewRoomItem::COLUMNS, ::MenuItem<NewRoomItem>(COLOR_NAME_COLUMNS, NewRoomItem::NAME, NewRoomItem::ROWS)},
-		{NewRoomItem::ROWS, ::MenuItem<NewRoomItem>(COLOR_NAME_ROWS, NewRoomItem::COLUMNS, NewRoomItem::TERRAIN)},
-		{NewRoomItem::TERRAIN, ::MenuItem<NewRoomItem>(COLOR_NAME_TERRAIN, NewRoomItem::ROWS, NewRoomItem::CREATE)},
-		{NewRoomItem::CREATE, ::MenuItem<NewRoomItem>(COLOR_NAME_CREATE, NewRoomItem::TERRAIN, NewRoomItem::CANCEL)},
-		{NewRoomItem::CANCEL, ::MenuItem<NewRoomItem>(COLOR_NAME_CANCEL, NewRoomItem::CREATE, NewRoomItem::NAME)}
-	};
 
 	static void CreateRoom()
 	{
@@ -56,10 +37,14 @@ namespace state::editor::NewRoom
 		::context::editor::Scenario::Save();
 	}
 
+	static NewRoomItem GetCurrentItem()
+	{
+		return (NewRoomItem)graphics::Layouts::GetMenuValue(LAYOUT_NAME, MENU_ID).value();
+	}
 
 	static void ActivateItem()
 	{
-		switch (current)
+		switch (GetCurrentItem())
 		{
 		case NewRoomItem::CREATE:
 			CreateRoom();
@@ -74,7 +59,7 @@ namespace state::editor::NewRoom
 
 	void IncreaseItem()
 	{
-		switch (current)
+		switch (GetCurrentItem())
 		{
 		case NewRoomItem::TERRAIN:
 			::context::editor::NewRoom::NextTerrain();
@@ -90,7 +75,7 @@ namespace state::editor::NewRoom
 
 	void DecreaseItem()
 	{
-		switch (current)
+		switch (GetCurrentItem())
 		{
 		case NewRoomItem::TERRAIN:
 			::context::editor::NewRoom::PreviousTerrain();
@@ -111,7 +96,7 @@ namespace state::editor::NewRoom
 		switch (command)
 		{
 		case ::Command::BACK:
-			if (current == NewRoomItem::NAME)
+			if (GetCurrentItem() == NewRoomItem::NAME)
 			{
 				::context::editor::NewRoom::AppendName("\b");
 			}
@@ -121,16 +106,16 @@ namespace state::editor::NewRoom
 			}
 			break;
 		case ::Command::RED:
-			if (current == NewRoomItem::NAME)
+			if (GetCurrentItem() == NewRoomItem::NAME)
 			{
 				::context::editor::NewRoom::ClearName();
 			}
 			break;
 		case ::Command::UP:
-			MenuItem<NewRoomItem>::Previous(current, items);
+			graphics::Layouts::PreviousMenuIndex(LAYOUT_NAME, MENU_ID);
 			break;
 		case ::Command::DOWN:
-			MenuItem<NewRoomItem>::Next(current, items);
+			graphics::Layouts::NextMenuIndex(LAYOUT_NAME, MENU_ID);
 			break;
 		case ::Command::LEFT:
 			DecreaseItem();
@@ -142,13 +127,10 @@ namespace state::editor::NewRoom
 			ActivateItem();
 			break;
 		}
-
 	}
 
 	static void OnUpdate(const Uint32& ticks)
 	{
-		MenuItem<NewRoomItem>::Update(items, current);
-
 		::data::Strings::Set(TEXT_NAME_ROOM_NAME, ::context::editor::NewRoom::GetName());
 
 		std::stringstream ss;
@@ -164,7 +146,7 @@ namespace state::editor::NewRoom
 
 	static void OnTextInput(const std::string& text)
 	{
-		if (current == NewRoomItem::NAME)
+		if (GetCurrentItem() == NewRoomItem::NAME)
 		{
 			::context::editor::NewRoom::AppendName(text);
 		}

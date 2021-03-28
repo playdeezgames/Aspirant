@@ -25,12 +25,12 @@ Sort Out:
         ✔ options @done(21-03-28 04:46)
         ✔ start game @done(21-03-28 04:53)
         ✔ start editor @done(21-03-28 04:59)
-        ☐ start play
-        ☐ avatar editor
-        ☐ new room
+        ✔ start play @done(21-03-28 05:19)
+        ✔ avatar editor @done(21-03-28 05:19)
+        ✔ new room @done(21-03-28 05:29)
         ☐ edit scenario
         ☐ edit scenario descriptor
-    ☐ store a list of updaters for a stte in application intead of only having one!
+    ☐ store a list of updaters for a state in application intead of only having one!
 Bugs:
     ✔ I cannot attempt to "open" a scenario when there are no scenarios @done(21-03-27 16:31)
     ✔ In a freshly created scenario, attempting to edit the avatar crashes the game @done(21-03-27 16:23)
