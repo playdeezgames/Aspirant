@@ -1,4 +1,3 @@
-#include "State.About.h"
 #include "Application.h"
 #include "UIState.h"
 #include "Graphics.Layouts.h"

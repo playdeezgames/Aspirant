@@ -1,4 +1,3 @@
-#include "State.Start.h"
 #include "Application.h"
 #include "Graphics.Layouts.h"
 namespace state::Start

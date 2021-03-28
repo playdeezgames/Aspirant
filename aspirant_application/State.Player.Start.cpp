@@ -1,4 +1,3 @@
-#include "State.Player.Start.h"
 #include <string>
 #include "Command.h"
 #include <SDL.h>

@@ -1,4 +1,3 @@
-#include "State.Editor.Avatar.h"
 #include "Application.h"
 #include "Graphics.Layouts.h"
 #include "Common.XY.h"

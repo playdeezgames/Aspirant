@@ -1,4 +1,3 @@
-#include "State.Editor.NewRoom.h"
 #include "Application.h"
 #include "Graphics.Layouts.h"
 #include <sstream>

@@ -17,25 +17,25 @@
 #include "Options.h"
 #include "Game.Descriptors.h"
 #include "Game.ScenarioDescriptors.h"
-#include "State.Splash.h"
-#include "State.MainMenu.h"
-#include "State.About.h"
-#include "State.ConfirmQuit.h"
-#include "State.Options.h"
-#include "State.Start.h"
-#include "State.Editor.Start.h"
-#include "State.Editor.Scenarios.h"
-#include "State.Editor.Scenario.h"
-#include "State.Editor.PickRoom.h"
 #include <map>
-#include "State.Editor.NewRoom.h"
-#include "State.Editor.ScenarioDescriptor.h"
-#include "State.Editor.RoomCells.h"
-#include "State.Editor.PickDescriptor.h"
 #include "Context.Editor.NewRoom.h"
-#include "State.Player.Start.h"
-#include "State.Player.NewGame.h"
-#include "State.Editor.Avatar.h"
+namespace state::About { void Start(); }
+namespace state::ConfirmQuit { void Start(); }
+namespace state::editor::Avatar { void Start(); }
+namespace state::editor::NewRoom { void Start(); }
+namespace state::editor::PickDescriptor { void Start(); }
+namespace state::editor::PickRoom { void Start(); }
+namespace state::editor::RoomCells { void Start(); }
+namespace state::editor::Scenario { void Start(); }
+namespace state::editor::ScenarioDescriptor { void Start(); }
+namespace state::editor::Scenarios { void Start(); }
+namespace state::editor::Start { void Start(); }
+namespace state::MainMenu { void Start(); }
+namespace state::Options { void Start(); }
+namespace state::player::NewGame { void Start(); }
+namespace state::player::Start { void Start(); }
+namespace state::Splash { void Start(); }
+namespace state::Start { void Start(); }
 namespace Application
 {
 	static ::UIState uiState = ::UIState::SPLASH;

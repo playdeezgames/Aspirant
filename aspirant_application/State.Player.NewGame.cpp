@@ -1,4 +1,3 @@
-#include "State.Player.NewGame.h"
 #include <string>
 namespace state::player::NewGame
 {

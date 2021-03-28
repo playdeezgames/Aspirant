@@ -1,4 +1,3 @@
-#include "State.ConfirmQuit.h"
 #include "Graphics.Layouts.h"
 #include "Application.h"
 namespace state::ConfirmQuit

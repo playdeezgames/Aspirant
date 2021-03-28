@@ -1,4 +1,3 @@
-#include "State.Editor.Start.h"
 #include "Application.h"
 #include "Graphics.Layouts.h"
 #include "json.hpp"
