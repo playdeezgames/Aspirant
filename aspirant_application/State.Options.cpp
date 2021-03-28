@@ -12,17 +12,12 @@
 namespace state::Options
 {
 	const std::string LAYOUT_NAME = "State.Options";
-	const std::string OPTION_ITEM_TOGGLE_MUTE_COLOR_NAME = "Options.Color.ToggleMute";
-	const std::string OPTION_ITEM_SFX_VOLUME_COLOR_NAME = "Options.Color.SfxVolume";
-	const std::string OPTION_ITEM_MUX_VOLUME_COLOR_NAME = "Options.Color.MuxVolume";
-	const std::string OPTION_ITEM_BACK_COLOR_NAME = "Options.Color.Back";
-
+	const std::string MENU_ID = "Options";
 	const std::string TOGGLE_MUTE_STRING_NAME = "Options.Text.ToggleMute";
 	const std::string SFX_VOLUME_STRING_NAME = "Options.Text.SfxVolume";
 	const std::string MUX_VOLUME_STRING_NAME = "Options.Text.MuxVolume";
 	const std::string MUTE = "Mute";
 	const std::string UNMUTE = "Unmute";
-
 	const std::string SFX_SAMPLE_NAME = "woohoo";
 
 	enum class OptionsItem
@@ -34,39 +29,6 @@ namespace state::Options
 	};
 
 	const int VOLUME_DELTA = 8;
-	static OptionsItem current = OptionsItem::BACK;
-	static std::map<OptionsItem, ::MenuItem<OptionsItem>> items =
-	{
-		{OptionsItem::TOGGLE_MUTE,
-			::MenuItem<OptionsItem>
-			(
-				OPTION_ITEM_TOGGLE_MUTE_COLOR_NAME,
-				OptionsItem::BACK,
-				OptionsItem::SFX_VOLUME
-		)},
-		{OptionsItem::SFX_VOLUME,
-			::MenuItem<OptionsItem>
-			(
-				OPTION_ITEM_SFX_VOLUME_COLOR_NAME,
-				OptionsItem::TOGGLE_MUTE,
-				OptionsItem::MUX_VOLUME
-		)},
-		{OptionsItem::MUX_VOLUME,
-			::MenuItem<OptionsItem>
-			(
-				OPTION_ITEM_MUX_VOLUME_COLOR_NAME,
-				OptionsItem::SFX_VOLUME,
-				OptionsItem::BACK
-		)},
-		{OptionsItem::BACK,
-			::MenuItem<OptionsItem>
-			(
-				OPTION_ITEM_BACK_COLOR_NAME,
-				OptionsItem::MUX_VOLUME,
-				OptionsItem::TOGGLE_MUTE
-		)}
-	};
-
 
 	static void AdjustSfxVolume(int delta)
 	{
@@ -78,40 +40,41 @@ namespace state::Options
 
 	static void AdjustMuxVolume(int delta)
 	{
-		common::Sounds::SetMuxVolume(common::Sounds::GetMuxVolume() + delta);//TODO: magic number
+		common::Sounds::SetMuxVolume(common::Sounds::GetMuxVolume() + delta);
 		::Options::Save();
 	}
 
+	static OptionsItem GetCurrentItem()
+	{
+		return (OptionsItem)graphics::Layouts::GetMenuValue(LAYOUT_NAME, MENU_ID).value();
+	}
+
+	static void ChangeItem(int delta)
+	{
+		switch (GetCurrentItem())
+		{
+		case OptionsItem::SFX_VOLUME:
+			AdjustSfxVolume(delta);
+			break;
+		case OptionsItem::MUX_VOLUME:
+			AdjustMuxVolume(delta);
+			break;
+		}
+	}
 
 	static void IncreaseItem()
 	{
-		switch (current)
-		{
-		case OptionsItem::SFX_VOLUME:
-			AdjustSfxVolume(VOLUME_DELTA);
-			break;
-		case OptionsItem::MUX_VOLUME:
-			AdjustMuxVolume(VOLUME_DELTA);
-			break;
-		}
+		ChangeItem(VOLUME_DELTA);
 	}
 
 	static void DecreaseItem()
 	{
-		switch (current)
-		{
-		case OptionsItem::SFX_VOLUME:
-			AdjustSfxVolume(-VOLUME_DELTA);
-			break;
-		case OptionsItem::MUX_VOLUME:
-			AdjustMuxVolume(-VOLUME_DELTA);
-			break;
-		}
+		ChangeItem(-VOLUME_DELTA);
 	}
 
 	static void ActivateItem()
 	{
-		switch (current)
+		switch (GetCurrentItem())
 		{
 		case OptionsItem::TOGGLE_MUTE:
 			common::Sounds::SetMuted(!common::Sounds::IsMuted());
@@ -128,10 +91,10 @@ namespace state::Options
 		switch (command)
 		{
 		case ::Command::UP:
-			MenuItem<OptionsItem>::Previous(current, items);
+			graphics::Layouts::PreviousMenuIndex(LAYOUT_NAME, MENU_ID);
 			break;
 		case ::Command::DOWN:
-			MenuItem<OptionsItem>::Next(current, items);
+			graphics::Layouts::NextMenuIndex(LAYOUT_NAME, MENU_ID);
 			break;
 		case ::Command::LEFT:
 			DecreaseItem();
@@ -148,10 +111,8 @@ namespace state::Options
 		}
 	}
 
-	static void OnUpdate(const Uint32& ticks)
+	static void UpdateMuteMenuItem()
 	{
-		MenuItem<OptionsItem>::Update(items, current);
-
 		if (common::Sounds::IsMuted())
 		{
 			::data::Strings::Set(TOGGLE_MUTE_STRING_NAME, UNMUTE);
@@ -160,16 +121,27 @@ namespace state::Options
 		{
 			::data::Strings::Set(TOGGLE_MUTE_STRING_NAME, MUTE);
 		}
+	}
+
+	static void UpdateSfxMenuItem()
+	{
 		std::stringstream ss;
-		//text for sfx volume
 		ss << "SFX Volume (" << common::Utility::ToPercentage(common::Sounds::GetSfxVolume(), MIX_MAX_VOLUME) << "%)";
 		::data::Strings::Set(SFX_VOLUME_STRING_NAME, ss.str());
+	}
 
-		//text for mux volume
-		ss.str("");
+	static void UpdateMuxMenuItem()
+	{
+		std::stringstream ss;
 		ss << "MUX Volume (" << common::Utility::ToPercentage(common::Sounds::GetMuxVolume(), MIX_MAX_VOLUME) << "%)";
 		::data::Strings::Set(MUX_VOLUME_STRING_NAME, ss.str());
+	}
 
+	static void OnUpdate(const Uint32& ticks)
+	{
+		UpdateMuteMenuItem();
+		UpdateSfxMenuItem();
+		UpdateMuxMenuItem();
 	}
 
 	void Start()

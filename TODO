@@ -20,9 +20,9 @@ Sort Out:
         ✔ PlayerLoadGame @done(21-03-27 18:34)
         ✔ EditAvatar @done(21-03-27 18:34)
     ☐ remove spaghetti menu
-        ☐ confirm quit
+        ✔ confirm quit @done(21-03-28 04:28)
         ✔ main menu @done(21-03-28 04:20)
-        ☐ options
+        ✔ options @done(21-03-28 04:46)
         ☐ start game
         ☐ start editor
         ☐ start play
@@ -30,6 +30,7 @@ Sort Out:
         ☐ new room
         ☐ edit scenario
         ☐ edit scenario descriptor
+    ☐ store a list of updaters for a stte in application intead of only having one!
 Bugs:
     ✔ I cannot attempt to "open" a scenario when there are no scenarios @done(21-03-27 16:31)
     ✔ In a freshly created scenario, attempting to edit the avatar crashes the game @done(21-03-27 16:23)
@@ -42,5 +43,6 @@ Bugs:
         need a confirm dialog
     ☐ i want the value of the menu item, not just the index
 Clunk:
+    ☐ the index of a menu in a layout cannot be proxied from a data int
 
 

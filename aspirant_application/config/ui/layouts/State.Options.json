@@ -20,55 +20,44 @@
         "drop-shadow-y": 2
     },
     {
-        "type": "Text",
+        "type": "Menu",
+        "menu-id": "Options",
+        "index": 3,
         "font": "default",
-        "color": { "key": "Options.Color.ToggleMute" },
-        "text": { "key" : "Options.Text.ToggleMute" },
-        "x": 320,
-        "y": 32,
+        "colors": {
+            "active": "Cyan",
+            "inactive": "Gray"
+        },
         "horizontal-alignment": 0,
         "drop-shadow": true,
         "drop-shadow-color": "Black",
         "drop-shadow-x": 2,
-        "drop-shadow-y": 2
-    },
-    {
-        "type": "Text",
-        "font": "default",
-        "color": { "key": "Options.Color.SfxVolume" },
-        "text": { "key" : "Options.Text.SfxVolume" },
-        "x": 320,
-        "y": 48,
-        "horizontal-alignment": 0,
-        "drop-shadow": true,
-        "drop-shadow-color": "Black",
-        "drop-shadow-x": 2,
-        "drop-shadow-y": 2
-    },
-    {
-        "type": "Text",
-        "font": "default",
-        "color": { "key": "Options.Color.MuxVolume" },
-        "text": { "key" : "Options.Text.MuxVolume" },
-        "x": 320,
-        "y": 64,
-        "horizontal-alignment": 0,
-        "drop-shadow": true,
-        "drop-shadow-color": "Black",
-        "drop-shadow-x": 2,
-        "drop-shadow-y": 2
-    },
-    {
-        "type": "Text",
-        "font": "default",
-        "color": { "key": "Options.Color.Back" },
-        "text": "Back",
-        "x": 320,
-        "y": 80,
-        "horizontal-alignment": 0,
-        "drop-shadow": true,
-        "drop-shadow-color": "Black",
-        "drop-shadow-x": 2,
-        "drop-shadow-y": 2
+        "drop-shadow-y": 2,
+        "menu-items": [
+            {
+                "text": { "key" : "Options.Text.ToggleMute" },
+                "x": 320,
+                "y": 32,
+                "value": 0
+            },
+            {
+                "text": { "key" : "Options.Text.SfxVolume" },
+                "x": 320,
+                "y": 48,
+                "value": 1
+            },
+            {
+                "text": { "key" : "Options.Text.MuxVolume" },
+                "x": 320,
+                "y": 64,
+                "value": 2
+            },
+            {
+                "text": "Back",
+                "x": 320,
+                "y": 80,
+                "value": 3
+            }
+        ]
     }
 ]

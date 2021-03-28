@@ -5,6 +5,7 @@
 #include "Graphics.Types.h"
 #include "Common.Properties.h"
 #include "Graphics.Properties.h"
+#include "Data.Int.h"
 namespace graphics::Layouts
 {
 	static std::map<std::string, nlohmann::json> layouts;
@@ -31,8 +32,8 @@ namespace graphics::Layouts
 			if (thingie[common::Properties::TYPE] == graphics::Types::MENU &&
 				thingie[graphics::Properties::MENU_ID] == menuId)
 			{
-				int index = thingie[graphics::Properties::INDEX];
-				return (int)thingie[graphics::Properties::MENU_ITEMS][index][graphics::Properties::VALUE];
+				int index = thingie[graphics::Properties::INDEX];//TODO: this cannot be proxied!
+				return (int)data::Int(thingie[graphics::Properties::MENU_ITEMS][index][graphics::Properties::VALUE]);
 			}
 		}
 		return std::optional<int>();
@@ -46,6 +47,7 @@ namespace graphics::Layouts
 				thingie[graphics::Properties::MENU_ID] == menuId)
 			{
 				auto itemCount = thingie[graphics::Properties::MENU_ITEMS].size();
+				//TODO: this cannot be proxied! vv
 				thingie[graphics::Properties::INDEX] = (thingie[graphics::Properties::INDEX] + itemCount + delta) % itemCount;
 			}
 		}
