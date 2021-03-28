@@ -1,8 +1,6 @@
 #include "Application.h"
-#include "UIState.h"
-#include <map>
 #include "Graphics.Layouts.h"
-#include "Data.Strings.h"
+#include <map>
 #include "Common.Sounds.h"
 #include "Options.h"
 #include <sstream>
@@ -11,9 +9,9 @@ namespace state::Options
 {
 	const std::string LAYOUT_NAME = "State.Options";
 	const std::string MENU_ID = "Options";
-	const std::string TOGGLE_MUTE_STRING_NAME = "Options.Text.ToggleMute";
-	const std::string SFX_VOLUME_STRING_NAME = "Options.Text.SfxVolume";
-	const std::string MUX_VOLUME_STRING_NAME = "Options.Text.MuxVolume";
+	const std::string MUTE_MENU_ITEM_ID = "Mute";
+	const std::string SFX_VOLUME_MENU_ITEM_ID = "SfxVolume";
+	const std::string MUX_VOLUME_MENU_ITEM_ID = "MuxVolume";
 	const std::string MUTE = "Mute";
 	const std::string UNMUTE = "Unmute";
 	const std::string SFX_SAMPLE_NAME = "woohoo";
@@ -111,28 +109,22 @@ namespace state::Options
 
 	static void UpdateMuteMenuItem()
 	{
-		if (common::Sounds::IsMuted())
-		{
-			::data::Strings::Set(TOGGLE_MUTE_STRING_NAME, UNMUTE);
-		}
-		else
-		{
-			::data::Strings::Set(TOGGLE_MUTE_STRING_NAME, MUTE);
-		}
+		graphics::Layouts::SetMenuItemText(LAYOUT_NAME, MUTE_MENU_ITEM_ID, 
+			common::Sounds::IsMuted() ? UNMUTE : MUTE);
 	}
 
 	static void UpdateSfxMenuItem()
 	{
 		std::stringstream ss;
 		ss << "SFX Volume (" << common::Utility::ToPercentage(common::Sounds::GetSfxVolume(), MIX_MAX_VOLUME) << "%)";
-		::data::Strings::Set(SFX_VOLUME_STRING_NAME, ss.str());
+		graphics::Layouts::SetMenuItemText(LAYOUT_NAME, SFX_VOLUME_MENU_ITEM_ID, ss.str());
 	}
 
 	static void UpdateMuxMenuItem()
 	{
 		std::stringstream ss;
 		ss << "MUX Volume (" << common::Utility::ToPercentage(common::Sounds::GetMuxVolume(), MIX_MAX_VOLUME) << "%)";
-		::data::Strings::Set(MUX_VOLUME_STRING_NAME, ss.str());
+		graphics::Layouts::SetMenuItemText(LAYOUT_NAME, MUX_VOLUME_MENU_ITEM_ID, ss.str());
 	}
 
 	static void OnUpdate(const Uint32& ticks)

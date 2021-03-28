@@ -1,8 +1,5 @@
 {
     "ItchURL": "https://thegrumpygamedev.itch.io/",
-    "Options.Text.ToggleMute": "Toggle Mute",
-    "Options.Text.SfxVolume": "Sfx Volume",
-    "Options.Text.MuxVolume": "Mux Volume",
     "EditScenarioSelector.Text.Index": "Scenario #/#",
     "EditScenarioSelector.Text.Id": "<id>",
     "EditScenarioSelector.Text.Name": "<name>",

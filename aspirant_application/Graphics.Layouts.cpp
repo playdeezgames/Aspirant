@@ -20,14 +20,14 @@ namespace graphics::Layouts
 		}
 	}
 
-	void Draw(SDL_Renderer* renderer, const std::string& key)
+	void Draw(SDL_Renderer* renderer, const std::string& layoutName)
 	{
-		graphics::Layout::Draw(renderer, layouts[key]);
+		graphics::Layout::Draw(renderer, layouts[layoutName]);
 	}
 
-	std::optional<int> GetMenuValue(const std::string& key, const std::string& menuId)
+	std::optional<int> GetMenuValue(const std::string& layoutName, const std::string& menuId)
 	{
-		for (auto& thingie : layouts[key])
+		for (auto& thingie : layouts[layoutName])
 		{
 			if (thingie[common::Properties::TYPE] == graphics::Types::MENU &&
 				thingie[graphics::Properties::MENU_ID] == menuId)
@@ -39,9 +39,9 @@ namespace graphics::Layouts
 		return std::optional<int>();
 	}
 
-	static void ChangeMenuIndex(const std::string& key, const std::string& menuId, int delta)
+	static void ChangeMenuIndex(const std::string& layoutName, const std::string& menuId, int delta)
 	{
-		for (auto& thingie : layouts[key])
+		for (auto& thingie : layouts[layoutName])
 		{
 			if (thingie[common::Properties::TYPE] == graphics::Types::MENU &&
 				thingie[graphics::Properties::MENU_ID] == menuId)
@@ -53,13 +53,32 @@ namespace graphics::Layouts
 		}
 	}
 
-	void NextMenuIndex(const std::string& key, const std::string& menuId)
+	void NextMenuIndex(const std::string& layoutName, const std::string& menuId)
 	{
-		ChangeMenuIndex(key, menuId, 1);
+		ChangeMenuIndex(layoutName, menuId, 1);
 	}
 
-	void PreviousMenuIndex(const std::string& key, const std::string& menuId)
+	void PreviousMenuIndex(const std::string& layoutName, const std::string& menuId)
 	{
-		ChangeMenuIndex(key, menuId, -1);
+		ChangeMenuIndex(layoutName, menuId, -1);
 	}
+
+	void SetMenuItemText(const std::string& layoutName, const std::string& menuItemId, const std::string& text)
+	{
+		for (auto& thingie : layouts[layoutName])
+		{
+			if (thingie[common::Properties::TYPE] == graphics::Types::MENU)
+			{
+				for (auto& menuItem : thingie[graphics::Properties::MENU_ITEMS])
+				{
+					if (menuItem.count(graphics::Properties::MENU_ITEM_ID) > 0 && 
+						menuItem[graphics::Properties::MENU_ITEM_ID]==menuItemId)
+					{
+						menuItem[graphics::Properties::TEXT] = text;
+					}
+				}
+			}
+		}
+	}
+
 }
