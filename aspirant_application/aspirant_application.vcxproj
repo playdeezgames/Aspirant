@@ -204,13 +204,11 @@
     <ClCompile Include="State.Start.cpp" />
     <ClCompile Include="Graphics.Image.cpp" />
     <ClCompile Include="Graphics.Text.cpp" />
-    <ClCompile Include="Data.String.cpp" />
     <ClCompile Include="Graphics.Textures.cpp" />
     <ClCompile Include="Common.Utility.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common.Properties.h" />
-    <ClInclude Include="Data.Properties.h" />
     <ClInclude Include="Game.Properties.h" />
     <ClInclude Include="Game.Types.h" />
     <ClInclude Include="Graphics.Properties.h" />
@@ -245,7 +243,6 @@
     <ClInclude Include="Graphics.Sprite.h" />
     <ClInclude Include="Graphics.Font.h" />
     <ClInclude Include="Graphics.Sprites.h" />
-    <ClInclude Include="Data.String.h" />
     <ClInclude Include="Graphics.Textures.h" />
     <ClInclude Include="UIState.h" />
     <ClInclude Include="Common.Utility.h" />
