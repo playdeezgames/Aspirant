@@ -1,16 +1,10 @@
 #include "State.Start.h"
 #include "Application.h"
-#include "UIState.h"
-#include "MenuItem.h"
-#include <map>
 #include "Graphics.Layouts.h"
-#include "Data.Strings.h"
 namespace state::Start
 {
-	const std::string START_GAME_EDITOR_COLOR_NAME = "StartGame.Color.Editor";
-	const std::string START_GAME_BACK_COLOR_NAME = "StartGame.Color.Back";
-	const std::string START_GAME_PLAY_COLOR_NAME = "StartGame.Color.Play";
 	const std::string LAYOUT_NAME = "State.Start";
+	const std::string MENU_ID = "Start";
 
 	enum class StartGameItem
 	{
@@ -19,18 +13,9 @@ namespace state::Start
 		BACK
 	};
 
-	static StartGameItem current = StartGameItem::BACK;
-	static std::map<StartGameItem, ::MenuItem<StartGameItem>> items =
-	{
-		{StartGameItem::EDITOR, ::MenuItem<StartGameItem>(START_GAME_EDITOR_COLOR_NAME, StartGameItem::BACK, StartGameItem::PLAY)},
-		{StartGameItem::PLAY, ::MenuItem<StartGameItem>(START_GAME_PLAY_COLOR_NAME, StartGameItem::EDITOR, StartGameItem::BACK)},
-		{StartGameItem::BACK, ::MenuItem<StartGameItem>(START_GAME_BACK_COLOR_NAME, StartGameItem::PLAY, StartGameItem::EDITOR)}
-	};
-
-
 	static void ActivateItem()
 	{
-		switch (current)
+		switch ((StartGameItem)graphics::Layouts::GetMenuValue(LAYOUT_NAME, MENU_ID).value())
 		{
 		case StartGameItem::BACK:
 			::Application::SetUIState(::UIState::MAIN_MENU);
@@ -49,10 +34,10 @@ namespace state::Start
 		switch (command)
 		{
 		case ::Command::UP:
-			MenuItem<StartGameItem>::Previous(current, items);
+			graphics::Layouts::PreviousMenuIndex(LAYOUT_NAME, MENU_ID);
 			break;
 		case ::Command::DOWN:
-			MenuItem<StartGameItem>::Next(current, items);
+			graphics::Layouts::NextMenuIndex(LAYOUT_NAME, MENU_ID);
 			break;
 		case ::Command::BACK:
 			::Application::SetUIState(::UIState::MAIN_MENU);
@@ -63,15 +48,9 @@ namespace state::Start
 		}
 	}
 
-	static void OnUpdate(const Uint32& ticks)
-	{
-		MenuItem<StartGameItem>::Update(items, current);
-	}
-
 	void Start()
 	{
 		::Application::SetCommandHandler(::UIState::START_GAME, OnCommand);
 		::Application::SetRenderLayout(::UIState::START_GAME, LAYOUT_NAME);
-		::Application::SetUpdateHandler(::UIState::START_GAME, OnUpdate);
 	}
 }
