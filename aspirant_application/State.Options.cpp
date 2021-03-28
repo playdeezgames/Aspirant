@@ -2,7 +2,6 @@
 #include "Application.h"
 #include "UIState.h"
 #include <map>
-#include "MenuItem.h"
 #include "Graphics.Layouts.h"
 #include "Data.Strings.h"
 #include "Common.Sounds.h"

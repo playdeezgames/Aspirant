@@ -256,7 +256,6 @@
     <ClInclude Include="Graphics.Layout.h" />
     <ClInclude Include="Graphics.Layouts.h" />
     <ClInclude Include="State.MainMenu.h" />
-    <ClInclude Include="MenuItem.h" />
     <ClInclude Include="Options.h" />
     <ClInclude Include="State.Options.h" />
     <ClInclude Include="Common.RNG.h" />

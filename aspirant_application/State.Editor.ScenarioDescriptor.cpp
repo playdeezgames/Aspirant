@@ -2,7 +2,6 @@
 #include "Application.h"
 #include "UIState.h"
 #include "Graphics.Layouts.h"
-#include "MenuItem.h"
 #include "Context.Editor.Scenarios.h"
 #include "Data.Strings.h"
 #include "Game.ScenarioDescriptors.h"

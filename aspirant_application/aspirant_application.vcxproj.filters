@@ -322,9 +322,6 @@
     <ClInclude Include="State.Start.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MenuItem.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="State.Editor.Start.h">
       <Filter>Header Files</Filter>
     </ClInclude>
