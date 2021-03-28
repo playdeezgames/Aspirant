@@ -1,4 +1,3 @@
-#include "Renderer.Editor.PickDescriptor.h"
 #include "Common.XY.h"
 #include "Graphics.Sprites.h"
 #include "Context.Editor.PickDescriptor.h"

@@ -1,4 +1,3 @@
-#include "Renderer.Editor.Cell.h"
 #include "Common.XY.h"
 #include "Context.Editor.Cell.h"
 #include "Graphics.Sprites.h"

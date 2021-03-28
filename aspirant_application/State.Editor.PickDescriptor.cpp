@@ -1,9 +1,6 @@
 #include "Application.h"
 #include "UIState.h"
 #include "Graphics.Layouts.h"
-#include "Renderer.Editor.Room.h"
-#include "Renderer.Editor.Cell.h"
-#include "Renderer.Editor.PickDescriptor.h"
 #include "Common.Utility.h"
 #include "Context.Editor.PickDescriptor.h"
 namespace state::editor::PickDescriptor

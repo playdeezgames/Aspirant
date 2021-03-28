@@ -262,22 +262,13 @@
     <ClInclude Include="Common.Finisher.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Graphics.Image.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Data.Int.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Data.String.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Graphics.Text.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Data.Bool.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Graphics.Layout.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Graphics.Layouts.h">
@@ -325,15 +316,6 @@
     <ClInclude Include="Context.Editor.RoomView.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Renderer.Editor.Room.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Renderer.Editor.Cell.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Renderer.Editor.PickDescriptor.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Context.Editor.PickDescriptor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -356,9 +338,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Graphics.Types.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Graphics.Menu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

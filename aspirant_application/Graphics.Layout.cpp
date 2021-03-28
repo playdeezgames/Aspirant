@@ -1,15 +1,16 @@
-#include "Graphics.Layout.h"
 #include "Common.Utility.h"
-#include "Graphics.Image.h"
-#include "Graphics.Text.h"
 #include "Common.Finisher.h"
 #include "Common.Properties.h"
 #include "Graphics.Types.h"
-#include "Renderer.Editor.Room.h"
-#include "Renderer.Editor.PickDescriptor.h"
-#include "Renderer.Editor.Cell.h"
-#include "Graphics.Menu.h"
 #include <map>
+#include "json.hpp"
+#include <SDL.h>
+namespace graphics::Menu { void Draw(SDL_Renderer*, const nlohmann::json&); }
+namespace graphics::Image { void Draw(SDL_Renderer*, const nlohmann::json&); }
+namespace graphics::Text { void Draw(SDL_Renderer*, const nlohmann::json&); }
+namespace renderer::editor::RoomCellObjects { void Draw(SDL_Renderer*, const nlohmann::json&); }
+namespace renderer::editor::PickDescriptor { void Draw(SDL_Renderer*, const nlohmann::json&); }
+namespace renderer::editor::Room { void Draw(SDL_Renderer*, const nlohmann::json&); }
 namespace graphics::Layout
 {
 	static std::map<std::string, void(*)(SDL_Renderer*, const nlohmann::json&)> table =

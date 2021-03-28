@@ -1,4 +1,3 @@
-#include "Renderer.Editor.Room.h"
 #include "Common.XY.h"
 #include "Context.Editor.RoomView.h"
 #include "Graphics.Sprites.h"

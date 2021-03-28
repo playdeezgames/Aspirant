@@ -1,9 +1,6 @@
 #include "Application.h"
 #include "UIState.h"
 #include "Graphics.Layouts.h"
-#include "Renderer.Editor.Room.h"
-#include "Renderer.Editor.PickDescriptor.h"
-#include "Renderer.Editor.Cell.h"
 #include "Context.Editor.RoomView.h"
 #include <sstream>
 #include "Data.Strings.h"

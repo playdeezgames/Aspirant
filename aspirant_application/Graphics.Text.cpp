@@ -1,4 +1,3 @@
-#include "Graphics.Text.h"
 #include "Common.Utility.h"
 #include "Graphics.Fonts.h"
 #include "Common.Properties.h"

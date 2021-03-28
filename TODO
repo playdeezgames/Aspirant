@@ -44,6 +44,8 @@ Sort Out:
         ☐ string
         ☐ int
         ☐ bool
+    ☐ alphabetize #include files
+        "nice to have, make for neat looking code"
 Bugs:
     ✔ I cannot attempt to "open" a scenario when there are no scenarios @done(21-03-27 16:31)
     ✔ In a freshly created scenario, attempting to edit the avatar crashes the game @done(21-03-27 16:23)

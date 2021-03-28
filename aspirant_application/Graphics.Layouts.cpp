@@ -1,11 +1,11 @@
 #include "Graphics.Layouts.h"
-#include "Graphics.Layout.h"
 #include "Data.JSON.h"
 #include <algorithm>
 #include "Graphics.Types.h"
 #include "Common.Properties.h"
 #include "Graphics.Properties.h"
 #include "Data.Int.h"
+namespace graphics::Layout { void Draw(SDL_Renderer*, const nlohmann::json&); }
 namespace graphics::Layouts
 {
 	static std::map<std::string, nlohmann::json> layouts;
