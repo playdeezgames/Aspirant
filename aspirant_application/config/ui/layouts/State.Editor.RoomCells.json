@@ -26,9 +26,8 @@
         "type": "Text",
         "font": "default",
         "color": "Gray",
-        "text": {
-            "key": "RoomViewPosition.Text.Position"
-        },
+        "text-id": "Position",
+        "text": "<position>",
         "x": 0,
         "y": 0,
         "horizontal-alignment": 1,

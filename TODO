@@ -31,7 +31,14 @@ Sort Out:
         ✔ edit scenario @done(21-03-28 05:37)
         ✔ edit scenario descriptor @done(21-03-28 05:44)
     ☐ store a list of updaters for a state in application intead of only having one!
-    ☐ set text values direction on layouts instead of proxying through data::String
+    ☐ set text values directly on layouts instead of proxying through data::String
+        ✔ EditScenarioSelector @done(21-03-28 07:17)
+        ☐ EditScenario
+        ☐ EditPickRoom
+        ☐ EditNewRoom
+        ☐ EditScenarioDescriptor
+        ☐ RoomViewPosition
+        ☐ EditAvatar
     ☐ eliminate data setters
         ☐ strings
         ☐ ints
@@ -57,6 +64,7 @@ Bugs:
         this is important to be able to do
         need a confirm dialog
     ☐ i want the value of the menu item, not just the index
+    ☐ game::ScenarioDescriptors::Get needs to return optional
 Clunk:
     ✘ the index of a menu in a layout cannot be proxied from a data int @cancelled(21-03-28 06:37)
 

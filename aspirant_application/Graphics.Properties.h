@@ -24,6 +24,7 @@ namespace graphics::Properties
 	const std::string RED = "red";
 	const std::string SPRITE = "sprite";
 	const std::string TEXT = "text";
+	const std::string TEXT_ID = "text-id";
 	const std::string TEXTURE = "texture";
 	const std::string VALUE = "value";
 }

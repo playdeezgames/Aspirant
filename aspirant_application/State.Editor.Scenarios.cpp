@@ -3,17 +3,16 @@
 #include "Graphics.Layouts.h"
 #include "Game.ScenarioDescriptors.h"
 #include "Context.Editor.Scenarios.h"
-#include "Data.Strings.h"
 #include <sstream>
 #include "Context.Editor.Scenario.h"
 #include "Data.JSON.h"
 namespace state::editor::Scenarios
 {
 	const std::string LAYOUT_NAME = "State.Editor.Scenarios";
-	const std::string TEXT_INDEX_STRING_NAME = "EditScenarioSelector.Text.Index";
-	const std::string TEXT_ID_STRING_NAME = "EditScenarioSelector.Text.Id";
-	const std::string TEXT_NAME_STRING_NAME = "EditScenarioSelector.Text.Name";
-	const std::string TEXT_BRIEF_STRING_NAME = "EditScenarioSelector.Text.Brief";
+	const std::string INDEX_TEXT_ID = "Index";
+	const std::string ID_TEXT_ID = "Id";
+	const std::string NAME_TEXT_ID = "Name";
+	const std::string BRIEF_TEXT_ID = "Brief";
 
 	static void OnCommand(const ::Command& command)
 	{
@@ -43,11 +42,11 @@ namespace state::editor::Scenarios
 		{
 			std::stringstream ss;
 			ss << "Scenario " << (::context::editor::Scenarios::GetIndex() + 1) << "/" << ::game::ScenarioDescriptors::GetCount();
-			::data::Strings::Set(TEXT_INDEX_STRING_NAME, ss.str());
+			graphics::Layouts::SetTextText(LAYOUT_NAME, INDEX_TEXT_ID, ss.str());
 		}
 		else
 		{
-			::data::Strings::Set(TEXT_INDEX_STRING_NAME, "No Scenarios");//TODO: magic string
+			graphics::Layouts::SetTextText(LAYOUT_NAME, INDEX_TEXT_ID, "No Scenarios");
 		}
 	}
 
@@ -55,11 +54,11 @@ namespace state::editor::Scenarios
 	{
 		if (scenario)
 		{
-			::data::Strings::Set(TEXT_NAME_STRING_NAME, scenario->GetName());
+			graphics::Layouts::SetTextText(LAYOUT_NAME, NAME_TEXT_ID, scenario->GetName());
 		}
 		else
 		{
-			::data::Strings::Set(TEXT_NAME_STRING_NAME, "-");//TODO: magic string
+			graphics::Layouts::SetTextText(LAYOUT_NAME, NAME_TEXT_ID, "-");
 		}
 	}
 
@@ -69,11 +68,12 @@ namespace state::editor::Scenarios
 		{
 			std::stringstream ss;
 			ss << scenario->GetId();
-			::data::Strings::Set(TEXT_ID_STRING_NAME, ss.str());
+			graphics::Layouts::SetTextText(LAYOUT_NAME, ID_TEXT_ID, ss.str());
+
 		}
 		else
 		{
-			::data::Strings::Set(TEXT_ID_STRING_NAME, "-");//TODO: magic string
+			graphics::Layouts::SetTextText(LAYOUT_NAME, ID_TEXT_ID, "-");
 		}
 
 	}
@@ -82,18 +82,18 @@ namespace state::editor::Scenarios
 	{
 		if (scenario)
 		{
-			::data::Strings::Set(TEXT_BRIEF_STRING_NAME, scenario->GetBrief());
+			graphics::Layouts::SetTextText(LAYOUT_NAME, BRIEF_TEXT_ID, scenario->GetBrief());
 		}
 		else
 		{
-			::data::Strings::Set(TEXT_BRIEF_STRING_NAME, "-");//TODO: magic string
+			graphics::Layouts::SetTextText(LAYOUT_NAME, BRIEF_TEXT_ID, "-");
 		}
 	}
 
 
 	static void OnUpdate(const Uint32& ticks)
 	{
-		auto scenario = ::game::ScenarioDescriptors::Get(::context::editor::Scenarios::GetIndex());
+		auto scenario = game::ScenarioDescriptors::Get(::context::editor::Scenarios::GetIndex());
 		UpdateBriefText(&scenario);
 		UpdateIdText(&scenario);
 		UpdateIndexText(&scenario);

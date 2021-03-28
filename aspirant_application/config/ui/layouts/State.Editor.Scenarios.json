@@ -23,9 +23,8 @@
         "type": "Text",
         "font": "default",
         "color": "Green",
-        "text": {
-            "key": "EditScenarioSelector.Text.Index"
-        },
+        "text-id": "Index",
+        "text": "<index>",
         "x": 320,
         "y": 32,
         "horizontal-alignment": 0,
@@ -51,9 +50,8 @@
         "type": "Text",
         "font": "default",
         "color": "Gray",
-        "text": {
-            "key": "EditScenarioSelector.Text.Id"
-        },
+        "text-id": "Id",
+        "text": "<id>",
         "x": 320,
         "y": 80,
         "horizontal-alignment": 0,
@@ -79,9 +77,8 @@
         "type": "Text",
         "font": "default",
         "color": "Gray",
-        "text": {
-            "key": "EditScenarioSelector.Text.Name"
-        },
+        "text-id": "Name",
+        "text": "<name>",
         "x": 320,
         "y": 128,
         "horizontal-alignment": 0,
@@ -107,9 +104,8 @@
         "type": "Text",
         "font": "default",
         "color": "Gray",
-        "text": {
-            "key": "EditScenarioSelector.Text.Brief"
-        },
+        "text-id": "Brief",
+        "text": "<brief>",
         "x": 320,
         "y": 176,
         "horizontal-alignment": 0,

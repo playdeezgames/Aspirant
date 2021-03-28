@@ -36,9 +36,8 @@
         "type": "Text",
         "font": "default",
         "color": "Gray",
-        "text": {
-            "key": "EditPickRoom.Text.RoomName"
-        },
+        "text-id":"RoomName",
+        "text": "<room name>",
         "x": 320,
         "y": 80,
         "horizontal-alignment": 0,

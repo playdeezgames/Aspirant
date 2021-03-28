@@ -12,4 +12,6 @@ namespace graphics::Layouts
 	void PreviousMenuIndex(const std::string&, const std::string&);
 
 	void SetMenuItemText(const std::string&, const std::string&, const std::string&);
+
+	void SetTextText(const std::string&, const std::string&, const std::string&);
 }

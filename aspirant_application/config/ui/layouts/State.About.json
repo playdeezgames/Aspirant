@@ -36,7 +36,7 @@
         "type": "Text",
         "font": "default",
         "color": "Cyan",
-        "text": {"key":"ItchURL"},
+        "text": "https://thegrumpygamedev.itch.io/",
         "x": 0,
         "y": 48,
         "horizontal-alignment": 1,
