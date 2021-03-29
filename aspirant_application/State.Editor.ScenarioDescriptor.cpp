@@ -112,7 +112,7 @@ namespace state::editor::ScenarioDescriptor
 	{
 		::Application::SetCommandHandler(::UIState::EDIT_SCENARIO_DESCRIPTOR, OnCommand);
 		::Application::SetRenderLayout(::UIState::EDIT_SCENARIO_DESCRIPTOR, LAYOUT_NAME);
-		::Application::SetUpdateHandler(::UIState::EDIT_SCENARIO_DESCRIPTOR, OnUpdate);
+		::Application::AddUpdateHandler(::UIState::EDIT_SCENARIO_DESCRIPTOR, OnUpdate);
 		::Application::SetTextInputHandler(::UIState::EDIT_SCENARIO_DESCRIPTOR, OnTextInput);
 	}
 }

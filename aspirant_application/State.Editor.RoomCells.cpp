@@ -86,6 +86,6 @@ namespace state::editor::RoomCells
 	{
 		Application::SetCommandHandler(::UIState::EDIT_NAVIGATE_ROOM, OnCommand);
 		Application::SetRenderLayout(::UIState::EDIT_NAVIGATE_ROOM, LAYOUT_NAME);
-		Application::SetUpdateHandler(::UIState::EDIT_NAVIGATE_ROOM, OnUpdate);
+		Application::AddUpdateHandler(::UIState::EDIT_NAVIGATE_ROOM, OnUpdate);
 	}
 }

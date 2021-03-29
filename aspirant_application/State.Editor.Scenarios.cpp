@@ -104,6 +104,6 @@ namespace state::editor::Scenarios
 	{
 		::Application::SetCommandHandler(::UIState::EDIT_SCENARIO_SELECTOR, OnCommand);
 		::Application::SetRenderLayout(::UIState::EDIT_SCENARIO_SELECTOR, LAYOUT_NAME);
-		::Application::SetUpdateHandler(::UIState::EDIT_SCENARIO_SELECTOR, OnUpdate);
+		::Application::AddUpdateHandler(::UIState::EDIT_SCENARIO_SELECTOR, OnUpdate);
 	}
 }

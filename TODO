@@ -1,71 +1,75 @@
 Sort Out:
-    ✔ layout names do not really reflect the corresponding namespaces in the code @done(21-03-27 18:34)
-        ✔ Splash @done(21-03-27 18:24)
-        ✔ MainMenu @done(21-03-27 17:35)
-        ✔ About @done(21-03-27 18:34)
-        ✔ ConfirmQuit @done(21-03-27 18:34)
-        ✔ Options @done(21-03-27 18:34)
-        ✔ StartGame @done(21-03-27 18:24)
-        ✔ StartEditor @done(21-03-27 18:34)
-        ✔ EditScenarioSelector @done(21-03-27 18:34)
-        ✔ EditScenario @done(21-03-27 18:34)
-        ✔ EditPickRoom @done(21-03-27 18:34)
-        ✔ EditNewRoom @done(21-03-27 18:34)
-        ✔ EditScenarioDescriptor @done(21-03-27 18:34)
-        ✔ EditNavigateRoom @done(21-03-27 18:22)
-        ✔ RoomViewPosition @done(21-03-27 18:34)
-        ✔ EditDescriptorSelector @done(21-03-27 18:22)
-        ✔ StartPlayer @done(21-03-27 18:25)
-        ✔ PlayerNewGame @done(21-03-27 18:34)
-        ✔ PlayerLoadGame @done(21-03-27 18:34)
-        ✔ EditAvatar @done(21-03-27 18:34)
-    ✔ remove spaghetti menu @done(21-03-28 05:44)
-        ✔ confirm quit @done(21-03-28 04:28)
-        ✔ main menu @done(21-03-28 04:20)
-        ✔ options @done(21-03-28 04:46)
-        ✔ start game @done(21-03-28 04:53)
-        ✔ start editor @done(21-03-28 04:59)
-        ✔ start play @done(21-03-28 05:19)
-        ✔ avatar editor @done(21-03-28 05:19)
-        ✔ new room @done(21-03-28 05:29)
-        ✔ edit scenario @done(21-03-28 05:37)
-        ✔ edit scenario descriptor @done(21-03-28 05:44)
     ☐ store a list of updaters for a state in application intead of only having one!
-    ☐ set text values directly on layouts instead of proxying through data::String
-        ✔ EditScenarioSelector @done(21-03-28 07:17)
-        ☐ EditScenario
-        ☐ EditPickRoom
-        ☐ EditNewRoom
-        ☐ EditScenarioDescriptor
-        ☐ RoomViewPosition
-        ☐ EditAvatar
-    ☐ eliminate data setters
-        ☐ strings
-        ☐ ints
-        ☐ bools
-    ☐ data stores are config stores, so rename the namespaces
-        ☐ string
-        ☐ int
-        ☐ bool
-    ☐ data proxies are no longer necessary
-        ☐ string
-        ☐ int
-        ☐ bool
-    ☐ alphabetize #include files
-        "nice to have, make for neat looking code"
 Bugs:
-    ✔ I cannot attempt to "open" a scenario when there are no scenarios @done(21-03-27 16:31)
-    ✔ In a freshly created scenario, attempting to edit the avatar crashes the game @done(21-03-27 16:23)
-    ✔ When I edit a scenario descriptor, it does not save. @done(21-03-27 16:28)
-    ✘ I do not have the ability to delete a scenario @cancelled(21-03-27 16:29)
-        do i want to?
-        do i have to have a confirm delete dialog?
     ☐ I do not have the ability to delete a room in a scenario
         this is important to be able to do
         need a confirm dialog
     ☐ i want the value of the menu item, not just the index
     ☐ game::ScenarioDescriptors::Get needs to return optional
-Clunk:
-    ✘ the index of a menu in a layout cannot be proxied from a data int @cancelled(21-03-28 06:37)
+Features:
+    ☐ handle mouse movement
+    ☐ handle mouse button clicks
+    ☐ handle mouse wheel
+    ☐ handle controller input
 
-
+Archive:
+  ✔ layout names do not really reflect the corresponding namespaces in the code @done(21-03-27 18:34) @project(Sort Out)
+  ✔ Splash @done(21-03-27 18:24) @project(Sort Out)
+  ✔ MainMenu @done(21-03-27 17:35) @project(Sort Out)
+  ✔ About @done(21-03-27 18:34) @project(Sort Out)
+  ✔ ConfirmQuit @done(21-03-27 18:34) @project(Sort Out)
+  ✔ Options @done(21-03-27 18:34) @project(Sort Out)
+  ✔ StartGame @done(21-03-27 18:24) @project(Sort Out)
+  ✔ StartEditor @done(21-03-27 18:34) @project(Sort Out)
+  ✔ EditScenarioSelector @done(21-03-27 18:34) @project(Sort Out)
+  ✔ EditScenario @done(21-03-27 18:34) @project(Sort Out)
+  ✔ EditPickRoom @done(21-03-27 18:34) @project(Sort Out)
+  ✔ EditNewRoom @done(21-03-27 18:34) @project(Sort Out)
+  ✔ EditScenarioDescriptor @done(21-03-27 18:34) @project(Sort Out)
+  ✔ EditNavigateRoom @done(21-03-27 18:22) @project(Sort Out)
+  ✔ RoomViewPosition @done(21-03-27 18:34) @project(Sort Out)
+  ✔ EditDescriptorSelector @done(21-03-27 18:22) @project(Sort Out)
+  ✔ StartPlayer @done(21-03-27 18:25) @project(Sort Out)
+  ✔ PlayerNewGame @done(21-03-27 18:34) @project(Sort Out)
+  ✔ PlayerLoadGame @done(21-03-27 18:34) @project(Sort Out)
+  ✔ EditAvatar @done(21-03-27 18:34) @project(Sort Out)
+  ✔ remove spaghetti menu @done(21-03-28 05:44) @project(Sort Out)
+  ✔ confirm quit @done(21-03-28 04:28) @project(Sort Out)
+  ✔ main menu @done(21-03-28 04:20) @project(Sort Out)
+  ✔ options @done(21-03-28 04:46) @project(Sort Out)
+  ✔ start game @done(21-03-28 04:53) @project(Sort Out)
+  ✔ start editor @done(21-03-28 04:59) @project(Sort Out)
+  ✔ start play @done(21-03-28 05:19) @project(Sort Out)
+  ✔ avatar editor @done(21-03-28 05:19) @project(Sort Out)
+  ✔ new room @done(21-03-28 05:29) @project(Sort Out)
+  ✔ edit scenario @done(21-03-28 05:37) @project(Sort Out)
+  ✔ edit scenario descriptor @done(21-03-28 05:44) @project(Sort Out)
+  ✔ set text values directly on layouts instead of proxying through data::String @done(21-03-29 05:01) @project(Sort Out)
+  ✔ EditScenarioSelector @done(21-03-28 07:17) @project(Sort Out)
+  ✔ EditScenario @done(21-03-29 05:01) @project(Sort Out)
+  ✔ EditPickRoom @done(21-03-29 05:01) @project(Sort Out)
+  ✔ EditNewRoom @done(21-03-29 05:01) @project(Sort Out)
+  ✔ EditScenarioDescriptor @done(21-03-29 05:01) @project(Sort Out)
+  ✔ RoomViewPosition @done(21-03-29 05:01) @project(Sort Out)
+  ✔ EditAvatar @done(21-03-29 05:01) @project(Sort Out)
+  ✔ eliminate data setters @done(21-03-29 05:01) @project(Sort Out)
+  ✔ strings @done(21-03-29 05:01) @project(Sort Out)
+  ✔ ints @done(21-03-29 05:01) @project(Sort Out)
+  ✔ bools @done(21-03-29 05:01) @project(Sort Out)
+  ✔ data stores are config stores, so rename the namespaces @done(21-03-29 05:01) @project(Sort Out)
+  ✔ string @done(21-03-29 05:01) @project(Sort Out)
+  ✔ int @done(21-03-29 05:01) @project(Sort Out)
+  ✔ bool @done(21-03-29 05:01) @project(Sort Out)
+  ✔ data proxies are no longer necessary @done(21-03-29 05:01) @project(Sort Out)
+  ✔ string @done(21-03-29 05:01) @project(Sort Out)
+  ✔ int @done(21-03-29 05:01) @project(Sort Out)
+  ✔ bool @done(21-03-29 05:01) @project(Sort Out)
+  ✘ alphabetize #include files @cancelled(21-03-29 05:01) @project(Sort Out)
+    "nice to have, make for neat looking code"
+  ✔ I cannot attempt to "open" a scenario when there are no scenarios @done(21-03-27 16:31) @project(Bugs)
+  ✔ In a freshly created scenario, attempting to edit the avatar crashes the game @done(21-03-27 16:23) @project(Bugs)
+  ✔ When I edit a scenario descriptor, it does not save. @done(21-03-27 16:28) @project(Bugs)
+  ✘ I do not have the ability to delete a scenario @cancelled(21-03-27 16:29) @project(Bugs)
+    do i want to?
+    do i have to have a confirm delete dialog?
+  ✘ the index of a menu in a layout cannot be proxied from a data int @cancelled(21-03-28 06:37) @project(Clunk)

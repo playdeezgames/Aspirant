@@ -134,7 +134,7 @@ namespace state::editor::Avatar
 	{
 		Application::SetCommandHandler(UIState::EDIT_AVATAR, OnCommand);
 		Application::SetRenderLayout(UIState::EDIT_AVATAR, LAYOUT_NAME);
-		Application::SetUpdateHandler(UIState::EDIT_AVATAR, OnUpdate);
+		Application::AddUpdateHandler(UIState::EDIT_AVATAR, OnUpdate);
 		Application::SetTextInputHandler(UIState::EDIT_AVATAR, OnTextInput);
 	}
 }

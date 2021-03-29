@@ -154,7 +154,7 @@ namespace state::editor::NewRoom
 	{
 		::Application::SetCommandHandler(::UIState::EDIT_NEW_ROOM, OnCommand);
 		::Application::SetRenderLayout(::UIState::EDIT_NEW_ROOM, LAYOUT_NAME);
-		::Application::SetUpdateHandler(::UIState::EDIT_NEW_ROOM, OnUpdate);
+		::Application::AddUpdateHandler(::UIState::EDIT_NEW_ROOM, OnUpdate);
 		::Application::SetTextInputHandler(::UIState::EDIT_NEW_ROOM, OnTextInput);
 	}
 }

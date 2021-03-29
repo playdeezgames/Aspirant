@@ -47,6 +47,6 @@ namespace state::editor::PickRoom
 	{
 		::Application::SetCommandHandler(::UIState::EDIT_PICK_ROOM, OnCommand);
 		::Application::SetRenderLayout(::UIState::EDIT_PICK_ROOM, LAYOUT_NAME);
-		::Application::SetUpdateHandler(::UIState::EDIT_PICK_ROOM, OnUpdate);
+		::Application::AddUpdateHandler(::UIState::EDIT_PICK_ROOM, OnUpdate);
 	}
 }

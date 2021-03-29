@@ -76,6 +76,6 @@ namespace state::editor::Scenario
 	{
 		::Application::SetCommandHandler(::UIState::EDIT_SCENARIO, OnCommand);
 		::Application::SetRenderLayout(::UIState::EDIT_SCENARIO, LAYOUT_NAME);
-		::Application::SetUpdateHandler(::UIState::EDIT_SCENARIO, UpdateHeader);
+		::Application::AddUpdateHandler(::UIState::EDIT_SCENARIO, UpdateHeader);
 	}
 }

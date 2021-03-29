@@ -120,11 +120,15 @@ namespace Application
 		textInputHandlers[state] = handler;
 	}
 
-	static std::map<::UIState, UpdateHandler> updateHandlers;
+	static std::map<::UIState, std::vector<UpdateHandler>> updateHandlers;
 
-	void SetUpdateHandler(const ::UIState& state, UpdateHandler handler)
+	void AddUpdateHandler(const ::UIState& state, UpdateHandler handler)
 	{
-		updateHandlers[state] = handler;
+		if (!updateHandlers.contains(state))
+		{
+			updateHandlers[state] = std::vector<UpdateHandler>();
+		}
+		updateHandlers[state].push_back(handler);
 	}
 
 	static std::map<UIState, std::string> renderLayouts;
@@ -198,10 +202,13 @@ namespace common::Application
 
 	void Update(Uint32 ticks)
 	{
-		auto handler = ::Application::updateHandlers.find(::Application::GetUIState());
-		if (handler != ::Application::updateHandlers.end())
+		auto handlers = ::Application::updateHandlers.find(::Application::GetUIState());
+		if (handlers != ::Application::updateHandlers.end())
 		{
-			handler->second(ticks);
+			for (auto handler : handlers->second)
+			{
+				handler(ticks);
+			}
 		}
 	}
 

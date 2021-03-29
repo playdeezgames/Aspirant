@@ -138,6 +138,6 @@ namespace state::Options
 	{
 		::Application::SetCommandHandler(::UIState::OPTIONS, OnCommand);
 		::Application::SetRenderLayout(::UIState::OPTIONS, LAYOUT_NAME);
-		::Application::SetUpdateHandler(::UIState::OPTIONS, OnUpdate);
+		::Application::AddUpdateHandler(::UIState::OPTIONS, OnUpdate);
 	}
 }

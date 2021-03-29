@@ -26,6 +26,6 @@ namespace state::Splash
 	{
 		::Application::SetCommandHandler(::UIState::SPLASH, OnCommand);
 		::Application::SetRenderLayout(::UIState::SPLASH, LAYOUT_NAME);
-		::Application::SetUpdateHandler(::UIState::SPLASH, OnUpdate);
+		::Application::AddUpdateHandler(::UIState::SPLASH, OnUpdate);
 	}
 }

@@ -13,6 +13,6 @@ namespace Application
 
 	void SetCommandHandler(const UIState&, CommandHandler);
 	void SetTextInputHandler(const UIState&, TextInputHandler);
-	void SetUpdateHandler(const UIState&, UpdateHandler);
+	void AddUpdateHandler(const UIState&, UpdateHandler);
 	void SetRenderLayout(const UIState&, const std::string&);
 }
