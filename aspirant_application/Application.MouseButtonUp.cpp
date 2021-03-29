@@ -15,7 +15,7 @@ namespace application::MouseButtonUp
 		auto iter = handlers.find(Application::GetUIState());
 		if (iter != handlers.end())
 		{
-			iter->second(common::XY<Sint32>(evt.x, evt.y));
+			iter->second(common::XY<Sint32>(evt.x, evt.y), evt.button);
 		}
 	}
 }

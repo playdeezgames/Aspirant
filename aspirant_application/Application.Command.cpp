@@ -4,12 +4,12 @@
 #include "Application.h"
 namespace application::Command
 {
-	static std::map<::UIState, Handler> commandHandlers;
+	static std::map<::UIState, Handler> handlers;
 
 	void Handle(const ::Command& command)
 	{
-		auto handler = commandHandlers.find(::Application::GetUIState());
-		if (handler != commandHandlers.end())
+		auto handler = handlers.find(::Application::GetUIState());
+		if (handler != handlers.end())
 		{
 			handler->second(command);
 		}
@@ -17,6 +17,6 @@ namespace application::Command
 
 	void SetHandler(const ::UIState& state, Handler handler)
 	{
-		commandHandlers[state] = handler;
+		handlers[state] = handler;
 	}
 }

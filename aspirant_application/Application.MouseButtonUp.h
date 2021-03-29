@@ -4,7 +4,7 @@
 #include "UIState.h"
 namespace application::MouseButtonUp
 {
-	typedef void (*Handler)(const common::XY<Sint32>&);
+	typedef void (*Handler)(const common::XY<Sint32>&, Uint8);
 	void SetHandler(const UIState&, Handler);
 	void Handle(const SDL_MouseButtonEvent&);
 }

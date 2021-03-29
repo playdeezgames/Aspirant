@@ -4,23 +4,23 @@
 #include "Application.h"
 namespace application::Update
 {
-	static std::map<::UIState, std::vector<Handler>> updateHandlers;
+	static std::map<::UIState, std::vector<Handler>> handlers;
 
 	void AddHandler(const ::UIState& state, Handler handler)
 	{
-		if (updateHandlers.find(state) == updateHandlers.end())
+		if (handlers.find(state) == handlers.end())
 		{
-			updateHandlers[state] = std::vector<Handler>();
+			handlers[state] = std::vector<Handler>();
 		}
-		updateHandlers[state].push_back(handler);
+		handlers[state].push_back(handler);
 	}
 
 	void Handle(Uint32 ticks)
 	{
-		auto handlers = updateHandlers.find(::Application::GetUIState());
-		if (handlers != updateHandlers.end())
+		auto iter = handlers.find(::Application::GetUIState());
+		if (iter != handlers.end())
 		{
-			for (auto handler : handlers->second)
+			for (auto handler : iter->second)
 			{
 				handler(ticks);
 			}

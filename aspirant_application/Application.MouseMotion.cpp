@@ -3,12 +3,12 @@
 #include "Application.h"
 namespace application::MouseMotion
 {
-	static std::map<UIState, Handler> mouseMotionHandlers;
+	static std::map<UIState, Handler> handlers;
 
 	void Handle(const SDL_MouseMotionEvent& evt)
 	{
-		auto handler = mouseMotionHandlers.find(Application::GetUIState());
-		if (handler != mouseMotionHandlers.end())
+		auto handler = handlers.find(Application::GetUIState());
+		if (handler != handlers.end())
 		{
 			handler->second({ evt.x, evt.y });
 		}
@@ -16,6 +16,6 @@ namespace application::MouseMotion
 
 	void SetHandler(const UIState& state, Handler handler)
 	{
-		mouseMotionHandlers[state] = handler;
+		handlers[state] = handler;
 	}
 }

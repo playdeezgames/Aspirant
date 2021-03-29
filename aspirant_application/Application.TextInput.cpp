@@ -3,12 +3,12 @@
 #include "Application.h"
 namespace application::TextInput
 {
-	static std::map<::UIState, Handler> textInputHandlers;
+	static std::map<::UIState, Handler> handlers;
 
 	void Handle(const SDL_TextInputEvent& evt)
 	{
-		auto handler = textInputHandlers.find(::Application::GetUIState());
-		if (handler != textInputHandlers.end())
+		auto handler = handlers.find(::Application::GetUIState());
+		if (handler != handlers.end())
 		{
 			handler->second(evt.text);
 		}
@@ -16,6 +16,6 @@ namespace application::TextInput
 
 	void SetHandler(const ::UIState& state, Handler handler)
 	{
-		textInputHandlers[state] = handler;
+		handlers[state] = handler;
 	}
 }
