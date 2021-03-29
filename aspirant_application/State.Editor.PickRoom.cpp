@@ -3,6 +3,8 @@
 #include "Graphics.Layouts.h"
 #include "Context.Editor.Rooms.h"
 #include "Context.Editor.RoomView.h"
+#include "Application.Command.h"
+#include "Application.Update.h"
 namespace state::editor::PickRoom
 {
 	const std::string LAYOUT_NAME = "State.Editor.PickRoom";
@@ -45,8 +47,8 @@ namespace state::editor::PickRoom
 
 	void Start()
 	{
-		::Application::SetCommandHandler(::UIState::EDIT_PICK_ROOM, OnCommand);
+		::application::Command::SetHandler(::UIState::EDIT_PICK_ROOM, OnCommand);
 		::Application::SetRenderLayout(::UIState::EDIT_PICK_ROOM, LAYOUT_NAME);
-		::Application::AddUpdateHandler(::UIState::EDIT_PICK_ROOM, OnUpdate);
+		::application::Update::AddHandler(::UIState::EDIT_PICK_ROOM, OnUpdate);
 	}
 }

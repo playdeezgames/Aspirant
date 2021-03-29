@@ -3,6 +3,7 @@
 #include <SDL.h>
 #include "Graphics.Layouts.h"
 #include "Application.h"
+#include "Application.Command.h"
 namespace state::player::Start
 {
 	const std::string LAYOUT_NAME = "State.Player.Start";
@@ -33,7 +34,7 @@ namespace state::player::Start
 
 	void Start()
 	{
-		::Application::SetCommandHandler(::UIState::START_PLAYER, OnCommand);
+		::application::Command::SetHandler(::UIState::START_PLAYER, OnCommand);
 		::Application::SetRenderLayout(::UIState::START_PLAYER, LAYOUT_NAME);
 	}
 }

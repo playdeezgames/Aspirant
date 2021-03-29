@@ -15,6 +15,10 @@
 #include "Game.ScenarioDescriptors.h"
 #include <map>
 #include "Context.Editor.NewRoom.h"
+#include "Application.MouseMotion.h"
+#include "Application.Command.h"
+#include "Application.TextInput.h"
+#include "Application.Update.h"
 namespace state::About { void Start(); }
 namespace state::ConfirmQuit { void Start(); }
 namespace state::editor::Avatar { void Start(); }
@@ -41,20 +45,9 @@ namespace Application
 		uiState = state;
 	}
 
-	static const ::UIState& GetUIState()
+	const ::UIState& GetUIState()
 	{
 		return uiState;
-	}
-
-	static std::map<::UIState, Application::CommandHandler> commandHandlers;
-
-	static void HandleCommand(const ::Command& command)
-	{
-		auto handler = commandHandlers.find(GetUIState());
-		if (handler != commandHandlers.end())
-		{
-			handler->second(command);
-		}
 	}
 
 	static std::optional<::Command> KeyCodeToCommand(const SDL_Keycode& code)
@@ -95,18 +88,7 @@ namespace Application
 		auto command = KeyCodeToCommand(evt.keysym.sym);
 		if (command)
 		{
-			HandleCommand(command.value());
-		}
-	}
-
-	static std::map<::UIState, TextInputHandler> textInputHandlers;
-
-	static void HandleTextInput(const SDL_TextInputEvent& evt)
-	{
-		auto handler = textInputHandlers.find(GetUIState());
-		if (handler != textInputHandlers.end())
-		{
-			handler->second(evt.text);
+			application::Command::Handle(command.value());
 		}
 	}
 
@@ -131,7 +113,7 @@ namespace Application
 		auto iter = controllerButtonCommand.find(evt.button);
 		if (iter != controllerButtonCommand.end())
 		{
-			HandleCommand(iter->second);
+			::application::Command::Handle(iter->second);
 		}
 	}
 
@@ -148,43 +130,6 @@ namespace Application
 	static void HandleMouseWheel(const SDL_MouseWheelEvent& evt)
 	{
 
-	}
-
-	void SetCommandHandler(const ::UIState& state, Application::CommandHandler handler)
-	{
-		commandHandlers[state] = handler;
-	}
-
-	void SetTextInputHandler(const ::UIState& state, TextInputHandler handler)
-	{
-		textInputHandlers[state] = handler;
-	}
-
-	static std::map<UIState, MouseMotionHandler> mouseMotionHandlers;
-
-	static void HandleMouseMotion(const SDL_MouseMotionEvent& evt)
-	{
-		auto handler = mouseMotionHandlers.find(GetUIState());
-		if (handler != mouseMotionHandlers.end())
-		{
-			handler->second({ evt.x, evt.y });
-		}
-	}
-
-	void SetMouseMotionHandler(const UIState& state, MouseMotionHandler handler)
-	{
-		mouseMotionHandlers[state] = handler;
-	}
-
-	static std::map<::UIState, std::vector<UpdateHandler>> updateHandlers;
-
-	void AddUpdateHandler(const ::UIState& state, UpdateHandler handler)
-	{
-		if (updateHandlers.find(state) == updateHandlers.end())
-		{
-			updateHandlers[state] = std::vector<UpdateHandler>();
-		}
-		updateHandlers[state].push_back(handler);
 	}
 
 	static std::map<UIState, std::string> renderLayouts;
@@ -241,7 +186,7 @@ namespace common::Application
 		graphics::Fonts::Start(FONTS);
 		graphics::Layouts::Start(LAYOUTS);
 		common::Sounds::Start(SFX, MUX);
-		::Options::Start(OPTIONS);
+		Options::Start(OPTIONS);
 		game::Descriptors::Start(DESCRIPTORS);
 		game::ScenarioDescriptors::Load(SCENARIOS);
 
@@ -258,14 +203,7 @@ namespace common::Application
 
 	void Update(Uint32 ticks)
 	{
-		auto handlers = ::Application::updateHandlers.find(::Application::GetUIState());
-		if (handlers != ::Application::updateHandlers.end())
-		{
-			for (auto handler : handlers->second)
-			{
-				handler(ticks);
-			}
-		}
+		application::Update::Handle(ticks);
 	}
 
 	void Render(SDL_Renderer* renderer)
@@ -288,13 +226,13 @@ namespace common::Application
 			::Application::HandleKeyDown(evt.key);
 			break;
 		case SDL_TEXTINPUT:
-			::Application::HandleTextInput(evt.text);
+			::application::TextInput::Handle(evt.text);
 			break;
 		case SDL_CONTROLLERBUTTONDOWN:
 			::Application::HandleControllerButtonDown(evt.cbutton);
 			break;
 		case SDL_MOUSEMOTION:
-			::Application::HandleMouseMotion(evt.motion);
+			::application::MouseMotion::Handle(evt.motion);
 			break;
 		case SDL_MOUSEBUTTONDOWN:
 			::Application::HandleMouseButtonDown(evt.button);

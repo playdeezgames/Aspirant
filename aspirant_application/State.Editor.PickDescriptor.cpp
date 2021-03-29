@@ -3,6 +3,7 @@
 #include "Graphics.Layouts.h"
 #include "Common.Utility.h"
 #include "Context.Editor.PickDescriptor.h"
+#include "Application.Command.h"
 namespace state::editor::PickDescriptor
 {
 	const std::string LAYOUT_NAME = "State.Editor.PickDescriptor";
@@ -44,7 +45,7 @@ namespace state::editor::PickDescriptor
 
 	void Start()
 	{
-		::Application::SetCommandHandler(::UIState::EDIT_DESCRIPTOR_SELECTOR, OnCommand);
+		::application::Command::SetHandler(::UIState::EDIT_DESCRIPTOR_SELECTOR, OnCommand);
 		::Application::SetRenderLayout(::UIState::EDIT_DESCRIPTOR_SELECTOR, LAYOUT_NAME);
 	}
 }

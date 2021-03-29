@@ -2,6 +2,7 @@
 #include "UIState.h"
 #include "Graphics.Layouts.h"
 #include <map>
+#include "Application.Command.h"
 namespace state::MainMenu
 {
 	const std::string LAYOUT_NAME = "State.MainMenu";
@@ -56,7 +57,7 @@ namespace state::MainMenu
 
 	void Start()
 	{
-		::Application::SetCommandHandler(::UIState::MAIN_MENU, OnCommand);
+		::application::Command::SetHandler(::UIState::MAIN_MENU, OnCommand);
 		::Application::SetRenderLayout(::UIState::MAIN_MENU, LAYOUT_NAME);
 	}
 }

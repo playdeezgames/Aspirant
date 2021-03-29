@@ -6,6 +6,8 @@
 #include <sstream>
 #include "Context.Editor.Rooms.h"
 #include "Context.Editor.NewRoom.h"
+#include "Application.Command.h"
+#include "Application.Update.h"
 namespace state::editor::Scenario
 {
 	const std::string LAYOUT_NAME = "State.Editor.Scenario";
@@ -74,8 +76,8 @@ namespace state::editor::Scenario
 
 	void Start()
 	{
-		::Application::SetCommandHandler(::UIState::EDIT_SCENARIO, OnCommand);
+		::application::Command::SetHandler(::UIState::EDIT_SCENARIO, OnCommand);
 		::Application::SetRenderLayout(::UIState::EDIT_SCENARIO, LAYOUT_NAME);
-		::Application::AddUpdateHandler(::UIState::EDIT_SCENARIO, UpdateHeader);
+		::application::Update::AddHandler(::UIState::EDIT_SCENARIO, UpdateHeader);
 	}
 }

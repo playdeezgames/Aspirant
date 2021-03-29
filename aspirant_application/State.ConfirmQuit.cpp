@@ -1,5 +1,6 @@
 #include "Graphics.Layouts.h"
 #include "Application.h"
+#include "Application.Command.h"
 namespace state::ConfirmQuit
 {
 	const std::string LAYOUT_NAME = "State.ConfirmQuit";
@@ -45,7 +46,7 @@ namespace state::ConfirmQuit
 
 	void Start()
 	{
-		::Application::SetCommandHandler(::UIState::CONFIRM_QUIT, OnCommand);
+		::application::Command::SetHandler(::UIState::CONFIRM_QUIT, OnCommand);
 		::Application::SetRenderLayout(::UIState::CONFIRM_QUIT, LAYOUT_NAME);
 	}
 }

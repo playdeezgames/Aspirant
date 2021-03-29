@@ -1,6 +1,7 @@
 #include "Application.h"
 #include "UIState.h"
 #include "Graphics.Layouts.h"
+#include "Application.Command.h"
 namespace state::About
 {
 	const std::string LAYOUT_NAME = "State.About";
@@ -17,7 +18,7 @@ namespace state::About
 
 	void Start()
 	{
-		::Application::SetCommandHandler(::UIState::ABOUT, OnCommand);
+		::application::Command::SetHandler(::UIState::ABOUT, OnCommand);
 		::Application::SetRenderLayout(::UIState::ABOUT, LAYOUT_NAME);
 	}
 }

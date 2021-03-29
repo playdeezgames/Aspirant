@@ -3,6 +3,9 @@
 #include "Graphics.Layouts.h"
 #include "Context.Editor.Scenarios.h"
 #include "Game.ScenarioDescriptors.h"
+#include "Application.Command.h"
+#include "Application.TextInput.h"
+#include "Application.Update.h"
 namespace state::editor::ScenarioDescriptor
 {
 	const std::string LAYOUT_NAME = "State.Editor.ScenarioDescriptor";
@@ -110,9 +113,9 @@ namespace state::editor::ScenarioDescriptor
 
 	void Start()
 	{
-		::Application::SetCommandHandler(::UIState::EDIT_SCENARIO_DESCRIPTOR, OnCommand);
+		::application::Command::SetHandler(::UIState::EDIT_SCENARIO_DESCRIPTOR, OnCommand);
 		::Application::SetRenderLayout(::UIState::EDIT_SCENARIO_DESCRIPTOR, LAYOUT_NAME);
-		::Application::AddUpdateHandler(::UIState::EDIT_SCENARIO_DESCRIPTOR, OnUpdate);
-		::Application::SetTextInputHandler(::UIState::EDIT_SCENARIO_DESCRIPTOR, OnTextInput);
+		::application::Update::AddHandler(::UIState::EDIT_SCENARIO_DESCRIPTOR, OnUpdate);
+		::application::TextInput::SetHandler(::UIState::EDIT_SCENARIO_DESCRIPTOR, OnTextInput);
 	}
 }

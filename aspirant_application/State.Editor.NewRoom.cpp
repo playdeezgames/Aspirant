@@ -4,6 +4,9 @@
 #include "Context.Editor.NewRoom.h"
 #include "Context.Editor.Rooms.h"
 #include "Context.Editor.Scenario.h"
+#include "Application.Command.h"
+#include "Application.TextInput.h"
+#include "Application.Update.h"
 namespace state::editor::NewRoom
 {
 	const std::string LAYOUT_NAME = "State.Editor.NewRoom";
@@ -152,9 +155,9 @@ namespace state::editor::NewRoom
 
 	void Start()
 	{
-		::Application::SetCommandHandler(::UIState::EDIT_NEW_ROOM, OnCommand);
+		::application::Command::SetHandler(::UIState::EDIT_NEW_ROOM, OnCommand);
 		::Application::SetRenderLayout(::UIState::EDIT_NEW_ROOM, LAYOUT_NAME);
-		::Application::AddUpdateHandler(::UIState::EDIT_NEW_ROOM, OnUpdate);
-		::Application::SetTextInputHandler(::UIState::EDIT_NEW_ROOM, OnTextInput);
+		::application::Update::AddHandler(::UIState::EDIT_NEW_ROOM, OnUpdate);
+		::application::TextInput::SetHandler(::UIState::EDIT_NEW_ROOM, OnTextInput);
 	}
 }

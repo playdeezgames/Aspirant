@@ -6,6 +6,7 @@
 #include "Data.JSON.h"
 #include "Game.ScenarioDescriptors.h"
 #include "Context.Editor.Scenarios.h"
+#include "Application.Command.h"
 namespace state::editor::Start
 {
 	const std::string LAYOUT_NAME = "State.Editor.Start";
@@ -80,7 +81,7 @@ namespace state::editor::Start
 
 	void Start()
 	{
-		::Application::SetCommandHandler(
+		::application::Command::SetHandler(
 			::UIState::START_EDITOR,
 			OnCommand);
 		::Application::SetRenderLayout(

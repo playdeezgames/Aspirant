@@ -8,6 +8,8 @@
 #include "Context.Editor.Rooms.h"
 #include "Context.Editor.Cell.h"
 #include "Context.Editor.PickDescriptor.h"
+#include "Application.Command.h"
+#include "Application.Update.h"
 namespace state::editor::RoomCells
 {
 	const std::string LAYOUT_NAME = "State.Editor.RoomCells";
@@ -84,8 +86,8 @@ namespace state::editor::RoomCells
 
 	void Start()
 	{
-		Application::SetCommandHandler(::UIState::EDIT_NAVIGATE_ROOM, OnCommand);
+		application::Command::SetHandler(::UIState::EDIT_NAVIGATE_ROOM, OnCommand);
 		Application::SetRenderLayout(::UIState::EDIT_NAVIGATE_ROOM, LAYOUT_NAME);
-		Application::AddUpdateHandler(::UIState::EDIT_NAVIGATE_ROOM, OnUpdate);
+		application::Update::AddHandler(::UIState::EDIT_NAVIGATE_ROOM, OnUpdate);
 	}
 }

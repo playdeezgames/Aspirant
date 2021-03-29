@@ -3,6 +3,9 @@
 #include "Common.XY.h"
 #include "Context.Editor.Scenario.h"
 #include <sstream>
+#include "Application.Command.h"
+#include "Application.TextInput.h"
+#include "Application.Update.h"
 namespace state::editor::Avatar
 {
 	const std::string LAYOUT_NAME = "State.Editor.Avatar";
@@ -132,9 +135,9 @@ namespace state::editor::Avatar
 
 	void Start()
 	{
-		Application::SetCommandHandler(UIState::EDIT_AVATAR, OnCommand);
+		application::Command::SetHandler(UIState::EDIT_AVATAR, OnCommand);
 		Application::SetRenderLayout(UIState::EDIT_AVATAR, LAYOUT_NAME);
-		Application::AddUpdateHandler(UIState::EDIT_AVATAR, OnUpdate);
-		Application::SetTextInputHandler(UIState::EDIT_AVATAR, OnTextInput);
+		application::Update::AddHandler(UIState::EDIT_AVATAR, OnUpdate);
+		application::TextInput::SetHandler(UIState::EDIT_AVATAR, OnTextInput);
 	}
 }

@@ -1,6 +1,8 @@
 #include "Application.h"
 #include "UIState.h"
 #include "Graphics.Layouts.h"
+#include "Application.Command.h"
+#include "Application.Update.h"
 namespace state::Splash
 {
 	const size_t TICKS_TOTAL = 3000;
@@ -24,8 +26,8 @@ namespace state::Splash
 
 	void Start()
 	{
-		::Application::SetCommandHandler(::UIState::SPLASH, OnCommand);
+		::application::Command::SetHandler(::UIState::SPLASH, OnCommand);
 		::Application::SetRenderLayout(::UIState::SPLASH, LAYOUT_NAME);
-		::Application::AddUpdateHandler(::UIState::SPLASH, OnUpdate);
+		::application::Update::AddHandler(::UIState::SPLASH, OnUpdate);
 	}
 }

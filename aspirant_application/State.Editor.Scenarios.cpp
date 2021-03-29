@@ -6,6 +6,8 @@
 #include <sstream>
 #include "Context.Editor.Scenario.h"
 #include "Data.JSON.h"
+#include "Application.Command.h"
+#include "Application.Update.h"
 namespace state::editor::Scenarios
 {
 	const std::string LAYOUT_NAME = "State.Editor.Scenarios";
@@ -102,8 +104,8 @@ namespace state::editor::Scenarios
 
 	void Start()
 	{
-		::Application::SetCommandHandler(::UIState::EDIT_SCENARIO_SELECTOR, OnCommand);
+		::application::Command::SetHandler(::UIState::EDIT_SCENARIO_SELECTOR, OnCommand);
 		::Application::SetRenderLayout(::UIState::EDIT_SCENARIO_SELECTOR, LAYOUT_NAME);
-		::Application::AddUpdateHandler(::UIState::EDIT_SCENARIO_SELECTOR, OnUpdate);
+		::application::Update::AddHandler(::UIState::EDIT_SCENARIO_SELECTOR, OnUpdate);
 	}
 }

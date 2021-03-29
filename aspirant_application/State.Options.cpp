@@ -5,6 +5,8 @@
 #include "Options.h"
 #include <sstream>
 #include "Common.Utility.h"
+#include "Application.Command.h"
+#include "Application.Update.h"
 namespace state::Options
 {
 	const std::string LAYOUT_NAME = "State.Options";
@@ -136,8 +138,8 @@ namespace state::Options
 
 	void Start()
 	{
-		::Application::SetCommandHandler(::UIState::OPTIONS, OnCommand);
+		::application::Command::SetHandler(::UIState::OPTIONS, OnCommand);
 		::Application::SetRenderLayout(::UIState::OPTIONS, LAYOUT_NAME);
-		::Application::AddUpdateHandler(::UIState::OPTIONS, OnUpdate);
+		::application::Update::AddHandler(::UIState::OPTIONS, OnUpdate);
 	}
 }
