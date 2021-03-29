@@ -158,7 +158,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Application.Command.cpp" />
+    <ClCompile Include="Application.MouseButtonDown.cpp" />
+    <ClCompile Include="Application.MouseButtonUp.cpp" />
     <ClCompile Include="Application.MouseMotion.cpp" />
+    <ClCompile Include="Application.MouseWheel.cpp" />
     <ClCompile Include="Application.TextInput.cpp" />
     <ClCompile Include="Application.Update.cpp" />
     <ClCompile Include="Game.ScenarioDescriptor.cpp" />
@@ -220,7 +223,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.Command.h" />
+    <ClInclude Include="Application.MouseButtonDown.h" />
+    <ClInclude Include="Application.MouseButtonUp.h" />
     <ClInclude Include="Application.MouseMotion.h" />
+    <ClInclude Include="Application.MouseWheel.h" />
     <ClInclude Include="Application.TextInput.h" />
     <ClInclude Include="Application.Update.h" />
     <ClInclude Include="Common.Properties.h" />

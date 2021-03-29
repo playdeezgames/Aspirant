@@ -8,7 +8,7 @@ Bugs:
     ✔ game::ScenarioDescriptors::Get needs to return optional @done(21-03-29 11:10)
     ✔ switch to x64 @done(21-03-29 07:38)
 Features:
-    ☐ handle mouse movement
+    ✔ handle mouse movement @done(21-03-29 16:18)
     ☐ handle mouse button clicks
     ☐ handle mouse wheel
     ✔ handle controller input @done(21-03-29 07:39)

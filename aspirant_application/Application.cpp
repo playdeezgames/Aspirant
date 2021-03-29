@@ -19,6 +19,9 @@
 #include "Application.Command.h"
 #include "Application.TextInput.h"
 #include "Application.Update.h"
+#include "Application.MouseWheel.h"
+#include "Application.MouseButtonDown.h"
+#include "Application.MouseButtonUp.h"
 namespace state::About { void Start(); }
 namespace state::ConfirmQuit { void Start(); }
 namespace state::editor::Avatar { void Start(); }
@@ -94,18 +97,18 @@ namespace Application
 
 	static std::map<Uint8, Command> controllerButtonCommand = 
 	{
-		{SDL_CONTROLLER_BUTTON_DPAD_DOWN, Command::DOWN},
-		{SDL_CONTROLLER_BUTTON_DPAD_UP, Command::UP},
-		{SDL_CONTROLLER_BUTTON_DPAD_LEFT, Command::LEFT},
-		{SDL_CONTROLLER_BUTTON_DPAD_RIGHT, Command::RIGHT},
-		{SDL_CONTROLLER_BUTTON_A, Command::GREEN },
-		{SDL_CONTROLLER_BUTTON_B, Command::RED},
-		{SDL_CONTROLLER_BUTTON_X, Command::BLUE},
-		{SDL_CONTROLLER_BUTTON_Y, Command::YELLOW},
-		{SDL_CONTROLLER_BUTTON_BACK, Command::BACK},
-		{SDL_CONTROLLER_BUTTON_START, Command::START},
-		{SDL_CONTROLLER_BUTTON_LEFTSHOULDER, Command::PREVIOUS},
-		{SDL_CONTROLLER_BUTTON_RIGHTSHOULDER, Command::NEXT}
+		{(Uint8)SDL_CONTROLLER_BUTTON_DPAD_DOWN, Command::DOWN},
+		{(Uint8)SDL_CONTROLLER_BUTTON_DPAD_UP, Command::UP},
+		{(Uint8)SDL_CONTROLLER_BUTTON_DPAD_LEFT, Command::LEFT},
+		{(Uint8)SDL_CONTROLLER_BUTTON_DPAD_RIGHT, Command::RIGHT},
+		{(Uint8)SDL_CONTROLLER_BUTTON_A, Command::GREEN },
+		{(Uint8)SDL_CONTROLLER_BUTTON_B, Command::RED},
+		{(Uint8)SDL_CONTROLLER_BUTTON_X, Command::BLUE},
+		{(Uint8)SDL_CONTROLLER_BUTTON_Y, Command::YELLOW},
+		{(Uint8)SDL_CONTROLLER_BUTTON_BACK, Command::BACK},
+		{(Uint8)SDL_CONTROLLER_BUTTON_START, Command::START},
+		{(Uint8)SDL_CONTROLLER_BUTTON_LEFTSHOULDER, Command::PREVIOUS},
+		{(Uint8)SDL_CONTROLLER_BUTTON_RIGHTSHOULDER, Command::NEXT}
 	};
 
 	static void HandleControllerButtonDown(const SDL_ControllerButtonEvent& evt)
@@ -115,21 +118,6 @@ namespace Application
 		{
 			::application::Command::Handle(iter->second);
 		}
-	}
-
-	static void HandleMouseButtonDown(const SDL_MouseButtonEvent& evt)
-	{
-
-	}
-
-	static void HandleMouseButtonUp(const SDL_MouseButtonEvent& evt)
-	{
-
-	}
-
-	static void HandleMouseWheel(const SDL_MouseWheelEvent& evt)
-	{
-
 	}
 
 	static std::map<UIState, std::string> renderLayouts;
@@ -235,13 +223,13 @@ namespace common::Application
 			::application::MouseMotion::Handle(evt.motion);
 			break;
 		case SDL_MOUSEBUTTONDOWN:
-			::Application::HandleMouseButtonDown(evt.button);
+			::application::MouseButtonDown::Handle(evt.button);
 			break;
 		case SDL_MOUSEBUTTONUP:
-			::Application::HandleMouseButtonUp(evt.button);
+			::application::MouseButtonUp::Handle(evt.button);
 			break;
 		case SDL_MOUSEWHEEL:
-			::Application::HandleMouseWheel(evt.wheel);
+			::application::MouseWheel::Handle(evt.wheel);
 			break;
 		}
 	}
