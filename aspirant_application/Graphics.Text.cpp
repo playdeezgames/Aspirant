@@ -11,6 +11,7 @@ namespace graphics::Text
 		{
 			graphics::Fonts::Get(
 				model[graphics::Properties::FONT])
+				.value()
 				.WriteText(
 					renderer, 
 					common::XY<int>(
@@ -22,6 +23,7 @@ namespace graphics::Text
 		}
 		graphics::Fonts::Get(
 			model[graphics::Properties::FONT])
+			.value()
 			.WriteText(
 				renderer, 
 				common::XY<int>(model[common::Properties::X], model[common::Properties::Y]),

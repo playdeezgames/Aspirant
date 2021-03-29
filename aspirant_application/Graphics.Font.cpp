@@ -1,28 +1,30 @@
 #include "Graphics.Font.h"
 #include "Common.Utility.h"
-#include "Data.JSON.h"
 #include "Graphics.Sprites.h"
 #include "Graphics.Colors.h"
+#include <sstream>
 namespace graphics
 {
 	Font::Font
 	(
-		const std::string& fileName
+		const nlohmann::json& model
 	)
-		: glyphs()
+		: model(model)
 	{
-		nlohmann::json properties = data::JSON::Load(fileName);
-		for (auto& item : properties.items())
-		{
-			char ch = (char)::common::Utility::StringToInt(item.key());
-			glyphs[ch] = item.value();
-		}
 	}
 
 	std::optional<graphics::Sprite> Font::GetGlyphSprite(char ch) const
 	{
-		auto iter = glyphs.find(ch);
-		return Sprites::Read(iter->second);
+		std::stringstream ss;
+		ss << (int)ch;
+		if (model.count(ss.str()) > 0)
+		{
+			return Sprites::Read(model[ss.str()]);
+		}
+		else
+		{
+			return std::optional<Sprite>();
+		}
 	}
 
 	common::XY<int> Font::WriteGlyph(SDL_Renderer* renderer, const common::XY<int>& xy, char ch, const std::string& color) const
@@ -88,5 +90,4 @@ namespace graphics
 			break;
 		}
 	}
-
 }

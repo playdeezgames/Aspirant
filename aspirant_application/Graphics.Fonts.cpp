@@ -3,44 +3,31 @@
 #include "Common.Finisher.h"
 namespace graphics::Fonts
 {
-	static graphics::Font* ParseDescriptor(const std::string&, const nlohmann::json& properties)
+	static std::map<std::string, nlohmann::json> table;
+
+	static void ParseDescriptor(const std::string& identifier, const nlohmann::json& properties)
 	{
-		return new graphics::Font(properties);
+		table[identifier] = data::JSON::Load(properties);
 	}
 
-	static std::map<std::string, graphics::Font*> descriptors;
-	static std::vector<std::string> identifiers;
-
-	const graphics::Font& Get(const std::string& key)
+	std::optional<graphics::Font> Get(const std::string& key)
 	{
-		return *descriptors[key];
-	}
-
-	const std::vector<std::string>& GetIdentifiers()
-	{
-		return identifiers;
-	}
-
-	static std::string ParseKey(const nlohmann::json& key)
-	{
-		return key;
-	}
-
-	static void Finish()
-	{
-		common::Finisher::Finish(descriptors);
+		if (table.count(key) > 0)
+		{
+			return Font(table[key]);
+		}
+		else
+		{
+			return std::optional<Font>();
+		}
 	}
 
 	void Start(const std::string& fileName)
 	{
-		atexit(Finish);
-		nlohmann::json properties = data::JSON::Load(fileName);
+		auto properties = data::JSON::Load(fileName);
 		for (auto& item : properties.items())
 		{
-			auto identifier = ParseKey(item.key());
-			identifiers.push_back(identifier);
-			descriptors[identifier] =
-				ParseDescriptor(identifier, item.value());
+			ParseDescriptor(item.key(), item.value());
 		}
 	}
 

@@ -4,6 +4,7 @@
 #include <map>
 #include "Common.XY.h"
 #include <optional>
+#include "json.hpp"
 namespace graphics
 {
 	enum class HorizontalAlignment
@@ -14,13 +15,8 @@ namespace graphics
 	};
 	class Font
 	{
-		Font() = delete;
-		Font(const Font&) = delete;
-		Font(Font&&) = delete;
-		Font& operator=(const Font&) = delete;
-		Font& operator=(Font&&) = delete;
 	private:
-		std::map<char, std::string> glyphs;
+		const nlohmann::json& model;
 		std::optional<graphics::Sprite> GetGlyphSprite(char) const;
 		void WriteTextCentered(SDL_Renderer*, const common::XY<int>&, const std::string&, const std::string&) const;
 		common::XY<int> WriteTextLeft(SDL_Renderer*, const common::XY<int>&, const std::string&, const std::string&) const;
@@ -29,7 +25,7 @@ namespace graphics
 	public:
 		Font
 		(
-			const std::string&
+			const nlohmann::json&
 		);
 		void WriteText(SDL_Renderer*, const common::XY<int>&, const std::string&, const std::string&, const HorizontalAlignment&) const;
 	};
