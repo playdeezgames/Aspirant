@@ -6,6 +6,7 @@ Bugs:
         need a confirm dialog
     ✔ i want the value of the menu item, not just the index @done(21-03-29 05:21)
     ☐ game::ScenarioDescriptors::Get needs to return optional
+    ☐ switch to x64
 Features:
     ☐ handle mouse movement
     ☐ handle mouse button clicks

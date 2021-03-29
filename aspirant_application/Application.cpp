@@ -167,7 +167,7 @@ namespace Application
 
 	void AddUpdateHandler(const ::UIState& state, UpdateHandler handler)
 	{
-		if (!updateHandlers.contains(state))
+		if (updateHandlers.find(state) == updateHandlers.end())
 		{
 			updateHandlers[state] = std::vector<UpdateHandler>();
 		}
@@ -277,6 +277,8 @@ namespace common::Application
 		case SDL_TEXTINPUT:
 			::Application::HandleTextInput(evt.text);
 			break;
+		case SDL_CONTROLLERBUTTONDOWN:
+			::Application::HandleControllerButtonDown(evt.cbutton);
 		}
 	}
 

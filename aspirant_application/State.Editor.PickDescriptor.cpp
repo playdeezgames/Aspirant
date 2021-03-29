@@ -11,7 +11,7 @@ namespace state::editor::PickDescriptor
 	{
 		::context::editor::PickDescriptor::SetIndex(
 			(size_t)common::Utility::PositiveModulo(
-				::context::editor::PickDescriptor::GetIndex() + delta, 
+				(int)::context::editor::PickDescriptor::GetIndex() + delta, 
 				::context::editor::PickDescriptor::GetCount()));
 	}
 

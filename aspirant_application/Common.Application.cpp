@@ -23,6 +23,17 @@ namespace common::Application
 	extern void HandleEvent(const SDL_Event&);
 	extern void Finish();
 
+	static std::map<int, SDL_GameController*> controllers;
+
+	static void FinishControllers()
+	{
+		for (auto controller : controllers)
+		{
+			SDL_GameControllerClose(controller.second);
+		}
+		controllers.clear();
+	}
+
 	static void DoStart(const std::string& configFile, const std::vector<std::string>& arguments)
 	{
 		SDL_Init(SDL_INIT_EVERYTHING);
@@ -56,6 +67,16 @@ namespace common::Application
 		auto iconSurface = IMG_Load(iconFileName.c_str());
 		SDL_SetWindowIcon(window, iconSurface);
 		SDL_FreeSurface(iconSurface);
+
+		atexit(FinishControllers);
+		for (int index = 0; index < SDL_NumJoysticks(); ++index)
+		{
+			if (SDL_IsGameController(index))
+			{
+				controllers[index] = SDL_GameControllerOpen(index);
+			}
+		}
+
 		Start(renderer, arguments);
 	}
 
@@ -70,7 +91,7 @@ namespace common::Application
 			currentTicks = frameTicks;
 			Render(renderer);
 			SDL_RenderPresent(renderer);
-			if (SDL_PollEvent(&evt))
+			while (SDL_PollEvent(&evt))
 			{
 				HandleEvent(evt);
 			}
