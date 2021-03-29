@@ -110,47 +110,44 @@ namespace Application
 		}
 	}
 
+	static std::map<Uint8, Command> controllerButtonCommand = 
+	{
+		{SDL_CONTROLLER_BUTTON_DPAD_DOWN, Command::DOWN},
+		{SDL_CONTROLLER_BUTTON_DPAD_UP, Command::UP},
+		{SDL_CONTROLLER_BUTTON_DPAD_LEFT, Command::LEFT},
+		{SDL_CONTROLLER_BUTTON_DPAD_RIGHT, Command::RIGHT},
+		{SDL_CONTROLLER_BUTTON_A, Command::GREEN },
+		{SDL_CONTROLLER_BUTTON_B, Command::RED},
+		{SDL_CONTROLLER_BUTTON_X, Command::BLUE},
+		{SDL_CONTROLLER_BUTTON_Y, Command::YELLOW},
+		{SDL_CONTROLLER_BUTTON_BACK, Command::BACK},
+		{SDL_CONTROLLER_BUTTON_START, Command::START},
+		{SDL_CONTROLLER_BUTTON_LEFTSHOULDER, Command::PREVIOUS},
+		{SDL_CONTROLLER_BUTTON_RIGHTSHOULDER, Command::NEXT}
+	};
+
 	static void HandleControllerButtonDown(const SDL_ControllerButtonEvent& evt)
 	{
-		switch ((SDL_GameControllerButton)evt.button)
+		auto iter = controllerButtonCommand.find(evt.button);
+		if (iter != controllerButtonCommand.end())
 		{
-		case SDL_CONTROLLER_BUTTON_DPAD_DOWN:
-			HandleCommand(Command::DOWN);
-			return;
-		case SDL_CONTROLLER_BUTTON_DPAD_UP:
-			HandleCommand(Command::UP);
-			return;
-		case SDL_CONTROLLER_BUTTON_DPAD_LEFT:
-			HandleCommand(Command::LEFT);
-			return;
-		case SDL_CONTROLLER_BUTTON_DPAD_RIGHT:
-			HandleCommand(Command::RIGHT);
-			return;
-		case SDL_CONTROLLER_BUTTON_A:
-			HandleCommand(Command::GREEN);
-			return;
-		case SDL_CONTROLLER_BUTTON_B:
-			HandleCommand(Command::RED);
-			return;
-		case SDL_CONTROLLER_BUTTON_X:
-			HandleCommand(Command::BLUE);
-			return;
-		case SDL_CONTROLLER_BUTTON_Y:
-			HandleCommand(Command::YELLOW);
-			return;
-		case SDL_CONTROLLER_BUTTON_BACK:
-			HandleCommand(Command::BACK);
-			return;
-		case SDL_CONTROLLER_BUTTON_START:
-			HandleCommand(Command::START);
-			return;
-		case SDL_CONTROLLER_BUTTON_LEFTSHOULDER:
-			HandleCommand(Command::PREVIOUS);
-			return;
-		case SDL_CONTROLLER_BUTTON_RIGHTSHOULDER:
-			HandleCommand(Command::NEXT);
-			return;
+			HandleCommand(iter->second);
 		}
+	}
+
+	static void HandleMouseButtonDown(const SDL_MouseButtonEvent& evt)
+	{
+
+	}
+
+	static void HandleMouseButtonUp(const SDL_MouseButtonEvent& evt)
+	{
+
+	}
+
+	static void HandleMouseWheel(const SDL_MouseWheelEvent& evt)
+	{
+
 	}
 
 	void SetCommandHandler(const ::UIState& state, Application::CommandHandler handler)
@@ -161,6 +158,22 @@ namespace Application
 	void SetTextInputHandler(const ::UIState& state, TextInputHandler handler)
 	{
 		textInputHandlers[state] = handler;
+	}
+
+	static std::map<UIState, MouseMotionHandler> mouseMotionHandlers;
+
+	static void HandleMouseMotion(const SDL_MouseMotionEvent& evt)
+	{
+		auto handler = mouseMotionHandlers.find(GetUIState());
+		if (handler != mouseMotionHandlers.end())
+		{
+			handler->second({ evt.x, evt.y });
+		}
+	}
+
+	void SetMouseMotionHandler(const UIState& state, MouseMotionHandler handler)
+	{
+		mouseMotionHandlers[state] = handler;
 	}
 
 	static std::map<::UIState, std::vector<UpdateHandler>> updateHandlers;
@@ -279,10 +292,19 @@ namespace common::Application
 			break;
 		case SDL_CONTROLLERBUTTONDOWN:
 			::Application::HandleControllerButtonDown(evt.cbutton);
+			break;
+		case SDL_MOUSEMOTION:
+			::Application::HandleMouseMotion(evt.motion);
+			break;
+		case SDL_MOUSEBUTTONDOWN:
+			::Application::HandleMouseButtonDown(evt.button);
+			break;
+		case SDL_MOUSEBUTTONUP:
+			::Application::HandleMouseButtonUp(evt.button);
+			break;
+		case SDL_MOUSEWHEEL:
+			::Application::HandleMouseWheel(evt.wheel);
+			break;
 		}
-	}
-
-	void Finish()
-	{
 	}
 }

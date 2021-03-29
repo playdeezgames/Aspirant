@@ -21,7 +21,6 @@ namespace common::Application
 	extern void Update(Uint32);
 	extern void Render(SDL_Renderer*);
 	extern void HandleEvent(const SDL_Event&);
-	extern void Finish();
 
 	static std::map<int, SDL_GameController*> controllers;
 
@@ -34,20 +33,12 @@ namespace common::Application
 		controllers.clear();
 	}
 
-	static void DoStart(const std::string& configFile, const std::vector<std::string>& arguments)
+	static void StartAudio(const nlohmann::json& properties)
 	{
-		SDL_Init(SDL_INIT_EVERYTHING);
-		Mix_Init(MIX_INIT_OGG);
-		auto properties = data::JSON::Load(configFile);
-		int windowWidth = properties[common::Properties::WIDTH];
-		int windowHeight = properties[common::Properties::HEIGHT];
-		int logicalWidth = properties[LOGICAL_WIDTH];
-		int logicalHeight = properties[LOGICAL_HEIGHT];
-		std::string windowTitle = properties[TITLE];
-		std::string iconFileName = properties[ICON];
 		int mixerFrequency = properties[MIXER_FREQUENCY];
 		int channelCount = properties[CHANNEL_COUNT];
 		int chunkSize = properties[CHUNK_SIZE];
+		Mix_Init(MIX_INIT_OGG);
 		Mix_OpenAudio
 		(
 			mixerFrequency,
@@ -55,7 +46,18 @@ namespace common::Application
 			channelCount,
 			chunkSize
 		);
+		atexit(Mix_Quit);
+		atexit(Mix_CloseAudio);
+	}
 
+	static void StartWindow(const nlohmann::json& properties)
+	{
+		int windowWidth = properties[common::Properties::WIDTH];
+		int windowHeight = properties[common::Properties::HEIGHT];
+		int logicalWidth = properties[LOGICAL_WIDTH];
+		int logicalHeight = properties[LOGICAL_HEIGHT];
+		std::string windowTitle = properties[TITLE];
+		std::string iconFileName = properties[ICON];
 		SDL_CreateWindowAndRenderer(
 			windowWidth,
 			windowHeight,
@@ -67,7 +69,10 @@ namespace common::Application
 		auto iconSurface = IMG_Load(iconFileName.c_str());
 		SDL_SetWindowIcon(window, iconSurface);
 		SDL_FreeSurface(iconSurface);
+	}
 
+	static void StartControllers()
+	{
 		atexit(FinishControllers);
 		for (int index = 0; index < SDL_NumJoysticks(); ++index)
 		{
@@ -76,7 +81,17 @@ namespace common::Application
 				controllers[index] = SDL_GameControllerOpen(index);
 			}
 		}
+	}
 
+	static void DoStart(const std::string& configFile, const std::vector<std::string>& arguments)
+	{
+		SDL_Init(SDL_INIT_EVERYTHING);
+		atexit(SDL_Quit);
+
+		auto properties = data::JSON::Load(configFile);
+		StartAudio(properties);
+		StartWindow(properties);
+		StartControllers();
 		Start(renderer, arguments);
 	}
 
@@ -98,12 +113,13 @@ namespace common::Application
 		}
 	}
 
-	static void DestroyRenderer()
+	template<typename TAsset>
+	void CleanUpPointer(TAsset*& asset, void (*finisher)(TAsset*))
 	{
-		if (renderer)
+		if (asset)
 		{
-			SDL_DestroyRenderer(renderer);
-			renderer = nullptr;
+			finisher(asset);
+			asset = nullptr;
 		}
 	}
 
@@ -118,12 +134,10 @@ namespace common::Application
 
 	static void DoFinish()
 	{
-		Finish();
-		DestroyRenderer();
-		DestroyWindow();
+		CleanUpPointer(renderer, SDL_DestroyRenderer);
+		CleanUpPointer(window, SDL_DestroyWindow);
 		Mix_CloseAudio();
 		Mix_Quit();
-		SDL_Quit();
 	}
 
 	int Run(const std::string& configFile, const std::vector<std::string>& arguments)
