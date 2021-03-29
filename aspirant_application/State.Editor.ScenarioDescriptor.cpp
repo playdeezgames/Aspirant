@@ -43,20 +43,20 @@ namespace state::editor::ScenarioDescriptor
 			switch (GetCurrentItem())
 			{
 			case EditScenarioDescriptorItem::SCENARIO_NAME:
-				temp = descriptor.GetName();
+				temp = descriptor.value().GetName();
 				if (!temp.empty())
 				{
 					temp.pop_back();
 				}
-				descriptor.SetName(temp);
+				descriptor.value().SetName(temp);
 				break;
 			case EditScenarioDescriptorItem::BRIEF:
-				temp = descriptor.GetBrief();
+				temp = descriptor.value().GetBrief();
 				if (!temp.empty())
 				{
 					temp.pop_back();
 				}
-				descriptor.SetBrief(temp);
+				descriptor.value().SetBrief(temp);
 				break;
 			}
 			break;
@@ -64,10 +64,10 @@ namespace state::editor::ScenarioDescriptor
 			switch (GetCurrentItem())
 			{
 			case EditScenarioDescriptorItem::SCENARIO_NAME:
-				descriptor.SetName("");
+				descriptor.value().SetName("");
 				break;
 			case EditScenarioDescriptorItem::BRIEF:
-				descriptor.SetBrief("");
+				descriptor.value().SetBrief("");
 				break;
 			default:
 				game::ScenarioDescriptors::Save();
@@ -90,8 +90,8 @@ namespace state::editor::ScenarioDescriptor
 	static void OnUpdate(const Uint32& ticks)
 	{
 		auto descriptor = ::game::ScenarioDescriptors::Get(::context::editor::Scenarios::GetIndex());
-		graphics::Layouts::SetTextText(LAYOUT_NAME, SCENARIO_NAME_TEXT_ID, descriptor.GetName());
-		graphics::Layouts::SetTextText(LAYOUT_NAME, BRIEF_TEXT_ID, descriptor.GetBrief());
+		graphics::Layouts::SetTextText(LAYOUT_NAME, SCENARIO_NAME_TEXT_ID, descriptor.value().GetName());
+		graphics::Layouts::SetTextText(LAYOUT_NAME, BRIEF_TEXT_ID, descriptor.value().GetBrief());
 	}
 
 	static void OnTextInput(const std::string& text)
@@ -100,10 +100,10 @@ namespace state::editor::ScenarioDescriptor
 		switch (GetCurrentItem())
 		{
 		case EditScenarioDescriptorItem::SCENARIO_NAME:
-			descriptor.SetName(descriptor.GetName() + text);
+			descriptor.value().SetName(descriptor.value().GetName() + text);
 			break;
 		case EditScenarioDescriptorItem::BRIEF:
-			descriptor.SetBrief(descriptor.GetBrief() + text);
+			descriptor.value().SetBrief(descriptor.value().GetBrief() + text);
 			break;
 		}
 	}

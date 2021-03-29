@@ -58,8 +58,15 @@ namespace game::ScenarioDescriptors
 		return table.size();
 	}
 
-	game::ScenarioDescriptor Get(size_t index)
+	std::optional<game::ScenarioDescriptor> Get(size_t index)
 	{
-		return game::ScenarioDescriptor(table[index]);
+		if (table.size()>index)
+		{
+			return std::optional<game::ScenarioDescriptor>(game::ScenarioDescriptor(table[index]));
+		}
+		else
+		{
+			return std::optional<game::ScenarioDescriptor>();
+		}
 	}
 }

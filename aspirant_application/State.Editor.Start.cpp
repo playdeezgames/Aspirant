@@ -36,7 +36,7 @@ namespace state::editor::Start
 	{
 		int scenarioId = ::game::ScenarioDescriptors::GetNextId();
 		::context::editor::Scenarios::SetIndex(::game::ScenarioDescriptors::Add());
-		CreateScenarioFile(game::ScenarioDescriptors::Get(context::editor::Scenarios::GetIndex()).GetFileName());
+		CreateScenarioFile(game::ScenarioDescriptors::Get(context::editor::Scenarios::GetIndex()).value().GetFileName());
 	}
 
 	static void ActivateItem()

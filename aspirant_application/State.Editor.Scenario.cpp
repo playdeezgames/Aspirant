@@ -68,7 +68,7 @@ namespace state::editor::Scenario
 	{
 		std::stringstream ss;
 		auto scenario = ::game::ScenarioDescriptors::Get(::context::editor::Scenarios::GetIndex());
-		ss << scenario.GetName() << "(id=" << scenario.GetId() << ")";//TODO: magic strings
+		ss << scenario.value().GetName() << "(id=" << scenario.value().GetId() << ")";//TODO: magic strings
 		graphics::Layouts::SetTextText(LAYOUT_NAME, HEADER_TEXT_ID, ss.str());
 	}
 

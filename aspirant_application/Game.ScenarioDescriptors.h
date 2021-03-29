@@ -2,6 +2,7 @@
 #include "Game.ScenarioDescriptor.h"
 #include <string>
 #include <vector>
+#include <optional>
 namespace game::ScenarioDescriptors
 {
 	void Load(const std::string&);
@@ -9,5 +10,5 @@ namespace game::ScenarioDescriptors
 	int GetNextId();
 	size_t Add();
 	size_t GetCount();
-	game::ScenarioDescriptor Get(size_t);
+	std::optional<game::ScenarioDescriptor> Get(size_t);
 }

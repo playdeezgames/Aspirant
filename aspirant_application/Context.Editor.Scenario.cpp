@@ -31,6 +31,7 @@ namespace context::editor::Scenario
 		data::JSON::Save(
 			::game::ScenarioDescriptors::Get(
 				::context::editor::Scenarios::GetIndex())
+			.value()
 			.GetFileName(),
 			scenarioModel
 			);
@@ -42,6 +43,7 @@ namespace context::editor::Scenario
 				data::JSON::Load(
 					::game::ScenarioDescriptors::Get(
 						::context::editor::Scenarios::GetIndex())
+					.value()
 					.GetFileName());
 	}
 

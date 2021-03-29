@@ -5,13 +5,13 @@ Bugs:
         this is important to be able to do
         need a confirm dialog
     ✔ i want the value of the menu item, not just the index @done(21-03-29 05:21)
-    ☐ game::ScenarioDescriptors::Get needs to return optional
-    ☐ switch to x64
+    ✔ game::ScenarioDescriptors::Get needs to return optional @done(21-03-29 11:10)
+    ✔ switch to x64 @done(21-03-29 07:38)
 Features:
     ☐ handle mouse movement
     ☐ handle mouse button clicks
     ☐ handle mouse wheel
-    ☐ handle controller input
+    ✔ handle controller input @done(21-03-29 07:39)
 
 Archive:
   ✔ layout names do not really reflect the corresponding namespaces in the code @done(21-03-27 18:34) @project(Sort Out)
