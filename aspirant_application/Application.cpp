@@ -110,6 +110,49 @@ namespace Application
 		}
 	}
 
+	static void HandleControllerButtonDown(const SDL_ControllerButtonEvent& evt)
+	{
+		switch ((SDL_GameControllerButton)evt.button)
+		{
+		case SDL_CONTROLLER_BUTTON_DPAD_DOWN:
+			HandleCommand(Command::DOWN);
+			return;
+		case SDL_CONTROLLER_BUTTON_DPAD_UP:
+			HandleCommand(Command::UP);
+			return;
+		case SDL_CONTROLLER_BUTTON_DPAD_LEFT:
+			HandleCommand(Command::LEFT);
+			return;
+		case SDL_CONTROLLER_BUTTON_DPAD_RIGHT:
+			HandleCommand(Command::RIGHT);
+			return;
+		case SDL_CONTROLLER_BUTTON_A:
+			HandleCommand(Command::GREEN);
+			return;
+		case SDL_CONTROLLER_BUTTON_B:
+			HandleCommand(Command::RED);
+			return;
+		case SDL_CONTROLLER_BUTTON_X:
+			HandleCommand(Command::BLUE);
+			return;
+		case SDL_CONTROLLER_BUTTON_Y:
+			HandleCommand(Command::YELLOW);
+			return;
+		case SDL_CONTROLLER_BUTTON_BACK:
+			HandleCommand(Command::BACK);
+			return;
+		case SDL_CONTROLLER_BUTTON_START:
+			HandleCommand(Command::START);
+			return;
+		case SDL_CONTROLLER_BUTTON_LEFTSHOULDER:
+			HandleCommand(Command::PREVIOUS);
+			return;
+		case SDL_CONTROLLER_BUTTON_RIGHTSHOULDER:
+			HandleCommand(Command::NEXT);
+			return;
+		}
+	}
+
 	void SetCommandHandler(const ::UIState& state, Application::CommandHandler handler)
 	{
 		commandHandlers[state] = handler;
@@ -223,17 +266,17 @@ namespace common::Application
 
 	void HandleEvent(const SDL_Event& evt)
 	{
-		if (evt.type == SDL_QUIT)
+		switch (evt.type)
 		{
+		case SDL_QUIT:
 			::Application::SetUIState(::UIState::QUIT);
-		}
-		else if (evt.type == SDL_KEYDOWN)
-		{
+			break;
+		case SDL_KEYDOWN:
 			::Application::HandleKeyDown(evt.key);
-		}
-		else if (evt.type == SDL_TEXTINPUT)
-		{
+			break;
+		case SDL_TEXTINPUT:
 			::Application::HandleTextInput(evt.text);
+			break;
 		}
 	}
 

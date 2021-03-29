@@ -1,10 +1,10 @@
 Sort Out:
-    ☐ store a list of updaters for a state in application intead of only having one!
+    ✔ store a list of updaters for a state in application intead of only having one! @done(21-03-29 05:21)
 Bugs:
-    ☐ I do not have the ability to delete a room in a scenario
+    ✘ I do not have the ability to delete a room in a scenario @cancelled(21-03-29 05:21)
         this is important to be able to do
         need a confirm dialog
-    ☐ i want the value of the menu item, not just the index
+    ✔ i want the value of the menu item, not just the index @done(21-03-29 05:21)
     ☐ game::ScenarioDescriptors::Get needs to return optional
 Features:
     ☐ handle mouse movement
