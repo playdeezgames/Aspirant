@@ -35,21 +35,9 @@
         "drop-shadow-y": 2,
         "menu-items": [
             {
-                "text": "Editor",
-                "x": 320,
-                "y": 32,
-                "value": 0
-            },
-            {
-                "text": "Play",
-                "x": 320,
-                "y": 48,
-                "value": 1
-            },
-            {
                 "text": "Back",
                 "x": 320,
-                "y": 64,
+                "y": 32,
                 "value": 2
             }
         ]

@@ -166,17 +166,12 @@
     <ClCompile Include="Application.TextInput.cpp" />
     <ClCompile Include="Application.UIState.cpp" />
     <ClCompile Include="Application.Update.cpp" />
-    <ClCompile Include="Game.ScenarioDescriptor.cpp" />
     <ClCompile Include="Graphics.Menu.cpp" />
     <ClCompile Include="State.About.cpp" />
     <ClCompile Include="Common.Application.cpp" />
     <ClCompile Include="Application.cpp" />
-    <ClCompile Include="Game.Avatar.cpp" />
-    <ClCompile Include="Game.Descriptor.Common.cpp" />
-    <ClCompile Include="Game.Object.Common.cpp" />
     <ClCompile Include="Graphics.Colors.cpp" />
     <ClCompile Include="State.ConfirmQuit.cpp" />
-    <ClCompile Include="Game.Descriptors.cpp" />
     <ClCompile Include="Graphics.Fonts.cpp" />
     <ClCompile Include="Data.JSON.cpp" />
     <ClCompile Include="Graphics.Layout.cpp" />
@@ -186,10 +181,6 @@
     <ClCompile Include="Options.cpp" />
     <ClCompile Include="State.Options.cpp" />
     <ClCompile Include="Common.RNG.cpp" />
-    <ClCompile Include="Game.Scenario.cpp" />
-    <ClCompile Include="Game.ScenarioDescriptors.cpp" />
-    <ClCompile Include="Game.Room.cpp" />
-    <ClCompile Include="Game.Cell.cpp" />
     <ClCompile Include="Common.Sounds.cpp" />
     <ClCompile Include="State.Splash.cpp" />
     <ClCompile Include="Graphics.Sprite.cpp" />
@@ -212,15 +203,11 @@
     <ClInclude Include="Application.UIState.h" />
     <ClInclude Include="Application.Update.h" />
     <ClInclude Include="Common.Properties.h" />
-    <ClInclude Include="Game.Properties.h" />
-    <ClInclude Include="Game.Types.h" />
     <ClInclude Include="Graphics.Properties.h" />
     <ClInclude Include="Graphics.Types.h" />
     <ClInclude Include="Application.Renderer.h" />
     <ClInclude Include="Graphics.Colors.h" />
     <ClInclude Include="Command.h" />
-    <ClInclude Include="Game.Descriptor.Common.h" />
-    <ClInclude Include="Game.Descriptors.h" />
     <ClInclude Include="Common.Finisher.h" />
     <ClInclude Include="Graphics.Fonts.h" />
     <ClInclude Include="json.hpp" />
@@ -228,12 +215,6 @@
     <ClInclude Include="Graphics.Layouts.h" />
     <ClInclude Include="Options.h" />
     <ClInclude Include="Common.RNG.h" />
-    <ClInclude Include="Game.Scenario.h" />
-    <ClInclude Include="Game.ScenarioDescriptor.h" />
-    <ClInclude Include="Game.ScenarioDescriptors.h" />
-    <ClInclude Include="Game.Object.Common.h" />
-    <ClInclude Include="Game.Room.h" />
-    <ClInclude Include="Game.Cell.h" />
     <ClInclude Include="Common.Sounds.h" />
     <ClInclude Include="Graphics.Sprite.h" />
     <ClInclude Include="Graphics.Font.h" />
@@ -242,9 +223,6 @@
     <ClInclude Include="UIState.h" />
     <ClInclude Include="Common.Utility.h" />
     <ClInclude Include="Common.XY.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Game.Avatar.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

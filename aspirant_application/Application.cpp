@@ -11,8 +11,6 @@
 #include "Graphics.Layouts.h"
 #include "Common.Sounds.h"
 #include "Options.h"
-#include "Game.Descriptors.h"
-#include "Game.ScenarioDescriptors.h"
 #include <map>
 #include "Application.MouseMotion.h"
 #include "Application.Command.h"
@@ -133,8 +131,6 @@ namespace common::Application
 		graphics::Layouts::Start(LAYOUTS);
 		common::Sounds::Start(SFX, MUX);
 		Options::Start(OPTIONS);
-		game::Descriptors::Start(DESCRIPTORS);
-		game::ScenarioDescriptors::Load(SCENARIOS);
 
 		for (auto starter : starters)
 		{
