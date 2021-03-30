@@ -3,7 +3,7 @@
 #include <optional>
 #include "UIState.h"
 #include "Command.h"
-#include "Application.h"
+#include "Application.Renderer.h"
 #include "Graphics.Colors.h"
 #include "Graphics.Textures.h"
 #include "Graphics.Sprites.h"
@@ -109,12 +109,6 @@ namespace Application
 		}
 	}
 
-	static std::map<UIState, std::string> renderLayouts;
-
-	void SetRenderLayout(const UIState& state, const std::string& layoutName)
-	{
-		renderLayouts[state] = layoutName;
-	}
 }
 namespace common::Application
 {
@@ -181,15 +175,6 @@ namespace common::Application
 	void Update(Uint32 ticks)
 	{
 		application::Update::Handle(ticks);
-	}
-
-	void Render(SDL_Renderer* renderer)
-	{
-		auto layoutName = ::Application::renderLayouts.find(::application::UIState::Read());
-		if (layoutName != ::Application::renderLayouts.end())
-		{
-			graphics::Layouts::Draw(renderer, layoutName->second);
-		}
 	}
 
 	void HandleEvent(const SDL_Event& evt)

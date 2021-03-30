@@ -1,4 +1,4 @@
-#include "Application.h"
+#include "Application.Renderer.h"
 #include "UIState.h"
 #include "Graphics.Layouts.h"
 #include <map>
@@ -60,6 +60,6 @@ namespace state::MainMenu
 	void Start()
 	{
 		::application::Command::SetHandler(::UIState::MAIN_MENU, OnCommand);
-		::Application::SetRenderLayout(::UIState::MAIN_MENU, LAYOUT_NAME);
+		::application::Renderer::SetRenderLayout(::UIState::MAIN_MENU, LAYOUT_NAME);
 	}
 }

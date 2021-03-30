@@ -1,4 +1,4 @@
-#include "Application.h"
+#include "Application.Renderer.h"
 #include "Graphics.Layouts.h"
 #include "json.hpp"
 #include "Game.Properties.h"
@@ -85,7 +85,7 @@ namespace state::editor::Start
 		::application::Command::SetHandler(
 			::UIState::START_EDITOR,
 			OnCommand);
-		::Application::SetRenderLayout(
+		::application::Renderer::SetRenderLayout(
 			::UIState::START_EDITOR,
 			LAYOUT_NAME);
 	}

@@ -1,4 +1,4 @@
-#include "Application.h"
+#include "Application.Renderer.h"
 #include "Graphics.Layouts.h"
 #include "Common.XY.h"
 #include "Context.Editor.Scenario.h"
@@ -137,7 +137,7 @@ namespace state::editor::Avatar
 	void Start()
 	{
 		application::Command::SetHandler(UIState::EDIT_AVATAR, OnCommand);
-		Application::SetRenderLayout(UIState::EDIT_AVATAR, LAYOUT_NAME);
+		application::Renderer::SetRenderLayout(UIState::EDIT_AVATAR, LAYOUT_NAME);
 		application::Update::AddHandler(UIState::EDIT_AVATAR, OnUpdate);
 		application::TextInput::SetHandler(UIState::EDIT_AVATAR, OnTextInput);
 	}

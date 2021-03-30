@@ -1,5 +1,5 @@
 #include "Application.UIState.h"
-#include "Application.h"
+#include "Application.Renderer.h"
 #include "UIState.h"
 #include "Graphics.Layouts.h"
 #include "Application.Command.h"
@@ -20,6 +20,6 @@ namespace state::About
 	void Start()
 	{
 		::application::Command::SetHandler(::UIState::ABOUT, OnCommand);
-		::Application::SetRenderLayout(::UIState::ABOUT, LAYOUT_NAME);
+		::application::Renderer::SetRenderLayout(::UIState::ABOUT, LAYOUT_NAME);
 	}
 }

@@ -1,4 +1,4 @@
-#include "Application.h"
+#include "Application.Renderer.h"
 #include "UIState.h"
 #include "Graphics.Layouts.h"
 #include "Application.Command.h"
@@ -28,7 +28,7 @@ namespace state::Splash
 	void Start()
 	{
 		::application::Command::SetHandler(::UIState::SPLASH, OnCommand);
-		::Application::SetRenderLayout(::UIState::SPLASH, LAYOUT_NAME);
+		::application::Renderer::SetRenderLayout(::UIState::SPLASH, LAYOUT_NAME);
 		::application::Update::AddHandler(::UIState::SPLASH, OnUpdate);
 	}
 }

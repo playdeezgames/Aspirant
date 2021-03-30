@@ -1,4 +1,4 @@
-#include "Application.h"
+#include "Application.Renderer.h"
 #include "UIState.h"
 #include "Graphics.Layouts.h"
 #include "Context.Editor.RoomView.h"
@@ -88,7 +88,7 @@ namespace state::editor::RoomCells
 	void Start()
 	{
 		application::Command::SetHandler(::UIState::EDIT_NAVIGATE_ROOM, OnCommand);
-		Application::SetRenderLayout(::UIState::EDIT_NAVIGATE_ROOM, LAYOUT_NAME);
+		application::Renderer::SetRenderLayout(::UIState::EDIT_NAVIGATE_ROOM, LAYOUT_NAME);
 		application::Update::AddHandler(::UIState::EDIT_NAVIGATE_ROOM, OnUpdate);
 	}
 }

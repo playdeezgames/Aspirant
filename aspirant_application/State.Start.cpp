@@ -1,4 +1,4 @@
-#include "Application.h"
+#include "Application.Renderer.h"
 #include "Graphics.Layouts.h"
 #include "Application.Command.h"
 #include "Application.UIState.h"
@@ -52,6 +52,6 @@ namespace state::Start
 	void Start()
 	{
 		::application::Command::SetHandler(::UIState::START_GAME, OnCommand);
-		::Application::SetRenderLayout(::UIState::START_GAME, LAYOUT_NAME);
+		::application::Renderer::SetRenderLayout(::UIState::START_GAME, LAYOUT_NAME);
 	}
 }

@@ -162,6 +162,7 @@
     <ClCompile Include="Application.MouseButtonUp.cpp" />
     <ClCompile Include="Application.MouseMotion.cpp" />
     <ClCompile Include="Application.MouseWheel.cpp" />
+    <ClCompile Include="Application.Renderer.cpp" />
     <ClCompile Include="Application.TextInput.cpp" />
     <ClCompile Include="Application.UIState.cpp" />
     <ClCompile Include="Application.Update.cpp" />
@@ -237,7 +238,7 @@
     <ClInclude Include="Game.Types.h" />
     <ClInclude Include="Graphics.Properties.h" />
     <ClInclude Include="Graphics.Types.h" />
-    <ClInclude Include="Application.h" />
+    <ClInclude Include="Application.Renderer.h" />
     <ClInclude Include="Graphics.Colors.h" />
     <ClInclude Include="Command.h" />
     <ClInclude Include="Game.Descriptor.Common.h" />

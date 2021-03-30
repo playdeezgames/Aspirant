@@ -1,4 +1,4 @@
-#include "Application.h"
+#include "Application.Renderer.h"
 #include "UIState.h"
 #include "Graphics.Layouts.h"
 #include "Game.ScenarioDescriptors.h"
@@ -78,7 +78,7 @@ namespace state::editor::Scenario
 	void Start()
 	{
 		::application::Command::SetHandler(::UIState::EDIT_SCENARIO, OnCommand);
-		::Application::SetRenderLayout(::UIState::EDIT_SCENARIO, LAYOUT_NAME);
+		::application::Renderer::SetRenderLayout(::UIState::EDIT_SCENARIO, LAYOUT_NAME);
 		::application::Update::AddHandler(::UIState::EDIT_SCENARIO, UpdateHeader);
 	}
 }

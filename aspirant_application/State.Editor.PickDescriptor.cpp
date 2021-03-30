@@ -1,4 +1,4 @@
-#include "Application.h"
+#include "Application.Renderer.h"
 #include "UIState.h"
 #include "Graphics.Layouts.h"
 #include "Common.Utility.h"
@@ -47,6 +47,6 @@ namespace state::editor::PickDescriptor
 	void Start()
 	{
 		::application::Command::SetHandler(::UIState::EDIT_DESCRIPTOR_SELECTOR, OnCommand);
-		::Application::SetRenderLayout(::UIState::EDIT_DESCRIPTOR_SELECTOR, LAYOUT_NAME);
+		::application::Renderer::SetRenderLayout(::UIState::EDIT_DESCRIPTOR_SELECTOR, LAYOUT_NAME);
 	}
 }

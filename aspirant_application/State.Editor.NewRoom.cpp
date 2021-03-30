@@ -1,4 +1,4 @@
-#include "Application.h"
+#include "Application.Renderer.h"
 #include "Graphics.Layouts.h"
 #include <sstream>
 #include "Context.Editor.NewRoom.h"
@@ -157,7 +157,7 @@ namespace state::editor::NewRoom
 	void Start()
 	{
 		::application::Command::SetHandler(::UIState::EDIT_NEW_ROOM, OnCommand);
-		::Application::SetRenderLayout(::UIState::EDIT_NEW_ROOM, LAYOUT_NAME);
+		::application::Renderer::SetRenderLayout(::UIState::EDIT_NEW_ROOM, LAYOUT_NAME);
 		::application::Update::AddHandler(::UIState::EDIT_NEW_ROOM, OnUpdate);
 		::application::TextInput::SetHandler(::UIState::EDIT_NEW_ROOM, OnTextInput);
 	}

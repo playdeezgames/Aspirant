@@ -2,7 +2,7 @@
 #include "Command.h"
 #include <SDL.h>
 #include "Graphics.Layouts.h"
-#include "Application.h"
+#include "Application.Renderer.h"
 #include "Application.Command.h"
 #include "Application.UIState.h"
 namespace state::player::Start
@@ -36,6 +36,6 @@ namespace state::player::Start
 	void Start()
 	{
 		::application::Command::SetHandler(::UIState::START_PLAYER, OnCommand);
-		::Application::SetRenderLayout(::UIState::START_PLAYER, LAYOUT_NAME);
+		::application::Renderer::SetRenderLayout(::UIState::START_PLAYER, LAYOUT_NAME);
 	}
 }

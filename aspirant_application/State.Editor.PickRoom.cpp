@@ -1,4 +1,4 @@
-#include "Application.h"
+#include "Application.Renderer.h"
 #include "UIState.h"
 #include "Graphics.Layouts.h"
 #include "Context.Editor.Rooms.h"
@@ -49,7 +49,7 @@ namespace state::editor::PickRoom
 	void Start()
 	{
 		::application::Command::SetHandler(::UIState::EDIT_PICK_ROOM, OnCommand);
-		::Application::SetRenderLayout(::UIState::EDIT_PICK_ROOM, LAYOUT_NAME);
+		::application::Renderer::SetRenderLayout(::UIState::EDIT_PICK_ROOM, LAYOUT_NAME);
 		::application::Update::AddHandler(::UIState::EDIT_PICK_ROOM, OnUpdate);
 	}
 }

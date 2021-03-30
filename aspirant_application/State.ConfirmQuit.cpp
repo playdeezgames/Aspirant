@@ -1,5 +1,5 @@
 #include "Graphics.Layouts.h"
-#include "Application.h"
+#include "Application.Renderer.h"
 #include "Application.Command.h"
 #include "Application.UIState.h"
 namespace state::ConfirmQuit
@@ -48,6 +48,6 @@ namespace state::ConfirmQuit
 	void Start()
 	{
 		::application::Command::SetHandler(::UIState::CONFIRM_QUIT, OnCommand);
-		::Application::SetRenderLayout(::UIState::CONFIRM_QUIT, LAYOUT_NAME);
+		::application::Renderer::SetRenderLayout(::UIState::CONFIRM_QUIT, LAYOUT_NAME);
 	}
 }

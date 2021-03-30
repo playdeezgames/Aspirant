@@ -1,4 +1,4 @@
-#include "Application.h"
+#include "Application.Renderer.h"
 #include "Graphics.Layouts.h"
 #include <map>
 #include "Common.Sounds.h"
@@ -140,7 +140,7 @@ namespace state::Options
 	void Start()
 	{
 		::application::Command::SetHandler(::UIState::OPTIONS, OnCommand);
-		::Application::SetRenderLayout(::UIState::OPTIONS, LAYOUT_NAME);
+		::application::Renderer::SetRenderLayout(::UIState::OPTIONS, LAYOUT_NAME);
 		::application::Update::AddHandler(::UIState::OPTIONS, OnUpdate);
 	}
 }

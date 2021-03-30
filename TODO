@@ -1,3 +1,15 @@
+What To Do Before Jam:
+  Remove(in a branch):
+    ☐ Context.*
+    ☐ Game.*
+    ☐ UIState -
+    ☐ anything after START_GAME
+    ☐ State.Editor.*
+    ☐ State.Player.*
+    ☐ Renderer.*
+What To Do Once Jam Starts:
+  ☐ make new git repo
+  ☐ make itch game page stub
 
 Archive:
   ✔ store a list of updaters for a state in application intead of only having one! @done(21-03-29 05:21) @project(Sort Out)
