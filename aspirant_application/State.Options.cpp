@@ -8,6 +8,8 @@
 #include "Application.Command.h"
 #include "Application.Update.h"
 #include "Application.UIState.h"
+#include "Graphics.Menus.h"
+#include "Graphics.MenuItems.h"
 namespace state::Options
 {
 	const std::string LAYOUT_NAME = "State.Options";
@@ -45,7 +47,7 @@ namespace state::Options
 
 	static OptionsItem GetCurrentItem()
 	{
-		return (OptionsItem)graphics::Layouts::GetMenuValue(LAYOUT_NAME, MENU_ID).value();
+		return (OptionsItem)graphics::Menus::Read(LAYOUT_NAME, MENU_ID).value();
 	}
 
 	static void ChangeItem(int delta)
@@ -90,10 +92,10 @@ namespace state::Options
 		switch (command)
 		{
 		case ::Command::UP:
-			graphics::Layouts::PreviousMenuIndex(LAYOUT_NAME, MENU_ID);
+			graphics::Menus::Previous(LAYOUT_NAME, MENU_ID);
 			break;
 		case ::Command::DOWN:
-			graphics::Layouts::NextMenuIndex(LAYOUT_NAME, MENU_ID);
+			graphics::Menus::Next(LAYOUT_NAME, MENU_ID);
 			break;
 		case ::Command::LEFT:
 			DecreaseItem();
@@ -113,7 +115,7 @@ namespace state::Options
 
 	static void UpdateMuteMenuItem()
 	{
-		graphics::Layouts::SetMenuItemText(LAYOUT_NAME, MUTE_MENU_ITEM_ID, 
+		graphics::MenuItems::SetItemText(LAYOUT_NAME, MUTE_MENU_ITEM_ID, 
 			common::Sounds::IsMuted() ? UNMUTE : MUTE);
 	}
 
@@ -121,14 +123,14 @@ namespace state::Options
 	{
 		std::stringstream ss;
 		ss << "SFX Volume (" << common::Utility::ToPercentage(common::Sounds::GetSfxVolume(), MIX_MAX_VOLUME) << "%)";
-		graphics::Layouts::SetMenuItemText(LAYOUT_NAME, SFX_VOLUME_MENU_ITEM_ID, ss.str());
+		graphics::MenuItems::SetItemText(LAYOUT_NAME, SFX_VOLUME_MENU_ITEM_ID, ss.str());
 	}
 
 	static void UpdateMuxMenuItem()
 	{
 		std::stringstream ss;
 		ss << "MUX Volume (" << common::Utility::ToPercentage(common::Sounds::GetMuxVolume(), MIX_MAX_VOLUME) << "%)";
-		graphics::Layouts::SetMenuItemText(LAYOUT_NAME, MUX_VOLUME_MENU_ITEM_ID, ss.str());
+		graphics::MenuItems::SetItemText(LAYOUT_NAME, MUX_VOLUME_MENU_ITEM_ID, ss.str());
 	}
 
 	static void OnUpdate(const Uint32& ticks)

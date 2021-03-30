@@ -167,6 +167,8 @@
     <ClCompile Include="Application.UIState.cpp" />
     <ClCompile Include="Application.Update.cpp" />
     <ClCompile Include="Graphics.Menu.cpp" />
+    <ClCompile Include="Graphics.MenuItems.cpp" />
+    <ClCompile Include="Graphics.Menus.cpp" />
     <ClCompile Include="State.About.cpp" />
     <ClCompile Include="Common.Application.cpp" />
     <ClCompile Include="Application.cpp" />
@@ -203,7 +205,10 @@
     <ClInclude Include="Application.UIState.h" />
     <ClInclude Include="Application.Update.h" />
     <ClInclude Include="Common.Properties.h" />
+    <ClInclude Include="Graphics.MenuItems.h" />
+    <ClInclude Include="Graphics.Menus.h" />
     <ClInclude Include="Graphics.Properties.h" />
+    <ClInclude Include="Graphics.Texts.h" />
     <ClInclude Include="Graphics.Types.h" />
     <ClInclude Include="Application.Renderer.h" />
     <ClInclude Include="Graphics.Colors.h" />

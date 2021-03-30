@@ -2,6 +2,7 @@
 #include "Graphics.Layouts.h"
 #include "Application.Command.h"
 #include "Application.UIState.h"
+#include "Graphics.Menus.h"
 namespace state::MainMenu
 {
 	const std::string LAYOUT_NAME = "State.MainMenu";
@@ -17,7 +18,7 @@ namespace state::MainMenu
 
 	static void ActivateItem()
 	{
-		switch ((MainMenuItem)graphics::Layouts::GetMenuValue(LAYOUT_NAME, MENU_ID).value())
+		switch ((MainMenuItem)graphics::Menus::Read(LAYOUT_NAME, MENU_ID).value())
 		{
 		case MainMenuItem::START:
 			::application::UIState::Write(::UIState::START_GAME);
@@ -40,10 +41,10 @@ namespace state::MainMenu
 		switch (command)
 		{
 		case ::Command::UP:
-			graphics::Layouts::PreviousMenuIndex(LAYOUT_NAME, MENU_ID);
+			graphics::Menus::Previous(LAYOUT_NAME, MENU_ID);
 			break;
 		case ::Command::DOWN:
-			graphics::Layouts::NextMenuIndex(LAYOUT_NAME, MENU_ID);
+			graphics::Menus::Next(LAYOUT_NAME, MENU_ID);
 			break;
 		case ::Command::GREEN:
 			ActivateItem();
