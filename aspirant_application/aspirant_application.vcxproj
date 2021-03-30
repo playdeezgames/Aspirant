@@ -178,10 +178,6 @@
     <ClCompile Include="State.ConfirmQuit.cpp" />
     <ClCompile Include="Game.Descriptors.cpp" />
     <ClCompile Include="Renderer.Editor.PickDescriptor.cpp" />
-    <ClCompile Include="State.Editor.Avatar.cpp" />
-    <ClCompile Include="State.Editor.PickDescriptor.cpp" />
-    <ClCompile Include="State.Editor.RoomCells.cpp" />
-    <ClCompile Include="State.Editor.NewRoom.cpp" />
     <ClCompile Include="Context.Editor.Scenario.cpp" />
     <ClCompile Include="Context.Editor.PickDescriptor.cpp" />
     <ClCompile Include="Context.Editor.NewRoom.cpp" />
@@ -190,10 +186,6 @@
     <ClCompile Include="Context.Editor.Rooms.cpp" />
     <ClCompile Include="Context.Editor.RoomView.cpp" />
     <ClCompile Include="Context.Editor.Scenarios.cpp" />
-    <ClCompile Include="State.Editor.PickRoom.cpp" />
-    <ClCompile Include="State.Editor.ScenarioDescriptor.cpp" />
-    <ClCompile Include="State.Editor.Scenarios.cpp" />
-    <ClCompile Include="State.Editor.Scenario.cpp" />
     <ClCompile Include="Graphics.Fonts.cpp" />
     <ClCompile Include="Data.JSON.cpp" />
     <ClCompile Include="Graphics.Layout.cpp" />
@@ -210,13 +202,10 @@
     <ClCompile Include="Game.Room.cpp" />
     <ClCompile Include="Game.Cell.cpp" />
     <ClCompile Include="Common.Sounds.cpp" />
-    <ClCompile Include="State.Player.NewGame.cpp" />
-    <ClCompile Include="State.Player.Start.cpp" />
     <ClCompile Include="State.Splash.cpp" />
     <ClCompile Include="Graphics.Sprite.cpp" />
     <ClCompile Include="Graphics.Font.cpp" />
     <ClCompile Include="Graphics.Sprites.cpp" />
-    <ClCompile Include="State.Editor.Start.cpp" />
     <ClCompile Include="State.Start.cpp" />
     <ClCompile Include="Graphics.Image.cpp" />
     <ClCompile Include="Graphics.Text.cpp" />

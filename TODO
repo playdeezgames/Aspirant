@@ -3,7 +3,7 @@ What To Do Before Jam:
     ☐ Context.*
     ☐ Game.*
     ☐ UIState -
-    ☐ anything after START_GAME
+    ✔ anything after START_GAME @done(21-03-30 08:39)
     ☐ State.Editor.*
     ☐ State.Player.*
     ☐ Renderer.*

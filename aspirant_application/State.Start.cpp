@@ -21,12 +21,6 @@ namespace state::Start
 		case StartGameItem::BACK:
 			::application::UIState::Write(::UIState::MAIN_MENU);
 			break;
-		case StartGameItem::EDITOR:
-			::application::UIState::Write(::UIState::START_EDITOR);
-			break;
-		case StartGameItem::PLAY:
-			::application::UIState::Write(::UIState::START_PLAYER);
-			break;
 		}
 	}
 

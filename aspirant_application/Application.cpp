@@ -25,19 +25,8 @@
 #include "Application.UIState.h"
 namespace state::About { void Start(); }
 namespace state::ConfirmQuit { void Start(); }
-namespace state::editor::Avatar { void Start(); }
-namespace state::editor::NewRoom { void Start(); }
-namespace state::editor::PickDescriptor { void Start(); }
-namespace state::editor::PickRoom { void Start(); }
-namespace state::editor::RoomCells { void Start(); }
-namespace state::editor::Scenario { void Start(); }
-namespace state::editor::ScenarioDescriptor { void Start(); }
-namespace state::editor::Scenarios { void Start(); }
-namespace state::editor::Start { void Start(); }
 namespace state::MainMenu { void Start(); }
 namespace state::Options { void Start(); }
-namespace state::player::NewGame { void Start(); }
-namespace state::player::Start { void Start(); }
 namespace state::Splash { void Start(); }
 namespace state::Start { void Start(); }
 namespace Application
@@ -134,19 +123,7 @@ namespace common::Application
 		state::ConfirmQuit::Start,
 		state::Options::Start,
 		state::Start::Start,
-		state::editor::Start::Start,
-		state::editor::Scenarios::Start,
-		state::editor::Scenario::Start,
-		state::editor::PickRoom::Start,
-		state::editor::NewRoom::Start,
-		state::editor::ScenarioDescriptor::Start,
-		state::editor::RoomCells::Start,
-		state::editor::PickDescriptor::Start,
-		::context::editor::NewRoom::Start,
-		state::player::Start::Start,
-		state::player::NewGame::Start,
-		state::editor::Avatar::Start,
-		state::editor::Scenario::Start
+		::context::editor::NewRoom::Start
 	};
 
 	void Start(SDL_Renderer* renderer, const std::vector<std::string>& arguments)
