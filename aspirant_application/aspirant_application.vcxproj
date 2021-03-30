@@ -177,7 +177,6 @@
     <ClCompile Include="Graphics.Colors.cpp" />
     <ClCompile Include="State.ConfirmQuit.cpp" />
     <ClCompile Include="Game.Descriptors.cpp" />
-    <ClCompile Include="Renderer.Editor.PickDescriptor.cpp" />
     <ClCompile Include="Context.Editor.Scenario.cpp" />
     <ClCompile Include="Context.Editor.PickDescriptor.cpp" />
     <ClCompile Include="Context.Editor.NewRoom.cpp" />
@@ -195,8 +194,6 @@
     <ClCompile Include="Options.cpp" />
     <ClCompile Include="State.Options.cpp" />
     <ClCompile Include="Common.RNG.cpp" />
-    <ClCompile Include="Renderer.Editor.Cell.cpp" />
-    <ClCompile Include="Renderer.Editor.Room.cpp" />
     <ClCompile Include="Game.Scenario.cpp" />
     <ClCompile Include="Game.ScenarioDescriptors.cpp" />
     <ClCompile Include="Game.Room.cpp" />
