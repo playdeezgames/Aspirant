@@ -169,6 +169,7 @@
     <ClCompile Include="Graphics.Menu.cpp" />
     <ClCompile Include="Graphics.MenuItems.cpp" />
     <ClCompile Include="Graphics.Menus.cpp" />
+    <ClCompile Include="Graphics.Texts.cpp" />
     <ClCompile Include="State.About.cpp" />
     <ClCompile Include="Common.Application.cpp" />
     <ClCompile Include="Application.cpp" />

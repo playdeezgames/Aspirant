@@ -24,20 +24,3 @@ namespace graphics::Layouts
 		graphics::Layout::Draw(renderer, layouts[layoutName]);
 	}
 }
-namespace graphics::Texts
-{
-	void SetTextText(const std::string& layoutName, const std::string& textId, const std::string& text)
-	{
-		for (auto& thingie : graphics::Layouts::layouts[layoutName])
-		{
-			if (thingie[common::Properties::TYPE] == graphics::Types::TEXT)
-			{
-				if (thingie.count(graphics::Properties::TEXT_ID) > 0 &&
-					thingie[graphics::Properties::TEXT_ID] == textId)
-				{
-					thingie[graphics::Properties::TEXT] = text;
-				}
-			}
-		}
-	}
-}
