@@ -1,6 +1,5 @@
 #include "Graphics.Fonts.h"
 #include "Data.JSON.h"
-#include "Common.Finisher.h"
 namespace graphics::Fonts
 {
 	static std::map<std::string, nlohmann::json> table;

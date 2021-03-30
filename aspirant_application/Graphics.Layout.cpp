@@ -1,5 +1,4 @@
 #include "Common.Utility.h"
-#include "Common.Finisher.h"
 #include "Common.Properties.h"
 #include "Graphics.Types.h"
 #include <map>
