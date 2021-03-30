@@ -3,7 +3,7 @@
 #include "Common.XY.h"
 #include "UIState.h"
 #include <map>
-#include "Application.h"
+#include "Application.Handlers.h"
 namespace application::MouseWheel
 {
 	static std::map<UIState, Handler> handlers;
@@ -15,12 +15,12 @@ namespace application::MouseWheel
 
 	void Handle(const SDL_MouseWheelEvent& evt)
 	{
-		auto iter = handlers.find(Application::GetUIState());
-		if (iter != handlers.end())
-		{
-			iter->second(common::XY<Sint32>(
-				(evt.direction == SDL_MOUSEWHEEL_FLIPPED) ? (-evt.x) : (evt.x), 
-				(evt.direction == SDL_MOUSEWHEEL_FLIPPED) ? (-evt.y) : (evt.y)));
-		}
+		application::Handlers::WithCurrent(
+			handlers,
+			[evt](const Handler& handler) { 
+			handler(common::XY<Sint32>(
+				(evt.direction == SDL_MOUSEWHEEL_FLIPPED) ? (-evt.x) : (evt.x),
+				(evt.direction == SDL_MOUSEWHEEL_FLIPPED) ? (-evt.y) : (evt.y))); 
+			});
 	}
 }

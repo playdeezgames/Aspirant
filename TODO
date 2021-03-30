@@ -1,19 +1,16 @@
-Sort Out:
-    ✔ store a list of updaters for a state in application intead of only having one! @done(21-03-29 05:21)
-Bugs:
-    ✘ I do not have the ability to delete a room in a scenario @cancelled(21-03-29 05:21)
-        this is important to be able to do
-        need a confirm dialog
-    ✔ i want the value of the menu item, not just the index @done(21-03-29 05:21)
-    ✔ game::ScenarioDescriptors::Get needs to return optional @done(21-03-29 11:10)
-    ✔ switch to x64 @done(21-03-29 07:38)
-Features:
-    ✔ handle mouse movement @done(21-03-29 16:18)
-    ☐ handle mouse button clicks
-    ☐ handle mouse wheel
-    ✔ handle controller input @done(21-03-29 07:39)
 
 Archive:
+  ✔ store a list of updaters for a state in application intead of only having one! @done(21-03-29 05:21) @project(Sort Out)
+  ✘ I do not have the ability to delete a room in a scenario @cancelled(21-03-29 05:21) @project(Bugs)
+    this is important to be able to do
+    need a confirm dialog
+  ✔ i want the value of the menu item, not just the index @done(21-03-29 05:21) @project(Bugs)
+  ✔ game::ScenarioDescriptors::Get needs to return optional @done(21-03-29 11:10) @project(Bugs)
+  ✔ switch to x64 @done(21-03-29 07:38) @project(Bugs)
+  ✔ handle mouse movement @done(21-03-29 16:18) @project(Features)
+  ✔ handle mouse button clicks @done(21-03-29 16:56) @project(Features)
+  ✔ handle mouse wheel @done(21-03-29 16:56) @project(Features)
+  ✔ handle controller input @done(21-03-29 07:39) @project(Features)
   ✔ layout names do not really reflect the corresponding namespaces in the code @done(21-03-27 18:34) @project(Sort Out)
   ✔ Splash @done(21-03-27 18:24) @project(Sort Out)
   ✔ MainMenu @done(21-03-27 17:35) @project(Sort Out)

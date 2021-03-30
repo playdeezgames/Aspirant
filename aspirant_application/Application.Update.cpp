@@ -1,7 +1,7 @@
 #include "Application.Update.h"
 #include <map>
 #include <vector>
-#include "Application.h"
+#include "Application.Handlers.h"
 namespace application::Update
 {
 	static std::map<::UIState, std::vector<Handler>> handlers;
@@ -17,14 +17,13 @@ namespace application::Update
 
 	void Handle(Uint32 ticks)
 	{
-		auto iter = handlers.find(::Application::GetUIState());
-		if (iter != handlers.end())
+		application::Handlers::WithCurrent(handlers, [ticks](const std::vector<Handler>& updaters) 
 		{
-			for (auto handler : iter->second)
+			for (auto updater : updaters)
 			{
-				handler(ticks);
+				updater(ticks);
 			}
-		}
+		});
 	}
 
 

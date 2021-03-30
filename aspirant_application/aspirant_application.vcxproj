@@ -223,6 +223,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.Command.h" />
+    <ClInclude Include="Application.Handlers.h" />
     <ClInclude Include="Application.MouseButtonDown.h" />
     <ClInclude Include="Application.MouseButtonUp.h" />
     <ClInclude Include="Application.MouseMotion.h" />

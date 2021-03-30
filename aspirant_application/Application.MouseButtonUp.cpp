@@ -1,6 +1,6 @@
 #include "Application.MouseButtonUp.h"
 #include <map>
-#include "Application.h"
+#include "Application.Handlers.h"
 namespace application::MouseButtonUp
 {
 	static std::map<UIState, Handler> handlers;
@@ -12,10 +12,8 @@ namespace application::MouseButtonUp
 
 	void Handle(const SDL_MouseButtonEvent& evt)
 	{
-		auto iter = handlers.find(Application::GetUIState());
-		if (iter != handlers.end())
-		{
-			iter->second(common::XY<Sint32>(evt.x, evt.y), evt.button);
-		}
+		application::Handlers::WithCurrent(
+			handlers,
+			[evt](const Handler& handler) { handler(common::XY<Sint32>(evt.x, evt.y), evt.button); });
 	}
 }
