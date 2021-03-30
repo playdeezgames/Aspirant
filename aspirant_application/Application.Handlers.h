@@ -1,13 +1,13 @@
 #pragma once
 #include <map>
 #include "UIState.h"
-#include "Application.h"
+#include "Application.UIState.h"
 namespace application::Handlers
 {
 	template<typename THandler, typename TAction>
-	void WithCurrent(const std::map<UIState, THandler> handlers, TAction action)
+	void WithCurrent(const std::map<::UIState, THandler> handlers, TAction action)
 	{
-		auto iter = handlers.find(Application::GetUIState());
+		auto iter = handlers.find(application::UIState::GetUIState());
 		if (iter != handlers.end())
 		{
 			action(iter->second);

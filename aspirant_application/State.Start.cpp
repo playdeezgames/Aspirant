@@ -1,6 +1,7 @@
 #include "Application.h"
 #include "Graphics.Layouts.h"
 #include "Application.Command.h"
+#include "Application.UIState.h"
 namespace state::Start
 {
 	const std::string LAYOUT_NAME = "State.Start";
@@ -18,13 +19,13 @@ namespace state::Start
 		switch ((StartGameItem)graphics::Layouts::GetMenuValue(LAYOUT_NAME, MENU_ID).value())
 		{
 		case StartGameItem::BACK:
-			::Application::SetUIState(::UIState::MAIN_MENU);
+			::application::UIState::SetUIState(::UIState::MAIN_MENU);
 			break;
 		case StartGameItem::EDITOR:
-			::Application::SetUIState(::UIState::START_EDITOR);
+			::application::UIState::SetUIState(::UIState::START_EDITOR);
 			break;
 		case StartGameItem::PLAY:
-			::Application::SetUIState(::UIState::START_PLAYER);
+			::application::UIState::SetUIState(::UIState::START_PLAYER);
 			break;
 		}
 	}
@@ -40,7 +41,7 @@ namespace state::Start
 			graphics::Layouts::NextMenuIndex(LAYOUT_NAME, MENU_ID);
 			break;
 		case ::Command::BACK:
-			::Application::SetUIState(::UIState::MAIN_MENU);
+			::application::UIState::SetUIState(::UIState::MAIN_MENU);
 			break;
 		case ::Command::GREEN:
 			ActivateItem();

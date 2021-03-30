@@ -7,6 +7,7 @@
 #include "Application.Command.h"
 #include "Application.TextInput.h"
 #include "Application.Update.h"
+#include "Application.UIState.h"
 namespace state::editor::NewRoom
 {
 	const std::string LAYOUT_NAME = "State.Editor.NewRoom";
@@ -50,10 +51,10 @@ namespace state::editor::NewRoom
 		case NewRoomItem::CREATE:
 			CreateRoom();
 			::context::editor::Rooms::UpdateRoomList();
-			::Application::SetUIState(::UIState::EDIT_PICK_ROOM);
+			::application::UIState::SetUIState(::UIState::EDIT_PICK_ROOM);
 			break;
 		case NewRoomItem::CANCEL:
-			::Application::SetUIState(::UIState::EDIT_SCENARIO);
+			::application::UIState::SetUIState(::UIState::EDIT_SCENARIO);
 			break;
 		}
 	}
@@ -103,7 +104,7 @@ namespace state::editor::NewRoom
 			}
 			else
 			{
-				::Application::SetUIState(::UIState::EDIT_SCENARIO);
+				::application::UIState::SetUIState(::UIState::EDIT_SCENARIO);
 			}
 			break;
 		case ::Command::RED:

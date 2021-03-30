@@ -1,6 +1,7 @@
 #include "Graphics.Layouts.h"
 #include "Application.h"
 #include "Application.Command.h"
+#include "Application.UIState.h"
 namespace state::ConfirmQuit
 {
 	const std::string LAYOUT_NAME = "State.ConfirmQuit";
@@ -17,10 +18,10 @@ namespace state::ConfirmQuit
 		switch ((ConfirmQuitItem)graphics::Layouts::GetMenuValue(LAYOUT_NAME,MENU_ID).value())
 		{
 		case ConfirmQuitItem::NO:
-			::Application::SetUIState(::UIState::MAIN_MENU);
+			::application::UIState::SetUIState(::UIState::MAIN_MENU);
 			return;
 		case ConfirmQuitItem::YES:
-			::Application::SetUIState(::UIState::QUIT);
+			::application::UIState::SetUIState(::UIState::QUIT);
 			return;
 		}
 	}
@@ -39,7 +40,7 @@ namespace state::ConfirmQuit
 			ActivateItem();
 			break;
 		case ::Command::BACK:
-			::Application::SetUIState(::UIState::MAIN_MENU);
+			::application::UIState::SetUIState(::UIState::MAIN_MENU);
 			break;
 		}
 	}

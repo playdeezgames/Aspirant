@@ -4,6 +4,7 @@
 #include "Common.Utility.h"
 #include "Context.Editor.PickDescriptor.h"
 #include "Application.Command.h"
+#include "Application.UIState.h"
 namespace state::editor::PickDescriptor
 {
 	const std::string LAYOUT_NAME = "State.Editor.PickDescriptor";
@@ -23,7 +24,7 @@ namespace state::editor::PickDescriptor
 		switch (command)
 		{
 		case ::Command::BACK:
-			::Application::SetUIState(::UIState::EDIT_PICK_ROOM);
+			::application::UIState::SetUIState(::UIState::EDIT_PICK_ROOM);
 			break;
 		case ::Command::UP:
 			ChangeIndex(-ROW_DELTA);
@@ -38,7 +39,7 @@ namespace state::editor::PickDescriptor
 			ChangeIndex(COLUMN_DELTA);
 			break;
 		case ::Command::NEXT:
-			::Application::SetUIState(::UIState::EDIT_NAVIGATE_ROOM);
+			::application::UIState::SetUIState(::UIState::EDIT_NAVIGATE_ROOM);
 			break;
 		}
 	}

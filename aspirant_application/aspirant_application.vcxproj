@@ -163,6 +163,7 @@
     <ClCompile Include="Application.MouseMotion.cpp" />
     <ClCompile Include="Application.MouseWheel.cpp" />
     <ClCompile Include="Application.TextInput.cpp" />
+    <ClCompile Include="Application.UIState.cpp" />
     <ClCompile Include="Application.Update.cpp" />
     <ClCompile Include="Game.ScenarioDescriptor.cpp" />
     <ClCompile Include="Graphics.Menu.cpp" />
@@ -229,6 +230,7 @@
     <ClInclude Include="Application.MouseMotion.h" />
     <ClInclude Include="Application.MouseWheel.h" />
     <ClInclude Include="Application.TextInput.h" />
+    <ClInclude Include="Application.UIState.h" />
     <ClInclude Include="Application.Update.h" />
     <ClInclude Include="Common.Properties.h" />
     <ClInclude Include="Game.Properties.h" />

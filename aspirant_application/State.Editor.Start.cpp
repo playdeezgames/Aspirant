@@ -7,6 +7,7 @@
 #include "Game.ScenarioDescriptors.h"
 #include "Context.Editor.Scenarios.h"
 #include "Application.Command.h"
+#include "Application.UIState.h"
 namespace state::editor::Start
 {
 	const std::string LAYOUT_NAME = "State.Editor.Start";
@@ -45,16 +46,16 @@ namespace state::editor::Start
 		switch ((StartEditorItem)graphics::Layouts::GetMenuValue(LAYOUT_NAME, MENU_ID).value())
 		{
 		case StartEditorItem::BACK:
-			::Application::SetUIState(::UIState::START_GAME);
+			::application::UIState::SetUIState(::UIState::START_GAME);
 			break;
 		case StartEditorItem::NEW:
 			CreateNewScenario();
-			::Application::SetUIState(::UIState::EDIT_SCENARIO_SELECTOR);
+			::application::UIState::SetUIState(::UIState::EDIT_SCENARIO_SELECTOR);
 			break;
 		case StartEditorItem::OPEN:
 			if (game::ScenarioDescriptors::GetCount() > 0)
 			{
-				::Application::SetUIState(::UIState::EDIT_SCENARIO_SELECTOR);
+				::application::UIState::SetUIState(::UIState::EDIT_SCENARIO_SELECTOR);
 			}
 			break;
 		}
@@ -71,7 +72,7 @@ namespace state::editor::Start
 			graphics::Layouts::NextMenuIndex(LAYOUT_NAME, MENU_ID);
 			break;
 		case ::Command::BACK:
-			::Application::SetUIState(::UIState::START_GAME);
+			::application::UIState::SetUIState(::UIState::START_GAME);
 			break;
 		case ::Command::GREEN:
 			ActivateItem();

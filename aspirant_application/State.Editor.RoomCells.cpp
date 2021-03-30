@@ -10,6 +10,7 @@
 #include "Context.Editor.PickDescriptor.h"
 #include "Application.Command.h"
 #include "Application.Update.h"
+#include "Application.UIState.h"
 namespace state::editor::RoomCells
 {
 	const std::string LAYOUT_NAME = "State.Editor.RoomCells";
@@ -50,7 +51,7 @@ namespace state::editor::RoomCells
 		{
 		case ::Command::BACK:
 			::context::editor::Scenario::Save();
-			::Application::SetUIState(::UIState::EDIT_PICK_ROOM);
+			::application::UIState::SetUIState(::UIState::EDIT_PICK_ROOM);
 			break;
 		case ::Command::UP:
 			MoveCursor({ 0,-1 });
@@ -71,7 +72,7 @@ namespace state::editor::RoomCells
 			RemoveObject();
 			break;
 		case ::Command::NEXT:
-			::Application::SetUIState(::UIState::EDIT_DESCRIPTOR_SELECTOR);
+			::application::UIState::SetUIState(::UIState::EDIT_DESCRIPTOR_SELECTOR);
 			break;
 		}
 	}

@@ -4,6 +4,7 @@
 #include <map>
 #include "Application.Command.h"
 #include "Application.MouseButtonDown.h"
+#include "Application.UIState.h"
 namespace state::MainMenu
 {
 	const std::string LAYOUT_NAME = "State.MainMenu";
@@ -22,17 +23,17 @@ namespace state::MainMenu
 		switch ((MainMenuItem)graphics::Layouts::GetMenuValue(LAYOUT_NAME, MENU_ID).value())
 		{
 		case MainMenuItem::START:
-			::Application::SetUIState(UIState::START_GAME);
+			::application::UIState::SetUIState(::UIState::START_GAME);
 			return;
 		case MainMenuItem::OPTIONS:
-			::Application::SetUIState(UIState::OPTIONS);
+			::application::UIState::SetUIState(::UIState::OPTIONS);
 			return;
 		case MainMenuItem::ABOUT:
 			SDL_SetClipboardText("https://thegrumpygamedev.itch.io/");
-			::Application::SetUIState(UIState::ABOUT);
+			::application::UIState::SetUIState(::UIState::ABOUT);
 			return;
 		case MainMenuItem::QUIT:
-			::Application::SetUIState(UIState::CONFIRM_QUIT);
+			::application::UIState::SetUIState(::UIState::CONFIRM_QUIT);
 			return;
 		}
 	}
@@ -51,7 +52,7 @@ namespace state::MainMenu
 			ActivateItem();
 			break;
 		case ::Command::BACK:
-			::Application::SetUIState(::UIState::CONFIRM_QUIT);
+			::application::UIState::SetUIState(::UIState::CONFIRM_QUIT);
 			break;
 		}
 	}

@@ -6,8 +6,5 @@
 #include "Common.XY.h"
 namespace Application
 {
-	void SetUIState(const ::UIState&);
-	const UIState& GetUIState();
 	void SetRenderLayout(const UIState&, const std::string&);
-
 }

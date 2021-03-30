@@ -3,6 +3,7 @@
 #include "Graphics.Layouts.h"
 #include "Application.Command.h"
 #include "Application.Update.h"
+#include "Application.UIState.h"
 namespace state::Splash
 {
 	const size_t TICKS_TOTAL = 3000;
@@ -19,7 +20,7 @@ namespace state::Splash
 		ticksLeft = (ticksLeft > ticks) ? (ticksLeft - ticks) : (0);
 		if (ticksLeft == 0)
 		{
-			::Application::SetUIState(::UIState::MAIN_MENU);
+			::application::UIState::SetUIState(::UIState::MAIN_MENU);
 			ticksLeft = TICKS_TOTAL;
 		}
 	}

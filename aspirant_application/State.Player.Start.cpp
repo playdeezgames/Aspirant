@@ -4,6 +4,7 @@
 #include "Graphics.Layouts.h"
 #include "Application.h"
 #include "Application.Command.h"
+#include "Application.UIState.h"
 namespace state::player::Start
 {
 	const std::string LAYOUT_NAME = "State.Player.Start";
@@ -27,7 +28,7 @@ namespace state::player::Start
 			graphics::Layouts::NextMenuIndex(LAYOUT_NAME, MENU_ID);
 			break;
 		case Command::BACK:
-			Application::SetUIState(UIState::START_GAME);
+			application::UIState::SetUIState(::UIState::START_GAME);
 			break;
 		}
 	}

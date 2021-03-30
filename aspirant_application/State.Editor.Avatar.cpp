@@ -6,6 +6,7 @@
 #include "Application.Command.h"
 #include "Application.TextInput.h"
 #include "Application.Update.h"
+#include "Application.UIState.h"
 namespace state::editor::Avatar
 {
 	const std::string LAYOUT_NAME = "State.Editor.Avatar";
@@ -65,7 +66,7 @@ namespace state::editor::Avatar
 		if(GetCurrentItem()==AvatarMenuItem::BACK)
 		{
 			context::editor::Scenario::Save();
-			Application::SetUIState(UIState::EDIT_SCENARIO);
+			application::UIState::SetUIState(UIState::EDIT_SCENARIO);
 		}
 	}
 
@@ -88,7 +89,7 @@ namespace state::editor::Avatar
 			else
 			{
 				context::editor::Scenario::Save();
-				Application::SetUIState(UIState::EDIT_SCENARIO);
+				application::UIState::SetUIState(UIState::EDIT_SCENARIO);
 			}
 			break;
 		case Command::UP:

@@ -7,6 +7,7 @@
 #include "Common.Utility.h"
 #include "Application.Command.h"
 #include "Application.Update.h"
+#include "Application.UIState.h"
 namespace state::Options
 {
 	const std::string LAYOUT_NAME = "State.Options";
@@ -79,7 +80,7 @@ namespace state::Options
 			::Options::Save();
 			break;
 		case OptionsItem::BACK:
-			::Application::SetUIState(::UIState::MAIN_MENU);
+			::application::UIState::SetUIState(::UIState::MAIN_MENU);
 			break;
 		}
 	}
@@ -101,7 +102,7 @@ namespace state::Options
 			IncreaseItem();
 			break;
 		case ::Command::BACK:
-			::Application::SetUIState(::UIState::MAIN_MENU);
+			::application::UIState::SetUIState(::UIState::MAIN_MENU);
 			break;
 		case ::Command::GREEN:
 			ActivateItem();

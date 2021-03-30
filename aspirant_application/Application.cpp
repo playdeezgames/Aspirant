@@ -22,6 +22,7 @@
 #include "Application.MouseWheel.h"
 #include "Application.MouseButtonDown.h"
 #include "Application.MouseButtonUp.h"
+#include "Application.UIState.h"
 namespace state::About { void Start(); }
 namespace state::ConfirmQuit { void Start(); }
 namespace state::editor::Avatar { void Start(); }
@@ -41,18 +42,6 @@ namespace state::Splash { void Start(); }
 namespace state::Start { void Start(); }
 namespace Application
 {
-	static ::UIState uiState = ::UIState::SPLASH;
-
-	void SetUIState(const ::UIState& state)
-	{
-		uiState = state;
-	}
-
-	const ::UIState& GetUIState()
-	{
-		return uiState;
-	}
-
 	static std::optional<::Command> KeyCodeToCommand(const SDL_Keycode& code)
 	{
 		switch (code)
@@ -186,7 +175,7 @@ namespace common::Application
 
 	bool IsRunning()
 	{
-		return ::Application::GetUIState() != ::UIState::QUIT;
+		return ::application::UIState::GetUIState() != ::UIState::QUIT;
 	}
 
 	void Update(Uint32 ticks)
@@ -196,7 +185,7 @@ namespace common::Application
 
 	void Render(SDL_Renderer* renderer)
 	{
-		auto layoutName = ::Application::renderLayouts.find(::Application::GetUIState());
+		auto layoutName = ::Application::renderLayouts.find(::application::UIState::GetUIState());
 		if (layoutName != ::Application::renderLayouts.end())
 		{
 			graphics::Layouts::Draw(renderer, layoutName->second);
@@ -208,7 +197,7 @@ namespace common::Application
 		switch (evt.type)
 		{
 		case SDL_QUIT:
-			::Application::SetUIState(::UIState::QUIT);
+			::application::UIState::SetUIState(::UIState::QUIT);
 			break;
 		case SDL_KEYDOWN:
 			::Application::HandleKeyDown(evt.key);

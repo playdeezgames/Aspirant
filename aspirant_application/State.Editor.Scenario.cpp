@@ -8,6 +8,7 @@
 #include "Context.Editor.NewRoom.h"
 #include "Application.Command.h"
 #include "Application.Update.h"
+#include "Application.UIState.h"
 namespace state::editor::Scenario
 {
 	const std::string LAYOUT_NAME = "State.Editor.Scenario";
@@ -28,21 +29,21 @@ namespace state::editor::Scenario
 		switch ((EditScenarioItem)graphics::Layouts::GetMenuValue(LAYOUT_NAME, MENU_ID).value())
 		{
 		case EditScenarioItem::BACK:
-			::Application::SetUIState(::UIState::EDIT_SCENARIO_SELECTOR);
+			::application::UIState::SetUIState(::UIState::EDIT_SCENARIO_SELECTOR);
 			break;
 		case EditScenarioItem::DESCRIPTOR:
-			::Application::SetUIState(::UIState::EDIT_SCENARIO_DESCRIPTOR);
+			::application::UIState::SetUIState(::UIState::EDIT_SCENARIO_DESCRIPTOR);
 			break;
 		case EditScenarioItem::AVATAR:
-			::Application::SetUIState(::UIState::EDIT_AVATAR);
+			::application::UIState::SetUIState(::UIState::EDIT_AVATAR);
 			break;
 		case EditScenarioItem::OPEN_ROOM:
 			::context::editor::Rooms::UpdateRoomList();
-			::Application::SetUIState(::UIState::EDIT_PICK_ROOM);
+			::application::UIState::SetUIState(::UIState::EDIT_PICK_ROOM);
 			break;
 		case EditScenarioItem::NEW_ROOM:
 			::context::editor::NewRoom::Reset();
-			::Application::SetUIState(::UIState::EDIT_NEW_ROOM);
+			::application::UIState::SetUIState(::UIState::EDIT_NEW_ROOM);
 			break;
 		}
 	}
@@ -61,7 +62,7 @@ namespace state::editor::Scenario
 			ActivateItem();
 			break;
 		case ::Command::BACK:
-			::Application::SetUIState(::UIState::EDIT_SCENARIO_SELECTOR);
+			::application::UIState::SetUIState(::UIState::EDIT_SCENARIO_SELECTOR);
 			break;
 		}
 	}

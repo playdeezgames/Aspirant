@@ -1,3 +1,4 @@
+#include "Application.UIState.h"
 #include "Application.h"
 #include "UIState.h"
 #include "Graphics.Layouts.h"
@@ -11,7 +12,7 @@ namespace state::About
 		switch (command)
 		{
 		case ::Command::BACK:
-			::Application::SetUIState(::UIState::MAIN_MENU);
+			::application::UIState::SetUIState(::UIState::MAIN_MENU);
 			break;
 		}
 	}

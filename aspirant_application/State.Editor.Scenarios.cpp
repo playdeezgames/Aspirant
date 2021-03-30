@@ -8,6 +8,7 @@
 #include "Data.JSON.h"
 #include "Application.Command.h"
 #include "Application.Update.h"
+#include "Application.UIState.h"
 namespace state::editor::Scenarios
 {
 	const std::string LAYOUT_NAME = "State.Editor.Scenarios";
@@ -21,7 +22,7 @@ namespace state::editor::Scenarios
 		switch (command)
 		{
 		case ::Command::BACK:
-			::Application::SetUIState(::UIState::START_EDITOR);
+			::application::UIState::SetUIState(::UIState::START_EDITOR);
 			break;
 		case ::Command::NEXT:
 		case ::Command::RIGHT:
@@ -33,7 +34,7 @@ namespace state::editor::Scenarios
 			break;
 		case ::Command::GREEN:
 			::context::editor::Scenario::Load();
-			::Application::SetUIState(::UIState::EDIT_SCENARIO);
+			::application::UIState::SetUIState(::UIState::EDIT_SCENARIO);
 			break;
 		}
 	}

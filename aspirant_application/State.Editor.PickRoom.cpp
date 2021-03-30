@@ -5,6 +5,7 @@
 #include "Context.Editor.RoomView.h"
 #include "Application.Command.h"
 #include "Application.Update.h"
+#include "Application.UIState.h"
 namespace state::editor::PickRoom
 {
 	const std::string LAYOUT_NAME = "State.Editor.PickRoom";
@@ -15,7 +16,7 @@ namespace state::editor::PickRoom
 		switch (command)
 		{
 		case ::Command::BACK:
-			::Application::SetUIState(::UIState::EDIT_SCENARIO);
+			::application::UIState::SetUIState(::UIState::EDIT_SCENARIO);
 			break;
 		case ::Command::RIGHT:
 		case ::Command::NEXT:
@@ -27,7 +28,7 @@ namespace state::editor::PickRoom
 			break;
 		case ::Command::GREEN:
 			::context::editor::RoomView::SetCursor({ 0,0 });
-			::Application::SetUIState(::UIState::EDIT_NAVIGATE_ROOM);
+			::application::UIState::SetUIState(::UIState::EDIT_NAVIGATE_ROOM);
 			break;
 		}
 	}

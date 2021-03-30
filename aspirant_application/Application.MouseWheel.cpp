@@ -6,9 +6,9 @@
 #include "Application.Handlers.h"
 namespace application::MouseWheel
 {
-	static std::map<UIState, Handler> handlers;
+	static std::map<::UIState, Handler> handlers;
 
-	void SetHandler(const UIState& state, Handler handler)
+	void SetHandler(const ::UIState& state, Handler handler)
 	{
 		handlers[state] = handler;
 	}

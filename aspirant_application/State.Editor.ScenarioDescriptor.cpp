@@ -6,6 +6,7 @@
 #include "Application.Command.h"
 #include "Application.TextInput.h"
 #include "Application.Update.h"
+#include "Application.UIState.h"
 namespace state::editor::ScenarioDescriptor
 {
 	const std::string LAYOUT_NAME = "State.Editor.ScenarioDescriptor";
@@ -31,7 +32,7 @@ namespace state::editor::ScenarioDescriptor
 		{
 		case EditScenarioDescriptorItem::BACK:
 			game::ScenarioDescriptors::Save();
-			::Application::SetUIState(::UIState::EDIT_SCENARIO);
+			::application::UIState::SetUIState(::UIState::EDIT_SCENARIO);
 			break;
 		}
 	}
@@ -74,7 +75,7 @@ namespace state::editor::ScenarioDescriptor
 				break;
 			default:
 				game::ScenarioDescriptors::Save();
-				::Application::SetUIState(::UIState::EDIT_SCENARIO);;
+				::application::UIState::SetUIState(::UIState::EDIT_SCENARIO);;
 				break;
 			}
 			break;
