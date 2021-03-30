@@ -89,9 +89,6 @@
     <ClCompile Include="State.ConfirmQuit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Context.Editor.Scenarios.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Game.Cell.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -99,27 +96,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Game.Scenario.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Context.Editor.Rooms.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Context.Editor.Scenario.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Context.Editor.NewRoom.h">
-      <Filter>Header Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Context.Editor.NewRoom.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Context.Editor.RoomView.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Context.Editor.Cell.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Context.Editor.PickDescriptor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Game.Avatar.cpp">
@@ -235,9 +211,6 @@
     <ClInclude Include="Game.ScenarioDescriptors.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Context.Editor.Scenarios.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Game.Cell.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -245,21 +218,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Game.Scenario.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Context.Editor.Rooms.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Context.Editor.Scenario.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Context.Editor.RoomView.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Context.Editor.PickDescriptor.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Context.Editor.Cell.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Common.Properties.h">

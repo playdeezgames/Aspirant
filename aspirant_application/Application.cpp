@@ -14,7 +14,6 @@
 #include "Game.Descriptors.h"
 #include "Game.ScenarioDescriptors.h"
 #include <map>
-#include "Context.Editor.NewRoom.h"
 #include "Application.MouseMotion.h"
 #include "Application.Command.h"
 #include "Application.TextInput.h"
@@ -122,8 +121,7 @@ namespace common::Application
 		state::About::Start,
 		state::ConfirmQuit::Start,
 		state::Options::Start,
-		state::Start::Start,
-		::context::editor::NewRoom::Start
+		state::Start::Start
 	};
 
 	void Start(SDL_Renderer* renderer, const std::vector<std::string>& arguments)
