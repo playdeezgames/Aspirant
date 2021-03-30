@@ -1,7 +1,5 @@
 #include "Application.UIState.h"
 #include "Application.Renderer.h"
-#include "UIState.h"
-#include "Graphics.Layouts.h"
 #include "Application.Command.h"
 namespace state::About
 {
@@ -9,12 +7,7 @@ namespace state::About
 
 	static void OnCommand(const ::Command& command)
 	{
-		switch (command)
-		{
-		case ::Command::BACK:
-			::application::UIState::Write(::UIState::MAIN_MENU);
-			break;
-		}
+		::application::UIState::Write(::UIState::MAIN_MENU);
 	}
 
 	void Start()

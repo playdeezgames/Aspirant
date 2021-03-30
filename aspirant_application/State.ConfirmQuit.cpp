@@ -1,7 +1,7 @@
-#include "Graphics.Layouts.h"
 #include "Application.Renderer.h"
 #include "Application.Command.h"
 #include "Application.UIState.h"
+#include "Graphics.Layouts.h"
 namespace state::ConfirmQuit
 {
 	const std::string LAYOUT_NAME = "State.ConfirmQuit";
@@ -40,6 +40,7 @@ namespace state::ConfirmQuit
 			ActivateItem();
 			break;
 		case ::Command::BACK:
+		case ::Command::RED:
 			::application::UIState::Write(::UIState::MAIN_MENU);
 			break;
 		}

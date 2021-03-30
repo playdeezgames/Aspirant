@@ -35,6 +35,7 @@ namespace state::Start
 			graphics::Layouts::NextMenuIndex(LAYOUT_NAME, MENU_ID);
 			break;
 		case ::Command::BACK:
+		case ::Command::RED:
 			::application::UIState::Write(::UIState::MAIN_MENU);
 			break;
 		case ::Command::GREEN:

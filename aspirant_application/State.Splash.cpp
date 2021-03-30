@@ -1,6 +1,4 @@
 #include "Application.Renderer.h"
-#include "UIState.h"
-#include "Graphics.Layouts.h"
 #include "Application.Command.h"
 #include "Application.Update.h"
 #include "Application.UIState.h"

@@ -1,9 +1,6 @@
 #include "Application.Renderer.h"
-#include "UIState.h"
 #include "Graphics.Layouts.h"
-#include <map>
 #include "Application.Command.h"
-#include "Application.MouseButtonDown.h"
 #include "Application.UIState.h"
 namespace state::MainMenu
 {
@@ -52,6 +49,7 @@ namespace state::MainMenu
 			ActivateItem();
 			break;
 		case ::Command::BACK:
+		case ::Command::RED:
 			::application::UIState::Write(::UIState::CONFIRM_QUIT);
 			break;
 		}

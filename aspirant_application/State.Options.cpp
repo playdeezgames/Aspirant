@@ -102,6 +102,7 @@ namespace state::Options
 			IncreaseItem();
 			break;
 		case ::Command::BACK:
+		case ::Command::RED:
 			::application::UIState::Write(::UIState::MAIN_MENU);
 			break;
 		case ::Command::GREEN:
