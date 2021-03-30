@@ -46,16 +46,16 @@ namespace state::editor::Start
 		switch ((StartEditorItem)graphics::Layouts::GetMenuValue(LAYOUT_NAME, MENU_ID).value())
 		{
 		case StartEditorItem::BACK:
-			::application::UIState::SetUIState(::UIState::START_GAME);
+			::application::UIState::Write(::UIState::START_GAME);
 			break;
 		case StartEditorItem::NEW:
 			CreateNewScenario();
-			::application::UIState::SetUIState(::UIState::EDIT_SCENARIO_SELECTOR);
+			::application::UIState::Write(::UIState::EDIT_SCENARIO_SELECTOR);
 			break;
 		case StartEditorItem::OPEN:
 			if (game::ScenarioDescriptors::GetCount() > 0)
 			{
-				::application::UIState::SetUIState(::UIState::EDIT_SCENARIO_SELECTOR);
+				::application::UIState::Write(::UIState::EDIT_SCENARIO_SELECTOR);
 			}
 			break;
 		}
@@ -72,7 +72,7 @@ namespace state::editor::Start
 			graphics::Layouts::NextMenuIndex(LAYOUT_NAME, MENU_ID);
 			break;
 		case ::Command::BACK:
-			::application::UIState::SetUIState(::UIState::START_GAME);
+			::application::UIState::Write(::UIState::START_GAME);
 			break;
 		case ::Command::GREEN:
 			ActivateItem();

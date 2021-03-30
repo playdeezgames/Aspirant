@@ -28,7 +28,7 @@ namespace state::player::Start
 			graphics::Layouts::NextMenuIndex(LAYOUT_NAME, MENU_ID);
 			break;
 		case Command::BACK:
-			application::UIState::SetUIState(::UIState::START_GAME);
+			application::UIState::Write(::UIState::START_GAME);
 			break;
 		}
 	}

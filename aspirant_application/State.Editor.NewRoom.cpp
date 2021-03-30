@@ -51,10 +51,10 @@ namespace state::editor::NewRoom
 		case NewRoomItem::CREATE:
 			CreateRoom();
 			::context::editor::Rooms::UpdateRoomList();
-			::application::UIState::SetUIState(::UIState::EDIT_PICK_ROOM);
+			::application::UIState::Write(::UIState::EDIT_PICK_ROOM);
 			break;
 		case NewRoomItem::CANCEL:
-			::application::UIState::SetUIState(::UIState::EDIT_SCENARIO);
+			::application::UIState::Write(::UIState::EDIT_SCENARIO);
 			break;
 		}
 	}
@@ -104,7 +104,7 @@ namespace state::editor::NewRoom
 			}
 			else
 			{
-				::application::UIState::SetUIState(::UIState::EDIT_SCENARIO);
+				::application::UIState::Write(::UIState::EDIT_SCENARIO);
 			}
 			break;
 		case ::Command::RED:

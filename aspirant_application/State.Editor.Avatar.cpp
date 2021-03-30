@@ -66,7 +66,7 @@ namespace state::editor::Avatar
 		if(GetCurrentItem()==AvatarMenuItem::BACK)
 		{
 			context::editor::Scenario::Save();
-			application::UIState::SetUIState(UIState::EDIT_SCENARIO);
+			application::UIState::Write(UIState::EDIT_SCENARIO);
 		}
 	}
 
@@ -89,7 +89,7 @@ namespace state::editor::Avatar
 			else
 			{
 				context::editor::Scenario::Save();
-				application::UIState::SetUIState(UIState::EDIT_SCENARIO);
+				application::UIState::Write(UIState::EDIT_SCENARIO);
 			}
 			break;
 		case Command::UP:

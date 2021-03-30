@@ -12,7 +12,7 @@ namespace state::About
 		switch (command)
 		{
 		case ::Command::BACK:
-			::application::UIState::SetUIState(::UIState::MAIN_MENU);
+			::application::UIState::Write(::UIState::MAIN_MENU);
 			break;
 		}
 	}

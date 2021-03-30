@@ -20,7 +20,7 @@ namespace state::Splash
 		ticksLeft = (ticksLeft > ticks) ? (ticksLeft - ticks) : (0);
 		if (ticksLeft == 0)
 		{
-			::application::UIState::SetUIState(::UIState::MAIN_MENU);
+			::application::UIState::Write(::UIState::MAIN_MENU);
 			ticksLeft = TICKS_TOTAL;
 		}
 	}

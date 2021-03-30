@@ -23,17 +23,17 @@ namespace state::MainMenu
 		switch ((MainMenuItem)graphics::Layouts::GetMenuValue(LAYOUT_NAME, MENU_ID).value())
 		{
 		case MainMenuItem::START:
-			::application::UIState::SetUIState(::UIState::START_GAME);
+			::application::UIState::Write(::UIState::START_GAME);
 			return;
 		case MainMenuItem::OPTIONS:
-			::application::UIState::SetUIState(::UIState::OPTIONS);
+			::application::UIState::Write(::UIState::OPTIONS);
 			return;
 		case MainMenuItem::ABOUT:
 			SDL_SetClipboardText("https://thegrumpygamedev.itch.io/");
-			::application::UIState::SetUIState(::UIState::ABOUT);
+			::application::UIState::Write(::UIState::ABOUT);
 			return;
 		case MainMenuItem::QUIT:
-			::application::UIState::SetUIState(::UIState::CONFIRM_QUIT);
+			::application::UIState::Write(::UIState::CONFIRM_QUIT);
 			return;
 		}
 	}
@@ -52,7 +52,7 @@ namespace state::MainMenu
 			ActivateItem();
 			break;
 		case ::Command::BACK:
-			::application::UIState::SetUIState(::UIState::CONFIRM_QUIT);
+			::application::UIState::Write(::UIState::CONFIRM_QUIT);
 			break;
 		}
 	}

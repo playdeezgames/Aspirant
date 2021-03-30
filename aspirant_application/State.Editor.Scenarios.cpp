@@ -22,7 +22,7 @@ namespace state::editor::Scenarios
 		switch (command)
 		{
 		case ::Command::BACK:
-			::application::UIState::SetUIState(::UIState::START_EDITOR);
+			::application::UIState::Write(::UIState::START_EDITOR);
 			break;
 		case ::Command::NEXT:
 		case ::Command::RIGHT:
@@ -34,7 +34,7 @@ namespace state::editor::Scenarios
 			break;
 		case ::Command::GREEN:
 			::context::editor::Scenario::Load();
-			::application::UIState::SetUIState(::UIState::EDIT_SCENARIO);
+			::application::UIState::Write(::UIState::EDIT_SCENARIO);
 			break;
 		}
 	}

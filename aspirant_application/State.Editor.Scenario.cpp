@@ -29,21 +29,21 @@ namespace state::editor::Scenario
 		switch ((EditScenarioItem)graphics::Layouts::GetMenuValue(LAYOUT_NAME, MENU_ID).value())
 		{
 		case EditScenarioItem::BACK:
-			::application::UIState::SetUIState(::UIState::EDIT_SCENARIO_SELECTOR);
+			::application::UIState::Write(::UIState::EDIT_SCENARIO_SELECTOR);
 			break;
 		case EditScenarioItem::DESCRIPTOR:
-			::application::UIState::SetUIState(::UIState::EDIT_SCENARIO_DESCRIPTOR);
+			::application::UIState::Write(::UIState::EDIT_SCENARIO_DESCRIPTOR);
 			break;
 		case EditScenarioItem::AVATAR:
-			::application::UIState::SetUIState(::UIState::EDIT_AVATAR);
+			::application::UIState::Write(::UIState::EDIT_AVATAR);
 			break;
 		case EditScenarioItem::OPEN_ROOM:
 			::context::editor::Rooms::UpdateRoomList();
-			::application::UIState::SetUIState(::UIState::EDIT_PICK_ROOM);
+			::application::UIState::Write(::UIState::EDIT_PICK_ROOM);
 			break;
 		case EditScenarioItem::NEW_ROOM:
 			::context::editor::NewRoom::Reset();
-			::application::UIState::SetUIState(::UIState::EDIT_NEW_ROOM);
+			::application::UIState::Write(::UIState::EDIT_NEW_ROOM);
 			break;
 		}
 	}
@@ -62,7 +62,7 @@ namespace state::editor::Scenario
 			ActivateItem();
 			break;
 		case ::Command::BACK:
-			::application::UIState::SetUIState(::UIState::EDIT_SCENARIO_SELECTOR);
+			::application::UIState::Write(::UIState::EDIT_SCENARIO_SELECTOR);
 			break;
 		}
 	}

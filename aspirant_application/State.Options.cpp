@@ -80,7 +80,7 @@ namespace state::Options
 			::Options::Save();
 			break;
 		case OptionsItem::BACK:
-			::application::UIState::SetUIState(::UIState::MAIN_MENU);
+			::application::UIState::Write(::UIState::MAIN_MENU);
 			break;
 		}
 	}
@@ -102,7 +102,7 @@ namespace state::Options
 			IncreaseItem();
 			break;
 		case ::Command::BACK:
-			::application::UIState::SetUIState(::UIState::MAIN_MENU);
+			::application::UIState::Write(::UIState::MAIN_MENU);
 			break;
 		case ::Command::GREEN:
 			ActivateItem();

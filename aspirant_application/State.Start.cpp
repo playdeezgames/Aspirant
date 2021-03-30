@@ -19,13 +19,13 @@ namespace state::Start
 		switch ((StartGameItem)graphics::Layouts::GetMenuValue(LAYOUT_NAME, MENU_ID).value())
 		{
 		case StartGameItem::BACK:
-			::application::UIState::SetUIState(::UIState::MAIN_MENU);
+			::application::UIState::Write(::UIState::MAIN_MENU);
 			break;
 		case StartGameItem::EDITOR:
-			::application::UIState::SetUIState(::UIState::START_EDITOR);
+			::application::UIState::Write(::UIState::START_EDITOR);
 			break;
 		case StartGameItem::PLAY:
-			::application::UIState::SetUIState(::UIState::START_PLAYER);
+			::application::UIState::Write(::UIState::START_PLAYER);
 			break;
 		}
 	}
@@ -41,7 +41,7 @@ namespace state::Start
 			graphics::Layouts::NextMenuIndex(LAYOUT_NAME, MENU_ID);
 			break;
 		case ::Command::BACK:
-			::application::UIState::SetUIState(::UIState::MAIN_MENU);
+			::application::UIState::Write(::UIState::MAIN_MENU);
 			break;
 		case ::Command::GREEN:
 			ActivateItem();

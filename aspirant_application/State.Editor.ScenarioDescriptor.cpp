@@ -32,7 +32,7 @@ namespace state::editor::ScenarioDescriptor
 		{
 		case EditScenarioDescriptorItem::BACK:
 			game::ScenarioDescriptors::Save();
-			::application::UIState::SetUIState(::UIState::EDIT_SCENARIO);
+			::application::UIState::Write(::UIState::EDIT_SCENARIO);
 			break;
 		}
 	}
@@ -75,7 +75,7 @@ namespace state::editor::ScenarioDescriptor
 				break;
 			default:
 				game::ScenarioDescriptors::Save();
-				::application::UIState::SetUIState(::UIState::EDIT_SCENARIO);;
+				::application::UIState::Write(::UIState::EDIT_SCENARIO);;
 				break;
 			}
 			break;

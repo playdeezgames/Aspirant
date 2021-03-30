@@ -2,6 +2,6 @@
 #include "UIState.h"
 namespace application::UIState
 {
-	void SetUIState(const ::UIState&);
-	const ::UIState& GetUIState();
+	void Write(const ::UIState&);
+	const ::UIState& Read();
 }

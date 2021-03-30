@@ -18,10 +18,10 @@ namespace state::ConfirmQuit
 		switch ((ConfirmQuitItem)graphics::Layouts::GetMenuValue(LAYOUT_NAME,MENU_ID).value())
 		{
 		case ConfirmQuitItem::NO:
-			::application::UIState::SetUIState(::UIState::MAIN_MENU);
+			::application::UIState::Write(::UIState::MAIN_MENU);
 			return;
 		case ConfirmQuitItem::YES:
-			::application::UIState::SetUIState(::UIState::QUIT);
+			::application::UIState::Write(::UIState::QUIT);
 			return;
 		}
 	}
@@ -40,7 +40,7 @@ namespace state::ConfirmQuit
 			ActivateItem();
 			break;
 		case ::Command::BACK:
-			::application::UIState::SetUIState(::UIState::MAIN_MENU);
+			::application::UIState::Write(::UIState::MAIN_MENU);
 			break;
 		}
 	}

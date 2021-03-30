@@ -16,7 +16,7 @@ namespace state::editor::PickRoom
 		switch (command)
 		{
 		case ::Command::BACK:
-			::application::UIState::SetUIState(::UIState::EDIT_SCENARIO);
+			::application::UIState::Write(::UIState::EDIT_SCENARIO);
 			break;
 		case ::Command::RIGHT:
 		case ::Command::NEXT:
@@ -28,7 +28,7 @@ namespace state::editor::PickRoom
 			break;
 		case ::Command::GREEN:
 			::context::editor::RoomView::SetCursor({ 0,0 });
-			::application::UIState::SetUIState(::UIState::EDIT_NAVIGATE_ROOM);
+			::application::UIState::Write(::UIState::EDIT_NAVIGATE_ROOM);
 			break;
 		}
 	}

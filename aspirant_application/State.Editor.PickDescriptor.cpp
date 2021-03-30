@@ -24,7 +24,7 @@ namespace state::editor::PickDescriptor
 		switch (command)
 		{
 		case ::Command::BACK:
-			::application::UIState::SetUIState(::UIState::EDIT_PICK_ROOM);
+			::application::UIState::Write(::UIState::EDIT_PICK_ROOM);
 			break;
 		case ::Command::UP:
 			ChangeIndex(-ROW_DELTA);
@@ -39,7 +39,7 @@ namespace state::editor::PickDescriptor
 			ChangeIndex(COLUMN_DELTA);
 			break;
 		case ::Command::NEXT:
-			::application::UIState::SetUIState(::UIState::EDIT_NAVIGATE_ROOM);
+			::application::UIState::Write(::UIState::EDIT_NAVIGATE_ROOM);
 			break;
 		}
 	}

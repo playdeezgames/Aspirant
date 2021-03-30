@@ -175,7 +175,7 @@ namespace common::Application
 
 	bool IsRunning()
 	{
-		return ::application::UIState::GetUIState() != ::UIState::QUIT;
+		return ::application::UIState::Read() != ::UIState::QUIT;
 	}
 
 	void Update(Uint32 ticks)
@@ -185,7 +185,7 @@ namespace common::Application
 
 	void Render(SDL_Renderer* renderer)
 	{
-		auto layoutName = ::Application::renderLayouts.find(::application::UIState::GetUIState());
+		auto layoutName = ::Application::renderLayouts.find(::application::UIState::Read());
 		if (layoutName != ::Application::renderLayouts.end())
 		{
 			graphics::Layouts::Draw(renderer, layoutName->second);
@@ -197,7 +197,7 @@ namespace common::Application
 		switch (evt.type)
 		{
 		case SDL_QUIT:
-			::application::UIState::SetUIState(::UIState::QUIT);
+			::application::UIState::Write(::UIState::QUIT);
 			break;
 		case SDL_KEYDOWN:
 			::Application::HandleKeyDown(evt.key);

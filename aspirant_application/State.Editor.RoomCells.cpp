@@ -51,7 +51,7 @@ namespace state::editor::RoomCells
 		{
 		case ::Command::BACK:
 			::context::editor::Scenario::Save();
-			::application::UIState::SetUIState(::UIState::EDIT_PICK_ROOM);
+			::application::UIState::Write(::UIState::EDIT_PICK_ROOM);
 			break;
 		case ::Command::UP:
 			MoveCursor({ 0,-1 });
@@ -72,7 +72,7 @@ namespace state::editor::RoomCells
 			RemoveObject();
 			break;
 		case ::Command::NEXT:
-			::application::UIState::SetUIState(::UIState::EDIT_DESCRIPTOR_SELECTOR);
+			::application::UIState::Write(::UIState::EDIT_DESCRIPTOR_SELECTOR);
 			break;
 		}
 	}
