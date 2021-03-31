@@ -30,20 +30,22 @@ namespace maze
 		return neighbors[direction];
 	}
 
-	const Door* Cell::GetDoor(Direction direction) const
+	std::optional<const Door*> Cell::GetDoor(Direction direction) const
 	{
 		auto door = exits.find(direction);
-		return door->second;
+		return 
+			(door!=exits.end()) ? 
+			(std::optional<const Door*>(door->second)) : 
+			(std::nullopt);
 	}
 
-	Door* Cell::GetDoor(Direction direction)
+	std::optional<Door*> Cell::GetDoor(Direction direction)
 	{
-		return exits[direction];
-	}
-
-	bool Cell::HasDoor(Direction direction) const
-	{
-		return exits.find(direction) != exits.end();
+		auto door = exits.find(direction);
+		return
+			(door != exits.end()) ?
+			(std::optional<Door*>(door->second)) :
+			(std::nullopt);
 	}
 
 	bool Cell::HasNeighbor(Direction direction) const

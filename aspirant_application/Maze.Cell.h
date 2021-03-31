@@ -3,6 +3,7 @@
 #include "Maze.Door.h"
 #include <map>
 #include <vector>
+#include <optional>
 namespace maze
 {
 	class Cell
@@ -16,9 +17,8 @@ namespace maze
 		void SetDoor(Direction, Door*);
 		const Cell* GetNeighbor(Direction) const;
 		Cell* GetNeighbor(Direction);
-		const Door* GetDoor(Direction) const;
-		Door* GetDoor(Direction);
-		bool HasDoor(Direction) const;
+		std::optional<const Door*> GetDoor(Direction) const;
+		std::optional<Door*> GetDoor(Direction);
 		bool HasNeighbor(Direction) const;
 		bool IsDeadEnd() const;
 	};

@@ -134,7 +134,7 @@ namespace maze
 				}
 			}
 			Direction direction = candidates[common::RNG::FromRange(0, (int)candidates.size())];
-			*(cell->GetDoor(direction)) = Door::OPEN;
+			*(cell->GetDoor(direction).value()) = Door::OPEN;
 			inside.insert(cell);
 			for (auto direction : MazeDirectionHelper::GetAll())
 			{

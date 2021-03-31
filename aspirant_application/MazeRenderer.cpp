@@ -29,7 +29,8 @@ namespace maze::Renderer
 							(direction == maze::Direction::SOUTH) ? (y + CELL_HEIGHT) :
 							(direction == maze::Direction::NORTH) ? (y - CELL_HEIGHT) :
 							(y);
-						if (cell->HasDoor(direction) && *(cell->GetDoor(direction)) == Door::OPEN)
+						auto door = cell->GetDoor(direction);
+						if (door && *(door.value()) == Door::OPEN)
 						{
 							SDL_RenderDrawLine(renderer, x, y, nextX, nextY);
 						}
