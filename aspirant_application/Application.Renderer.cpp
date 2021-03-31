@@ -2,6 +2,7 @@
 #include <map>
 #include "Application.UIState.h"
 #include "Graphics.Layouts.h"
+#include "MazeRenderer.h"
 namespace application::Renderer
 {
 	static std::map<::UIState, std::string> renderLayouts;
@@ -21,5 +22,6 @@ namespace common::Application
 		{
 			graphics::Layouts::Draw(renderer, layoutName->second);
 		}
+		maze::Renderer::Render(renderer);
 	}
 }

@@ -3,6 +3,7 @@
 #include "MazeCell.h"
 #include "MazeDoor.h"
 #include "json.hpp"
+#include <SDL.h>
 namespace maze
 {
 	class Maze
