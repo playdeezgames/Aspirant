@@ -2,63 +2,63 @@
 #include <string>
 namespace maze
 {
-	std::vector<MazeDirection> allDirections;
-	const std::vector<MazeDirection>& MazeDirectionHelper::GetAll()
+	std::vector<Direction> allDirections;
+	const std::vector<Direction>& MazeDirectionHelper::GetAll()
 	{
 		if (allDirections.empty())
 		{
-			allDirections.push_back(MazeDirection::NORTH);
-			allDirections.push_back(MazeDirection::EAST);
-			allDirections.push_back(MazeDirection::SOUTH);
-			allDirections.push_back(MazeDirection::WEST);
+			allDirections.push_back(Direction::NORTH);
+			allDirections.push_back(Direction::EAST);
+			allDirections.push_back(Direction::SOUTH);
+			allDirections.push_back(Direction::WEST);
 		}
 		return allDirections;
 	}
-	MazeDirection MazeDirectionHelper::GetOpposite(MazeDirection direction)
+	Direction MazeDirectionHelper::GetOpposite(Direction direction)
 	{
 		switch (direction)
 		{
-		case MazeDirection::EAST:
-			return MazeDirection::WEST;
-		case MazeDirection::WEST:
-			return MazeDirection::EAST;
-		case MazeDirection::NORTH:
-			return MazeDirection::SOUTH;
-		case MazeDirection::SOUTH:
-			return MazeDirection::NORTH;
+		case Direction::EAST:
+			return Direction::WEST;
+		case Direction::WEST:
+			return Direction::EAST;
+		case Direction::NORTH:
+			return Direction::SOUTH;
+		case Direction::SOUTH:
+			return Direction::NORTH;
 		default:
 			throw std::string("bad direction");
 		}
 	}
 
-	int MazeDirectionHelper::GetNextColumn(int column, int row, MazeDirection direction)
+	int MazeDirectionHelper::GetNextColumn(int column, int row, Direction direction)
 	{
 		switch (direction)
 		{
-		case MazeDirection::EAST:
+		case Direction::EAST:
 			return column + 1;
-		case MazeDirection::WEST:
+		case Direction::WEST:
 			return column - 1;
-		case MazeDirection::NORTH:
+		case Direction::NORTH:
 			return column;
-		case MazeDirection::SOUTH:
+		case Direction::SOUTH:
 			return column;
 		default:
 			throw std::string("bad direction");
 		}
 	}
 
-	int MazeDirectionHelper::GetNextRow(int column, int row, MazeDirection direction)
+	int MazeDirectionHelper::GetNextRow(int column, int row, Direction direction)
 	{
 		switch (direction)
 		{
-		case MazeDirection::EAST:
+		case Direction::EAST:
 			return row;
-		case MazeDirection::WEST:
+		case Direction::WEST:
 			return row;
-		case MazeDirection::NORTH:
+		case Direction::NORTH:
 			return row - 1;
-		case MazeDirection::SOUTH:
+		case Direction::SOUTH:
 			return row + 1;
 		default:
 			throw std::string("bad direction");

@@ -8,18 +8,18 @@ namespace maze
 	class MazeCell
 	{
 	private:
-		std::map<MazeDirection, Door*> exits;
-		std::map<MazeDirection, MazeCell*> neighbors;
+		std::map<Direction, Door*> exits;
+		std::map<Direction, MazeCell*> neighbors;
 	public:
 		MazeCell();
-		void SetNeighbor(MazeDirection, MazeCell*);
-		void SetDoor(MazeDirection, Door*);
-		const MazeCell* GetNeighbor(MazeDirection) const;
-		MazeCell* GetNeighbor(MazeDirection);
-		const Door* GetDoor(MazeDirection) const;
-		Door* GetDoor(MazeDirection);
-		bool HasDoor(MazeDirection) const;
-		bool HasNeighbor(MazeDirection) const;
+		void SetNeighbor(Direction, MazeCell*);
+		void SetDoor(Direction, Door*);
+		const MazeCell* GetNeighbor(Direction) const;
+		MazeCell* GetNeighbor(Direction);
+		const Door* GetDoor(Direction) const;
+		Door* GetDoor(Direction);
+		bool HasDoor(Direction) const;
+		bool HasNeighbor(Direction) const;
 		bool IsDeadEnd() const;
 	};
 }

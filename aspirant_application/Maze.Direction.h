@@ -2,7 +2,7 @@
 #include <vector>
 namespace maze
 {
-	enum class MazeDirection
+	enum class Direction
 	{
 		NORTH,
 		EAST,
@@ -12,9 +12,9 @@ namespace maze
 	class MazeDirectionHelper
 	{
 	public:
-		static MazeDirection GetOpposite(MazeDirection);
-		static const std::vector<MazeDirection>& GetAll();
-		static int GetNextColumn(int, int, MazeDirection);
-		static int GetNextRow(int, int, MazeDirection);
+		static Direction GetOpposite(Direction);
+		static const std::vector<Direction>& GetAll();
+		static int GetNextColumn(int, int, Direction);
+		static int GetNextRow(int, int, Direction);
 	};
 }

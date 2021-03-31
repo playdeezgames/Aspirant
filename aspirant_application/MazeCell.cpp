@@ -8,45 +8,45 @@ namespace maze
 
 	}
 
-	void MazeCell::SetNeighbor(MazeDirection direction, MazeCell* cell)
+	void MazeCell::SetNeighbor(Direction direction, MazeCell* cell)
 	{
 		neighbors[direction] = cell;
 	}
 
-	void MazeCell::SetDoor(MazeDirection direction, Door* door)
+	void MazeCell::SetDoor(Direction direction, Door* door)
 	{
 		exits[direction] = door;
 	}
 
-	const MazeCell* MazeCell::GetNeighbor(MazeDirection direction) const
+	const MazeCell* MazeCell::GetNeighbor(Direction direction) const
 	{
 
 		auto neighbor = neighbors.find(direction);
 		return neighbor->second;
 	}
 
-	MazeCell* MazeCell::GetNeighbor(MazeDirection direction)
+	MazeCell* MazeCell::GetNeighbor(Direction direction)
 	{
 		return neighbors[direction];
 	}
 
-	const Door* MazeCell::GetDoor(MazeDirection direction) const
+	const Door* MazeCell::GetDoor(Direction direction) const
 	{
 		auto door = exits.find(direction);
 		return door->second;
 	}
 
-	Door* MazeCell::GetDoor(MazeDirection direction)
+	Door* MazeCell::GetDoor(Direction direction)
 	{
 		return exits[direction];
 	}
 
-	bool MazeCell::HasDoor(MazeDirection direction) const
+	bool MazeCell::HasDoor(Direction direction) const
 	{
 		return exits.find(direction) != exits.end();
 	}
 
-	bool MazeCell::HasNeighbor(MazeDirection direction) const
+	bool MazeCell::HasNeighbor(Direction direction) const
 	{
 		return neighbors.find(direction) != neighbors.end();
 	}

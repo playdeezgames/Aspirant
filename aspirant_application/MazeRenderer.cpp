@@ -22,12 +22,12 @@ namespace maze::Renderer
 					for (auto direction : directions)
 					{
 						int nextX =
-							(direction == maze::MazeDirection::EAST) ? (x + CELL_WIDTH) :
-							(direction == maze::MazeDirection::WEST) ? (x - CELL_WIDTH) :
+							(direction == maze::Direction::EAST) ? (x + CELL_WIDTH) :
+							(direction == maze::Direction::WEST) ? (x - CELL_WIDTH) :
 							(x);
 						int nextY =
-							(direction == maze::MazeDirection::SOUTH) ? (y + CELL_HEIGHT) :
-							(direction == maze::MazeDirection::NORTH) ? (y - CELL_HEIGHT) :
+							(direction == maze::Direction::SOUTH) ? (y + CELL_HEIGHT) :
+							(direction == maze::Direction::NORTH) ? (y - CELL_HEIGHT) :
 							(y);
 						if (cell->HasDoor(direction) && *(cell->GetDoor(direction)) == Door::OPEN)
 						{

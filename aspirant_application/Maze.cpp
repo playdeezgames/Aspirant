@@ -124,7 +124,7 @@ namespace maze
 			cell = frontier[index];
 			frontier[index] = frontier[frontier.size() - 1];
 			frontier.pop_back();
-			std::vector<MazeDirection> candidates;
+			std::vector<Direction> candidates;
 			for (auto direction : MazeDirectionHelper::GetAll())
 			{
 				if (cell->HasNeighbor(direction))
@@ -136,7 +136,7 @@ namespace maze
 					}
 				}
 			}
-			MazeDirection direction = candidates[common::RNG::FromRange(0, (int)candidates.size())];
+			Direction direction = candidates[common::RNG::FromRange(0, (int)candidates.size())];
 			*(cell->GetDoor(direction)) = Door::OPEN;
 			inside.insert(cell);
 			for (auto direction : MazeDirectionHelper::GetAll())
