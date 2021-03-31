@@ -173,7 +173,6 @@
     <ClCompile Include="Maze.cpp" />
     <ClCompile Include="Maze.Cell.cpp" />
     <ClCompile Include="Maze.Direction.cpp" />
-    <ClCompile Include="MazeRenderer.cpp" />
     <ClCompile Include="State.About.cpp" />
     <ClCompile Include="Common.Application.cpp" />
     <ClCompile Include="Application.cpp" />
@@ -226,7 +225,6 @@
     <ClInclude Include="Maze.Cell.h" />
     <ClInclude Include="Maze.Direction.h" />
     <ClInclude Include="Maze.Door.h" />
-    <ClInclude Include="MazeRenderer.h" />
     <ClInclude Include="Options.h" />
     <ClInclude Include="Common.RNG.h" />
     <ClInclude Include="Common.Sounds.h" />

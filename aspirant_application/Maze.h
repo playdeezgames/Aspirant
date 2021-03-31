@@ -2,7 +2,6 @@
 #include <vector>
 #include "Maze.Cell.h"
 #include "Maze.Door.h"
-#include <SDL.h>
 namespace maze
 {
 	class Maze

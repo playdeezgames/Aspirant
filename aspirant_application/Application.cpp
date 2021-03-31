@@ -20,7 +20,6 @@
 #include "Application.MouseButtonDown.h"
 #include "Application.MouseButtonUp.h"
 #include "Application.UIState.h"
-#include "MazeRenderer.h"
 namespace state::About { void Start(); }
 namespace state::ConfirmQuit { void Start(); }
 namespace state::MainMenu { void Start(); }
@@ -121,8 +120,7 @@ namespace common::Application
 		state::About::Start,
 		state::ConfirmQuit::Start,
 		state::Options::Start,
-		state::Start::Start,
-		maze::Renderer::Start
+		state::Start::Start
 	};
 
 	void Start(SDL_Renderer* renderer, const std::vector<std::string>& arguments)
