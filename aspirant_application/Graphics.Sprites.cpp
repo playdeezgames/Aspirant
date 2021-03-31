@@ -17,7 +17,7 @@ namespace graphics::Sprites
 		}
 		else
 		{
-			return std::optional<Sprite>();
+			return std::nullopt;
 		}
 	}
 

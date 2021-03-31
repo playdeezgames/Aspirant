@@ -23,7 +23,7 @@ namespace graphics
 		}
 		else
 		{
-			return std::optional<Sprite>();
+			return std::nullopt;
 		}
 	}
 

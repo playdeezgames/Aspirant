@@ -33,31 +33,32 @@ namespace Application
 		switch (code)
 		{
 		case SDLK_UP:
-			return std::optional<::Command>(::Command::UP);
+			
+			return std::make_optional(::Command::UP);
 		case SDLK_DOWN:
-			return std::optional<::Command>(::Command::DOWN);
+			return std::make_optional(::Command::DOWN);
 		case SDLK_LEFT:
-			return std::optional<::Command>(::Command::LEFT);
+			return std::make_optional(::Command::LEFT);
 		case SDLK_RIGHT:
-			return std::optional<::Command>(::Command::RIGHT);
+			return std::make_optional(::Command::RIGHT);
 		case SDLK_SPACE:
-			return std::optional<::Command>(::Command::GREEN);
+			return std::make_optional(::Command::GREEN);
 		case SDLK_RETURN:
-			return std::optional<::Command>(::Command::START);
+			return std::make_optional(::Command::START);
 		case SDLK_ESCAPE:
-			return std::optional<::Command>(::Command::RED);
+			return std::make_optional(::Command::RED);
 		case SDLK_COMMA:
-			return std::optional<::Command>(::Command::PREVIOUS);
+			return std::make_optional(::Command::PREVIOUS);
 		case SDLK_PERIOD:
-			return std::optional<::Command>(::Command::NEXT);
+			return std::make_optional(::Command::NEXT);
 		case SDLK_BACKSPACE:
-			return std::optional<::Command>(::Command::BACK);
+			return std::make_optional(::Command::BACK);
 		case SDLK_TAB:
-			return std::optional<::Command>(::Command::YELLOW);
+			return std::make_optional(::Command::YELLOW);
 		case SDLK_z:
-			return std::optional<::Command>(::Command::BLUE);
+			return std::make_optional(::Command::BLUE);
 		default:
-			return std::optional<::Command>();
+			return std::nullopt;
 		}
 	}
 

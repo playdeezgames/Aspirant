@@ -21,7 +21,7 @@ namespace graphics::Menus
 				return (int)thingie[graphics::Properties::MENU_ITEMS][index][graphics::Properties::VALUE];
 			}
 		}
-		return std::optional<int>();
+		return std::nullopt;
 	}
 
 	static void ChangeMenuIndex(const std::string& layoutName, const std::string& menuId, int delta)

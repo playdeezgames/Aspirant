@@ -17,7 +17,7 @@ namespace graphics::Fonts
 		}
 		else
 		{
-			return std::optional<Font>();
+			return std::nullopt;
 		}
 	}
 
