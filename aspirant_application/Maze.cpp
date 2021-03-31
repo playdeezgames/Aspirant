@@ -3,9 +3,6 @@
 #include "Common.RNG.h"
 namespace maze
 {
-	const std::string PROPERTY_CELLS = "cells";
-	const std::string PROPERTY_DOORS = "doors";
-
 	Maze::Maze(size_t columns, size_t rows)
 		: cells()
 		, doors()
@@ -21,7 +18,7 @@ namespace maze
 
 		while (cells.size() < columns * rows)
 		{
-			cells.push_back(new MazeCell());
+			cells.push_back(new Cell());
 		}
 	}
 
@@ -40,7 +37,7 @@ namespace maze
 
 	void Maze::InitializeCell(int column, int row)
 	{
-		MazeCell* cell = GetCell(column, row);
+		Cell* cell = GetCell(column, row);
 		for (auto direction : MazeDirectionHelper::GetAll())
 		{
 			if (!cell->HasNeighbor(direction))
@@ -49,7 +46,7 @@ namespace maze
 				int nextRow = MazeDirectionHelper::GetNextRow(column, row, direction);
 				if (nextColumn >= 0 && nextColumn < columns && nextRow >= 0 && nextRow < rows)
 				{
-					MazeCell* neighbor = GetCell(nextColumn, nextRow);
+					Cell* neighbor = GetCell(nextColumn, nextRow);
 					Door* door = new Door();
 					doors.push_back(door);
 					cell->SetNeighbor(direction, neighbor);
@@ -74,7 +71,7 @@ namespace maze
 		}
 	}
 
-	MazeCell* Maze::GetCell(int column, int row)
+	Cell* Maze::GetCell(int column, int row)
 	{
 		if (column >= 0 && column < columns && row >= 0 && row < rows)
 		{
@@ -83,7 +80,7 @@ namespace maze
 		return nullptr;
 	}
 
-	const MazeCell* Maze::GetCell(int column, int row) const
+	const Cell* Maze::GetCell(int column, int row) const
 	{
 		if (column >= 0 && column < columns && row >= 0 && row < rows)
 		{
@@ -103,17 +100,17 @@ namespace maze
 	void Maze::Generate()
 	{
 		Clear();
-		std::set<MazeCell*> outside(cells.begin(), cells.end());
-		std::vector<MazeCell*> frontier;
-		std::set<MazeCell*> inside;
-		MazeCell* cell = cells[common::RNG::FromRange(0, (int)cells.size())];
+		std::set<Cell*> outside(cells.begin(), cells.end());
+		std::vector<Cell*> frontier;
+		std::set<Cell*> inside;
+		Cell* cell = cells[common::RNG::FromRange(0, (int)cells.size())];
 		outside.erase(cell);
 		inside.insert(cell);
 		for (auto direction : MazeDirectionHelper::GetAll())
 		{
 			if (cell->HasNeighbor(direction))
 			{
-				MazeCell* neighbor = cell->GetNeighbor(direction);
+				Cell* neighbor = cell->GetNeighbor(direction);
 				outside.erase(neighbor);
 				frontier.push_back(neighbor);
 			}
@@ -129,7 +126,7 @@ namespace maze
 			{
 				if (cell->HasNeighbor(direction))
 				{
-					MazeCell* neighbor = cell->GetNeighbor(direction);
+					Cell* neighbor = cell->GetNeighbor(direction);
 					if (inside.contains(neighbor))
 					{
 						candidates.push_back(direction);
@@ -143,7 +140,7 @@ namespace maze
 			{
 				if (cell->HasNeighbor(direction))
 				{
-					MazeCell* neighbor = cell->GetNeighbor(direction);
+					Cell* neighbor = cell->GetNeighbor(direction);
 					if (outside.contains(neighbor))
 					{
 						outside.erase(neighbor);

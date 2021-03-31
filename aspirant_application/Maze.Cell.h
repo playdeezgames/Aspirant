@@ -5,17 +5,17 @@
 #include <vector>
 namespace maze
 {
-	class MazeCell
+	class Cell
 	{
 	private:
 		std::map<Direction, Door*> exits;
-		std::map<Direction, MazeCell*> neighbors;
+		std::map<Direction, Cell*> neighbors;
 	public:
-		MazeCell();
-		void SetNeighbor(Direction, MazeCell*);
+		Cell();
+		void SetNeighbor(Direction, Cell*);
 		void SetDoor(Direction, Door*);
-		const MazeCell* GetNeighbor(Direction) const;
-		MazeCell* GetNeighbor(Direction);
+		const Cell* GetNeighbor(Direction) const;
+		Cell* GetNeighbor(Direction);
 		const Door* GetDoor(Direction) const;
 		Door* GetDoor(Direction);
 		bool HasDoor(Direction) const;

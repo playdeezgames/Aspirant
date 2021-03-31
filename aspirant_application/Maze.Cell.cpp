@@ -1,57 +1,57 @@
-#include "MazeCell.h"
+#include "Maze.Cell.h"
 namespace maze
 {
-	MazeCell::MazeCell()
+	Cell::Cell()
 		: exits()
 		, neighbors()
 	{
 
 	}
 
-	void MazeCell::SetNeighbor(Direction direction, MazeCell* cell)
+	void Cell::SetNeighbor(Direction direction, Cell* cell)
 	{
 		neighbors[direction] = cell;
 	}
 
-	void MazeCell::SetDoor(Direction direction, Door* door)
+	void Cell::SetDoor(Direction direction, Door* door)
 	{
 		exits[direction] = door;
 	}
 
-	const MazeCell* MazeCell::GetNeighbor(Direction direction) const
+	const Cell* Cell::GetNeighbor(Direction direction) const
 	{
 
 		auto neighbor = neighbors.find(direction);
 		return neighbor->second;
 	}
 
-	MazeCell* MazeCell::GetNeighbor(Direction direction)
+	Cell* Cell::GetNeighbor(Direction direction)
 	{
 		return neighbors[direction];
 	}
 
-	const Door* MazeCell::GetDoor(Direction direction) const
+	const Door* Cell::GetDoor(Direction direction) const
 	{
 		auto door = exits.find(direction);
 		return door->second;
 	}
 
-	Door* MazeCell::GetDoor(Direction direction)
+	Door* Cell::GetDoor(Direction direction)
 	{
 		return exits[direction];
 	}
 
-	bool MazeCell::HasDoor(Direction direction) const
+	bool Cell::HasDoor(Direction direction) const
 	{
 		return exits.find(direction) != exits.end();
 	}
 
-	bool MazeCell::HasNeighbor(Direction direction) const
+	bool Cell::HasNeighbor(Direction direction) const
 	{
 		return neighbors.find(direction) != neighbors.end();
 	}
 
-	bool MazeCell::IsDeadEnd() const
+	bool Cell::IsDeadEnd() const
 	{
 		int count = 0;
 		for (auto& entry : exits)

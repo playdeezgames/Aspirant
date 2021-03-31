@@ -8,7 +8,7 @@ namespace maze::Renderer
 
 	void Render(SDL_Renderer* renderer)
 	{
-		SDL_SetRenderDrawColor(renderer, 0xff, 0x00, 0xff, 0xff);
+		SDL_SetRenderDrawColor(renderer, 0x80, 0x00, 0x80, 0xff);
 		auto& directions = maze::MazeDirectionHelper::GetAll();
 		for (auto row = 0; row < maze.GetRows(); ++row)
 		{
