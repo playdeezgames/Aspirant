@@ -1,4 +1,4 @@
-#include "MazeDirection.h"
+#include "Maze.Direction.h"
 #include <string>
 namespace maze
 {

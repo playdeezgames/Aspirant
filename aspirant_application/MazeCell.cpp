@@ -13,7 +13,7 @@ namespace maze
 		neighbors[direction] = cell;
 	}
 
-	void MazeCell::SetDoor(MazeDirection direction, MazeDoor* door)
+	void MazeCell::SetDoor(MazeDirection direction, Door* door)
 	{
 		exits[direction] = door;
 	}
@@ -30,13 +30,13 @@ namespace maze
 		return neighbors[direction];
 	}
 
-	const MazeDoor* MazeCell::GetDoor(MazeDirection direction) const
+	const Door* MazeCell::GetDoor(MazeDirection direction) const
 	{
 		auto door = exits.find(direction);
 		return door->second;
 	}
 
-	MazeDoor* MazeCell::GetDoor(MazeDirection direction)
+	Door* MazeCell::GetDoor(MazeDirection direction)
 	{
 		return exits[direction];
 	}
@@ -56,7 +56,7 @@ namespace maze
 		int count = 0;
 		for (auto& entry : exits)
 		{
-			if (entry.second->IsOpen())
+			if (*entry.second == Door::OPEN)
 			{
 				count++;
 			}

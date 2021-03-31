@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 #include "MazeCell.h"
-#include "MazeDoor.h"
+#include "Maze.Door.h"
 #include "json.hpp"
 #include <SDL.h>
 namespace maze
@@ -12,7 +12,7 @@ namespace maze
 		size_t columns;
 		size_t rows;
 		std::vector<MazeCell*> cells;
-		std::vector<MazeDoor*> doors;
+		std::vector<Door*> doors;
 		void Clear();
 		void PopulateCells();
 		void InitializeCells();

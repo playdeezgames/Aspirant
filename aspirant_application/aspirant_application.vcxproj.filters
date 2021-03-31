@@ -131,9 +131,6 @@
     <ClCompile Include="MazeDirection.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MazeDoor.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="MazeRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -241,13 +238,10 @@
     <ClInclude Include="MazeCell.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MazeConstants.h">
+    <ClInclude Include="Maze.Direction.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MazeDirection.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MazeDoor.h">
+    <ClInclude Include="Maze.Door.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MazeRenderer.h">

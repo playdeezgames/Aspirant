@@ -50,7 +50,7 @@ namespace maze
 				if (nextColumn >= 0 && nextColumn < columns && nextRow >= 0 && nextRow < rows)
 				{
 					MazeCell* neighbor = GetCell(nextColumn, nextRow);
-					MazeDoor* door = new MazeDoor();
+					Door* door = new Door();
 					doors.push_back(door);
 					cell->SetNeighbor(direction, neighbor);
 					cell->SetDoor(direction, door);
@@ -96,7 +96,7 @@ namespace maze
 	{
 		for (auto& door : doors)
 		{
-			door->SetOpen(false);
+			(*door) = Door::CLOSED;
 		}
 	}
 
@@ -137,7 +137,7 @@ namespace maze
 				}
 			}
 			MazeDirection direction = candidates[common::RNG::FromRange(0, (int)candidates.size())];
-			cell->GetDoor(direction)->SetOpen(true);
+			*(cell->GetDoor(direction)) = Door::OPEN;
 			inside.insert(cell);
 			for (auto direction : MazeDirectionHelper::GetAll())
 			{
