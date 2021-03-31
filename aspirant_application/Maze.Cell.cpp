@@ -18,16 +18,22 @@ namespace maze
 		exits[direction] = door;
 	}
 
-	const Cell* Cell::GetNeighbor(Direction direction) const
+	std::optional<const Cell*> Cell::GetNeighbor(Direction direction) const
 	{
-
 		auto neighbor = neighbors.find(direction);
-		return neighbor->second;
+		return 
+			(neighbor != neighbors.end()) ?
+			(std::make_optional(neighbor->second)) :
+			(std::nullopt);
 	}
 
-	Cell* Cell::GetNeighbor(Direction direction)
+	std::optional<Cell*> Cell::GetNeighbor(Direction direction)
 	{
-		return neighbors[direction];
+		auto neighbor = neighbors.find(direction);
+		return
+			(neighbor != neighbors.end()) ?
+			(std::make_optional(neighbor->second)) :
+			(std::nullopt);
 	}
 
 	std::optional<const Door*> Cell::GetDoor(Direction direction) const
@@ -46,11 +52,6 @@ namespace maze
 			(door != exits.end()) ?
 			(std::optional<Door*>(door->second)) :
 			(std::nullopt);
-	}
-
-	bool Cell::HasNeighbor(Direction direction) const
-	{
-		return neighbors.find(direction) != neighbors.end();
 	}
 
 	bool Cell::IsDeadEnd() const

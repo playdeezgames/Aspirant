@@ -40,7 +40,7 @@ namespace maze
 		Cell* cell = GetCell(column, row);
 		for (auto direction : MazeDirectionHelper::GetAll())
 		{
-			if (!cell->HasNeighbor(direction))
+			if (!cell->GetNeighbor(direction))
 			{
 				int nextColumn = MazeDirectionHelper::GetNextColumn(column, row, direction);
 				int nextRow = MazeDirectionHelper::GetNextRow(column, row, direction);
@@ -108,11 +108,11 @@ namespace maze
 		inside.insert(cell);
 		for (auto direction : MazeDirectionHelper::GetAll())
 		{
-			if (cell->HasNeighbor(direction))
+			auto neighbor = cell->GetNeighbor(direction);
+			if (neighbor)
 			{
-				Cell* neighbor = cell->GetNeighbor(direction);
-				outside.erase(neighbor);
-				frontier.push_back(neighbor);
+				outside.erase(neighbor.value());
+				frontier.push_back(neighbor.value());
 			}
 		}
 		while (!frontier.empty())
@@ -124,10 +124,10 @@ namespace maze
 			std::vector<Direction> candidates;
 			for (auto direction : MazeDirectionHelper::GetAll())
 			{
-				if (cell->HasNeighbor(direction))
+				auto neighbor = cell->GetNeighbor(direction);
+				if (neighbor)
 				{
-					Cell* neighbor = cell->GetNeighbor(direction);
-					if (inside.contains(neighbor))
+					if (inside.contains(neighbor.value()))
 					{
 						candidates.push_back(direction);
 					}
@@ -138,13 +138,13 @@ namespace maze
 			inside.insert(cell);
 			for (auto direction : MazeDirectionHelper::GetAll())
 			{
-				if (cell->HasNeighbor(direction))
+				auto neighbor = cell->GetNeighbor(direction);
+				if (neighbor)
 				{
-					Cell* neighbor = cell->GetNeighbor(direction);
-					if (outside.contains(neighbor))
+					if (outside.contains(neighbor.value()))
 					{
-						outside.erase(neighbor);
-						frontier.push_back(neighbor);
+						outside.erase(neighbor.value());
+						frontier.push_back(neighbor.value());
 					}
 				}
 			}
